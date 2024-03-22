@@ -76,7 +76,7 @@ export const ChooseBet = ({
             functionName: "betAmount",
             args: [
               1,
-              0, //hexToBigInt(nullifierHash as `0x${string}`),
+              hexToBigInt(nullifierHash as `0x${string}`),
               parseEther(amount.toString()),
             ],
             account: primaryWallet.address as `0x${string}`,

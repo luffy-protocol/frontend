@@ -186,6 +186,7 @@ export default function YourResults() {
 
       setProof(bytesToHex(proof.proof));
       setLogs((prev) => [...prev, "Proof Generation Success 😏"]);
+      setLogs((prev) => [...prev, bytesToHex(proof.proof)]);
       setLogs((prev) => [...prev, "Verifying proof... ⏳"]);
       const isValid = await noir.verifyFinalProof(proof);
 

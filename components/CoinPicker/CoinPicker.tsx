@@ -46,12 +46,8 @@ export const CoinPicker = () => {
           args: [primaryWallet.address as `0x${string}`],
         });
 
-        console.log("APE Balance");
-        console.log(data);
         setApeBalance(formatEther(data as bigint));
 
-        console.log("CHZ Balance");
-        console.log(formatEther(result));
         setChilizBalance(formatEther(result));
       } else {
         console.log("No primary wallet");

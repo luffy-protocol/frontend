@@ -34,7 +34,7 @@ export default function BuildSquad() {
   const [amount, setAmount] = useState<number>(0);
   const [betChainId, setBetChainId] = useState<number>(0);
   const [worldcoin, setWorldCoin] = useState<any>(null);
-  const [worldVerified, setWorldVerified] = useState<boolean>(false);
+  const [worldVerified, setWorldVerified] = useState<boolean>(true);
   const [betPlaced, setBetPlaced] = useState<boolean>(false);
   const [logs, setLogs] = useState<string[]>([]);
   const handleOnAutofill = () => {
@@ -96,17 +96,28 @@ export default function BuildSquad() {
             ]);
             setWorldVerified(true);
           } catch (e) {
-            if ((e as any).toString().includes("InvalidNullifier()")) {
-              setLogs((prev) => [
-                ...prev,
-                "Worldcoin ID already used. Try again with a different ID",
-              ]);
-            } else if (
-              (e as any).toString().includes("Unable to decode signature")
-            ) {
-              setLogs((prev) => [...prev, "Weird bug. Try again."]);
+            if (e != undefined) {
+              if ((e as any).toString().includes("InvalidNullifier()")) {
+                setLogs((prev) => [
+                  ...prev,
+                  "Worldcoin ID already used. Try again with a different ID",
+                ]);
+              } else if (
+                (e as any).toString().includes("Unable to decode signature")
+              ) {
+                setLogs((prev) => [...prev, "Weird bug. Try again."]);
+              } else if (
+                (e as any).toString().includes("User rejected the request")
+              ) {
+                setLogs((prev) => [...prev, "Rejected Transaction"]);
+              } else {
+                setLogs((prev) => [
+                  ...prev,
+                  "Unknown error. Check Developer Logs",
+                ]);
+              }
+              console.log(e);
             }
-            console.log(e);
           }
         })();
       }
@@ -141,48 +152,94 @@ export default function BuildSquad() {
                   variant="outlined"
                   color="info"
                   onClick={async () => {
-                    // create squad
-                    if (primaryWallet) {
-                      if (network != 421614) setNetwork(421614);
-                      console.log("Creating squad");
+                    try {
+                      if (primaryWallet) {
+                        console.log("Creating squad");
+                        const walletClient = await createWalletClientFromWallet(
+                          primaryWallet
+                        );
+                        if (walletClient.chain.id != 421614)
+                          walletClient.switchChain({ id: 421614 });
+                        const squad = [
+                          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 0,
+                        ];
+                        const merkleRoot = computeMerkleRoot(squad);
 
-                      const squad = [
-                        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 0,
-                      ];
-                      const merkleRoot = computeMerkleRoot(squad);
+                        const publicClient = createPublicClient({
+                          chain: arbitrumSepolia,
+                          transport: http(
+                            process.env.NEXT_PUBLIC_ARB_SEPOLIA_URL
+                          ),
+                        });
+                        console.log(process.env.NEXT_PUBLIC_ARB_SEPOLIA_URL);
 
-                      const publicClient = createPublicClient({
-                        chain: arbitrumSepolia,
-                        transport: http(
-                          process.env.NEXT_PUBLIC_ARB_SEPOLIA_URL
-                        ),
-                      });
-                      console.log(process.env.NEXT_PUBLIC_ARB_SEPOLIA_URL);
-                      const walletClient = await createWalletClientFromWallet(
-                        primaryWallet
-                      );
-                      console.log([
-                        1,
-                        merkleRoot, //hexToBigInt(nullifierHash as `0x${string}`),
-                        primaryWallet.address as `0x${string}`,
-                        nullifierHash == "" ? 0 : nullifierHash,
-                      ]);
-                      const { request } = await publicClient.simulateContract({
-                        address: LUFFY_PROTOCOL_ADDRESS,
-                        abi: LUFFY_PROTOCOL_ABI,
-                        functionName: "registerSquad",
-                        args: [
+                        console.log([
                           1,
                           merkleRoot, //hexToBigInt(nullifierHash as `0x${string}`),
                           primaryWallet.address as `0x${string}`,
                           nullifierHash == "" ? 0 : nullifierHash,
-                        ],
-                        account: primaryWallet.address as `0x${string}`,
-                      });
+                        ]);
+                        const { request } = await publicClient.simulateContract(
+                          {
+                            address: LUFFY_PROTOCOL_ADDRESS,
+                            abi: LUFFY_PROTOCOL_ABI,
+                            functionName: "registerSquad",
+                            args: [
+                              1,
+                              merkleRoot, //hexToBigInt(nullifierHash as `0x${string}`),
+                              primaryWallet.address as `0x${string}`,
+                              nullifierHash == "" ? 0 : nullifierHash,
+                            ],
+                            account: primaryWallet.address as `0x${string}`,
+                          }
+                        );
 
-                      const tx = await walletClient.writeContract(request);
-                      console.log(tx);
+                        const tx = await walletClient.writeContract(request);
+                        console.log(tx);
+                        setLogs((prev) => [
+                          ...prev,
+                          "Squad registered successfully",
+                        ]);
+                        setLogs((prev) => [
+                          ...prev,
+                          "https://sepolia.arbiscan.io/tx/" + tx,
+                        ]);
+                      }
+                    } catch (e) {
+                      console.log(e);
+                      if ((e as any).toString().includes("SelectSquadDisabled"))
+                        setLogs((prev) => [
+                          ...prev,
+                          "Registering squad is disabled",
+                        ]);
+                      else if (
+                        (e as any).toString().includes("InvalidGameweek")
+                      )
+                        setLogs((prev) => [...prev, "Wrong Gameweek"]);
+                      else if (
+                        (e as any)
+                          .toString()
+                          .includes("(gas * gas fee + value)")
+                      )
+                        setLogs((prev) => [
+                          ...prev,
+                          "Wrong Chain or Insufficient Gas Fee",
+                        ]);
+                      else if (
+                        (e as any)
+                          .toString()
+                          .includes("User rejected the request")
+                      ) {
+                        setLogs((prev) => [...prev, "Rejected Transaction"]);
+                      } else {
+                        setLogs((prev) => [
+                          ...prev,
+                          "Unknown error. Check Developer Logs",
+                        ]);
+                      }
                     }
+
+                    // create squad
                   }}
                 >
                   Submit Squad

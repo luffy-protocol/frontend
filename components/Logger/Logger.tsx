@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { useGeneralContext } from "@/contexts";
 
 const styles = {
@@ -16,11 +16,21 @@ const styles = {
 export const Logger = ({ logs }: { logs: string[] }) => {
   return (
     <Box sx={styles.container} overflow={"scroll"}>
-      {logs.map((log, index) => (
-        <Typography key={index} fontWeight={500} marginBottom={1}>
-          {`[${index + 1}] ${log}`}
-        </Typography>
-      ))}
+      {logs.map((log, index) =>
+        log.includes("tx") ? (
+          <Link
+            key={index}
+            fontWeight={500}
+            marginBottom={1}
+            href={log}
+            target={"_blank"}
+          >{`[${index + 1}] ${log}`}</Link>
+        ) : (
+          <Typography key={index} fontWeight={500} marginBottom={1}>
+            {`[${index + 1}] ${log}`}
+          </Typography>
+        )
+      )}
     </Box>
   );
 };

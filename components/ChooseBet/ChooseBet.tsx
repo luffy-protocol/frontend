@@ -55,65 +55,83 @@ export const ChooseBet = ({
   const { primaryWallet } = useDynamicContext();
   const { nullifierHash } = useGeneralContext();
   const placeBet = async () => {
-    if (primaryWallet) {
-      console.log(network);
-      if (coin == "CHZ") {
-        console.log(network != 88882);
-        if (network != 88882) setNetwork(88882);
-
-        const publicClient = createPublicClient({
-          chain: spicy,
-          transport: http(process.env.NEXT_PUBLIC_CHILIZ_URL),
-        });
+    try {
+      if (primaryWallet) {
         const walletClient = await createWalletClientFromWallet(primaryWallet);
-        console.log("NULLIFIER HASH");
-        console.log(nullifierHash);
-        const { request } = await publicClient.simulateContract({
-          address: LUFFY_REWARDS_CHILIZ_ADDRESS,
-          abi: LUFFY_REWARDS_ABI,
-          functionName: "betAmount",
-          args: [
-            1,
-            0, //hexToBigInt(nullifierHash as `0x${string}`),
-            parseEther(amount.toString()),
-          ],
-          account: primaryWallet.address as `0x${string}`,
-          value: parseEther(amount.toString()),
-        });
-        const tx = await walletClient.writeContract(request);
-        console.log(tx);
-        log("Bet placed successfully");
-        log(`https://testnet.chiliscan.com/tx/${tx}`);
-        setBetPlaced(true);
-      } else if (coin == "APE") {
-        if (network != 11155111) setNetwork(11155111);
+        console.log("BEFORE NETWORK " + network);
+        if (coin == "CHZ") {
+          if (walletClient.chain.id != 88882)
+            walletClient.switchChain({ id: 88882 });
+          console.log("AFTER NETWORK " + network);
+          const publicClient = createPublicClient({
+            chain: spicy,
+            transport: http(process.env.NEXT_PUBLIC_CHILIZ_URL),
+          });
 
-        const publicClient = createPublicClient({
-          chain: sepolia,
-          transport: http(process.env.NEXT_PUBLIC_SEPOLIA_URL),
-        });
-        const walletClient = await createWalletClientFromWallet(primaryWallet);
-        const { request: placeBetTx } = await publicClient.simulateContract({
-          address: LUFFY_REWARDS_SEPOLIA_ADDRESS,
-          abi: LUFFY_REWARDS_ABI,
-          functionName: "betAmount",
-          args: [
-            1,
-            hexToBigInt(nullifierHash as `0x${string}`),
-            parseEther(amount.toString()),
-          ],
-          account: primaryWallet.address as `0x${string}`,
-          value: parseEther(amount.toString()),
-        });
-        const tx = await walletClient.writeContract(placeBetTx);
-        console.log(tx);
-        log("Bet placed successfully");
-        log(`https://sepolia.etherscan.io/tx/${tx}`);
-        setBetPlaced(true);
+          console.log("NULLIFIER HASH");
+          console.log(nullifierHash);
+          const { request } = await publicClient.simulateContract({
+            address: LUFFY_REWARDS_CHILIZ_ADDRESS,
+            abi: LUFFY_REWARDS_ABI,
+            functionName: "betAmount",
+            args: [
+              1,
+              0, //hexToBigInt(nullifierHash as `0x${string}`),
+              parseEther(amount.toString()),
+            ],
+            account: primaryWallet.address as `0x${string}`,
+            value: parseEther(amount.toString()),
+          });
+          const tx = await walletClient.writeContract(request);
+          console.log(tx);
+          log("Bet placed successfully");
+          log(`https://testnet.chiliscan.com/tx/${tx}`);
+          setBetPlaced(true);
+        } else if (coin == "APE") {
+          const walletClient = await createWalletClientFromWallet(
+            primaryWallet
+          );
+          if (walletClient.chain.id != 11155111)
+            walletClient.switchChain({ id: 11155111 });
+
+          const publicClient = createPublicClient({
+            chain: sepolia,
+            transport: http(process.env.NEXT_PUBLIC_SEPOLIA_URL),
+          });
+
+          const { request: placeBetTx } = await publicClient.simulateContract({
+            address: LUFFY_REWARDS_SEPOLIA_ADDRESS,
+            abi: LUFFY_REWARDS_ABI,
+            functionName: "betAmount",
+            args: [
+              1,
+              hexToBigInt(nullifierHash as `0x${string}`),
+              parseEther(amount.toString()),
+            ],
+            account: primaryWallet.address as `0x${string}`,
+            value: parseEther(amount.toString()),
+          });
+          const tx = await walletClient.writeContract(placeBetTx);
+          console.log(tx);
+          log("Bet placed successfully");
+          log(`https://sepolia.etherscan.io/tx/${tx}`);
+          setBetPlaced(true);
+        }
+        console.log("Placing bet");
+      } else {
+        console.log("No wallet connected");
       }
-      console.log("Placing bet");
-    } else {
-      console.log("No wallet connected");
+    } catch (e) {
+      console.log(e);
+      if ((e as any).toString().includes("(gas * gas fee + value)")) {
+        log("Wrong Chain or Insufficient Gas Fee");
+      } else if ((e as any).toString().includes("InvalidNullifier()")) {
+        log("Another Squad cannot be created with the same nullifier");
+      } else if ((e as any).toString().includes("User rejected the request")) {
+        log("Rejected Transaction");
+      } else {
+        log("Unknown Error. Check developer logs");
+      }
     }
   };
 

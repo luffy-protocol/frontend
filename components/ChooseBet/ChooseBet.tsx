@@ -37,12 +37,14 @@ import { useGeneralContext } from "@/contexts";
 
 export const ChooseBet = ({
   amount,
+  squadGenerated,
   setAmount,
   setChainId,
   log,
   setBetPlaced,
 }: {
   amount: number;
+  squadGenerated: boolean;
   setAmount: (amount: number) => void;
   setChainId: (chainId: number) => void;
   log: (log: string) => void;
@@ -56,6 +58,7 @@ export const ChooseBet = ({
     if (primaryWallet) {
       console.log(network);
       if (coin == "CHZ") {
+        console.log(network != 88882);
         if (network != 88882) setNetwork(88882);
 
         const publicClient = createPublicClient({
@@ -184,7 +187,7 @@ export const ChooseBet = ({
           </Select>
         </FormControl>
         <Button
-          disabled={amount == 0}
+          disabled={amount == 0 || !squadGenerated}
           variant="outlined"
           color="success"
           onClick={placeBet}

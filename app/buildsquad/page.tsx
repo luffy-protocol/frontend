@@ -34,8 +34,8 @@ export default function BuildSquad() {
   const [amount, setAmount] = useState<number>(0);
   const [betChainId, setBetChainId] = useState<number>(0);
   const [worldcoin, setWorldCoin] = useState<any>(null);
-  const [worldVerified, setWorldVerified] = useState<boolean>(true);
-  const [betPlaced, setBetPlaced] = useState<boolean>(true);
+  const [worldVerified, setWorldVerified] = useState<boolean>(false);
+  const [betPlaced, setBetPlaced] = useState<boolean>(false);
   const [logs, setLogs] = useState<string[]>([]);
   const handleOnAutofill = () => {
     setLogs((prev) => [...prev, "You squad has been autofilled successfully"]);
@@ -96,7 +96,16 @@ export default function BuildSquad() {
             ]);
             setWorldVerified(true);
           } catch (e) {
-            setLogs((prev) => [...prev, (e as any).toString()]);
+            if ((e as any).toString().includes("InvalidNullifier()")) {
+              setLogs((prev) => [
+                ...prev,
+                "Worldcoin ID already used. Try again with a different ID",
+              ]);
+            } else if (
+              (e as any).toString().includes("Unable to decode signature")
+            ) {
+              setLogs((prev) => [...prev, "Weird bug. Try again."]);
+            }
             console.log(e);
           }
         })();
@@ -192,6 +201,7 @@ export default function BuildSquad() {
 
                   <ChooseBet
                     amount={amount}
+                    squadGenerated={squadGenerated}
                     setChainId={(chainId: number) => {
                       setBetChainId(chainId);
                     }}

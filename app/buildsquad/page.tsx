@@ -34,8 +34,9 @@ export default function BuildSquad() {
   const [amount, setAmount] = useState<number>(0);
   const [betChainId, setBetChainId] = useState<number>(0);
   const [worldcoin, setWorldCoin] = useState<any>(null);
-  const [worldVerified, setWorldVerified] = useState<boolean>(true);
+  const [worldVerified, setWorldVerified] = useState<boolean>(false);
   const [betPlaced, setBetPlaced] = useState<boolean>(false);
+  const [squadSubmitted, setSquadSubmitted] = useState<boolean>(false);
   const [logs, setLogs] = useState<string[]>([]);
   const handleOnAutofill = () => {
     setLogs((prev) => [...prev, "You squad has been autofilled successfully"]);
@@ -147,7 +148,7 @@ export default function BuildSquad() {
             }}
           >
             <Stack direction="row" spacing={2}>
-              {worldVerified && betPlaced && (
+              {worldVerified && betPlaced && !squadSubmitted && (
                 <Button
                   variant="outlined"
                   color="info"
@@ -205,6 +206,7 @@ export default function BuildSquad() {
                           "https://sepolia.arbiscan.io/tx/" + tx,
                         ]);
                       }
+                      setSquadSubmitted(true);
                     } catch (e) {
                       console.log(e);
                       if ((e as any).toString().includes("SelectSquadDisabled"))
@@ -280,6 +282,9 @@ export default function BuildSquad() {
                     setWorldCoin(data);
                   }}
                 />
+              )}
+              {squadSubmitted && (
+                <Typography variant="h4">You are all Set! ⚽️</Typography>
               )}
             </Stack>
             <Typography variant="h4">Logs</Typography>

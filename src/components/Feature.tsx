@@ -41,7 +41,7 @@ export default function Example() {
             Get Started
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            How to play ZKricket
+            How to play Luffy
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.

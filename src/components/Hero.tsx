@@ -35,12 +35,12 @@ export default function Hero() {
               Unleash Your Inner Cricket Guru . Play Fantasy Cricket on the{" "}
               <span className={`${pxsans.className}`}>Blockchain</span> with{" "}
               <span className=" text-transparent bg-clip-text bg-gradient-to-br from-slate-300 to-[#01A4F1]">
-                ZKricket
+                Luffy
               </span>
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
               <p className="text-lg leading-8 text-gray-600">
-                Experience cricket like never before with ZKricket, the
+                Experience cricket like never before with Luffy, the
                 world&apos;s first Web3 fantasy cricket game. Own your team,
                 build your legacy, and earn real rewards.
               </p>

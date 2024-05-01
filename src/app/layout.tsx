@@ -7,8 +7,9 @@ import Footer from "@/components/Footer";
 const jksans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Zkricket",
-  description: "A zero-knowledge fantasy cricket platform",
+  title: "Luffy",
+  description:
+    "Fully private and decentralized fantasy sports solution. Own your squad. Own your prediction. ",
 };
 
 import {

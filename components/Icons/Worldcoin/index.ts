@@ -1,1 +1,0 @@
-export { Worldcoin } from './Worldcoin';

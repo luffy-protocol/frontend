@@ -1,1 +1,0 @@
-export { DynamicWidget } from './DynamicWidget';

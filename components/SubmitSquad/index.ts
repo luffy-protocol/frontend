@@ -1,1 +1,0 @@
-export { SubmitSquad } from './SubmitSquad';

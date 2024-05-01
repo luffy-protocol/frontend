@@ -1,1 +1,0 @@
-export { CoinPicker } from './CoinPicker';

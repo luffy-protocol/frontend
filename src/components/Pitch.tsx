@@ -68,26 +68,23 @@ const Pitch: React.FC<PitchProps> = ({
   return (
     <div className="bg-white">
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
-        <div className="flex justify-center items-center relative">
-          <img
-            className="rounded-lg shadow-md border-2 border-black"
-            src="/pitchbase.png"
-            alt="Pitch"
-          />
-          {playerPositions.map((player, index) => (
-            <>
-              <PlayerImage
-                name={player.name}
-                key={index}
-                index={index}
-                player={player}
-                points={points}
-                showPoints={showPoints}
-                onClick={() => handlePlayerClick(index)}
-              />
-              <div></div>
-            </>
-          ))}
+        <div className="flex justify-start items-center relative w-[80%] mx-auto">
+          <div className="relative rounded-lg shadow-md border-2 border-black bg-[url('/pitchbase.png')] w-[45%] h-svh">
+            {playerPositions.map((player, index) => (
+              <>
+                <PlayerImage
+                  name={player.name}
+                  key={index}
+                  index={index}
+                  player={player}
+                  points={points}
+                  showPoints={showPoints}
+                  onClick={() => handlePlayerClick(index)}
+                />
+                <div></div>
+              </>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -169,20 +166,64 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       <img
         src={imageUrl}
         alt={`Player ${index + 1}`}
-        className="absolute cursor-pointer w-20"
+        className={`absolute cursor-pointer w-16 mt-8 ${
+          index == 10
+            ? "left-[42%]"
+            : index == 9
+            ? "top-[47%] left-[5%]"
+            : index == 8
+            ? "top-[47%] left-[30%]"
+            : index == 7
+            ? "top-[47%] left-[55%]"
+            : index == 6
+            ? "top-[45%] left-[80%]"
+            : index == 5
+            ? "top-[71%] left-[17%]"
+            : index == 4
+            ? "top-[71%] left-[42%]"
+            : index == 3
+            ? "top-[71%] left-[67%]"
+            : index == 2
+            ? "top-[23%] left-[17%]"
+            : index == 1
+            ? "top-[23%] left-[42%]"
+            : "top-[23%] left-[67%]"
+        }`}
         onClick={onClick}
-        style={{
-          top: calculateTopPosition(index),
-          left: calculateLeftPosition(index),
-        }}
+        // style={{
+        //   top: calculateTopPosition(index),
+        //   left: calculateLeftPosition(index),
+        // }}
       />
       <div
-        className="absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md"
+        className={`absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md  ${
+          index == 10
+            ? "left-[42%]"
+            : index == 9
+            ? "top-[47%] left-[5%]"
+            : index == 8
+            ? "top-[47%] left-[30%]"
+            : index == 7
+            ? "top-[47%] left-[55%]"
+            : index == 6
+            ? "top-[45%] left-[80%]"
+            : index == 5
+            ? "top-[71%] left-[17%]"
+            : index == 4
+            ? "top-[71%] left-[42%]"
+            : index == 3
+            ? "top-[71%] left-[67%]"
+            : index == 2
+            ? "top-[23%] left-[17%]"
+            : index == 1
+            ? "top-[23%] left-[42%]"
+            : "top-[23%] left-[67%]"
+        }`}
         onClick={onClick}
-        style={{
-          top: `${calculateTopTextPosition(index)}px`,
-          left: calculateLeftPosition(index),
-        }}
+        // style={{
+        //   top: `${calculateTopTextPosition(index)}px`,
+        //   left: calculateLeftPosition(index),
+        // }}
       >
         {name}
       </div>
@@ -190,10 +231,10 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
         <div
           className="absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md"
           onClick={onClick}
-          style={{
-            top: `${calculateTopTextPosition(index) + 25}px`,
-            left: `${calculateLeftTextPosition(index) + 20}px`,
-          }}
+          // style={{
+          //   top: `${calculateTopTextPosition(index) + 25}px`,
+          //   left: `${calculateLeftTextPosition(index) + 20}px`,
+          // }}
         >
           {points[index]}
           {"  "}Points

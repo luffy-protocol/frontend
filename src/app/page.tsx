@@ -5,16 +5,23 @@ import Feature from "@/components/Feature";
 import Hero from "@/components/Hero";
 import Team from "@/components/Team";
 import Tools from "@/components/Tools";
+import TopPlayers from "@/components/TopPlayers";
 import Youtube from "@/components/Youtube";
 
 export default function Page() {
   return (
     <>
-      <Hero />
-      <CTA />
-      <Feature />
-      <Tools />
-      <Team />
+      <div className="bg-white overflow-x-hidden">
+        <Hero />
+        <div className="mx-12">
+          <p className="text-black font-bold text-3xl">Top Players</p>
+          <TopPlayers />
+        </div>
+        <CTA />
+        <Feature />
+        <Tools />
+        {/* <Team /> */}
+      </div>
     </>
   );
 }

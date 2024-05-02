@@ -14,7 +14,9 @@ export default function Page() {
       <div className="bg-white overflow-x-hidden">
         <Hero />
         <div className="mx-12">
-          <p className="text-black font-bold text-3xl">Top Players</p>
+          <p className="text-black font-bold text-3xl text-center pb-10">
+            Top Players
+          </p>
           <TopPlayers />
         </div>
         <CTA />

@@ -14,7 +14,7 @@ export default function CardImage({
 }) {
   return (
     <>
-      <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200 w-fit">
+      <div className="overflow-hidden rounded bg-white text-slate-500  w-fit">
         <div className="flex items-center justify-center">
           <figure>
             <img

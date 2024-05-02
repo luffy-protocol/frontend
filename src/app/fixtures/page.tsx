@@ -45,11 +45,11 @@ function Page() {
           // Filter upcoming matches
           const filteredMatches = response.filter((match: any) => {
             const startDate = new Date(Number(match.startDate));
-            return startDate > currentDate;
+            return startDate < currentDate;
           });
           // Map the filtered matches to the desired format
           const completedMatches = filteredMatches
-            .slice(0, 6)
+            .slice(-7, -1)
             .map((match: any) => ({
               id: match.id, // Assuming fid represents matchId
               team1: match.team1,
@@ -89,6 +89,7 @@ function Page() {
 
         // Extract ongoing matches from the data and set in state
         if (data != null) {
+          console.log(data);
           const predictions = (data as any).users[0].predictions;
           const games = predictions.map((prediction: any) =>
             parseInt(prediction.game.id, 16)
@@ -118,6 +119,48 @@ function Page() {
     fetchOngoingFixtures();
   }, []);
 
+  function processGamePredictions(response: any) {
+    const games = response.data.games;
+
+    games.forEach((game: any) => {
+      const gameId = game.id;
+      const predictions = game.predictions;
+
+      if (predictions.length > 0) {
+        console.log(`Game with ID ${gameId} has predictions.`);
+
+        predictions.forEach((prediction: any) => {
+          if (prediction.claim) {
+            console.log(`Prediction for game ${gameId} has been claimed.`);
+          } else {
+            console.log(`Prediction for game ${gameId} has not been claimed.`);
+          }
+        });
+      } else {
+        console.log(`Game with ID ${gameId} does not have any predictions.`);
+      }
+    });
+  }
+  const exampleResponse = {
+    data: {
+      games: [
+        {
+          id: "0x1657b",
+          predictions: [],
+        },
+        {
+          id: "0x165a3",
+          predictions: [
+            {
+              claim: null,
+            },
+          ],
+        },
+      ],
+    },
+  };
+  console.log("Fetching games...");
+  processGamePredictions(exampleResponse);
   return (
     <div>
       <div className="bg-white px-16 py-6 sm:pt-32 lg:px-16">

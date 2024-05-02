@@ -35,7 +35,7 @@ function Page() {
     { id: number; team1: string; team2: string; title: string }[]
   >([]);
   useEffect(() => {
-    const fetchUpcomingFixtures = async () => {
+    const fetchCompletedFixtures = async () => {
       try {
         // Fetch fixtures
         const { message, response } = await fetchFixtures();
@@ -59,6 +59,18 @@ function Page() {
           // Set completed matches in state
           console.log(completedMatches);
           setCompletedMatches(completedMatches);
+
+          const upcominfMatches = filteredMatches
+            .slice(0, 6)
+            .map((match: any) => ({
+              id: match.id, // Assuming fid represents matchId
+              team1: match.team1,
+              team2: match.team2,
+              title: "Indian Primere League", // Common title
+            }));
+          // Set completed matches in state
+          console.log(upcominfMatches);
+          setUpcomingMatches(upcominfMatches);
         } else {
           console.error("Error fetching upcoming fixtures:", message);
         }
@@ -67,7 +79,7 @@ function Page() {
       }
     };
     // Call the function to fetch upcoming fixtures
-    fetchUpcomingFixtures();
+    fetchCompletedFixtures();
   }, []);
   useEffect(() => {
     async function fetchOngoingFixtures() {
@@ -76,10 +88,19 @@ function Page() {
           "https://api.studio.thegraph.com/query/30735/zkricket/version/latest",
           gql`
             query MyQuery {
-              users(address: "${address}") {
-                predictions {
-                  game{
-                    id
+              games {
+                id
+                predictions(
+                  where: {
+                    user_: {
+                      address: "0x0429a2da7884ca14e53142988d5845952fe4df6a"
+                    }
+                  }
+                ) {
+                  claim {
+                    game {
+                      id
+                    }
                   }
                 }
               }
@@ -90,22 +111,39 @@ function Page() {
         // Extract ongoing matches from the data and set in state
         if (data != null) {
           console.log(data);
-          const predictions = (data as any).users[0].predictions;
-          const games = predictions.map((prediction: any) =>
-            parseInt(prediction.game.id, 16)
+          const games = (data as any).games;
+          console.log(games);
+          const gameIdsWithPredictionsAndNullClaims = games
+            .filter(
+              (game: any) =>
+                game.predictions.length > 0 &&
+                game.predictions.some(
+                  (prediction: any) => prediction.claim === null
+                )
+            )
+            .map((game: any) => parseInt(game.id, 16));
+
+          console.log(
+            "Game IDs with predictions and null claims:",
+            gameIdsWithPredictionsAndNullClaims
           );
-          const ongoingMatchesData = matches.filter((match: any) =>
-            games.includes(match.id)
-          );
-          const upcomingMatchesData = matches.filter(
-            (match: any) => !games.includes(match.id)
-          );
-          setOngoingMatches(ongoingMatchesData);
-          setUpcomingMatches(upcomingMatchesData);
-          console.log("Ongoing Matches Data");
-          console.log(ongoingMatchesData);
-          console.log("Upcoming Matches Data");
-          console.log(upcomingMatchesData);
+
+          // const predictions = (data as any).users[0].predictions;
+          // const games = predictions.map((prediction: any) =>
+          //   parseInt(prediction.game.id, 16)
+          // );
+          // const ongoingMatchesData = matches.filter((match: any) =>
+          //   games.includes(match.id)
+          // );
+          // const upcomingMatchesData = matches.filter(
+          //   (match: any) => !games.includes(match.id)
+          // );
+          // setOngoingMatches(ongoingMatchesData);
+          // setUpcomingMatches(upcomingMatchesData);
+          // console.log("Ongoing Matches Data");
+          // console.log(ongoingMatchesData);
+          // console.log("Upcoming Matches Data");
+          // console.log(upcomingMatchesData);
         }
         console.log("Data from the graph");
         console.log(data);
@@ -119,48 +157,57 @@ function Page() {
     fetchOngoingFixtures();
   }, []);
 
-  function processGamePredictions(response: any) {
-    const games = response.data.games;
+  // function processGamePredictions(response: any) {
+  //   const games = response.data.games;
 
-    games.forEach((game: any) => {
-      const gameId = game.id;
-      const predictions = game.predictions;
+  //   games.forEach((game: any) => {
+  //     const gameId = game.id;
+  //     const predictions = game.predictions;
 
-      if (predictions.length > 0) {
-        console.log(`Game with ID ${gameId} has predictions.`);
+  //     if (predictions.length > 0) {
+  //       console.log(`Game with ID ${parseInt(gameId, 16)} has predictions.`);
 
-        predictions.forEach((prediction: any) => {
-          if (prediction.claim) {
-            console.log(`Prediction for game ${gameId} has been claimed.`);
-          } else {
-            console.log(`Prediction for game ${gameId} has not been claimed.`);
-          }
-        });
-      } else {
-        console.log(`Game with ID ${gameId} does not have any predictions.`);
-      }
-    });
-  }
-  const exampleResponse = {
-    data: {
-      games: [
-        {
-          id: "0x1657b",
-          predictions: [],
-        },
-        {
-          id: "0x165a3",
-          predictions: [
-            {
-              claim: null,
-            },
-          ],
-        },
-      ],
-    },
-  };
-  console.log("Fetching games...");
-  processGamePredictions(exampleResponse);
+  //       predictions.forEach((prediction: any) => {
+  //         if (prediction.claim) {
+  //           console.log(
+  //             `Prediction for game ${parseInt(gameId, 16)} has been claimed.`
+  //           );
+  //         } else {
+  //           console.log(
+  //             `Prediction for game ${parseInt(
+  //               gameId,
+  //               16
+  //             )} has not been claimed.`
+  //           );
+  //         }
+  //       });
+  //     } else {
+  //       console.log(
+  //         `Game with ID ${parseInt(gameId, 16)} does not have any predictions.`
+  //       );
+  //     }
+  //   });
+  // }
+  // const exampleResponse = {
+  //   data: {
+  //     games: [
+  //       {
+  //         id: "0x1657b",
+  //         predictions: [],
+  //       },
+  //       {
+  //         id: "0x165a3",
+  //         predictions: [
+  //           {
+  //             claim: null,
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // };
+  // console.log("Fetching games...");
+  // processGamePredictions(exampleResponse);
   return (
     <div>
       <div className="bg-white px-16 py-6 sm:pt-32 lg:px-16">

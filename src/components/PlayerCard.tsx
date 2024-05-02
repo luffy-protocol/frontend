@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Pixelify_Sans } from "next/font/google";
+const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 export default function CardImage({
   name,
   team,
@@ -27,7 +28,11 @@ export default function CardImage({
           <header className="">
             <h3 className="text-xl font-medium text-slate-700">{name}</h3>
             {/* <div className="flex justify-between"> */}
-            <p className="text-sm text-slate-400 text-center">{team}</p>
+            <p
+              className={`text-sm text-slate-400 text-center ${pxsans.className}`}
+            >
+              {team}
+            </p>
             {/* <p className="text-sm text-slate-400">{position}</p> */}
             {/* </div> */}
             <p className="text-lg font-bold text-center">Points:{points}</p>

@@ -200,20 +200,37 @@ export default function Page({ params }: { params: { slug: string } }) {
           {/* </div> */}
         </div>
 
-        <div className="pt-12">
-          <Pitch
-            index={index}
-            setindex={setindex}
-            slug={params.slug}
-            open={open}
-            setOpen={setOpen}
-            playerPositions={playerPositions}
-            points={gameResults[params.slug]}
-            setPoints={(_points: any) => {
-              setPoints(_points);
-            }}
-            showPoints={false}
-          />
+        <div className="pt-12 ">
+          <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14  ">
+            <div className="w-[80%] mx-auto flex">
+              <Pitch
+                index={index}
+                setindex={setindex}
+                slug={params.slug}
+                open={open}
+                setOpen={setOpen}
+                playerPositions={playerPositions}
+                points={gameResults[params.slug]}
+                setPoints={(_points: any) => {
+                  setPoints(_points);
+                }}
+                showPoints={false}
+              />
+              <div className="w-[45%] flex flex-col items-center">
+                <button className="mt-10 flex items-center gap-x-6">
+                  <p className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    {"Submit Squad"}
+                  </p>
+                </button>
+                <p className="font-normal text-neutral-500 italic text-xs py-1">
+                  0 selected, 11 more to go
+                </p>
+                <p className=" py-6a text-black text-3xl font-bold text-center">
+                  Create Squad
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="flex items-center justify-center gap-3">
           <button

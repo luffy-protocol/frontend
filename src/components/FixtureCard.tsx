@@ -55,12 +55,12 @@ export default function FixtureCard(props: {
                   </p>
                 </div>
                 <img
-                  className="h-8  flex-shrink-0 "
+                  className="h-24 rounded-full flex-shrink-0 "
                   src={`/${person.team1}.png`}
                   alt=""
                 />
                 <img
-                  className="h-8 flex-shrink-0  "
+                  className="h-24 rounded-full flex-shrink-0  "
                   src={`/${person.team2}.png`}
                   alt=""
                 />

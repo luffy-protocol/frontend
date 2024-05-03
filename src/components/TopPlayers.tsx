@@ -45,9 +45,7 @@ export default function CarouselLogo() {
     { name: "Virat Kholi", team: "rcb", position: "Batter", points: 310 },
     { name: "Shubman Gill", team: "gt", position: "Batter", points: 101 },
     { name: "David Millek", team: "gt", position: "WK-Batter", points: 510 },
-    { name: "Rohit Sharma", team: "mi", position: "Batter", points: 101 },
-    // Add more player data as needed
-  ];
+    { name: "Rohit Sharma", team: "mi", position: "Batter", points: 101 },];
 
   return (
     <>

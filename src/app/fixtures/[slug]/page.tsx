@@ -225,7 +225,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <p className="font-normal text-neutral-500 italic text-xs py-1">
                   0 selected, 11 more to go
                 </p>
-                <p className=" py-6a text-black text-3xl font-bold text-center">
+                <p className="py-6 text-black text-3xl font-bold text-center">
                   Create Squad
                 </p>
               </div>

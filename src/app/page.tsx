@@ -13,16 +13,17 @@ export default function Page() {
     <>
       <div className="bg-white overflow-x-hidden">
         <Hero />
-        <div className="mx-12">
+
+        <CTA />
+        <div className="mx-12 my-20">
           <p className="text-black font-bold text-3xl text-center pb-10">
             Top Players
           </p>
           <TopPlayers />
         </div>
-        <CTA />
         <Feature />
-        <Tools />
-        {/* <Team /> */}
+        {/* <Tools /> */
+        /* <Team /> */}
       </div>
     </>
   );

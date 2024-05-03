@@ -28,6 +28,7 @@ import {
 import computeMerklePath from "@/utils/computeMerklePath";
 import computeMerkleRoot from "@/utils/computeMerkleRoot";
 import axios from "axios";
+import Image from "next/image";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const [addplr, setaddplr] = useState(false);
@@ -167,20 +168,39 @@ export default function Page({ params }: { params: { slug: string } }) {
         slug={params.slug}
       />
       <div className="pt-10 bg-white">
-        <div className="flex flex-row">
-          <Link href={"/fixtures"}>
+        <div className="">
+          {/* <div className="flex flex-row"> */}
+          {/* <Link href={"/fixtures"}>
             <div className=" pl-16 py-6 sm:pt-32 lg:pl-16 text-black text-6xl font-bold mt-5">
               <ArrowLeftCircleIcon className="h-10 w-10 text-black" />
             </div>
-          </Link>
-          <div className=" px-16 py-6 sm:pt-32 lg:pr-16 text-black text-6xl font-bold ">
-            {teams[0]} VS {teams[1]}
-            <div className=" px-2 text-2xl font-thin">
-              Fixture: {params.slug}
-            </div>
+          </Link> */}
+          <div className="flex justify-center space-x-4 w-full mt-20">
+            <Image
+              src="/Royal Challengers Bengaluru.png"
+              width={130}
+              height={130}
+              alt="team1"
+            />
+            <Image src="/vs.png" width={100} height={100} alt="vs" />
+            <Image
+              src="/Chennai Super Kings.png"
+              width={130}
+              height={130}
+              alt="team2"
+            />
           </div>
+          {/* <div className="text-neutral-500 px-2 text-sm font-semibold text-center">
+            Fixture: {params.slug}
+          </div> */}
+          {/* <div className=" px-16 py-6 sm:pt-32 lg:pr-16 text-black text-6xl font-bold ">
+            {teams[0]} VS {teams[1]}
+            
+          </div> */}
+          {/* </div> */}
         </div>
-        <div className="pt-20">
+
+        <div className="pt-12">
           <Pitch
             index={index}
             setindex={setindex}

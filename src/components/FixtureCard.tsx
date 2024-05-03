@@ -85,7 +85,7 @@ export default function FixtureCard(props: {
                     <div className="-ml-px flex w-0 flex-1">
                       <Link
                         href={`/fixtures/${person.id}${
-                          state == 1 && "?claim=true"
+                          state == 1 ? "?claim=true" : ""
                         }`}
                         className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                       >

@@ -12,6 +12,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { csk, rcb, rr, kkr, dc, pbks, lsg, gt, srh, mi } from "@/data/teams";
 import fetchMatchDetail from "@/utils/supabaseFunctions/fetchMatchDetails";
 import { useAccount } from "wagmi";
+import { useSearchParams } from "next/navigation";
 interface PlayerPitch {
   name: string;
   id: string;
@@ -42,7 +43,6 @@ interface AddPlayerProps {
 
 const teamShortForms: { [key: string]: string } = {
   "Chennai Super Kings": "CSK",
-
   "Royal Challengers Bengaluru": "RCB",
   "Mumbai Indians": "MI",
   "Delhi Capitals": "DC",
@@ -63,21 +63,24 @@ const Addplayer: React.FC<AddPlayerProps> = ({
   slug,
 }) => {
   const [team, setteams] = useState<string[]>(["rcb", "mi"]);
+
+  const searchParams = useSearchParams();
   useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(slug);
-      console.log(teamShortForms[response[0].team2]);
-      console.log(teamShortForms[response[0].team1].toLowerCase());
+
       if (message === "Success") {
         setteams([
           teamShortForms[response[0].team1].toLowerCase(),
           teamShortForms[response[0].team2].toLowerCase(),
         ]);
 
-        // fetchPlayers([
-        //   teamShortForms[response[0].team1].toLowerCase(),
-        //   teamShortForms[response[0].team2].toLowerCase(),
-        // ]);
+        searchParams.get("claim") == "true"
+          ? fetchPlayers([
+              teamShortForms[response[0].team1].toLowerCase(),
+              teamShortForms[response[0].team2].toLowerCase(),
+            ])
+          : console.log("Not Claiming");
       }
     };
     fetchTeams();
@@ -95,6 +98,7 @@ const Addplayer: React.FC<AddPlayerProps> = ({
           const team1Player = team1.player.find(
             (p: any) => parseInt(p.id) === id
           );
+          console.log(team1Player);
           const team2Player = team2.player.find(
             (p: any) => parseInt(p.id) === id
           );
@@ -104,13 +108,13 @@ const Addplayer: React.FC<AddPlayerProps> = ({
                 id: team1Player.id,
                 type:
                   team1Player.role == "Batter"
-                    ? "bat"
+                    ? "Batter"
                     : team1Player.role == "Bowler"
-                    ? "bowl"
-                    : team1Player.role == "Allrounder"
-                    ? "ar"
-                    : "wk",
-                team: team1.name,
+                    ? "Bowler"
+                    : team1Player.role == "Batting Allrounder"
+                    ? "Batting Allrounder"
+                    : "WK-Batter",
+                team: teamShortForms[team1.name].toLowerCase(),
               }
             : team2Player
             ? {
@@ -118,13 +122,13 @@ const Addplayer: React.FC<AddPlayerProps> = ({
                 id: team2Player.id,
                 type:
                   team2Player.role == "Batter"
-                    ? "bat"
+                    ? "Batter"
                     : team2Player.role == "Bowler"
-                    ? "bowl"
-                    : team2Player.role == "Allrounder"
-                    ? "ar"
-                    : "wk",
-                team: team2.name,
+                    ? "Bowler"
+                    : team2Player.role == "Batting Allrounder"
+                    ? "Batting Allrounder"
+                    : "WK-Batter",
+                team: teamShortForms[team2.name].toLowerCase(),
               }
             : { name: "Choose Player", id: "", type: "wk", team: "plain" }; // If player not found, return null
         });

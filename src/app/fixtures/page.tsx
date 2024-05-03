@@ -110,7 +110,7 @@ function Page() {
                 predictions(
                   where: {
                     user_: {
-                      address: "0x0429a2da7884ca14e53142988d5845952fe4df6a"
+                      address: "0x4b4b30e2E7c6463b03CdFFD6c42329D357205334"
                     }
                   }
                 ) {

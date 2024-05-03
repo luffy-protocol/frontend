@@ -42,7 +42,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
-    "Royal Challengers Bangalore": "RCB",
+    "Royal Challengers Bengaluru": "RCB",
     "Mumbai Indians": "MI",
     "Delhi Capitals": "DC",
     "Kolkata Knight Riders": "KKR",
@@ -143,6 +143,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(params.slug);
+      console.log(response);
+      console.log(teamShortForms[response[0].team1]);
       if (message === "Success") {
         setteams([
           teamShortForms[response[0].team1],

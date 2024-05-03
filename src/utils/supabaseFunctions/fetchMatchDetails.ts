@@ -22,7 +22,7 @@ export default async function fetchMatchDetail(slug: string): Promise<{
     const { data: fixture, error } = await supabase
       .from("fixture")
       .select("*")
-      .eq("id", slug);
+      .eq("matchId", slug);
     if (error) throw new Error(error.message);
     return { message: "Success", response: fixture };
   } catch (error) {

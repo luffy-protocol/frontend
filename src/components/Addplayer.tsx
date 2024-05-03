@@ -42,7 +42,8 @@ interface AddPlayerProps {
 
 const teamShortForms: { [key: string]: string } = {
   "Chennai Super Kings": "CSK",
-  "Royal Challengers Bangalore": "RCB",
+
+  "Royal Challengers Bengaluru": "RCB",
   "Mumbai Indians": "MI",
   "Delhi Capitals": "DC",
   "Kolkata Knight Riders": "KKR",
@@ -65,15 +66,18 @@ const Addplayer: React.FC<AddPlayerProps> = ({
   useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(slug);
+      console.log(teamShortForms[response[0].team2]);
+      console.log(teamShortForms[response[0].team1].toLowerCase());
       if (message === "Success") {
         setteams([
           teamShortForms[response[0].team1].toLowerCase(),
           teamShortForms[response[0].team2].toLowerCase(),
         ]);
-        fetchPlayers([
-          teamShortForms[response[0].team1].toLowerCase(),
-          teamShortForms[response[0].team2].toLowerCase(),
-        ]);
+
+        // fetchPlayers([
+        //   teamShortForms[response[0].team1].toLowerCase(),
+        //   teamShortForms[response[0].team2].toLowerCase(),
+        // ]);
       }
     };
     fetchTeams();
@@ -155,6 +159,7 @@ const Addplayer: React.FC<AddPlayerProps> = ({
   };
 
   useEffect(() => {
+    console.log(team);
     if (index === 10) {
       const team1 = allTeams[team[0] as keyof typeof allTeams];
       const team2 = allTeams[team[1] as keyof typeof allTeams];

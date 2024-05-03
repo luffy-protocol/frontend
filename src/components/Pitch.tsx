@@ -50,20 +50,20 @@ const Pitch: React.FC<PitchProps> = ({
     setOpen(true);
   };
 
-  useEffect(() => {
-    let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
-    const playerIds = gameData[slug];
-    if (playerIds != null && playerIds != undefined) {
-      const remappedIds = playerIds.map(
-        (id: any) => playerIdRemappings[slug as string][id.toString()]
-      );
-      console.log(remappedIds);
-      const tpoints = remappedIds.map(
-        (id: any) => gameResults[slug][id.toString()]
-      );
-      setPoints(tpoints);
-    }
-  }, []);
+  // useEffect(() => {
+  //   let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
+  //   const playerIds = gameData[slug];
+  //   if (playerIds != null && playerIds != undefined) {
+  //     const remappedIds = playerIds.map(
+  //       (id: any) => playerIdRemappings[slug as string][id.toString()]
+  //     );
+  //     console.log(remappedIds);
+  //     const tpoints = remappedIds.map(
+  //       (id: any) => gameResults[slug][id.toString()]
+  //     );
+  //     setPoints(tpoints);
+  //   }
+  // }, []);
 
   return (
     <div className="bg-white">
@@ -100,51 +100,6 @@ interface PlayerImageProps {
   onClick: () => void;
 }
 
-// const PlayerImage: React.FC<PlayerImageProps> = ({
-//   name,
-//   index,
-//   player,
-//   onClick,
-// }) => {
-//   return (
-//     <>
-//       {player.team == "plain" ? (
-//         <img
-//           src={`/players/plain/${player.type}.png`}
-//           alt={`Player ${index + 1}`}
-//           className="absolute cursor-pointer w-20"
-//           onClick={onClick}
-//           style={{
-//             top: calculateTopPosition(index),
-//             left: calculateLeftPosition(index),
-//           }}
-//         />
-//       ) : (
-//         <img
-//           // src={`/players/${player.team}/${player.type}.png`}
-//           src={`/players/${player.team}/${player.type}.png`}
-//           alt={`Player ${index + 1}`}
-//           className="absolute cursor-pointer w-20"
-//           onClick={onClick}
-//           style={{
-//             top: calculateTopPosition(index),
-//             left: calculateLeftPosition(index),
-//           }}
-//         />
-//       )}
-//       <div
-//         className="absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black  rounded-md"
-//         onClick={onClick}
-//         style={{
-//           top: calculateTopTextPosition(index),
-//           left: calculateLeftPosition(index),
-//         }}
-//       >
-//         {name}
-//       </div>
-//     </>
-//   );
-// };
 const PlayerImage: React.FC<PlayerImageProps> = ({
   name,
   index,

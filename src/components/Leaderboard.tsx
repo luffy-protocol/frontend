@@ -93,7 +93,7 @@ export default function Leaderboard() {
     const fetchLeaderboard = async () => {
       try {
         const data = await request(
-          "https://api.studio.thegraph.com/query/30735/zkricket/version/latest",
+          "https://api.studio.thegraph.com/query/30735/luffy/version/latest",
           gql`
             query MyQuery {
               game(id: "0x1657b") {

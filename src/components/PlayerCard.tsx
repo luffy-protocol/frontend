@@ -14,7 +14,7 @@ export default function CardImage({
 }) {
   return (
     <>
-      <div className="overflow-hidden rounded bg-white text-slate-500  w-fit">
+      <div className="overflow-hidden rounded bg-white text-slate-500  w-52">
         <div className="flex items-center justify-center">
           <figure>
             <img
@@ -26,7 +26,9 @@ export default function CardImage({
         </div>
         <div className="p-6">
           <header className="">
-            <h3 className="text-xl font-medium text-slate-700">{name}</h3>
+            <h3 className="text-xl font-medium text-slate-700 text-center">
+              {name}
+            </h3>
             {/* <div className="flex justify-between"> */}
             <p
               className={`text-sm text-slate-400 text-center ${pxsans.className}`}

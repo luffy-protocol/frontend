@@ -219,7 +219,218 @@ export default function Page({ params }: { params: { slug: string } }) {
                 showPoints={false}
               />
               <div className="w-[45%] flex flex-col items-center">
-                <button className="mt-10 flex items-center gap-x-6">
+                <button
+                  className="mt-10 flex items-center gap-x-6"
+                  onClick={async () => {
+                    // if (searchParams.get("claim") == "true") {
+                    //   let gameData = JSON.parse(
+                    //     localStorage.getItem("gameData") || "{}"
+                    //   );
+                    //   const playerIds = gameData[params.slug];
+                    //   if (playerIds != null && playerIds != undefined) {
+                    //     const remappedIds = playerIds.map(
+                    //       (id: any) =>
+                    //         playerIdRemappings[params.slug as string][id.toString()]
+                    //     );
+                    //     console.log("Remapped Ids");
+                    //     console.log(remappedIds);
+
+                    //     let signer_pub_x_key = [];
+                    //     let signer_pub_y_key = [];
+                    //     let signature = [];
+                    //     let points_merkle_paths = [];
+                    //     const all_points_merkle_root = computeMerkleRoot(
+                    //       gameResults[params.slug]
+                    //     );
+                    //     console.log("ALL POINTS MERKLE ROOT");
+                    //     console.log(all_points_merkle_root);
+                    //     const player_ids = remappedIds;
+                    //     let player_points = [];
+                    //     for (let i = 0; i < 11; i++) {
+                    //       const merklePathHexString = computeMerklePath(
+                    //         player_ids[i],
+                    //         gameResults[params.slug]
+                    //       );
+
+                    //       player_points.push(
+                    //         Array.from(
+                    //           Buffer.from(
+                    //             (points[i] as any).toString(16).padStart(64, "0"),
+                    //             "hex"
+                    //           )
+                    //         )
+                    //       );
+                    //       const merklePath = merklePathHexString.map((element) =>
+                    //         Array.from(
+                    //           Buffer.from(element.slice(2), "hex")
+                    //         ).toString()
+                    //       );
+                    //       points_merkle_paths.push(merklePath);
+                    //     }
+                    //     console.log("POINTS MERKLE PATH");
+                    //     console.log(points_merkle_paths);
+
+                    //     console.log("PLAYER POINTS");
+                    //     console.log(player_points);
+
+                    //     let squad_hash: `0x${string}` = computeSquadHash(
+                    //       Buffer.from(remappedIds)
+                    //     );
+
+                    //     console.log("SQUAD HASH");
+                    //     console.log(squad_hash);
+
+                    //     if (primaryWallet != null) {
+                    //       const walletClient = await createWalletClientFromWallet(
+                    //         primaryWallet
+                    //       );
+                    //       const publicClient = createPublicClient({
+                    //         chain: scrollSepolia,
+                    //         transport: http(
+                    //           `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
+                    //         ),
+                    //       });
+                    //       const sig = Buffer.from(
+                    //         (
+                    //           await walletClient.signMessage({
+                    //             account: primaryWallet.address as `0x${string}`,
+                    //             message: {
+                    //               raw: Buffer.from(
+                    //                 hashMessage({ raw: squad_hash }).slice(2),
+                    //                 "hex"
+                    //               ),
+                    //             },
+                    //           })
+                    //         ).slice(2),
+                    //         "hex"
+                    //       );
+
+                    //       const publicKey = await recoverPublicKey({
+                    //         hash: Buffer.from(
+                    //           hashMessage({ raw: squad_hash }).slice(2),
+                    //           "hex"
+                    //         ),
+                    //         signature: sig,
+                    //       });
+                    //       const publicKeyBuffer = Buffer.from(
+                    //         publicKey.slice(2),
+                    //         "hex"
+                    //       );
+                    //       signature = Array.from(
+                    //         new Uint8Array(sig.subarray(0, sig.length - 1))
+                    //       );
+
+                    //       // Extract x and y coordinates
+                    //       signer_pub_x_key = Array.from(
+                    //         publicKeyBuffer.subarray(1, 33)
+                    //       ).map((byte) => `${byte}`);
+                    //       signer_pub_y_key = Array.from(
+                    //         publicKeyBuffer.subarray(33)
+                    //       ).map((byte) => `${byte}`);
+                    //       console.log("X coords");
+                    //       console.log(Array.from(publicKeyBuffer.subarray(1, 33)));
+                    //       console.log("Y coords");
+                    //       console.log(Array.from(publicKeyBuffer.subarray(33)));
+                    //       console.log("Signature");
+                    //       console.log(signature);
+                    //       const proofInput = `selected_player_ids=${player_ids.toString()}
+                    //       selected_players_points=${player_points.toString()}
+                    //       player_points_merkle_paths=${points_merkle_paths.toString()}
+                    //       all_player_points_merkle_root=[${Array.from(
+                    //         Buffer.from(all_points_merkle_root.slice(2), "hex")
+                    //       ).toString()}]
+                    //       claimed_player_points=${points
+                    //         .reduce((sum, currentValue) => sum + currentValue, 0)
+                    //         .toString()}
+                    //       selected_squad_hash=[${Array.from(
+                    //         Buffer.from(squad_hash.slice(2), "hex")
+                    //       ).toString()}]
+                    //       signer_pub_x_key=[${signer_pub_x_key.toString()}]
+                    //       signer_pub_y_key=[${signer_pub_y_key.toString()}]
+                    //       signature=[${signature.toString()}]`;
+                    //       console.log(proofInput);
+
+                    //       // const response = await fetch("/api/sindri/prove", {
+                    //       //   method: "POST",
+                    //       //   headers: {
+                    //       //     "Content-Type": "application/json",
+                    //       //   },
+                    //       //   body: JSON.stringify({
+                    //       //     proofInputs: proofInput,
+                    //       //   }),
+                    //       // });
+                    //       // console.log(response);
+                    //     }
+                    //   }
+                    // } else {
+                    // compute squad hash
+                    let gameData = JSON.parse(
+                      localStorage.getItem("gameData") || "{}"
+                    );
+                    const playerIds = gameData[params.slug];
+                    if (playerIds != null && playerIds != undefined) {
+                      const remappedIds = playerIds.map(
+                        (id: any) =>
+                          playerIdRemappings[params.slug as string][
+                            id.toString()
+                          ]
+                      );
+                      console.log("Remapped Ids");
+                      console.log(remappedIds);
+                      let squad_hash: `0x${string}` = computeSquadHash(
+                        Buffer.from(remappedIds)
+                      );
+                      console.log("SQUAD HASH");
+                      console.log(squad_hash);
+                      setLogs([
+                        {
+                          id: 1,
+                          hash: "Computed Squad Hash successfully",
+                          href: "",
+                          username: squad_hash,
+                        },
+                      ]);
+                      // send transaction on-chain
+
+                      if (primaryWallet) {
+                        const walletClient = await createWalletClientFromWallet(
+                          primaryWallet
+                        );
+                        const publicClient = createPublicClient({
+                          chain: scrollSepolia,
+                          transport: http(
+                            `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
+                          ),
+                        });
+                        const { request } = await publicClient.simulateContract(
+                          {
+                            address: protocolAddress as `0x${string}`,
+                            abi: protocolAbi,
+                            functionName: "registerSquad",
+                            args: [params.slug, squad_hash],
+                            account: primaryWallet.address as `0x${string}`,
+                          }
+                        );
+                        const tx = await walletClient.writeContract(request);
+                        console.log(tx);
+                        setLogs([
+                          {
+                            id: 1,
+                            hash: "Computed Squad Hash successfully",
+                            href: "",
+                            username: squad_hash,
+                          },
+                          {
+                            id: 1,
+                            hash: "Transaction Sent successfully",
+                            href: "https://sepolia.scrollscan.com/tx/" + tx,
+                            username: tx,
+                          },
+                        ]);
+                      }
+                    }
+                  }}
+                >
                   <p className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                     {"Submit Squad"}
                   </p>
@@ -291,221 +502,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-3">
-          <button
-            className="mt-10 flex items-center gap-x-6"
-            onClick={async () => {
-              // if (searchParams.get("claim") == "true") {
-              //   let gameData = JSON.parse(
-              //     localStorage.getItem("gameData") || "{}"
-              //   );
-              //   const playerIds = gameData[params.slug];
-              //   if (playerIds != null && playerIds != undefined) {
-              //     const remappedIds = playerIds.map(
-              //       (id: any) =>
-              //         playerIdRemappings[params.slug as string][id.toString()]
-              //     );
-              //     console.log("Remapped Ids");
-              //     console.log(remappedIds);
 
-              //     let signer_pub_x_key = [];
-              //     let signer_pub_y_key = [];
-              //     let signature = [];
-              //     let points_merkle_paths = [];
-              //     const all_points_merkle_root = computeMerkleRoot(
-              //       gameResults[params.slug]
-              //     );
-              //     console.log("ALL POINTS MERKLE ROOT");
-              //     console.log(all_points_merkle_root);
-              //     const player_ids = remappedIds;
-              //     let player_points = [];
-              //     for (let i = 0; i < 11; i++) {
-              //       const merklePathHexString = computeMerklePath(
-              //         player_ids[i],
-              //         gameResults[params.slug]
-              //       );
-
-              //       player_points.push(
-              //         Array.from(
-              //           Buffer.from(
-              //             (points[i] as any).toString(16).padStart(64, "0"),
-              //             "hex"
-              //           )
-              //         )
-              //       );
-              //       const merklePath = merklePathHexString.map((element) =>
-              //         Array.from(
-              //           Buffer.from(element.slice(2), "hex")
-              //         ).toString()
-              //       );
-              //       points_merkle_paths.push(merklePath);
-              //     }
-              //     console.log("POINTS MERKLE PATH");
-              //     console.log(points_merkle_paths);
-
-              //     console.log("PLAYER POINTS");
-              //     console.log(player_points);
-
-              //     let squad_hash: `0x${string}` = computeSquadHash(
-              //       Buffer.from(remappedIds)
-              //     );
-
-              //     console.log("SQUAD HASH");
-              //     console.log(squad_hash);
-
-              //     if (primaryWallet != null) {
-              //       const walletClient = await createWalletClientFromWallet(
-              //         primaryWallet
-              //       );
-              //       const publicClient = createPublicClient({
-              //         chain: scrollSepolia,
-              //         transport: http(
-              //           `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
-              //         ),
-              //       });
-              //       const sig = Buffer.from(
-              //         (
-              //           await walletClient.signMessage({
-              //             account: primaryWallet.address as `0x${string}`,
-              //             message: {
-              //               raw: Buffer.from(
-              //                 hashMessage({ raw: squad_hash }).slice(2),
-              //                 "hex"
-              //               ),
-              //             },
-              //           })
-              //         ).slice(2),
-              //         "hex"
-              //       );
-
-              //       const publicKey = await recoverPublicKey({
-              //         hash: Buffer.from(
-              //           hashMessage({ raw: squad_hash }).slice(2),
-              //           "hex"
-              //         ),
-              //         signature: sig,
-              //       });
-              //       const publicKeyBuffer = Buffer.from(
-              //         publicKey.slice(2),
-              //         "hex"
-              //       );
-              //       signature = Array.from(
-              //         new Uint8Array(sig.subarray(0, sig.length - 1))
-              //       );
-
-              //       // Extract x and y coordinates
-              //       signer_pub_x_key = Array.from(
-              //         publicKeyBuffer.subarray(1, 33)
-              //       ).map((byte) => `${byte}`);
-              //       signer_pub_y_key = Array.from(
-              //         publicKeyBuffer.subarray(33)
-              //       ).map((byte) => `${byte}`);
-              //       console.log("X coords");
-              //       console.log(Array.from(publicKeyBuffer.subarray(1, 33)));
-              //       console.log("Y coords");
-              //       console.log(Array.from(publicKeyBuffer.subarray(33)));
-              //       console.log("Signature");
-              //       console.log(signature);
-              //       const proofInput = `selected_player_ids=${player_ids.toString()}
-              //       selected_players_points=${player_points.toString()}
-              //       player_points_merkle_paths=${points_merkle_paths.toString()}
-              //       all_player_points_merkle_root=[${Array.from(
-              //         Buffer.from(all_points_merkle_root.slice(2), "hex")
-              //       ).toString()}]
-              //       claimed_player_points=${points
-              //         .reduce((sum, currentValue) => sum + currentValue, 0)
-              //         .toString()}
-              //       selected_squad_hash=[${Array.from(
-              //         Buffer.from(squad_hash.slice(2), "hex")
-              //       ).toString()}]
-              //       signer_pub_x_key=[${signer_pub_x_key.toString()}]
-              //       signer_pub_y_key=[${signer_pub_y_key.toString()}]
-              //       signature=[${signature.toString()}]`;
-              //       console.log(proofInput);
-
-              //       // const response = await fetch("/api/sindri/prove", {
-              //       //   method: "POST",
-              //       //   headers: {
-              //       //     "Content-Type": "application/json",
-              //       //   },
-              //       //   body: JSON.stringify({
-              //       //     proofInputs: proofInput,
-              //       //   }),
-              //       // });
-              //       // console.log(response);
-              //     }
-              //   }
-              // } else {
-              // compute squad hash
-              let gameData = JSON.parse(
-                localStorage.getItem("gameData") || "{}"
-              );
-              const playerIds = gameData[params.slug];
-              if (playerIds != null && playerIds != undefined) {
-                const remappedIds = playerIds.map(
-                  (id: any) =>
-                    playerIdRemappings[params.slug as string][id.toString()]
-                );
-                console.log("Remapped Ids");
-                console.log(remappedIds);
-                let squad_hash: `0x${string}` = computeSquadHash(
-                  Buffer.from(remappedIds)
-                );
-                console.log("SQUAD HASH");
-                console.log(squad_hash);
-                setLogs([
-                  {
-                    id: 1,
-                    hash: "Computed Squad Hash successfully",
-                    href: "",
-                    username: squad_hash,
-                  },
-                ]);
-                // send transaction on-chain
-
-                if (primaryWallet) {
-                  const walletClient = await createWalletClientFromWallet(
-                    primaryWallet
-                  );
-                  const publicClient = createPublicClient({
-                    chain: scrollSepolia,
-                    transport: http(
-                      `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
-                    ),
-                  });
-                  const { request } = await publicClient.simulateContract({
-                    address: protocolAddress as `0x${string}`,
-                    abi: protocolAbi,
-                    functionName: "registerSquad",
-                    args: [params.slug, squad_hash],
-                    account: primaryWallet.address as `0x${string}`,
-                  });
-                  const tx = await walletClient.writeContract(request);
-                  console.log(tx);
-                  setLogs([
-                    {
-                      id: 1,
-                      hash: "Computed Squad Hash successfully",
-                      href: "",
-                      username: squad_hash,
-                    },
-                    {
-                      id: 1,
-                      hash: "Transaction Sent successfully",
-                      href: "https://sepolia.scrollscan.com/tx/" + tx,
-                      username: tx,
-                    },
-                  ]);
-                }
-              }
-            }}
-          >
-            <p className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-              {"Submit Squad"}
-            </p>
-          </button>
-        </div>
-        <p className="text-black font-bold text-3xl">{}</p>
         <div className="px-24">
           <div className=" pr-16 py-6 sm:pt-32 lg:pr-16 text-black text-6xl font-bold">
             Logs

@@ -33,7 +33,6 @@ export default function RootLayout({
             <body>
               <Nav />
               <div className={jksans.className}>{children}</div>
-              <Footer />
             </body>
           </DynamicWagmiConnector>
         </Providers>

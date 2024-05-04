@@ -13,6 +13,7 @@ import { csk, rcb, rr, kkr, dc, pbks, lsg, gt, srh, mi } from "@/data/teams";
 import fetchMatchDetail from "@/utils/supabaseFunctions/fetchMatchDetails";
 import { useAccount } from "wagmi";
 import { useSearchParams } from "next/navigation";
+import { fixtureDetails } from "@/utils/constants";
 interface PlayerPitch {
   name: string;
   id: string;
@@ -64,7 +65,10 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
   setOpen,
   slug,
 }) => {
-  const [team, setteams] = useState<string[]>(["rcb", "mi"]);
+  const [team, setteams] = useState<string[]>([
+    teamShortForms[fixtureDetails[slug].team1].toLowerCase(),
+    teamShortForms[fixtureDetails[slug].team2].toLowerCase(),
+  ]);
 
   const searchParams = useSearchParams();
   useEffect(() => {

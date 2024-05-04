@@ -797,6 +797,28 @@ interface PlayerIdRemappings {
   [key: string]: { [key: string]: number };
 }
 
+interface FixtureDetails {
+  [key: string]: {
+    team1: string;
+    team2: string;
+  };
+}
+
+const fixtureDetails: FixtureDetails = {
+  "91600": {
+    team1: "Royal Challengers Bengaluru",
+    team2: "Gujarat Titans",
+  },
+  "91515": {
+    team1: "Chennai Super Kings",
+    team2: "Delhi Capitals",
+  },
+  "91555": {
+    team1: "Chennai Super Kings",
+    team2: "Delhi Capitals",
+  },
+};
+
 const playerIdRemappings: PlayerIdRemappings = {
   "91515": {
     "702": 40,
@@ -928,4 +950,5 @@ export {
   oracleAbi,
   playerIdRemappings,
   gameResults,
+  fixtureDetails,
 };

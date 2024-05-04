@@ -7,6 +7,7 @@ import { ArrowLeftCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
+  fixtureDetails,
   gameResults,
   playerIdRemappings,
   protocolAbi,
@@ -161,32 +162,18 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      {/* <Addplayer
-        index={index}
-        teams={teams}
-        open={open}
-        setOpen={setOpen}
-        setPlayerPositions={setPlayerPositions}
-        slug={params.slug}
-      /> */}
       <div className="pt-10 bg-white">
         <div className="">
-          {/* <div className="flex flex-row"> */}
-          {/* <Link href={"/fixtures"}>
-            <div className=" pl-16 py-6 sm:pt-32 lg:pl-16 text-black text-6xl font-bold mt-5">
-              <ArrowLeftCircleIcon className="h-10 w-10 text-black" />
-            </div>
-          </Link> */}
           <div className="flex justify-center space-x-4 w-full mt-20">
             <Image
-              src="/Royal Challengers Bengaluru.png"
+              src={`/${fixtureDetails[params.slug].team1}.png`}
               width={130}
               height={130}
               alt="team1"
             />
             <Image src="/vs.png" width={100} height={100} alt="vs" />
             <Image
-              src="/Chennai Super Kings.png"
+              src={`/${fixtureDetails[params.slug].team2}.png`}
               width={130}
               height={130}
               alt="team2"

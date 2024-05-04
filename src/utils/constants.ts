@@ -1,416 +1,87 @@
-const oracleAddress = "0x497f5b0ae3873604ac303582b13b66d14d520e7b";
-const protocolAddress = "0x8decd86959b87c64be4978029a27d19c3e5d49de";
-const oracleAbi = [
-  {
-    inputs: [
-      { internalType: "address", name: "_functionsRouter", type: "address" },
-      { internalType: "uint32", name: "_destinationDomain", type: "uint32" },
-      { internalType: "bytes32", name: "_protocolAddress", type: "bytes32" },
-      { internalType: "contract IMailbox", name: "_mailbox", type: "address" },
-      { internalType: "string", name: "_sourceCode", type: "string" },
-      { internalType: "uint64", name: "_subscriptionId", type: "uint64" },
-      { internalType: "bytes32", name: "_donId", type: "bytes32" },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  { inputs: [], name: "EmptySource", type: "error" },
-  {
-    inputs: [
-      { internalType: "uint32", name: "destinationDomain", type: "uint32" },
-      { internalType: "uint256", name: "requiredFee", type: "uint256" },
-      { internalType: "uint256", name: "sentFee", type: "uint256" },
-    ],
-    name: "InadequateCrosschainFee",
-    type: "error",
-  },
-  { inputs: [], name: "NoInlineSecrets", type: "error" },
-  { inputs: [], name: "OnlyRouterCanFulfill", type: "error" },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, internalType: "address", name: "from", type: "address" },
-      { indexed: true, internalType: "address", name: "to", type: "address" },
-    ],
-    name: "OwnershipTransferRequested",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, internalType: "address", name: "from", type: "address" },
-      { indexed: true, internalType: "address", name: "to", type: "address" },
-    ],
-    name: "OwnershipTransferred",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, internalType: "bytes32", name: "id", type: "bytes32" },
-    ],
-    name: "RequestFulfilled",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      { indexed: true, internalType: "bytes32", name: "id", type: "bytes32" },
-    ],
-    name: "RequestSent",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "gameweek",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "messageId",
-        type: "bytes32",
-      },
-      { indexed: false, internalType: "uint256", name: "fee", type: "uint256" },
-    ],
-    name: "ResultsDispatched",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "gameweek",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "requestId",
-        type: "bytes32",
-      },
-      { indexed: false, internalType: "bytes", name: "error", type: "bytes" },
-    ],
-    name: "ResultsFetchFailed",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "gameweek",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "requestId",
-        type: "bytes32",
-      },
-    ],
-    name: "ResultsFetchInitiated",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "bytes32",
-        name: "requestId",
-        type: "bytes32",
-      },
-      {
-        indexed: false,
-        internalType: "bytes32",
-        name: "pointsMerkleRoot",
-        type: "bytes32",
-      },
-      {
-        indexed: false,
-        internalType: "string",
-        name: "gameResults",
-        type: "string",
-      },
-    ],
-    name: "ResultsPublished",
-    type: "event",
-  },
-  {
-    inputs: [],
-    name: "acceptOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "destinationDomain",
-    outputs: [{ internalType: "uint32", name: "", type: "uint32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "donId",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "functionsRouter",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "gameId",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "gameResults",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "bytes32", name: "requestId", type: "bytes32" },
-      { internalType: "bytes", name: "response", type: "bytes" },
-      { internalType: "bytes", name: "err", type: "bytes" },
-    ],
-    name: "handleOracleFulfillment",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "mailbox",
-    outputs: [{ internalType: "contract IMailbox", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "owner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "playerIdRemappings",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "pointsMerkleRoot",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "protocolAddress",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    name: "requestToGameId",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "s_callbackGasLimit",
-    outputs: [{ internalType: "uint32", name: "", type: "uint32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "s_lastError",
-    outputs: [{ internalType: "bytes", name: "", type: "bytes" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "s_lastRequestId",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "s_lastResponse",
-    outputs: [{ internalType: "bytes", name: "", type: "bytes" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "s_subscriptionId",
-    outputs: [{ internalType: "uint64", name: "", type: "uint64" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "_gameId", type: "uint256" },
-      { internalType: "string", name: "_gameResults", type: "string" },
-    ],
-    name: "setGameResults",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "_gameId", type: "uint256" },
-      { internalType: "string", name: "_remapping", type: "string" },
-    ],
-    name: "setPlayerIdRemmapings",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "_gameId", type: "uint256" },
-      { internalType: "bytes32", name: "_pointsMerkleRoot", type: "bytes32" },
-    ],
-    name: "setPointsMerkleRoot",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "bytes32", name: "_protocolAddress", type: "bytes32" },
-    ],
-    name: "setProtocolAddress",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "sourceCode",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "address", name: "to", type: "address" }],
-    name: "transferOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint8", name: "donHostedSecretsSlotID", type: "uint8" },
-      {
-        internalType: "uint64",
-        name: "donHostedSecretsVersion",
-        type: "uint64",
-      },
-    ],
-    name: "triggerFetchGameResults",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "_gameId", type: "uint256" }],
-    name: "triggerResultsCrosschain",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "bytes32", name: "_protocolAddress", type: "bytes32" },
-    ],
-    name: "updateProtocolAddress",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "string", name: "_sourceCode", type: "string" }],
-    name: "updateSourceCode",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "upkeepContract",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-];
+const protocolAddress = "0x1510e68f0874ea6a3a7841a29f7ccc6de82915d6";
 
 const protocolAbi = [
   {
     inputs: [
-      { internalType: "uint256", name: "_initialGameId", type: "uint256" },
-      { internalType: "contract IMailbox", name: "_mailbox", type: "address" },
+      {
+        internalType: "address",
+        name: "_functionsRouter",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "_sourceCode",
+        type: "string",
+      },
+      {
+        internalType: "uint64",
+        name: "_subscriptionId",
+        type: "uint64",
+      },
+      {
+        internalType: "bytes32",
+        name: "_donId",
+        type: "bytes32",
+      },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
   },
   {
+    inputs: [],
+    name: "EmptySource",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NoInlineSecrets",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "OnlyRouterCanFulfill",
+    type: "error",
+  },
+  {
     inputs: [
-      { internalType: "address", name: "caller", type: "address" },
-      { internalType: "address", name: "owner", type: "address" },
+      {
+        internalType: "uint256",
+        name: "gameId",
+        type: "uint256",
+      },
     ],
-    name: "NotAllowedCaller",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "bytes32", name: "caller", type: "bytes32" }],
-    name: "NotAllowedCrosschainCaller",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "address", name: "caller", type: "address" }],
-    name: "NotMailbox",
-    type: "error",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "gameweek", type: "uint256" }],
     name: "ResultsNotPublished",
     type: "error",
   },
   {
-    inputs: [{ internalType: "uint256", name: "gameweek", type: "uint256" }],
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "gameId",
+        type: "uint256",
+      },
+    ],
     name: "SelectSquadDisabled",
     type: "error",
   },
-  { inputs: [], name: "ZeroKnowledgeVerificationFailed", type: "error" },
+  {
+    inputs: [],
+    name: "ZeroKnowledgeVerificationFailed",
+    type: "error",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "gameId",
+        type: "uint256",
+      },
+    ],
+    name: "ClaimPointsDisabled",
+    type: "event",
+  },
   {
     anonymous: false,
     inputs: [
@@ -428,6 +99,44 @@ const protocolAbi = [
       },
     ],
     name: "GamePlayerIdRemappingSet",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferRequested",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
     type: "event",
   },
   {
@@ -455,7 +164,7 @@ const protocolAbi = [
       {
         indexed: false,
         internalType: "uint256",
-        name: "gameweek",
+        name: "gameId",
         type: "uint256",
       },
       {
@@ -478,9 +187,35 @@ const protocolAbi = [
     anonymous: false,
     inputs: [
       {
+        indexed: true,
+        internalType: "bytes32",
+        name: "id",
+        type: "bytes32",
+      },
+    ],
+    name: "RequestFulfilled",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "id",
+        type: "bytes32",
+      },
+    ],
+    name: "RequestSent",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
         indexed: false,
         internalType: "uint256",
-        name: "gameweek",
+        name: "gameId",
         type: "uint256",
       },
       {
@@ -489,7 +224,12 @@ const protocolAbi = [
         name: "requestId",
         type: "bytes32",
       },
-      { indexed: false, internalType: "bytes", name: "error", type: "bytes" },
+      {
+        indexed: false,
+        internalType: "bytes",
+        name: "error",
+        type: "bytes",
+      },
     ],
     name: "ResultsFetchFailed",
     type: "event",
@@ -500,7 +240,7 @@ const protocolAbi = [
       {
         indexed: false,
         internalType: "uint256",
-        name: "gameweek",
+        name: "gameId",
         type: "uint256",
       },
       {
@@ -544,7 +284,7 @@ const protocolAbi = [
       {
         indexed: false,
         internalType: "uint256",
-        name: "gameweek",
+        name: "gameId",
         type: "uint256",
       },
       {
@@ -564,134 +304,260 @@ const protocolAbi = [
     type: "event",
   },
   {
+    inputs: [],
+    name: "acceptOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [
-      { internalType: "uint256", name: "gameId", type: "uint256" },
-      { internalType: "uint256", name: "totalPoints", type: "uint256" },
-      { internalType: "bytes", name: "_proof", type: "bytes" },
+      {
+        internalType: "uint256",
+        name: "_gameId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "totalPoints",
+        type: "uint256",
+      },
+      {
+        internalType: "bytes",
+        name: "_proof",
+        type: "bytes",
+      },
     ],
     name: "claimPoints",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
-    inputs: [{ internalType: "bool", name: "", type: "bool" }],
-    name: "destinationAddress",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "bool", name: "", type: "bool" }],
-    name: "destinationChainIds",
-    outputs: [{ internalType: "uint32", name: "", type: "uint32" }],
+    inputs: [],
+    name: "donId",
+    outputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
-    name: "gameCounter",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    name: "functionsRouter",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "uint256", name: "", type: "uint256" },
-      { internalType: "address", name: "", type: "address" },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
     ],
     name: "gamePoints",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "gameResults",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "uint256", name: "", type: "uint256" },
-      { internalType: "address", name: "", type: "address" },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "gameResults",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
     ],
     name: "gameToSquadHash",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
+    outputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "uint32", name: "", type: "uint32" },
-      { internalType: "bytes32", name: "_sender", type: "bytes32" },
-      { internalType: "bytes", name: "_message", type: "bytes" },
+      {
+        internalType: "bytes32",
+        name: "requestId",
+        type: "bytes32",
+      },
+      {
+        internalType: "bytes",
+        name: "response",
+        type: "bytes",
+      },
+      {
+        internalType: "bytes",
+        name: "err",
+        type: "bytes",
+      },
     ],
-    name: "handle",
+    name: "handleOracleFulfillment",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     name: "isSelectSquadEnabled",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "isZkVerificationEnabled",
-    outputs: [{ internalType: "bool", name: "", type: "bool" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "mailbox",
-    outputs: [{ internalType: "contract IMailbox", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "oracleAddress",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "owner",
-    outputs: [{ internalType: "address", name: "", type: "address" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "playerIdRemappings",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "playersMetadata",
-    outputs: [{ internalType: "string", name: "", type: "string" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    name: "pointsMerkleRoot",
-    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "string[]", name: "_playersMetadata", type: "string[]" },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "playerIdRemappings",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "playersMetadata",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "pointsMerkleRoot",
+    outputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string[]",
+        name: "_playersMetadata",
+        type: "string[]",
+      },
     ],
     name: "registerPlayers",
     outputs: [],
@@ -700,8 +566,16 @@ const protocolAbi = [
   },
   {
     inputs: [
-      { internalType: "uint256", name: "_gameId", type: "uint256" },
-      { internalType: "bytes32", name: "_squadHash", type: "bytes32" },
+      {
+        internalType: "uint256",
+        name: "_gameId",
+        type: "uint256",
+      },
+      {
+        internalType: "bytes32",
+        name: "_squadHash",
+        type: "bytes32",
+      },
     ],
     name: "registerSquad",
     outputs: [],
@@ -710,26 +584,123 @@ const protocolAbi = [
   },
   {
     inputs: [
-      { internalType: "uint256", name: "_gameCounter", type: "uint256" },
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
     ],
-    name: "setGameCounter",
+    name: "requestToGameId",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "s_callbackGasLimit",
+    outputs: [
+      {
+        internalType: "uint32",
+        name: "",
+        type: "uint32",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "s_lastError",
+    outputs: [
+      {
+        internalType: "bytes",
+        name: "",
+        type: "bytes",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "s_lastRequestId",
+    outputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "s_lastResponse",
+    outputs: [
+      {
+        internalType: "bytes",
+        name: "",
+        type: "bytes",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "s_subscriptionId",
+    outputs: [
+      {
+        internalType: "uint64",
+        name: "",
+        type: "uint64",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_gameId",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "_gameResults",
+        type: "string",
+      },
+      {
+        internalType: "bytes32",
+        name: "_pointsMerkleRoot",
+        type: "bytes32",
+      },
+    ],
+    name: "setGameResults",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "bytes32", name: "_oracleAddress", type: "bytes32" },
-    ],
-    name: "setOracleAddress",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "_gameId", type: "uint256" },
-      { internalType: "string", name: "_remapping", type: "string" },
+      {
+        internalType: "uint256",
+        name: "_gameId",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "_remapping",
+        type: "string",
+      },
     ],
     name: "setPlayerIdRemmapings",
     outputs: [],
@@ -738,18 +709,16 @@ const protocolAbi = [
   },
   {
     inputs: [
-      { internalType: "uint256", name: "_gameweek", type: "uint256" },
-      { internalType: "bytes32", name: "_pointsMerkleRoot", type: "bytes32" },
-    ],
-    name: "setPointsMerkleRoot",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      { internalType: "uint256", name: "_gameId", type: "uint256" },
-      { internalType: "bool", name: "_isSelectSquadEnabled", type: "bool" },
+      {
+        internalType: "uint256",
+        name: "_gameId",
+        type: "uint256",
+      },
+      {
+        internalType: "bool",
+        name: "_isSelectSquadEnabled",
+        type: "bool",
+      },
     ],
     name: "setSelectSquadEnabled",
     outputs: [],
@@ -758,7 +727,11 @@ const protocolAbi = [
   },
   {
     inputs: [
-      { internalType: "bool", name: "_isZkVerificationEnabled", type: "bool" },
+      {
+        internalType: "bool",
+        name: "_isZkVerificationEnabled",
+        type: "bool",
+      },
     ],
     name: "setZkVerificationEnabled",
     outputs: [],
@@ -766,28 +739,89 @@ const protocolAbi = [
     type: "function",
   },
   {
-    inputs: [
+    inputs: [],
+    name: "sourceCode",
+    outputs: [
       {
-        internalType: "uint32[2]",
-        name: "_destinationChainIds",
-        type: "uint32[2]",
-      },
-      {
-        internalType: "bytes32[2]",
-        name: "_destinationAddresses",
-        type: "bytes32[2]",
+        internalType: "string",
+        name: "",
+        type: "string",
       },
     ],
-    name: "setupDestinationAddresses",
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_gameId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint8",
+        name: "donHostedSecretsSlotID",
+        type: "uint8",
+      },
+      {
+        internalType: "uint64",
+        name: "donHostedSecretsVersion",
+        type: "uint64",
+      },
+    ],
+    name: "triggerFetchGameResults",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "_sourceCode",
+        type: "string",
+      },
+    ],
+    name: "updateSourceCode",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
   {
     inputs: [],
+    name: "upkeepContract",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "zkVerifier",
     outputs: [
-      { internalType: "contract UltraVerifier", name: "", type: "address" },
+      {
+        internalType: "contract UltraVerifier",
+        name: "",
+        type: "address",
+      },
     ],
     stateMutability: "view",
     type: "function",
@@ -996,10 +1030,8 @@ const gameResults: GameResults = {
 };
 
 export {
-  oracleAddress,
   protocolAbi,
   protocolAddress,
-  oracleAbi,
   playerIdRemappings,
   gameResults,
   fixtureDetails,

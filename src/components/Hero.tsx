@@ -52,7 +52,7 @@ export default function Hero() {
                   Get started
                 </a>
               </div>
-              {showModal && <AnkrModal handleVerify={handleVerify} />}
+              {/* {showModal && <AnkrModal handleVerify={handleVerify} />} */}
             </div>
             <img
               src="/cric.svg"

@@ -30,7 +30,7 @@ function Nav() {
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <img
-                className="h-12 w-auto border-2 rounded-lg z-0"
+                className="h-12 w-auto rounded-lg z-0"
                 src="/logo.png"
                 alt=""
               />

@@ -283,7 +283,7 @@ function Page() {
             Upcoming Fixtures
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Participate in upcoming fixtures
+            Create squads in upcoming fixtures
           </p>
         </div>
       </div>
@@ -304,7 +304,7 @@ function Page() {
             Ongoing Fixtures
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Participate in Ongoing fixtures
+            Claim your points in the Ongoing Fixtures
           </p>
         </div>
       </div>

@@ -30,7 +30,7 @@ function processDataAndWriteToFile(input1, input2, outputFilePath) {
   }
 }
 const team1 = "kkr";
-const team2 = "dc";
+const team2 = "lsg";
 
 // Example usage:
 const input1 = "./teams/" + team1 + ".json"; // Provide the path to your input JSON file

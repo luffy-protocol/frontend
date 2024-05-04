@@ -6,6 +6,7 @@ import { ArrowLeftCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
+  allTeams,
   fixtureDetails,
   gameResults,
   playerIdRemappings,
@@ -19,7 +20,7 @@ import {
   http,
   recoverPublicKey,
 } from "viem";
-import { arbitrumSepolia } from "viem/chains";
+import { arbitrumSepolia, cronos } from "viem/chains";
 import computeSquadHash from "@/utils/computeSquadHash";
 import {
   createWalletClientFromWallet,
@@ -36,7 +37,6 @@ import { useAccount } from "wagmi";
 export default function Page({ params }: { params: { slug: string } }) {
   const [addplr, setaddplr] = useState(false);
   const { address } = useAccount();
-
   const [index, setindex] = useState(0);
   const [teams, setteams] = useState<string[]>([]);
   const [logs, setLogs] = useState<any[]>([]);
@@ -45,7 +45,6 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [totalPoints, setTotalPoints] = useState(0);
   const [squadUpdated, setSquadUpdated] = useState(false);
   const { primaryWallet } = useDynamicContext();
-
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
     "Royal Challengers Bengaluru": "RCB",
@@ -147,13 +146,23 @@ export default function Page({ params }: { params: { slug: string } }) {
   ]);
 
   useEffect(() => {
-    const players = JSON.parse(localStorage.getItem("players") || "{}");
-    if (players != null && players != undefined) {
-      const squad = players[params.slug][address as any];
-      console.log("SQUADDD");
-      console.log(squad);
-    }
-  }, []);
+    (async function () {
+      const players = JSON.parse(localStorage.getItem("players") || "{}");
+      console;
+      if (players != null && players != undefined && address != undefined) {
+        const squad = players[params.slug][address as any];
+        console.log("ADDRESS");
+        console.log(address);
+        console.log("SQUADDD");
+        console.log(squad);
+
+        if (squad != null && squad != undefined && teams.length > 0) {
+          await fetchPlayers(squad.playerIds as any, teams);
+          setSquadUpdated(true);
+        }
+      }
+    })();
+  }, [address, teams]);
   useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(params.slug);
@@ -170,6 +179,43 @@ export default function Page({ params }: { params: { slug: string } }) {
     fetchTeams();
   }, []);
 
+  const fetchPlayers = async (playerIds: any, team: any) => {
+    if (team[0] != "") {
+      const team1 = allTeams[
+        team[0].toLowerCase() as keyof typeof allTeams
+      ] as any;
+      const team2 = allTeams[
+        team[1].toLowerCase() as keyof typeof allTeams
+      ] as any;
+      if (playerIds != undefined) {
+        const matchedPlayers = playerIds.map((id: any) => {
+          const team1Player = team1.player.find(
+            (p: any) => p.id === (id as string)
+          );
+          const team2Player = team2.player.find(
+            (p: any) => p.id === (id as string)
+          );
+          return team1Player
+            ? {
+                name: team1Player.name,
+                id: team1Player.id,
+                type: team1Player.role,
+                team: teamShortForms[team1.name].toLowerCase(),
+              }
+            : team2Player
+            ? {
+                name: team2Player.name,
+                id: team2Player.id,
+                type: team2Player.role,
+                team: teamShortForms[team2.name].toLowerCase(),
+              }
+            : { name: "Choose Player", id: "", type: "wk", team: "plain" }; // If player not found, return null
+        });
+        console.log(matchedPlayers);
+        setPlayerPositions(matchedPlayers);
+      }
+    }
+  };
   return (
     <>
       <div className="pt-10 bg-white">
@@ -287,7 +333,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                       if (!gameData[params.slug]) gameData[params.slug] = {};
                       gameData[params.slug][address as any] = {
                         squadHash: squad_hash,
-                        playerIds: remappedIds,
+                        playerIds: pIds,
                       };
                       localStorage.setItem("players", JSON.stringify(gameData));
                       setSquadUpdated(true);

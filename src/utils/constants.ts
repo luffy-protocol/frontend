@@ -1,3 +1,5 @@
+import { csk, dc, gt, kkr, lsg, mi, pbks, rcb, rr, srh } from "@/data/teams";
+
 const protocolAddress = "0x1510e68f0874ea6a3a7841a29f7ccc6de82915d6";
 
 const protocolAbi = [
@@ -838,6 +840,18 @@ interface FixtureDetails {
   };
 }
 
+const allTeams = {
+  csk: csk,
+  rcb: rcb,
+  rr: rr,
+  kkr: kkr,
+  dc: dc,
+  pbks: pbks,
+  lsg: lsg,
+  gt: gt,
+  srh: srh,
+  mi: mi,
+};
 const fixtureDetails: FixtureDetails = {
   "91600": {
     team1: "Royal Challengers Bengaluru",
@@ -1144,4 +1158,5 @@ export {
   playerIdRemappings,
   gameResults,
   fixtureDetails,
+  allTeams,
 };

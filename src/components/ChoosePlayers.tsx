@@ -13,7 +13,7 @@ import { csk, rcb, rr, kkr, dc, pbks, lsg, gt, srh, mi } from "@/data/teams";
 import fetchMatchDetail from "@/utils/supabaseFunctions/fetchMatchDetails";
 import { useAccount } from "wagmi";
 import { useSearchParams } from "next/navigation";
-import { fixtureDetails } from "@/utils/constants";
+import { allTeams, fixtureDetails } from "@/utils/constants";
 interface PlayerPitch {
   name: string;
   id: string;
@@ -108,32 +108,19 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
           const team2Player = team2.player.find(
             (p: any) => parseInt(p.id) === id
           );
+          console.log(team2Player);
           return team1Player
             ? {
                 name: team1Player.name,
                 id: team1Player.id,
-                type:
-                  team1Player.role == "Batter"
-                    ? "Batter"
-                    : team1Player.role == "Bowler"
-                    ? "Bowler"
-                    : team1Player.role == "Batting Allrounder"
-                    ? "Batting Allrounder"
-                    : "WK-Batter",
+                type: team1Player.role,
                 team: teamShortForms[team1.name].toLowerCase(),
               }
             : team2Player
             ? {
                 name: team2Player.name,
                 id: team2Player.id,
-                type:
-                  team2Player.role == "Batter"
-                    ? "Batter"
-                    : team2Player.role == "Bowler"
-                    ? "Bowler"
-                    : team2Player.role == "Batting Allrounder"
-                    ? "Batting Allrounder"
-                    : "WK-Batter",
+                type: team2Player.role,
                 team: teamShortForms[team2.name].toLowerCase(),
               }
             : { name: "Choose Player", id: "", type: "wk", team: "plain" }; // If player not found, return null
@@ -155,18 +142,6 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
   }
   const [role, setRole] = useState("");
   const [player, setPlayer] = useState<Player[]>([]); // Fix the missing 'Player' type
-  const allTeams = {
-    csk: csk,
-    rcb: rcb,
-    rr: rr,
-    kkr: kkr,
-    dc: dc,
-    pbks: pbks,
-    lsg: lsg,
-    gt: gt,
-    srh: srh,
-    mi: mi,
-  };
 
   useEffect(() => {
     console.log(team);

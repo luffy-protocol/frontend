@@ -1,12 +1,14 @@
 import { http, createConfig } from "wagmi";
-import { mainnet } from "wagmi/chains";
+import { arbitrumSepolia, mainnet } from "wagmi/chains";
 
 export const config = createConfig({
-  chains: [mainnet],
+  chains: [arbitrumSepolia],
   multiInjectedProviderDiscovery: false,
   ssr: true,
   transports: {
-    [mainnet.id]: http(),
+    [arbitrumSepolia.id]: http(
+      `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+    ),
   },
 });
 

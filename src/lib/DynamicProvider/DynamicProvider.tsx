@@ -43,7 +43,7 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <DynamicContextProvider
       settings={{
-        appLogoUrl: "https://app.luffyprotocol.com/Logo1.png",
+        appLogoUrl: "https://app.luffyprotocol.com/logo.jpeg",
         overrides: { evmNetworks },
         environmentId:
           process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID ||

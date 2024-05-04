@@ -69,7 +69,7 @@ const Pitch: React.FC<PitchProps> = ({
   }, []);
 
   return (
-    <div className="flex justify-start  relative w-[55%] mx-auto">
+    <div className="flex justify-start  relative w-[48%] mx-auto">
       <div className="relative rounded-lg shadow-md border-2 border-black bg-[url('/pitchbase.png')] w-full bg-contain  h-[122svh]">
         {playerPositions.map((player, index) => (
           <>

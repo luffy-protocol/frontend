@@ -29,6 +29,8 @@ import computeMerklePath from "@/utils/computeMerklePath";
 import computeMerkleRoot from "@/utils/computeMerkleRoot";
 import axios from "axios";
 import Image from "next/image";
+import DummyPlayerData from "@/components/DummyPlayerData";
+import ChoosePlayers from "@/components/ChoosePlayers";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const [addplr, setaddplr] = useState(false);
@@ -159,14 +161,14 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <Addplayer
+      {/* <Addplayer
         index={index}
         teams={teams}
         open={open}
         setOpen={setOpen}
         setPlayerPositions={setPlayerPositions}
         slug={params.slug}
-      />
+      /> */}
       <div className="pt-10 bg-white">
         <div className="">
           {/* <div className="flex flex-row"> */}
@@ -202,7 +204,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="pt-12 ">
           <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14  ">
-            <div className="w-[80%] mx-auto flex">
+            <div className="w-[90%] mx-auto flex">
               <Pitch
                 index={index}
                 setindex={setindex}
@@ -228,6 +230,63 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <p className="py-6 text-black text-3xl font-bold text-center">
                   Create Squad
                 </p>
+
+                <div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md px-6">
+                  <div className="">
+                    <div className="inline-block min-w-full py-2 align-middle">
+                      <table className="min-w-full divide-y divide-gray-300">
+                        <thead>
+                          <tr>
+                            <th
+                              scope="col"
+                              className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                            >
+                              Name
+                            </th>
+                            <th
+                              scope="col"
+                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                            >
+                              Team
+                            </th>
+                            {/* <th
+                                scope="col"
+                                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                              >
+                                Status
+                              </th> */}
+                            <th
+                              scope="col"
+                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                            >
+                              Role
+                            </th>
+                            <th
+                              scope="col"
+                              className="relative py-3.5 pl-3 pr-4 sm:pr-0"
+                            >
+                              <span className="sr-only">Edit</span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="">
+                          {open == false ? (
+                            <DummyPlayerData />
+                          ) : (
+                            <ChoosePlayers
+                              index={index}
+                              teams={teams}
+                              open={open}
+                              setOpen={setOpen}
+                              setPlayerPositions={setPlayerPositions}
+                              slug={params.slug}
+                            />
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -20,6 +20,7 @@
     "axios": "^1.6.8",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
+    "ldrs": "^1.0.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",

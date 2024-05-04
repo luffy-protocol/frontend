@@ -270,16 +270,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                         },
                       ]);
                       let gameData = JSON.parse(
-                        localStorage.getItem("gameData") || "{}"
+                        localStorage.getItem("players") || "{}"
                       );
+                      if (!gameData[params.slug]) gameData[params.slug] = {};
                       gameData[params.slug][address as any] = {
                         squadHash: squad_hash,
                         playerIds: remappedIds,
                       };
-                      localStorage.setItem(
-                        "gameData",
-                        JSON.stringify(gameData)
-                      );
+                      localStorage.setItem("players", JSON.stringify(gameData));
                     }
                   }}
                 >

@@ -31,7 +31,7 @@ function Nav() {
             <Link href="/" className="-m-1.5 p-1.5">
               <img
                 className="h-12 w-auto border-2 rounded-lg z-0"
-                src="/logo.jpeg"
+                src="/logo.png"
                 alt=""
               />
             </Link>

@@ -436,7 +436,10 @@ export default function Page({ params }: { params: { slug: string } }) {
                   </p>
                 </button>
                 <p className="font-normal text-neutral-500 italic text-xs py-1">
-                  0 selected, 11 more to go
+                  {playerPositions.filter((player) => player.id != "").length}{" "}
+                  selected,{" "}
+                  {playerPositions.filter((player) => player.id == "").length}{" "}
+                  more to go
                 </p>
                 <p className="py-6 text-black text-3xl font-bold text-center">
                   Create Squad
@@ -490,6 +493,9 @@ export default function Page({ params }: { params: { slug: string } }) {
                               open={open}
                               setOpen={setOpen}
                               setPlayerPositions={setPlayerPositions}
+                              playerIds={playerPositions.map(
+                                (player) => player.id
+                              )}
                               slug={params.slug}
                             />
                           )}

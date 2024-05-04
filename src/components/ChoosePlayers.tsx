@@ -32,10 +32,11 @@ interface PlayerPitch {
     | "dc";
   type: "bat" | "bowl" | "ar" | "wk";
 }
-interface AddPlayerProps {
+interface ChoosePlayerProps {
   index: number;
   teams: string[];
   open: boolean;
+  playerIds: string[];
   setOpen: Dispatch<SetStateAction<boolean>>;
   setPlayerPositions: Dispatch<SetStateAction<PlayerPitch[]>>;
   slug: string;
@@ -54,11 +55,12 @@ const teamShortForms: { [key: string]: string } = {
   "Lucknow Super Giants": "LSG",
 };
 
-const ChoosePlayers: React.FC<AddPlayerProps> = ({
+const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
   open,
   teams,
   index,
   setPlayerPositions,
+  playerIds,
   setOpen,
   slug,
 }) => {
@@ -301,9 +303,11 @@ const ChoosePlayers: React.FC<AddPlayerProps> = ({
             <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
               <button
                 type="button"
-                className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                disabled={playerIds.includes(person.id as any)}
                 onClick={() => {
                   console.log(person);
+
                   updatePlayerPosition(index, {
                     id: person.id as any,
                     name: person.name,

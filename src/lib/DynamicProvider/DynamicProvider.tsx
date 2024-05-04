@@ -20,8 +20,7 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
       },
       networkId: 421614,
       rpcUrls: [
-        `https://arb-sepolia.g.alchemy.com/v2/
-      ${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`,
+        `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`,
       ],
       vanityName: "Arb Sepolia",
     },

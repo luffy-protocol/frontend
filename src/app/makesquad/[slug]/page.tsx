@@ -374,7 +374,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                       {
                         id: 1,
                         hash: "Transaction Sent successfully",
-                        href: "https://sepolia.scrollscan.com/tx/" + tx,
+                        href: "https://sepolia.arbiscan.io/tx/" + tx,
                         username: tx,
                       },
                     ]);

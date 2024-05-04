@@ -19,7 +19,6 @@ function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { setShowDynamicUserProfile } = useDynamicContext();
   const { address } = useAccount();
-  console.log(address);
   return (
     <div>
       <header className="absolute inset-x-0 top-0 z-50">

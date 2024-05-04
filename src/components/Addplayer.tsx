@@ -231,14 +231,6 @@ const Addplayer: React.FC<AddPlayerProps> = ({
     }
   }, [index]);
   const updatePlayerPosition = (index: number, newPlayerData: PlayerPitch) => {
-    let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
-    if (gameData[slug] == null || gameData[slug] == undefined) {
-      gameData[slug] = Array(11).fill(0);
-    }
-    gameData[slug][index] = parseInt(newPlayerData.id);
-    console.log("GAME DATA");
-    console.log(gameData);
-    localStorage.setItem("gameData", JSON.stringify(gameData));
     setPlayerPositions((prevPositions: any) => {
       // Create a copy of the state to avoid mutation
       const updatedPositions = [...prevPositions];

@@ -10,8 +10,6 @@ import { helix } from "ldrs";
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 function Page() {
-  const { address } = useAccount();
-
   const [matches, setMatches] = useState([
     {
       id: 91515,

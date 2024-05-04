@@ -1,5 +1,4 @@
 "use client";
-import Addplayer from "@/components/Addplayer";
 import Logs from "@/components/Logs";
 import Pitch from "@/components/Pitch";
 import fetchMatchDetail from "@/utils/supabaseFunctions/fetchMatchDetails";
@@ -44,6 +43,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [open, setOpen] = useState(false);
   const [points, setPoints] = useState([]);
   const [totalPoints, setTotalPoints] = useState(0);
+  const [squadUpdated, setSquadUpdated] = useState(false);
   const { primaryWallet } = useDynamicContext();
 
   const teamShortForms: { [key: string]: string } = {
@@ -147,6 +147,14 @@ export default function Page({ params }: { params: { slug: string } }) {
   ]);
 
   useEffect(() => {
+    const players = JSON.parse(localStorage.getItem("players") || "{}");
+    if (players != null && players != undefined) {
+      const squad = players[params.slug][address as any];
+      console.log("SQUADDD");
+      console.log(squad);
+    }
+  }, []);
+  useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(params.slug);
       console.log(response);
@@ -216,6 +224,10 @@ export default function Page({ params }: { params: { slug: string } }) {
                   }
                   onClick={async () => {
                     const pIds = playerPositions.map((p) => p.id);
+                    console.log("REMAPPINGS");
+                    console.log(playerIdRemappings);
+                    console.log("Player Ids");
+                    console.log(pIds);
                     const remappedIds = pIds.map(
                       (id: any) => playerIdRemappings[params.slug as string][id]
                     );
@@ -265,7 +277,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         {
                           id: 1,
                           hash: "Transaction Sent successfully",
-                          href: "https://sepolia.scrollscan.com/tx/" + tx,
+                          href: "https://sepolia.arbiscan.io/tx/" + tx,
                           username: tx,
                         },
                       ]);
@@ -278,19 +290,25 @@ export default function Page({ params }: { params: { slug: string } }) {
                         playerIds: remappedIds,
                       };
                       localStorage.setItem("players", JSON.stringify(gameData));
+                      setSquadUpdated(true);
                     }
                   }}
                 >
                   <p>Submit Squad</p>
                 </button>
                 <p className="font-normal text-neutral-500 italic text-xs py-1">
-                  {playerPositions.filter((player) => player.id != "").length}{" "}
-                  selected,{" "}
-                  {playerPositions.filter((player) => player.id == "").length}{" "}
-                  more to go
+                  {squadUpdated
+                    ? "Click on players to update your squad"
+                    : `${
+                        playerPositions.filter((player) => player.id != "")
+                          .length
+                      } selected, ${
+                        playerPositions.filter((player) => player.id == "")
+                          .length
+                      } more to go`}
                 </p>
                 <p className="py-6 text-black text-3xl font-bold text-center">
-                  Create Squad
+                  {squadUpdated ? "Update Squad" : "Create Squad"}
                 </p>
 
                 <div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md px-6">

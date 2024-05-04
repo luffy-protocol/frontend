@@ -10,11 +10,6 @@ export default function CarouselLogo() {
       animationDuration: 4500,
       animationTimingFunc: "linear",
       perView: 3,
-      classes: {
-        nav: {
-          active: "[&>*]:bg-wuiSlate-700",
-        },
-      },
       breakpoints: {
         1024: {
           perView: 2,

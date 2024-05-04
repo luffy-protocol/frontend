@@ -16,7 +16,7 @@ import {
   http,
   recoverPublicKey,
 } from "viem";
-import { scrollSepolia } from "viem/chains";
+import { arbitrumSepolia } from "viem/chains";
 import computeSquadHash from "@/utils/computeSquadHash";
 import {
   createWalletClientFromWallet,
@@ -249,7 +249,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         primaryWallet
                       );
                       const publicClient = createPublicClient({
-                        chain: scrollSepolia,
+                        chain: arbitrumSepolia,
                         transport: http(
                           `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
                         ),
@@ -341,7 +341,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     //         primaryWallet
                     //       );
                     //       const publicClient = createPublicClient({
-                    //         chain: scrollSepolia,
+                    //         chain: arbitrumSepolia,
                     //         transport: http(
                     //           `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
                     //         ),

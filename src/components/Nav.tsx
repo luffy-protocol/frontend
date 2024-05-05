@@ -207,12 +207,14 @@ function Nav() {
                     <button
                       className="mt-2 rounded-md bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                       onClick={async () => {
+                        refetch();
+
+                        setProcessing(true);
                         console.log(txHash == "");
                         console.log(isAuthenticated);
                         if (txHash == "" && isAuthenticated) {
                           (async function () {
                             try {
-                              refetch();
                               if (data != undefined) {
                                 const value = parseFloat(data.formatted);
                                 console.log(value);
@@ -254,6 +256,7 @@ function Nav() {
                                   setShowModal(true);
                                 } else {
                                   console.log("YOu have enough money :0");
+                                  setShowErrorModal(true);
                                 }
                               } else {
                                 console.log("could not fetch balance");
@@ -261,9 +264,12 @@ function Nav() {
                             } catch (e) {
                               console.log(e);
                             }
+                            setProcessing(false);
                           })();
                         } else {
+                          setProcessing(false);
                           console.log("Already fetched");
+                          setShowErrorModal(true);
                         }
                       }}
                     >

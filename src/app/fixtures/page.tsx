@@ -100,6 +100,7 @@ function Page() {
   //   fetchCompletedFixtures();
   // }, []);
 
+  const { address } = useAccount();
   useEffect(() => {
     helix.register();
     async function fetchOngoingFixtures() {
@@ -113,7 +114,7 @@ function Page() {
                 predictions(
                   where: {
                     user_: {
-                      address: "0x4b4b30e2E7c6463b03CdFFD6c42329D357205334"
+                      address: "${address}"
                     }
                   }
                 ) {
@@ -151,16 +152,19 @@ function Page() {
           );
 
           const ongoingMatchesData = response.filter((match: any) =>
-            gameIdsWithPredictionsAndNullClaims.includes(match.id)
+            gameIdsWithPredictionsAndNullClaims.includes(match.matchId)
           );
+          console.log(ongoingMatchesData);
           const formattedOngoingMatches = ongoingMatchesData.map(
             (match: any) => ({
               id: match.id,
+
               team1: match.team1,
               team2: match.team2,
               title: "Indian Premiere League",
             })
           );
+
           setOngoingMatches(formattedOngoingMatches);
           setLoadingOngoing(false);
           console.log("Ongoing Matches Data");
@@ -269,7 +273,7 @@ function Page() {
     }
 
     fetchOngoingFixtures();
-  }, []);
+  }, [address]);
 
   return (
     <div>

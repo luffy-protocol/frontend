@@ -5,6 +5,7 @@ import fetchMatchDetail from "@/utils/supabaseFunctions/fetchMatchDetails";
 import { ArrowLeftCircleIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import circuit from "@/utils/circuits.json";
 import {
   allTeams,
   fixtureDetails,
@@ -19,6 +20,9 @@ import {
   hashMessage,
   http,
   recoverPublicKey,
+  stringToBytes,
+  stringToHex,
+  toBytes,
 } from "viem";
 import { arbitrumSepolia, cronos } from "viem/chains";
 import computeSquadHash from "@/utils/computeSquadHash";
@@ -35,6 +39,11 @@ import ChoosePlayers from "@/components/ChoosePlayers";
 import { useAccount } from "wagmi";
 import PlayerImage from "@/components/PlayerImage";
 import JustPlayerImage from "@/components/JustPlayerImage";
+import {
+  BarretenbergBackend,
+  CompiledCircuit,
+} from "@noir-lang/backend_barretenberg";
+import { Noir } from "@noir-lang/noir_js";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const [addplr, setaddplr] = useState(false);
@@ -45,6 +54,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [open, setOpen] = useState(false);
   const [points, setPoints] = useState<number[]>([]);
   const [squad, setSquad] = useState([]);
+  const [squadHash, setSquadHash] = useState("");
   const [squadUpdated, setSquadUpdated] = useState(false);
   const [topScorerIndex, setTopScorerIndex] = useState(0);
   const { primaryWallet } = useDynamicContext();
@@ -159,6 +169,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           await fetchPlayers(_squad.playerIds as any, teams);
 
           setSquad(_squad.playerIds);
+          setSquadHash(_squad.squadHash);
 
           const remappedIds = _squad.playerIds.map(
             (id: any) =>
@@ -294,30 +305,38 @@ export default function Page({ params }: { params: { slug: string } }) {
                       .length != 11
                   }
                   onClick={async () => {
-                    let gameData = JSON.parse(
-                      localStorage.getItem("gameData") || "{}"
-                    );
-                    const playerIds = gameData[params.slug];
-                    if (playerIds != null && playerIds != undefined) {
-                      const remappedIds = playerIds.map(
-                        (id: any) =>
-                          playerIdRemappings[params.slug as string][
-                            id.toString()
-                          ]
+                    try {
+                      const backend = new BarretenbergBackend(
+                        circuit as CompiledCircuit
                       );
-                      console.log("Remapped Ids");
-                      console.log(remappedIds);
+                      const noir = new Noir(
+                        circuit as CompiledCircuit,
+                        backend
+                      );
+                      if (primaryWallet === null) return;
+                      const walletClient = await createWalletClientFromWallet(
+                        primaryWallet
+                      );
+                      const publicClient = createPublicClient({
+                        chain: arbitrumSepolia,
+                        transport: http(
+                          `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                        ),
+                      });
 
                       let signer_pub_x_key = [];
                       let signer_pub_y_key = [];
                       let signature = [];
                       let points_merkle_paths = [];
-                      const all_points_merkle_root = computeMerkleRoot(
+                      const squadMerkleRoot = computeMerkleRoot(
                         gameResults[params.slug]
                       );
-                      console.log("ALL POINTS MERKLE ROOT");
-                      console.log(all_points_merkle_root);
-                      const player_ids = remappedIds;
+                      const player_ids = squad.map(
+                        (p) =>
+                          playerIdRemappings[params.slug][
+                            (p as number).toString()
+                          ]
+                      );
                       let player_points = [];
                       for (let i = 0; i < 11; i++) {
                         const merklePathHexString = computeMerklePath(
@@ -340,102 +359,113 @@ export default function Page({ params }: { params: { slug: string } }) {
                         );
                         points_merkle_paths.push(merklePath);
                       }
-                      console.log("POINTS MERKLE PATH");
-                      console.log(points_merkle_paths);
-
-                      console.log("PLAYER POINTS");
-                      console.log(player_points);
-
-                      let squad_hash: `0x${string}` = computeSquadHash(
-                        Buffer.from(remappedIds)
+                      console.log("Signing this");
+                      console.log(squadHash);
+                      const sig = Buffer.from(
+                        (
+                          await walletClient.signMessage({
+                            account: primaryWallet.address as `0x${string}`,
+                            message: {
+                              raw: stringToBytes(squadHash),
+                            },
+                          })
+                        ).slice(2),
+                        "hex"
                       );
 
-                      console.log("SQUAD HASH");
-                      console.log(squad_hash);
+                      const publicKey = await recoverPublicKey({
+                        hash: Buffer.from(squadHash.slice(2), "hex"),
+                        signature: sig,
+                      });
+                      const publicKeyBuffer = Buffer.from(
+                        publicKey.slice(2),
+                        "hex"
+                      );
+                      signature = Array.from(
+                        new Uint8Array(sig.subarray(0, sig.length - 1))
+                      );
 
-                      if (primaryWallet != null) {
-                        const walletClient = await createWalletClientFromWallet(
-                          primaryWallet
-                        );
-                        const publicClient = createPublicClient({
-                          chain: arbitrumSepolia,
-                          transport: http(
-                            `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
-                          ),
-                        });
-                        const sig = Buffer.from(
-                          (
-                            await walletClient.signMessage({
-                              account: primaryWallet.address as `0x${string}`,
-                              message: {
-                                raw: Buffer.from(
-                                  hashMessage({ raw: squad_hash }).slice(2),
-                                  "hex"
-                                ),
-                              },
-                            })
-                          ).slice(2),
-                          "hex"
-                        );
+                      // Extract x and y coordinates
+                      signer_pub_x_key = Array.from(
+                        publicKeyBuffer.subarray(1, 33)
+                      ).map((byte) => `${byte}`);
+                      signer_pub_y_key = Array.from(
+                        publicKeyBuffer.subarray(33)
+                      ).map((byte) => `${byte}`);
+                      console.log({
+                        signer_pub_x_key: Array.from(signer_pub_x_key).map(
+                          (byte) => `${byte}`
+                        ),
+                        signer_pub_y_key: Array.from(signer_pub_y_key).map(
+                          (byte) => `${byte}`
+                        ),
+                        signature: Array.from(signature).map(
+                          (byte) => `${byte}`
+                        ),
+                        selected_player_ids: Array.from(player_ids).map(
+                          (byte) => `${byte}`
+                        ),
+                        selected_players_points: Array.from(player_points).map(
+                          (byte) => `${byte}`
+                        ),
+                        player_points_merkle_paths: points_merkle_paths.map(
+                          (points_merkle_path) =>
+                            points_merkle_path.map((element) =>
+                              Array.from(toBytes(element)).map(
+                                (byte) => `${byte}`
+                              )
+                            )
+                        ) as any,
+                        all_player_points_merkle_root: Array.from(
+                          toBytes(squadMerkleRoot)
+                        ).map((byte) => `${byte}`),
+                        selected_squad_hash: Array.from(
+                          Buffer.from(squadHash.slice(2), "hex")
+                        ).map((byte) => `${byte}`),
+                        claimed_player_points: points.reduce(
+                          (acc, currentValue) => acc + currentValue,
+                          0
+                        ),
+                      });
 
-                        const publicKey = await recoverPublicKey({
-                          hash: Buffer.from(
-                            hashMessage({ raw: squad_hash }).slice(2),
-                            "hex"
-                          ),
-                          signature: sig,
-                        });
-                        const publicKeyBuffer = Buffer.from(
-                          publicKey.slice(2),
-                          "hex"
-                        );
-                        signature = Array.from(
-                          new Uint8Array(sig.subarray(0, sig.length - 1))
-                        );
-
-                        // Extract x and y coordinates
-                        signer_pub_x_key = Array.from(
-                          publicKeyBuffer.subarray(1, 33)
-                        ).map((byte) => `${byte}`);
-                        signer_pub_y_key = Array.from(
-                          publicKeyBuffer.subarray(33)
-                        ).map((byte) => `${byte}`);
-                        console.log("X coords");
-                        console.log(
-                          Array.from(publicKeyBuffer.subarray(1, 33))
-                        );
-                        console.log("Y coords");
-                        console.log(Array.from(publicKeyBuffer.subarray(33)));
-                        console.log("Signature");
-                        console.log(signature);
-                        const proofInput = `selected_player_ids=${player_ids.toString()}
-          selected_players_points=${player_points.toString()}
-          player_points_merkle_paths=${points_merkle_paths.toString()}
-          all_player_points_merkle_root=[${Array.from(
-            Buffer.from(all_points_merkle_root.slice(2), "hex")
-          ).toString()}]
-          claimed_player_points=${points
-            .reduce((sum, currentValue) => sum + currentValue, 0)
-            .toString()}
-          selected_squad_hash=[${Array.from(
-            Buffer.from(squad_hash.slice(2), "hex")
-          ).toString()}]
-          signer_pub_x_key=[${signer_pub_x_key.toString()}]
-          signer_pub_y_key=[${signer_pub_y_key.toString()}]
-          signature=[${signature.toString()}]`;
-                        console.log(proofInput);
-
-                        // const response = await fetch("/api/sindri/prove", {
-                        //   method: "POST",
-                        //   headers: {
-                        //     "Content-Type": "application/json",
-                        //   },
-                        //   body: JSON.stringify({
-                        //     proofInputs: proofInput,
-                        //   }),
-                        // });
-                        // console.log(response);
-                      }
+                      const proof = await noir.generateFinalProof({
+                        signer_pub_x_key: Array.from(signer_pub_x_key).map(
+                          (byte) => `${byte}`
+                        ),
+                        signer_pub_y_key: Array.from(signer_pub_y_key).map(
+                          (byte) => `${byte}`
+                        ),
+                        signature: Array.from(signature).map(
+                          (byte) => `${byte}`
+                        ),
+                        selected_player_ids: Array.from(player_ids).map(
+                          (byte) => `${byte}`
+                        ),
+                        selected_players_points: Array.from(player_points).map(
+                          (byte) => `${byte}`
+                        ),
+                        player_points_merkle_paths: points_merkle_paths.map(
+                          (points_merkle_path) =>
+                            points_merkle_path.map((element) =>
+                              Array.from(toBytes(element)).map(
+                                (byte) => `${byte}`
+                              )
+                            )
+                        ) as any,
+                        all_player_points_merkle_root: Array.from(
+                          toBytes(squadMerkleRoot)
+                        ).map((byte) => `${byte}`),
+                        selected_squad_hash: Array.from(
+                          Buffer.from(squadHash.slice(2), "hex")
+                        ).map((byte) => `${byte}`),
+                        claimed_player_points: points.reduce(
+                          (acc, currentValue) => acc + currentValue,
+                          0
+                        ),
+                      });
+                      console.log(proof);
+                    } catch (e) {
+                      console.log(e);
                     }
                   }}
                 >

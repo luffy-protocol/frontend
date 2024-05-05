@@ -252,7 +252,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     const publicClient = createPublicClient({
                       chain: arbitrumSepolia,
                       transport: http(
-                        `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
+                        `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
                       ),
                     });
                     const sig = Buffer.from(
@@ -352,7 +352,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     const publicClient = createPublicClient({
                       chain: arbitrumSepolia,
                       transport: http(
-                        `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
+                        `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
                       ),
                     });
                     const { request } = await publicClient.simulateContract({

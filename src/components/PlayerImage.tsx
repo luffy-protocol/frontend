@@ -49,7 +49,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
         alt={`Player ${index + 1}`}
         className={`absolute cursor-pointer w-16 mt-8 ${
           index == 10
-            ? "left-[42%]"
+            ? "left-[42%] top-[0%]"
             : index == 9
             ? "top-[47%] left-[5%]"
             : index == 8
@@ -75,7 +75,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       <div
         className={`absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md  ${
           index == 10
-            ? "left-[42%]"
+            ? "left-[42%] top-[0%]"
             : index == 9
             ? "top-[47%] left-[5%]"
             : index == 8

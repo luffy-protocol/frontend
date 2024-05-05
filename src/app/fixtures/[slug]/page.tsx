@@ -148,7 +148,6 @@ export default function Page({ params }: { params: { slug: string } }) {
   useEffect(() => {
     (async function () {
       const players = JSON.parse(localStorage.getItem("players") || "{}");
-      console;
       if (players != null && players != undefined && address != undefined) {
         if (players[params.slug] == null || players[params.slug] == undefined)
           players[params.slug] = {};
@@ -290,7 +289,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                       const publicClient = createPublicClient({
                         chain: arbitrumSepolia,
                         transport: http(
-                          `https://rpc.ankr.com/scroll_sepolia_testnet/${process.env.NEXT_PUBLIC_ANKR_RPC_KEY}`
+                          `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
                         ),
                       });
                       const { request } = await publicClient.simulateContract({

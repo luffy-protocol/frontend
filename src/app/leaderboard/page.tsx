@@ -1,8 +1,10 @@
+"use client";
 import Leaderboard from "@/components/Leaderboard";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
-export default function Page() {
+function Page() {
   const { isAuthenticated } = useDynamicContext();
+
   return isAuthenticated ? (
     <div>
       <div className="bg-white  px-48 py-6 sm:pt-32 lg:px-48 text-black">
@@ -22,3 +24,4 @@ export default function Page() {
     </div>
   );
 }
+export default Page;

@@ -3,9 +3,6 @@
 import CTA from "@/components/CTA";
 import Feature from "@/components/Feature";
 import Hero from "@/components/Hero";
-// import Team from "@/components/Team";
-// import Tools from "@/components/Tools";
-// import TopPlayers from "@/components/TopPlayers";
 import PlayerCarousel from "@/components/TopPlayers";
 import WelcomeModal from "@/components/WelcomeModal";
 import { useEffect, useState } from "react";
@@ -13,9 +10,7 @@ import { privateKeyToAccount } from "viem/accounts";
 import { createPublicClient, createWalletClient, http, parseEther } from "viem";
 import { useAccount, useBalance } from "wagmi";
 import { arbitrumSepolia } from "viem/chains";
-import { getTransactionCount } from "viem/actions";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
-// import Youtube from "@/components/Youtube";
 
 export default function Page() {
   const { address } = useAccount();

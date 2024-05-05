@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const statuses = {
   Complete: "text-green-700 bg-green-50 ring-green-600/20",
   "In progress": "text-gray-600 bg-gray-50 ring-gray-500/10",
@@ -38,6 +40,9 @@ function classNames(...classes: string[]) {
 }
 
 export default function Logs({ logs }: { logs: any }) {
+  useEffect(() => {
+    console.log(logs);
+  }, []);
   return (
     <ul role="list" className="divide-y divide-gray-100">
       {logs.map((lg: any) => (

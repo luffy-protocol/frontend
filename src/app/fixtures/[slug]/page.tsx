@@ -309,7 +309,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           username: squad_hash,
                         },
                         {
-                          id: 1,
+                          id: 2,
                           hash: "Transaction Sent successfully",
                           href: "https://sepolia.arbiscan.io/tx/" + tx,
                           username: tx,

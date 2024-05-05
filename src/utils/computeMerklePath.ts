@@ -4,8 +4,6 @@ export default function computeMerklePath(
   leafIndex: number,
   leaves: number[]
 ): `0x${string}`[] {
-  console.log(leafIndex);
-  console.log(leaves);
   if (leafIndex < 0 || leafIndex >= leaves.length) {
     throw new Error("Leaf index out of range");
   }
@@ -35,7 +33,6 @@ export default function computeMerklePath(
         )
       );
     }
-
     currentLayer = nextLayer;
   }
 

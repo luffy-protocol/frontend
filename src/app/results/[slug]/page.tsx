@@ -15,9 +15,11 @@ import {
   protocolAddress,
 } from "@/utils/constants";
 import {
+  bytesToHex,
   createPublicClient,
   createWalletClient,
   hashMessage,
+  hexToBytes,
   http,
   recoverPublicKey,
   stringToBytes,
@@ -57,6 +59,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [squadHash, setSquadHash] = useState("");
   const [squadUpdated, setSquadUpdated] = useState(false);
   const [topScorerIndex, setTopScorerIndex] = useState(0);
+  const [started, setStarted] = useState(false);
   const { primaryWallet } = useDynamicContext();
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
@@ -302,10 +305,11 @@ export default function Page({ params }: { params: { slug: string } }) {
                   className="mt-10 mx-auto flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                   disabled={
                     playerPositions.filter((player) => player.id != "")
-                      .length != 11
+                      .length != 11 || started
                   }
                   onClick={async () => {
                     try {
+                      setStarted(true);
                       const backend = new BarretenbergBackend(
                         circuit as CompiledCircuit
                       );
@@ -331,6 +335,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                       const squadMerkleRoot = computeMerkleRoot(
                         gameResults[params.slug]
                       );
+                      const _logs = [];
+                      _logs.push({
+                        id: 1,
+                        hash: "Computed Squad Merkle root",
+                        href: "",
+                        username: squadMerkleRoot,
+                      });
+                      setLogs(_logs);
                       const player_ids = squad.map(
                         (p) =>
                           playerIdRemappings[params.slug][
@@ -343,22 +355,31 @@ export default function Page({ params }: { params: { slug: string } }) {
                           player_ids[i],
                           gameResults[params.slug]
                         );
-
+                        console.log(merklePathHexString);
+                        console.log(
+                          `0x${(points[i] as any)
+                            .toString(16)
+                            .padStart(64, "0")}`
+                        );
                         player_points.push(
-                          Array.from(
-                            Buffer.from(
-                              (points[i] as any).toString(16).padStart(64, "0"),
-                              "hex"
-                            )
+                          hexToBytes(
+                            `0x${(points[i] as any)
+                              .toString(16)
+                              .padStart(64, "0")}`
                           )
                         );
                         const merklePath = merklePathHexString.map((element) =>
-                          Array.from(
-                            Buffer.from(element.slice(2), "hex")
-                          ).toString()
+                          hexToBytes(element)
                         );
                         points_merkle_paths.push(merklePath);
                       }
+                      _logs.push({
+                        id: 2,
+                        hash: "Computed Squad Hash",
+                        href: "",
+                        username: squadHash,
+                      });
+                      setLogs(_logs);
                       console.log("Signing this");
                       console.log(squadHash);
                       const sig = Buffer.from(
@@ -384,6 +405,15 @@ export default function Page({ params }: { params: { slug: string } }) {
                       signature = Array.from(
                         new Uint8Array(sig.subarray(0, sig.length - 1))
                       );
+                      _logs.push({
+                        id: 3,
+                        hash: "Signature obtained successfully",
+                        href: "",
+                        username: bytesToHex(
+                          new Uint8Array(sig.subarray(0, sig.length - 1))
+                        ),
+                      });
+                      setLogs(_logs);
 
                       // Extract x and y coordinates
                       signer_pub_x_key = Array.from(
@@ -405,15 +435,13 @@ export default function Page({ params }: { params: { slug: string } }) {
                         selected_player_ids: Array.from(player_ids).map(
                           (byte) => `${byte}`
                         ),
-                        selected_players_points: Array.from(player_points).map(
-                          (byte) => `${byte}`
+                        selected_players_points: player_points.map((point) =>
+                          Array.from(point).map((byte) => `${byte}`)
                         ),
                         player_points_merkle_paths: points_merkle_paths.map(
                           (points_merkle_path) =>
                             points_merkle_path.map((element) =>
-                              Array.from(toBytes(element)).map(
-                                (byte) => `${byte}`
-                              )
+                              Array.from(element).map((e) => `${e}`)
                             )
                         ) as any,
                         all_player_points_merkle_root: Array.from(
@@ -427,6 +455,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                           0
                         ),
                       });
+                      _logs.push({
+                        id: 4,
+                        hash: "Generating zero knowledge proof...",
+                        href: "",
+                        username:
+                          "Please wait. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
+                      });
+                      setLogs(_logs);
 
                       const proof = await noir.generateFinalProof({
                         signer_pub_x_key: Array.from(signer_pub_x_key).map(
@@ -441,15 +477,13 @@ export default function Page({ params }: { params: { slug: string } }) {
                         selected_player_ids: Array.from(player_ids).map(
                           (byte) => `${byte}`
                         ),
-                        selected_players_points: Array.from(player_points).map(
-                          (byte) => `${byte}`
-                        ),
+                        selected_players_points: player_points.map((point) =>
+                          Array.from(point).map((byte) => `${byte}`)
+                        ) as any,
                         player_points_merkle_paths: points_merkle_paths.map(
                           (points_merkle_path) =>
                             points_merkle_path.map((element) =>
-                              Array.from(toBytes(element)).map(
-                                (byte) => `${byte}`
-                              )
+                              Array.from(element).map((e) => `${e}`)
                             )
                         ) as any,
                         all_player_points_merkle_root: Array.from(
@@ -463,7 +497,43 @@ export default function Page({ params }: { params: { slug: string } }) {
                           0
                         ),
                       });
-                      console.log(proof);
+                      _logs.push({
+                        id: 5,
+                        hash: "Proof generated successfully",
+                        href: "",
+                        username:
+                          bytesToHex(proof.proof).substring(0, 50 - 3) + "...",
+                      });
+                      setLogs(_logs);
+                      _logs.push({
+                        id: 6,
+                        hash: "Verifying zero knowledge proof...",
+                        href: "",
+                        username:
+                          "The proof needs to be verified initially to be passed on chain",
+                      });
+                      setLogs(_logs);
+                      const verified = await noir.verifyFinalProof(proof);
+                      if (verified)
+                        _logs.push({
+                          id: 7,
+                          hash: "Proof verified successfully",
+                          href: "",
+                          username:
+                            "Woohoo. You are all set. Triggering transaction to send the proof on chain",
+                        });
+                      else
+                        _logs.push({
+                          id: 7,
+                          hash: "Proof verification failed",
+                          href: "",
+                          username:
+                            "Uh Oh. Please try again. If you are stuck, reach out to our discord channel.",
+                        });
+
+                      setLogs(_logs);
+
+                      // send transaction
                     } catch (e) {
                       console.log(e);
                     }
@@ -471,6 +541,11 @@ export default function Page({ params }: { params: { slug: string } }) {
                 >
                   <p>Generate Proof</p>
                 </button>
+                {started && (
+                  <p className="font-normal text-center text-neutral-500 italic text-xs py-1 w-[200px] mx-auto">
+                    Proof generation started. Check logs below for status
+                  </p>
+                )}
               </div>
             </div>
             <div className="w-[90%] mx-auto flex justify-center pt-6">
@@ -500,84 +575,4 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
     </>
   );
-}
-
-{
-  /* <div className="w-[45%] flex flex-col items-center">
-
-<p className="font-normal text-neutral-500 italic text-xs py-1">
-  {squadUpdated
-    ? "Click on players to update your squad"
-    : `${
-        playerPositions.filter((player) => player.id != "")
-          .length
-      } selected, ${
-        playerPositions.filter((player) => player.id == "")
-          .length
-      } more to go`}
-</p>
-<p className="py-6 text-black text-3xl font-bold text-center">
-  {squadUpdated ? "Update Squad" : "Create Squad"}
-</p>
-
-<div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md px-6">
-  <div className="">
-    <div className="inline-block min-w-full py-2 align-middle">
-      <table className="min-w-full divide-y divide-gray-300">
-        <thead>
-          <tr>
-            <th
-              scope="col"
-              className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
-            >
-              Name
-            </th>
-            <th
-              scope="col"
-              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-            >
-              Team
-            </th>
-            {/* <th
-                scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-              >
-                Status
-              </th>
-            <th
-              scope="col"
-              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-            >
-              Role
-            </th>
-            <th
-              scope="col"
-              className="relative py-3.5 pl-3 pr-4 sm:pr-0"
-            >
-              <span className="sr-only">Edit</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody className="">
-          {open == false ? (
-            <DummyPlayerData />
-          ) : (
-            <ChoosePlayers
-              index={index}
-              teams={teams}
-              open={open}
-              setOpen={setOpen}
-              setPlayerPositions={setPlayerPositions}
-              playerIds={playerPositions.map(
-                (player) => player.id
-              )}
-              slug={params.slug}
-            />
-          )}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-</div> */
 }

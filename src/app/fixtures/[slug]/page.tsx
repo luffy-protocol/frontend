@@ -410,7 +410,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     <div className="w-full h-screen flex justify-center items-center bg-white">
       <div>
         <p className="text-black font-bold text-xl sm:text-3xl">
-          Create your wallet to get started
+          Connect your wallet to get started
         </p>
         <div className="mx-auto flex justify-center mt-6">
           <DynamicWidget />

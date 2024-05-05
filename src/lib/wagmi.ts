@@ -1,5 +1,5 @@
-import { http, createConfig } from "wagmi";
-import { arbitrumSepolia, mainnet } from "wagmi/chains";
+import { http, createConfig } from "@wagmi/core";
+import { arbitrumSepolia } from "@wagmi/core/chains";
 
 export const config = createConfig({
   chains: [arbitrumSepolia],

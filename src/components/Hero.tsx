@@ -4,6 +4,7 @@ import { useAccount } from "wagmi";
 import { Pixelify_Sans } from "next/font/google";
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 import AnkrModal from "./AnkrModal";
+import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 
 export default function Hero() {
   const [showModal, setShowModal] = useState(false);
@@ -39,15 +40,20 @@ export default function Hero() {
               </span>
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-              <div className="mt-10 flex items-center justify-center  gap-x-6">
-                <a
-                  href="/fixtures"
-                  className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Play Now
-                </a>
-              </div>
-              {/* {showModal && <AnkrModal handleVerify={handleVerify} />} */}
+              {address != undefined ? (
+                <div className="mt-10 flex items-center justify-center  gap-x-6">
+                  <a
+                    href="/fixtures"
+                    className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Play Now
+                  </a>
+                </div>
+              ) : (
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end flex justify-center">
+                  <DynamicWidget />
+                </div>
+              )}
             </div>
             <img
               src="/hero.gif"

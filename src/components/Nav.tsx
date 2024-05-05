@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -19,6 +19,9 @@ function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { setShowDynamicUserProfile } = useDynamicContext();
   const { address } = useAccount();
+  useEffect(() => {
+    console.log(address);
+  }, []);
   return (
     <div>
       <header className="absolute inset-x-0 top-0 z-50">
@@ -57,7 +60,6 @@ function Nav() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            {/* <DynamicWidget /> */}
             <DynamicWidget />
           </div>
         </nav>
@@ -72,11 +74,7 @@ function Nav() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
+                <img className="h-8 w-auto" src="/logo.png" alt="" />
               </a>
               <button
                 type="button"

@@ -43,9 +43,10 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [teams, setteams] = useState<string[]>([]);
   const [logs, setLogs] = useState<any[]>([]);
   const [open, setOpen] = useState(false);
-  const [points, setPoints] = useState([]);
-  const [totalPoints, setTotalPoints] = useState(0);
+  const [points, setPoints] = useState<number[]>([]);
+  const [squad, setSquad] = useState([]);
   const [squadUpdated, setSquadUpdated] = useState(false);
+  const [topScorerIndex, setTopScorerIndex] = useState(0);
   const { primaryWallet } = useDynamicContext();
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
@@ -150,14 +151,27 @@ export default function Page({ params }: { params: { slug: string } }) {
   useEffect(() => {
     (async function () {
       const players = JSON.parse(localStorage.getItem("players") || "{}");
-      console;
       if (players != null && players != undefined && address != undefined) {
         if (players[params.slug] == null || players[params.slug] == undefined)
           players[params.slug] = {};
-        const squad = players[params.slug][address as any];
+        const _squad = players[params.slug][address as any];
+        if (_squad != null && _squad != undefined && teams.length > 0) {
+          await fetchPlayers(_squad.playerIds as any, teams);
 
-        if (squad != null && squad != undefined && teams.length > 0) {
-          await fetchPlayers(squad.playerIds as any, teams);
+          setSquad(_squad.playerIds);
+
+          const remappedIds = _squad.playerIds.map(
+            (id: any) =>
+              playerIdRemappings[params.slug as string][id.toString()]
+          );
+          console.log(remappedIds);
+          const tpoints = remappedIds.map(
+            (id: any) => gameResults[params.slug][id.toString()]
+          );
+          setTopScorerIndex(tpoints.indexOf(Math.max(...tpoints)));
+          console.log("TEAM POINTS");
+          console.log(tpoints);
+          setPoints(tpoints);
           setSquadUpdated(true);
         }
       }
@@ -247,17 +261,31 @@ export default function Page({ params }: { params: { slug: string } }) {
             <div className="flex w-[70%] mx-auto justify-between text-black  h-[200px] ">
               <div>
                 <p className="text-2xl font-semibold text-center">Top Scorer</p>
-                <JustPlayerImage point={69} player={playerPositions[0]} />
+                <JustPlayerImage
+                  point={points.length > 0 ? points[topScorerIndex] : 0}
+                  player={
+                    squadUpdated
+                      ? playerPositions[topScorerIndex - 1]
+                      : {
+                          name: "Choose Player",
+                          id: "",
+                          type: "bat",
+                          team: "plain",
+                        }
+                  }
+                />
               </div>
               <div>
                 <p className="text-2xl font-semibold text-center">
                   Total Points
                 </p>
-                <p className="text-5xl font-semibold text-center mt-12">420</p>
+                <p className="text-5xl font-semibold text-center mt-12">
+                  {points.reduce((acc, currentValue) => acc + currentValue, 0)}
+                </p>
               </div>
               <div>
                 <p className="text-2xl font-semibold text-center">
-                  Confirmation
+                  Claim Points
                 </p>
                 <button
                   className="mt-10 mx-auto flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
@@ -411,7 +439,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     }
                   }}
                 >
-                  <p>Claim points</p>
+                  <p>Generate Proof</p>
                 </button>
               </div>
             </div>
@@ -427,7 +455,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 setPoints={(_points: any) => {
                   setPoints(_points);
                 }}
-                showPoints={false}
+                showPoints={true}
               />
             </div>
           </div>

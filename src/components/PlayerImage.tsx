@@ -102,7 +102,29 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       </div>
       {showPoints && (
         <div
-          className="absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md"
+          className={`absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md ${
+            index == 10
+              ? "left-[42%] top-[14%]"
+              : index == 9
+              ? "top-[61%] left-[5%]"
+              : index == 8
+              ? "top-[61%] left-[30%]"
+              : index == 7
+              ? "top-[61%] left-[55%]"
+              : index == 6
+              ? "top-[61%] left-[80%]"
+              : index == 5
+              ? "top-[85%] left-[17%]"
+              : index == 4
+              ? "top-[85%] left-[42%]"
+              : index == 3
+              ? "top-[85%] left-[67%]"
+              : index == 2
+              ? "top-[37%] left-[17%]"
+              : index == 1
+              ? "top-[37%] left-[42%]"
+              : "top-[37%] left-[67%]"
+          }`}
           onClick={onClick}
         >
           {points[index]}

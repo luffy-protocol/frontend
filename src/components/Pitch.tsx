@@ -1,8 +1,8 @@
 "use client";
 import { gameResults, playerIdRemappings } from "@/utils/constants";
-import { useSearchParams } from "next/navigation";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import PlayerImage from "./PlayerImage";
+import { useAccount } from "wagmi";
 
 interface Player {
   name: string;
@@ -46,28 +46,12 @@ const Pitch: React.FC<PitchProps> = ({
   setPoints,
   showPoints,
 }) => {
+  const { address } = useAccount();
   const handlePlayerClick = (index: number) => {
     console.log("Player", index, "clicked");
     setindex(index);
     setOpen(true);
   };
-  const searchParams = useSearchParams();
-  useEffect(() => {
-    if (searchParams.get("claim") === "true") {
-      let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
-      const playerIds = gameData[slug];
-      if (playerIds != null && playerIds != undefined) {
-        const remappedIds = playerIds.map(
-          (id: any) => playerIdRemappings[slug as string][id.toString()]
-        );
-        console.log(remappedIds);
-        const tpoints = remappedIds.map(
-          (id: any) => gameResults[slug][id.toString()]
-        );
-        setPoints(tpoints);
-      }
-    }
-  }, []);
 
   return (
     <div className="flex justify-start  relative w-[48%] mx-auto">

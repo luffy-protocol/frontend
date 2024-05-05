@@ -202,8 +202,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   return isAuthenticated ? (
     <>
       <div className="pt-10 bg-white">
-        <div className="">
-          <div className="hidden md:block flex justify-center space-x-4 w-full mt-20">
+        <div className="w-full">
+          <div className="hidden md:flex justify-center space-x-4 w-full mt-20">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
               width={130}
@@ -218,7 +218,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               alt="team2"
             />
           </div>
-          <div className="block md:hidden flex justify-center w-full mt-20">
+          <div className="flex md:hidden justify-center w-full mt-20">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
               width={100}
@@ -244,26 +244,14 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="pt-12 ">
-          <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14  ">
+          <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-8  ">
             <div className="w-[90%] mx-auto flex flex-col sm:flex-row">
-              {/* <div className="sm:w-[55%]"> */}
-              <Pitch
-                index={index}
-                setindex={setindex}
-                slug={params.slug}
-                open={open}
-                setOpen={setOpen}
-                playerPositions={playerPositions}
-                points={gameResults[params.slug]}
-                setPoints={(_points: any) => {
-                  setPoints(_points);
-                }}
-                showPoints={false}
-              />
-              {/* </div> */}
-              <div className="sm:w-[45%] flex flex-col items-center mt-6 sm:mt-0">
+              <div className="block md:hidden flex flex-col items-center justify-center">
+                <p className="py-2 text-black text-xl font-semibold text-center">
+                  {squadUpdated ? "Update Squad" : "Create Squad"}
+                </p>
                 <button
-                  className="mt-10 flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                  className="mt-2 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                   disabled={
                     playerPositions.filter((player) => player.id != "")
                       .length != 11
@@ -345,43 +333,146 @@ export default function Page({ params }: { params: { slug: string } }) {
                           .length
                       } more to go`}
                 </p>
-                <p className="py-6 text-black text-3xl font-bold text-center">
-                  {squadUpdated ? "Update Squad" : "Create Squad"}
-                </p>
+              </div>
+              {/* <div className="sm:w-[55%]"> */}
+              <Pitch
+                index={index}
+                setindex={setindex}
+                slug={params.slug}
+                open={open}
+                setOpen={setOpen}
+                playerPositions={playerPositions}
+                points={gameResults[params.slug]}
+                setPoints={(_points: any) => {
+                  setPoints(_points);
+                }}
+                showPoints={false}
+              />
+              {/* </div> */}
+              <div className="sm:w-[45%] flex flex-col items-center mt-6 sm:mt-0">
+                <div className="hidden md:block">
+                  <button
+                    className="mt-10 flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                    disabled={
+                      playerPositions.filter((player) => player.id != "")
+                        .length != 11
+                    }
+                    onClick={async () => {
+                      const pIds = playerPositions.map((p) => p.id);
+                      const remappedIds = pIds.map(
+                        (id: any) =>
+                          playerIdRemappings[params.slug as string][id]
+                      );
+                      let squad_hash: `0x${string}` = computeSquadHash(
+                        Buffer.from(remappedIds)
+                      );
+                      setLogs([
+                        {
+                          id: 1,
+                          hash: "Computed Squad Hash successfully",
+                          href: "",
+                          username: squad_hash,
+                        },
+                      ]);
+                      // send transaction on-chain
 
-                <div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md px-6">
+                      if (primaryWallet) {
+                        const walletClient = await createWalletClientFromWallet(
+                          primaryWallet
+                        );
+                        const publicClient = createPublicClient({
+                          chain: arbitrumSepolia,
+                          transport: http(
+                            `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                          ),
+                        });
+                        const { request } = await publicClient.simulateContract(
+                          {
+                            address: protocolAddress as `0x${string}`,
+                            abi: protocolAbi,
+                            functionName: "registerSquad",
+                            args: [params.slug, squad_hash],
+                            account: primaryWallet.address as `0x${string}`,
+                          }
+                        );
+                        const tx = await walletClient.writeContract(request);
+                        console.log(tx);
+                        setLogs([
+                          {
+                            id: 1,
+                            hash: "Computed Squad Hash successfully",
+                            href: "",
+                            username: squad_hash,
+                          },
+                          {
+                            id: 2,
+                            hash: "Transaction Sent successfully",
+                            href: "https://sepolia.arbiscan.io/tx/" + tx,
+                            username: tx,
+                          },
+                        ]);
+                        let gameData = JSON.parse(
+                          localStorage.getItem("players") || "{}"
+                        );
+                        if (!gameData[params.slug]) gameData[params.slug] = {};
+                        gameData[params.slug][address as any] = {
+                          squadHash: squad_hash,
+                          playerIds: pIds,
+                        };
+                        localStorage.setItem(
+                          "players",
+                          JSON.stringify(gameData)
+                        );
+                        setSquadUpdated(true);
+                      }
+                    }}
+                  >
+                    <p>Submit Squad</p>
+                  </button>
+                  <p className="font-normal text-neutral-500 italic text-xs py-1">
+                    {squadUpdated
+                      ? "Click on players to update your squad"
+                      : `${
+                          playerPositions.filter((player) => player.id != "")
+                            .length
+                        } selected, ${
+                          playerPositions.filter((player) => player.id == "")
+                            .length
+                        } more to go`}
+                  </p>
+                  <p className="py-6 text-black text-3xl font-bold text-center">
+                    {squadUpdated ? "Update Squad" : "Create Squad"}
+                  </p>
+                </div>
+
+                <div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md md:px-6 md:mx-6">
                   <div className="">
                     <div className="inline-block min-w-full py-2 align-middle">
-                      <table className="min-w-full divide-y divide-gray-300">
+                      <table className="min-w-full divide-y divide-gray-300 ">
                         <thead>
                           <tr>
                             <th
                               scope="col"
-                              className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
+                              className="py-3.5 md:pl-4 md:pr-3 text-left text-xs font-semibold text-gray-900"
                             >
-                              Name
+                              &emsp;&emsp; Name
                             </th>
                             <th
                               scope="col"
-                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                              className="md:px-3 py-3.5 text-left text-xs font-semibold text-gray-900"
                             >
                               Team
                             </th>
-                            {/* <th
-                                scope="col"
-                                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                              >
-                                Status
-                              </th> */}
+
                             <th
                               scope="col"
-                              className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                              className="hidden md:block md:px-3 py-3.5 text-left text-xs font-semibold text-gray-900"
                             >
                               Role
                             </th>
                             <th
                               scope="col"
-                              className="relative py-3.5 pl-3 pr-4 sm:pr-0"
+                              className="relative py-3.5 md:pl-3 md:pr-4 sm:pr-0"
                             >
                               <span className="sr-only">Edit</span>
                             </th>

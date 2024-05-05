@@ -261,20 +261,20 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
               </div>
             </div>
           </td>
-          <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
+          <td className="whitespace-nowrap md:px-3 py-5 text-sm text-gray-500">
             <div className="text-gray-900">
               {/* {person.team} */}
               {person.team?.toUpperCase()}
             </div>
           </td>
-          <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
+          <td className="hidden md:block whitespace-nowrap md:px-3 py-5 text-sm text-gray-500">
             {role}
           </td>
           <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
             <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
               <button
                 type="button"
-                className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                className="block rounded-md bg-indigo-600 px-2 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                 disabled={playerIds.includes(person.id as any)}
                 onClick={() => {
                   console.log(person);

@@ -58,17 +58,25 @@ export default function DummyPlayerData() {
               />
             </div>
             <div className="ml-4">
-              <div className="font-medium text-gray-900">
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              <div className="hidden md:block font-medium text-gray-900">
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              </div>
+              <div className="block md:hidden font-medium text-gray-900">
+                &emsp;&emsp;&emsp;
               </div>
             </div>
           </div>
         </td>
         <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
-          <div className="text-gray-900">&emsp;&emsp;</div>
+          <div className="hidden md:block font-medium text-gray-900">
+            &emsp;&emsp;&emsp;
+          </div>
+          <div className="block md:hidden font-medium text-gray-900">
+            &emsp;
+          </div>
         </td>
         <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
-          &emsp;&emsp;&emsp;&emsp;
+          &emsp;&emsp;&emsp;
         </td>
         <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
           <div className="mt-4 sm:mt-0 sm:flex-none">

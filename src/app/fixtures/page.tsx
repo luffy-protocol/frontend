@@ -235,7 +235,7 @@ function Page() {
           </p>
         </div>
       </div>
-      <div className="px-24 bg-white">
+      <div className="px-24 bg-white pb-2">
         {!LoadingUpcoming ? (
           <FixtureCard fixtures={upcomingMatches} state={0} />
         ) : (
@@ -256,7 +256,7 @@ function Page() {
           </p>
         </div>
       </div>
-      <div className="px-24 bg-white">
+      <div className="px-24 bg-white pb-2">
         {!loadingOngoing ? (
           <FixtureCard fixtures={ongoingMatches} state={1} />
         ) : (
@@ -277,7 +277,7 @@ function Page() {
           </p>
         </div>
       </div>
-      <div className="px-24 bg-white">
+      <div className="px-24 bg-white pb-2">
         {!loadingCompleted ? (
           <FixtureCard fixtures={completedMatches} state={2} />
         ) : (

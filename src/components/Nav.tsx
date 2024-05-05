@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { DynamicWidget } from "../lib/dynamic";
-import { useAccount } from "wagmi";
+import { DynamicWidget, SpinnerIcon } from "../lib/dynamic";
+import { useAccount, useBalance } from "wagmi";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,16 +14,37 @@ const navigation = [
 ];
 
 import { DynamicUserProfile, useDynamicContext } from "../lib/dynamic";
+import WelcomeModal from "./WelcomeModal";
+import { privateKeyToAccount } from "viem/accounts";
+import { createPublicClient, createWalletClient, http, parseEther } from "viem";
+import { arbitrumSepolia } from "viem/chains";
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { setShowDynamicUserProfile } = useDynamicContext();
+  const { isAuthenticated } = useDynamicContext();
   const { address } = useAccount();
+
+  const { data, refetch } = useBalance({
+    address: address,
+  });
+  const [showModal, setShowModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [txHash, setTxHash] = useState("");
+  const [processing, setProcessing] = useState(false);
   useEffect(() => {
     console.log(address);
+    console.log(isAuthenticated);
   }, []);
   return (
     <div>
+      {showModal && (
+        <WelcomeModal
+          close={() => {
+            setShowModal(false);
+          }}
+          tx={txHash}
+        />
+      )}
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -60,6 +81,76 @@ function Nav() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            {isAuthenticated && (
+              <button
+                className="mx-4 rounded-md bg-[#01A4F1] px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                onClick={async () => {
+                  setProcessing(true);
+                  console.log(txHash == "");
+                  console.log(isAuthenticated);
+                  if (txHash == "" && isAuthenticated) {
+                    (async function () {
+                      try {
+                        refetch();
+                        if (data != undefined) {
+                          const value = parseFloat(data.formatted);
+                          console.log(value);
+                          if (value < 0.0002) {
+                            const account = privateKeyToAccount(
+                              (process.env
+                                .NEXT_PUBLIC_PRIVATE_KEY as `0x${string}`) ||
+                                "0x"
+                            );
+                            const walletClient = createWalletClient({
+                              account: account,
+                              chain: arbitrumSepolia,
+                              transport: http(
+                                `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                              ),
+                            });
+                            const publicClient = createPublicClient({
+                              chain: arbitrumSepolia,
+                              transport: http(
+                                `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                              ),
+                            });
+                            const txCount =
+                              await publicClient.getTransactionCount({
+                                address: account.address,
+                              });
+
+                            const tx = await walletClient.sendTransaction({
+                              account: account,
+                              to: address,
+                              value: parseEther("0.002"),
+                              nonce: txCount,
+                            });
+                            console.log("TX complete");
+                            console.log(tx);
+                            setTxHash(tx);
+                            setShowModal(true);
+                          } else {
+                            console.log("YOu have enough money :0");
+                          }
+                        } else {
+                          console.log("could not fetch balance");
+                        }
+                      } catch (e) {
+                        console.log(e);
+                      }
+                      setProcessing(false);
+                    })();
+                  } else {
+                    console.log("Already fetched");
+                  }
+                }}
+              >
+                <div className="flex">
+                  <p>Claim free ETH</p>&nbsp;
+                  {processing && <SpinnerIcon />}
+                </div>
+              </button>
+            )}
             <DynamicWidget />
           </div>
         </nav>
@@ -98,7 +189,77 @@ function Nav() {
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 flex flex-col space-y-2 items-start justify-start">
+                  {isAuthenticated && (
+                    <button
+                      className="mt-2 rounded-md bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                      onClick={async () => {
+                        console.log(txHash == "");
+                        console.log(isAuthenticated);
+                        if (txHash == "" && isAuthenticated) {
+                          (async function () {
+                            try {
+                              refetch();
+                              if (data != undefined) {
+                                const value = parseFloat(data.formatted);
+                                console.log(value);
+                                if (value < 0.0002) {
+                                  const account = privateKeyToAccount(
+                                    (process.env
+                                      .NEXT_PUBLIC_PRIVATE_KEY as `0x${string}`) ||
+                                      "0x"
+                                  );
+                                  const walletClient = createWalletClient({
+                                    account: account,
+                                    chain: arbitrumSepolia,
+                                    transport: http(
+                                      `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                                    ),
+                                  });
+                                  const publicClient = createPublicClient({
+                                    chain: arbitrumSepolia,
+                                    transport: http(
+                                      `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                                    ),
+                                  });
+                                  const txCount =
+                                    await publicClient.getTransactionCount({
+                                      address: account.address,
+                                    });
+
+                                  const tx = await walletClient.sendTransaction(
+                                    {
+                                      account: account,
+                                      to: address,
+                                      value: parseEther("0.002"),
+                                      nonce: txCount,
+                                    }
+                                  );
+                                  console.log("TX complete");
+                                  console.log(tx);
+                                  setTxHash(tx);
+                                  setShowModal(true);
+                                } else {
+                                  console.log("YOu have enough money :0");
+                                }
+                              } else {
+                                console.log("could not fetch balance");
+                              }
+                            } catch (e) {
+                              console.log(e);
+                            }
+                          })();
+                        } else {
+                          console.log("Already fetched");
+                        }
+                      }}
+                    >
+                      <div className="flex">
+                        <p>Claim free ETH</p>&nbsp;
+                        {processing && <SpinnerIcon />}
+                      </div>
+                    </button>
+                  )}
                   <DynamicWidget />
                 </div>
               </div>

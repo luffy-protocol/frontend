@@ -6,10 +6,12 @@ import { request, gql } from "graphql-request";
 import fetchFixtures from "@/utils/supabaseFunctions/fetchFixtures";
 import { useAccount } from "wagmi";
 import { helix } from "ldrs";
+import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 function Page() {
+  const { isAuthenticated } = useDynamicContext();
   const [matches, setMatches] = useState([
     {
       id: 91515,
@@ -43,62 +45,6 @@ function Page() {
   const [completedMatches, setCompletedMatches] = useState<
     { id: number; team1: string; team2: string; title: string }[]
   >([]);
-  // useEffect(() => {
-  //   const fetchCompletedFixtures = async () => {
-  //     try {
-  //       // Fetch fixtures
-  //       const { message, response } = await fetchFixtures();
-  //       if (message === "Success") {
-  //         // Get current date
-  //         const currentDate = new Date();
-  //         setAllMatches(response);
-  //         console.log(response);
-
-  //         // Filter upcoming matches
-  //         const filteredMatches = response.filter((match: any) => {
-  //           const startDate = new Date(Number(match.startDate));
-  //           return startDate < currentDate;
-  //         });
-  //         // Map the filtered matches to the desired format
-  //         const completedMatches = filteredMatches
-  //           .slice(-7, -1)
-  //           .map((match: any) => ({
-  //             id: match.id, // Assuming fid represents matchId
-  //             team1: match.team1,
-  //             team2: match.team2,
-  //             title: "Indian Primere League", // Common title
-  //           }));
-  //         // Set completed matches in state
-  //         console.log(completedMatches);
-  //         setCompletedMatches(completedMatches);
-
-  //         const filteredMatches1 = response.filter((match: any) => {
-  //           const startDate = new Date(Number(match.startDate));
-  //           return startDate > currentDate;
-  //         });
-
-  //         const upcominfMatches = filteredMatches1
-  //           .slice(0, 6)
-  //           .map((match: any) => ({
-  //             id: match.id, // Assuming fid represents matchId
-  //             team1: match.team1,
-  //             team2: match.team2,
-  //             title: "Indian Primere League", // Common title
-  //           }));
-  //         // Set completed matches in state
-  //         console.log(upcominfMatches);
-  //         setUpcomingMatches(upcominfMatches);
-  //       } else {
-  //         console.error("Error fetching upcoming fixtures:", message);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching upcoming fixtures:", error);
-  //     }
-  //   };
-  //   setOngoingMatches(matches);
-  //   // Call the function to fetch upcoming fixtures
-  //   fetchCompletedFixtures();
-  // }, []);
 
   const { address } = useAccount();
   useEffect(() => {
@@ -275,7 +221,7 @@ function Page() {
     fetchOngoingFixtures();
   }, [address]);
 
-  return (
+  return isAuthenticated ? (
     <div>
       <div className="bg-white px-16 py-6 sm:pt-32 lg:px-16">
         <div className="mx-auto max-w-2xl text-center">
@@ -339,6 +285,17 @@ function Page() {
             <l-helix size="45" speed="2.5" color="black"></l-helix>
           </div>
         )}
+      </div>
+    </div>
+  ) : (
+    <div className="w-full h-screen flex justify-center items-center bg-white">
+      <div>
+        <p className="text-black font-bold text-xl sm:text-3xl">
+          Create your wallet to get started
+        </p>
+        <div className="mx-auto flex justify-center mt-6">
+          <DynamicWidget />
+        </div>
       </div>
     </div>
   );

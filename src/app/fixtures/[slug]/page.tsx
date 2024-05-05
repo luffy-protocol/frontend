@@ -2,8 +2,6 @@
 import Logs from "@/components/Logs";
 import Pitch from "@/components/Pitch";
 import fetchMatchDetail from "@/utils/supabaseFunctions/fetchMatchDetails";
-import { ArrowLeftCircleIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
   allTeams,
@@ -13,36 +11,27 @@ import {
   protocolAbi,
   protocolAddress,
 } from "@/utils/constants";
-import {
-  createPublicClient,
-  createWalletClient,
-  hashMessage,
-  http,
-  recoverPublicKey,
-} from "viem";
+import { createPublicClient, http } from "viem";
 import { arbitrumSepolia, cronos } from "viem/chains";
 import computeSquadHash from "@/utils/computeSquadHash";
 import {
+  DynamicWidget,
   createWalletClientFromWallet,
   useDynamicContext,
 } from "@dynamic-labs/sdk-react-core";
-import computeMerklePath from "@/utils/computeMerklePath";
-import computeMerkleRoot from "@/utils/computeMerkleRoot";
-import axios from "axios";
 import Image from "next/image";
 import DummyPlayerData from "@/components/DummyPlayerData";
 import ChoosePlayers from "@/components/ChoosePlayers";
 import { useAccount } from "wagmi";
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const [addplr, setaddplr] = useState(false);
+  const { isAuthenticated } = useDynamicContext();
   const { address } = useAccount();
   const [index, setindex] = useState(0);
   const [teams, setteams] = useState<string[]>([]);
   const [logs, setLogs] = useState<any[]>([]);
   const [open, setOpen] = useState(false);
   const [points, setPoints] = useState([]);
-  const [totalPoints, setTotalPoints] = useState(0);
   const [squadUpdated, setSquadUpdated] = useState(false);
   const { primaryWallet } = useDynamicContext();
   const teamShortForms: { [key: string]: string } = {
@@ -210,7 +199,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       }
     }
   };
-  return (
+  return isAuthenticated ? (
     <>
       <div className="pt-10 bg-white">
         <div className="">
@@ -417,5 +406,16 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </>
+  ) : (
+    <div className="w-full h-screen flex justify-center items-center bg-white">
+      <div>
+        <p className="text-black font-bold text-xl sm:text-3xl">
+          Create your wallet to get started
+        </p>
+        <div className="mx-auto flex justify-center mt-6">
+          <DynamicWidget />
+        </div>
+      </div>
+    </div>
   );
 }

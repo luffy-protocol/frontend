@@ -18,6 +18,7 @@ import WelcomeModal from "./WelcomeModal";
 import { privateKeyToAccount } from "viem/accounts";
 import { createPublicClient, createWalletClient, http, parseEther } from "viem";
 import { arbitrumSepolia } from "viem/chains";
+import ErrorModal from "./ErrorModal";
 
 function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,6 +44,14 @@ function Nav() {
             setShowModal(false);
           }}
           tx={txHash}
+        />
+      )}
+      {showErrorModal && (
+        <ErrorModal
+          close={() => {
+            setShowErrorModal(false);
+          }}
+          balance={data != undefined ? data?.formatted : "0"}
         />
       )}
       <header className="absolute inset-x-0 top-0 z-50">
@@ -85,13 +94,14 @@ function Nav() {
               <button
                 className="mx-4 rounded-md bg-[#01A4F1] px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                 onClick={async () => {
+                  refetch();
+
                   setProcessing(true);
                   console.log(txHash == "");
                   console.log(isAuthenticated);
                   if (txHash == "" && isAuthenticated) {
                     (async function () {
                       try {
-                        refetch();
                         if (data != undefined) {
                           const value = parseFloat(data.formatted);
                           console.log(value);
@@ -131,6 +141,7 @@ function Nav() {
                             setShowModal(true);
                           } else {
                             console.log("YOu have enough money :0");
+                            setShowErrorModal(true);
                           }
                         } else {
                           console.log("could not fetch balance");
@@ -141,7 +152,9 @@ function Nav() {
                       setProcessing(false);
                     })();
                   } else {
+                    setProcessing(false);
                     console.log("Already fetched");
+                    setShowErrorModal(true);
                   }
                 }}
               >

@@ -95,7 +95,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             : index == 1
             ? "top-[16%] sm:top-[23%] left-[42%]"
             : "top-[16%] sm:top-[23%] left-[67%]"
-        } w-7 sm:w-7 md:w-10 lg:w-14`}
+        } w-7 md:w-14`}
         onClick={onClick}
       >
         {name}

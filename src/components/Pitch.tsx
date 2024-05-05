@@ -72,9 +72,9 @@ const Pitch: React.FC<PitchProps> = ({
         ))}
       </div> */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
-        <div className="flex justify-center items-center relative">
+        <div className="flex justify-center items-center relative ">
           <img
-            className="rounded-lg shadow-md border-2 border-black"
+            className="rounded-lg shadow-md border-2 border-black w-full"
             src="/pitchbase.png"
             alt="Pitch"
           />

@@ -51,51 +51,51 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
           index == 10
             ? "left-[42%] top-[0%]"
             : index == 9
-            ? "top-[47%] left-[5%]"
+            ? " top-[40%] sm:top-[47%] left-[5%]"
             : index == 8
-            ? "top-[47%] left-[30%]"
+            ? "top-[40%] sm:top-[47%] left-[30%]"
             : index == 7
-            ? "top-[47%] left-[55%]"
+            ? " top-[40%] sm:top-[47%] left-[55%]"
             : index == 6
-            ? "top-[47%] left-[80%]"
+            ? "top-[40%] sm:top-[47%] left-[80%]"
             : index == 5
-            ? "top-[71%] left-[17%]"
+            ? "top-[64%] sm:top-[71%] left-[17%]"
             : index == 4
-            ? "top-[71%] left-[42%]"
+            ? "top-[64%] sm:top-[71%] left-[42%]"
             : index == 3
-            ? "top-[71%] left-[67%]"
+            ? "top-[64%]  sm:top-[71%] left-[67%]"
             : index == 2
-            ? "top-[23%] left-[17%]"
+            ? "top-[16%] sm:top-[23%] left-[17%]"
             : index == 1
-            ? "top-[23%] left-[42%]"
-            : "top-[23%] left-[67%]"
-        }`}
+            ? "top-[16%] sm:top-[23%] left-[42%]"
+            : "top-[16%] sm:top-[23%] left-[67%]"
+        } w-7 sm:w-7 md:w-10 lg:w-14`}
         onClick={onClick}
       />
       <div
-        className={`absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md  ${
+        className={`absolute cursor-pointer sm:text-xs text-[5px] mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md  ${
           index == 10
             ? "left-[42%] top-[0%]"
             : index == 9
-            ? "top-[47%] left-[5%]"
+            ? " top-[40%] sm:top-[47%] left-[5%]"
             : index == 8
-            ? "top-[47%] left-[30%]"
+            ? "top-[40%] sm:top-[47%] left-[30%]"
             : index == 7
-            ? "top-[47%] left-[55%]"
+            ? " top-[40%] sm:top-[47%] left-[55%]"
             : index == 6
-            ? "top-[47%] left-[80%]"
+            ? "top-[40%] sm:top-[47%] left-[80%]"
             : index == 5
-            ? "top-[71%] left-[17%]"
+            ? "top-[64%] sm:top-[71%] left-[17%]"
             : index == 4
-            ? "top-[71%] left-[42%]"
+            ? "top-[64%] sm:top-[71%] left-[42%]"
             : index == 3
-            ? "top-[71%] left-[67%]"
+            ? "top-[64%]  sm:top-[71%] left-[67%]"
             : index == 2
-            ? "top-[23%] left-[17%]"
+            ? "top-[16%] sm:top-[23%] left-[17%]"
             : index == 1
-            ? "top-[23%] left-[42%]"
-            : "top-[23%] left-[67%]"
-        }`}
+            ? "top-[16%] sm:top-[23%] left-[42%]"
+            : "top-[16%] sm:top-[23%] left-[67%]"
+        } w-7 sm:w-7 md:w-10 lg:w-14`}
         onClick={onClick}
       >
         {name}

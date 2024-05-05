@@ -55,7 +55,7 @@ const Pitch: React.FC<PitchProps> = ({
 
   return (
     <div className="flex justify-start  relative w-[48%] mx-auto">
-      <div className="relative rounded-lg shadow-md border-2 border-black bg-[url('/pitchbase.png')] w-full bg-contain  h-[122svh]">
+      {/* <div className="relative rounded-lg shadow-md border-2 border-black bg-[url('/pitchbase.png')] w-full bg-contain  h-[122svh] bg-no-repeat">
         {playerPositions.map((player, index) => (
           <>
             <PlayerImage
@@ -70,6 +70,29 @@ const Pitch: React.FC<PitchProps> = ({
             <div></div>
           </>
         ))}
+      </div> */}
+      <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className="flex justify-center items-center relative">
+          <img
+            className="rounded-lg shadow-md border-2 border-black"
+            src="/pitchbase.png"
+            alt="Pitch"
+          />
+          {playerPositions.map((player, index) => (
+            <>
+              <PlayerImage
+                name={player.name}
+                key={index}
+                index={index}
+                player={player}
+                points={points}
+                showPoints={showPoints}
+                onClick={() => handlePlayerClick(index)}
+              />
+              <div></div>
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );

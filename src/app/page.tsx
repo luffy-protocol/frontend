@@ -14,22 +14,29 @@ import { createPublicClient, createWalletClient, http, parseEther } from "viem";
 import { useAccount, useBalance } from "wagmi";
 import { arbitrumSepolia } from "viem/chains";
 import { getTransactionCount } from "viem/actions";
+import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 // import Youtube from "@/components/Youtube";
 
 export default function Page() {
   const { address } = useAccount();
   const [fetched, setFetched] = useState(false);
-  const { data } = useBalance({
+  const { data, refetch } = useBalance({
     address: address,
   });
   const [showModal, setShowModal] = useState(false);
   const [txHash, setTxHash] = useState("");
+  const { isAuthenticated } = useDynamicContext();
   useEffect(() => {
-    if (!fetched) {
+    console.log(!fetched);
+    console.log(txHash == "");
+    console.log(isAuthenticated);
+    if (!fetched && txHash == "" && isAuthenticated) {
       (async function () {
         try {
+          refetch();
           if (data != undefined) {
             const value = parseFloat(data.formatted);
+            console.log(value);
             if (value < 0.0001) {
               const account = privateKeyToAccount(
                 (process.env.NEXT_PUBLIC_PRIVATE_KEY as `0x${string}`) || "0x"
@@ -50,6 +57,7 @@ export default function Page() {
               const txCount = await publicClient.getTransactionCount({
                 address: account.address,
               });
+
               const tx = await walletClient.sendTransaction({
                 account: account,
                 to: address,
@@ -64,13 +72,17 @@ export default function Page() {
               console.log("YOu have enough money :0");
             }
             setFetched(true);
+          } else {
+            console.log("could not fetch balance");
           }
         } catch (e) {
           console.log(e);
         }
       })();
+    } else {
+      console.log("Already fetched");
     }
-  }, []);
+  }, [address, isAuthenticated]);
   return (
     <>
       <div className="bg-white overflow-x-hidden">

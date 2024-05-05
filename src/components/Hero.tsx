@@ -7,22 +7,8 @@ import AnkrModal from "./AnkrModal";
 import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 
 export default function Hero() {
-  const [showModal, setShowModal] = useState(false);
   const { address } = useAccount();
 
-  useEffect(() => {
-    if (address) {
-      setShowModal(true);
-    }
-  }, [address]);
-
-  const handleVerify = () => {
-    window.open(
-      `https://www-stage.ankr.com/verify/consumer/connect/?policyId=377&chain=opbnb&accountAddress=${address}`,
-      "_blank"
-    );
-    setShowModal(false);
-  };
   return (
     <div className="bg-white">
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
@@ -40,20 +26,14 @@ export default function Hero() {
               </span>
             </h1>
             <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-              {address != undefined ? (
-                <div className="mt-10 flex items-center justify-center  gap-x-6">
-                  <a
-                    href="/fixtures"
-                    className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    Play Now
-                  </a>
-                </div>
-              ) : (
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end flex justify-center">
-                  <DynamicWidget />
-                </div>
-              )}
+              <div className="mt-10 flex items-center justify-center  gap-x-6">
+                <a
+                  href="/fixtures"
+                  className="rounded-md shad bg-[#01A4F1] px-3.5 py-2.5 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Play Now
+                </a>
+              </div>
             </div>
             <img
               src="/hero.gif"

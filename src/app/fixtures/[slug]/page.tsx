@@ -203,7 +203,7 @@ export default function Page({ params }: { params: { slug: string } }) {
     <>
       <div className="pt-10 bg-white">
         <div className="">
-          <div className="flex justify-center space-x-4 w-full mt-20">
+          <div className="hidden md:block flex justify-center space-x-4 w-full mt-20">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
               width={130}
@@ -215,6 +215,21 @@ export default function Page({ params }: { params: { slug: string } }) {
               src={`/${fixtureDetails[params.slug].team2}.png`}
               width={130}
               height={130}
+              alt="team2"
+            />
+          </div>
+          <div className="block md:hidden flex justify-center w-full mt-20">
+            <Image
+              src={`/${fixtureDetails[params.slug].team1}.png`}
+              width={100}
+              height={100}
+              alt="team1"
+            />
+            <Image src="/vs.png" width={80} height={80} alt="vs" />
+            <Image
+              src={`/${fixtureDetails[params.slug].team2}.png`}
+              width={100}
+              height={100}
               alt="team2"
             />
           </div>

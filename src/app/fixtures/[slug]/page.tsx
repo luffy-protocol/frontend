@@ -150,11 +150,9 @@ export default function Page({ params }: { params: { slug: string } }) {
       const players = JSON.parse(localStorage.getItem("players") || "{}");
       console;
       if (players != null && players != undefined && address != undefined) {
+        if (players[params.slug] == null || players[params.slug] == undefined)
+          players[params.slug] = {};
         const squad = players[params.slug][address as any];
-        console.log("ADDRESS");
-        console.log(address);
-        console.log("SQUADDD");
-        console.log(squad);
 
         if (squad != null && squad != undefined && teams.length > 0) {
           await fetchPlayers(squad.playerIds as any, teams);
@@ -166,8 +164,6 @@ export default function Page({ params }: { params: { slug: string } }) {
   useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(params.slug);
-      console.log(response);
-      console.log(teamShortForms[response[0].team1]);
       if (message === "Success") {
         setteams([
           teamShortForms[response[0].team1],
@@ -211,7 +207,6 @@ export default function Page({ params }: { params: { slug: string } }) {
               }
             : { name: "Choose Player", id: "", type: "wk", team: "plain" }; // If player not found, return null
         });
-        console.log(matchedPlayers);
         setPlayerPositions(matchedPlayers);
       }
     }
@@ -270,20 +265,12 @@ export default function Page({ params }: { params: { slug: string } }) {
                   }
                   onClick={async () => {
                     const pIds = playerPositions.map((p) => p.id);
-                    console.log("REMAPPINGS");
-                    console.log(playerIdRemappings);
-                    console.log("Player Ids");
-                    console.log(pIds);
                     const remappedIds = pIds.map(
                       (id: any) => playerIdRemappings[params.slug as string][id]
                     );
-                    console.log("Remapped Ids");
-                    console.log(remappedIds);
                     let squad_hash: `0x${string}` = computeSquadHash(
                       Buffer.from(remappedIds)
                     );
-                    console.log("SQUAD HASH");
-                    console.log(squad_hash);
                     setLogs([
                       {
                         id: 1,

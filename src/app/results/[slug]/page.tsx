@@ -532,8 +532,37 @@ export default function Page({ params }: { params: { slug: string } }) {
                         });
 
                       setLogs(_logs);
-
+                      console.log("PARAMS");
+                      console.log([
+                        params.slug,
+                        points.reduce(
+                          (acc, currentValue) => acc + currentValue,
+                          0
+                        ),
+                        proof.proof,
+                      ]);
                       // send transaction
+                      const { request } = await publicClient.simulateContract({
+                        address: protocolAddress as `0x${string}`,
+                        abi: protocolAbi,
+                        functionName: "claimPoints",
+                        args: [
+                          params.slug,
+                          points.reduce(
+                            (acc, currentValue) => acc + currentValue,
+                            0
+                          ),
+                          bytesToHex(proof.proof),
+                        ],
+                        account: primaryWallet.address as `0x${string}`,
+                      });
+                      const tx = await walletClient.writeContract(request);
+                      _logs.push({
+                        id: 7,
+                        hash: "Transaction Sent Successfully",
+                        href: `https://sepolia.arbiscan.io/tx/${tx}`,
+                        username: tx,
+                      });
                     } catch (e) {
                       console.log(e);
                     }

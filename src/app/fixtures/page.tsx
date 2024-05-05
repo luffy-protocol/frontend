@@ -157,7 +157,7 @@ function Page() {
           console.log(ongoingMatchesData);
           const formattedOngoingMatches = ongoingMatchesData.map(
             (match: any) => ({
-              id: match.id,
+              id: match.matchId,
 
               team1: match.team1,
               team2: match.team2,

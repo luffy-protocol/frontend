@@ -1,7 +1,7 @@
 import Leaderboard from "@/components/Leaderboard";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page() {
   const { isAuthenticated } = useDynamicContext();
   return isAuthenticated ? (
     <div>

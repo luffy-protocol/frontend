@@ -60,6 +60,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [squadUpdated, setSquadUpdated] = useState(false);
   const [topScorerIndex, setTopScorerIndex] = useState(0);
   const [started, setStarted] = useState(false);
+  const [claimed, setClaimed] = useState(false);
   const { primaryWallet } = useDynamicContext();
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
@@ -160,6 +161,16 @@ export default function Page({ params }: { params: { slug: string } }) {
       team: "plain",
     },
   ]);
+  useEffect(() => {
+    let claimed = JSON.parse(localStorage.getItem("claimed") || "{}");
+    if (claimed != null && claimed != undefined && address != undefined) {
+      if (claimed[params.slug] == null || claimed[params.slug] == undefined)
+        claimed[params.slug] = {};
+      else {
+        if (claimed[params.slug][address] == true) setClaimed(true);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     (async function () {
@@ -305,7 +316,9 @@ export default function Page({ params }: { params: { slug: string } }) {
                   className="mt-10 mx-auto flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                   disabled={
                     playerPositions.filter((player) => player.id != "")
-                      .length != 11 || started
+                      .length != 11 ||
+                    started ||
+                    claimed
                   }
                   onClick={async () => {
                     try {
@@ -563,6 +576,25 @@ export default function Page({ params }: { params: { slug: string } }) {
                         href: `https://sepolia.arbiscan.io/tx/${tx}`,
                         username: tx,
                       });
+                      let claimed = JSON.parse(
+                        localStorage.getItem("claimed") || "{}"
+                      );
+                      if (
+                        claimed != null &&
+                        claimed != undefined &&
+                        address != undefined
+                      ) {
+                        if (
+                          claimed[params.slug] == null ||
+                          claimed[params.slug] == undefined
+                        )
+                          claimed[params.slug] = {};
+                        claimed[params.slug][address] = true;
+                        localStorage.setItem(
+                          "claimed",
+                          JSON.stringify(claimed)
+                        );
+                      }
                     } catch (e) {
                       console.log(e);
                     }
@@ -573,6 +605,12 @@ export default function Page({ params }: { params: { slug: string } }) {
                 {started && (
                   <p className="font-normal text-center text-neutral-500 italic text-xs py-1 w-[200px] mx-auto">
                     Proof generation started. Check logs below for status
+                  </p>
+                )}
+                {claimed && (
+                  <p className="font-normal text-center text-neutral-500 italic text-xs py-1 w-[200px] mx-auto">
+                    You already claimed your points. Check Leaderboard for your
+                    ranking.
                   </p>
                 )}
               </div>

@@ -101,8 +101,9 @@ function Page() {
             Overall Leaderboard
           </p>
           <p className="mb-6 text-sm text-neutral-600  mx-auto">
-            Note: If you don't see your profile or games played here, make sure
-            you claimed the points for your predictions in the fixtures page.
+            Note: If you don&apos;t see your profile or games played here, make
+            sure you claimed the points for your predictions in the fixtures
+            page.
           </p>
           <OverallLeaderboard users={users} />
         </div>

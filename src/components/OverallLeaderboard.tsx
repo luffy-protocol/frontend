@@ -1,11 +1,7 @@
 "use client";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import request, { gql } from "graphql-request";
 import { Pixelify_Sans } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { helix } from "ldrs";
-
-const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 interface UserData {
   id: string;
@@ -19,8 +15,9 @@ interface UserData {
 interface Props {
   users: UserData[];
 }
+const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
-const OverallLeaderboard: React.FC<Props> = ({ users }) => {
+export default function OverallLeaderboard({ users }: Props) {
   useEffect(() => {
     if (typeof window !== undefined) {
       helix.register();
@@ -118,6 +115,4 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
       </div>
     </div>
   );
-};
-
-export default OverallLeaderboard;
+}

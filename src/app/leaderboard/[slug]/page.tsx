@@ -94,7 +94,7 @@ function Page() {
   return isAuthenticated ? (
     <div>
       <div className="bg-white  px-48 py-6 sm:pt-32 lg:px-48 text-black h-screen">
-        <MatchLeaderboard users={users} />
+        {/* <MatchLeaderboard users={users} /> */}
       </div>
     </div>
   ) : (

@@ -1,8 +1,8 @@
 "use client";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import request, { gql } from "graphql-request";
 import { Pixelify_Sans } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { helix } from "ldrs";
+
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 interface UserData {
@@ -18,12 +18,20 @@ interface Props {
   users: UserData[];
 }
 
-const MatchLeaderboard: React.FC<Props> = ({ users }) => {
+const MatchLeaderboard = ({ users }: Props) => {
   useEffect(() => {
-    console.log("Inside Leaderboard");
-    console.log(users);
+    if (typeof window !== undefined) {
+      helix.register();
+      console.log("Inside Leaderboard");
+      console.log(users);
+    }
   }, [users]);
-  return (
+
+  return users.length == 0 ? (
+    <div className="flex items-center justify-center h-full w-full">
+      <l-helix size="45" speed="2.5" color="black"></l-helix>
+    </div>
+  ) : (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
       <div className="mt-8 flow-root">
@@ -53,7 +61,7 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                     className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
                   >
                     <a href="#" className="group inline-flex">
-                      Games Played
+                      Matches
                     </a>
                   </th>
                   <th
@@ -89,8 +97,15 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       {user.totalPointsWon}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {user.address}
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                      <a
+                        href={
+                          `https://sepolia.arbiscan.io/address/` + user.address
+                        }
+                        target="_blank"
+                      >
+                        {user.address}
+                      </a>
                     </td>
                   </tr>
                 ))}

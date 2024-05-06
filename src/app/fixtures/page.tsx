@@ -39,7 +39,10 @@ function Page() {
   const [upcomingMatches, setUpcomingMatches] = useState<
     { id: number; team1: string; team2: string; title: string }[]
   >([]);
-  const [ongoingMatches, setOngoingMatches] = useState<
+  const [claimmableOngoingMatches, setClaimmableOngoingMatches] = useState<
+    { id: number; team1: string; team2: string; title: string }[]
+  >([]);
+  const [unclaimmableOngoingMatches, setUnclaimmableOngoingMatches] = useState<
     { id: number; team1: string; team2: string; title: string }[]
   >([]);
   const [completedMatches, setCompletedMatches] = useState<
@@ -57,6 +60,7 @@ function Page() {
             query MyQuery {
               games {
                 id
+                resultsPublishedTime
                 predictions(
                   where: {
                     user_: {
@@ -82,39 +86,56 @@ function Page() {
           console.log(data);
           const games = (data as any).games;
           console.log(games);
-          const gameIdsWithPredictionsAndNullClaims = games
-            .filter(
-              (game: any) =>
-                game.predictions.length > 0 &&
-                game.predictions.some(
-                  (prediction: any) => prediction.claim === null
-                )
-            )
+          const gameIdsWithPredictionsAndNullClaims = games.filter(
+            (game: any) =>
+              game.predictions.length > 0 &&
+              game.predictions.some(
+                (prediction: any) => prediction.claim === null
+              )
+          );
+
+          const gameIdsThatCanBeClaimed = gameIdsWithPredictionsAndNullClaims
+            .filter((game: any) => game.resultsPublishedTime != null)
             .map((game: any) => parseInt(game.id, 16));
-
+          const gameIdsThatCannotBeClaimed = gameIdsWithPredictionsAndNullClaims
+            .filter((game: any) => game.resultsPublishedTime == null)
+            .map((game: any) => parseInt(game.id, 16));
           console.log(
-            "Game IDs with predictions and null claims:",
-            gameIdsWithPredictionsAndNullClaims
+            "Game IDs with predictions and null claims that can be claimed:",
+            gameIdsThatCanBeClaimed
+          );
+          console.log(
+            "Game IDs with predictions and null claims that cannot be claimed:",
+            gameIdsThatCannotBeClaimed
           );
 
-          const ongoingMatchesData = response.filter((match: any) =>
-            gameIdsWithPredictionsAndNullClaims.includes(match.matchId)
+          const ongoingMatchesThatCanBeClaimed = response.filter((match: any) =>
+            gameIdsThatCanBeClaimed.includes(match.matchId)
           );
-          console.log(ongoingMatchesData);
-          const formattedOngoingMatches = ongoingMatchesData.map(
-            (match: any) => ({
+          const ongoingMatchesThatCannotBeClaimed = response.filter(
+            (match: any) => gameIdsThatCannotBeClaimed.includes(match.matchId)
+          );
+          const formattedClaimmableOngoingMatches =
+            ongoingMatchesThatCanBeClaimed.map((match: any) => ({
               id: match.matchId,
-
               team1: match.team1,
               team2: match.team2,
               title: "Indian Premiere League",
-            })
-          );
+            }));
+          const formattedUnclaimmableOngoingMatches =
+            ongoingMatchesThatCannotBeClaimed.map((match: any) => ({
+              id: match.matchId,
+              team1: match.team1,
+              team2: match.team2,
+              title: "Indian Premiere League",
+            }));
 
-          setOngoingMatches(formattedOngoingMatches);
+          setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
+          setUnclaimmableOngoingMatches(formattedUnclaimmableOngoingMatches);
           setLoadingOngoing(false);
           console.log("Ongoing Matches Data");
-          console.log(formattedOngoingMatches);
+          console.log(formattedClaimmableOngoingMatches);
+          console.log(formattedUnclaimmableOngoingMatches);
 
           const gameIdsWithPredictionsAndClaims = games
             .filter(
@@ -160,9 +181,8 @@ function Page() {
           //Now if the match isnt completed and not in ongoing status then , we need to fetch the match id and check for the startdate of the matchId in response .if the startDate is greater than current date then it is an upcoming match else mark it as complted
           const remaining = games.filter(
             (match: any) =>
-              !gameIdsWithPredictionsAndNullClaims.includes(
-                parseInt(match.id, 16)
-              ) &&
+              !gameIdsThatCanBeClaimed.includes(parseInt(match.id, 16)) &&
+              !gameIdsThatCannotBeClaimed.includes(parseInt(match.id, 16)) &&
               !gameIdsWithPredictionsAndClaims.includes(parseInt(match.id, 16))
           );
 
@@ -252,13 +272,35 @@ function Page() {
             Ongoing Fixtures
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Claim your points in the Ongoing Fixtures
+            These games are yet to be played or being played. Wait for the results after the
+            match.
           </p>
         </div>
       </div>
       <div className="px-24 bg-white pb-2">
         {!loadingOngoing ? (
-          <FixtureCard fixtures={ongoingMatches} state={1} />
+          <FixtureCard fixtures={unclaimmableOngoingMatches} state={1} />
+        ) : (
+          <div className="flex items-center justify-center p-12">
+            <l-helix size="45" speed="2.5" color="black"></l-helix>
+          </div>
+        )}
+      </div>
+      <div className="bg-white px-16 py-6 sm:pt-32 lg:px-16">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2
+            className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl ${pxsans.className}`}
+          >
+            Claimmable Fixtures
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Results are published on-chain. Claim your points in these fixtures.
+          </p>
+        </div>
+      </div>
+      <div className="px-24 bg-white pb-2">
+        {!loadingOngoing ? (
+          <FixtureCard fixtures={claimmableOngoingMatches} state={2} />
         ) : (
           <div className="flex items-center justify-center p-12">
             <l-helix size="45" speed="2.5" color="black"></l-helix>
@@ -279,7 +321,7 @@ function Page() {
       </div>
       <div className="px-24 bg-white pb-2">
         {!loadingCompleted ? (
-          <FixtureCard fixtures={completedMatches} state={2} />
+          <FixtureCard fixtures={completedMatches} state={3} />
         ) : (
           <div className="flex items-center justify-center p-12">
             <l-helix size="45" speed="2.5" color="black"></l-helix>

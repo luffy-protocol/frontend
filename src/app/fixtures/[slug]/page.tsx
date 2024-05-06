@@ -31,7 +31,6 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [teams, setteams] = useState<string[]>([]);
   const [logs, setLogs] = useState<any[]>([]);
   const [open, setOpen] = useState(false);
-  const [points, setPoints] = useState([]);
   const [squadUpdated, setSquadUpdated] = useState(false);
   const { primaryWallet } = useDynamicContext();
   const teamShortForms: { [key: string]: string } = {
@@ -233,14 +232,6 @@ export default function Page({ params }: { params: { slug: string } }) {
               alt="team2"
             />
           </div>
-          {/* <div className="text-neutral-500 px-2 text-sm font-semibold text-center">
-            Fixture: {params.slug}
-          </div> */}
-          {/* <div className=" px-16 py-6 sm:pt-32 lg:pr-16 text-black text-6xl font-bold ">
-            {teams[0]} VS {teams[1]}
-            
-          </div> */}
-          {/* </div> */}
         </div>
 
         <div className="pt-12 ">

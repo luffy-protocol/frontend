@@ -33,21 +33,26 @@ export default function FixtureCard(props: {
                 <div className="flex-1 truncate">
                   <div className="flex items-center space-x-3">
                     <h3 className="truncate text-sm font-medium text-gray-900">
-                      {person.team1} vs {person.team2}
+                      {person.team1.split(" ")[0]} vs{" "}
+                      {person.team2.split(" ")[0]}
                     </h3>
                     <span
                       className={`inline-flex flex-shrink-0 items-center rounded-full  px-1.5 py-0.5 text-xs font-medium ${
-                        state == 2
+                        state == 3
                           ? "bg-red-50 text-red-700 ring-1 ring-inset ring-red-600/20"
-                          : state == 1
+                          : state == 2
                           ? "bg-yellow-50 text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
+                          : state == 1
+                          ? "bg-neutral-50 text-neutral-700 ring-1 ring-inset ring-neutral-600/20"
                           : "bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20"
                       }`}
                     >
-                      {state == 2
+                      {state == 3
                         ? "Entries Closed"
-                        : state == 1
+                        : state == 2
                         ? "Claim Points Now"
+                        : state == 1
+                        ? "Waiting For Results"
                         : "Entries Open"}
                     </span>
                   </div>
@@ -68,7 +73,7 @@ export default function FixtureCard(props: {
               </div>
               <div>
                 <div className="-mt-px flex divide-x divide-gray-200">
-                  {state != 0 && (
+                  {state > 1 && (
                     <div className="flex w-0 flex-1">
                       <Link
                         href={`/leaderboard/${person.id}`}
@@ -84,11 +89,11 @@ export default function FixtureCard(props: {
                     </div>
                   )}
 
-                  {state != 2 && (
+                  {state != 3 && (
                     <div className="-ml-px flex w-0 flex-1">
                       <Link
                         href={
-                          state == 1
+                          state == 2
                             ? `/results/${person.id}`
                             : `/fixtures/${person.id}`
                         }
@@ -105,7 +110,11 @@ export default function FixtureCard(props: {
                             aria-hidden="true"
                           />
                         )}
-                        {state == 0 ? "Make Squad" : "View Squad"}
+                        {state == 0
+                          ? "Make Squad"
+                          : state == 2
+                          ? "View Squad"
+                          : "Update Squad"}
                       </Link>
                     </div>
                   )}

@@ -441,7 +441,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
                 <div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md md:px-6 md:mx-6">
                   <div className="">
-                    <div className="inline-block min-w-full py-2 align-middle">
+                    <div className="inline-block min-w-full py-2 align-middle overflow-y-auto max-h-96">
                       <table className="min-w-full divide-y divide-gray-300 ">
                         <thead>
                           <tr>
@@ -472,7 +472,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                             </th>
                           </tr>
                         </thead>
-                        <tbody className="">
+                        <tbody className=" max-h-96 overflow-y-auto">
                           {open == false ? (
                             <DummyPlayerData />
                           ) : (

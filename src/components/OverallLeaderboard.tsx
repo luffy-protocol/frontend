@@ -2,124 +2,27 @@
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import request, { gql } from "graphql-request";
 import { Pixelify_Sans } from "next/font/google";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
-const people = [
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0x83sd8f3",
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
+interface UserData {
+  id: string;
+  name: string;
+  address: string;
+  totalGamesPlayed: number;
+  totalGamesClaimed: number;
+  totalPointsWon: number;
+}
 
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
+interface Props {
+  users: UserData[];
+}
 
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-
-    commitmenthash: "afafasfasfas",
-  },
-
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-
-    commitmenthash: "afafasfasfas",
-  },
-  {
-    name: "Lindsay Walton",
-    points: "5",
-    address: "0xafasf",
-
-    commitmenthash: "afafasfasfas",
-  },
-];
-
-export default function Leaderboard() {
+const OverallLeaderboard: React.FC<Props> = ({ users }) => {
   useEffect(() => {
-    const fetchLeaderboard = async () => {
-      try {
-        const data = await request(
-          "https://api.studio.thegraph.com/query/30735/luffy/version/latest",
-          gql`
-            query MyQuery {
-              game(id: "0x1657b") {
-                claims {
-                  points
-                  transactionHash
-                  user {
-                    address
-                  }
-                }
-              }
-            }
-          `
-        );
-
-        // Extract ongoing matches from the data and set in state
-        const ongoingMatchesData = data;
-        console.log(data);
-        // setongoing(ongoingMatchesData);
-      } catch (error) {
-        console.error("Error fetching ongoing fixtures:", error);
-      }
-    };
-    fetchLeaderboard();
-  }, []);
-
+    console.log("Inside Leaderboard");
+    console.log(users);
+  }, [users]);
   return (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
@@ -191,19 +94,19 @@ export default function Leaderboard() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
-                {people.map((person, index) => (
+                {users.map((user, index) => (
                   <tr key={index}>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                       {index + 1}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <span title={person.address}>{person.name}</span>
+                      <span title={user.address}>{user.name}</span>
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {person.points}
+                      {user.totalPointsWon}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {person.commitmenthash}
+                      {user.address}
                     </td>
                   </tr>
                 ))}
@@ -214,4 +117,6 @@ export default function Leaderboard() {
       </div>
     </div>
   );
-}
+};
+
+export default OverallLeaderboard;

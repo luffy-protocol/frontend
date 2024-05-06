@@ -24,26 +24,18 @@ interface Player {
 }
 
 interface PitchProps {
-  open: boolean;
-  slug: string;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  index: number;
   setindex: React.Dispatch<React.SetStateAction<number>>;
   playerPositions: Player[];
   points: any[];
-  setPoints: (number: any) => void;
   showPoints: boolean;
 }
 
 const Pitch: React.FC<PitchProps> = ({
-  open,
-  slug,
   setOpen,
   setindex,
-  index,
   playerPositions,
   points,
-  setPoints,
   showPoints,
 }) => {
   const { address } = useAccount();

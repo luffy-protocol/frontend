@@ -336,16 +336,10 @@ export default function Page({ params }: { params: { slug: string } }) {
               </div>
               {/* <div className="sm:w-[55%]"> */}
               <Pitch
-                index={index}
                 setindex={setindex}
-                slug={params.slug}
-                open={open}
                 setOpen={setOpen}
                 playerPositions={playerPositions}
                 points={gameResults[params.slug]}
-                setPoints={(_points: any) => {
-                  setPoints(_points);
-                }}
                 showPoints={false}
               />
               {/* </div> */}

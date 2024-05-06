@@ -52,6 +52,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [topScorerIndex, setTopScorerIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const [claimed, setClaimed] = useState(false);
+  const [yourPoints, setYourPoints] = useState<number[]>([]);
   const { primaryWallet } = useDynamicContext();
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
@@ -65,6 +66,8 @@ export default function Page({ params }: { params: { slug: string } }) {
     "Gujarat Titans": "GT",
     "Lucknow Super Giants": "LSG",
   };
+
+  const positioning = {};
   interface Player {
     name: string;
     id: string;
@@ -179,6 +182,9 @@ export default function Page({ params }: { params: { slug: string } }) {
           const remappedIds = _squad.playerIds.map(
             (id: any) =>
               playerIdRemappings[params.slug as string][id.toString()]
+          );
+          setYourPoints(
+            remappedIds.map((id: any) => gameResults[params.slug][id])
           );
           console.log(remappedIds);
           const tpoints = remappedIds.map(
@@ -608,16 +614,10 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
             <div className="w-[90%] mx-auto flex justify-center pt-6">
               <Pitch
-                index={index}
                 setindex={setindex}
-                slug={params.slug}
-                open={open}
                 setOpen={setOpen}
                 playerPositions={playerPositions}
-                points={gameResults[params.slug]}
-                setPoints={(_points: any) => {
-                  setPoints(_points);
-                }}
+                points={yourPoints}
                 showPoints={true}
               />
             </div>

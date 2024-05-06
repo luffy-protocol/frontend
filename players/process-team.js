@@ -29,7 +29,7 @@ function processDataAndWriteToFile(input1, input2, outputFilePath) {
     console.error("Error processing data:", error);
   }
 }
-const team1 = "kkr";
+const team1 = "srh";
 const team2 = "lsg";
 
 // Example usage:

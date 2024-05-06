@@ -470,7 +470,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         hash: "Generating zero knowledge proof...",
                         href: "",
                         username:
-                          "Please wait. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
+                          "Please wait. DO NOT close this window. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
                       });
                       setLogs(_logs);
 
@@ -520,7 +520,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         hash: "Verifying zero knowledge proof...",
                         href: "",
                         username:
-                          "The proof needs to be verified initially to be passed on chain",
+                          "The proof needs to be verified initially before passing it on chain",
                       });
                       setLogs(_logs);
                       const verified = await noir.verifyFinalProof(proof);
@@ -573,6 +573,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         href: `https://sepolia.arbiscan.io/tx/${tx}`,
                         username: tx,
                       });
+                      setLogs(_logs);
                       let claimed = JSON.parse(
                         localStorage.getItem("claimed") || "{}"
                       );

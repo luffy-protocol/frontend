@@ -22,9 +22,11 @@ interface Props {
 
 const OverallLeaderboard: React.FC<Props> = ({ users }) => {
   useEffect(() => {
-    helix.register();
-    console.log("Inside Leaderboard");
-    console.log(users);
+    if (typeof window !== undefined) {
+      helix.register();
+      console.log("Inside Leaderboard");
+      console.log(users);
+    }
   }, [users]);
 
   return users.length == 0 ? (

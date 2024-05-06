@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function FixtureCard(props: {
   fixtures: {
@@ -17,6 +18,12 @@ export default function FixtureCard(props: {
 }) {
   const fixtures = props.fixtures;
   const state = props.state;
+
+  useEffect(() => {
+    // get start time of a match from supabase
+    // check if the current time is over start time
+    // then remove the option of Update squad in the Ongoing Fixtures tab
+  }, []);
   return (
     <>
       <div className="hidden md:block relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 p-14 ">
@@ -149,17 +156,21 @@ export default function FixtureCard(props: {
                 <div className="flex justify-center">
                   <p
                     className={`rounded-full mb-1  px-1.5 py-0.5 text-xs font-medium ${
-                      state == 2
+                      state == 3
                         ? "bg-red-50 text-red-700 ring-1 ring-inset ring-red-600/20"
-                        : state == 1
+                        : state == 2
                         ? "bg-yellow-50 text-yellow-700 ring-1 ring-inset ring-yellow-600/20"
+                        : state == 1
+                        ? "bg-neutral-50 text-neutral-700 ring-1 ring-inset ring-neutral-600/20"
                         : "bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20"
                     }`}
                   >
-                    {state == 2
+                    {state == 3
                       ? "Entries Closed"
-                      : state == 1
+                      : state == 2
                       ? "Claim Points Now"
+                      : state == 1
+                      ? "Waiting For Results"
                       : "Entries Open"}
                   </p>
                 </div>
@@ -172,7 +183,7 @@ export default function FixtureCard(props: {
                 </p>
                 <div></div>
               </div>
-              {state != 0 && (
+              {state > 1 && (
                 <Link
                   href={`/leaderboard/${person.id}`}
                   className="flex justify-center mt-2 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
@@ -184,10 +195,10 @@ export default function FixtureCard(props: {
                   <p> View Leaderboard</p>
                 </Link>
               )}
-              {state != 2 && (
+              {state != 3 && (
                 <Link
                   href={
-                    state == 1
+                    state == 2
                       ? `/results/${person.id}`
                       : `/fixtures/${person.id}`
                   }
@@ -204,7 +215,11 @@ export default function FixtureCard(props: {
                       aria-hidden="true"
                     />
                   )}
-                  {state == 0 ? "Make Squad" : "View Squad"}
+                  {state == 0
+                    ? "Make Squad"
+                    : state == 2
+                    ? "View Squad"
+                    : "Update Squad"}
                 </Link>
               )}
             </div>

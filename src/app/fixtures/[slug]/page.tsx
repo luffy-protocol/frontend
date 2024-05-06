@@ -322,7 +322,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 >
                   <p>Submit Squad</p>
                 </button>
-                <p className="font-normal text-neutral-500 italic text-xs py-1">
+                <p className="font-normal text-neutral-500 italic text-xs py-1 text-center">
                   {squadUpdated
                     ? "Click on players to update your squad"
                     : `${
@@ -346,7 +346,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               <div className="sm:w-[45%] flex flex-col items-center mt-6 sm:mt-0">
                 <div className="hidden md:block">
                   <button
-                    className="mt-10 flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                    className="mt-10 flex mx-auto items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                     disabled={
                       playerPositions.filter((player) => player.id != "")
                         .length != 11

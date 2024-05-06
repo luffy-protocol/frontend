@@ -156,12 +156,12 @@ export default function Page({ params }: { params: { slug: string } }) {
     },
   ]);
   useEffect(() => {
-    let claimed = JSON.parse(localStorage.getItem("claimed") || "{}");
-    if (claimed != null && claimed != undefined && address != undefined) {
-      if (claimed[params.slug] == null || claimed[params.slug] == undefined)
-        claimed[params.slug] = {};
+    let _claimed = JSON.parse(localStorage.getItem("claimed") || "{}");
+    if (_claimed != null && _claimed != undefined && address != undefined) {
+      if (_claimed[params.slug] == null || _claimed[params.slug] == undefined)
+        _claimed[params.slug] = {};
       else {
-        if (claimed[params.slug][address] == true) setClaimed(true);
+        if (_claimed[params.slug][address] == true) setClaimed(true);
       }
     }
   }, []);

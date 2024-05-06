@@ -70,7 +70,6 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
     teamShortForms[fixtureDetails[slug].team2].toLowerCase(),
   ]);
 
-  const searchParams = useSearchParams();
   useEffect(() => {
     const fetchTeams = async () => {
       const { message, response } = await fetchMatchDetail(slug);
@@ -80,55 +79,11 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
           teamShortForms[response[0].team1].toLowerCase(),
           teamShortForms[response[0].team2].toLowerCase(),
         ]);
-
-        searchParams.get("claim") == "true"
-          ? fetchPlayers([
-              teamShortForms[response[0].team1].toLowerCase(),
-              teamShortForms[response[0].team2].toLowerCase(),
-            ])
-          : console.log("Not Claiming");
       }
     };
     fetchTeams();
   }, []);
 
-  const fetchPlayers = async (team: any) => {
-    if (team[0] != "") {
-      const team1 = allTeams[team[0] as keyof typeof allTeams] as any;
-      const team2 = allTeams[team[1] as keyof typeof allTeams] as any;
-
-      let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
-      let playerIds = gameData[slug];
-      if (playerIds != undefined) {
-        const matchedPlayers = playerIds.map((id: any) => {
-          const team1Player = team1.player.find(
-            (p: any) => parseInt(p.id) === id
-          );
-          console.log(team1Player);
-          const team2Player = team2.player.find(
-            (p: any) => parseInt(p.id) === id
-          );
-          console.log(team2Player);
-          return team1Player
-            ? {
-                name: team1Player.name,
-                id: team1Player.id,
-                type: team1Player.role,
-                team: teamShortForms[team1.name].toLowerCase(),
-              }
-            : team2Player
-            ? {
-                name: team2Player.name,
-                id: team2Player.id,
-                type: team2Player.role,
-                team: teamShortForms[team2.name].toLowerCase(),
-              }
-            : { name: "Choose Player", id: "", type: "wk", team: "plain" }; // If player not found, return null
-        });
-        setPlayerPositions(matchedPlayers);
-      }
-    }
-  };
   // const team = ["mi", "csk"];
   interface Player {
     id?: string;
@@ -166,12 +121,12 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
       const team2 = allTeams[team[1] as keyof typeof allTeams];
       setPlayer([
         ...team1.player
-          .filter((player) => player.role === "Batting Allrounder")
+          .filter((player) => player.role?.includes("Allrounder"))
           .map(
             (player) => ({ ...player, team: team[0] }) // Set team for players from team1
           ),
         ...team2.player
-          .filter((player) => player.role === "Batting Allrounder")
+          .filter((player) => player.role?.includes("Allrounder"))
           .map(
             (player) => ({ ...player, team: team[1] }) // Set team for players from team2
           ),

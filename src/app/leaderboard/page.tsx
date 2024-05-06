@@ -78,6 +78,8 @@ function Page() {
           },
         });
         const data = response.data;
+        console.log("DYNAMIC DATA");
+        console.log(data);
         if (data.success) {
           const _mappedUsers: MappedUsers = {};
           data.data.users.forEach((user: any) => {

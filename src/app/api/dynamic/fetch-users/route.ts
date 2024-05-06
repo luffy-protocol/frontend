@@ -16,7 +16,7 @@ export async function GET(req: Request, res: Response) {
     }
 
     const response = await axios.get(
-      `https://app.dynamicauth.com/api/v0/environments/${DYNAMIC_ENV_ID}/users`,
+      `https://app.dynamicauth.com/api/v0/environments/${DYNAMIC_ENV_ID}/users?limit=100`,
       {
         headers: {
           Authorization: `Bearer ${DYNAMIC_API_KEY}`,

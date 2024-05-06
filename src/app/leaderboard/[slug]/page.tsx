@@ -7,115 +7,14 @@ import request, { gql } from "graphql-request";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-interface User {
-  id: string;
-  name: string;
-  address: string;
-}
-interface MappedUsers {
-  [address: string]: User;
-}
-interface FetchInput {
-  mappedUsers: MappedUsers;
-  gameId: string;
-}
-interface UserData {
-  id: string;
-  name: string;
-  address: string;
-  commitment: string;
-  commitTx: string;
-  points: number;
-}
-
-const fetchAllUsers = async ({
-  gameId,
-  mappedUsers,
-}: FetchInput): Promise<UserData[]> => {
-  try {
-    const data = await request(
-      "https://api.studio.thegraph.com/query/30735/luffy/version/latest",
-      gql`
-        query MyQuery($id: String) {
-          predictions(where: { game: $id }) {
-            id
-            squadHash
-            transactionHash
-            claim {
-              points
-            }
-            user {
-              address
-            }
-          }
-        }
-      `,
-      {
-        id: gameId,
-      }
-    );
-
-    // Extract ongoing matches from the data and set in state
-    console.log(data);
-    return (data as any).predictions
-      .map((pred: any) => {
-        if (mappedUsers[pred.user.address.toLowerCase()] === undefined) {
-          return null;
-        } else
-          return {
-            name: mappedUsers[pred.user.address.toLowerCase()].name,
-            address: pred.user.address.toLowerCase(),
-            commitment: pred.squadHash,
-            commitTx: pred.transactionHash,
-            points: pred.claim == null ? 0 : pred.claim,
-          };
-      })
-      .filter((pred: any) => pred !== null);
-  } catch (error) {
-    console.error("Error fetching ongoing fixtures:", error);
-    return [];
-  }
-};
 function Page({ params }: { params: { slug: string } }) {
   const { isAuthenticated } = useDynamicContext();
-  const [users, setUsers] = useState<UserData[]>([]);
-
-  useEffect(() => {
-    (async function () {
-      const response = await axios.get(`/api/dynamic/fetch-users`, {
-        headers: {
-          Authorization: `Bearer ${
-            process.env.NEXT_PUBLIC_DYNAMIC_API_KEY || ""
-          }`,
-        },
-      });
-      const data = response.data;
-      if (data.success) {
-        const _mappedUsers: MappedUsers = {};
-        data.data.users.forEach((user: any) => {
-          _mappedUsers[user.walletPublicKey.toLowerCase()] = {
-            id: user.id,
-            name: `${user.firstName} ${user.lastName}`,
-            address: user.walletPublicKey.toLowerCase() || "0x",
-          };
-        });
-        const _userData = await fetchAllUsers({
-          mappedUsers: _mappedUsers,
-          gameId: "0x" + parseInt(params.slug).toString(16),
-        });
-        console.log("USER DATA BEFORE SETTING");
-        console.log(_userData);
-        setUsers(_userData);
-        console.log("USER DATA AFTER SETTING");
-        console.log(_userData);
-      }
-    })();
-  }, []);
+  const [fetched, setFetched] = useState(false);
 
   return isAuthenticated ? (
     <div>
-      <div className="bg-white  px-48 py-6 sm:pt-32 lg:px-48 text-black h-full">
-        <div className={`w-full  ${users.length == 0 && "h-screen"}`}>
+      <div className="bg-white  px-40 py-6 sm:pt-32 lg:px-48 text-black h-full">
+        <div className={`w-full ${!fetched && "h-screen"} `}>
           <div className="hidden md:flex justify-center space-x-4 w-full">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
@@ -135,13 +34,18 @@ function Page({ params }: { params: { slug: string } }) {
             Note: If you don&apos;t see your profile or games played here, make
             sure you claimed the points for your squads in the fixtures page.
           </p>
-          {users.length == 0 && (
+          {!fetched && (
             <div className="flex flex-col items-center justify-start h-full w-full mt-24">
               <l-helix size="45" speed="2.5" color="black"></l-helix>
             </div>
           )}
         </div>
-        <MatchLeaderboard users={users} />
+        <MatchLeaderboard
+          setFetched={() => {
+            setFetched(true);
+          }}
+          slug={params.slug}
+        />
       </div>
     </div>
   ) : (

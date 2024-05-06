@@ -530,7 +530,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           hash: "Proof verified successfully",
                           href: "",
                           username:
-                            "Woohoo. You are all set. Triggering transaction to send the proof on chain",
+                            "Woohoo. There is one more final step. Please approve the transaction to send this proof on the blockchain",
                         });
                       else
                         _logs.push({

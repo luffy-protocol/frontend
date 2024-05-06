@@ -4,6 +4,9 @@ import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import axios from "axios";
 import request, { gql } from "graphql-request";
 import { useEffect, useState } from "react";
+import { Pixelify_Sans } from "next/font/google";
+
+const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 interface User {
   id: string;
   name: string;
@@ -92,8 +95,15 @@ function Page() {
 
   return isAuthenticated ? (
     <div>
-      <div className="bg-white  px-48 py-6 sm:pt-32 lg:px-48 text-black h-screen">
-        <OverallLeaderboard users={users} />
+      <div className="bg-white  px-48 py-6 sm:pt-32 lg:px-48 text-black h-full">
+        <div className={`w-full  ${users.length == 0 && "h-screen"}`}>
+          <p
+            className={`${pxsans.className} text-3xl font-bold text-black text-center my-6`}
+          >
+            Overall Leaderboard
+          </p>
+          <OverallLeaderboard users={users} />
+        </div>
       </div>
     </div>
   ) : (

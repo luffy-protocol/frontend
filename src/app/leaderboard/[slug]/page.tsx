@@ -4,6 +4,7 @@ import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import axios from "axios";
 import request, { gql } from "graphql-request";
 import { useEffect, useState } from "react";
+
 interface User {
   id: string;
   name: string;

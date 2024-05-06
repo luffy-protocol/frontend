@@ -3,6 +3,8 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import request, { gql } from "graphql-request";
 import { Pixelify_Sans } from "next/font/google";
 import { useEffect, useState } from "react";
+import { helix } from "ldrs";
+
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 interface UserData {
@@ -20,10 +22,16 @@ interface Props {
 
 const OverallLeaderboard: React.FC<Props> = ({ users }) => {
   useEffect(() => {
+    helix.register();
+
     console.log("Inside Leaderboard");
     console.log(users);
   }, [users]);
-  return (
+  return users.length == 0 ? (
+    <div className="flex flex-col h-full w-full items-center justify-center">
+      <l-helix size="45" speed="2.5" color="black"></l-helix>
+    </div>
+  ) : (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
       <div className="mt-8 flow-root">
@@ -93,6 +101,7 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
                   </th>
                 </tr>
               </thead>
+
               <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
                 {users.map((user, index) => (
                   <tr key={index}>

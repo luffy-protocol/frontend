@@ -27,11 +27,7 @@ const MatchLeaderboard = ({ users }: Props) => {
     }
   }, [users]);
 
-  return users.length == 0 ? (
-    <div className="flex items-center justify-center h-full w-full">
-      <l-helix size="45" speed="2.5" color="black"></l-helix>
-    </div>
-  ) : (
+  return (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
       <div className="mt-8 flow-root">

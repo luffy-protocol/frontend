@@ -106,6 +106,11 @@ function Page() {
             sure you claimed the points for your predictions in the fixtures
             page.
           </p>
+          {users.length == 0 && (
+            <div className="flex flex-col items-center justify-start h-full w-full mt-24">
+              <l-helix size="45" speed="2.5" color="black"></l-helix>
+            </div>
+          )}
           <OverallLeaderboard users={users} />
         </div>
       </div>

@@ -17,48 +17,60 @@ interface MappedUsers {
 }
 interface FetchInput {
   mappedUsers: MappedUsers;
+  gameId: string;
 }
 interface UserData {
   id: string;
   name: string;
   address: string;
-  totalGamesPlayed: number;
-  totalGamesClaimed: number;
-  totalPointsWon: number;
+  commitment: string;
+  commitTx: string;
+  points: number;
 }
 
 const fetchAllUsers = async ({
+  gameId,
   mappedUsers,
 }: FetchInput): Promise<UserData[]> => {
   try {
     const data = await request(
       "https://api.studio.thegraph.com/query/30735/luffy/version/latest",
       gql`
-        query MyQuery {
-          users(orderBy: totalPointsWon, orderDirection: desc) {
-            address
-            totalGamesPlayed
-            totalGamesClaimed
-            totalPointsWon
+        query MyQuery($id: String) {
+          predictions(where: { game: $id }) {
+            id
+            squadHash
+            transactionHash
+            claim {
+              points
+            }
+            user {
+              address
+            }
           }
         }
-      `
+      `,
+      {
+        id: gameId,
+      }
     );
 
     // Extract ongoing matches from the data and set in state
     console.log(data);
-    console.log("Mapped Users");
-    console.log(mappedUsers);
-    return (data as any).users
-      .map((user: any) => {
-        console.log("Mapped User");
-        console.log(mappedUsers[user.address]);
-        if (mappedUsers[user.address.toLowerCase()] === undefined) {
+    return (data as any).predictions
+      .map((pred: any) => {
+        if (mappedUsers[pred.user.address.toLowerCase()] === undefined) {
           return null;
-        } else return { ...user, name: mappedUsers[user.address].name };
+        } else
+          return {
+            name: mappedUsers[pred.user.address.toLowerCase()].name,
+            address: pred.user.address.toLowerCase(),
+            commitment: pred.squadHash,
+            commitTx: pred.transactionHash,
+            points: pred.claim == null ? 0 : pred.claim,
+          };
       })
-      .filter((user: any) => user !== null);
-    // setongoing(ongoingMatchesData);
+      .filter((pred: any) => pred !== null);
   } catch (error) {
     console.error("Error fetching ongoing fixtures:", error);
     return [];
@@ -67,8 +79,8 @@ const fetchAllUsers = async ({
 function Page({ params }: { params: { slug: string } }) {
   const { isAuthenticated } = useDynamicContext();
   const [users, setUsers] = useState<UserData[]>([]);
+
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_DYNAMIC_API_KEY);
     (async function () {
       const response = await axios.get(`/api/dynamic/fetch-users`, {
         headers: {
@@ -87,8 +99,15 @@ function Page({ params }: { params: { slug: string } }) {
             address: user.walletPublicKey.toLowerCase() || "0x",
           };
         });
-        const _userData = await fetchAllUsers({ mappedUsers: _mappedUsers });
+        const _userData = await fetchAllUsers({
+          mappedUsers: _mappedUsers,
+          gameId: "0x" + parseInt(params.slug).toString(16),
+        });
+        console.log("USER DATA BEFORE SETTING");
+        console.log(_userData);
         setUsers(_userData);
+        console.log("USER DATA AFTER SETTING");
+        console.log(_userData);
       }
     })();
   }, []);
@@ -114,8 +133,7 @@ function Page({ params }: { params: { slug: string } }) {
           </div>
           <p className="mb-6 text-sm text-neutral-600 mx-auto text-center">
             Note: If you don&apos;t see your profile or games played here, make
-            sure you claimed the points for your predictions in the fixtures
-            page.
+            sure you claimed the points for your squads in the fixtures page.
           </p>
           {users.length == 0 && (
             <div className="flex flex-col items-center justify-start h-full w-full mt-24">

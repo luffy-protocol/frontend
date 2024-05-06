@@ -9,22 +9,22 @@ interface UserData {
   id: string;
   name: string;
   address: string;
-  totalGamesPlayed: number;
-  totalGamesClaimed: number;
-  totalPointsWon: number;
+  commitment: string;
+  commitTx: string;
+  points: number;
 }
 
 interface Props {
   users: UserData[];
 }
 
-const MatchLeaderboard = ({ users }: Props) => {
+export default function MatchLeaderboard({ users }: Props) {
   useEffect(() => {
-    if (typeof window !== undefined) {
-      helix.register();
-      console.log("Inside Leaderboard");
-      console.log(users);
-    }
+    helix.register();
+  }, []);
+  useEffect(() => {
+    console.log("Inside Leaderboard");
+    console.log(users);
   }, [users]);
 
   return (
@@ -57,7 +57,15 @@ const MatchLeaderboard = ({ users }: Props) => {
                     className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
                   >
                     <a href="#" className="group inline-flex">
-                      Matches
+                      Wallet Address
+                    </a>
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
+                  >
+                    <a href="#" className="group inline-flex">
+                      Commitment Hash
                     </a>
                   </th>
                   <th
@@ -68,50 +76,50 @@ const MatchLeaderboard = ({ users }: Props) => {
                       Points
                     </a>
                   </th>
-                  <th
-                    scope="col"
-                    className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
-                  >
-                    <a href="#" className="group inline-flex">
-                      Wallet Address
-                    </a>
-                  </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
-                {users.map((user, index) => (
-                  <tr key={index}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                      {index + 1}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <span title={user.address}>{user.name}</span>
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {user.totalGamesClaimed}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {user.totalPointsWon}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
-                      <a
-                        href={
-                          `https://sepolia.arbiscan.io/address/` + user.address
-                        }
-                        target="_blank"
-                      >
-                        {user.address}
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+              {users != null && users != undefined && users.length != 0 && (
+                <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
+                  {users.map((user, index) => (
+                    <tr key={index}>
+                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                        {index + 1}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <span title={user.address}>{user.name}</span>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                        <a
+                          href={
+                            `https://sepolia.arbiscan.io/address/` +
+                            user.address
+                          }
+                          target="_blank"
+                        >
+                          {user.address}
+                        </a>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                        <a
+                          href={
+                            `https://sepolia.arbiscan.io/tx/` + user.commitTx
+                          }
+                          target="_blank"
+                        >
+                          {user.commitment}
+                        </a>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        {user.points}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              )}
             </table>
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default MatchLeaderboard;
+}

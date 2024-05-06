@@ -103,8 +103,7 @@ function Page() {
           </p>
           <p className="mb-6 text-sm text-neutral-600  mx-auto">
             Note: If you don&apos;t see your profile or games played here, make
-            sure you claimed the points for your predictions in the fixtures
-            page.
+            sure you claimed the points for your squads in the fixtures page.
           </p>
           {users.length == 0 && (
             <div className="flex flex-col items-center justify-start h-full w-full mt-24">

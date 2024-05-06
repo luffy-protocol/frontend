@@ -141,7 +141,7 @@ function Page() {
               // If match detail is found, extract team1 and team2
               if (matchDetail) {
                 return {
-                  id: parseInt(matchDetail.matchId, 16),
+                  id: matchDetail.matchId,
                   team1: matchDetail.team1,
                   team2: matchDetail.team2,
                   title: "Indian Premiere League",

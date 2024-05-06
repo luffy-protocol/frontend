@@ -153,12 +153,12 @@ const ChoosePlayers: React.FC<ChoosePlayerProps> = ({
       const team2 = allTeams[team[1] as keyof typeof allTeams];
       setPlayer([
         ...team1.player
-          .filter((player) => player.role === "Batter")
+          .filter((player) => player.role?.includes("Batter"))
           .map(
             (player) => ({ ...player, team: team[0] }) // Set team for players from team1
           ),
         ...team2.player
-          .filter((player) => player.role === "Batter")
+          .filter((player) => player.role?.includes("Batter"))
           .map(
             (player) => ({ ...player, team: team[1] }) // Set team for players from team2
           ),

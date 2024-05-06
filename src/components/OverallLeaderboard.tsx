@@ -4,7 +4,7 @@ import request, { gql } from "graphql-request";
 import { Pixelify_Sans } from "next/font/google";
 import { useEffect, useState } from "react";
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
-
+import { helix } from "ldrs";
 interface UserData {
   id: string;
   name: string;
@@ -20,10 +20,15 @@ interface Props {
 
 const OverallLeaderboard: React.FC<Props> = ({ users }) => {
   useEffect(() => {
+    helix.register();
     console.log("Inside Leaderboard");
     console.log(users);
   }, [users]);
-  return (
+  return users.length == 0 ? (
+    <div className="flex items-center justify-center">
+      <l-helix size="45" speed="2.5" color="black"></l-helix>
+    </div>
+  ) : (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
       <div className="mt-8 flow-root">

@@ -68,19 +68,21 @@ export default function FixtureCard(props: {
               </div>
               <div>
                 <div className="-mt-px flex divide-x divide-gray-200">
-                  <div className="flex w-0 flex-1">
-                    <Link
-                      href={`/leaderboard/${person.id}`}
-                      className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
-                    >
-                      {" "}
-                      <ChartBarIcon
-                        className="h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                      />
-                      View Leaderboard
-                    </Link>
-                  </div>
+                  {state != 0 && (
+                    <div className="flex w-0 flex-1">
+                      <Link
+                        href={`/leaderboard/${person.id}`}
+                        className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                      >
+                        {" "}
+                        <ChartBarIcon
+                          className="h-5 w-5 text-gray-400"
+                          aria-hidden="true"
+                        />
+                        View Leaderboard
+                      </Link>
+                    </div>
+                  )}
 
                   {state != 2 && (
                     <div className="-ml-px flex w-0 flex-1">
@@ -161,16 +163,18 @@ export default function FixtureCard(props: {
                 </p>
                 <div></div>
               </div>
-              <Link
-                href={`/leaderboard/${person.id}`}
-                className="flex justify-center mt-2 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
-              >
-                <ChartBarIcon
-                  className="h-5 w-5 mr-2 text-gray-400"
-                  aria-hidden="true"
-                />
-                <p> View Leaderboard</p>
-              </Link>
+              {state != 0 && (
+                <Link
+                  href={`/leaderboard/${person.id}`}
+                  className="flex justify-center mt-2 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                >
+                  <ChartBarIcon
+                    className="h-5 w-5 mr-2 text-gray-400"
+                    aria-hidden="true"
+                  />
+                  <p> View Leaderboard</p>
+                </Link>
+              )}
               {state != 2 && (
                 <Link
                   href={

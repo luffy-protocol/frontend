@@ -29,6 +29,7 @@ interface UserData {
 }
 
 interface Props {
+  fetched: boolean;
   setFetched: () => void;
   slug: string;
 }
@@ -81,7 +82,7 @@ const fetchAllUsers = async ({
   }
 };
 
-export default function MatchLeaderboard({ setFetched, slug }: Props) {
+export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
   const [users, setUsers] = useState<UserData[]>([]);
   useEffect(() => {
     helix.register();
@@ -114,9 +115,9 @@ export default function MatchLeaderboard({ setFetched, slug }: Props) {
     fetchData();
 
     return () => {};
-  }, [setFetched, slug]);
+  }, []);
 
-  return (
+  return users.length != 0 ? (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
       <div className="mt-8 flow-root">
@@ -167,50 +168,54 @@ export default function MatchLeaderboard({ setFetched, slug }: Props) {
                   </th>
                 </tr>
               </thead>
-              {users != null && users != undefined && users.length != 0 && (
-                <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
-                  {users
-                    .sort((a, b) => b.points - a.points)
-                    .map((user, index) => (
-                      <tr key={index}>
-                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                          {index + 1}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          <span title={user.address}>{user.name}</span>
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {user.points}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
-                          <a
-                            href={
-                              `https://sepolia.arbiscan.io/address/` +
-                              user.address
-                            }
-                            target="_blank"
-                          >
-                            {user.address}
-                          </a>
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
-                          <a
-                            href={
-                              `https://sepolia.arbiscan.io/tx/` + user.commitTx
-                            }
-                            target="_blank"
-                          >
-                            {user.commitment}
-                          </a>
-                        </td>
-                      </tr>
-                    ))}
-                </tbody>
-              )}
+              <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
+                {users
+                  .sort((a, b) => b.points - a.points)
+                  .map((user, index) => (
+                    <tr key={index}>
+                      <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                        {index + 1}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <span title={user.address}>{user.name}</span>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        {user.points}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                        <a
+                          href={
+                            `https://sepolia.arbiscan.io/address/` +
+                            user.address
+                          }
+                          target="_blank"
+                        >
+                          {user.address}
+                        </a>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                        <a
+                          href={
+                            `https://sepolia.arbiscan.io/tx/` + user.commitTx
+                          }
+                          target="_blank"
+                        >
+                          {user.commitment}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
+  ) : fetched ? (
+    <div className="h-screen w-full flex justify-center items-start mt-32">
+      <p>No one played this game :/</p>
+    </div>
+  ) : (
+    <div></div>
   );
 }

@@ -41,6 +41,7 @@ function Page({ params }: { params: { slug: string } }) {
           )}
         </div>
         <MatchLeaderboard
+          fetched={fetched}
           setFetched={() => {
             setFetched(true);
           }}

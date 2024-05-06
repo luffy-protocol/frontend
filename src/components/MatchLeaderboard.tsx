@@ -90,11 +90,7 @@ export default function MatchLeaderboard({ setFetched, slug }: Props) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(`/api/dynamic/fetch-users`, {
-        headers: {
-          Authorization: `Bearer ${
-            process.env.NEXT_PUBLIC_DYNAMIC_API_KEY || ""
-          }`,
-        },
+        headers: {},
       });
       const data = response.data;
       if (data.success) {

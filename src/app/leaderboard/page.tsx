@@ -71,11 +71,7 @@ function Page() {
       console.log(process.env.NEXT_PUBLIC_DYNAMIC_API_KEY);
       (async function () {
         const response = await axios.get(`/api/dynamic/fetch-users`, {
-          headers: {
-            Authorization: `Bearer ${
-              process.env.NEXT_PUBLIC_DYNAMIC_API_KEY || ""
-            }`,
-          },
+          headers: {},
         });
         const data = response.data;
         console.log("DYNAMIC DATA");

@@ -287,7 +287,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                   point={points.length > 0 ? points[topScorerIndex] : 0}
                   player={
                     squadUpdated
-                      ? playerPositions[topScorerIndex - 1]
+                      ? playerPositions[topScorerIndex]
                       : {
                           name: "Choose Player",
                           id: "",

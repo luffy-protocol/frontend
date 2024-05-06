@@ -10,7 +10,7 @@ import { useAccount, useBalance } from "wagmi";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Fixtures", href: "/fixtures" },
-  { name: "Leaderboard", href: "/leaderboard/0" },
+  { name: "Leaderboard", href: "/leaderboard" },
 ];
 
 import { DynamicUserProfile, useDynamicContext } from "../lib/dynamic";

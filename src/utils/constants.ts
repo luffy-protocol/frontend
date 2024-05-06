@@ -873,6 +873,18 @@ const fixtureDetails: FixtureDetails = {
     team1: "Lucknow Super Giants",
     team2: "Kolkata Knight Riders",
   },
+  "91623": {
+    team1: "Mumbai Indians",
+    team2: "Sunrisers Hyderabad",
+  },
+  "91632": {
+    team1: "Delhi Capitals",
+    team2: "Rajasthan Royals",
+  },
+  "91641": {
+    team1: "Sunrisers Hyderabad",
+    team2: "Lucknow Super Giants",
+  },
 };
 
 const playerIdRemappings: PlayerIdRemappings = {

@@ -38,12 +38,6 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                   >
                     <a href="#" className="group inline-flex">
                       Ranking
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          className="h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </span>
                     </a>
                   </th>
                   <th
@@ -52,12 +46,14 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                   >
                     <a href="#" className="group inline-flex">
                       Name
-                      <span className="ml-2 flex-none rounded bg-gray-100 text-gray-900 group-hover:bg-gray-200">
-                        <ChevronDownIcon
-                          className="h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </span>
+                    </a>
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
+                  >
+                    <a href="#" className="group inline-flex">
+                      Games Played
                     </a>
                   </th>
                   <th
@@ -66,12 +62,6 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                   >
                     <a href="#" className="group inline-flex">
                       Points
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          className="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible"
-                          aria-hidden="true"
-                        />
-                      </span>
                     </a>
                   </th>
                   <th
@@ -79,17 +69,8 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                     className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
                   >
                     <a href="#" className="group inline-flex">
-                      Commitment Hash
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          className="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible"
-                          aria-hidden="true"
-                        />
-                      </span>
+                      Wallet Address
                     </a>
-                  </th>
-                  <th scope="col" className="relative py-3.5 pl-3 pr-0">
-                    <span className="sr-only">Edit</span>
                   </th>
                 </tr>
               </thead>
@@ -101,6 +82,9 @@ const MatchLeaderboard: React.FC<Props> = ({ users }) => {
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       <span title={user.address}>{user.name}</span>
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      {user.totalGamesClaimed}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       {user.totalPointsWon}

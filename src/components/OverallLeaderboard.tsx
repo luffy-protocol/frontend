@@ -3,8 +3,6 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import request, { gql } from "graphql-request";
 import { Pixelify_Sans } from "next/font/google";
 import { useEffect, useState } from "react";
-import { helix } from "ldrs";
-
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 interface UserData {
@@ -22,16 +20,10 @@ interface Props {
 
 const OverallLeaderboard: React.FC<Props> = ({ users }) => {
   useEffect(() => {
-    helix.register();
-
     console.log("Inside Leaderboard");
     console.log(users);
   }, [users]);
-  return users.length == 0 ? (
-    <div className="flex flex-col h-full w-full items-center justify-center">
-      <l-helix size="45" speed="2.5" color="black"></l-helix>
-    </div>
-  ) : (
+  return (
     <div className="px-4 sm:px-6 lg:px-8 border-2 rounded-lg shadow-md heropattern-pixeldots-slate-50">
       <div className="sm:flex sm:items-center"></div>
       <div className="mt-8 flow-root">
@@ -46,12 +38,6 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
                   >
                     <a href="#" className="group inline-flex">
                       Ranking
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          className="h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </span>
                     </a>
                   </th>
                   <th
@@ -60,12 +46,14 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
                   >
                     <a href="#" className="group inline-flex">
                       Name
-                      <span className="ml-2 flex-none rounded bg-gray-100 text-gray-900 group-hover:bg-gray-200">
-                        <ChevronDownIcon
-                          className="h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </span>
+                    </a>
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
+                  >
+                    <a href="#" className="group inline-flex">
+                      Matches
                     </a>
                   </th>
                   <th
@@ -74,12 +62,6 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
                   >
                     <a href="#" className="group inline-flex">
                       Points
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          className="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible"
-                          aria-hidden="true"
-                        />
-                      </span>
                     </a>
                   </th>
                   <th
@@ -87,21 +69,11 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
                     className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
                   >
                     <a href="#" className="group inline-flex">
-                      Commitment Hash
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          className="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible"
-                          aria-hidden="true"
-                        />
-                      </span>
+                      Wallet Address
                     </a>
-                  </th>
-                  <th scope="col" className="relative py-3.5 pl-3 pr-0">
-                    <span className="sr-only">Edit</span>
                   </th>
                 </tr>
               </thead>
-
               <tbody className="divide-y divide-gray-200 heropattern-floortile-slate-100">
                 {users.map((user, index) => (
                   <tr key={index}>
@@ -112,10 +84,20 @@ const OverallLeaderboard: React.FC<Props> = ({ users }) => {
                       <span title={user.address}>{user.name}</span>
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {user.totalPointsWon}
+                      {user.totalGamesClaimed}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {user.address}
+                      {user.totalPointsWon}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                      <a
+                        href={
+                          `https://sepolia.arbiscan.io/address/` + user.address
+                        }
+                        target="_blank"
+                      >
+                        {user.address}
+                      </a>
                     </td>
                   </tr>
                 ))}

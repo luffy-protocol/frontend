@@ -67,29 +67,31 @@ function Page() {
     }
   };
   useEffect(() => {
-    console.log(process.env.NEXT_PUBLIC_DYNAMIC_API_KEY);
-    (async function () {
-      const response = await axios.get(`/api/dynamic/fetch-users`, {
-        headers: {
-          Authorization: `Bearer ${
-            process.env.NEXT_PUBLIC_DYNAMIC_API_KEY || ""
-          }`,
-        },
-      });
-      const data = response.data;
-      if (data.success) {
-        const _mappedUsers: MappedUsers = {};
-        data.data.users.forEach((user: any) => {
-          _mappedUsers[user.walletPublicKey.toLowerCase()] = {
-            id: user.id,
-            name: `${user.firstName} ${user.lastName}`,
-            address: user.walletPublicKey.toLowerCase() || "0x",
-          };
+    if (typeof window !== "undefined") {
+      console.log(process.env.NEXT_PUBLIC_DYNAMIC_API_KEY);
+      (async function () {
+        const response = await axios.get(`/api/dynamic/fetch-users`, {
+          headers: {
+            Authorization: `Bearer ${
+              process.env.NEXT_PUBLIC_DYNAMIC_API_KEY || ""
+            }`,
+          },
         });
-        const _userData = await fetchAllUsers({ mappedUsers: _mappedUsers });
-        setUsers(_userData);
-      }
-    })();
+        const data = response.data;
+        if (data.success) {
+          const _mappedUsers: MappedUsers = {};
+          data.data.users.forEach((user: any) => {
+            _mappedUsers[user.walletPublicKey.toLowerCase()] = {
+              id: user.id,
+              name: `${user.firstName} ${user.lastName}`,
+              address: user.walletPublicKey.toLowerCase() || "0x",
+            };
+          });
+          const _userData = await fetchAllUsers({ mappedUsers: _mappedUsers });
+          setUsers(_userData);
+        }
+      })();
+    }
   }, []);
 
   return isAuthenticated ? (
@@ -104,7 +106,7 @@ function Page() {
             sure you claimed the points for your predictions in the fixtures
             page.
           </p>
-          {/* <OverallLeaderboard users={users} /> */}
+          <OverallLeaderboard users={users} />
         </div>
       </div>
     </div>

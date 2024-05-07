@@ -272,8 +272,8 @@ function Page() {
             Ongoing Fixtures
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            These games are yet to be played or being played. Wait for the results after the
-            match.
+            These games are yet to be played or being played. Wait for the
+            results after the match.
           </p>
         </div>
       </div>

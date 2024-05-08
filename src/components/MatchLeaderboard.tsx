@@ -150,14 +150,7 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
                       Points
                     </a>
                   </th>
-                  <th
-                    scope="col"
-                    className="hidden md:block px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
-                  >
-                    <a href="#" className="group inline-flex">
-                      Wallet Address
-                    </a>
-                  </th>
+
                   <th
                     scope="col"
                     className="hidden md:block px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
@@ -182,17 +175,7 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {user.points}
                       </td>
-                      <td className="hidden md:block whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
-                        <a
-                          href={
-                            `https://sepolia.arbiscan.io/address/` +
-                            user.address
-                          }
-                          target="_blank"
-                        >
-                          {user.address}
-                        </a>
-                      </td>
+
                       <td className="hidden md:block whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
                         <a
                           href={

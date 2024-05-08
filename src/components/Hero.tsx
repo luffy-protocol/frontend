@@ -3,9 +3,6 @@ import { useState, useEffect } from "react";
 import { useAccount } from "wagmi";
 import { Pixelify_Sans } from "next/font/google";
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
-import AnkrModal from "./AnkrModal";
-import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
-
 export default function Hero() {
   const { address } = useAccount();
 

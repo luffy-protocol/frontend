@@ -129,14 +129,11 @@ function Page() {
               team2: match.team2,
               title: "Indian Premiere League",
             }));
+          const currentDate = new Date();
 
           setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
           setUnclaimmableOngoingMatches(formattedUnclaimmableOngoingMatches);
           setLoadingOngoing(false);
-          console.log("Ongoing Matches Data");
-          console.log(formattedClaimmableOngoingMatches);
-          console.log(formattedUnclaimmableOngoingMatches);
-
           const gameIdsWithPredictionsAndClaims = games
             .filter(
               (game: any) =>

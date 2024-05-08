@@ -1,3 +1,4 @@
+import fetchFixtures from "@/utils/supabaseFunctions/fetchFixtures";
 import {
   PlusIcon,
   ChartBarIcon,
@@ -5,7 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function FixtureCard(props: {
   fixtures: {
@@ -16,14 +17,39 @@ export default function FixtureCard(props: {
   }[];
   state: number;
 }) {
-  const fixtures = props.fixtures;
-  const state = props.state;
+  const { fixtures, state } = props;
+  const [games, setGames] = useState<boolean[]>([]);
 
   useEffect(() => {
     // get start time of a match from supabase
+    if (state == 1) {
+      (async function () {
+        const { message, response } = await fetchFixtures();
+        const currentTime = new Date();
+        const games: any[] = [];
+        if (message === "Success") {
+          fixtures.forEach((fixture) => {
+            const matching = response.find(
+              (item: any) => item.matchId === fixture.id
+            );
+            console.log("MATCHIGN");
+            console.log(matching);
+            if (matching) {
+              const startTime = new Date(Number(matching.startDate));
+              console.log(currentTime);
+              console.log(startTime);
+              games.push(currentTime > startTime);
+            }
+          });
+        }
+        console.log(games);
+        setGames(games);
+      })();
+    }
+
     // check if the current time is over start time
     // then remove the option of Update squad in the Ongoing Fixtures tab
-  }, []);
+  }, [state]);
   return (
     <>
       <div className="hidden md:block relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 p-14 ">
@@ -31,7 +57,7 @@ export default function FixtureCard(props: {
           role="list"
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2"
         >
-          {fixtures.map((person) => (
+          {fixtures.map((person, index) => (
             <li
               key={person.id}
               className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow"
@@ -63,7 +89,7 @@ export default function FixtureCard(props: {
                         : "Entries Open"}
                     </span>
                   </div>
-                  <p className="mt-1 truncate text-sm text-gray-500">
+                  <p className="mt-1 truncate text-sm text-gray-500 mb-4">
                     {person.title}
                   </p>
                 </div>
@@ -96,7 +122,7 @@ export default function FixtureCard(props: {
                     </div>
                   )}
 
-                  {state != 3 && (
+                  {state != 3 && !games[index] && (
                     <div className="-ml-px flex w-0 flex-1">
                       <Link
                         href={
@@ -178,7 +204,7 @@ export default function FixtureCard(props: {
                 <h3 className="truncate text-sm font-semibold text-center text-gray-900">
                   {person.team1.split(" ")[0]} vs {person.team2.split(" ")[0]}
                 </h3>
-                <p className="mt-1 truncate text-sm text-gray-500 text-center">
+                <p className="my-2 truncate text-sm text-gray-500 text-center">
                   {person.title}
                 </p>
                 <div></div>
@@ -195,7 +221,7 @@ export default function FixtureCard(props: {
                   <p> View Leaderboard</p>
                 </Link>
               )}
-              {state != 3 && (
+              {state != 3 && !games[index] && (
                 <Link
                   href={
                     state == 2

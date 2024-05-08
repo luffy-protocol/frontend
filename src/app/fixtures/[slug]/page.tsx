@@ -22,7 +22,8 @@ import {
 import Image from "next/image";
 import DummyPlayerData from "@/components/DummyPlayerData";
 import ChoosePlayers from "@/components/ChoosePlayers";
-import { useAccount } from "wagmi";
+import { useAccount, useBalance } from "wagmi";
+import DisplayGasModal from "@/components/DisplayGasModal";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { isAuthenticated } = useDynamicContext();
@@ -33,6 +34,9 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [open, setOpen] = useState(false);
   const [squadUpdated, setSquadUpdated] = useState(false);
   const { primaryWallet } = useDynamicContext();
+  const [displayGasModal, setDisplayGasModal] = useState(false);
+  const { refetch } = useBalance({ address: address });
+
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
     "Royal Challengers Bengaluru": "RCB",
@@ -202,6 +206,14 @@ export default function Page({ params }: { params: { slug: string } }) {
     <>
       <div className="pt-10 bg-white">
         <div className="w-full">
+          {displayGasModal && (
+            <DisplayGasModal
+              state={displayGasModal}
+              setModalState={(_state) => {
+                setDisplayGasModal(_state);
+              }}
+            />
+          )}
           <div className="hidden md:flex justify-center space-x-4 w-full mt-20">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
@@ -248,66 +260,85 @@ export default function Page({ params }: { params: { slug: string } }) {
                       .length != 11
                   }
                   onClick={async () => {
-                    const pIds = playerPositions.map((p) => p.id);
-                    const remappedIds = pIds.map(
-                      (id: any) => playerIdRemappings[params.slug as string][id]
-                    );
-                    let squad_hash: `0x${string}` = computeSquadHash(
-                      Buffer.from(remappedIds)
-                    );
-                    setLogs([
-                      {
-                        id: 1,
-                        hash: "Computed Squad Hash successfully",
-                        href: "",
-                        username: squad_hash,
-                      },
-                    ]);
-                    // send transaction on-chain
+                    try {
+                      const { data } = await refetch();
+                      if (
+                        data?.formatted != undefined &&
+                        parseFloat(data.formatted) > 0.02
+                      ) {
+                        const pIds = playerPositions.map((p) => p.id);
+                        const remappedIds = pIds.map(
+                          (id: any) =>
+                            playerIdRemappings[params.slug as string][id]
+                        );
+                        let squad_hash: `0x${string}` = computeSquadHash(
+                          Buffer.from(remappedIds)
+                        );
+                        setLogs([
+                          {
+                            id: 1,
+                            hash: "Computed Squad Hash successfully",
+                            href: "",
+                            username: squad_hash,
+                          },
+                        ]);
+                        // send transaction on-chain
 
-                    if (primaryWallet) {
-                      const walletClient = await createWalletClientFromWallet(
-                        primaryWallet
-                      );
-                      const publicClient = createPublicClient({
-                        chain: arbitrumSepolia,
-                        transport: http(
-                          `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
-                        ),
-                      });
-                      const { request } = await publicClient.simulateContract({
-                        address: protocolAddress as `0x${string}`,
-                        abi: protocolAbi,
-                        functionName: "registerSquad",
-                        args: [params.slug, squad_hash],
-                        account: primaryWallet.address as `0x${string}`,
-                      });
-                      const tx = await walletClient.writeContract(request);
-                      console.log(tx);
-                      setLogs([
-                        {
-                          id: 1,
-                          hash: "Computed Squad Hash successfully",
-                          href: "",
-                          username: squad_hash,
-                        },
-                        {
-                          id: 2,
-                          hash: "Transaction Sent successfully",
-                          href: "https://sepolia.arbiscan.io/tx/" + tx,
-                          username: tx,
-                        },
-                      ]);
-                      let gameData = JSON.parse(
-                        localStorage.getItem("players") || "{}"
-                      );
-                      if (!gameData[params.slug]) gameData[params.slug] = {};
-                      gameData[params.slug][address as any] = {
-                        squadHash: squad_hash,
-                        playerIds: pIds,
-                      };
-                      localStorage.setItem("players", JSON.stringify(gameData));
-                      setSquadUpdated(true);
+                        if (primaryWallet) {
+                          const walletClient =
+                            await createWalletClientFromWallet(primaryWallet);
+                          const publicClient = createPublicClient({
+                            chain: arbitrumSepolia,
+                            transport: http(
+                              `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                            ),
+                          });
+                          const { request } =
+                            await publicClient.simulateContract({
+                              address: protocolAddress as `0x${string}`,
+                              abi: protocolAbi,
+                              functionName: "registerSquad",
+                              args: [params.slug, squad_hash],
+                              account: primaryWallet.address as `0x${string}`,
+                            });
+                          const tx = await walletClient.writeContract(request);
+                          console.log(tx);
+                          setLogs([
+                            {
+                              id: 1,
+                              hash: "Computed Squad Hash successfully",
+                              href: "",
+                              username: squad_hash,
+                            },
+                            {
+                              id: 2,
+                              hash: "Transaction Sent successfully",
+                              href: "https://sepolia.arbiscan.io/tx/" + tx,
+                              username: tx,
+                            },
+                          ]);
+                          let gameData = JSON.parse(
+                            localStorage.getItem("players") || "{}"
+                          );
+                          if (!gameData[params.slug])
+                            gameData[params.slug] = {};
+                          gameData[params.slug][address as any] = {
+                            squadHash: squad_hash,
+                            playerIds: pIds,
+                          };
+                          localStorage.setItem(
+                            "players",
+                            JSON.stringify(gameData)
+                          );
+                          setSquadUpdated(true);
+                        }
+                      } else {
+                        if (data?.formatted != undefined)
+                          setDisplayGasModal(true);
+                      }
+                    } catch (e) {
+                      console.log("Error Occured");
+                      console.log(e);
                     }
                   }}
                 >

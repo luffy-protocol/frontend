@@ -20,7 +20,7 @@ const PlayerCarousel = () => {
           <PlayerCard
             key={index}
             name={player.name}
-            team={player.team.toUpperCase()}
+            team={player.team}
             position={player.position}
             points={player.points}
           />
@@ -31,7 +31,7 @@ const PlayerCarousel = () => {
           <PlayerCard
             key={index}
             name={player.name}
-            team={player.team.toUpperCase()}
+            team={player.team}
             position={player.position}
             points={player.points}
           />

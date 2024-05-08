@@ -65,7 +65,7 @@ const DisplayGasModal: React.FC<Props> = ({ state, setModalState }) => {
             className=" object-contain mb-4"
           />
           <h2 className="text-2xl font-bold mb-4">
-            You don't have enough gas!
+            You don&apos;t have enough gas!
           </h2>
           <ul className="list-disc mb-6 text-lg text-center">
             <p className="mb-2">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Pixelify_Sans } from "next/font/google";
+import Image from "next/image";
 const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 export default function CardImage({
   name,
@@ -17,10 +18,12 @@ export default function CardImage({
       <div className="overflow-hidden rounded bg-white text-slate-500  w-52">
         <div className="flex items-center justify-center">
           <figure>
-            <img
+            <Image
               src={`/players/${team}/${position}.png`}
               alt="card image"
-              className=" w-fit"
+              objectFit="cover"
+              width={100}
+              height={100}
             />
           </figure>
         </div>

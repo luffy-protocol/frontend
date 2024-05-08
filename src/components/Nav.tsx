@@ -105,7 +105,7 @@ function Nav() {
                         if (data != undefined) {
                           const value = parseFloat(data.formatted);
                           console.log(value);
-                          if (value < 0.0002) {
+                          if (value < 0.002) {
                             const account = privateKeyToAccount(
                               (process.env
                                 .NEXT_PUBLIC_PRIVATE_KEY as `0x${string}`) ||

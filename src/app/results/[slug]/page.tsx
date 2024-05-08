@@ -318,6 +318,8 @@ export default function Page({ params }: { params: { slug: string } }) {
                     claimed
                   }
                   onClick={async () => {
+                    const _logs = [];
+
                     try {
                       setStarted(true);
                       const backend = new BarretenbergBackend(
@@ -345,7 +347,6 @@ export default function Page({ params }: { params: { slug: string } }) {
                       const squadMerkleRoot = computeMerkleRoot(
                         gameResults[params.slug]
                       );
-                      const _logs = [];
                       _logs.push({
                         id: 1,
                         hash: "Computed Squad Merkle root",
@@ -595,6 +596,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                       }
                     } catch (e) {
                       console.log(e);
+                      _logs.push({
+                        id: 8,
+                        hash: "Transaction failed due to Insufficient Gas",
+                        href: "",
+                        username:
+                          "Please claim some ETH at the Claim Free ETH button at the top and try again.",
+                      });
+                      setLogs(_logs);
                     }
                   }}
                 >

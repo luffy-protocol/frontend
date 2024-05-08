@@ -30,13 +30,14 @@ import {
 import computeMerklePath from "@/utils/computeMerklePath";
 import computeMerkleRoot from "@/utils/computeMerkleRoot";
 import Image from "next/image";
-import { useAccount } from "wagmi";
+import { useAccount, useBalance } from "wagmi";
 import JustPlayerImage from "@/components/JustPlayerImage";
 import {
   BarretenbergBackend,
   CompiledCircuit,
 } from "@noir-lang/backend_barretenberg";
 import { Noir } from "@noir-lang/noir_js";
+import DisplayGasModal from "@/components/DisplayGasModal";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { isAuthenticated } = useDynamicContext();
@@ -53,7 +54,10 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [started, setStarted] = useState(false);
   const [claimed, setClaimed] = useState(false);
   const [yourPoints, setYourPoints] = useState<number[]>([]);
+  const [displayGasModal, setDisplayGasModal] = useState<boolean>(false);
+  const [close, setClose] = useState<boolean>(false);
   const { primaryWallet } = useDynamicContext();
+  const { refetch } = useBalance({ address: address });
   const teamShortForms: { [key: string]: string } = {
     "Chennai Super Kings": "CSK",
     "Royal Challengers Bengaluru": "RCB",
@@ -67,7 +71,6 @@ export default function Page({ params }: { params: { slug: string } }) {
     "Lucknow Super Giants": "LSG",
   };
 
-  const positioning = {};
   interface Player {
     name: string;
     id: string;
@@ -253,6 +256,14 @@ export default function Page({ params }: { params: { slug: string } }) {
     <>
       <div className="pt-10 bg-white">
         <div className="">
+          {displayGasModal && (
+            <DisplayGasModal
+              state={displayGasModal}
+              setModalState={(_state) => {
+                setDisplayGasModal(_state);
+              }}
+            />
+          )}
           <div className="flex justify-center space-x-4 w-full mt-20">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
@@ -321,278 +332,288 @@ export default function Page({ params }: { params: { slug: string } }) {
                     const _logs = [];
 
                     try {
-                      setStarted(true);
-                      const backend = new BarretenbergBackend(
-                        circuit as CompiledCircuit
-                      );
-                      const noir = new Noir(
-                        circuit as CompiledCircuit,
-                        backend
-                      );
-                      if (primaryWallet === null) return;
-                      const walletClient = await createWalletClientFromWallet(
-                        primaryWallet
-                      );
-                      const publicClient = createPublicClient({
-                        chain: arbitrumSepolia,
-                        transport: http(
-                          `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
-                        ),
-                      });
+                      const { data } = await refetch();
+                      if (
+                        data?.formatted != undefined &&
+                        parseFloat(data.formatted) > 0.02
+                      ) {
+                        const backend = new BarretenbergBackend(
+                          circuit as CompiledCircuit
+                        );
+                        const noir = new Noir(
+                          circuit as CompiledCircuit,
+                          backend
+                        );
+                        if (primaryWallet === null) return;
+                        const walletClient = await createWalletClientFromWallet(
+                          primaryWallet
+                        );
+                        const publicClient = createPublicClient({
+                          chain: arbitrumSepolia,
+                          transport: http(
+                            `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                          ),
+                        });
 
-                      let signer_pub_x_key = [];
-                      let signer_pub_y_key = [];
-                      let signature = [];
-                      let points_merkle_paths = [];
-                      const squadMerkleRoot = computeMerkleRoot(
-                        gameResults[params.slug]
-                      );
-                      _logs.push({
-                        id: 1,
-                        hash: "Computed Squad Merkle root",
-                        href: "",
-                        username: squadMerkleRoot,
-                      });
-                      setLogs(_logs);
-                      const player_ids = squad.map(
-                        (p) =>
-                          playerIdRemappings[params.slug][
-                            (p as number).toString()
-                          ]
-                      );
-                      let player_points = [];
-                      for (let i = 0; i < 11; i++) {
-                        const merklePathHexString = computeMerklePath(
-                          player_ids[i],
+                        let signer_pub_x_key = [];
+                        let signer_pub_y_key = [];
+                        let signature = [];
+                        let points_merkle_paths = [];
+                        const squadMerkleRoot = computeMerkleRoot(
                           gameResults[params.slug]
                         );
-                        console.log(merklePathHexString);
-                        console.log(
-                          `0x${(points[i] as any)
-                            .toString(16)
-                            .padStart(64, "0")}`
+                        _logs.push({
+                          id: 1,
+                          hash: "Computed Squad Merkle root",
+                          href: "",
+                          username: squadMerkleRoot,
+                        });
+                        setLogs(_logs);
+                        const player_ids = squad.map(
+                          (p) =>
+                            playerIdRemappings[params.slug][
+                              (p as number).toString()
+                            ]
                         );
-                        player_points.push(
-                          hexToBytes(
+                        let player_points = [];
+                        for (let i = 0; i < 11; i++) {
+                          const merklePathHexString = computeMerklePath(
+                            player_ids[i],
+                            gameResults[params.slug]
+                          );
+                          console.log(merklePathHexString);
+                          console.log(
                             `0x${(points[i] as any)
                               .toString(16)
                               .padStart(64, "0")}`
-                          )
+                          );
+                          player_points.push(
+                            hexToBytes(
+                              `0x${(points[i] as any)
+                                .toString(16)
+                                .padStart(64, "0")}`
+                            )
+                          );
+                          const merklePath = merklePathHexString.map(
+                            (element) => hexToBytes(element)
+                          );
+                          points_merkle_paths.push(merklePath);
+                        }
+                        _logs.push({
+                          id: 2,
+                          hash: "Computed Squad Hash",
+                          href: "",
+                          username: squadHash,
+                        });
+                        setLogs(_logs);
+                        console.log("Signing this");
+                        console.log(squadHash);
+                        const sig = Buffer.from(
+                          (
+                            await walletClient.signMessage({
+                              account: primaryWallet.address as `0x${string}`,
+                              message: {
+                                raw: stringToBytes(squadHash),
+                              },
+                            })
+                          ).slice(2),
+                          "hex"
                         );
-                        const merklePath = merklePathHexString.map((element) =>
-                          hexToBytes(element)
-                        );
-                        points_merkle_paths.push(merklePath);
-                      }
-                      _logs.push({
-                        id: 2,
-                        hash: "Computed Squad Hash",
-                        href: "",
-                        username: squadHash,
-                      });
-                      setLogs(_logs);
-                      console.log("Signing this");
-                      console.log(squadHash);
-                      const sig = Buffer.from(
-                        (
-                          await walletClient.signMessage({
-                            account: primaryWallet.address as `0x${string}`,
-                            message: {
-                              raw: stringToBytes(squadHash),
-                            },
-                          })
-                        ).slice(2),
-                        "hex"
-                      );
 
-                      const publicKey = await recoverPublicKey({
-                        hash: Buffer.from(squadHash.slice(2), "hex"),
-                        signature: sig,
-                      });
-                      const publicKeyBuffer = Buffer.from(
-                        publicKey.slice(2),
-                        "hex"
-                      );
-                      signature = Array.from(
-                        new Uint8Array(sig.subarray(0, sig.length - 1))
-                      );
-                      _logs.push({
-                        id: 3,
-                        hash: "Signature obtained successfully",
-                        href: "",
-                        username: bytesToHex(
+                        const publicKey = await recoverPublicKey({
+                          hash: Buffer.from(squadHash.slice(2), "hex"),
+                          signature: sig,
+                        });
+                        const publicKeyBuffer = Buffer.from(
+                          publicKey.slice(2),
+                          "hex"
+                        );
+                        signature = Array.from(
                           new Uint8Array(sig.subarray(0, sig.length - 1))
-                        ),
-                      });
-                      setLogs(_logs);
-
-                      // Extract x and y coordinates
-                      signer_pub_x_key = Array.from(
-                        publicKeyBuffer.subarray(1, 33)
-                      ).map((byte) => `${byte}`);
-                      signer_pub_y_key = Array.from(
-                        publicKeyBuffer.subarray(33)
-                      ).map((byte) => `${byte}`);
-                      console.log({
-                        signer_pub_x_key: Array.from(signer_pub_x_key).map(
-                          (byte) => `${byte}`
-                        ),
-                        signer_pub_y_key: Array.from(signer_pub_y_key).map(
-                          (byte) => `${byte}`
-                        ),
-                        signature: Array.from(signature).map(
-                          (byte) => `${byte}`
-                        ),
-                        selected_player_ids: Array.from(player_ids).map(
-                          (byte) => `${byte}`
-                        ),
-                        selected_players_points: player_points.map((point) =>
-                          Array.from(point).map((byte) => `${byte}`)
-                        ),
-                        player_points_merkle_paths: points_merkle_paths.map(
-                          (points_merkle_path) =>
-                            points_merkle_path.map((element) =>
-                              Array.from(element).map((e) => `${e}`)
-                            )
-                        ) as any,
-                        all_player_points_merkle_root: Array.from(
-                          toBytes(squadMerkleRoot)
-                        ).map((byte) => `${byte}`),
-                        selected_squad_hash: Array.from(
-                          Buffer.from(squadHash.slice(2), "hex")
-                        ).map((byte) => `${byte}`),
-                        claimed_player_points: points.reduce(
-                          (acc, currentValue) => acc + currentValue,
-                          0
-                        ),
-                      });
-                      _logs.push({
-                        id: 4,
-                        hash: "Generating zero knowledge proof...",
-                        href: "",
-                        username:
-                          "Please wait. DO NOT close this window. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
-                      });
-                      setLogs(_logs);
-
-                      const proof = await noir.generateFinalProof({
-                        signer_pub_x_key: Array.from(signer_pub_x_key).map(
-                          (byte) => `${byte}`
-                        ),
-                        signer_pub_y_key: Array.from(signer_pub_y_key).map(
-                          (byte) => `${byte}`
-                        ),
-                        signature: Array.from(signature).map(
-                          (byte) => `${byte}`
-                        ),
-                        selected_player_ids: Array.from(player_ids).map(
-                          (byte) => `${byte}`
-                        ),
-                        selected_players_points: player_points.map((point) =>
-                          Array.from(point).map((byte) => `${byte}`)
-                        ) as any,
-                        player_points_merkle_paths: points_merkle_paths.map(
-                          (points_merkle_path) =>
-                            points_merkle_path.map((element) =>
-                              Array.from(element).map((e) => `${e}`)
-                            )
-                        ) as any,
-                        all_player_points_merkle_root: Array.from(
-                          toBytes(squadMerkleRoot)
-                        ).map((byte) => `${byte}`),
-                        selected_squad_hash: Array.from(
-                          Buffer.from(squadHash.slice(2), "hex")
-                        ).map((byte) => `${byte}`),
-                        claimed_player_points: points.reduce(
-                          (acc, currentValue) => acc + currentValue,
-                          0
-                        ),
-                      });
-                      _logs.push({
-                        id: 5,
-                        hash: "Proof generated successfully",
-                        href: "",
-                        username:
-                          bytesToHex(proof.proof).substring(0, 50 - 3) + "...",
-                      });
-                      setLogs(_logs);
-                      _logs.push({
-                        id: 6,
-                        hash: "Verifying zero knowledge proof...",
-                        href: "",
-                        username:
-                          "The proof needs to be verified initially before passing it on chain",
-                      });
-                      setLogs(_logs);
-                      const verified = await noir.verifyFinalProof(proof);
-                      if (verified)
+                        );
                         _logs.push({
-                          id: 7,
-                          hash: "Proof verified successfully",
+                          id: 3,
+                          hash: "Signature obtained successfully",
+                          href: "",
+                          username: bytesToHex(
+                            new Uint8Array(sig.subarray(0, sig.length - 1))
+                          ),
+                        });
+                        setLogs(_logs);
+
+                        // Extract x and y coordinates
+                        signer_pub_x_key = Array.from(
+                          publicKeyBuffer.subarray(1, 33)
+                        ).map((byte) => `${byte}`);
+                        signer_pub_y_key = Array.from(
+                          publicKeyBuffer.subarray(33)
+                        ).map((byte) => `${byte}`);
+                        console.log({
+                          signer_pub_x_key: Array.from(signer_pub_x_key).map(
+                            (byte) => `${byte}`
+                          ),
+                          signer_pub_y_key: Array.from(signer_pub_y_key).map(
+                            (byte) => `${byte}`
+                          ),
+                          signature: Array.from(signature).map(
+                            (byte) => `${byte}`
+                          ),
+                          selected_player_ids: Array.from(player_ids).map(
+                            (byte) => `${byte}`
+                          ),
+                          selected_players_points: player_points.map((point) =>
+                            Array.from(point).map((byte) => `${byte}`)
+                          ),
+                          player_points_merkle_paths: points_merkle_paths.map(
+                            (points_merkle_path) =>
+                              points_merkle_path.map((element) =>
+                                Array.from(element).map((e) => `${e}`)
+                              )
+                          ) as any,
+                          all_player_points_merkle_root: Array.from(
+                            toBytes(squadMerkleRoot)
+                          ).map((byte) => `${byte}`),
+                          selected_squad_hash: Array.from(
+                            Buffer.from(squadHash.slice(2), "hex")
+                          ).map((byte) => `${byte}`),
+                          claimed_player_points: points.reduce(
+                            (acc, currentValue) => acc + currentValue,
+                            0
+                          ),
+                        });
+                        _logs.push({
+                          id: 4,
+                          hash: "Generating zero knowledge proof...",
                           href: "",
                           username:
-                            "Woohoo. There is one more final step. Please approve the transaction to send this proof on the blockchain",
+                            "Please wait. DO NOT close this window. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
                         });
-                      else
+                        setLogs(_logs);
+
+                        const proof = await noir.generateFinalProof({
+                          signer_pub_x_key: Array.from(signer_pub_x_key).map(
+                            (byte) => `${byte}`
+                          ),
+                          signer_pub_y_key: Array.from(signer_pub_y_key).map(
+                            (byte) => `${byte}`
+                          ),
+                          signature: Array.from(signature).map(
+                            (byte) => `${byte}`
+                          ),
+                          selected_player_ids: Array.from(player_ids).map(
+                            (byte) => `${byte}`
+                          ),
+                          selected_players_points: player_points.map((point) =>
+                            Array.from(point).map((byte) => `${byte}`)
+                          ) as any,
+                          player_points_merkle_paths: points_merkle_paths.map(
+                            (points_merkle_path) =>
+                              points_merkle_path.map((element) =>
+                                Array.from(element).map((e) => `${e}`)
+                              )
+                          ) as any,
+                          all_player_points_merkle_root: Array.from(
+                            toBytes(squadMerkleRoot)
+                          ).map((byte) => `${byte}`),
+                          selected_squad_hash: Array.from(
+                            Buffer.from(squadHash.slice(2), "hex")
+                          ).map((byte) => `${byte}`),
+                          claimed_player_points: points.reduce(
+                            (acc, currentValue) => acc + currentValue,
+                            0
+                          ),
+                        });
                         _logs.push({
-                          id: 7,
-                          hash: "Proof verification failed",
+                          id: 5,
+                          hash: "Proof generated successfully",
                           href: "",
                           username:
-                            "Uh Oh. Please try again. If you are stuck, reach out to our discord channel.",
+                            bytesToHex(proof.proof).substring(0, 50 - 3) +
+                            "...",
                         });
+                        setLogs(_logs);
+                        _logs.push({
+                          id: 6,
+                          hash: "Verifying zero knowledge proof...",
+                          href: "",
+                          username:
+                            "The proof needs to be verified initially before passing it on chain",
+                        });
+                        setLogs(_logs);
+                        const verified = await noir.verifyFinalProof(proof);
+                        if (verified)
+                          _logs.push({
+                            id: 7,
+                            hash: "Proof verified successfully",
+                            href: "",
+                            username:
+                              "Woohoo. There is one more final step. Please approve the transaction to send this proof on the blockchain",
+                          });
+                        else
+                          _logs.push({
+                            id: 7,
+                            hash: "Proof verification failed",
+                            href: "",
+                            username:
+                              "Uh Oh. Please try again. If you are stuck, reach out to our discord channel.",
+                          });
 
-                      setLogs(_logs);
-                      console.log("PARAMS");
-                      console.log([
-                        params.slug,
-                        points.reduce(
-                          (acc, currentValue) => acc + currentValue,
-                          0
-                        ),
-                        proof.proof,
-                      ]);
-                      // send transaction
-                      const { request } = await publicClient.simulateContract({
-                        address: protocolAddress as `0x${string}`,
-                        abi: protocolAbi,
-                        functionName: "claimPoints",
-                        args: [
+                        setLogs(_logs);
+                        console.log("PARAMS");
+                        console.log([
                           params.slug,
                           points.reduce(
                             (acc, currentValue) => acc + currentValue,
                             0
                           ),
-                          bytesToHex(proof.proof),
-                        ],
-                        account: primaryWallet.address as `0x${string}`,
-                      });
-                      const tx = await walletClient.writeContract(request);
-                      _logs.push({
-                        id: 7,
-                        hash: "Transaction Sent Successfully",
-                        href: `https://sepolia.arbiscan.io/tx/${tx}`,
-                        username: tx,
-                      });
-                      setLogs(_logs);
-                      let claimed = JSON.parse(
-                        localStorage.getItem("claimed") || "{}"
-                      );
-                      if (
-                        claimed != null &&
-                        claimed != undefined &&
-                        address != undefined
-                      ) {
-                        if (
-                          claimed[params.slug] == null ||
-                          claimed[params.slug] == undefined
-                        )
-                          claimed[params.slug] = {};
-                        claimed[params.slug][address] = true;
-                        localStorage.setItem(
-                          "claimed",
-                          JSON.stringify(claimed)
+                          proof.proof,
+                        ]);
+                        // send transaction
+                        const { request } = await publicClient.simulateContract(
+                          {
+                            address: protocolAddress as `0x${string}`,
+                            abi: protocolAbi,
+                            functionName: "claimPoints",
+                            args: [
+                              params.slug,
+                              points.reduce(
+                                (acc, currentValue) => acc + currentValue,
+                                0
+                              ),
+                              bytesToHex(proof.proof),
+                            ],
+                            account: primaryWallet.address as `0x${string}`,
+                          }
                         );
+                        const tx = await walletClient.writeContract(request);
+                        _logs.push({
+                          id: 7,
+                          hash: "Transaction Sent Successfully",
+                          href: `https://sepolia.arbiscan.io/tx/${tx}`,
+                          username: tx,
+                        });
+                        setLogs(_logs);
+                        let claimed = JSON.parse(
+                          localStorage.getItem("claimed") || "{}"
+                        );
+                        if (
+                          claimed != null &&
+                          claimed != undefined &&
+                          address != undefined
+                        ) {
+                          if (
+                            claimed[params.slug] == null ||
+                            claimed[params.slug] == undefined
+                          )
+                            claimed[params.slug] = {};
+                          claimed[params.slug][address] = true;
+                          localStorage.setItem(
+                            "claimed",
+                            JSON.stringify(claimed)
+                          );
+                        }
+                      } else {
+                        setDisplayGasModal(true);
                       }
                     } catch (e) {
                       console.log(e);

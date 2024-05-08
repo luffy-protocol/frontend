@@ -28,6 +28,7 @@ function Nav() {
   const { data, refetch } = useBalance({
     address: address,
   });
+
   const [showModal, setShowModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [txHash, setTxHash] = useState("");
@@ -94,7 +95,7 @@ function Nav() {
               <button
                 className="mx-4 rounded-md bg-[#01A4F1] px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                 onClick={async () => {
-                  refetch();
+                  await refetch();
 
                   setProcessing(true);
                   console.log(txHash == "");
@@ -105,7 +106,7 @@ function Nav() {
                         if (data != undefined) {
                           const value = parseFloat(data.formatted);
                           console.log(value);
-                          if (value < 0.002) {
+                          if (value < 0.02) {
                             const account = privateKeyToAccount(
                               (process.env
                                 .NEXT_PUBLIC_PRIVATE_KEY as `0x${string}`) ||
@@ -132,7 +133,7 @@ function Nav() {
                             const tx = await walletClient.sendTransaction({
                               account: account,
                               to: address,
-                              value: parseEther("0.002"),
+                              value: parseEther("0.02"),
                               nonce: txCount,
                             });
                             console.log("TX complete");
@@ -207,7 +208,7 @@ function Nav() {
                     <button
                       className="mt-2 rounded-md bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                       onClick={async () => {
-                        refetch();
+                        await refetch();
 
                         setProcessing(true);
                         console.log(txHash == "");

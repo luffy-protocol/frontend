@@ -430,7 +430,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                   </p>
                 </div>
 
-                <div className="mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md md:px-6 md:mx-6">
+                <div className="hidden md:block mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md md:px-6 md:mx-6">
                   <div className="">
                     <div className="inline-block min-w-full py-2 align-middle overflow-y-auto max-h-96">
                       <table className="min-w-full divide-y divide-gray-300 ">
@@ -484,6 +484,61 @@ export default function Page({ params }: { params: { slug: string } }) {
                     </div>
                   </div>
                 </div>
+                {open && (
+                  <div className="block md:hidden mt-8 flow-root heropattern-pixeldots-slate-50 border-2 rounded-lg shadow-md md:px-6 md:mx-6">
+                    <div className="">
+                      <div className="inline-block min-w-full py-2 align-middle overflow-y-auto max-h-96">
+                        <table
+                          id="choose"
+                          className="min-w-full divide-y divide-gray-300 "
+                        >
+                          <thead>
+                            <tr>
+                              <th
+                                scope="col"
+                                className="py-3.5 md:pl-4 md:pr-3 text-left text-xs font-semibold text-gray-900"
+                              >
+                                &emsp;&emsp; Name
+                              </th>
+                              <th
+                                scope="col"
+                                className="md:px-3 py-3.5 text-left text-xs font-semibold text-gray-900"
+                              >
+                                Team
+                              </th>
+
+                              <th
+                                scope="col"
+                                className="hidden md:block md:px-3 py-3.5 text-left text-xs font-semibold text-gray-900"
+                              >
+                                Role
+                              </th>
+                              <th
+                                scope="col"
+                                className="relative py-3.5 md:pl-3 md:pr-4 sm:pr-0"
+                              >
+                                <span className="sr-only">Edit</span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className=" max-h-96 overflow-y-auto">
+                            <ChoosePlayers
+                              index={index}
+                              teams={teams}
+                              open={open}
+                              setOpen={setOpen}
+                              setPlayerPositions={setPlayerPositions}
+                              playerIds={playerPositions.map(
+                                (player) => player.id
+                              )}
+                              slug={params.slug}
+                            />
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

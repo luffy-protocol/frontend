@@ -43,7 +43,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
   }, [player.team, player.type]);
 
   return (
-    <>
+    <a href="#choose">
       <img
         src={imageUrl}
         alt={`Player ${index + 1}`}
@@ -131,7 +131,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
           {"  "}Points
         </div>
       )}
-    </>
+    </a>
   );
 };
 

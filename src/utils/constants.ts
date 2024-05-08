@@ -885,6 +885,38 @@ const fixtureDetails: FixtureDetails = {
     team1: "Sunrisers Hyderabad",
     team2: "Lucknow Super Giants",
   },
+  "91645": {
+    team1: "Punjab Kings",
+    team2: "Royal Challengers Bengaluru",
+  },
+  "91650": {
+    team1: "Gujarat Titans",
+    team2: "Chennai Super Kings",
+  },
+  "91654": {
+    team1: "Kolkata Knight Riders",
+    team2: "Mumbai Indians",
+  },
+  "91663": {
+    team1: "Chennai Super Kings",
+    team2: "Rajasthan Royals",
+  },
+  "91668": {
+    team1: "Royal Challengers Bengaluru",
+    team2: "Delhi Capitals",
+  },
+  "91677": {
+    team1: "Gujarat Titans",
+    team2: "Kolkata Knight Riders",
+  },
+  "91681": {
+    team1: "Delhi Capitals",
+    team2: "Lucknow Super Giants",
+  },
+  "91686": {
+    team1: "Rajasthan Royals",
+    team2: "Punjab Kings",
+  },
 };
 
 const playerIdRemappings: PlayerIdRemappings = {

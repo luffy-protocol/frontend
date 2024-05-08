@@ -13,9 +13,9 @@ function Page({ params }: { params: { slug: string } }) {
 
   return isAuthenticated ? (
     <div>
-      <div className="bg-white  px-40 py-6 sm:pt-32 lg:px-48 text-black h-full">
-        <div className={`w-full ${!fetched && "h-screen"} `}>
-          <div className="hidden md:flex justify-center space-x-4 w-full">
+      <div className="bg-white  md:px-48 py-6 pt-12 sm:pt-32 lg:px-48 text-black min-h-screen">
+        <div className={` ${!fetched && "h-screen"} `}>
+          <div className="hidden md:flex justify-center space-x-4">
             <Image
               src={`/${fixtureDetails[params.slug].team1}.png`}
               width={130}
@@ -27,6 +27,21 @@ function Page({ params }: { params: { slug: string } }) {
               src={`/${fixtureDetails[params.slug].team2}.png`}
               width={130}
               height={130}
+              alt="team2"
+            />
+          </div>
+          <div className="flex md:hidden mt-16 justify-center">
+            <Image
+              src={`/${fixtureDetails[params.slug].team1}.png`}
+              width={100}
+              height={100}
+              alt="team1"
+            />
+            <Image src="/vs.png" width={80} height={80} alt="vs" />
+            <Image
+              src={`/${fixtureDetails[params.slug].team2}.png`}
+              width={100}
+              height={100}
               alt="team2"
             />
           </div>

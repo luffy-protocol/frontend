@@ -152,7 +152,7 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
                   </th>
                   <th
                     scope="col"
-                    className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
+                    className="hidden md:block px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
                   >
                     <a href="#" className="group inline-flex">
                       Wallet Address
@@ -160,7 +160,7 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
                   </th>
                   <th
                     scope="col"
-                    className="px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
+                    className="hidden md:block px-3 py-3.5 text-left  text-xl font-semibold text-gray-900"
                   >
                     <a href="#" className="group inline-flex">
                       Commitment Hash
@@ -182,7 +182,7 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {user.points}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                      <td className="hidden md:block whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
                         <a
                           href={
                             `https://sepolia.arbiscan.io/address/` +
@@ -193,7 +193,7 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
                           {user.address}
                         </a>
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
+                      <td className="hidden md:block whitespace-nowrap px-3 py-4 text-sm text-neutral-700 underline hover:text-neutral-400">
                         <a
                           href={
                             `https://sepolia.arbiscan.io/tx/` + user.commitTx

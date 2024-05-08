@@ -94,9 +94,15 @@ function Page() {
 
   return isAuthenticated ? (
     <div>
-      <div className="bg-white  px-48 py-6 sm:pt-32 lg:px-48 text-black h-full">
-        <div className={`w-full  ${users.length == 0 && "h-screen"}`}>
-          <p className={` text-5xl font-bold text-black  mt-6 mb-4`}>
+      <div className="bg-white  md:px-48 py-6 pt-12 sm:pt-32 lg:px-48 text-black min-h-screen">
+        <div
+          className={`w-full text-center md:text-left ${
+            users.length == 0 && "h-screen"
+          }`}
+        >
+          <p
+            className={`text-2xl  md:text-5xl font-bold text-black  mt-12 mb-4`}
+          >
             Overall Leaderboard
           </p>
           <p className="mb-6 text-sm text-neutral-600  mx-auto">

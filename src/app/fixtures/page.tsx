@@ -82,10 +82,7 @@ function Page() {
         // Extract ongoing matches from the data and set in state
         if (data != null) {
           const { message, response } = await fetchFixtures();
-          console.log(response);
-          console.log(data);
           const games = (data as any).games;
-          console.log(games);
           const gameIdsWithPredictionsAndNullClaims = games.filter(
             (game: any) =>
               game.predictions.length > 0 &&
@@ -100,14 +97,6 @@ function Page() {
           const gameIdsThatCannotBeClaimed = gameIdsWithPredictionsAndNullClaims
             .filter((game: any) => game.resultsPublishedTime == null)
             .map((game: any) => parseInt(game.id, 16));
-          console.log(
-            "Game IDs with predictions and null claims that can be claimed:",
-            gameIdsThatCanBeClaimed
-          );
-          console.log(
-            "Game IDs with predictions and null claims that cannot be claimed:",
-            gameIdsThatCannotBeClaimed
-          );
 
           const ongoingMatchesThatCanBeClaimed = response.filter((match: any) =>
             gameIdsThatCanBeClaimed.includes(match.matchId)
@@ -129,8 +118,6 @@ function Page() {
               team2: match.team2,
               title: "Indian Premiere League",
             }));
-          const currentDate = new Date();
-
           setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
           setUnclaimmableOngoingMatches(formattedUnclaimmableOngoingMatches);
           setLoadingOngoing(false);
@@ -143,11 +130,6 @@ function Page() {
                 )
             )
             .map((game: any) => parseInt(game.id, 16));
-
-          console.log(
-            "Game IDs with predictions and claims:",
-            gameIdsWithPredictionsAndClaims
-          );
 
           const gameIdsWithPredictionsAndClaimsFormatted =
             gameIdsWithPredictionsAndClaims.map((gameId: any) => {
@@ -166,14 +148,11 @@ function Page() {
                 };
               }
             });
-          console.log(gameIdsWithPredictionsAndClaimsFormatted);
           setCompletedMatches(gameIdsWithPredictionsAndClaimsFormatted);
 
           const completedMatchesData = response.filter((match: any) =>
             gameIdsWithPredictionsAndClaims.includes(match.id)
           );
-          console.log("Completed Matches Data");
-          console.log(completedMatchesData);
 
           //Now if the match isnt completed and not in ongoing status then , we need to fetch the match id and check for the startdate of the matchId in response .if the startDate is greater than current date then it is an upcoming match else mark it as complted
           const remaining = games.filter(
@@ -182,8 +161,6 @@ function Page() {
               !gameIdsThatCannotBeClaimed.includes(parseInt(match.id, 16)) &&
               !gameIdsWithPredictionsAndClaims.includes(parseInt(match.id, 16))
           );
-
-          console.log(remaining);
 
           const remainingCompletedMatches = [] as any;
           const remainingUpcomingMatches = [] as any;
@@ -216,20 +193,14 @@ function Page() {
             }
           });
 
-          console.log("Remaining Completed Matches");
-          console.log(remainingCompletedMatches);
           setCompletedMatches((prevCompletedMatches) => [
             ...prevCompletedMatches,
             ...remainingCompletedMatches,
           ]);
           setLoadingCompleted(false);
-          console.log("Remaining Upcoming Matches");
-          console.log(remainingUpcomingMatches);
           setUpcomingMatches(remainingUpcomingMatches);
           setUpcomingLoading(false);
         }
-        console.log("Data from the graph");
-        console.log(data);
       } catch (error) {
         console.error("Error fetching ongoing fixtures:", error);
       }

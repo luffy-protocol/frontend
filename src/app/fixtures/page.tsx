@@ -12,30 +12,10 @@ const pxsans = Pixelify_Sans({ subsets: ["latin"] });
 
 function Page() {
   const { isAuthenticated } = useDynamicContext();
-  const [matches, setMatches] = useState([
-    {
-      id: 91515,
-      team1: "Delhi Capitals",
-      team2: "Gujarat Titans",
-      title: "Indian Premiere League",
-    },
-    {
-      id: 91555,
-      team1: "Chennai Super Kings",
-      team2: "Sunrisers Hyderabad",
-      title: "Indian Premiere League",
-    },
-    {
-      id: 91600,
-      team1: "Royal Challengers Bengaluru",
-      team2: "Gujarat Titans",
-      title: "Indian Premiere League",
-    },
-  ]);
+
   const [loadingOngoing, setLoadingOngoing] = useState(true);
   const [loadingCompleted, setLoadingCompleted] = useState(true);
   const [LoadingUpcoming, setUpcomingLoading] = useState(true);
-  const [AllMatches, setAllMatches] = useState([]);
   const [upcomingMatches, setUpcomingMatches] = useState<
     { id: number; team1: string; team2: string; title: string }[]
   >([]);
@@ -118,7 +98,15 @@ function Page() {
               team2: match.team2,
               title: "Indian Premiere League",
             }));
-          setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
+          // setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
+          setClaimmableOngoingMatches([
+            {
+              id: 91618,
+              team1: "Lucknow Super Giants",
+              team2: "Kolkata Knight Riders",
+              title: "Indian Premiere League",
+            },
+          ]);
           setUnclaimmableOngoingMatches(formattedUnclaimmableOngoingMatches);
           setLoadingOngoing(false);
           const gameIdsWithPredictionsAndClaims = games

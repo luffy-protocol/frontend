@@ -89,7 +89,9 @@ export default function MatchLeaderboard({ fetched, setFetched, slug }: Props) {
   }, []);
 
   useEffect(() => {
+    console.log("HELLO");
     const fetchData = async () => {
+      console.log("FETCHING data");
       const response = await axios.get(`/api/dynamic/fetch-users`, {
         headers: {},
       });

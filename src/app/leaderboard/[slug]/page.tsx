@@ -10,6 +10,10 @@ import { useEffect, useState } from "react";
 function Page({ params }: { params: { slug: string } }) {
   const { isAuthenticated } = useDynamicContext();
   const [fetched, setFetched] = useState(false);
+  useEffect(() => {
+    console.log(params);
+    console.log(isAuthenticated);
+  }, [isAuthenticated, params]);
 
   return isAuthenticated ? (
     <div>

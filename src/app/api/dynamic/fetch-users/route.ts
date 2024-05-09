@@ -16,8 +16,11 @@ export async function GET(req: Request, res: Response) {
       }
     );
     const data = response.data;
+    console.log(response.data);
     return Response.json({ success: true, data: data });
   } catch (e) {
+    console.log("ERROR OCCURED");
+    console.log(e);
     return Response.json({ success: false, data: e });
   }
 }

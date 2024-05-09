@@ -260,122 +260,14 @@ export default function Page({ params }: { params: { slug: string } }) {
                       .length != 11
                   }
                   onClick={async () => {
+                    const _logs = [];
+
                     try {
                       const { data } = await refetch();
                       if (
                         data?.formatted != undefined &&
                         parseFloat(data.formatted) > 0.02
                       ) {
-                        const pIds = playerPositions.map((p) => p.id);
-                        const remappedIds = pIds.map(
-                          (id: any) =>
-                            playerIdRemappings[params.slug as string][id]
-                        );
-                        let squad_hash: `0x${string}` = computeSquadHash(
-                          Buffer.from(remappedIds)
-                        );
-                        setLogs([
-                          {
-                            id: 1,
-                            hash: "Computed Squad Hash successfully",
-                            href: "",
-                            username: squad_hash,
-                          },
-                        ]);
-                        // send transaction on-chain
-
-                        if (primaryWallet) {
-                          const walletClient =
-                            await createWalletClientFromWallet(primaryWallet);
-                          const publicClient = createPublicClient({
-                            chain: arbitrumSepolia,
-                            transport: http(
-                              `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
-                            ),
-                          });
-                          const { request } =
-                            await publicClient.simulateContract({
-                              address: protocolAddress as `0x${string}`,
-                              abi: protocolAbi,
-                              functionName: "registerSquad",
-                              args: [params.slug, squad_hash],
-                              account: primaryWallet.address as `0x${string}`,
-                            });
-                          const tx = await walletClient.writeContract(request);
-                          console.log(tx);
-                          setLogs([
-                            {
-                              id: 1,
-                              hash: "Computed Squad Hash successfully",
-                              href: "",
-                              username: squad_hash,
-                            },
-                            {
-                              id: 2,
-                              hash: "Transaction Sent successfully",
-                              href: "https://sepolia.arbiscan.io/tx/" + tx,
-                              username: tx,
-                            },
-                          ]);
-                          let gameData = JSON.parse(
-                            localStorage.getItem("players") || "{}"
-                          );
-                          if (!gameData[params.slug])
-                            gameData[params.slug] = {};
-                          gameData[params.slug][address as any] = {
-                            squadHash: squad_hash,
-                            playerIds: pIds,
-                          };
-                          localStorage.setItem(
-                            "players",
-                            JSON.stringify(gameData)
-                          );
-                          setSquadUpdated(true);
-                        }
-                      } else {
-                        if (data?.formatted != undefined)
-                          setDisplayGasModal(true);
-                      }
-                    } catch (e) {
-                      console.log("Error Occured");
-                      console.log(e);
-                    }
-                  }}
-                >
-                  <p>Submit Squad</p>
-                </button>
-                <p className="font-normal text-neutral-500 italic text-xs py-1 text-center">
-                  {squadUpdated
-                    ? "Click on players to update your squad"
-                    : `${
-                        playerPositions.filter((player) => player.id != "")
-                          .length
-                      } selected, ${
-                        playerPositions.filter((player) => player.id == "")
-                          .length
-                      } more to go`}
-                </p>
-              </div>
-              {/* <div className="sm:w-[55%]"> */}
-              <Pitch
-                setindex={setindex}
-                setOpen={setOpen}
-                playerPositions={playerPositions}
-                points={gameResults[params.slug]}
-                showPoints={false}
-              />
-              {/* </div> */}
-              <div className="sm:w-[45%] flex flex-col items-center mt-6 sm:mt-0">
-                <div className="hidden md:block">
-                  <button
-                    className="mt-10 flex mx-auto items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
-                    disabled={
-                      playerPositions.filter((player) => player.id != "")
-                        .length != 11
-                    }
-                    onClick={async () => {
-                      const _logs = [];
-                      try {
                         const pIds = playerPositions.map((p) => p.id);
                         const remappedIds = pIds.map(
                           (id: any) =>
@@ -433,6 +325,126 @@ export default function Page({ params }: { params: { slug: string } }) {
                             JSON.stringify(gameData)
                           );
                           setSquadUpdated(true);
+                        }
+                      } else {
+                        if (data?.formatted != undefined)
+                          setDisplayGasModal(true);
+                      }
+                    } catch (e) {
+                      console.log("Error Occured");
+                      console.log(e);
+                      _logs.push({
+                        id: _logs.length + 1,
+                        hash: "Transaction Rejected",
+                        href: "",
+                        username: "What made you change your mind? :/",
+                      });
+                      setLogs(_logs);
+                    }
+                  }}
+                >
+                  <p>Submit Squad</p>
+                </button>
+                <p className="font-normal text-neutral-500 italic text-xs py-1 text-center">
+                  {squadUpdated
+                    ? "Click on players to update your squad"
+                    : `${
+                        playerPositions.filter((player) => player.id != "")
+                          .length
+                      } selected, ${
+                        playerPositions.filter((player) => player.id == "")
+                          .length
+                      } more to go`}
+                </p>
+              </div>
+              {/* <div className="sm:w-[55%]"> */}
+              <Pitch
+                setindex={setindex}
+                setOpen={setOpen}
+                playerPositions={playerPositions}
+                points={gameResults[params.slug]}
+                showPoints={false}
+              />
+              {/* </div> */}
+              <div className="sm:w-[45%] flex flex-col items-center mt-6 sm:mt-0">
+                <div className="hidden md:block">
+                  <button
+                    className="mt-10 flex mx-auto items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                    disabled={
+                      playerPositions.filter((player) => player.id != "")
+                        .length != 11
+                    }
+                    onClick={async () => {
+                      const _logs = [];
+                      try {
+                        const { data } = await refetch();
+                        if (
+                          data?.formatted != undefined &&
+                          parseFloat(data.formatted) > 0.02
+                        ) {
+                          const pIds = playerPositions.map((p) => p.id);
+                          const remappedIds = pIds.map(
+                            (id: any) =>
+                              playerIdRemappings[params.slug as string][id]
+                          );
+                          let squad_hash: `0x${string}` = computeSquadHash(
+                            Buffer.from(remappedIds)
+                          );
+                          _logs.push({
+                            id: _logs.length + 1,
+                            hash: "Computed Squad Hash successfully",
+                            href: "",
+                            username: squad_hash,
+                          });
+                          setLogs(_logs);
+                          // send transaction on-chain
+
+                          if (primaryWallet) {
+                            const walletClient =
+                              await createWalletClientFromWallet(primaryWallet);
+                            const publicClient = createPublicClient({
+                              chain: arbitrumSepolia,
+                              transport: http(
+                                `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                              ),
+                            });
+                            const { request } =
+                              await publicClient.simulateContract({
+                                address: protocolAddress as `0x${string}`,
+                                abi: protocolAbi,
+                                functionName: "registerSquad",
+                                args: [params.slug, squad_hash],
+                                account: primaryWallet.address as `0x${string}`,
+                              });
+                            const tx = await walletClient.writeContract(
+                              request
+                            );
+                            console.log(tx);
+                            _logs.push({
+                              id: _logs.length + 1,
+                              hash: "Transaction Sent successfully",
+                              href: "https://sepolia.arbiscan.io/tx/" + tx,
+                              username: tx,
+                            });
+                            setLogs(_logs);
+                            let gameData = JSON.parse(
+                              localStorage.getItem("players") || "{}"
+                            );
+                            if (!gameData[params.slug])
+                              gameData[params.slug] = {};
+                            gameData[params.slug][address as any] = {
+                              squadHash: squad_hash,
+                              playerIds: pIds,
+                            };
+                            localStorage.setItem(
+                              "players",
+                              JSON.stringify(gameData)
+                            );
+                            setSquadUpdated(true);
+                          }
+                        } else {
+                          if (data?.formatted != undefined)
+                            setDisplayGasModal(true);
                         }
                       } catch (e) {
                         _logs.push({

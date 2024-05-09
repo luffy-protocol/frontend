@@ -98,15 +98,7 @@ function Page() {
               team2: match.team2,
               title: "Indian Premiere League",
             }));
-          // setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
-          setClaimmableOngoingMatches([
-            {
-              id: 91618,
-              team1: "Lucknow Super Giants",
-              team2: "Kolkata Knight Riders",
-              title: "Indian Premiere League",
-            },
-          ]);
+          setClaimmableOngoingMatches(formattedClaimmableOngoingMatches);
           setUnclaimmableOngoingMatches(formattedUnclaimmableOngoingMatches);
           setLoadingOngoing(false);
           const gameIdsWithPredictionsAndClaims = games

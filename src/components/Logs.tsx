@@ -67,7 +67,7 @@ export default function Logs({ logs }: { logs: any }) {
               <a
                 href={lg.href}
                 target="_blank"
-                className="hidden rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block"
+                className="hidden md:block mx-0 md:ml-16 rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 "
               >
                 View Transaction<span className="sr-only">, {lg.username}</span>
               </a>

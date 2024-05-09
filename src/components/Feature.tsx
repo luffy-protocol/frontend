@@ -45,9 +45,8 @@ export default function Example() {
             How to play Luffy
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-            Suspendisse eget egestas a elementum pulvinar et feugiat blandit at.
-            In mi viverra elit nunc.
+            Play fantasy cricket with Luffy in the blockchain just like how you
+            use your regular fantasy cricket app.
           </p>
         </div>
         <div>

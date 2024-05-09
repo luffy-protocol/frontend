@@ -312,7 +312,7 @@ function Page() {
             Completed Fixtures
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            View Completed fixtures
+            View the leaderboard of completed fixtures here.
           </p>
         </div>
       </div>

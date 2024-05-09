@@ -48,16 +48,16 @@ export default function Logs({ logs }: { logs: any }) {
       {logs.map((lg: any) => (
         <li
           key={lg.id}
-          className="flex items-center justify-between gap-x-6 py-5"
+          className="flex items-center justify-between gap-x-6 py-5 text-wrap text-center md:text-left"
         >
           <div className="min-w-0">
             <div className="flex items-start gap-x-3">
-              <p className="text-sm font-semibold leading-6 text-gray-900">
+              <p className="text-sm font-semibold leading-6 text-gray-900 overflow-hidden ">
                 {lg.hash}
               </p>
             </div>
-            <div className="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
-              <p className="truncate">{lg.username}</p>
+            <div className="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500 ">
+              <p className="truncate overflow-hidden">{lg.username}</p>
             </div>
           </div>
           <div className="flex flex-none items-center gap-x-4">

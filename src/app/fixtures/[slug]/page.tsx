@@ -575,8 +575,8 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        <div className="px-24 pt-16 pb-32 flex flex-col items-center">
-          <div className=" pr-16 py-6 lg:pr-16 text-black text-4xl font-bold text-center">
+        <div className="pt-16 pb-32 flex flex-col items-center">
+          <div className=" py-6 text-black text-2xl md:text-4xl font-bold text-center">
             Logs
           </div>
           {logs.length != 0 && <Logs logs={logs} />}

@@ -291,9 +291,11 @@ export default function Page({ params }: { params: { slug: string } }) {
 
         <div className="pt-12 ">
           <div className="relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-6  ">
-            <div className="flex w-[70%] mx-auto justify-between text-black  h-[200px] ">
+            <div className="flex w-[90%] md:w-[70%] mx-auto justify-between text-black  h-[200px] ">
               <div>
-                <p className="text-2xl font-semibold text-center">Top Scorer</p>
+                <p className="text-lg md:text-2xl font-semibold text-center">
+                  Top Scorer
+                </p>
                 <JustPlayerImage
                   point={points.length > 0 ? points[topScorerIndex] : 0}
                   player={
@@ -309,19 +311,19 @@ export default function Page({ params }: { params: { slug: string } }) {
                 />
               </div>
               <div>
-                <p className="text-2xl font-semibold text-center">
+                <p className="text-lg md:text-2xl font-semibold text-center">
                   Total Points
                 </p>
-                <p className="text-5xl font-semibold text-center mt-12">
+                <p className="text-3xl md:text-5xl font-semibold text-center mt-12">
                   {points.reduce((acc, currentValue) => acc + currentValue, 0)}
                 </p>
               </div>
               <div>
-                <p className="text-2xl font-semibold text-center">
+                <p className="text-lg md:text-2xl font-semibold text-center">
                   Claim Points
                 </p>
                 <button
-                  className="mt-10 mx-auto flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
+                  className="mt-10 mx-auto flex items-center gap-x-6 rounded-md  bg-[#01A4F1] px-3.5 py-2.5 text-xs md:text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-neutral-400"
                   disabled={
                     playerPositions.filter((player) => player.id != "")
                       .length != 11 ||
@@ -628,7 +630,10 @@ export default function Page({ params }: { params: { slug: string } }) {
                     }
                   }}
                 >
-                  <p>Generate Proof</p>
+                  <p className="hidden md:block">GenerateProof</p>
+                  <p className="block md:hidden">
+                    Generate <br /> Proof
+                  </p>
                 </button>
                 {started && (
                   <p className="font-normal text-center text-neutral-500 italic text-xs py-1 w-[200px] mx-auto">
@@ -655,8 +660,8 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        <div className="px-24 pt-16 pb-32 flex flex-col items-center">
-          <div className=" pr-16 py-6 lg:pr-16 text-black text-4xl font-bold text-center">
+        <div className="pt-16 pb-32 flex flex-col items-center">
+          <div className="py-6 text-black text-2xl md:text-4xl font-bold text-center">
             Logs
           </div>
           {logs.length != 0 && <Logs logs={logs} />}

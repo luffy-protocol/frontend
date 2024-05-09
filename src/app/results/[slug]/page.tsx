@@ -365,7 +365,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           gameResults[params.slug]
                         );
                         _logs.push({
-                          id: 1,
+                          id: _logs.length + 1,
                           hash: "Computed Squad Merkle root",
                           href: "",
                           username: squadMerkleRoot,
@@ -402,7 +402,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           points_merkle_paths.push(merklePath);
                         }
                         _logs.push({
-                          id: 2,
+                          id: _logs.length + 1,
                           hash: "Computed Squad Hash",
                           href: "",
                           username: squadHash,
@@ -434,7 +434,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           new Uint8Array(sig.subarray(0, sig.length - 1))
                         );
                         _logs.push({
-                          id: 3,
+                          id: _logs.length + 1,
                           hash: "Signature obtained successfully",
                           href: "",
                           username: bytesToHex(
@@ -484,7 +484,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           ),
                         });
                         _logs.push({
-                          id: 4,
+                          id: _logs.length + 1,
                           hash: "Generating zero knowledge proof...",
                           href: "",
                           username:
@@ -526,7 +526,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           ),
                         });
                         _logs.push({
-                          id: 5,
+                          id: _logs.length + 1,
                           hash: "Proof generated successfully",
                           href: "",
                           username:
@@ -535,7 +535,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         });
                         setLogs(_logs);
                         _logs.push({
-                          id: 6,
+                          id: _logs.length + 1,
                           hash: "Verifying zero knowledge proof...",
                           href: "",
                           username:
@@ -545,19 +545,19 @@ export default function Page({ params }: { params: { slug: string } }) {
                         const verified = await noir.verifyFinalProof(proof);
                         if (verified)
                           _logs.push({
-                            id: 7,
+                            id: _logs.length + 1,
                             hash: "Proof verified successfully",
                             href: "",
                             username:
-                              "Woohoo. There is one more final step. Please approve the transaction to send this proof on the blockchain",
+                              "Woohoo. There is one more step. Wait for the transaction to complete. The proof is being sent on the blockchain",
                           });
                         else
                           _logs.push({
-                            id: 7,
+                            id: _logs.length + 1,
                             hash: "Proof verification failed",
                             href: "",
                             username:
-                              "Uh Oh. Please try again. If you are stuck, reach out to our discord channel.",
+                              "Uh Oh. Something is wrong with your proof. Please try again. If you are stuck, reach out to our discord channel.",
                           });
 
                         setLogs(_logs);
@@ -589,7 +589,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                         );
                         const tx = await walletClient.writeContract(request);
                         _logs.push({
-                          id: 7,
+                          id: _logs.length + 1,
                           hash: "Transaction Sent Successfully",
                           href: `https://sepolia.arbiscan.io/tx/${tx}`,
                           username: tx,
@@ -620,11 +620,10 @@ export default function Page({ params }: { params: { slug: string } }) {
                     } catch (e) {
                       console.log(e);
                       _logs.push({
-                        id: 8,
-                        hash: "Transaction failed due to Insufficient Gas",
+                        id: _logs.length + 1,
+                        hash: "Transaction Rejected",
                         href: "",
-                        username:
-                          "Please claim some ETH at the Claim Free ETH button at the top and try again.",
+                        username: "What made you change your mind? :/",
                       });
                       setLogs(_logs);
                     }

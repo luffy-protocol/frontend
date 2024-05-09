@@ -44,20 +44,20 @@ export default function Logs({ logs }: { logs: any }) {
     console.log(logs);
   }, []);
   return (
-    <ul role="list" className="divide-y divide-gray-100">
+    <div role="list" className="divide-y divide-gray-100 max-w-[90%]">
       {logs.map((lg: any) => (
-        <li
+        <div
           key={lg.id}
-          className="flex items-center justify-between py-5 text-center md:text-left"
+          className="flex items-center justify-between py-5 text-center mx-auto"
         >
           <div className="max-w-screen  ">
             <div className="flex items-start">
-              <p className="text-sm font-semibold leading-6 text-gray-900 mx-auto md:mx-0 whitespace-normal text-wrap break-words">
+              <p className="text-sm font-semibold leading-6 text-gray-900 mx-auto md:mx-0 whitespace-normal text-wrap break-all">
                 {lg.hash}
               </p>
             </div>
             <div className="mt-1 flex items-center text-xs leading-5 text-gray-500 ">
-              <p className="mx-auto md:mx-0 whitespace-normal text-wrap break-words">
+              <p className="mx-auto md:mx-0 whitespace-normal text-wrap break-all">
                 {lg.username}
               </p>
             </div>
@@ -73,8 +73,8 @@ export default function Logs({ logs }: { logs: any }) {
               </a>
             )}
           </div>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }

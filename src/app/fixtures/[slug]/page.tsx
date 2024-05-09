@@ -374,72 +374,74 @@ export default function Page({ params }: { params: { slug: string } }) {
                         .length != 11
                     }
                     onClick={async () => {
-                      const pIds = playerPositions.map((p) => p.id);
-                      const remappedIds = pIds.map(
-                        (id: any) =>
-                          playerIdRemappings[params.slug as string][id]
-                      );
-                      let squad_hash: `0x${string}` = computeSquadHash(
-                        Buffer.from(remappedIds)
-                      );
-                      setLogs([
-                        {
-                          id: 1,
+                      const _logs = [];
+                      try {
+                        const pIds = playerPositions.map((p) => p.id);
+                        const remappedIds = pIds.map(
+                          (id: any) =>
+                            playerIdRemappings[params.slug as string][id]
+                        );
+                        let squad_hash: `0x${string}` = computeSquadHash(
+                          Buffer.from(remappedIds)
+                        );
+                        _logs.push({
+                          id: _logs.length + 1,
                           hash: "Computed Squad Hash successfully",
                           href: "",
                           username: squad_hash,
-                        },
-                      ]);
-                      // send transaction on-chain
-
-                      if (primaryWallet) {
-                        const walletClient = await createWalletClientFromWallet(
-                          primaryWallet
-                        );
-                        const publicClient = createPublicClient({
-                          chain: arbitrumSepolia,
-                          transport: http(
-                            `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
-                          ),
                         });
-                        const { request } = await publicClient.simulateContract(
-                          {
-                            address: protocolAddress as `0x${string}`,
-                            abi: protocolAbi,
-                            functionName: "registerSquad",
-                            args: [params.slug, squad_hash],
-                            account: primaryWallet.address as `0x${string}`,
-                          }
-                        );
-                        const tx = await walletClient.writeContract(request);
-                        console.log(tx);
-                        setLogs([
-                          {
-                            id: 1,
-                            hash: "Computed Squad Hash successfully",
-                            href: "",
-                            username: squad_hash,
-                          },
-                          {
-                            id: 2,
+                        setLogs(_logs);
+                        // send transaction on-chain
+
+                        if (primaryWallet) {
+                          const walletClient =
+                            await createWalletClientFromWallet(primaryWallet);
+                          const publicClient = createPublicClient({
+                            chain: arbitrumSepolia,
+                            transport: http(
+                              `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_ARBITRUM}`
+                            ),
+                          });
+                          const { request } =
+                            await publicClient.simulateContract({
+                              address: protocolAddress as `0x${string}`,
+                              abi: protocolAbi,
+                              functionName: "registerSquad",
+                              args: [params.slug, squad_hash],
+                              account: primaryWallet.address as `0x${string}`,
+                            });
+                          const tx = await walletClient.writeContract(request);
+                          console.log(tx);
+                          _logs.push({
+                            id: _logs.length + 1,
                             hash: "Transaction Sent successfully",
                             href: "https://sepolia.arbiscan.io/tx/" + tx,
                             username: tx,
-                          },
-                        ]);
-                        let gameData = JSON.parse(
-                          localStorage.getItem("players") || "{}"
-                        );
-                        if (!gameData[params.slug]) gameData[params.slug] = {};
-                        gameData[params.slug][address as any] = {
-                          squadHash: squad_hash,
-                          playerIds: pIds,
-                        };
-                        localStorage.setItem(
-                          "players",
-                          JSON.stringify(gameData)
-                        );
-                        setSquadUpdated(true);
+                          });
+                          setLogs(_logs);
+                          let gameData = JSON.parse(
+                            localStorage.getItem("players") || "{}"
+                          );
+                          if (!gameData[params.slug])
+                            gameData[params.slug] = {};
+                          gameData[params.slug][address as any] = {
+                            squadHash: squad_hash,
+                            playerIds: pIds,
+                          };
+                          localStorage.setItem(
+                            "players",
+                            JSON.stringify(gameData)
+                          );
+                          setSquadUpdated(true);
+                        }
+                      } catch (e) {
+                        _logs.push({
+                          id: _logs.length + 1,
+                          hash: "Transaction Rejected",
+                          href: "",
+                          username: "What made you change your mind? :/",
+                        });
+                        setLogs(_logs);
                       }
                     }}
                   >

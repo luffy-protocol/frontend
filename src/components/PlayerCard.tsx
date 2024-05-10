@@ -40,7 +40,9 @@ export default function CardImage({
             </p>
             {/* <p className="text-sm text-slate-400">{position}</p> */}
             {/* </div> */}
-            <p className="text-lg font-bold text-center">Points:{points}</p>
+            <p className="text-sm md:text-lg font-bold text-center">
+              Points:{points}
+            </p>
           </header>
         </div>
       </div>

@@ -65,25 +65,27 @@ const DisplayGasModal: React.FC<Props> = ({ state, setModalState }) => {
             className=" object-contain mb-4"
           />
           <h2 className="text-2xl font-bold mb-4">
-            You don&apos;t have enough gas!
+            Please wait while we mint some funds to your wallet
           </h2>
           <ul className="list-disc mb-6 text-lg text-center">
             <p className="mb-2">
               You need some funds to perform the transaction.
             </p>
-            <p className="mb-2">Minting some funds to your wallet now...</p>
+            <p className="mb-2">Minting 0.02ETH to your wallet now...</p>
 
-            <p>
-              Click{" "}
-              <a
-                target="_blank"
-                className="text-underline text-blue-400"
-                href={`https://sepolia.arbiscan.io/tx/${txHash}`}
-              >
-                here
-              </a>{" "}
-              to view the transaction
-            </p>
+            {txHash != "" && (
+              <p>
+                Click{" "}
+                <a
+                  target="_blank"
+                  className="text-underline text-blue-400"
+                  href={`https://sepolia.arbiscan.io/tx/${txHash}`}
+                >
+                  here
+                </a>{" "}
+                to view the transaction
+              </p>
+            )}
             <button
               onClick={() => {
                 if (txHash != "") setModalState(false);

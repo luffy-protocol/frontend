@@ -102,7 +102,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       </div>
       {showPoints && (
         <div
-          className={`absolute cursor-pointer text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md ${
+          className={`absolute cursor-pointer text-[5px] md:text-xs mt-5 mr-5 px-1 bg-slate-50 text-black rounded-md ${
             index == 10
               ? "left-[42%] top-[14%]"
               : index == 9

@@ -38,6 +38,7 @@ import {
 } from "@noir-lang/backend_barretenberg";
 import { Noir } from "@noir-lang/noir_js";
 import DisplayGasModal from "@/components/DisplayGasModal";
+import axios from "axios";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const { isAuthenticated } = useDynamicContext();
@@ -446,174 +447,207 @@ export default function Page({ params }: { params: { slug: string } }) {
                         // Extract x and y coordinates
                         signer_pub_x_key = Array.from(
                           publicKeyBuffer.subarray(1, 33)
-                        ).map((byte) => `${byte}`);
+                        );
                         signer_pub_y_key = Array.from(
                           publicKeyBuffer.subarray(33)
-                        ).map((byte) => `${byte}`);
-                        console.log({
-                          signer_pub_x_key: Array.from(signer_pub_x_key).map(
-                            (byte) => `${byte}`
-                          ),
-                          signer_pub_y_key: Array.from(signer_pub_y_key).map(
-                            (byte) => `${byte}`
-                          ),
-                          signature: Array.from(signature).map(
-                            (byte) => `${byte}`
-                          ),
-                          selected_player_ids: Array.from(player_ids).map(
-                            (byte) => `${byte}`
-                          ),
+                        );
+                        const proofInputs = JSON.stringify({
+                          signer_pub_x_key,
+                          signer_pub_y_key,
+                          signature,
+                          selected_player_ids: player_ids,
                           selected_players_points: player_points.map((point) =>
-                            Array.from(point).map((byte) => `${byte}`)
+                            Array.from(point)
                           ),
                           player_points_merkle_paths: points_merkle_paths.map(
                             (points_merkle_path) =>
                               points_merkle_path.map((element) =>
-                                Array.from(element).map((e) => `${e}`)
+                                Array.from(element)
                               )
-                          ) as any,
+                          ),
                           all_player_points_merkle_root: Array.from(
                             toBytes(squadMerkleRoot)
-                          ).map((byte) => `${byte}`),
+                          ),
                           selected_squad_hash: Array.from(
                             Buffer.from(squadHash.slice(2), "hex")
-                          ).map((byte) => `${byte}`),
+                          ),
                           claimed_player_points: points.reduce(
                             (acc, currentValue) => acc + currentValue,
                             0
                           ),
                         });
-                        _logs.push({
-                          id: _logs.length + 1,
-                          hash: "Generating zero knowledge proof...",
-                          href: "",
-                          username:
-                            "Please wait. DO NOT close this window. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
-                        });
-                        setLogs(_logs);
 
-                        const proof = await noir.generateFinalProof({
-                          signer_pub_x_key: Array.from(signer_pub_x_key).map(
-                            (byte) => `${byte}`
-                          ),
-                          signer_pub_y_key: Array.from(signer_pub_y_key).map(
-                            (byte) => `${byte}`
-                          ),
-                          signature: Array.from(signature).map(
-                            (byte) => `${byte}`
-                          ),
-                          selected_player_ids: Array.from(player_ids).map(
-                            (byte) => `${byte}`
-                          ),
-                          selected_players_points: player_points.map((point) =>
-                            Array.from(point).map((byte) => `${byte}`)
-                          ) as any,
-                          player_points_merkle_paths: points_merkle_paths.map(
-                            (points_merkle_path) =>
-                              points_merkle_path.map((element) =>
-                                Array.from(element).map((e) => `${e}`)
-                              )
-                          ) as any,
-                          all_player_points_merkle_root: Array.from(
-                            toBytes(squadMerkleRoot)
-                          ).map((byte) => `${byte}`),
-                          selected_squad_hash: Array.from(
-                            Buffer.from(squadHash.slice(2), "hex")
-                          ).map((byte) => `${byte}`),
-                          claimed_player_points: points.reduce(
-                            (acc, currentValue) => acc + currentValue,
-                            0
-                          ),
-                        });
-                        _logs.push({
-                          id: _logs.length + 1,
-                          hash: "Proof generated successfully",
-                          href: "",
-                          username:
-                            bytesToHex(proof.proof).substring(0, 50 - 3) +
-                            "...",
-                        });
-                        setLogs(_logs);
-                        _logs.push({
-                          id: _logs.length + 1,
-                          hash: "Verifying zero knowledge proof...",
-                          href: "",
-                          username:
-                            "The proof needs to be verified initially before passing it on chain",
-                        });
-                        setLogs(_logs);
-                        const verified = await noir.verifyFinalProof(proof);
-                        if (verified)
-                          _logs.push({
-                            id: _logs.length + 1,
-                            hash: "Proof verified successfully",
-                            href: "",
-                            username:
-                              "Woohoo. There is one more step. Wait for the transaction to complete. The proof is being sent on the blockchain",
-                          });
-                        else
-                          _logs.push({
-                            id: _logs.length + 1,
-                            hash: "Proof verification failed",
-                            href: "",
-                            username:
-                              "Uh Oh. Something is wrong with your proof. Please try again. If you are stuck, reach out to our discord channel.",
-                          });
+                        console.log(proofInputs);
 
-                        setLogs(_logs);
-                        console.log("PARAMS");
-                        console.log([
-                          params.slug,
-                          points.reduce(
-                            (acc, currentValue) => acc + currentValue,
-                            0
-                          ),
-                          proof.proof,
-                        ]);
-                        // send transaction
-                        const { request } = await publicClient.simulateContract(
-                          {
-                            address: protocolAddress as `0x${string}`,
-                            abi: protocolAbi,
-                            functionName: "claimPoints",
-                            args: [
-                              params.slug,
-                              points.reduce(
-                                (acc, currentValue) => acc + currentValue,
-                                0
-                              ),
-                              bytesToHex(proof.proof),
-                            ],
-                            account: primaryWallet.address as `0x${string}`,
-                          }
-                        );
-                        const tx = await walletClient.writeContract(request);
-                        _logs.push({
-                          id: _logs.length + 1,
-                          hash: "Transaction Sent Successfully",
-                          href: `https://sepolia.arbiscan.io/tx/${tx}`,
-                          username: tx,
+                        const response = await axios.post(`/api/sindri/prove`, {
+                          headers: {},
+                          data: { proofInputs: proofInputs },
                         });
-                        setLogs(_logs);
-                        let claimed = JSON.parse(
-                          localStorage.getItem("claimed") || "{}"
-                        );
-                        if (
-                          claimed != null &&
-                          claimed != undefined &&
-                          address != undefined
-                        ) {
-                          if (
-                            claimed[params.slug] == null ||
-                            claimed[params.slug] == undefined
-                          )
-                            claimed[params.slug] = {};
-                          claimed[params.slug][address] = true;
-                          localStorage.setItem(
-                            "claimed",
-                            JSON.stringify(claimed)
-                          );
-                        }
+                        console.log(response);
+                        //   console.log({
+                        //     signer_pub_x_key: Array.from(signer_pub_x_key).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     signer_pub_y_key: Array.from(signer_pub_y_key).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     signature: Array.from(signature).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     selected_player_ids: Array.from(player_ids).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     selected_players_points: player_points.map((point) =>
+                        //       Array.from(point).map((byte) => `${byte}`)
+                        //     ),
+                        //     player_points_merkle_paths: points_merkle_paths.map(
+                        //       (points_merkle_path) =>
+                        //         points_merkle_path.map((element) =>
+                        //           Array.from(element).map((e) => `${e}`)
+                        //         )
+                        //     ) as any,
+                        //     all_player_points_merkle_root: Array.from(
+                        //       toBytes(squadMerkleRoot)
+                        //     ).map((byte) => `${byte}`),
+                        //     selected_squad_hash: Array.from(
+                        //       Buffer.from(squadHash.slice(2), "hex")
+                        //     ).map((byte) => `${byte}`),
+                        //     claimed_player_points: points.reduce(
+                        //       (acc, currentValue) => acc + currentValue,
+                        //       0
+                        //     ),
+                        //   });
+                        //   _logs.push({
+                        //     id: _logs.length + 1,
+                        //     hash: "Generating zero knowledge proof...",
+                        //     href: "",
+                        //     username:
+                        //       "Please wait. DO NOT close this window. This may take 2-3 minutes. This proof is generated to verify your squad in the blockchain without revealing it 🪄",
+                        //   });
+                        //   setLogs(_logs);
+
+                        //   const proof = await noir.generateFinalProof({
+                        //     signer_pub_x_key: Array.from(signer_pub_x_key).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     signer_pub_y_key: Array.from(signer_pub_y_key).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     signature: Array.from(signature).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     selected_player_ids: Array.from(player_ids).map(
+                        //       (byte) => `${byte}`
+                        //     ),
+                        //     selected_players_points: player_points.map((point) =>
+                        //       Array.from(point).map((byte) => `${byte}`)
+                        //     ) as any,
+                        //     player_points_merkle_paths: points_merkle_paths.map(
+                        //       (points_merkle_path) =>
+                        //         points_merkle_path.map((element) =>
+                        //           Array.from(element).map((e) => `${e}`)
+                        //         )
+                        //     ) as any,
+                        //     all_player_points_merkle_root: Array.from(
+                        //       toBytes(squadMerkleRoot)
+                        //     ).map((byte) => `${byte}`),
+                        //     selected_squad_hash: Array.from(
+                        //       Buffer.from(squadHash.slice(2), "hex")
+                        //     ).map((byte) => `${byte}`),
+                        //     claimed_player_points: points.reduce(
+                        //       (acc, currentValue) => acc + currentValue,
+                        //       0
+                        //     ),
+                        //   });
+                        //   _logs.push({
+                        //     id: _logs.length + 1,
+                        //     hash: "Proof generated successfully",
+                        //     href: "",
+                        //     username:
+                        //       bytesToHex(proof.proof).substring(0, 50 - 3) +
+                        //       "...",
+                        //   });
+                        //   setLogs(_logs);
+                        //   _logs.push({
+                        //     id: _logs.length + 1,
+                        //     hash: "Verifying zero knowledge proof...",
+                        //     href: "",
+                        //     username:
+                        //       "The proof needs to be verified initially before passing it on chain",
+                        //   });
+                        //   setLogs(_logs);
+                        //   const verified = await noir.verifyFinalProof(proof);
+                        //   if (verified)
+                        //     _logs.push({
+                        //       id: _logs.length + 1,
+                        //       hash: "Proof verified successfully",
+                        //       href: "",
+                        //       username:
+                        //         "Woohoo. There is one more step. Wait for the transaction to complete. The proof is being sent on the blockchain",
+                        //     });
+                        //   else
+                        //     _logs.push({
+                        //       id: _logs.length + 1,
+                        //       hash: "Proof verification failed",
+                        //       href: "",
+                        //       username:
+                        //         "Uh Oh. Something is wrong with your proof. Please try again. If you are stuck, reach out to our discord channel.",
+                        //     });
+
+                        //   setLogs(_logs);
+                        //   console.log("PARAMS");
+                        //   console.log([
+                        //     params.slug,
+                        //     points.reduce(
+                        //       (acc, currentValue) => acc + currentValue,
+                        //       0
+                        //     ),
+                        //     proof.proof,
+                        //   ]);
+                        //   // send transaction
+                        //   const { request } = await publicClient.simulateContract(
+                        //     {
+                        //       address: protocolAddress as `0x${string}`,
+                        //       abi: protocolAbi,
+                        //       functionName: "claimPoints",
+                        //       args: [
+                        //         params.slug,
+                        //         points.reduce(
+                        //           (acc, currentValue) => acc + currentValue,
+                        //           0
+                        //         ),
+                        //         bytesToHex(proof.proof),
+                        //       ],
+                        //       account: primaryWallet.address as `0x${string}`,
+                        //     }
+                        //   );
+                        //   const tx = await walletClient.writeContract(request);
+                        //   _logs.push({
+                        //     id: _logs.length + 1,
+                        //     hash: "Transaction Sent Successfully",
+                        //     href: `https://sepolia.arbiscan.io/tx/${tx}`,
+                        //     username: tx,
+                        //   });
+                        //   setLogs(_logs);
+                        //   let claimed = JSON.parse(
+                        //     localStorage.getItem("claimed") || "{}"
+                        //   );
+                        //   if (
+                        //     claimed != null &&
+                        //     claimed != undefined &&
+                        //     address != undefined
+                        //   ) {
+                        //     if (
+                        //       claimed[params.slug] == null ||
+                        //       claimed[params.slug] == undefined
+                        //     )
+                        //       claimed[params.slug] = {};
+                        //     claimed[params.slug][address] = true;
+                        //     localStorage.setItem(
+                        //       "claimed",
+                        //       JSON.stringify(claimed)
+                        //     );
+                        //   }
                       } else {
                         setDisplayGasModal(true);
                       }

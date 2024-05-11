@@ -1,5 +1,3 @@
-// pages/api/getImageUrl.ts
-
 import axios from "axios";
 
 const DYNAMIC_API_KEY = process.env.NEXT_PUBLIC_DYNAMIC_API_KEY;

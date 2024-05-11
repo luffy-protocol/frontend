@@ -1,13 +1,10 @@
-// pages/api/getImageUrl.ts
-
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { proofInputs } = req.body;
+export async function POST(req: Request, res: Response) {
+  const request = await req.json();
+  const { proofInputs } = request;
+  console.log(request);
   const SINDRI_API_KEY =
     process.env.NEXT_PUBLIC_SINDRI_API_KEY || "<your-key-here>";
 
@@ -47,12 +44,14 @@ export default async function handler(
     console.log(proofDetailResponse.data.proof);
     console.log("Public Output:");
     console.log(proofDetailResponse.data.public);
-    res.status(200).json({
+
+    return Response.json({
+      success: true,
       proof: proofDetailResponse.data.proof,
     });
   } catch (error) {
     console.log("Error generating proof:");
     console.log(error);
-    return res.status(500).json({ error: "Internal server error" });
+    return Response.json({ success: false, error: "Internal server error" });
   }
 }

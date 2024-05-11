@@ -19,7 +19,6 @@ export default async function handler(
   axios.defaults.validateStatus = (status) => status >= 200 && status < 300;
 
   const circuitId = "8407979b-1359-401f-8259-2130ab7b46e1";
-
   try {
     const proveResponse = await axios.post(`/circuit/${circuitId}/prove`, {
       proof_input: proofInputs,
@@ -52,7 +51,8 @@ export default async function handler(
       proof: proofDetailResponse.data.proof,
     });
   } catch (error) {
-    console.error("Error fetching image URL:", error);
+    console.log("Error generating proof:");
+    console.log(error);
     return res.status(500).json({ error: "Internal server error" });
   }
 }

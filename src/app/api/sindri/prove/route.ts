@@ -52,6 +52,6 @@ export async function POST(req: Request, res: Response) {
   } catch (error) {
     console.log("Error generating proof:");
     console.log(error);
-    return Response.json({ success: false, error: "Internal server error" });
+    return Response.json({ success: false, error: error });
   }
 }

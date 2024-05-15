@@ -1,0 +1,2568 @@
+[
+  {
+    "player": {
+      "id": 16536,
+      "name": "G. Vallecilla",
+      "firstname": "Exon Gustavo",
+      "lastname": "Vallecilla Godoy",
+      "age": 24,
+      "birth": {
+        "date": "1999-05-28",
+        "place": "Esmeraldas",
+        "country": "Ecuador"
+      },
+      "nationality": "Ecuador",
+      "height": "186 cm",
+      "weight": "81 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/16536.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 24787,
+      "name": "B. Scott",
+      "firstname": "Brady",
+      "lastname": "Canfield Scott",
+      "age": 25,
+      "birth": {
+        "date": "1999-06-30",
+        "place": "Petaluma",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "83 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/24787.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 47582,
+      "name": "C. Hernández",
+      "firstname": "Juan Camilo",
+      "lastname": "Hernández Suárez",
+      "age": 25,
+      "birth": {
+        "date": "1999-04-20",
+        "place": "Pereira",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "175 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/47582.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 8,
+          "minutes": 727,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.388888",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 2,
+          "bench": 1
+        },
+        "shots": {
+          "total": 31,
+          "on": 12
+        },
+        "goals": {
+          "total": 4,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 312,
+          "key": 14,
+          "accuracy": 22
+        },
+        "tackles": {
+          "total": 11,
+          "blocks": 1,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 115,
+          "won": 54
+        },
+        "dribbles": {
+          "attempts": 35,
+          "success": 15,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 15,
+          "committed": 8
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 1
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 1,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 4,
+          "minutes": 400,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.680000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 2,
+          "bench": 1
+        },
+        "shots": {
+          "total": 13,
+          "on": 6
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 174,
+          "key": 11,
+          "accuracy": 24
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 54,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 18,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 11,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50833,
+      "name": "J. Williams",
+      "firstname": "Josh",
+      "lastname": "Williams",
+      "age": 36,
+      "birth": {
+        "date": "1988-04-18",
+        "place": "Akron",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "83 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50833.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50883,
+      "name": "J. Gressel",
+      "firstname": "Julian Emil Kurt",
+      "lastname": "Gressel",
+      "age": 31,
+      "birth": {
+        "date": "1993-12-16",
+        "place": "Neustadt an der Aisch",
+        "country": "Germany"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "95 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50883.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51044,
+      "name": "C. Ramirez",
+      "firstname": "Christian",
+      "lastname": "Ramirez",
+      "age": 33,
+      "birth": {
+        "date": "1991-04-04",
+        "place": "Garden Grove",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51044.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 1,
+          "minutes": 92,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.575000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 1,
+          "bench": 6
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 41,
+          "key": 2,
+          "accuracy": 6
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 2,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 112,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.950000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 33,
+          "key": 3,
+          "accuracy": 12
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 4,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 1,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51045,
+      "name": "D. Rossi",
+      "firstname": "Diego Martín",
+      "lastname": "Rossi Marachlian",
+      "age": 26,
+      "birth": {
+        "date": "1998-03-05",
+        "place": "Montevideo",
+        "country": "Uruguay"
+      },
+      "nationality": "Uruguay",
+      "height": "170 cm",
+      "weight": "65 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51045.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 9,
+          "minutes": 854,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.118181",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 1,
+          "bench": 2
+        },
+        "shots": {
+          "total": 17,
+          "on": 6
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 344,
+          "key": 17,
+          "accuracy": 26
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 98,
+          "won": 43
+        },
+        "dribbles": {
+          "attempts": 35,
+          "success": 21,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 20,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 1,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 5,
+          "minutes": 497,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.150000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": 10,
+          "on": 8
+        },
+        "goals": {
+          "total": 3,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 176,
+          "key": 8,
+          "accuracy": 26
+        },
+        "tackles": {
+          "total": 4,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 53,
+          "won": 20
+        },
+        "dribbles": {
+          "attempts": 15,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51137,
+      "name": "T. Roberts",
+      "firstname": "Charles Thomas",
+      "lastname": "Roberts IV",
+      "age": 23,
+      "birth": {
+        "date": "2001-05-11",
+        "place": "Little Rock",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "180 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51137.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51160,
+      "name": "K. Molino",
+      "firstname": "Kevin Reginald",
+      "lastname": "Molino",
+      "age": 34,
+      "birth": {
+        "date": "1990-06-17",
+        "place": "Carenage",
+        "country": "Trinidad and Tobago"
+      },
+      "nationality": "Trinidad and Tobago",
+      "height": "180 cm",
+      "weight": "80 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51160.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51253,
+      "name": "J. Medranda",
+      "firstname": "Jimmy Gerardo",
+      "lastname": "Medranda Obando",
+      "age": 30,
+      "birth": {
+        "date": "1994-02-07",
+        "place": "Mosquera",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "173 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51253.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 64134,
+      "name": "M. Hinestroza",
+      "firstname": "Marino",
+      "lastname": "Hinestroza Angulo",
+      "age": 22,
+      "birth": {
+        "date": "2002-07-08",
+        "place": "Cali",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "172 cm",
+      "weight": "60 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/64134.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 7,
+          "lineups": 3,
+          "minutes": 238,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.883333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 3,
+          "bench": 8
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 86,
+          "key": 2,
+          "accuracy": 10
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 31,
+          "won": 12
+        },
+        "dribbles": {
+          "attempts": 13,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 4,
+          "minutes": 281,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.920000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 4,
+          "bench": 2
+        },
+        "shots": {
+          "total": 7,
+          "on": 3
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 80,
+          "key": 2,
+          "accuracy": 13
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 37,
+          "won": 22
+        },
+        "dribbles": {
+          "attempts": 17,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 10,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 203409,
+      "name": "G. Rayo",
+      "firstname": "Gibran",
+      "lastname": "Rayo Najera",
+      "age": 23,
+      "birth": {
+        "date": "2001-10-14",
+        "place": "Dallas",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/203409.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 203428,
+      "name": "J. Russell-Rowe",
+      "firstname": "Jacen Rex Orlando",
+      "lastname": "Russell-Rowe",
+      "age": 22,
+      "birth": {
+        "date": "2002-09-13",
+        "place": "Toronto",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "183 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/203428.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 6,
+          "minutes": 609,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.133333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 5,
+          "bench": 4
+        },
+        "shots": {
+          "total": 16,
+          "on": 7
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 156,
+          "key": 12,
+          "accuracy": 12
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 65,
+          "won": 25
+        },
+        "dribbles": {
+          "attempts": 13,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 8,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 4,
+          "minutes": 348,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.866666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 4,
+          "bench": 2
+        },
+        "shots": {
+          "total": 7,
+          "on": 4
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 92,
+          "key": 4,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 32,
+          "won": 10
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 270964,
+      "name": "N. Fuson",
+      "firstname": "Noah",
+      "lastname": "Fuson",
+      "age": 25,
+      "birth": {
+        "date": "1999-12-31",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "76 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/270964.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 308690,
+      "name": "I. Parente",
+      "firstname": "Isaiah",
+      "lastname": "Parente",
+      "age": 24,
+      "birth": {
+        "date": "2000-03-16",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "179 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/308690.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351575,
+      "name": "P. Quinton",
+      "firstname": "Philip Kane",
+      "lastname": "Quinton",
+      "age": 25,
+      "birth": {
+        "date": "1999-11-16",
+        "place": "Portland",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "198 cm",
+      "weight": "93 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351575.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 7
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 52,
+          "key": null,
+          "accuracy": 45
+        },
+        "tackles": {
+          "total": null,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 2,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362400,
+      "name": "M. Arfsten",
+      "firstname": "Maximilian",
+      "lastname": "Arfsten",
+      "age": 23,
+      "birth": {
+        "date": "2001-04-19",
+        "place": "Fresno",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "78 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362400.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 5,
+          "minutes": 502,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.033333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 3,
+          "bench": 6
+        },
+        "shots": {
+          "total": 7,
+          "on": 4
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 246,
+          "key": 8,
+          "accuracy": 23
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 62,
+          "won": 29
+        },
+        "dribbles": {
+          "attempts": 20,
+          "success": 11,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 0,
+          "minutes": 37,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 11,
+          "key": null,
+          "accuracy": 4
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 6,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 380746,
+      "name": "C. Mrowka",
+      "firstname": "Cole",
+      "lastname": "Mrowka",
+      "age": 18,
+      "birth": {
+        "date": "2006-04-06",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/380746.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 5
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 407238,
+      "name": "K. Hughes",
+      "firstname": "Keegan Monroe",
+      "lastname": "Hughes",
+      "age": 24,
+      "birth": {
+        "date": "2000-07-22",
+        "place": "Newark",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "81 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/407238.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 413198,
+      "name": "G. De Libera",
+      "firstname": "Giorgio",
+      "lastname": "De Libera",
+      "age": 19,
+      "birth": {
+        "date": "2005-10-31",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/413198.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1613,
+          "name": "Columbus Crew",
+          "logo": "https://media.api-sports.io/football/teams/1613.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  }
+]

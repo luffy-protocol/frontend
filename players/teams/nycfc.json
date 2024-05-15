@@ -1,0 +1,1902 @@
+[
+  {
+    "player": {
+      "id": 6048,
+      "name": "B. Cufré",
+      "firstname": "Braian Ezequiel",
+      "lastname": "Cufré",
+      "age": 27,
+      "birth": {
+        "date": "1996-12-15",
+        "place": "Mar del Plata",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": "179 cm",
+      "weight": "82 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/6048.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 6411,
+      "name": "M. Pellegrini",
+      "firstname": "Matías",
+      "lastname": "Pellegrini",
+      "age": 24,
+      "birth": {
+        "date": "2000-03-11",
+        "place": "Magdalena",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": "180 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/6411.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 25459,
+      "name": "A. Morales",
+      "firstname": "Alfredo Eloy Galo",
+      "lastname": "Morales",
+      "age": 34,
+      "birth": {
+        "date": "1990-05-12",
+        "place": "Berlin",
+        "country": "Germany"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/25459.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50857,
+      "name": "J. Haak",
+      "firstname": "Justin",
+      "lastname": "Haak",
+      "age": 23,
+      "birth": {
+        "date": "2001-09-12",
+        "place": "Brooklyn",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50857.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 0,
+          "minutes": 61,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.566666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 0,
+          "bench": 8
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 45,
+          "key": null,
+          "accuracy": 13
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 22,
+          "won": 10
+        },
+        "dribbles": {
+          "attempts": 3,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71152,
+      "name": "C. Mizell",
+      "firstname": "Cody Nobles",
+      "lastname": "Mizell",
+      "age": 33,
+      "birth": {
+        "date": "1991-09-30",
+        "place": "Woodstock",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/71152.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 79678,
+      "name": "A. Martínez",
+      "firstname": "Adrián Alonso",
+      "lastname": "Martínez Batista",
+      "age": 26,
+      "birth": {
+        "date": "1998-10-15",
+        "place": "Puntarenas",
+        "country": "Costa Rica"
+      },
+      "nationality": "Costa Rica",
+      "height": "173 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/79678.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 7,
+          "lineups": 3,
+          "minutes": 271,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.714285",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 3,
+          "bench": 9
+        },
+        "shots": {
+          "total": 6,
+          "on": 4
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 52,
+          "key": null,
+          "accuracy": 7
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 17,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 102851,
+      "name": "R. Ledezma",
+      "firstname": "Richard",
+      "lastname": "Ledezma",
+      "age": 23,
+      "birth": {
+        "date": "2000-09-06",
+        "place": "Phoenix",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/102851.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 103167,
+      "name": "K. O&apos;Toole",
+      "firstname": "Kevin",
+      "lastname": "O'Toole",
+      "age": 26,
+      "birth": {
+        "date": "1998-12-14",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/103167.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 11,
+          "minutes": 1000,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.883333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": 2,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 443,
+          "key": 11,
+          "accuracy": 30
+        },
+        "tackles": {
+          "total": 25,
+          "blocks": 3,
+          "interceptions": 16
+        },
+        "duels": {
+          "total": 103,
+          "won": 45
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 12
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 108643,
+      "name": "G. Segal",
+      "firstname": "Gabriel",
+      "lastname": "North Segal",
+      "age": 23,
+      "birth": {
+        "date": "2001-05-17",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/108643.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.860000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 6,
+          "on": 3
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 35,
+          "key": 1,
+          "accuracy": 4
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 13,
+          "won": 6
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 171300,
+      "name": "S. Turnbull",
+      "firstname": "Stephen Timothy",
+      "lastname": "Turnbull",
+      "age": 26,
+      "birth": {
+        "date": "1998-03-13",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/171300.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 296333,
+      "name": "M. Bakrar",
+      "firstname": "Mounsef",
+      "lastname": "Bakrar",
+      "age": 23,
+      "birth": {
+        "date": "2001-01-13",
+        "place": null,
+        "country": "Algeria"
+      },
+      "nationality": "Algeria",
+      "height": "183 cm",
+      "weight": "80 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/296333.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 10,
+          "minutes": 815,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.610000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 7,
+          "bench": 0
+        },
+        "shots": {
+          "total": 28,
+          "on": 10
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 141,
+          "key": 9,
+          "accuracy": 9
+        },
+        "tackles": {
+          "total": 10,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 102,
+          "won": 40
+        },
+        "dribbles": {
+          "attempts": 23,
+          "success": 8,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 15,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351915,
+      "name": "N. Benalcazar",
+      "firstname": "Nicholas Enrique",
+      "lastname": "Benalcazar",
+      "age": 23,
+      "birth": {
+        "date": "2001-06-06",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "180 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351915.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351916,
+      "name": "S. Owusu",
+      "firstname": "Samuel Afriyie",
+      "lastname": "Owusu",
+      "age": 24,
+      "birth": {
+        "date": "2000-12-13",
+        "place": "Kumasi",
+        "country": "Ghana"
+      },
+      "nationality": "Ghana",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351916.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 354232,
+      "name": "J. Fernández",
+      "firstname": "Julián",
+      "lastname": "Fernández",
+      "age": 20,
+      "birth": {
+        "date": "2004-01-30",
+        "place": "Buenos Aires",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/354232.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 4,
+          "minutes": 423,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.918181",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 7,
+          "out": 4,
+          "bench": 8
+        },
+        "shots": {
+          "total": 10,
+          "on": 6
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 177,
+          "key": 9,
+          "accuracy": 12
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": null,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 54,
+          "won": 24
+        },
+        "dribbles": {
+          "attempts": 18,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 7
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 361358,
+      "name": "J. Mijatović",
+      "firstname": "Jovan",
+      "lastname": "Mijatović",
+      "age": 19,
+      "birth": {
+        "date": "2005-07-11",
+        "place": "Beograd",
+        "country": "Serbia"
+      },
+      "nationality": "Serbia",
+      "height": "179 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/361358.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 0,
+          "minutes": 63,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.375000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 0,
+          "bench": 7
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 10,
+          "key": null,
+          "accuracy": 1
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 13,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362095,
+      "name": "J. Denis",
+      "firstname": "John",
+      "lastname": "Denis",
+      "age": 26,
+      "birth": {
+        "date": "1998-02-03",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362095.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 379134,
+      "name": "J. Shore",
+      "firstname": "Jonathan",
+      "lastname": "Shore",
+      "age": 17,
+      "birth": {
+        "date": "2007-04-13",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "172 cm",
+      "weight": "61 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/379134.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 427864,
+      "name": "J. Arroyave",
+      "firstname": "Jacob",
+      "lastname": "Arroyave",
+      "age": 17,
+      "birth": {
+        "date": "2007-11-12",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/427864.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 452826,
+      "name": "Z. Yañez",
+      "firstname": "Zidane Antonio",
+      "lastname": "Yañez",
+      "age": 16,
+      "birth": {
+        "date": "2008-01-26",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/452826.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 455906,
+      "name": "M. Jones",
+      "firstname": "Malachi",
+      "lastname": "Jones",
+      "age": 21,
+      "birth": {
+        "date": "2003-09-23",
+        "place": "Freetown",
+        "country": "Sierra Leone"
+      },
+      "nationality": "Sierra Leone",
+      "height": "178 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/455906.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 1,
+          "minutes": 178,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.483333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 5,
+          "out": 1,
+          "bench": 10
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 48,
+          "key": 1,
+          "accuracy": 5
+        },
+        "tackles": {
+          "total": 5,
+          "blocks": 1,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 40,
+          "won": 20
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  }
+]

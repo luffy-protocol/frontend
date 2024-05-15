@@ -1,0 +1,1902 @@
+[
+  {
+    "player": {
+      "id": 13289,
+      "name": "A. Reyes",
+      "firstname": "Andrés Felipe",
+      "lastname": "Reyes Ambuila",
+      "age": 25,
+      "birth": {
+        "date": "1999-09-08",
+        "place": "Puerto Tejada",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "191 cm",
+      "weight": "81 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/13289.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 6,
+          "minutes": 484,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.462500",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 1,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 197,
+          "key": 2,
+          "accuracy": 20
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 3,
+          "interceptions": 10
+        },
+        "duels": {
+          "total": 55,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 1
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 41344,
+      "name": "Luquinhas",
+      "firstname": "Lucas",
+      "lastname": "Lima Linhares",
+      "age": 28,
+      "birth": {
+        "date": "1996-09-28",
+        "place": "Brasília",
+        "country": "Brazil"
+      },
+      "nationality": "Brazil",
+      "height": "169 cm",
+      "weight": "60 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/41344.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50726,
+      "name": "C. Coronel",
+      "firstname": "Carlos Miguel",
+      "lastname": "Coronel",
+      "age": 28,
+      "birth": {
+        "date": "1996-12-29",
+        "place": "Corumbá",
+        "country": "Brazil"
+      },
+      "nationality": "Paraguay",
+      "height": "192 cm",
+      "weight": "88 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50726.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 11,
+          "minutes": 990,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 18,
+          "assists": null,
+          "saves": 29
+        },
+        "passes": {
+          "total": 343,
+          "key": null,
+          "accuracy": 18
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 4,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50945,
+      "name": "R. Meara",
+      "firstname": "Ryan",
+      "lastname": "Meara",
+      "age": 34,
+      "birth": {
+        "date": "1990-11-15",
+        "place": "Yonkers",
+        "country": "USA"
+      },
+      "nationality": "Republic of Ireland",
+      "height": "192 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50945.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 9
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": 2
+        },
+        "passes": {
+          "total": 24,
+          "key": null,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50949,
+      "name": "K. Duncan",
+      "firstname": "Kyle",
+      "lastname": "Barri Duncan",
+      "age": 27,
+      "birth": {
+        "date": "1997-08-08",
+        "place": "New York",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50949.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 6,
+          "minutes": 558,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.677777",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 2,
+          "bench": 5
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 238,
+          "key": 2,
+          "accuracy": 20
+        },
+        "tackles": {
+          "total": 10,
+          "blocks": 1,
+          "interceptions": 7
+        },
+        "duels": {
+          "total": 68,
+          "won": 32
+        },
+        "dribbles": {
+          "attempts": 11,
+          "success": 8,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 16
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 119002,
+      "name": "J. Tolkin",
+      "firstname": "John Michael",
+      "lastname": "Tolkin",
+      "age": 22,
+      "birth": {
+        "date": "2002-07-31",
+        "place": "Chatham",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "170 cm",
+      "weight": "61 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/119002.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 8,
+          "minutes": 701,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.811111",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 2,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 343,
+          "key": 10,
+          "accuracy": 31
+        },
+        "tackles": {
+          "total": 14,
+          "blocks": 1,
+          "interceptions": 8
+        },
+        "duels": {
+          "total": 52,
+          "won": 29
+        },
+        "dribbles": {
+          "attempts": 9,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 6
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 201716,
+      "name": "D. Nealis",
+      "firstname": "Dylan J.",
+      "lastname": "Nealis",
+      "age": 26,
+      "birth": {
+        "date": "1998-07-30",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "180 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/201716.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 9,
+          "minutes": 827,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.118181",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 4,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 387,
+          "key": 11,
+          "accuracy": 27
+        },
+        "tackles": {
+          "total": 21,
+          "blocks": 2,
+          "interceptions": 8
+        },
+        "duels": {
+          "total": 108,
+          "won": 71
+        },
+        "dribbles": {
+          "attempts": 11,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 14,
+          "committed": 14
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 207200,
+      "name": "N. Eile",
+      "firstname": "Noah Johannes",
+      "lastname": "Eile",
+      "age": 22,
+      "birth": {
+        "date": "2002-07-19",
+        "place": null,
+        "country": "Sweden"
+      },
+      "nationality": "Sweden",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/207200.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 8,
+          "minutes": 723,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.855555",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 1,
+          "bench": 2
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 523,
+          "key": 2,
+          "accuracy": 51
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 4,
+          "interceptions": 14
+        },
+        "duels": {
+          "total": 46,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 1
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 216421,
+      "name": "A. Marcucci",
+      "firstname": "Anthony Joseph",
+      "lastname": "Marcucci Jr.",
+      "age": 25,
+      "birth": {
+        "date": "1999-07-31",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "86 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/216421.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 231064,
+      "name": "P. Stroud",
+      "firstname": "Peter Forrest",
+      "lastname": "Stroud",
+      "age": 22,
+      "birth": {
+        "date": "2002-04-23",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/231064.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 8,
+          "lineups": 8,
+          "minutes": 604,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.875000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 5,
+          "bench": 0
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 271,
+          "key": 3,
+          "accuracy": 29
+        },
+        "tackles": {
+          "total": 17,
+          "blocks": 2,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 63,
+          "won": 37
+        },
+        "dribbles": {
+          "attempts": 6,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 13,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 310971,
+      "name": "W. Carmona",
+      "firstname": "Wikelman José",
+      "lastname": "Carmona Torres",
+      "age": 21,
+      "birth": {
+        "date": "2003-02-24",
+        "place": "Guarico",
+        "country": "Venezuela"
+      },
+      "nationality": "Venezuela",
+      "height": "172 cm",
+      "weight": "71 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/310971.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 7,
+          "minutes": 589,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.125000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 5,
+          "bench": 4
+        },
+        "shots": {
+          "total": 8,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 221,
+          "key": 9,
+          "accuracy": 20
+        },
+        "tackles": {
+          "total": 20,
+          "blocks": null,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 69,
+          "won": 34
+        },
+        "dribbles": {
+          "attempts": 15,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
+          "committed": 9
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 312329,
+      "name": "C. Ofori",
+      "firstname": "Curtis",
+      "lastname": "Ofori",
+      "age": 19,
+      "birth": {
+        "date": "2005-11-20",
+        "place": "Hopewell Junction",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/312329.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351580,
+      "name": "O. Mullings",
+      "firstname": "O’Vonte",
+      "lastname": "Mullings",
+      "age": 24,
+      "birth": {
+        "date": "2000-10-09",
+        "place": null,
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "178 cm",
+      "weight": "74 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351580.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 353379,
+      "name": "W. Meyer",
+      "firstname": "William",
+      "lastname": "Meyer",
+      "age": 26,
+      "birth": {
+        "date": "1998-05-25",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/353379.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362888,
+      "name": "J. Mina",
+      "firstname": "Juan José",
+      "lastname": "Mina González",
+      "age": 20,
+      "birth": {
+        "date": "2004-07-27",
+        "place": "Cali",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "183 cm",
+      "weight": "78 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362888.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 363998,
+      "name": "A. Stokes",
+      "firstname": "Aidan",
+      "lastname": "Stokes",
+      "age": 16,
+      "birth": {
+        "date": "2008-01-14",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "69 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/363998.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 367598,
+      "name": "D. Alexandre",
+      "firstname": "Davi",
+      "lastname": "Alexandre",
+      "age": 17,
+      "birth": {
+        "date": "2007-02-03",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/367598.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 371081,
+      "name": "O. Valencia",
+      "firstname": "Omar Javier",
+      "lastname": "Valencia Arauz",
+      "age": 20,
+      "birth": {
+        "date": "2004-06-08",
+        "place": "Ciudad de Panamá",
+        "country": "Panama"
+      },
+      "nationality": "Panama",
+      "height": "180 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/371081.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 413200,
+      "name": "A. Shapiro-Thompson",
+      "firstname": "Amos Daniel",
+      "lastname": "Shapiro-Thompson",
+      "age": 24,
+      "birth": {
+        "date": "2000-01-11",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/413200.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 414131,
+      "name": "I. Kasule",
+      "firstname": "Ibrahim",
+      "lastname": "Kasule",
+      "age": 20,
+      "birth": {
+        "date": "2004-02-17",
+        "place": null,
+        "country": "Uganda"
+      },
+      "nationality": "Uganda",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/414131.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1602,
+          "name": "New York Red Bulls",
+          "logo": "https://media.api-sports.io/football/teams/1602.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  }
+]

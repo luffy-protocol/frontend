@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    workerThreads: false,
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;

@@ -5,6 +5,7 @@ import fetchFixtures from "@/utils/fixtureHelpers/FetchFixtures";
 import fixtureById from "@/utils/fixtureHelpers/FixtureById";
 import Image from "next/image";
 import { getPlayerById } from "@/utils/playerHelpers/FetchPlayerById";
+import PlayerCard from "@/components/PlayerCard";
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
         Fetch
       </button>
       <img src={teamLogo("1616")} alt="" width={50} height={50} />
-      <img src={playerimg("153465")} alt="" width={50} height={50} />
+      <img src={playerimg(153465)} alt="" width={50} height={50} />
+      <PlayerCard playerId={148} />
     </div>
   );
 }

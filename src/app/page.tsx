@@ -1,9 +1,10 @@
 "use client";
 import { playerimg } from "@/utils/logos/playerImage";
 import { teamLogo } from "@/utils/logos/teamlogo";
-import fetchFixtures from "@/utils/supabase/fixtureHelpers/FetchFixtures";
-import fixtureById from "@/utils/supabase/fixtureHelpers/FixtureById";
+import fetchFixtures from "@/utils/fixtureHelpers/FetchFixtures";
+import fixtureById from "@/utils/fixtureHelpers/FixtureById";
 import Image from "next/image";
+import { getPlayerById } from "@/utils/playerHelpers/FetchPlayerById";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <button
         onClick={async () => {
           // const { message, response } = await fetchFixtures();
-          const { message, response } = await fixtureById(1150754);
+          // const { message, response } = await fixtureById(1150754);
+          const response = getPlayerById(148);
           console.log(response);
         }}
       >

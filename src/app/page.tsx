@@ -8,6 +8,7 @@ import { getPlayerById } from "@/utils/playerHelpers/FetchPlayerById";
 import PlayerCard from "@/components/PlayerCard";
 import { useState } from "react";
 import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
+import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
 
 export default function Home() {
   const [img, setimg] = useState<File | null | undefined>();
@@ -26,11 +27,12 @@ export default function Home() {
         onClick={async () => {
           // const { message, response } = await fetchFixtures();
           // const { message, response } = await fixtureById(1150754);
-          const response = getPlayerById(148);
+          // const response = getPlayerById(148);
+          const { message, response } = await registerUserProfile(1111);
           console.log(response);
         }}
       >
-        Fetch
+        Register
       </button>
       <img src={teamLogo("1616")} alt="" width={50} height={50} />
       <img src={playerimg(153465)} alt="" width={50} height={50} />

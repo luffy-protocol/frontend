@@ -9,6 +9,7 @@ import PlayerCard from "@/components/PlayerCard";
 import { useState } from "react";
 import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
 import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
+import addFollower from "@/utils/profileHelpers/addFollower";
 
 export default function Home() {
   const [img, setimg] = useState<File | null | undefined>();
@@ -28,7 +29,8 @@ export default function Home() {
           // const { message, response } = await fetchFixtures();
           // const { message, response } = await fixtureById(1150754);
           // const response = getPlayerById(148);
-          const { message, response } = await registerUserProfile(1111);
+          // const { message, response } = await registerUserProfile(1112);
+          const { message, response } = await addFollower(1112, 1001);
           console.log(response);
         }}
       >

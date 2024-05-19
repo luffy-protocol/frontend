@@ -30,7 +30,9 @@ export default function Home() {
           // const { message, response } = await fixtureById(1150754);
           // const response = getPlayerById(148);
           // const { message, response } = await registerUserProfile(1112);
-          const { message, response } = await addFollower(1112, 1001);
+          // const { message: a, response: b } = await registerUserProfile(1111);
+
+          const { message, response } = await addFollower(1111, 1112);
           console.log(response);
         }}
       >

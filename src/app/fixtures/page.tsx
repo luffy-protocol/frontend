@@ -147,7 +147,33 @@ const Page: React.FC = () => {
             ongoingMatchesThatCannotBeClaimed
           );
 
-          setClaimmableOngoingMatches(ongoingMatchesThatCanBeClaimed);
+          // Check if the resultsPublishedTime is more than 2 days ago
+          const now = new Date();
+          const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
+          const updatedClaimableOngoingMatches =
+            ongoingMatchesThatCanBeClaimed.filter((match: any) => {
+              const game = games.find(
+                (game: any) => parseInt(game.id, 16) === match.fixture_id
+              );
+              return (
+                new Date(parseInt(game.resultsPublishedTime) * 1000) >
+                twoDaysAgo
+              );
+            });
+
+          const matchesMovedToCompleted = ongoingMatchesThatCanBeClaimed.filter(
+            (match: any) => {
+              const game = games.find(
+                (game: any) => parseInt(game.id, 16) === match.fixture_id
+              );
+              return (
+                new Date(parseInt(game.resultsPublishedTime) * 1000) <=
+                twoDaysAgo
+              );
+            }
+          );
+
+          setClaimmableOngoingMatches(updatedClaimableOngoingMatches);
           setUnclaimmableOngoingMatches(ongoingMatchesThatCannotBeClaimed);
           setLoadingOngoing(false);
 
@@ -165,9 +191,12 @@ const Page: React.FC = () => {
             gameIdsWithPredictionsAndClaims
           );
 
-          const completedMatchDetails = response.filter((match: any) =>
-            gameIdsWithPredictionsAndClaims.includes(match.fixture_id)
-          );
+          const completedMatchDetails = [
+            ...response.filter((match: any) =>
+              gameIdsWithPredictionsAndClaims.includes(match.fixture_id)
+            ),
+            ...matchesMovedToCompleted,
+          ];
           console.log("Completed match details:", completedMatchDetails);
 
           setCompletedMatches(completedMatchDetails);

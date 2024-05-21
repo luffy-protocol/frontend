@@ -268,7 +268,7 @@ export default function Page({ params }: { params: { round: string } }) {
           </h2>
           <div className="">
             {claimmableOngoingMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} status={2} />
             ))}
           </div>
           <h2 className="text-xl font-semibold mb-2 mt-4">
@@ -276,7 +276,7 @@ export default function Page({ params }: { params: { round: string } }) {
           </h2>
           <div className="">
             {unclaimmableOngoingMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} status={1} />
             ))}
           </div>
         </>
@@ -288,7 +288,7 @@ export default function Page({ params }: { params: { round: string } }) {
           <h2 className="text-xl font-semibold mb-2 mt-4">Completed Matches</h2>
           <div className="">
             {completedMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} status={4} />
             ))}
           </div>
         </>
@@ -300,7 +300,7 @@ export default function Page({ params }: { params: { round: string } }) {
           <h2 className="text-xl font-semibold mb-2 mt-4">Upcoming Matches</h2>
           <div className="">
             {upcomingMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} status={0} />
             ))}
           </div>
         </>
@@ -309,7 +309,7 @@ export default function Page({ params }: { params: { round: string } }) {
         <h2 className="text-xl font-semibold mb-2 mt-4">Expired Matches</h2>
         <div className="">
           {expiredMatches.map((match) => (
-            <FixtureCard key={match.fixture_id} fixture={match} />
+            <FixtureCard key={match.fixture_id} fixture={match} status={3} />
           ))}
         </div>
       </>

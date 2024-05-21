@@ -20,7 +20,10 @@ interface FixtureDetails {
   venue: string;
 }
 
-const FixtureCard: React.FC<{ fixture: FixtureDetails }> = ({ fixture }) => {
+const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
+  fixture,
+  status,
+}) => {
   return (
     <div
       className={`flex items-center justify-evenly  bg-no-repeat bg-contain xl:h-[165px] h-[140px]`}
@@ -67,7 +70,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails }> = ({ fixture }) => {
 
       <div className=" justify-end font-stalinist">
         <div className="flex flex-col justify-start gap-3 ">
-          <Status text="Open Now" />
+          <Status status={status} />
 
           <Button />
 

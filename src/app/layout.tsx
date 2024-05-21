@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter ,Stalinist_One} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const stalinist = Stalinist_One({ subsets: ["latin"] ,weight:["400"] , variable : "--font-stalinist"});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={(inter.className,stalinist.variable)}>{children}</body>
     </html>
   );
 }

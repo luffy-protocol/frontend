@@ -30,7 +30,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
       style={{ backgroundImage: `url('/assets/Border.svg')`, width: "100%" }}
     >
       <div className="flex flex-col justify-center items-center ">
-        <div className="text-[10px] font-stalinist ">Starts in</div>
+        <div className="text-[10px] font-stalinist mb-1">Starts in</div>
 
         <div className="flex gap-4 items-center justify-center ">
           <div className="flex flex-col items-center">
@@ -44,7 +44,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
               <p>W</p> <p>D</p>
             </div>
           </div>
-          <div className=" self-start mt-2">
+          <div className=" self-start">
             {" "}
             <Timer />
           </div>

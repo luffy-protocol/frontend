@@ -10,7 +10,7 @@ import { useState } from "react";
 import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
 import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
 import addFollower from "@/utils/profileHelpers/addFollower";
-import Card from "@/components/FixtureCard";
+import FixtureCard from "@/components/FixtureCard";
 
 export default function Home() {
   const [img, setimg] = useState<File | null | undefined>();
@@ -57,13 +57,9 @@ export default function Home() {
   //     </form>
   //   </div>
   // );
-    return (
+  return (
     <div className="container mx-auto px-4 py-8 flex flex-col gap-2">
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-
+      {/* <FixtureCard /> */}
     </div>
   );
 }

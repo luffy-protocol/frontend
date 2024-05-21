@@ -1,53 +1,81 @@
-
-
-import React from 'react';
-import Timer from './Timer';
-import Status from './status';
-import Button from './Button';
+import React from "react";
+import Timer from "./Timer";
+import Status from "./status";
+import Button from "./Button";
 
 interface CardProps {
   className?: string; // Optional class for additional styling
 }
+interface FixtureDetails {
+  away_id: number;
+  away_name: string;
+  away_logo: string; // added for logo
+  date: string;
+  fixture_id: number;
+  home_id: number;
+  home_name: string;
+  home_logo: string; // added for logo
+  id: number;
+  starttime: string;
+  venue: string;
+}
 
-const Card: React.FC<CardProps> = ({ className = '' }) => {
+const FixtureCard: React.FC<{ fixture: FixtureDetails }> = ({ fixture }) => {
   return (
     <div
       className={`flex items-center justify-evenly  bg-no-repeat bg-contain xl:h-[165px] h-[140px]`}
-      style={{ backgroundImage: `url('/assets/Border.svg')`,width:"100%"}}
+      style={{ backgroundImage: `url('/assets/Border.svg')`, width: "100%" }}
     >
-
       <div className="flex flex-col justify-center items-center ">
-        <div className="text-[10px] font-stalinist ml-8">Starts in</div>
+        <div className="text-[10px] font-stalinist ">Starts in</div>
 
         <div className="flex gap-4 items-center justify-center ">
           <div className="flex flex-col items-center">
-            <p className="font-bold text-2xl font-stalinist text-[#D8485F]">Orlando City</p>
-            <div className=' self-start text-[12px] flex gap-1 font-stalinist'><p>W</p><p>L</p><p>W</p><p>W</p> <p>D</p></div>
+            <p className="font-bold text-2xl font-stalinist text-[#D8485F] max-w-[260px] overflow-hidden text-ellipsis whitespace-nowrap">
+              {fixture.home_name}
+            </p>
+            <div className=" self-start text-[12px] flex gap-1 font-stalinist">
+              <p>W</p>
+              <p>L</p>
+              <p>W</p>
+              <p>W</p> <p>D</p>
+            </div>
           </div>
-            <div className=' self-start mt-2'> <Timer/></div>
+          <div className=" self-start mt-2">
+            {" "}
+            <Timer />
+          </div>
 
           <div className="flex flex-col ">
-            <p className="font-bold text-2xl font-stalinist text-[#B62DD3]">Inter Miami</p>
-            <div className='self-end text-[12px] flex gap-1 font-stalinist' ><p>W</p><p>L</p><p>W</p><p>W</p> <p>D</p></div>
+            <div className="overflow-x-auto max-w-[260px]">
+              <p className="font-bold text-2xl font-stalinist text-[#B62DD3] text-ellipsis whitespace-nowrap">
+                {fixture.away_name}
+              </p>
+            </div>
+            <div className="self-end text-[12px] flex gap-1 font-stalinist">
+              <p>W</p>
+              <p>L</p>
+              <p>W</p>
+              <p>W</p> <p>D</p>
+            </div>
           </div>
         </div>
-        <div className="text-[10px] font-stalinist text-gray-400 ml-8">Inter and co Stadium</div>
-
-
-      </div>
-
-      <div className=' justify-end font-stalinist'>
-      <div className='flex flex-col justify-start gap-3 '>
-        <Status text="Open Now" />
-        <div className=''>
-        <Button />
-
+        <div className="text-[10px] font-stalinist text-gray-400 ">
+          {fixture.venue}
         </div>
-        <div className='text-[10px]'>Players : 250</div>
       </div>
+
+      <div className=" justify-end font-stalinist">
+        <div className="flex flex-col justify-start gap-3 ">
+          <Status text="Open Now" />
+
+          <Button />
+
+          <div className="text-[10px]">Players : 250</div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default FixtureCard;

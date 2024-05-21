@@ -4,6 +4,7 @@ import { request, gql } from "graphql-request";
 import fetchFixtures from "@/utils/fixtureHelpers/FetchFixtures";
 import { teamLogo } from "@/utils/logos/teamlogo";
 import fetchFixtureByRound from "@/utils/fixtureHelpers/FixtureByRound";
+import FixtureCard from "@/components/FixtureCard";
 
 interface MatchDetails {
   away_id: number;
@@ -51,7 +52,7 @@ const MatchCard: React.FC<{ match: MatchDetails }> = ({ match }) => {
   );
 };
 
-const Page: React.FC = () => {
+export default function Page({ params }: { params: { round: string } }) {
   const [claimmableOngoingMatches, setClaimmableOngoingMatches] = useState<
     MatchDetails[]
   >([]);
@@ -60,6 +61,7 @@ const Page: React.FC = () => {
   >([]);
   const [completedMatches, setCompletedMatches] = useState<MatchDetails[]>([]);
   const [upcomingMatches, setUpcomingMatches] = useState<MatchDetails[]>([]);
+  const [expiredMatches, setExpiredMatches] = useState<MatchDetails[]>([]);
   const [loadingOngoing, setLoadingOngoing] = useState<boolean>(true);
   const [loadingCompleted, setLoadingCompleted] = useState<boolean>(true);
   const [upcomingLoading, setUpcomingLoading] = useState<boolean>(true);
@@ -69,7 +71,9 @@ const Page: React.FC = () => {
       try {
         console.log("Fetching ongoing fixtures...");
         // const { message, response } = await fetchFixtures();
-        const { message, response } = await fetchFixtureByRound(19);
+        const { message, response } = await fetchFixtureByRound(
+          Number(params.round)
+        );
 
         console.log("Fetched fixtures message:", message);
         console.log("Fetched fixtures response:", response);
@@ -161,7 +165,7 @@ const Page: React.FC = () => {
               );
             });
 
-          const matchesMovedToCompleted = ongoingMatchesThatCanBeClaimed.filter(
+          const matchesMovedToExpired = ongoingMatchesThatCanBeClaimed.filter(
             (match: any) => {
               const game = games.find(
                 (game: any) => parseInt(game.id, 16) === match.fixture_id
@@ -175,6 +179,7 @@ const Page: React.FC = () => {
 
           setClaimmableOngoingMatches(updatedClaimableOngoingMatches);
           setUnclaimmableOngoingMatches(ongoingMatchesThatCannotBeClaimed);
+          setExpiredMatches(matchesMovedToExpired);
           setLoadingOngoing(false);
 
           const gameIdsWithPredictionsAndClaims = games
@@ -191,12 +196,9 @@ const Page: React.FC = () => {
             gameIdsWithPredictionsAndClaims
           );
 
-          const completedMatchDetails = [
-            ...response.filter((match: any) =>
-              gameIdsWithPredictionsAndClaims.includes(match.fixture_id)
-            ),
-            ...matchesMovedToCompleted,
-          ];
+          const completedMatchDetails = response.filter((match: any) =>
+            gameIdsWithPredictionsAndClaims.includes(match.fixture_id)
+          );
           console.log("Completed match details:", completedMatchDetails);
 
           setCompletedMatches(completedMatchDetails);
@@ -254,7 +256,6 @@ const Page: React.FC = () => {
 
     fetchOngoingFixtures();
   }, [address]);
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Matches</h1>
@@ -265,17 +266,17 @@ const Page: React.FC = () => {
           <h2 className="text-xl font-semibold mb-2">
             Claimable Ongoing Matches
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="">
             {claimmableOngoingMatches.map((match) => (
-              <MatchCard key={match.fixture_id} match={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} />
             ))}
           </div>
           <h2 className="text-xl font-semibold mb-2 mt-4">
             Unclaimable Ongoing Matches
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="">
             {unclaimmableOngoingMatches.map((match) => (
-              <MatchCard key={match.fixture_id} match={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} />
             ))}
           </div>
         </>
@@ -285,9 +286,9 @@ const Page: React.FC = () => {
       ) : (
         <>
           <h2 className="text-xl font-semibold mb-2 mt-4">Completed Matches</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="">
             {completedMatches.map((match) => (
-              <MatchCard key={match.fixture_id} match={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} />
             ))}
           </div>
         </>
@@ -297,16 +298,21 @@ const Page: React.FC = () => {
       ) : (
         <>
           <h2 className="text-xl font-semibold mb-2 mt-4">Upcoming Matches</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="">
             {upcomingMatches.map((match) => (
-              <MatchCard key={match.fixture_id} match={match} />
+              <FixtureCard key={match.fixture_id} fixture={match} />
             ))}
           </div>
         </>
       )}
-      {/* For testing, render dummy matches */}
+      <>
+        <h2 className="text-xl font-semibold mb-2 mt-4">Expired Matches</h2>
+        <div className="">
+          {expiredMatches.map((match) => (
+            <FixtureCard key={match.fixture_id} fixture={match} />
+          ))}
+        </div>
+      </>
     </div>
   );
-};
-
-export default Page;
+}

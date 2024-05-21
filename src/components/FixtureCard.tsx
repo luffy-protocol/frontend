@@ -46,7 +46,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
           </div>
           <div className=" self-start">
             {" "}
-            <Timer />
+            <Timer starttime={fixture.starttime} />
           </div>
 
           <div className="flex flex-col ">

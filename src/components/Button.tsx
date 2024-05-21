@@ -1,6 +1,11 @@
 import React from "react";
+import { useRouter } from "next/navigation";
+interface ButtonProps {
+  id: number;
+}
 
-const Button: React.FC = () => {
+const Button: React.FC<ButtonProps> = ({ id }) => {
+  const router = useRouter();
   return (
     <div
       className={`flex justify-center items-center bg-contain bg-no-repeat `}
@@ -11,6 +16,7 @@ const Button: React.FC = () => {
       }}
       onClick={() => {
         console.log("first");
+        router.push(`/game/${id}`);
       }}
     >
       <div className="flex items-center justify-center ">

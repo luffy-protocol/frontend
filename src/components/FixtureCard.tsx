@@ -72,7 +72,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
         <div className="flex flex-col justify-start gap-3 ">
           <Status status={status} />
 
-          <Button />
+          <Button id={fixture.fixture_id} />
 
           <div className="text-[10px]">Players : 250</div>
         </div>

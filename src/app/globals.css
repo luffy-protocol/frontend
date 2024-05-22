@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Stalinist+One&family=VT323&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -25,6 +25,13 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #999999);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @layer utilities {

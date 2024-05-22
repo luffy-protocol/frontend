@@ -26,7 +26,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
 }) => {
   return (
     <div
-      className={`flex items-center justify-evenly  bg-no-repeat bg-contain xl:h-[165px] h-[140px]`}
+      className={`flex items-center justify-evenly  bg-no-repeat bg-contain 2xl:h-[180px] xl:h-[165px] h-[140px]`}
       style={{ backgroundImage: `url('/assets/Border.svg')`, width: "100%" }}
     >
       <div className="flex flex-col justify-center items-center ">

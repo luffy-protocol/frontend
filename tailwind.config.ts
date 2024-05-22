@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -13,11 +14,23 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      fontFamily :{
-        stalinist : ["var(--font-stalinist )"]
-      }
+      fontFamily: {
+        stalinist: ["var(--font-stalinist )"],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        ".text-gradient": {
+          background: "linear-gradient(to right, #FFFFFF, #999999)",
+          "-webkit-background-clip": "text",
+          "-webkit-text-fill-color": "transparent",
+        },
+      };
+
+      addUtilities(newUtilities);
+    }),
+  ],
 };
 export default config;

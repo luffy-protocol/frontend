@@ -193,7 +193,7 @@ const Timer: React.FC<TimerProps> = ({ starttime }) => {
       <div className="flex gap-1">
         <DigitBox value={formatTime(hours)[0]} />
         <DigitBox value={formatTime(hours)[1]} />
-        <DigitBox value={formatTime(hours)[2]} />
+        {formatTime(hours)[2] && <DigitBox value={formatTime(hours)[2]} />}
         <span className="text-md font-stalinist self-center">:</span>
       </div>
       <div className="flex gap-1">

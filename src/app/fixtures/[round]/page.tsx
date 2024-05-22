@@ -5,6 +5,7 @@ import fetchFixtures from "@/utils/fixtureHelpers/FetchFixtures";
 import { teamLogo } from "@/utils/logos/teamlogo";
 import fetchFixtureByRound from "@/utils/fixtureHelpers/FixtureByRound";
 import FixtureCard from "@/components/FixtureCard";
+import Left from "../../../../public/assets/Left.png";
 
 interface MatchDetails {
   away_id: number;
@@ -21,36 +22,6 @@ interface MatchDetails {
 }
 
 const address = "0x4b4b30e2E7c6463b03CdFFD6c42329D357205334"; // replace with the actual address
-
-const MatchCard: React.FC<{ match: MatchDetails }> = ({ match }) => {
-  return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg my-4">
-      <div className="px-6 py-4">
-        <div className="flex items-center justify-between mb-4">
-          <img
-            src={teamLogo(match.home_id)}
-            alt={match.home_name}
-            className="w-12 h-12"
-          />
-          <span className="text-xl font-bold">vs</span>
-          <img
-            src={teamLogo(match.away_id)}
-            alt={match.away_name}
-            className="w-12 h-12"
-          />
-        </div>
-        <div className="font-bold text-xl mb-2">
-          {match.home_name} vs {match.away_name}
-        </div>
-        <p className="text-gray-700 text-base">Venue: {match.venue}</p>
-        <p className="text-gray-700 text-base">
-          Date: {new Date(match.date).toLocaleDateString()} Time:{" "}
-          {new Date(parseInt(match.starttime) * 1000).toLocaleTimeString()}
-        </p>
-      </div>
-    </div>
-  );
-};
 
 export default function Page({ params }: { params: { round: string } }) {
   const [claimmableOngoingMatches, setClaimmableOngoingMatches] = useState<
@@ -106,6 +77,31 @@ export default function Page({ params }: { params: { round: string } }) {
         console.log("Fetched data:", data);
 
         if (data != null) {
+          const data: { games: any[] } = await request(
+            "https://api.studio.thegraph.com/query/30735/luffy-block-magic/version/latest",
+            gql`
+              query MyQuery {
+                games {
+                  id
+                  resultsPublishedTime
+                  predictions(
+                    where: {
+                      user_: {
+                        address: "${address}"
+                      }
+                    }
+                  ) {
+                    claim {
+                      game {
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+            `
+          );
+
           const games = data.games;
           console.log("Games:", games);
 
@@ -257,62 +253,110 @@ export default function Page({ params }: { params: { round: string } }) {
     fetchOngoingFixtures();
   }, [address]);
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Matches</h1>
-      {loadingOngoing ? (
-        <p>Loading ongoing matches...</p>
-      ) : (
-        <>
-          <h2 className="text-xl font-semibold mb-2">
-            Claimable Ongoing Matches
-          </h2>
-          <div className="">
-            {claimmableOngoingMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} status={2} />
-            ))}
+    // <div className="container mx-auto p-4">
+    //   <h1 className="text-2xl font-bold mb-4">Matches</h1>
+    //   {loadingOngoing ? (
+    //     <p>Loading ongoing matches...</p>
+    //   ) : (
+    //     <>
+    //       <h2 className="text-xl font-semibold mb-2">
+    //         Claimable Ongoing Matches
+    //       </h2>
+    //       <div className="">
+    //         {claimmableOngoingMatches.map((match) => (
+    //           <FixtureCard key={match.fixture_id} fixture={match} status={2} />
+    //         ))}
+    //       </div>
+    //       <h2 className="text-xl font-semibold mb-2 mt-4">
+    //         Unclaimable Ongoing Matches
+    //       </h2>
+    //       <div className="">
+    //         {unclaimmableOngoingMatches.map((match) => (
+    //           <FixtureCard key={match.fixture_id} fixture={match} status={1} />
+    //         ))}
+    //       </div>
+    //     </>
+    //   )}
+
+    //   {upcomingLoading ? (
+    //     <p>Loading upcoming matches...</p>
+    //   ) : (
+    //     <>
+    //       <h2 className="text-xl font-semibold mb-2 mt-4">Upcoming Matches</h2>
+    //       <div className="">
+    //         {upcomingMatches.map((match) => (
+    //           <FixtureCard key={match.fixture_id} fixture={match} status={0} />
+    //         ))}
+    //       </div>
+    //     </>
+    //   )}
+    //   <>
+    //     <h2 className="text-xl font-semibold mb-2 mt-4">Expired Matches</h2>
+    //     <div className="">
+    //       {expiredMatches.map((match) => (
+    //         <FixtureCard key={match.fixture_id} fixture={match} status={3} />
+    //       ))}
+    //     </div>
+    //   </>
+    //   {loadingCompleted ? (
+    //     <p>Loading completed matches...</p>
+    //   ) : (
+    //     <>
+    //       <h2 className="text-xl font-semibold mb-2 mt-4">Completed Matches</h2>
+    //       <div className="">
+    //         {completedMatches.map((match) => (
+    //           <FixtureCard key={match.fixture_id} fixture={match} status={4} />
+    //         ))}
+    //       </div>
+    //     </>
+    //   )}
+    // </div>
+    <div
+      className="flex flex-col px-10 items-center bg-no-repeat bg-contain w-full h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px]"
+      style={{ backgroundImage: `url('/assets/GameBorder.svg')` }}
+    >
+      <div className="text-4xl self-start mt-5 px-8 pt-5 font-stalinist text-gradient">
+        GAMES
+      </div>
+      <div className="flex flex-col gap-2 items-center w-10/12 mt-24 overflow-auto max-h-full">
+        <div className="flex gap-3 items-center justify-center">
+          <img src="/assets/Left.png" alt="" width="90px" />
+
+          <div className="text-5xl font-stalinist items-center justify-center lg:text-4xl">
+            Game Week {params.round}
           </div>
-          <h2 className="text-xl font-semibold mb-2 mt-4">
-            Unclaimable Ongoing Matches
-          </h2>
-          <div className="">
-            {unclaimmableOngoingMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} status={1} />
-            ))}
-          </div>
-        </>
-      )}
-      {loadingCompleted ? (
-        <p>Loading completed matches...</p>
-      ) : (
-        <>
-          <h2 className="text-xl font-semibold mb-2 mt-4">Completed Matches</h2>
-          <div className="">
-            {completedMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} status={4} />
-            ))}
-          </div>
-        </>
-      )}
-      {upcomingLoading ? (
-        <p>Loading upcoming matches...</p>
-      ) : (
-        <>
-          <h2 className="text-xl font-semibold mb-2 mt-4">Upcoming Matches</h2>
-          <div className="">
-            {upcomingMatches.map((match) => (
-              <FixtureCard key={match.fixture_id} fixture={match} status={0} />
-            ))}
-          </div>
-        </>
-      )}
-      <>
-        <h2 className="text-xl font-semibold mb-2 mt-4">Expired Matches</h2>
-        <div className="">
-          {expiredMatches.map((match) => (
-            <FixtureCard key={match.fixture_id} fixture={match} status={3} />
-          ))}
+          <img src="/assets/Right.png" alt="" width="90px" />
         </div>
-      </>
+        {claimmableOngoingMatches.map((match, index) => (
+          <FixtureCard
+            key={`${match.fixture_id}-${index}`}
+            fixture={match}
+            status={2}
+          />
+        ))}
+        {claimmableOngoingMatches.map((match, index) => (
+          <FixtureCard
+            key={`${match.fixture_id}-${index}`}
+            fixture={match}
+            status={2}
+          />
+        ))}
+        {claimmableOngoingMatches.map((match, index) => (
+          <FixtureCard
+            key={`${match.fixture_id}-${index}`}
+            fixture={match}
+            status={2}
+          />
+        ))}
+
+        {claimmableOngoingMatches.map((match, index) => (
+          <FixtureCard
+            key={`${match.fixture_id}-${index}`}
+            fixture={match}
+            status={2}
+          />
+        ))}
+      </div>
     </div>
   );
 }

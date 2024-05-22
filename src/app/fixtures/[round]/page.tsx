@@ -322,8 +322,8 @@ export default function Page({ params }: { params: { round: string } }) {
         <div className="text-4xl self-start mt-5 px-2 pt-5 font-stalinist text-gradient xl:px-8">
           GAMES
         </div>
-        <div className="flex flex-col gap-2 items-center w-10/12 mt-24 overflow-auto max-h-full">
-          <div className="flex gap-3 items-center justify-center">
+        <div className="flex flex-col gap-2 items-center w-10/12 mt-24  max-h-full">
+          <div className="flex gap-3 items-center justify-center mb-10">
             <img src="/assets/Left.png" alt="" width="90px" />
 
             <div className="text-5xl font-stalinist items-center justify-center lg:text-4xl">
@@ -331,35 +331,71 @@ export default function Page({ params }: { params: { round: string } }) {
             </div>
             <img src="/assets/Right.png" alt="" width="90px" />
           </div>
-          {claimmableOngoingMatches.map((match, index) => (
-            <FixtureCard
-              key={`${match.fixture_id}-${index}`}
-              fixture={match}
-              status={2}
-            />
-          ))}
-          {claimmableOngoingMatches.map((match, index) => (
-            <FixtureCard
-              key={`${match.fixture_id}-${index}`}
-              fixture={match}
-              status={2}
-            />
-          ))}
-          {claimmableOngoingMatches.map((match, index) => (
-            <FixtureCard
-              key={`${match.fixture_id}-${index}`}
-              fixture={match}
-              status={2}
-            />
-          ))}
-
-          {claimmableOngoingMatches.map((match, index) => (
-            <FixtureCard
-              key={`${match.fixture_id}-${index}`}
-              fixture={match}
-              status={2}
-            />
-          ))}
+          <div className="flex flex-col gap-2 items-center justify-center w-full ">
+            <div className="flex items-center justify-center w-full">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>
+            <div className="flex items-center justify-center w-full">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>
+            <div className="flex items-center justify-center w-full">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>{" "}
+            <div className="flex items-center justify-center w-full">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>{" "}
+            <div className="flex items-center justify-center w-full">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>
+            <div className="flex items-center justify-center w-full">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>{" "}
+            <div className="flex items-center justify-center w-full ">
+              {claimmableOngoingMatches.map((match, index) => (
+                <FixtureCard
+                  key={`${match.fixture_id}-${index}`}
+                  fixture={match}
+                  status={2}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

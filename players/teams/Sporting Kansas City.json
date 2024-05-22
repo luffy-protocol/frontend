@@ -33,18 +33,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 2,
+          "appearences": 3,
           "lineups": 1,
-          "minutes": 62,
+          "minutes": 89,
           "number": null,
           "position": "Attacker",
-          "rating": "6.500000",
+          "rating": "6.633333",
           "captain": false
         },
         "substitutes": {
-          "in": 1,
+          "in": 2,
           "out": 1,
-          "bench": 6
+          "bench": 7
         },
         "shots": {
           "total": null,
@@ -53,26 +53,26 @@
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 18,
-          "key": 1,
-          "accuracy": 7
+          "total": 30,
+          "key": 2,
+          "accuracy": 9
         },
         "tackles": {
-          "total": 1,
+          "total": 2,
           "blocks": null,
           "interceptions": 1
         },
         "duels": {
-          "total": 10,
-          "won": 4
+          "total": 14,
+          "won": 6
         },
         "dribbles": {
-          "attempts": 3,
-          "success": 1,
+          "attempts": 4,
+          "success": 2,
           "past": null
         },
         "fouls": {
@@ -382,7 +382,7 @@
         "substitutes": {
           "in": 2,
           "out": 0,
-          "bench": 4
+          "bench": 5
         },
         "shots": {
           "total": 1,
@@ -540,12 +540,12 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 11,
-          "minutes": 957,
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1047,
           "number": null,
           "position": "Midfielder",
-          "rating": "7.209090",
+          "rating": "7.191666",
           "captain": false
         },
         "substitutes": {
@@ -554,28 +554,28 @@
           "bench": 0
         },
         "shots": {
-          "total": 15,
+          "total": 18,
           "on": 10
         },
         "goals": {
           "total": 4,
           "conceded": 0,
-          "assists": null,
+          "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 408,
-          "key": 12,
+          "total": 440,
+          "key": 13,
           "accuracy": 30
         },
         "tackles": {
-          "total": 16,
+          "total": 17,
           "blocks": 1,
           "interceptions": 8
         },
         "duels": {
-          "total": 130,
-          "won": 60
+          "total": 138,
+          "won": 63
         },
         "dribbles": {
           "attempts": 34,
@@ -583,8 +583,8 @@
           "past": null
         },
         "fouls": {
-          "drawn": 21,
-          "committed": 23
+          "drawn": 23,
+          "committed": 24
         },
         "cards": {
           "yellow": 3,
@@ -709,17 +709,17 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 10,
-          "minutes": 838,
+          "appearences": 12,
+          "lineups": 11,
+          "minutes": 901,
           "number": null,
           "position": "Attacker",
-          "rating": "6.754545",
+          "rating": "6.766666",
           "captain": false
         },
         "substitutes": {
           "in": 1,
-          "out": 6,
+          "out": 7,
           "bench": 1
         },
         "shots": {
@@ -729,22 +729,22 @@
         "goals": {
           "total": 3,
           "conceded": 0,
-          "assists": null,
+          "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 262,
-          "key": 8,
+          "total": 283,
+          "key": 10,
           "accuracy": 19
         },
         "tackles": {
-          "total": 10,
+          "total": 11,
           "blocks": null,
           "interceptions": 2
         },
         "duels": {
-          "total": 78,
-          "won": 34
+          "total": 84,
+          "won": 36
         },
         "dribbles": {
           "attempts": 10,
@@ -753,7 +753,7 @@
         },
         "fouls": {
           "drawn": 18,
-          "committed": 4
+          "committed": 5
         },
         "cards": {
           "yellow": 0,
@@ -878,12 +878,12 @@
           "season": 2024
         },
         "games": {
-          "appearences": 8,
-          "lineups": 6,
-          "minutes": 502,
+          "appearences": 9,
+          "lineups": 7,
+          "minutes": 592,
           "number": null,
           "position": "Midfielder",
-          "rating": "7.187500",
+          "rating": "7.155555",
           "captain": false
         },
         "substitutes": {
@@ -902,9 +902,9 @@
           "saves": null
         },
         "passes": {
-          "total": 253,
-          "key": 8,
-          "accuracy": 25
+          "total": 311,
+          "key": 10,
+          "accuracy": 27
         },
         "tackles": {
           "total": 16,
@@ -912,8 +912,8 @@
           "interceptions": 14
         },
         "duels": {
-          "total": 56,
-          "won": 31
+          "total": 59,
+          "won": 32
         },
         "dribbles": {
           "attempts": 6,
@@ -922,7 +922,7 @@
         },
         "fouls": {
           "drawn": 8,
-          "committed": 11
+          "committed": 12
         },
         "cards": {
           "yellow": 4,
@@ -1047,42 +1047,42 @@
           "season": 2024
         },
         "games": {
-          "appearences": 9,
-          "lineups": 6,
-          "minutes": 505,
+          "appearences": 10,
+          "lineups": 7,
+          "minutes": 588,
           "number": null,
           "position": "Attacker",
-          "rating": "7.011111",
+          "rating": "7.030000",
           "captain": false
         },
         "substitutes": {
           "in": 3,
-          "out": 4,
+          "out": 5,
           "bench": 3
         },
         "shots": {
-          "total": 10,
-          "on": 3
+          "total": 12,
+          "on": 4
         },
         "goals": {
-          "total": 0,
+          "total": 1,
           "conceded": 0,
           "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 181,
-          "key": 7,
+          "total": 199,
+          "key": 8,
           "accuracy": 15
         },
         "tackles": {
-          "total": 7,
+          "total": 9,
           "blocks": null,
           "interceptions": 3
         },
         "duels": {
-          "total": 77,
-          "won": 39
+          "total": 84,
+          "won": 42
         },
         "dribbles": {
           "attempts": 17,
@@ -1216,22 +1216,22 @@
           "season": 2024
         },
         "games": {
-          "appearences": 12,
-          "lineups": 12,
-          "minutes": 1063,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1126,
           "number": null,
           "position": "Attacker",
-          "rating": "7.016666",
+          "rating": "7.007692",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 5,
+          "out": 6,
           "bench": 0
         },
         "shots": {
-          "total": 16,
-          "on": 10
+          "total": 18,
+          "on": 11
         },
         "goals": {
           "total": 2,
@@ -1240,9 +1240,9 @@
           "saves": null
         },
         "passes": {
-          "total": 325,
+          "total": 349,
           "key": 11,
-          "accuracy": 21
+          "accuracy": 20
         },
         "tackles": {
           "total": 11,
@@ -1250,17 +1250,17 @@
           "interceptions": 6
         },
         "duels": {
-          "total": 105,
-          "won": 44
+          "total": 109,
+          "won": 46
         },
         "dribbles": {
-          "attempts": 30,
-          "success": 9,
+          "attempts": 31,
+          "success": 10,
           "past": null
         },
         "fouls": {
-          "drawn": 19,
-          "committed": 15
+          "drawn": 20,
+          "committed": 16
         },
         "cards": {
           "yellow": 2,
@@ -1396,7 +1396,7 @@
         "substitutes": {
           "in": 3,
           "out": 0,
-          "bench": 10
+          "bench": 11
         },
         "shots": {
           "total": 1,
@@ -1554,12 +1554,12 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 11,
-          "minutes": 990,
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1080,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.954545",
+          "rating": "6.975000",
           "captain": false
         },
         "substitutes": {
@@ -1568,28 +1568,28 @@
           "bench": 0
         },
         "shots": {
-          "total": 4,
-          "on": 1
+          "total": 5,
+          "on": 2
         },
         "goals": {
-          "total": 1,
+          "total": 2,
           "conceded": 0,
           "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 592,
-          "key": 11,
-          "accuracy": 43
+          "total": 653,
+          "key": 12,
+          "accuracy": 44
         },
         "tackles": {
-          "total": 31,
+          "total": 35,
           "blocks": 5,
           "interceptions": 16
         },
         "duels": {
-          "total": 94,
-          "won": 45
+          "total": 102,
+          "won": 49
         },
         "dribbles": {
           "attempts": 8,
@@ -1598,7 +1598,7 @@
         },
         "fouls": {
           "drawn": 5,
-          "committed": 13
+          "committed": 15
         },
         "cards": {
           "yellow": 5,
@@ -2103,18 +2103,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
+          "appearences": 12,
           "lineups": 7,
-          "minutes": 592,
+          "minutes": 619,
           "number": null,
           "position": "Attacker",
-          "rating": "6.854545",
+          "rating": "6.808333",
           "captain": false
         },
         "substitutes": {
-          "in": 4,
+          "in": 5,
           "out": 5,
-          "bench": 5
+          "bench": 6
         },
         "shots": {
           "total": 21,
@@ -2127,9 +2127,9 @@
           "saves": null
         },
         "passes": {
-          "total": 150,
+          "total": 152,
           "key": 10,
-          "accuracy": 10
+          "accuracy": 9
         },
         "tackles": {
           "total": 4,
@@ -2642,7 +2642,7 @@
         "substitutes": {
           "in": 7,
           "out": 0,
-          "bench": 11
+          "bench": 12
         },
         "shots": {
           "total": 3,
@@ -2800,18 +2800,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 6,
+          "appearences": 7,
           "lineups": 0,
-          "minutes": 78,
+          "minutes": 85,
           "number": null,
           "position": "Attacker",
-          "rating": "6.450000",
+          "rating": "6.500000",
           "captain": false
         },
         "substitutes": {
-          "in": 6,
+          "in": 7,
           "out": 0,
-          "bench": 7
+          "bench": 8
         },
         "shots": {
           "total": 1,
@@ -2820,25 +2820,25 @@
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 28,
+          "total": 33,
           "key": 1,
           "accuracy": 4
         },
         "tackles": {
-          "total": 3,
+          "total": 5,
           "blocks": null,
           "interceptions": null
         },
         "duels": {
-          "total": 28,
-          "won": 11
+          "total": 32,
+          "won": 13
         },
         "dribbles": {
-          "attempts": 9,
+          "attempts": 10,
           "success": 4,
           "past": null
         },
@@ -2886,6 +2886,2203 @@
           "in": 0,
           "out": 0,
           "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 8660,
+      "name": "Z. Bassong",
+      "firstname": "Zorhan Ludovic",
+      "lastname": "Bassong",
+      "age": 25,
+      "birth": {
+        "date": "1999-05-07",
+        "place": "Toronto",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "179 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/8660.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 106,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 12
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 50,
+          "key": null,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 5,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 14,
+          "won": 10
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 97,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 8698,
+      "name": "L. Ndenbe",
+      "firstname": "Logan Yves",
+      "lastname": "Ndenbe",
+      "age": 24,
+      "birth": {
+        "date": "2000-02-09",
+        "place": "Mouscron",
+        "country": "Belgium"
+      },
+      "nationality": "Belgium",
+      "height": "174 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/8698.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 13392,
+      "name": "D. Rosero",
+      "firstname": "Daniel Alejandro",
+      "lastname": "Rosero Valencia",
+      "age": 31,
+      "birth": {
+        "date": "1993-10-06",
+        "place": "Bogotá",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "187 cm",
+      "weight": "87 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/13392.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 10,
+          "minutes": 900,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 3,
+          "on": 3
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 538,
+          "key": 1,
+          "accuracy": 47
+        },
+        "tackles": {
+          "total": 12,
+          "blocks": 8,
+          "interceptions": 10
+        },
+        "duels": {
+          "total": 73,
+          "won": 42
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 12,
+          "committed": 15
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 25603,
+      "name": "T. Leibold",
+      "firstname": "Tim",
+      "lastname": "Leibold",
+      "age": 31,
+      "birth": {
+        "date": "1993-11-30",
+        "place": "Böblingen",
+        "country": "Germany"
+      },
+      "nationality": "Germany",
+      "height": "174 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/25603.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1064,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.841666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 1
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 656,
+          "key": 9,
+          "accuracy": 46
+        },
+        "tackles": {
+          "total": 32,
+          "blocks": 2,
+          "interceptions": 14
+        },
+        "duels": {
+          "total": 108,
+          "won": 56
+        },
+        "dribbles": {
+          "attempts": 11,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 15,
+          "committed": 15
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 47441,
+      "name": "N. Radoja",
+      "firstname": "Nemanja",
+      "lastname": "Radoja",
+      "age": 31,
+      "birth": {
+        "date": "1993-02-06",
+        "place": "Novi Sad",
+        "country": "Serbia"
+      },
+      "nationality": "Serbia",
+      "height": "186 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/47441.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1080,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.058333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": 6,
+          "on": 4
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 690,
+          "key": 9,
+          "accuracy": 50
+        },
+        "tackles": {
+          "total": 21,
+          "blocks": 2,
+          "interceptions": 14
+        },
+        "duels": {
+          "total": 93,
+          "won": 56
+        },
+        "dribbles": {
+          "attempts": 17,
+          "success": 12,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 10,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 120,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51247,
+      "name": "T. Melia",
+      "firstname": "Timothy",
+      "lastname": "Melia",
+      "age": 38,
+      "birth": {
+        "date": "1986-05-15",
+        "place": "Great River",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "95 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51247.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1080,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.008333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 23,
+          "assists": 0,
+          "saves": 43
+        },
+        "passes": {
+          "total": 379,
+          "key": 1,
+          "accuracy": 22
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 3,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51251,
+      "name": "Andreu Fontàs",
+      "firstname": "Andreu",
+      "lastname": "Fontàs Prat",
+      "age": 35,
+      "birth": {
+        "date": "1989-11-14",
+        "place": "Banyoles",
+        "country": "Spain"
+      },
+      "nationality": "Spain",
+      "height": "188 cm",
+      "weight": "91 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51251.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 9,
+          "minutes": 810,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.844444",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 661,
+          "key": 4,
+          "accuracy": 64
+        },
+        "tackles": {
+          "total": 8,
+          "blocks": 2,
+          "interceptions": 14
+        },
+        "duels": {
+          "total": 54,
+          "won": 24
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 9
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 23,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 102596,
+      "name": "R. Castellanos",
+      "firstname": "Robert",
+      "lastname": "Castellanos Becerra",
+      "age": 26,
+      "birth": {
+        "date": "1998-05-11",
+        "place": "Palmdale",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "86 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/102596.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 12
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 67,
+          "key": null,
+          "accuracy": 65
+        },
+        "tackles": {
+          "total": null,
+          "blocks": 1,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 5,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 120,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 102682,
+      "name": "J. Pulskamp",
+      "firstname": "John Gregory",
+      "lastname": "Pulskamp",
+      "age": 23,
+      "birth": {
+        "date": "2001-04-19",
+        "place": "Bakersfield",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "193 cm",
+      "weight": "95 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/102682.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.300000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 12
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 1,
+          "assists": null,
+          "saves": 4
+        },
+        "passes": {
+          "total": 14,
+          "key": null,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 120,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 178793,
+      "name": "R. Voloder",
+      "firstname": "Robert",
+      "lastname": "Voloder",
+      "age": 23,
+      "birth": {
+        "date": "2001-05-09",
+        "place": "Frankfurt",
+        "country": "Germany"
+      },
+      "nationality": "Germany",
+      "height": "185 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/178793.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 6,
+          "minutes": 540,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.683333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 7
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 318,
+          "key": 2,
+          "accuracy": 44
+        },
+        "tackles": {
+          "total": 10,
+          "blocks": 4,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 38,
+          "won": 24
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 120,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 274364,
+      "name": "K. Pierre",
+      "firstname": "Kayden Leighton",
+      "lastname": "Hugh Pierre",
+      "age": 21,
+      "birth": {
+        "date": "2003-02-16",
+        "place": "Bloomfield Hills",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "175 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/274364.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 70,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 8
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 44,
+          "key": null,
+          "accuracy": 35
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": 1,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 5,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 120,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 407239,
+      "name": "C. Rindov",
+      "firstname": "Christopher",
+      "lastname": "Rindov",
+      "age": 23,
+      "birth": {
+        "date": "2001-10-08",
+        "place": "Spring",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "86 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/407239.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 458449,
+      "name": "R. Schewe",
+      "firstname": "Ryan",
+      "lastname": "Schewe",
+      "age": 22,
+      "birth": {
+        "date": "2002-03-08",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "193 cm",
+      "weight": "88 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/458449.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1611,
+          "name": "Sporting Kansas City",
+          "logo": "https://media.api-sports.io/football/teams/1611.png"
+        },
+        "league": {
+          "id": 257,
+          "name": "US Open Cup",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
         },
         "shots": {
           "total": null,

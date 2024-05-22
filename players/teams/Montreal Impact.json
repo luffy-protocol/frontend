@@ -318,22 +318,22 @@
           "season": 2024
         },
         "games": {
-          "appearences": 5,
-          "lineups": 3,
-          "minutes": 291,
+          "appearences": 6,
+          "lineups": 4,
+          "minutes": 381,
           "number": null,
           "position": "Attacker",
-          "rating": "7.140000",
+          "rating": "6.983333",
           "captain": false
         },
         "substitutes": {
           "in": 2,
-          "out": 4,
+          "out": 5,
           "bench": 2
         },
         "shots": {
-          "total": 10,
-          "on": 5
+          "total": 14,
+          "on": 6
         },
         "goals": {
           "total": 2,
@@ -342,22 +342,22 @@
           "saves": null
         },
         "passes": {
-          "total": 66,
+          "total": 81,
           "key": 2,
-          "accuracy": 11
+          "accuracy": 10
         },
         "tackles": {
-          "total": 2,
-          "blocks": null,
+          "total": 4,
+          "blocks": 1,
           "interceptions": null
         },
         "duels": {
-          "total": 21,
-          "won": 11
+          "total": 27,
+          "won": 14
         },
         "dribbles": {
-          "attempts": 5,
-          "success": 1,
+          "attempts": 6,
+          "success": 2,
           "past": null
         },
         "fouls": {
@@ -395,175 +395,6 @@
           "appearences": 0,
           "lineups": 0,
           "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 310968,
-      "name": "S. Ibrahim",
-      "firstname": "Sunusi",
-      "lastname": "Ibrahim",
-      "age": 22,
-      "birth": {
-        "date": "2002-10-01",
-        "place": null,
-        "country": "Nigeria"
-      },
-      "nationality": "Nigeria",
-      "height": null,
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/310968.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1614,
-          "name": "Montreal Impact",
-          "logo": "https://media.api-sports.io/football/teams/1614.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 10,
-          "lineups": 1,
-          "minutes": 153,
-          "number": null,
-          "position": "Attacker",
-          "rating": "6.633333",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 9,
-          "out": 1,
-          "bench": 10
-        },
-        "shots": {
-          "total": 6,
-          "on": 2
-        },
-        "goals": {
-          "total": 1,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": 51,
-          "key": 4,
-          "accuracy": 4
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": 1
-        },
-        "duels": {
-          "total": 23,
-          "won": 11
-        },
-        "dribbles": {
-          "attempts": 5,
-          "success": 4,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 3,
-          "committed": 1
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1614,
-          "name": "Montreal Impact",
-          "logo": "https://media.api-sports.io/football/teams/1614.png"
-        },
-        "league": {
-          "id": 259,
-          "name": "Canadian Championship",
-          "country": "Canada",
-          "logo": "https://media.api-sports.io/football/leagues/259.png",
-          "flag": "https://media.api-sports.io/flags/ca.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 90,
           "number": null,
           "position": "Attacker",
           "rating": null,
@@ -793,6 +624,175 @@
   },
   {
     "player": {
+      "id": 310968,
+      "name": "S. Ibrahim",
+      "firstname": "Sunusi",
+      "lastname": "Ibrahim",
+      "age": 22,
+      "birth": {
+        "date": "2002-10-01",
+        "place": null,
+        "country": "Nigeria"
+      },
+      "nationality": "Nigeria",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/310968.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 3,
+          "minutes": 333,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.754545",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 9,
+          "out": 1,
+          "bench": 10
+        },
+        "shots": {
+          "total": 9,
+          "on": 4
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 100,
+          "key": 7,
+          "accuracy": 7
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 42,
+          "won": 19
+        },
+        "dribbles": {
+          "attempts": 6,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
       "id": 68490,
       "name": "M. Toye",
       "firstname": "Mason Vincent",
@@ -825,31 +825,31 @@
           "season": 2024
         },
         "games": {
-          "appearences": 6,
+          "appearences": 7,
           "lineups": 3,
-          "minutes": 262,
+          "minutes": 269,
           "number": null,
           "position": "Attacker",
           "rating": "6.500000",
           "captain": false
         },
         "substitutes": {
-          "in": 3,
-          "out": 3,
-          "bench": 5
+          "in": 4,
+          "out": 4,
+          "bench": 6
         },
         "shots": {
-          "total": 2,
-          "on": 2
+          "total": 3,
+          "on": 3
         },
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 54,
+          "total": 55,
           "key": 1,
           "accuracy": 7
         },
@@ -859,7 +859,7 @@
           "interceptions": 2
         },
         "duels": {
-          "total": 15,
+          "total": 16,
           "won": 4
         },
         "dribbles": {
@@ -911,6 +911,175 @@
           "in": 0,
           "out": 1,
           "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 2847,
+      "name": "A. Lassiter",
+      "firstname": "Ariel Daniel",
+      "lastname": "Lassiter Acuña",
+      "age": 30,
+      "birth": {
+        "date": "1994-09-27",
+        "place": "Turrialba",
+        "country": "Costa Rica"
+      },
+      "nationality": "Costa Rica",
+      "height": "178 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/2847.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1074,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.707692",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 4,
+          "bench": 0
+        },
+        "shots": {
+          "total": 14,
+          "on": 8
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 373,
+          "key": 6,
+          "accuracy": 24
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 60,
+          "won": 26
+        },
+        "dribbles": {
+          "attempts": 20,
+          "success": 7,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 12,
+          "committed": 7
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
         },
         "shots": {
           "total": null,
@@ -1080,175 +1249,6 @@
           "in": 0,
           "out": 0,
           "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 2847,
-      "name": "A. Lassiter",
-      "firstname": "Ariel Daniel",
-      "lastname": "Lassiter Acuña",
-      "age": 30,
-      "birth": {
-        "date": "1994-09-27",
-        "place": "Turrialba",
-        "country": "Costa Rica"
-      },
-      "nationality": "Costa Rica",
-      "height": "178 cm",
-      "weight": "70 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/2847.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1614,
-          "name": "Montreal Impact",
-          "logo": "https://media.api-sports.io/football/teams/1614.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 11,
-          "lineups": 11,
-          "minutes": 894,
-          "number": null,
-          "position": "Attacker",
-          "rating": "6.781818",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 4,
-          "bench": 0
-        },
-        "shots": {
-          "total": 11,
-          "on": 7
-        },
-        "goals": {
-          "total": 2,
-          "conceded": 0,
-          "assists": 2,
-          "saves": null
-        },
-        "passes": {
-          "total": 319,
-          "key": 6,
-          "accuracy": 25
-        },
-        "tackles": {
-          "total": 4,
-          "blocks": 1,
-          "interceptions": 2
-        },
-        "duels": {
-          "total": 51,
-          "won": 23
-        },
-        "dribbles": {
-          "attempts": 19,
-          "success": 7,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 12,
-          "committed": 6
-        },
-        "cards": {
-          "yellow": 2,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1614,
-          "name": "Montreal Impact",
-          "logo": "https://media.api-sports.io/football/teams/1614.png"
-        },
-        "league": {
-          "id": 259,
-          "name": "Canadian Championship",
-          "country": "Canada",
-          "logo": "https://media.api-sports.io/football/leagues/259.png",
-          "flag": "https://media.api-sports.io/flags/ca.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 44,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
         },
         "shots": {
           "total": null,
@@ -1501,18 +1501,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 0,
+          "appearences": 2,
           "lineups": 0,
-          "minutes": 0,
+          "minutes": 14,
           "number": null,
           "position": "Midfielder",
-          "rating": null,
+          "rating": "6.300000",
           "captain": false
         },
         "substitutes": {
-          "in": 0,
+          "in": 2,
           "out": 0,
-          "bench": 1
+          "bench": 3
         },
         "shots": {
           "total": null,
@@ -1521,22 +1521,22 @@
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": null,
+          "total": 12,
           "key": null,
-          "accuracy": null
+          "accuracy": 6
         },
         "tackles": {
-          "total": null,
+          "total": 1,
           "blocks": null,
-          "interceptions": null
+          "interceptions": 1
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 4,
+          "won": 1
         },
         "dribbles": {
           "attempts": null,
@@ -1545,7 +1545,7 @@
         },
         "fouls": {
           "drawn": null,
-          "committed": null
+          "committed": 1
         },
         "cards": {
           "yellow": 0,
@@ -1670,61 +1670,61 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 11,
-          "minutes": 980,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1139,
           "number": null,
           "position": "Midfielder",
-          "rating": "7.054545",
+          "rating": "7.046153",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 1,
+          "out": 2,
           "bench": 0
         },
         "shots": {
-          "total": 4,
-          "on": 2
+          "total": 5,
+          "on": 3
         },
         "goals": {
-          "total": 0,
+          "total": 1,
           "conceded": 0,
           "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 638,
-          "key": 13,
-          "accuracy": 51
+          "total": 725,
+          "key": 16,
+          "accuracy": 49
         },
         "tackles": {
-          "total": 18,
+          "total": 24,
           "blocks": 4,
           "interceptions": 6
         },
         "duels": {
-          "total": 87,
-          "won": 45
+          "total": 105,
+          "won": 55
         },
         "dribbles": {
-          "attempts": 12,
-          "success": 7,
+          "attempts": 15,
+          "success": 10,
           "past": null
         },
         "fouls": {
-          "drawn": 14,
-          "committed": 10
+          "drawn": 15,
+          "committed": 11
         },
         "cards": {
-          "yellow": 3,
+          "yellow": 4,
           "yellowred": 0,
           "red": 0
         },
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": 0,
+          "scored": 1,
           "missed": 0,
           "saved": null
         }
@@ -1976,6 +1976,175 @@
   },
   {
     "player": {
+      "id": 55405,
+      "name": "L. Lappalainen",
+      "firstname": "Lassi Roni Kasperi",
+      "lastname": "Lappalainen",
+      "age": 26,
+      "birth": {
+        "date": "1998-08-24",
+        "place": "Espoo",
+        "country": "Finland"
+      },
+      "nationality": "Finland",
+      "height": "183 cm",
+      "weight": "76 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/55405.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 0,
+          "minutes": 41,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.433333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 15,
+          "key": null,
+          "accuracy": 3
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 10,
+          "won": 4
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
       "id": 294824,
       "name": "N. Saliba",
       "firstname": "Nathan-Dylan",
@@ -2177,18 +2346,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 4,
-          "lineups": 0,
-          "minutes": 67,
+          "appearences": 6,
+          "lineups": 1,
+          "minutes": 157,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.533333",
+          "rating": "6.640000",
           "captain": false
         },
         "substitutes": {
-          "in": 4,
-          "out": 0,
-          "bench": 9
+          "in": 5,
+          "out": 1,
+          "bench": 10
         },
         "shots": {
           "total": null,
@@ -2197,31 +2366,31 @@
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 66,
+          "total": 117,
           "key": null,
-          "accuracy": 15
+          "accuracy": 17
         },
         "tackles": {
-          "total": null,
+          "total": 5,
           "blocks": null,
           "interceptions": 2
         },
         "duels": {
-          "total": 8,
-          "won": 1
+          "total": 19,
+          "won": 8
         },
         "dribbles": {
-          "attempts": null,
-          "success": null,
+          "attempts": 2,
+          "success": 1,
           "past": null
         },
         "fouls": {
           "drawn": 1,
-          "committed": 4
+          "committed": 7
         },
         "cards": {
           "yellow": 2,
@@ -2314,21 +2483,21 @@
   },
   {
     "player": {
-      "id": 55405,
-      "name": "L. Lappalainen",
-      "firstname": "Lassi Roni Kasperi",
-      "lastname": "Lappalainen",
-      "age": 26,
+      "id": 199409,
+      "name": "B. Duke",
+      "firstname": "Bryce Michael",
+      "lastname": "Duke",
+      "age": 23,
       "birth": {
-        "date": "1998-08-24",
-        "place": "Espoo",
-        "country": "Finland"
+        "date": "2001-02-28",
+        "place": "Peoria",
+        "country": "USA"
       },
-      "nationality": "Finland",
-      "height": "183 cm",
-      "weight": "76 kg",
+      "nationality": "USA",
+      "height": "170 cm",
+      "weight": "66 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/55405.png"
+      "photo": "https://media.api-sports.io/football/players/199409.png"
     },
     "statistics": [
       {
@@ -2346,54 +2515,223 @@
           "season": 2024
         },
         "games": {
-          "appearences": 3,
-          "lineups": 0,
-          "minutes": 41,
+          "appearences": 12,
+          "lineups": 10,
+          "minutes": 817,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.433333",
+          "rating": "6.941666",
           "captain": false
         },
         "substitutes": {
-          "in": 3,
-          "out": 0,
+          "in": 2,
+          "out": 7,
           "bench": 3
         },
         "shots": {
+          "total": 7,
+          "on": 4
+        },
+        "goals": {
           "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 401,
+          "key": 17,
+          "accuracy": 26
+        },
+        "tackles": {
+          "total": 16,
+          "blocks": null,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 96,
+          "won": 39
+        },
+        "dribbles": {
+          "attempts": 20,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 15,
+          "committed": 14
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
           "on": null
         },
         "goals": {
-          "total": 0,
-          "conceded": 0,
+          "total": 1,
+          "conceded": null,
           "assists": null,
           "saves": null
         },
         "passes": {
-          "total": 15,
+          "total": null,
           "key": null,
-          "accuracy": 3
+          "accuracy": null
         },
         "tackles": {
-          "total": 1,
-          "blocks": 1,
+          "total": null,
+          "blocks": null,
           "interceptions": null
         },
         "duels": {
-          "total": 10,
-          "won": 4
+          "total": null,
+          "won": null
         },
         "dribbles": {
-          "attempts": 4,
-          "success": 3,
+          "attempts": null,
+          "success": null,
           "past": null
         },
         "fouls": {
           "drawn": null,
-          "committed": 1
+          "committed": null
         },
         "cards": {
           "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 1071,
+      "name": "D. Yankov",
+      "firstname": "Dominik",
+      "lastname": "Ivilin Yankov",
+      "age": 24,
+      "birth": {
+        "date": "2000-07-28",
+        "place": "Toronto",
+        "country": "Bulgaria"
+      },
+      "nationality": "Bulgaria",
+      "height": "176 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/1071.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 3,
+          "minutes": 356,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.577777",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 6,
+          "out": 4,
+          "bench": 6
+        },
+        "shots": {
+          "total": 5,
+          "on": 3
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 102,
+          "key": 3,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 56,
+          "won": 19
+        },
+        "dribbles": {
+          "attempts": 15,
+          "success": 7,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 1,
           "yellowred": 0,
           "red": 0
         },
@@ -2432,6 +2770,175 @@
           "in": 0,
           "out": 0,
           "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50792,
+      "name": "S. Piette",
+      "firstname": "Samuel",
+      "lastname": "Piette",
+      "age": 30,
+      "birth": {
+        "date": "1994-11-12",
+        "place": "Le Gardeur",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "171 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50792.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 12,
+          "minutes": 1006,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.915384",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 8,
+          "bench": 1
+        },
+        "shots": {
+          "total": 3,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 641,
+          "key": 9,
+          "accuracy": 43
+        },
+        "tackles": {
+          "total": 31,
+          "blocks": 5,
+          "interceptions": 11
+        },
+        "duels": {
+          "total": 103,
+          "won": 48
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 8,
+          "committed": 24
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
         },
         "shots": {
           "total": null,
@@ -2526,7 +3033,7 @@
         "substitutes": {
           "in": 0,
           "out": 0,
-          "bench": 2
+          "bench": 4
         },
         "shots": {
           "total": null,
@@ -2652,21 +3159,21 @@
   },
   {
     "player": {
-      "id": 199409,
-      "name": "B. Duke",
-      "firstname": "Bryce Michael",
-      "lastname": "Duke",
-      "age": 23,
+      "id": 181,
+      "name": "V. Wanyama",
+      "firstname": "Victor",
+      "lastname": "Mugubi Wanyama",
+      "age": 33,
       "birth": {
-        "date": "2001-02-28",
-        "place": "Peoria",
-        "country": "USA"
+        "date": "1991-06-25",
+        "place": "Nairobi",
+        "country": "Kenya"
       },
-      "nationality": "USA",
-      "height": "170 cm",
-      "weight": "66 kg",
+      "nationality": "Kenya",
+      "height": "188 cm",
+      "weight": "80 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/199409.png"
+      "photo": "https://media.api-sports.io/football/players/181.png"
     },
     "statistics": [
       {
@@ -2684,54 +3191,54 @@
           "season": 2024
         },
         "games": {
-          "appearences": 10,
-          "lineups": 9,
-          "minutes": 739,
+          "appearences": 6,
+          "lineups": 1,
+          "minutes": 154,
           "number": null,
           "position": "Midfielder",
-          "rating": "7.080000",
+          "rating": "6.616666",
           "captain": false
         },
         "substitutes": {
-          "in": 1,
-          "out": 6,
-          "bench": 2
+          "in": 5,
+          "out": 1,
+          "bench": 12
         },
         "shots": {
-          "total": 7,
-          "on": 4
+          "total": null,
+          "on": null
         },
         "goals": {
-          "total": 1,
+          "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 361,
-          "key": 16,
-          "accuracy": 29
+          "total": 103,
+          "key": null,
+          "accuracy": 14
         },
         "tackles": {
-          "total": 13,
-          "blocks": null,
-          "interceptions": 6
+          "total": 4,
+          "blocks": 2,
+          "interceptions": 5
         },
         "duels": {
-          "total": 85,
-          "won": 35
+          "total": 14,
+          "won": 8
         },
         "dribbles": {
-          "attempts": 15,
-          "success": 6,
+          "attempts": 2,
+          "success": 2,
           "past": null
         },
         "fouls": {
-          "drawn": 14,
-          "committed": 14
+          "drawn": null,
+          "committed": 3
         },
         "cards": {
-          "yellow": 0,
+          "yellow": 1,
           "yellowred": 0,
           "red": 0
         },
@@ -2759,24 +3266,24 @@
         },
         "games": {
           "appearences": 1,
-          "lineups": 0,
-          "minutes": 44,
+          "lineups": 1,
+          "minutes": 90,
           "number": null,
           "position": "Midfielder",
           "rating": null,
           "captain": false
         },
         "substitutes": {
-          "in": 1,
+          "in": 0,
           "out": 0,
-          "bench": 1
+          "bench": 0
         },
         "shots": {
           "total": null,
           "on": null
         },
         "goals": {
-          "total": 1,
+          "total": 0,
           "conceded": null,
           "assists": null,
           "saves": null
@@ -2821,21 +3328,21 @@
   },
   {
     "player": {
-      "id": 50792,
-      "name": "S. Piette",
-      "firstname": "Samuel",
-      "lastname": "Piette",
-      "age": 30,
+      "id": 30470,
+      "name": "G. Corbo",
+      "firstname": "Gabriele",
+      "lastname": "Corbo",
+      "age": 24,
       "birth": {
-        "date": "1994-11-12",
-        "place": "Le Gardeur",
-        "country": "Canada"
+        "date": "2000-01-11",
+        "place": "Napoli",
+        "country": "Italy"
       },
-      "nationality": "Canada",
-      "height": "171 cm",
-      "weight": "73 kg",
+      "nationality": "Italy",
+      "height": "186 cm",
+      "weight": null,
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/50792.png"
+      "photo": "https://media.api-sports.io/football/players/30470.png"
     },
     "statistics": [
       {
@@ -2854,53 +3361,53 @@
         },
         "games": {
           "appearences": 11,
-          "lineups": 11,
-          "minutes": 884,
+          "lineups": 6,
+          "minutes": 601,
           "number": null,
-          "position": "Midfielder",
-          "rating": "6.918181",
+          "position": "Defender",
+          "rating": "6.700000",
           "captain": false
         },
         "substitutes": {
-          "in": 0,
-          "out": 8,
-          "bench": 0
+          "in": 5,
+          "out": 1,
+          "bench": 7
         },
         "shots": {
-          "total": 3,
+          "total": 2,
           "on": null
         },
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": 1,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 546,
-          "key": 6,
-          "accuracy": 43
+          "total": 346,
+          "key": 4,
+          "accuracy": 28
         },
         "tackles": {
-          "total": 26,
-          "blocks": 4,
-          "interceptions": 9
+          "total": 7,
+          "blocks": 7,
+          "interceptions": 5
         },
         "duels": {
-          "total": 88,
-          "won": 42
+          "total": 30,
+          "won": 16
         },
         "dribbles": {
           "attempts": 2,
-          "success": null,
+          "success": 2,
           "past": null
         },
         "fouls": {
-          "drawn": 8,
-          "committed": 20
+          "drawn": 3,
+          "committed": 3
         },
         "cards": {
-          "yellow": 4,
+          "yellow": 0,
           "yellowred": 0,
           "red": 0
         },
@@ -2931,7 +3438,683 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Midfielder",
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50906,
+      "name": "R. Edwards",
+      "firstname": "Raheem Nathaniel Anfernee",
+      "lastname": "Edwards",
+      "age": 29,
+      "birth": {
+        "date": "1995-07-17",
+        "place": "Toronto",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "173 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50906.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 7,
+          "lineups": 4,
+          "minutes": 370,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.514285",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 3,
+          "bench": 5
+        },
+        "shots": {
+          "total": 4,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 150,
+          "key": 6,
+          "accuracy": 18
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": null,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 59,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 15,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 1
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 27,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50929,
+      "name": "Ruan",
+      "firstname": "Ruan Gregório",
+      "lastname": "Teixeira",
+      "age": 29,
+      "birth": {
+        "date": "1995-05-29",
+        "place": "Rio de Janeiro",
+        "country": "Brazil"
+      },
+      "nationality": "Brazil",
+      "height": "174 cm",
+      "weight": "65 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50929.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1095,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.730769",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 5,
+          "bench": 0
+        },
+        "shots": {
+          "total": 3,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 355,
+          "key": 11,
+          "accuracy": 21
+        },
+        "tackles": {
+          "total": 13,
+          "blocks": 2,
+          "interceptions": 11
+        },
+        "duels": {
+          "total": 88,
+          "won": 46
+        },
+        "dribbles": {
+          "attempts": 32,
+          "success": 13,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 18,
+          "committed": 6
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 46,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 56807,
+      "name": "S. Breza",
+      "firstname": "Sebastian Jean-Baptiste",
+      "lastname": "Breza",
+      "age": 26,
+      "birth": {
+        "date": "1998-03-15",
+        "place": "Ottawa",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "195 cm",
+      "weight": "98 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/56807.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 13
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71174,
+      "name": "L. Ketterer",
+      "firstname": "Logan",
+      "lastname": "Ketterer",
+      "age": 31,
+      "birth": {
+        "date": "1993-11-09",
+        "place": "Madison",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "82 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/71174.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
           "rating": null,
           "captain": false
         },
@@ -2990,21 +4173,21 @@
   },
   {
     "player": {
-      "id": 1071,
-      "name": "D. Yankov",
-      "firstname": "Dominik",
-      "lastname": "Ivilin Yankov",
-      "age": 24,
+      "id": 78494,
+      "name": "J. Waterman",
+      "firstname": "Joel Robert",
+      "lastname": "Waterman",
+      "age": 28,
       "birth": {
-        "date": "2000-07-28",
-        "place": "Toronto",
-        "country": "Bulgaria"
+        "date": "1996-01-24",
+        "place": "Langley",
+        "country": "Canada"
       },
-      "nationality": "Bulgaria",
-      "height": "176 cm",
-      "weight": null,
+      "nationality": "Canada",
+      "height": "185 cm",
+      "weight": "78 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/1071.png"
+      "photo": "https://media.api-sports.io/football/players/78494.png"
     },
     "statistics": [
       {
@@ -3022,51 +4205,389 @@
           "season": 2024
         },
         "games": {
-          "appearences": 7,
-          "lineups": 2,
-          "minutes": 254,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1139,
           "number": null,
-          "position": "Midfielder",
-          "rating": "6.571428",
+          "position": "Defender",
+          "rating": "6.884615",
           "captain": false
         },
         "substitutes": {
-          "in": 5,
-          "out": 3,
-          "bench": 5
+          "in": 0,
+          "out": 2,
+          "bench": 0
         },
         "shots": {
-          "total": 4,
+          "total": 2,
           "on": 2
         },
         "goals": {
-          "total": 1,
+          "total": 0,
           "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 892,
+          "key": 1,
+          "accuracy": 61
+        },
+        "tackles": {
+          "total": 14,
+          "blocks": 13,
+          "interceptions": 28
+        },
+        "duels": {
+          "total": 64,
+          "won": 39
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
           "assists": null,
           "saves": null
         },
         "passes": {
-          "total": 83,
-          "key": 3,
-          "accuracy": 8
+          "total": null,
+          "key": null,
+          "accuracy": null
         },
         "tackles": {
-          "total": 5,
+          "total": null,
           "blocks": null,
           "interceptions": null
         },
         "duels": {
-          "total": 41,
-          "won": 13
+          "total": null,
+          "won": null
         },
         "dribbles": {
-          "attempts": 13,
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 102508,
+      "name": "G. Campbell",
+      "firstname": "George Hampton",
+      "lastname": "Campbell",
+      "age": 23,
+      "birth": {
+        "date": "2001-06-22",
+        "place": "Atlanta",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/102508.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 9,
+          "minutes": 811,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.790000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 572,
+          "key": 3,
+          "accuracy": 46
+        },
+        "tackles": {
+          "total": 13,
+          "blocks": 7,
+          "interceptions": 13
+        },
+        "duels": {
+          "total": 68,
+          "won": 39
+        },
+        "dribbles": {
+          "attempts": 10,
           "success": 5,
           "past": null
         },
         "fouls": {
-          "drawn": 3,
-          "committed": 2
+          "drawn": 6,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 195508,
+      "name": "J. Sosa",
+      "firstname": "Enzo Joaquín",
+      "lastname": "Sosa Romañuk",
+      "age": 22,
+      "birth": {
+        "date": "2002-01-10",
+        "place": "Fray Bentos",
+        "country": "Uruguay"
+      },
+      "nationality": "Uruguay",
+      "height": "189 cm",
+      "weight": "82 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/195508.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 4,
+          "minutes": 389,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.616666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 1,
+          "bench": 5
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 234,
+          "key": 1,
+          "accuracy": 32
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 3,
+          "interceptions": 7
+        },
+        "duels": {
+          "total": 38,
+          "won": 17
+        },
+        "dribbles": {
+          "attempts": 3,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 12
         },
         "cards": {
           "yellow": 1,
@@ -3100,7 +4621,7 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Midfielder",
+          "position": "Defender",
           "rating": null,
           "captain": false
         },
@@ -3152,6 +4673,439 @@
           "commited": null,
           "scored": null,
           "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 262600,
+      "name": "J. Sirois",
+      "firstname": "Jonathan",
+      "lastname": "Sirois",
+      "age": 23,
+      "birth": {
+        "date": "2001-06-27",
+        "place": null,
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "183 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/262600.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1170,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "6.938461",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 31,
+          "assists": 0,
+          "saves": 47
+        },
+        "passes": {
+          "total": 395,
+          "key": null,
+          "accuracy": 22
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 5,
+          "won": 4
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 323586,
+      "name": "F. Álvarez",
+      "firstname": "Fernando Antonio",
+      "lastname": "Álvarez Amador",
+      "age": 21,
+      "birth": {
+        "date": "2003-08-24",
+        "place": "New York",
+        "country": "USA"
+      },
+      "nationality": "Colombia",
+      "height": "187 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/323586.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 8,
+          "lineups": 7,
+          "minutes": 570,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.637500",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 3,
+          "bench": 5
+        },
+        "shots": {
+          "total": 3,
+          "on": 1
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 284,
+          "key": 1,
+          "accuracy": 28
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 4,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 31,
+          "won": 17
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 470404,
+      "name": "G. Doody",
+      "firstname": "Grayson Patrick",
+      "lastname": "Doody",
+      "age": 22,
+      "birth": {
+        "date": "2002-03-20",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/470404.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1614,
+          "name": "Montreal Impact",
+          "logo": "https://media.api-sports.io/football/teams/1614.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }

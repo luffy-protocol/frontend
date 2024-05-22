@@ -1,28 +1,28 @@
 [
   {
     "player": {
-      "id": 6200,
-      "name": "P. de la Vega",
-      "firstname": "Pedro",
-      "lastname": "de la Vega",
-      "age": 23,
+      "id": 148,
+      "name": "Riqui Puig",
+      "firstname": "Ricard",
+      "lastname": "Puig Martí",
+      "age": 25,
       "birth": {
-        "date": "2001-02-07",
-        "place": "Olavarría",
-        "country": "Argentina"
+        "date": "1999-08-13",
+        "place": "Barcelona",
+        "country": "Spain"
       },
-      "nationality": "Argentina",
-      "height": "177 cm",
-      "weight": "74 kg",
+      "nationality": "Spain",
+      "height": "169 cm",
+      "weight": "56 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/6200.png"
+      "photo": "https://media.api-sports.io/football/players/148.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -33,220 +33,51 @@
           "season": 2024
         },
         "games": {
-          "appearences": 2,
-          "lineups": 1,
-          "minutes": 89,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1157,
           "number": null,
-          "position": "Attacker",
-          "rating": "7.250000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 1,
-          "bench": 1
-        },
-        "shots": {
-          "total": 1,
-          "on": 1
-        },
-        "goals": {
-          "total": 1,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": 43,
-          "key": 1,
-          "accuracy": 15
-        },
-        "tackles": {
-          "total": 2,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": 16,
-          "won": 11
-        },
-        "dribbles": {
-          "attempts": 8,
-          "success": 6,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 3,
-          "committed": 2
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 1,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
+          "position": "Midfielder",
+          "rating": "7.884615",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 0,
+          "out": 2,
           "bench": 0
         },
         "shots": {
-          "total": null,
-          "on": null
+          "total": 20,
+          "on": 13
         },
         "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 51107,
-      "name": "N. Tolo",
-      "firstname": "Nouhou",
-      "lastname": "Tolo",
-      "age": 27,
-      "birth": {
-        "date": "1997-06-23",
-        "place": "Douala",
-        "country": "Cameroon"
-      },
-      "nationality": "Cameroon",
-      "height": "178 cm",
-      "weight": "79 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/51107.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 10,
-          "lineups": 10,
-          "minutes": 821,
-          "number": null,
-          "position": "Defender",
-          "rating": "6.860000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 1,
-          "bench": 0
-        },
-        "shots": {
           "total": 3,
-          "on": 1
-        },
-        "goals": {
-          "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 5,
           "saves": null
         },
         "passes": {
-          "total": 433,
-          "key": 8,
-          "accuracy": 36
+          "total": 1255,
+          "key": 29,
+          "accuracy": 82
         },
         "tackles": {
-          "total": 12,
-          "blocks": 5,
-          "interceptions": 10
+          "total": 11,
+          "blocks": 1,
+          "interceptions": 8
         },
         "duels": {
-          "total": 82,
-          "won": 45
+          "total": 133,
+          "won": 76
         },
         "dribbles": {
-          "attempts": 18,
-          "success": 12,
+          "attempts": 40,
+          "success": 28,
           "past": null
         },
         "fouls": {
-          "drawn": 12,
-          "committed": 12
+          "drawn": 35,
+          "committed": 10
         },
         "cards": {
           "yellow": 4,
@@ -257,81 +88,7 @@
           "won": null,
           "commited": null,
           "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
+          "missed": 1,
           "saved": null
         }
       }
@@ -339,366 +96,28 @@
   },
   {
     "player": {
-      "id": 51111,
-      "name": "D. Leyva",
-      "firstname": "Daniel Ulises",
-      "lastname": "Leyva",
-      "age": 21,
+      "id": 364,
+      "name": "D. Joveljić",
+      "firstname": "Dejan",
+      "lastname": "Joveljić",
+      "age": 25,
       "birth": {
-        "date": "2003-05-05",
-        "place": "Las Vegas",
-        "country": "USA"
+        "date": "1999-08-07",
+        "place": "Bijeljina",
+        "country": "Bosnia and Herzegovina"
       },
-      "nationality": "USA",
-      "height": "178 cm",
-      "weight": "68 kg",
+      "nationality": "Serbia",
+      "height": "181 cm",
+      "weight": "75 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/51111.png"
+      "photo": "https://media.api-sports.io/football/players/364.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 4,
-          "lineups": 1,
-          "minutes": 89,
-          "number": null,
-          "position": "Midfielder",
-          "rating": "7.066666",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 3,
-          "out": 1,
-          "bench": 10
-        },
-        "shots": {
-          "total": 2,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": 61,
-          "key": 5,
-          "accuracy": 17
-        },
-        "tackles": {
-          "total": 2,
-          "blocks": null,
-          "interceptions": 1
-        },
-        "duels": {
-          "total": 18,
-          "won": 10
-        },
-        "dribbles": {
-          "attempts": 2,
-          "success": 1,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 5,
-          "committed": 3
-        },
-        "cards": {
-          "yellow": 1,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 120,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 51118,
-      "name": "J. Morris",
-      "firstname": "Jordan Perry",
-      "lastname": "Morris",
-      "age": 30,
-      "birth": {
-        "date": "1994-10-26",
-        "place": "Seattle",
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": "183 cm",
-      "weight": "84 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/51118.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 12,
-          "lineups": 12,
-          "minutes": 993,
-          "number": null,
-          "position": "Attacker",
-          "rating": "7.058333",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 7,
-          "bench": 0
-        },
-        "shots": {
-          "total": 15,
-          "on": 7
-        },
-        "goals": {
-          "total": 1,
-          "conceded": 0,
-          "assists": 1,
-          "saves": null
-        },
-        "passes": {
-          "total": 256,
-          "key": 17,
-          "accuracy": 17
-        },
-        "tackles": {
-          "total": 10,
-          "blocks": 2,
-          "interceptions": 1
-        },
-        "duels": {
-          "total": 96,
-          "won": 49
-        },
-        "dribbles": {
-          "attempts": 9,
-          "success": 8,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 7,
-          "committed": 11
-        },
-        "cards": {
-          "yellow": 3,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 51119,
-      "name": "R. Ruidíaz",
-      "firstname": "Raúl Mario",
-      "lastname": "Ruidíaz Misitich",
-      "age": 34,
-      "birth": {
-        "date": "1990-07-25",
-        "place": "Lima",
-        "country": "Peru"
-      },
-      "nationality": "Peru",
-      "height": "169 cm",
-      "weight": "65 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/51119.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -711,217 +130,48 @@
         "games": {
           "appearences": 12,
           "lineups": 10,
-          "minutes": 841,
+          "minutes": 858,
           "number": null,
           "position": "Attacker",
-          "rating": "7.325000",
+          "rating": "7.058333",
           "captain": false
         },
         "substitutes": {
           "in": 2,
-          "out": 7,
+          "out": 8,
           "bench": 2
         },
         "shots": {
-          "total": 35,
-          "on": 22
+          "total": 21,
+          "on": 16
         },
         "goals": {
           "total": 7,
           "conceded": 0,
-          "assists": null,
+          "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 257,
-          "key": 8,
-          "accuracy": 18
-        },
-        "tackles": {
-          "total": 3,
-          "blocks": 1,
-          "interceptions": 1
-        },
-        "duels": {
-          "total": 86,
-          "won": 36
-        },
-        "dribbles": {
-          "attempts": 32,
-          "success": 15,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 8,
-          "committed": 8
-        },
-        "cards": {
-          "yellow": 2,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 4,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 51212,
-      "name": "A. Rusnák",
-      "firstname": "Albert",
-      "lastname": "Rusnák",
-      "age": 30,
-      "birth": {
-        "date": "1994-07-07",
-        "place": "Vyškov",
-        "country": "Czechia"
-      },
-      "nationality": "Slovakia",
-      "height": "175 cm",
-      "weight": "61 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/51212.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 10,
-          "lineups": 7,
-          "minutes": 680,
-          "number": null,
-          "position": "Midfielder",
-          "rating": "7.190000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 3,
-          "out": 3,
-          "bench": 3
-        },
-        "shots": {
-          "total": 6,
-          "on": 3
-        },
-        "goals": {
-          "total": 0,
-          "conceded": 0,
-          "assists": 2,
-          "saves": null
-        },
-        "passes": {
-          "total": 360,
-          "key": 21,
-          "accuracy": 32
+          "total": 150,
+          "key": 16,
+          "accuracy": 9
         },
         "tackles": {
           "total": 5,
           "blocks": null,
-          "interceptions": 4
+          "interceptions": 1
         },
         "duels": {
-          "total": 41,
-          "won": 19
+          "total": 63,
+          "won": 22
         },
         "dribbles": {
-          "attempts": 10,
-          "success": 6,
+          "attempts": 8,
+          "success": 3,
           "past": null
         },
         "fouls": {
-          "drawn": 7,
+          "drawn": 8,
           "committed": 5
         },
         "cards": {
@@ -933,21 +183,137 @@
           "won": null,
           "commited": null,
           "scored": 0,
+          "missed": 1,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 1944,
+      "name": "J. Paintsil",
+      "firstname": "Joseph Martin",
+      "lastname": "Paintsil",
+      "age": 26,
+      "birth": {
+        "date": "1998-02-01",
+        "place": "Accra",
+        "country": "Ghana"
+      },
+      "nationality": "Ghana",
+      "height": "169 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/1944.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1062,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.500000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 6,
+          "bench": 0
+        },
+        "shots": {
+          "total": 24,
+          "on": 12
+        },
+        "goals": {
+          "total": 4,
+          "conceded": 0,
+          "assists": 4,
+          "saves": null
+        },
+        "passes": {
+          "total": 392,
+          "key": 28,
+          "accuracy": 24
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 2,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 121,
+          "won": 58
+        },
+        "dribbles": {
+          "attempts": 46,
+          "success": 18,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 32,
+          "committed": 20
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 1,
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 19142,
+      "name": "J. Bond",
+      "firstname": "Jonathan Henry",
+      "lastname": "Bond",
+      "age": 31,
+      "birth": {
+        "date": "1993-05-19",
+        "place": "Hemel Hempstead",
+        "country": "England"
       },
+      "nationality": "England",
+      "height": "196 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/19142.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
@@ -956,7 +322,7 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Midfielder",
+          "position": "Goalkeeper",
           "rating": null,
           "captain": false
         },
@@ -1015,28 +381,28 @@
   },
   {
     "player": {
-      "id": 102373,
-      "name": "D. Musovski",
-      "firstname": "Daniel",
-      "lastname": "Musovski",
-      "age": 29,
+      "id": 31489,
+      "name": "G. Brugman",
+      "firstname": "Gastón",
+      "lastname": "Brugman Duarte",
+      "age": 32,
       "birth": {
-        "date": "1995-11-30",
-        "place": "Henderson",
-        "country": "USA"
+        "date": "1992-09-07",
+        "place": "Rosario",
+        "country": "Uruguay"
       },
-      "nationality": "USA",
-      "height": "183 cm",
-      "weight": "77 kg",
+      "nationality": "Uruguay",
+      "height": "178 cm",
+      "weight": "75 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/102373.png"
+      "photo": "https://media.api-sports.io/football/players/31489.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -1047,50 +413,430 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 1,
-          "minutes": 211,
+          "appearences": 13,
+          "lineups": 8,
+          "minutes": 767,
           "number": null,
-          "position": "Attacker",
-          "rating": "6.672727",
+          "position": "Midfielder",
+          "rating": "7.284615",
           "captain": false
         },
         "substitutes": {
-          "in": 10,
-          "out": 1,
-          "bench": 11
+          "in": 5,
+          "out": 5,
+          "bench": 6
         },
         "shots": {
-          "total": 5,
-          "on": 3
+          "total": 15,
+          "on": 4
         },
         "goals": {
-          "total": 1,
+          "total": 0,
           "conceded": 0,
           "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 56,
-          "key": 2,
-          "accuracy": 3
+          "total": 620,
+          "key": 9,
+          "accuracy": 42
         },
         "tackles": {
-          "total": 4,
-          "blocks": null,
-          "interceptions": 1
+          "total": 27,
+          "blocks": 7,
+          "interceptions": 22
         },
         "duels": {
-          "total": 49,
-          "won": 28
+          "total": 94,
+          "won": 52
         },
         "dribbles": {
-          "attempts": 10,
-          "success": 4,
+          "attempts": 6,
+          "success": 2,
           "past": null
         },
         "fouls": {
-          "drawn": 12,
+          "drawn": 15,
+          "committed": 20
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50157,
+      "name": "T. Boyd",
+      "firstname": "Tyler Dominic",
+      "lastname": "Boyd",
+      "age": 30,
+      "birth": {
+        "date": "1994-12-30",
+        "place": "Tauranga",
+        "country": "New Zealand"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "74 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50157.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50804,
+      "name": "C. Mavinga",
+      "firstname": "Chris",
+      "lastname": "Mavinga",
+      "age": 33,
+      "birth": {
+        "date": "1991-05-26",
+        "place": "Meaux",
+        "country": "France"
+      },
+      "nationality": "Congo DR",
+      "height": "183 cm",
+      "weight": "81 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50804.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50814,
+      "name": "M. Delgado",
+      "firstname": "Marco Antonio",
+      "lastname": "Delgado",
+      "age": 29,
+      "birth": {
+        "date": "1995-05-16",
+        "place": "Glendora",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "176 cm",
+      "weight": "67 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50814.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1114,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.315384",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 4,
+          "bench": 0
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 3,
+          "saves": null
+        },
+        "passes": {
+          "total": 766,
+          "key": 24,
+          "accuracy": 52
+        },
+        "tackles": {
+          "total": 24,
+          "blocks": 4,
+          "interceptions": 16
+        },
+        "duels": {
+          "total": 88,
+          "won": 48
+        },
+        "dribbles": {
+          "attempts": 7,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 14,
+          "committed": 8
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 1,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51010,
+      "name": "D. Fagúndez",
+      "firstname": "Diego Santiago",
+      "lastname": "Fagúndez Pepe",
+      "age": 29,
+      "birth": {
+        "date": "1995-02-14",
+        "place": "Montevideo",
+        "country": "Uruguay"
+      },
+      "nationality": "Uruguay",
+      "height": "173 cm",
+      "weight": "64 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51010.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 6,
+          "minutes": 601,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.861538",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 8,
+          "out": 5,
+          "bench": 8
+        },
+        "shots": {
+          "total": 8,
+          "on": 7
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 256,
+          "key": 20,
+          "accuracy": 17
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": null,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 50,
+          "won": 14
+        },
+        "dribbles": {
+          "attempts": 8,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
           "committed": 7
         },
         "cards": {
@@ -1105,41 +851,62 @@
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51131,
+      "name": "M. Barrios",
+      "firstname": "Michael David",
+      "lastname": "Barrios Puerta",
+      "age": 33,
+      "birth": {
+        "date": "1991-04-21",
+        "place": "Barranquilla",
+        "country": "Colombia"
       },
+      "nationality": "Colombia",
+      "height": "163 cm",
+      "weight": "61 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51131.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 120,
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
           "number": null,
           "position": "Attacker",
           "rating": null,
           "captain": false
         },
         "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
+          "in": null,
+          "out": null,
+          "bench": null
         },
         "shots": {
           "total": null,
           "on": null
         },
         "goals": {
-          "total": 1,
+          "total": null,
           "conceded": null,
           "assists": null,
           "saves": null
@@ -1168,9 +935,9 @@
           "committed": null
         },
         "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
+          "yellow": null,
+          "yellowred": null,
+          "red": null
         },
         "penalty": {
           "won": null,
@@ -1184,28 +951,28 @@
   },
   {
     "player": {
-      "id": 102828,
-      "name": "D. Teves",
-      "firstname": "Dylan Harvey Aluli",
-      "lastname": "Teves",
+      "id": 51132,
+      "name": "E. Cerrillo",
+      "firstname": "Edwin Javier",
+      "lastname": "Cerrillo",
       "age": 24,
       "birth": {
-        "date": "2000-05-14",
-        "place": null,
+        "date": "2000-10-03",
+        "place": "Waco",
         "country": "USA"
       },
       "nationality": "USA",
-      "height": "173 cm",
-      "weight": "63 kg",
+      "height": "175 cm",
+      "weight": "79 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/102828.png"
+      "photo": "https://media.api-sports.io/football/players/51132.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -1216,51 +983,51 @@
           "season": 2024
         },
         "games": {
-          "appearences": 5,
-          "lineups": 1,
-          "minutes": 76,
+          "appearences": 14,
+          "lineups": 9,
+          "minutes": 763,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.833333",
+          "rating": "6.721428",
           "captain": false
         },
         "substitutes": {
-          "in": 4,
-          "out": 1,
-          "bench": 11
+          "in": 5,
+          "out": 6,
+          "bench": 5
         },
         "shots": {
-          "total": 1,
-          "on": 1
+          "total": null,
+          "on": null
         },
         "goals": {
-          "total": 1,
+          "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 33,
+          "total": 609,
           "key": 1,
-          "accuracy": 9
+          "accuracy": 41
         },
         "tackles": {
-          "total": 2,
-          "blocks": null,
-          "interceptions": null
+          "total": 12,
+          "blocks": 7,
+          "interceptions": 7
         },
         "duels": {
-          "total": 13,
-          "won": 7
+          "total": 57,
+          "won": 26
         },
         "dribbles": {
-          "attempts": 3,
-          "success": 2,
+          "attempts": 7,
+          "success": 4,
           "past": null
         },
         "fouls": {
-          "drawn": 2,
-          "committed": 4
+          "drawn": 8,
+          "committed": 12
         },
         "cards": {
           "yellow": 1,
@@ -1274,25 +1041,46 @@
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 102702,
+      "name": "T. Lepley",
+      "firstname": "Tucker",
+      "lastname": "Lepley",
+      "age": 22,
+      "birth": {
+        "date": "2002-01-17",
+        "place": "Charlotte",
+        "country": "USA"
       },
+      "nationality": "USA",
+      "height": "163 cm",
+      "weight": "57 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/102702.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 86,
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
           "number": null,
           "position": "Midfielder",
           "rating": null,
@@ -1300,8 +1088,8 @@
         },
         "substitutes": {
           "in": 0,
-          "out": 1,
-          "bench": 0
+          "out": 0,
+          "bench": 1
         },
         "shots": {
           "total": null,
@@ -1309,7 +1097,7 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
+          "conceded": 0,
           "assists": null,
           "saves": null
         },
@@ -1335,101 +1123,6 @@
         "fouls": {
           "drawn": null,
           "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 103203,
-      "name": "P. Rothrock",
-      "firstname": "Paul",
-      "lastname": "Rothrock",
-      "age": 25,
-      "birth": {
-        "date": "1999-01-09",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": "173 cm",
-      "weight": "74 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/103203.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 5,
-          "lineups": 0,
-          "minutes": 36,
-          "number": null,
-          "position": "Attacker",
-          "rating": "6.325000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 5,
-          "out": 0,
-          "bench": 10
-        },
-        "shots": {
-          "total": 1,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": 22,
-          "key": null,
-          "accuracy": 3
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": 10,
-          "won": 2
-        },
-        "dribbles": {
-          "attempts": 2,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 2,
-          "committed": 2
         },
         "cards": {
           "yellow": 0,
@@ -1443,41 +1136,347 @@
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 143367,
+      "name": "Gabriel Pec",
+      "firstname": "Gabriel",
+      "lastname": "Fortes Chaves",
+      "age": 23,
+      "birth": {
+        "date": "2001-02-11",
+        "place": null,
+        "country": "Brazil"
       },
+      "nationality": "Brazil",
+      "height": "177 cm",
+      "weight": "63 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/143367.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 81,
+          "appearences": 13,
+          "lineups": 10,
+          "minutes": 935,
           "number": null,
           "position": "Attacker",
-          "rating": null,
+          "rating": "7.276923",
           "captain": false
         },
         "substitutes": {
-          "in": 0,
-          "out": 1,
-          "bench": 0
+          "in": 3,
+          "out": 4,
+          "bench": 3
+        },
+        "shots": {
+          "total": 30,
+          "on": 16
+        },
+        "goals": {
+          "total": 3,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 330,
+          "key": 12,
+          "accuracy": 22
+        },
+        "tackles": {
+          "total": 17,
+          "blocks": 2,
+          "interceptions": 8
+        },
+        "duels": {
+          "total": 120,
+          "won": 49
+        },
+        "dribbles": {
+          "attempts": 40,
+          "success": 15,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 13,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 201787,
+      "name": "Miguel Berry",
+      "firstname": "Miguel",
+      "lastname": "Berry",
+      "age": 27,
+      "birth": {
+        "date": "1997-09-16",
+        "place": "Barcelona",
+        "country": "Spain"
+      },
+      "nationality": "Spain",
+      "height": "191 cm",
+      "weight": "82 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/201787.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 4,
+          "minutes": 400,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.692307",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 9,
+          "out": 4,
+          "bench": 10
+        },
+        "shots": {
+          "total": 2,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 83,
+          "key": 6,
+          "accuracy": 4
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 1,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 73,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 201791,
+      "name": "J. Pérez",
+      "firstname": "Jonathan Alexánder",
+      "lastname": "Pérez Lara",
+      "age": 21,
+      "birth": {
+        "date": "2003-01-18",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "Mexico",
+      "height": "168 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/201791.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 0,
+          "minutes": 15,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.550000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 0,
+          "bench": 13
         },
         "shots": {
           "total": null,
           "on": null
         },
         "goals": {
-          "total": 1,
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 14,
+          "key": null,
+          "accuracy": 6
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 6,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 265740,
+      "name": "A. González",
+      "firstname": "Adrián",
+      "lastname": "González Mendoza",
+      "age": 21,
+      "birth": {
+        "date": "2003-06-23",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "Mexico",
+      "height": "168 cm",
+      "weight": "63 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/265740.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
           "conceded": null,
           "assists": null,
           "saves": null
@@ -1506,9 +1505,9 @@
           "committed": null
         },
         "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
+          "yellow": null,
+          "yellowred": null,
+          "red": null
         },
         "penalty": {
           "won": null,
@@ -1522,28 +1521,28 @@
   },
   {
     "player": {
-      "id": 146737,
-      "name": "S. Kitahara",
-      "firstname": "Sota Leo",
-      "lastname": "Kitahara",
-      "age": 21,
+      "id": 312907,
+      "name": "D. Aguirre",
+      "firstname": "Daniel",
+      "lastname": "Aguirre",
+      "age": 25,
       "birth": {
-        "date": "2003-01-11",
-        "place": "Edmonds",
+        "date": "1999-07-28",
+        "place": null,
         "country": "USA"
       },
       "nationality": "USA",
-      "height": "175 cm",
-      "weight": "66 kg",
+      "height": "170 cm",
+      "weight": "75 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/146737.png"
+      "photo": "https://media.api-sports.io/football/players/312907.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -1554,17 +1553,112 @@
           "season": 2024
         },
         "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 58,
+          "appearences": 7,
+          "lineups": 0,
+          "minutes": 51,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.700000",
+          "rating": "6.666666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 7,
+          "out": 0,
+          "bench": 14
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 49,
+          "key": 2,
+          "accuracy": 6
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 10,
+          "won": 6
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 325807,
+      "name": "C. Garcés",
+      "firstname": "Carlos Emiro",
+      "lastname": "Garcés Torres",
+      "age": 23,
+      "birth": {
+        "date": "2001-10-11",
+        "place": "López de Micay",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "186 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/325807.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 1,
+          "out": 0,
           "bench": 2
         },
         "shots": {
@@ -1578,18 +1672,18 @@
           "saves": null
         },
         "passes": {
-          "total": 27,
+          "total": null,
           "key": null,
-          "accuracy": 22
+          "accuracy": null
         },
         "tackles": {
-          "total": 1,
+          "total": null,
           "blocks": null,
-          "interceptions": 1
+          "interceptions": null
         },
         "duels": {
-          "total": 5,
-          "won": 3
+          "total": null,
+          "won": null
         },
         "dribbles": {
           "attempts": null,
@@ -1597,8 +1691,8 @@
           "past": null
         },
         "fouls": {
-          "drawn": 2,
-          "committed": 2
+          "drawn": null,
+          "committed": null
         },
         "cards": {
           "yellow": 0,
@@ -1612,34 +1706,530 @@
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 407993,
+      "name": "G. Vivi",
+      "firstname": "Gino",
+      "lastname": "Vivi Quesada",
+      "age": 24,
+      "birth": {
+        "date": "2000-12-20",
+        "place": null,
+        "country": "Costa Rica"
       },
+      "nationality": "Costa Rica",
+      "height": "172 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/407993.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 413237,
+      "name": "A. Bibout",
+      "firstname": "Aaron",
+      "lastname": "Banind Bibout",
+      "age": 20,
+      "birth": {
+        "date": "2004-09-03",
+        "place": null,
+        "country": "Cameroon"
+      },
+      "nationality": "Cameroon",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/413237.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 854,
+      "name": "M. Cáceres",
+      "firstname": "José Martín",
+      "lastname": "Cáceres Silva",
+      "age": 37,
+      "birth": {
+        "date": "1987-04-07",
+        "place": "Montevideo",
+        "country": "Uruguay"
+      },
+      "nationality": "Uruguay",
+      "height": "180 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/854.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 9,
+          "minutes": 678,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.677777",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 3,
+          "bench": 3
+        },
+        "shots": {
+          "total": 2,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 444,
+          "key": 2,
+          "accuracy": 46
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": 7,
+          "interceptions": 7
+        },
+        "duels": {
+          "total": 28,
+          "won": 15
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 1
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 18944,
+      "name": "M. Yoshida",
+      "firstname": "Maya",
+      "lastname": "Yoshida",
+      "age": 36,
+      "birth": {
+        "date": "1988-08-24",
+        "place": "Nagasaki",
+        "country": "Japan"
+      },
+      "nationality": "Japan",
+      "height": "189 cm",
+      "weight": "78 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/18944.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1260,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.107142",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 8,
+          "on": 5
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 943,
+          "key": 1,
+          "accuracy": 61
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 16,
+          "interceptions": 19
+        },
+        "duels": {
+          "total": 73,
+          "won": 43
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 33144,
+      "name": "M. Yamane",
+      "firstname": "Miki",
+      "lastname": "Yamane",
+      "age": 31,
+      "birth": {
+        "date": "1993-12-22",
+        "place": "Yokohama",
+        "country": "Japan"
+      },
+      "nationality": "Japan",
+      "height": "178 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/33144.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1155,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.984615",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 3,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 791,
+          "key": 4,
+          "accuracy": 54
+        },
+        "tackles": {
+          "total": 19,
+          "blocks": 5,
+          "interceptions": 14
+        },
+        "duels": {
+          "total": 83,
+          "won": 48
+        },
+        "dribbles": {
+          "attempts": 22,
+          "success": 14,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 8
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 45794,
+      "name": "N. Mićović",
+      "firstname": "Novak",
+      "lastname": "Mićović",
+      "age": 23,
+      "birth": {
+        "date": "2001-10-25",
+        "place": "Belgarde",
+        "country": "Serbia"
+      },
+      "nationality": "Serbia",
+      "height": "190 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/45794.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
           "appearences": 1,
-          "lineups": 0,
-          "minutes": 33,
+          "lineups": 1,
+          "minutes": 90,
           "number": null,
-          "position": "Midfielder",
-          "rating": null,
+          "position": "Goalkeeper",
+          "rating": "7.000000",
           "captain": false
         },
         "substitutes": {
-          "in": 1,
+          "in": 0,
           "out": 0,
-          "bench": 1
+          "bench": 13
         },
         "shots": {
           "total": null,
@@ -1647,14 +2237,14 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
+          "conceded": 0,
+          "assists": 0,
+          "saves": 2
         },
         "passes": {
-          "total": null,
+          "total": 29,
           "key": null,
-          "accuracy": null
+          "accuracy": 27
         },
         "tackles": {
           "total": null,
@@ -1682,37 +2272,37 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
         }
       }
     ]
   },
   {
     "player": {
-      "id": 156141,
-      "name": "Braudílio Rodrigues",
-      "firstname": "Braudílio",
-      "lastname": "Pina Rodrigues",
-      "age": 25,
+      "id": 50809,
+      "name": "E. Zavaleta",
+      "firstname": "Eriq Anthony",
+      "lastname": "Zavaleta Vanney",
+      "age": 32,
       "birth": {
-        "date": "1999-11-15",
-        "place": "Bissau",
-        "country": "Guinea-Bissau"
+        "date": "1992-08-02",
+        "place": "Westfield",
+        "country": "USA"
       },
-      "nationality": "Portugal",
-      "height": "182 cm",
-      "weight": "64 kg",
+      "nationality": "El Salvador",
+      "height": "185 cm",
+      "weight": "84 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/156141.png"
+      "photo": "https://media.api-sports.io/football/players/50809.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -1723,136 +2313,62 @@
           "season": 2024
         },
         "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
+          "appearences": 5,
+          "lineups": 1,
+          "minutes": 158,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
+          "position": "Defender",
+          "rating": "5.866666",
           "captain": false
         },
         "substitutes": {
-          "in": 0,
+          "in": 4,
           "out": 0,
-          "bench": 0
+          "bench": 8
         },
         "shots": {
-          "total": null,
-          "on": null
+          "total": 2,
+          "on": 1
         },
         "goals": {
-          "total": 0,
-          "conceded": null,
+          "total": 1,
+          "conceded": 0,
           "assists": null,
           "saves": null
         },
         "passes": {
-          "total": null,
+          "total": 97,
           "key": null,
-          "accuracy": null
+          "accuracy": 29
         },
         "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
+          "total": 3,
+          "blocks": 3,
+          "interceptions": 2
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 10,
+          "won": 5
         },
         "dribbles": {
-          "attempts": null,
-          "success": null,
+          "attempts": 1,
+          "success": 1,
           "past": null
         },
         "fouls": {
           "drawn": null,
-          "committed": null
+          "committed": 3
         },
         "cards": {
           "yellow": 0,
           "yellowred": 0,
-          "red": 0
+          "red": 1
         },
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }
@@ -1860,123 +2376,28 @@
   },
   {
     "player": {
-      "id": 177781,
-      "name": "T. Sousa",
-      "firstname": "Travian Anthony",
-      "lastname": "LaMere Sousa",
-      "age": 23,
+      "id": 51126,
+      "name": "J. Nelson",
+      "firstname": "John Vincent",
+      "lastname": "Nelson",
+      "age": 26,
       "birth": {
-        "date": "2001-09-19",
-        "place": "Lathrop",
+        "date": "1998-07-11",
+        "place": "Medina",
         "country": "USA"
       },
       "nationality": "USA",
-      "height": "178 cm",
-      "weight": "81 kg",
+      "height": "175 cm",
+      "weight": "74 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/177781.png"
+      "photo": "https://media.api-sports.io/football/players/51126.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 180926,
-      "name": "Léo Chú",
-      "firstname": "Leonardo",
-      "lastname": "Alves Chú Franco",
-      "age": 24,
-      "birth": {
-        "date": "2000-04-06",
-        "place": null,
-        "country": "Brazil"
-      },
-      "nationality": "Brazil",
-      "height": "178 cm",
-      "weight": "69 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/180926.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -1988,186 +2409,17 @@
         },
         "games": {
           "appearences": 6,
-          "lineups": 5,
-          "minutes": 312,
+          "lineups": 1,
+          "minutes": 135,
           "number": null,
-          "position": "Midfielder",
-          "rating": "6.883333",
+          "position": "Defender",
+          "rating": "6.440000",
           "captain": false
         },
         "substitutes": {
-          "in": 1,
-          "out": 5,
-          "bench": 4
-        },
-        "shots": {
-          "total": 6,
-          "on": 3
-        },
-        "goals": {
-          "total": 1,
-          "conceded": 0,
-          "assists": 1,
-          "saves": null
-        },
-        "passes": {
-          "total": 82,
-          "key": 4,
-          "accuracy": 13
-        },
-        "tackles": {
-          "total": 6,
-          "blocks": null,
-          "interceptions": 2
-        },
-        "duels": {
-          "total": 31,
-          "won": 15
-        },
-        "dribbles": {
-          "attempts": 16,
-          "success": 7,
-          "past": null
-        },
-        "fouls": {
-          "drawn": 1,
-          "committed": 2
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 30,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 265762,
-      "name": "R. Baker-Whiting",
-      "firstname": "Reed",
-      "lastname": "Vanarthur Baker-Whiting",
-      "age": 19,
-      "birth": {
-        "date": "2005-03-31",
-        "place": "Seattle",
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": "180 cm",
-      "weight": "70 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/265762.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 4,
-          "number": null,
-          "position": "Midfielder",
-          "rating": "6.700000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
+          "in": 5,
+          "out": 1,
+          "bench": 13
         },
         "shots": {
           "total": null,
@@ -2176,13 +2428,13 @@
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 10,
+          "total": 60,
           "key": null,
-          "accuracy": 8
+          "accuracy": 12
         },
         "tackles": {
           "total": 1,
@@ -2190,713 +2442,16 @@
           "interceptions": 1
         },
         "duels": {
-          "total": 2,
-          "won": 1
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 318814,
-      "name": "E. Björgólfs­son",
-      "firstname": "Eyþór Mart­in",
-      "lastname": "Vigerust Björgólfs­son",
-      "age": 24,
-      "birth": {
-        "date": "2000-08-25",
-        "place": null,
-        "country": "Norway"
-      },
-      "nationality": "Norway",
-      "height": null,
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/318814.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 335553,
-      "name": "O. De Rosario",
-      "firstname": "Osaze Tafari",
-      "lastname": "De Rosario",
-      "age": 23,
-      "birth": {
-        "date": "2001-07-19",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "Guyana",
-      "height": "183 cm",
-      "weight": "81 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/335553.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 4,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 351491,
-      "name": "H. Uderitz",
-      "firstname": "Hal",
-      "lastname": "Uderitz",
-      "age": 25,
-      "birth": {
-        "date": "1999-09-15",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": null,
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/351491.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 362164,
-      "name": "S. Brunell",
-      "firstname": "Snyder",
-      "lastname": "Brunell",
-      "age": 17,
-      "birth": {
-        "date": "2007-03-23",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": "168 cm",
-      "weight": "61 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/362164.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 34,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 362441,
-      "name": "G. Minoungou",
-      "firstname": "Georgi",
-      "lastname": "Minoungou",
-      "age": 22,
-      "birth": {
-        "date": "2002-07-25",
-        "place": null,
-        "country": "Côte d'Ivoire"
-      },
-      "nationality": "Côte d'Ivoire",
-      "height": "178 cm",
-      "weight": "70 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/362441.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 5,
-          "number": null,
-          "position": "Attacker",
-          "rating": "6.700000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": 2,
-          "key": null,
-          "accuracy": 1
-        },
-        "tackles": {
-          "total": 1,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
           "total": 5,
           "won": 2
         },
         "dribbles": {
-          "attempts": 1,
-          "success": 1,
+          "attempts": null,
+          "success": null,
           "past": null
         },
         "fouls": {
-          "drawn": null,
+          "drawn": 1,
           "committed": 1
         },
         "cards": {
@@ -2911,33 +2466,244 @@
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71006,
+      "name": "J. McCarthy",
+      "firstname": "John Joseph",
+      "lastname": "McCarthy",
+      "age": 32,
+      "birth": {
+        "date": "1992-07-04",
+        "place": "Philadelphia",
+        "country": "USA"
       },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/71006.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 116,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1170,
           "number": null,
-          "position": "Attacker",
+          "position": "Goalkeeper",
+          "rating": "7.176923",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 21,
+          "assists": 0,
+          "saves": 51
+        },
+        "passes": {
+          "total": 338,
+          "key": 1,
+          "accuracy": 17
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 3,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71219,
+      "name": "M. Cuevas",
+      "firstname": "Mauricio",
+      "lastname": "Aimar Cuevas",
+      "age": 21,
+      "birth": {
+        "date": "2003-02-10",
+        "place": "Los Angeles",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "170 cm",
+      "weight": "54 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/71219.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 0,
+          "minutes": 40,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.633333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 0,
+          "bench": 14
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 23,
+          "key": null,
+          "accuracy": 9
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 3,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 125162,
+      "name": "M. Ferkranus",
+      "firstname": "Marcus",
+      "lastname": "Ashton Ferkranus",
+      "age": 21,
+      "birth": {
+        "date": "2003-05-10",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/125162.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
           "rating": null,
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 1,
+          "out": 0,
           "bench": 0
         },
         "shots": {
@@ -2990,28 +2756,28 @@
   },
   {
     "player": {
-      "id": 415232,
-      "name": "K. Kossa-Rienzi",
-      "firstname": "Kalani",
-      "lastname": "Kossa-Rienzi",
-      "age": 22,
+      "id": 196739,
+      "name": "J. Aude",
+      "firstname": "Julián Ezequiel",
+      "lastname": "Aude Bernardi",
+      "age": 21,
       "birth": {
-        "date": "2002-06-27",
-        "place": "Berkeley",
-        "country": "USA"
+        "date": "2003-03-24",
+        "place": "Lanús",
+        "country": "Argentina"
       },
-      "nationality": "USA",
-      "height": "173 cm",
-      "weight": "68 kg",
+      "nationality": "Argentina",
+      "height": "180 cm",
+      "weight": "71 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/415232.png"
+      "photo": "https://media.api-sports.io/football/players/196739.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
         },
         "league": {
           "id": 253,
@@ -3022,92 +2788,113 @@
           "season": 2024
         },
         "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
+          "appearences": 14,
+          "lineups": 13,
+          "minutes": 1101,
           "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1595,
-          "name": "Seattle Sounders",
-          "logo": "https://media.api-sports.io/football/teams/1595.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 39,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
+          "position": "Defender",
+          "rating": "6.985714",
           "captain": false
         },
         "substitutes": {
           "in": 1,
-          "out": 0,
+          "out": 7,
           "bench": 1
+        },
+        "shots": {
+          "total": 3,
+          "on": 1
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 558,
+          "key": 9,
+          "accuracy": 33
+        },
+        "tackles": {
+          "total": 31,
+          "blocks": 6,
+          "interceptions": 17
+        },
+        "duels": {
+          "total": 149,
+          "won": 91
+        },
+        "dribbles": {
+          "attempts": 26,
+          "success": 16,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 29,
+          "committed": 12
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 208667,
+      "name": "J. Neal",
+      "firstname": "Jalen Christopher",
+      "lastname": "Neal",
+      "age": 21,
+      "birth": {
+        "date": "2003-08-24",
+        "place": "Lakewood",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/208667.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1605,
+          "name": "Los Angeles Galaxy",
+          "logo": "https://media.api-sports.io/football/teams/1605.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 3,
+          "minutes": 327,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.720000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 2
         },
         "shots": {
           "total": null,
@@ -3115,32 +2902,32 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
-          "assists": null,
+          "conceded": 0,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": null,
+          "total": 247,
           "key": null,
-          "accuracy": null
+          "accuracy": 46
         },
         "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
+          "total": 7,
+          "blocks": 3,
+          "interceptions": 3
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 17,
+          "won": 11
         },
         "dribbles": {
-          "attempts": null,
+          "attempts": 1,
           "success": null,
           "past": null
         },
         "fouls": {
           "drawn": null,
-          "committed": null
+          "committed": 2
         },
         "cards": {
           "yellow": 0,
@@ -3150,8 +2937,8 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }

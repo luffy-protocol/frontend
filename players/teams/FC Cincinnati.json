@@ -1,0 +1,5853 @@
+[
+  {
+    "player": {
+      "id": 195717,
+      "name": "Y. Mosquera",
+      "firstname": "Yerson",
+      "lastname": "Mosquera Valdelamar",
+      "age": 22,
+      "birth": {
+        "date": "2001-05-02",
+        "place": "Apartadó",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "187 cm",
+      "weight": "76 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/195717.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50893,
+      "name": "B. Vázquez",
+      "firstname": "Brandon",
+      "lastname": "Vázquez Toledo",
+      "age": 26,
+      "birth": {
+        "date": "1998-10-14",
+        "place": "Chula Vista",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "90 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50893.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51140,
+      "name": "D. Badji",
+      "firstname": "Dominique",
+      "lastname": "Badji",
+      "age": 32,
+      "birth": {
+        "date": "1992-10-16",
+        "place": "Dakar",
+        "country": "Senegal"
+      },
+      "nationality": "Senegal",
+      "height": "183 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51140.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 357318,
+      "name": "H. Robledo",
+      "firstname": "Harrison",
+      "lastname": "Robledo",
+      "age": 22,
+      "birth": {
+        "date": "2002-02-02",
+        "place": "Medellín",
+        "country": "Colombia"
+      },
+      "nationality": "USA",
+      "height": "170 cm",
+      "weight": "65 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/357318.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 2450,
+      "name": "J. Moreno",
+      "firstname": "Junior Leonardo",
+      "lastname": "Moreno Borrero",
+      "age": 31,
+      "birth": {
+        "date": "1993-07-20",
+        "place": "San Cristóbal",
+        "country": "Venezuela"
+      },
+      "nationality": "Venezuela",
+      "height": "175 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/2450.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50733,
+      "name": "R. Gaddis",
+      "firstname": "Ray",
+      "lastname": "Gaddis",
+      "age": 34,
+      "birth": {
+        "date": "1990-01-13",
+        "place": "Indianapolis",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "175 cm",
+      "weight": "65 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50733.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 30,
+      "name": "S. Arias",
+      "firstname": "Santiago",
+      "lastname": "Arias Naranjo",
+      "age": 32,
+      "birth": {
+        "date": "1992-01-13",
+        "place": "Medellín",
+        "country": "Colombia"
+      },
+      "nationality": "Colombia",
+      "height": "178 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/30.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362779,
+      "name": "P. Walters",
+      "firstname": "Paul",
+      "lastname": "Walters",
+      "age": 20,
+      "birth": {
+        "date": "2004-04-11",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "190 cm",
+      "weight": "87 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362779.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 406708,
+      "name": "J. Akpunonu",
+      "firstname": "Joey",
+      "lastname": "Akpunonu",
+      "age": 23,
+      "birth": {
+        "date": "2001-12-21",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/406708.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 412224,
+      "name": "B. Stitz",
+      "firstname": "Benjamin",
+      "lastname": "Stitz",
+      "age": 24,
+      "birth": {
+        "date": "2000-05-12",
+        "place": "Baltimore",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/412224.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 319420,
+      "name": "A. Ordóñez",
+      "firstname": "Arquímides Rafael Zacarias",
+      "lastname": "Ordóñez",
+      "age": 21,
+      "birth": {
+        "date": "2003-08-05",
+        "place": "Cincinnati, OH",
+        "country": "USA"
+      },
+      "nationality": "Guatemala",
+      "height": "184 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/319420.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 1,
+          "minutes": 103,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.100000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 5,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 31,
+          "key": 2,
+          "accuracy": 12
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 7,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 1,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 237080,
+      "name": "M. Angulo",
+      "firstname": "Marco Antonio",
+      "lastname": "Angulo Solórzano",
+      "age": 22,
+      "birth": {
+        "date": "2002-05-08",
+        "place": "Esmeraldas",
+        "country": "Ecuador"
+      },
+      "nationality": "Ecuador",
+      "height": "180 cm",
+      "weight": "67 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/237080.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 6052,
+      "name": "Á. Barreal",
+      "firstname": "Álvaro Martín",
+      "lastname": "Barreal",
+      "age": 24,
+      "birth": {
+        "date": "2000-08-17",
+        "place": "Buenos Aires",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": "172 cm",
+      "weight": "66 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/6052.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 6063,
+      "name": "L. Orellano",
+      "firstname": "Luca Nicolás",
+      "lastname": "Orellano",
+      "age": 24,
+      "birth": {
+        "date": "2000-03-22",
+        "place": "Francisco Álvarez",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": "177 cm",
+      "weight": "66 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/6063.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 12,
+          "minutes": 1090,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.115384",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 8,
+          "bench": 1
+        },
+        "shots": {
+          "total": 20,
+          "on": 8
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 499,
+          "key": 24,
+          "accuracy": 30
+        },
+        "tackles": {
+          "total": 22,
+          "blocks": 1,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 156,
+          "won": 69
+        },
+        "dribbles": {
+          "attempts": 55,
+          "success": 26,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 17,
+          "committed": 19
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 1,
+          "minutes": 75,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 27,
+          "key": 1,
+          "accuracy": 11
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 4,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 311016,
+      "name": "K. Kelsy",
+      "firstname": "Kevin Jesús",
+      "lastname": "Kelsy Genez",
+      "age": 20,
+      "birth": {
+        "date": "2004-07-27",
+        "place": "Valencia",
+        "country": "Venezuela"
+      },
+      "nationality": "Venezuela",
+      "height": "188 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/311016.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 1,
+          "minutes": 147,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.050000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 1,
+          "bench": 3
+        },
+        "shots": {
+          "total": 4,
+          "on": 4
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 31,
+          "key": 3,
+          "accuracy": 5
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 25,
+          "won": 11
+        },
+        "dribbles": {
+          "attempts": 5,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50751,
+      "name": "Sergio Santos",
+      "firstname": "Sergio Henrique",
+      "lastname": "Santos Gomes",
+      "age": 30,
+      "birth": {
+        "date": "1994-09-04",
+        "place": "Belo Horizonte",
+        "country": "Brazil"
+      },
+      "nationality": "Brazil",
+      "height": "183 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50751.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 3,
+          "minutes": 270,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.766666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 7,
+          "out": 3,
+          "bench": 8
+        },
+        "shots": {
+          "total": 6,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 71,
+          "key": 4,
+          "accuracy": 5
+        },
+        "tackles": {
+          "total": 6,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 69,
+          "won": 33
+        },
+        "dribbles": {
+          "attempts": 5,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 14,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 1,
+          "minutes": 126,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.775000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 1,
+          "bench": 3
+        },
+        "shots": {
+          "total": 5,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 57,
+          "key": null,
+          "accuracy": 9
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 9,
+          "won": 4
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51204,
+      "name": "C. Baird",
+      "firstname": "Corey Jacob",
+      "lastname": "Baird",
+      "age": 28,
+      "birth": {
+        "date": "1996-01-30",
+        "place": "Escondido",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51204.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 10,
+          "minutes": 818,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.775000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 9,
+          "bench": 2
+        },
+        "shots": {
+          "total": 11,
+          "on": 6
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 169,
+          "key": 12,
+          "accuracy": 11
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 72,
+          "won": 29
+        },
+        "dribbles": {
+          "attempts": 9,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 12,
+          "committed": 9
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 219,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.100000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 3,
+          "bench": 1
+        },
+        "shots": {
+          "total": 6,
+          "on": 4
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 50,
+          "key": 6,
+          "accuracy": 13
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 12,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 21269,
+      "name": "A. Boupendza",
+      "firstname": "Aaron Salem",
+      "lastname": "Boupendza Pozzi",
+      "age": 28,
+      "birth": {
+        "date": "1996-08-07",
+        "place": "Moanda",
+        "country": "Gabon"
+      },
+      "nationality": "Gabon",
+      "height": "178 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/21269.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 5,
+          "minutes": 511,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.822222",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 5,
+          "out": 4,
+          "bench": 5
+        },
+        "shots": {
+          "total": 16,
+          "on": 8
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 123,
+          "key": 3,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": 4,
+          "blocks": 2,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 70,
+          "won": 30
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 8,
+          "committed": 6
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 236,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.533333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 13,
+          "on": 6
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 71,
+          "key": 5,
+          "accuracy": 17
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 35,
+          "won": 18
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 25621,
+      "name": "Y. Kubo",
+      "firstname": "Yuya",
+      "lastname": "Kubo",
+      "age": 31,
+      "birth": {
+        "date": "1993-12-24",
+        "place": "Yamaguchi",
+        "country": "Japan"
+      },
+      "nationality": "Japan",
+      "height": "178 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/25621.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 13,
+          "minutes": 1132,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.192857",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 5,
+          "bench": 1
+        },
+        "shots": {
+          "total": 23,
+          "on": 12
+        },
+        "goals": {
+          "total": 4,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 396,
+          "key": 10,
+          "accuracy": 23
+        },
+        "tackles": {
+          "total": 36,
+          "blocks": 1,
+          "interceptions": 12
+        },
+        "duels": {
+          "total": 129,
+          "won": 69
+        },
+        "dribbles": {
+          "attempts": 28,
+          "success": 12,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 13,
+          "committed": 21
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 270,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.200000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": 3,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 153,
+          "key": 7,
+          "accuracy": 42
+        },
+        "tackles": {
+          "total": 5,
+          "blocks": null,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 24,
+          "won": 11
+        },
+        "dribbles": {
+          "attempts": 7,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 6068,
+      "name": "Y. Asad",
+      "firstname": "Yamil Rodrigo",
+      "lastname": "Asad",
+      "age": 30,
+      "birth": {
+        "date": "1994-07-27",
+        "place": "San Antonio de Padua",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": "178 cm",
+      "weight": "74 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/6068.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 0,
+          "minutes": 34,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 5,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 46,
+          "key": 2,
+          "accuracy": 7
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 11,
+          "won": 9
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 403329,
+      "name": "M. Pinto",
+      "firstname": "Malik",
+      "lastname": "Pinto",
+      "age": 22,
+      "birth": {
+        "date": "2002-08-09",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "180 cm",
+      "weight": "76 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/403329.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 1,
+          "minutes": 142,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.571428",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 8,
+          "out": 1,
+          "bench": 13
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 80,
+          "key": 2,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": 10,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 25,
+          "won": 13
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 115,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.633333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 130,
+          "key": 4,
+          "accuracy": 41
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 14,
+          "won": 10
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362155,
+      "name": "G. Valenzuela",
+      "firstname": "Gerardo",
+      "lastname": "Valenzuela",
+      "age": 20,
+      "birth": {
+        "date": "2004-09-28",
+        "place": "Boca Raton",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362155.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 3,
+          "minutes": 342,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.725000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 9,
+          "out": 3,
+          "bench": 11
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 147,
+          "key": 3,
+          "accuracy": 10
+        },
+        "tackles": {
+          "total": 11,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 65,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 12,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 9
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 1,
+          "minutes": 133,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.075000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 100,
+          "key": 9,
+          "accuracy": 22
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 10,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 66249,
+      "name": "P. Bucha",
+      "firstname": "Pavel",
+      "lastname": "Bucha",
+      "age": 26,
+      "birth": {
+        "date": "1998-03-11",
+        "place": "Mělník",
+        "country": "Czechia"
+      },
+      "nationality": "Czechia",
+      "height": "174 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/66249.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1235,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.021428",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 6,
+          "bench": 0
+        },
+        "shots": {
+          "total": 9,
+          "on": 5
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 663,
+          "key": 8,
+          "accuracy": 41
+        },
+        "tackles": {
+          "total": 23,
+          "blocks": 4,
+          "interceptions": 19
+        },
+        "duels": {
+          "total": 110,
+          "won": 51
+        },
+        "dribbles": {
+          "attempts": 31,
+          "success": 17,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 263,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.766666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 163,
+          "key": 2,
+          "accuracy": 50
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 18,
+          "won": 8
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50763,
+      "name": "L. Acosta",
+      "firstname": "Luciano Federico",
+      "lastname": "Acosta",
+      "age": 30,
+      "birth": {
+        "date": "1994-05-31",
+        "place": "Buenos Aires",
+        "country": "Argentina"
+      },
+      "nationality": "Argentina",
+      "height": "161 cm",
+      "weight": "61 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50763.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 13,
+          "minutes": 1179,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "8.107142",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 4,
+          "bench": 1
+        },
+        "shots": {
+          "total": 27,
+          "on": 16
+        },
+        "goals": {
+          "total": 7,
+          "conceded": 0,
+          "assists": 9,
+          "saves": null
+        },
+        "passes": {
+          "total": 629,
+          "key": 52,
+          "accuracy": 34
+        },
+        "tackles": {
+          "total": 17,
+          "blocks": null,
+          "interceptions": 8
+        },
+        "duels": {
+          "total": 202,
+          "won": 94
+        },
+        "dribbles": {
+          "attempts": 101,
+          "success": 44,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 30,
+          "committed": 22
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 1,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 3,
+          "minutes": 286,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.725000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": 9,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 224,
+          "key": 17,
+          "accuracy": 43
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 33,
+          "won": 13
+        },
+        "dribbles": {
+          "attempts": 16,
+          "success": 8,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 28398,
+      "name": "O. Nwobodo",
+      "firstname": "Obinna Emmanuel",
+      "lastname": "Nwobodo",
+      "age": 28,
+      "birth": {
+        "date": "1996-11-29",
+        "place": null,
+        "country": "Nigeria"
+      },
+      "nationality": "Nigeria",
+      "height": "180 cm",
+      "weight": "65 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/28398.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 11,
+          "minutes": 898,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.958333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 4,
+          "bench": 1
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 443,
+          "key": 6,
+          "accuracy": 31
+        },
+        "tackles": {
+          "total": 29,
+          "blocks": 7,
+          "interceptions": 20
+        },
+        "duels": {
+          "total": 108,
+          "won": 56
+        },
+        "dribbles": {
+          "attempts": 15,
+          "success": 10,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 12,
+          "committed": 21
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 219,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.100000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 158,
+          "key": 2,
+          "accuracy": 49
+        },
+        "tackles": {
+          "total": 6,
+          "blocks": null,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 19,
+          "won": 9
+        },
+        "dribbles": {
+          "attempts": 3,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 422778,
+      "name": "L. Aghedo",
+      "firstname": "London",
+      "lastname": "Aghedo",
+      "age": 24,
+      "birth": {
+        "date": "2000-05-31",
+        "place": "Valencia",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "83 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/422778.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.300000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 31,
+          "key": 1,
+          "accuracy": 29
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 8,
+          "won": 6
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 18897,
+      "name": "D. Yedlin",
+      "firstname": "DeAndre Roselle",
+      "lastname": "Yedlin",
+      "age": 31,
+      "birth": {
+        "date": "1993-07-09",
+        "place": "Seattle",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/18897.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 8,
+          "minutes": 645,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.844444",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 3,
+          "bench": 1
+        },
+        "shots": {
+          "total": 4,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 3,
+          "saves": null
+        },
+        "passes": {
+          "total": 295,
+          "key": 10,
+          "accuracy": 26
+        },
+        "tackles": {
+          "total": 13,
+          "blocks": 2,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 60,
+          "won": 26
+        },
+        "dribbles": {
+          "attempts": 13,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 7
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 172,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.100000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 56,
+          "key": 2,
+          "accuracy": 21
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 13,
+          "won": 8
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 359455,
+      "name": "I. Foster",
+      "firstname": "Isaiah",
+      "lastname": "Foster",
+      "age": 21,
+      "birth": {
+        "date": "2003-08-12",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "78 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/359455.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 5
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 43,
+          "key": 2,
+          "accuracy": 39
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 5,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351572,
+      "name": "I. Murphy",
+      "firstname": "Ian",
+      "lastname": "Murphy",
+      "age": 24,
+      "birth": {
+        "date": "2000-01-16",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351572.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 9,
+          "minutes": 937,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.869230",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 3,
+          "bench": 5
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 635,
+          "key": 1,
+          "accuracy": 42
+        },
+        "tackles": {
+          "total": 15,
+          "blocks": 7,
+          "interceptions": 11
+        },
+        "duels": {
+          "total": 58,
+          "won": 30
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 12
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 4,
+          "minutes": 298,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 274,
+          "key": 2,
+          "accuracy": 59
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": null,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 30,
+          "won": 18
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 19607,
+      "name": "M. Miazga",
+      "firstname": "Matthew",
+      "lastname": "Miazga",
+      "age": 29,
+      "birth": {
+        "date": "1995-07-19",
+        "place": "Clifton",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "193 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/19607.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1170,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.061538",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 6,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 830,
+          "key": 1,
+          "accuracy": 54
+        },
+        "tackles": {
+          "total": 22,
+          "blocks": 11,
+          "interceptions": 11
+        },
+        "duels": {
+          "total": 94,
+          "won": 68
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 9
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 4,
+          "minutes": 309,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.925000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 275,
+          "key": null,
+          "accuracy": 64
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 21,
+          "won": 13
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 310912,
+      "name": "B. Halsey",
+      "firstname": "Bret",
+      "lastname": "Halsey",
+      "age": 24,
+      "birth": {
+        "date": "2000-06-01",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/310912.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 8,
+          "lineups": 1,
+          "minutes": 205,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.516666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 7,
+          "out": 1,
+          "bench": 11
+        },
+        "shots": {
+          "total": 2,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 109,
+          "key": 4,
+          "accuracy": 10
+        },
+        "tackles": {
+          "total": 6,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 23,
+          "won": 9
+        },
+        "dribbles": {
+          "attempts": 3,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 8
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 1,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 2,
+          "minutes": 149,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 2,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 3,
+          "saves": null
+        },
+        "passes": {
+          "total": 106,
+          "key": 9,
+          "accuracy": 31
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 24,
+          "won": 13
+        },
+        "dribbles": {
+          "attempts": 11,
+          "success": 8,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 156035,
+      "name": "K. Keller",
+      "firstname": "Kipp Christian",
+      "lastname": "Keller",
+      "age": 24,
+      "birth": {
+        "date": "2000-07-14",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "82 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/156035.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 7,
+          "lineups": 5,
+          "minutes": 379,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.957142",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 3,
+          "bench": 8
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 253,
+          "key": null,
+          "accuracy": 29
+        },
+        "tackles": {
+          "total": 6,
+          "blocks": 6,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 37,
+          "won": 27
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 99,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.866666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 1,
+          "bench": 3
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 74,
+          "key": 1,
+          "accuracy": 21
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 5,
+          "won": 4
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50879,
+      "name": "M. Robinson",
+      "firstname": "Miles Gordon",
+      "lastname": "Robinson",
+      "age": 27,
+      "birth": {
+        "date": "1997-03-14",
+        "place": "Arlington",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50879.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1079,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.258333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 645,
+          "key": 5,
+          "accuracy": 46
+        },
+        "tackles": {
+          "total": 18,
+          "blocks": 6,
+          "interceptions": 15
+        },
+        "duels": {
+          "total": 90,
+          "won": 59
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 8
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 270,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.133333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 204,
+          "key": 1,
+          "accuracy": 59
+        },
+        "tackles": {
+          "total": 5,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 19,
+          "won": 14
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50977,
+      "name": "N. Hagglund",
+      "firstname": "Nicholas Stuart",
+      "lastname": "Hagglund",
+      "age": 32,
+      "birth": {
+        "date": "1992-09-14",
+        "place": "Cincinnati",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "186 cm",
+      "weight": "87 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50977.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 3,
+          "minutes": 215,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.800000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 2,
+          "bench": 7
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 140,
+          "key": null,
+          "accuracy": 18
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": 2,
+          "interceptions": 7
+        },
+        "duels": {
+          "total": 19,
+          "won": 14
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50981,
+      "name": "A. Powell",
+      "firstname": "Alvas Elvis",
+      "lastname": "Powell",
+      "age": 30,
+      "birth": {
+        "date": "1994-07-18",
+        "place": "Danvers Pen",
+        "country": "Jamaica"
+      },
+      "nationality": "Jamaica",
+      "height": "183 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50981.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 3,
+          "minutes": 157,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.666666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 3,
+          "bench": 9
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 55,
+          "key": 1,
+          "accuracy": 6
+        },
+        "tackles": {
+          "total": 5,
+          "blocks": 2,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 30,
+          "won": 18
+        },
+        "dribbles": {
+          "attempts": 8,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 126,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 3
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 51,
+          "key": 1,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 6,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50944,
+      "name": "E. Louro",
+      "firstname": "Evan Michael",
+      "lastname": "Louro",
+      "age": 28,
+      "birth": {
+        "date": "1996-01-19",
+        "place": "South River",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "102 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50944.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 9
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 2,
+          "assists": null,
+          "saves": 3
+        },
+        "passes": {
+          "total": 19,
+          "key": null,
+          "accuracy": 13
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351571,
+      "name": "R. Celentano",
+      "firstname": "Roman Marcello",
+      "lastname": "Celentano",
+      "age": 24,
+      "birth": {
+        "date": "2000-09-14",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "91 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351571.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 10,
+          "minutes": 900,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.330000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 5,
+          "assists": 0,
+          "saves": 28
+        },
+        "passes": {
+          "total": 259,
+          "key": null,
+          "accuracy": 18
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 7,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 4,
+          "minutes": 360,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.050000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 3,
+          "assists": null,
+          "saves": 10
+        },
+        "passes": {
+          "total": 71,
+          "key": null,
+          "accuracy": 15
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50870,
+      "name": "A. Kann",
+      "firstname": "Alec",
+      "lastname": "Kann",
+      "age": 34,
+      "birth": {
+        "date": "1990-08-08",
+        "place": "Decatur",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "194 cm",
+      "weight": "87 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50870.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 3,
+          "minutes": 270,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "6.566666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 5
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 4,
+          "assists": null,
+          "saves": 6
+        },
+        "passes": {
+          "total": 66,
+          "key": null,
+          "accuracy": 15
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 398923,
+      "name": "S. Jimenez",
+      "firstname": "Stiven",
+      "lastname": "Jimenez",
+      "age": 17,
+      "birth": {
+        "date": "2007-06-24",
+        "place": "Riverdale",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/398923.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 3,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.200000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 1,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 2242,
+          "name": "FC Cincinnati",
+          "logo": "https://media.api-sports.io/football/teams/2242.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 41,
+          "key": null,
+          "accuracy": 37
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 3,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  }
+]

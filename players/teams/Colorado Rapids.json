@@ -1,28 +1,218 @@
 [
   {
     "player": {
-      "id": 6092,
-      "name": "A. Velasco",
-      "firstname": "Alan Agustín",
-      "lastname": "Velasco",
-      "age": 22,
+      "id": 2566,
+      "name": "D. Rubio",
+      "firstname": "Diego Iván",
+      "lastname": "Rubio Köstner",
+      "age": 31,
       "birth": {
-        "date": "2002-07-27",
-        "place": "Quilmes",
+        "date": "1993-05-15",
+        "place": "Santiago de Chile",
+        "country": "Chile"
+      },
+      "nationality": "Chile",
+      "height": "180 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/2566.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 2743,
+      "name": "A. Gersbach",
+      "firstname": "Alexander Joseph",
+      "lastname": "Gersbach",
+      "age": 27,
+      "birth": {
+        "date": "1997-05-08",
+        "place": "Auburn",
+        "country": "Australia"
+      },
+      "nationality": "Australia",
+      "height": "183 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/2743.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 6652,
+      "name": "B. Galván",
+      "firstname": "Braian Alejandro",
+      "lastname": "Galván",
+      "age": 24,
+      "birth": {
+        "date": "2000-10-06",
+        "place": "San Miguel de Tucumán",
         "country": "Argentina"
       },
       "nationality": "Argentina",
-      "height": "167 cm",
-      "weight": "63 kg",
+      "height": "166 cm",
+      "weight": "64 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/6092.png"
+      "photo": "https://media.api-sports.io/football/players/6652.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -37,155 +227,7 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
+          "position": "Midfielder",
           "rating": null,
           "captain": false
         },
@@ -244,28 +286,28 @@
   },
   {
     "player": {
-      "id": 40241,
-      "name": "Jesús Jiménez",
-      "firstname": "Jesús",
-      "lastname": "Jiménez Núñez",
-      "age": 31,
+      "id": 35475,
+      "name": "W. Yarbrough",
+      "firstname": "William Paul",
+      "lastname": "Yarbrough Story",
+      "age": 35,
       "birth": {
-        "date": "1993-11-05",
-        "place": "Leganés",
-        "country": "Spain"
+        "date": "1989-03-20",
+        "place": "Aguascalientes",
+        "country": "Mexico"
       },
-      "nationality": "Spain",
-      "height": "183 cm",
-      "weight": "82 kg",
+      "nationality": "USA",
+      "height": "187 cm",
+      "weight": "73 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/40241.png"
+      "photo": "https://media.api-sports.io/football/players/35475.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -280,7 +322,7 @@
           "lineups": null,
           "minutes": null,
           "number": null,
-          "position": "Attacker",
+          "position": "Goalkeeper",
           "rating": null,
           "captain": false
         },
@@ -334,19 +376,40 @@
           "missed": null,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 46043,
+      "name": "M. Ilić",
+      "firstname": "Marko",
+      "lastname": "Ilić",
+      "age": 26,
+      "birth": {
+        "date": "1998-02-03",
+        "place": "Novi Sad",
+        "country": "Serbia"
       },
+      "nationality": "Serbia",
+      "height": "191 cm",
+      "weight": "81 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/46043.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
@@ -354,7 +417,7 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Attacker",
+          "position": "Goalkeeper",
           "rating": null,
           "captain": false
         },
@@ -413,28 +476,28 @@
   },
   {
     "player": {
-      "id": 51120,
-      "name": "J. Gonzalez",
-      "firstname": "Jesse",
-      "lastname": "Gonzalez",
-      "age": 29,
+      "id": 50913,
+      "name": "D. Mihailović",
+      "firstname": "Djordje Aleksandar",
+      "lastname": "Mihailović",
+      "age": 26,
       "birth": {
-        "date": "1995-05-25",
-        "place": "Dallas",
+        "date": "1998-11-10",
+        "place": "Jacksonville",
         "country": "USA"
       },
       "nationality": "USA",
-      "height": "192 cm",
-      "weight": "82 kg",
+      "height": "178 cm",
+      "weight": "70 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/51120.png"
+      "photo": "https://media.api-sports.io/football/players/50913.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -445,136 +508,62 @@
           "season": 2024
         },
         "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1137,
           "number": null,
-          "position": "Goalkeeper",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Goalkeeper",
-          "rating": null,
+          "position": "Midfielder",
+          "rating": "7.138461",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 0,
+          "out": 5,
           "bench": 0
         },
         "shots": {
-          "total": null,
-          "on": null
+          "total": 14,
+          "on": 9
         },
         "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
+          "total": 3,
+          "conceded": 0,
+          "assists": 3,
           "saves": null
         },
         "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
+          "total": 431,
+          "key": 30,
+          "accuracy": 27
         },
         "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
+          "total": 8,
+          "blocks": 2,
+          "interceptions": 5
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 91,
+          "won": 38
         },
         "dribbles": {
-          "attempts": null,
-          "success": null,
+          "attempts": 21,
+          "success": 10,
           "past": null
         },
         "fouls": {
-          "drawn": null,
-          "committed": null
+          "drawn": 18,
+          "committed": 18
         },
         "cards": {
-          "yellow": 0,
+          "yellow": 3,
           "yellowred": 0,
           "red": 0
         },
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 1,
           "saved": null
         }
       }
@@ -582,28 +571,28 @@
   },
   {
     "player": {
-      "id": 79160,
-      "name": "E. Ansah",
-      "firstname": "Eugene",
-      "lastname": "Ansah",
-      "age": 30,
+      "id": 50959,
+      "name": "O. Fernandez",
+      "firstname": "Omir Guadalupe",
+      "lastname": "Fernandez Mosso",
+      "age": 25,
       "birth": {
-        "date": "1994-12-16",
-        "place": "Accra",
-        "country": "Ghana"
+        "date": "1999-02-08",
+        "place": "New York",
+        "country": "USA"
       },
-      "nationality": "Ghana",
-      "height": "179 cm",
-      "weight": null,
+      "nationality": "USA",
+      "height": "170 cm",
+      "weight": "64 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/79160.png"
+      "photo": "https://media.api-sports.io/football/players/50959.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -614,51 +603,51 @@
           "season": 2024
         },
         "games": {
-          "appearences": 9,
-          "lineups": 4,
-          "minutes": 310,
+          "appearences": 14,
+          "lineups": 8,
+          "minutes": 667,
           "number": null,
-          "position": "Attacker",
-          "rating": "6.833333",
+          "position": "Midfielder",
+          "rating": "6.742857",
           "captain": false
         },
         "substitutes": {
-          "in": 5,
-          "out": 4,
-          "bench": 7
+          "in": 6,
+          "out": 8,
+          "bench": 6
         },
         "shots": {
-          "total": 8,
-          "on": 4
+          "total": 12,
+          "on": 5
         },
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 58,
-          "key": 8,
-          "accuracy": 5
+          "total": 177,
+          "key": 7,
+          "accuracy": 10
         },
         "tackles": {
-          "total": 4,
-          "blocks": null,
-          "interceptions": 2
+          "total": 12,
+          "blocks": 1,
+          "interceptions": 6
         },
         "duels": {
-          "total": 39,
-          "won": 14
+          "total": 63,
+          "won": 36
         },
         "dribbles": {
-          "attempts": 7,
-          "success": 3,
+          "attempts": 13,
+          "success": 7,
           "past": null
         },
         "fouls": {
-          "drawn": 3,
-          "committed": 9
+          "drawn": 15,
+          "committed": 3
         },
         "cards": {
           "yellow": 0,
@@ -672,181 +661,33 @@
           "missed": 0,
           "saved": null
         }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 46,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 1,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
       }
     ]
   },
   {
     "player": {
-      "id": 196850,
-      "name": "J. Mulato",
-      "firstname": "José Daniel",
-      "lastname": "Mulato Palacios",
-      "age": 21,
+      "id": 51309,
+      "name": "D. Wilson",
+      "firstname": "Daniel John",
+      "lastname": "Wilson",
+      "age": 33,
       "birth": {
-        "date": "2003-01-09",
-        "place": "Cali",
-        "country": "Colombia"
+        "date": "1991-12-27",
+        "place": "Livingston",
+        "country": "Scotland"
       },
-      "nationality": "Colombia",
-      "height": "180 cm",
-      "weight": "75 kg",
+      "nationality": "Scotland",
+      "height": "187 cm",
+      "weight": "79 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/196850.png"
+      "photo": "https://media.api-sports.io/football/players/51309.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -857,25 +698,25 @@
           "season": 2024
         },
         "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
           "number": null,
-          "position": "Attacker",
+          "position": "Defender",
           "rating": null,
           "captain": false
         },
         "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
+          "in": null,
+          "out": null,
+          "bench": null
         },
         "shots": {
           "total": null,
           "on": null
         },
         "goals": {
-          "total": 0,
+          "total": null,
           "conceded": null,
           "assists": null,
           "saves": null
@@ -904,83 +745,9 @@
           "committed": null
         },
         "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
+          "yellow": null,
+          "yellowred": null,
+          "red": null
         },
         "penalty": {
           "won": null,
@@ -994,28 +761,313 @@
   },
   {
     "player": {
-      "id": 203395,
-      "name": "D. Sealy",
-      "firstname": "Dante Isiah",
-      "lastname": "Sealy",
-      "age": 21,
+      "id": 51316,
+      "name": "S. Nicholson",
+      "firstname": "Sam Alastair",
+      "lastname": "Nicholson",
+      "age": 29,
       "birth": {
-        "date": "2003-04-17",
+        "date": "1995-01-20",
+        "place": "Edinburgh",
+        "country": "Scotland"
+      },
+      "nationality": "Scotland",
+      "height": "175 cm",
+      "weight": "71 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51316.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51317,
+      "name": "J. Price",
+      "firstname": "Jack Alexander",
+      "lastname": "Price",
+      "age": 32,
+      "birth": {
+        "date": "1992-12-19",
+        "place": "Shrewsbury",
+        "country": "England"
+      },
+      "nationality": "England",
+      "height": "170 cm",
+      "weight": "87 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51317.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 52673,
+      "name": "M. Navarro",
+      "firstname": "Miguel Ángel",
+      "lastname": "Navarro Zárate",
+      "age": 25,
+      "birth": {
+        "date": "1999-02-26",
+        "place": "Maracaibo",
+        "country": "Venezuela"
+      },
+      "nationality": "Venezuela",
+      "height": "175 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/52673.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71343,
+      "name": "A. Keita",
+      "firstname": "Aboubacar Kobele",
+      "lastname": "Keita",
+      "age": 24,
+      "birth": {
+        "date": "2000-04-06",
         "place": "New York City",
         "country": "USA"
       },
       "nationality": "USA",
-      "height": "178 cm",
-      "weight": "80 kg",
+      "height": "188 cm",
+      "weight": "81 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/203395.png"
+      "photo": "https://media.api-sports.io/football/players/71343.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -1026,51 +1078,1096 @@
           "season": 2024
         },
         "games": {
-          "appearences": 9,
-          "lineups": 8,
-          "minutes": 684,
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
           "number": null,
-          "position": "Attacker",
-          "rating": "6.866666",
+          "position": "Defender",
+          "rating": null,
           "captain": false
         },
         "substitutes": {
-          "in": 1,
-          "out": 3,
-          "bench": 3
+          "in": 0,
+          "out": 0,
+          "bench": 0
         },
         "shots": {
-          "total": 13,
-          "on": 5
+          "total": null,
+          "on": null
         },
         "goals": {
-          "total": 1,
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 119029,
+      "name": "L. Diack",
+      "firstname": "Lamine",
+      "lastname": "Diack",
+      "age": 24,
+      "birth": {
+        "date": "2000-11-15",
+        "place": "Dakar",
+        "country": "Senegal"
+      },
+      "nationality": "Senegal",
+      "height": "186 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/119029.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 4,
+          "lineups": 0,
+          "minutes": 16,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.533333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 0,
+          "bench": 8
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
           "conceded": 0,
           "assists": null,
           "saves": null
         },
         "passes": {
-          "total": 219,
-          "key": 7,
-          "accuracy": 19
+          "total": 10,
+          "key": null,
+          "accuracy": 2
         },
         "tackles": {
-          "total": 11,
-          "blocks": 1,
-          "interceptions": 9
+          "total": 3,
+          "blocks": null,
+          "interceptions": 2
         },
         "duels": {
-          "total": 77,
-          "won": 39
+          "total": 9,
+          "won": 6
         },
         "dribbles": {
-          "attempts": 22,
-          "success": 9,
+          "attempts": 2,
+          "success": 1,
           "past": null
         },
         "fouls": {
-          "drawn": 14,
-          "committed": 15
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 197778,
+      "name": "R. Cabral",
+      "firstname": "Rémi",
+      "lastname": "Cabral",
+      "age": 25,
+      "birth": {
+        "date": "1999-07-10",
+        "place": "Paris",
+        "country": "France"
+      },
+      "nationality": "France",
+      "height": "183 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/197778.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 203206,
+      "name": "O. Larraz",
+      "firstname": "Oliver",
+      "lastname": "Love Larraz",
+      "age": 23,
+      "birth": {
+        "date": "2001-09-16",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "63 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/203206.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1109,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.957142",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 9,
+          "bench": 0
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 493,
+          "key": 9,
+          "accuracy": 29
+        },
+        "tackles": {
+          "total": 37,
+          "blocks": 4,
+          "interceptions": 18
+        },
+        "duels": {
+          "total": 137,
+          "won": 68
+        },
+        "dribbles": {
+          "attempts": 22,
+          "success": 11,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 13,
+          "committed": 23
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 231081,
+      "name": "Sidnei Tavares",
+      "firstname": "Sidnei Wilson",
+      "lastname": "Vieira David Tavares",
+      "age": 23,
+      "birth": {
+        "date": "2001-09-29",
+        "place": null,
+        "country": "Portugal"
+      },
+      "nationality": "Portugal",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/231081.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 237155,
+      "name": "D. Amadou",
+      "firstname": "Daouda",
+      "lastname": "Amadou",
+      "age": 22,
+      "birth": {
+        "date": "2002-10-02",
+        "place": "Yaoundé",
+        "country": "Cameroon"
+      },
+      "nationality": "Cameroon",
+      "height": "160 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/237155.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 306213,
+      "name": "Max",
+      "firstname": "Max",
+      "lastname": "Alves da Silva",
+      "age": 23,
+      "birth": {
+        "date": "2001-05-12",
+        "place": "Juiz de Fora",
+        "country": "Brazil"
+      },
+      "nationality": "Brazil",
+      "height": "175 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/306213.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362099,
+      "name": "Y. Hanya",
+      "firstname": "Yosuke",
+      "lastname": "Hanya",
+      "age": 25,
+      "birth": {
+        "date": "1999-01-30",
+        "place": "Tokyo",
+        "country": "Japan"
+      },
+      "nationality": "Japan",
+      "height": "173 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362099.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362176,
+      "name": "J. Travis",
+      "firstname": "Jackson",
+      "lastname": "Travis",
+      "age": 20,
+      "birth": {
+        "date": "2004-02-23",
+        "place": "Jackson",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362176.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 0,
+          "minutes": 27,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 13
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 19,
+          "key": 2,
+          "accuracy": 15
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 6,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 997,
+      "name": "A. Maxsø",
+      "firstname": "Andreas",
+      "lastname": "Beyer Maxsø",
+      "age": 30,
+      "birth": {
+        "date": "1994-03-18",
+        "place": "Hvidovre",
+        "country": "Denmark"
+      },
+      "nationality": "Denmark",
+      "height": "190 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/997.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1260,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.850000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 617,
+          "key": 3,
+          "accuracy": 38
+        },
+        "tackles": {
+          "total": 12,
+          "blocks": 12,
+          "interceptions": 11
+        },
+        "duels": {
+          "total": 82,
+          "won": 43
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 12
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 13969,
+      "name": "D. Chacón",
+      "firstname": "Daniel Alonso",
+      "lastname": "Chacón Salas",
+      "age": 23,
+      "birth": {
+        "date": "2001-04-11",
+        "place": "Turrialba",
+        "country": "Costa Rica"
+      },
+      "nationality": "Costa Rica",
+      "height": "183 cm",
+      "weight": "69 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/13969.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 20898,
+      "name": "K. Cabral",
+      "firstname": "Kévin",
+      "lastname": "Cabral",
+      "age": 25,
+      "birth": {
+        "date": "1999-07-10",
+        "place": "Paris",
+        "country": "France"
+      },
+      "nationality": "France",
+      "height": "185 cm",
+      "weight": "69 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/20898.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 8,
+          "minutes": 634,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.666666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 8,
+          "bench": 6
+        },
+        "shots": {
+          "total": 12,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 154,
+          "key": 6,
+          "accuracy": 10
+        },
+        "tackles": {
+          "total": 8,
+          "blocks": 2,
+          "interceptions": 9
+        },
+        "duels": {
+          "total": 72,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 16,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 12,
+          "committed": 7
         },
         "cards": {
           "yellow": 2,
@@ -1084,28 +2181,49 @@
           "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50828,
+      "name": "Z. Steffen",
+      "firstname": "Zackary Thomas",
+      "lastname": "Steffen",
+      "age": 29,
+      "birth": {
+        "date": "1995-04-02",
+        "place": "Coatesville",
+        "country": "USA"
       },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "86 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50828.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
-          "id": 257,
-          "name": "US Open Cup",
+          "id": 253,
+          "name": "Major League Soccer",
           "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
           "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1260,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
+          "position": "Goalkeeper",
+          "rating": "6.914285",
           "captain": false
         },
         "substitutes": {
@@ -1119,23 +2237,23 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
+          "conceded": 23,
+          "assists": 0,
+          "saves": 43
         },
         "passes": {
-          "total": null,
+          "total": 367,
           "key": null,
-          "accuracy": null
+          "accuracy": 16
         },
         "tackles": {
-          "total": null,
+          "total": 1,
           "blocks": null,
           "interceptions": null
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 6,
+          "won": 6
         },
         "dribbles": {
           "attempts": null,
@@ -1147,6 +2265,196 @@
           "committed": null
         },
         "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50829,
+      "name": "L. Abubakar",
+      "firstname": "Alhassan",
+      "lastname": "Abubakar",
+      "age": 30,
+      "birth": {
+        "date": "1994-12-25",
+        "place": "Kumasi",
+        "country": "Ghana"
+      },
+      "nationality": "Ghana",
+      "height": "185 cm",
+      "weight": "82 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50829.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 107,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.266666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 10
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 59,
+          "key": null,
+          "accuracy": 17
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 10,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51301,
+      "name": "S. Anderson",
+      "firstname": "Sebastian Sun",
+      "lastname": "Anderson",
+      "age": 22,
+      "birth": {
+        "date": "2002-08-08",
+        "place": "Sacramento",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51301.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 1,
+          "minutes": 116,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.500000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 13
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 35,
+          "key": null,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": 1,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 14,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 2
+        },
+        "cards": {
           "yellow": 0,
           "yellowred": 0,
           "red": 0
@@ -1154,32 +2462,243 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51305,
+      "name": "K. Rosenberry",
+      "firstname": "Keegan",
+      "lastname": "Rosenberry",
+      "age": 31,
+      "birth": {
+        "date": "1993-12-11",
+        "place": "Harrisburg",
+        "country": "USA"
       },
+      "nationality": "USA",
+      "height": "173 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51305.png"
+    },
+    "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
           "season": 2024
         },
         "games": {
-          "appearences": 1,
-          "lineups": 1,
-          "minutes": 46,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1150,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
+          "position": "Defender",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 576,
+          "key": 10,
+          "accuracy": 34
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 7,
+          "interceptions": 19
+        },
+        "duels": {
+          "total": 51,
+          "won": 29
+        },
+        "dribbles": {
+          "attempts": 3,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51308,
+      "name": "S. Vines",
+      "firstname": "Samuel Marqus Lloyd",
+      "lastname": "Vines",
+      "age": 25,
+      "birth": {
+        "date": "1999-05-31",
+        "place": "Colorado Springs",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "178 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51308.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1198,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.985714",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 3,
+          "bench": 0
+        },
+        "shots": {
+          "total": 4,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 630,
+          "key": 13,
+          "accuracy": 38
+        },
+        "tackles": {
+          "total": 15,
+          "blocks": 5,
+          "interceptions": 19
+        },
+        "duels": {
+          "total": 50,
+          "won": 27
+        },
+        "dribbles": {
+          "attempts": 8,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51312,
+      "name": "C. Bassett",
+      "firstname": "Cole John",
+      "lastname": "Bassett",
+      "age": 23,
+      "birth": {
+        "date": "2001-07-28",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "180 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51312.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1257,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.557142",
           "captain": false
         },
         "substitutes": {
@@ -1188,48 +2707,48 @@
           "bench": 0
         },
         "shots": {
-          "total": null,
-          "on": null
+          "total": 26,
+          "on": 12
         },
         "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
+          "total": 5,
+          "conceded": 0,
+          "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
+          "total": 770,
+          "key": 15,
+          "accuracy": 48
         },
         "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
+          "total": 36,
+          "blocks": 2,
+          "interceptions": 8
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 159,
+          "won": 81
         },
         "dribbles": {
-          "attempts": null,
-          "success": null,
+          "attempts": 20,
+          "success": 12,
           "past": null
         },
         "fouls": {
-          "drawn": null,
-          "committed": null
+          "drawn": 18,
+          "committed": 15
         },
         "cards": {
-          "yellow": 0,
+          "yellow": 1,
           "yellowred": 0,
           "red": 0
         },
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }
@@ -1237,28 +2756,28 @@
   },
   {
     "player": {
-      "id": 203447,
-      "name": "M. Collodi",
-      "firstname": "Michael",
-      "lastname": "Collodi",
-      "age": 23,
+      "id": 61178,
+      "name": "C. Ronan",
+      "firstname": "Connor Patrick",
+      "lastname": "Ronan",
+      "age": 26,
       "birth": {
-        "date": "2001-05-25",
-        "place": null,
-        "country": "USA"
+        "date": "1998-03-06",
+        "place": "Rochdale",
+        "country": "England"
       },
-      "nationality": "USA",
-      "height": "183 cm",
-      "weight": "88 kg",
+      "nationality": "Republic of Ireland",
+      "height": "170 cm",
+      "weight": "70 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/203447.png"
+      "photo": "https://media.api-sports.io/football/players/61178.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -1269,359 +2788,21 @@
           "season": 2024
         },
         "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
+          "appearences": 6,
+          "lineups": 3,
+          "minutes": 262,
           "number": null,
-          "position": "Goalkeeper",
-          "rating": null,
+          "position": "Midfielder",
+          "rating": "6.800000",
           "captain": false
         },
         "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
+          "in": 3,
+          "out": 1,
+          "bench": 3
         },
         "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Goalkeeper",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 304195,
-      "name": "A. Carrera",
-      "firstname": "Juan Antonio",
-      "lastname": "Carrera Zarzar",
-      "age": 20,
-      "birth": {
-        "date": "2004-03-15",
-        "place": "Pachuca de Soto",
-        "country": "Mexico"
-      },
-      "nationality": "USA",
-      "height": "193 cm",
-      "weight": "72 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/304195.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Goalkeeper",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 21,
-          "number": null,
-          "position": "Goalkeeper",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 312291,
-      "name": "B. Kamungo",
-      "firstname": "Bernard",
-      "lastname": "Kamungo",
-      "age": 22,
-      "birth": {
-        "date": "2002-01-01",
-        "place": null,
-        "country": "Tanzania"
-      },
-      "nationality": "USA",
-      "height": "175 cm",
-      "weight": "68 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/312291.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 10,
-          "lineups": 4,
-          "minutes": 453,
-          "number": null,
-          "position": "Attacker",
-          "rating": "6.660000",
-          "captain": false
-        },
-        "substitutes": {
-          "in": 6,
-          "out": 4,
-          "bench": 7
-        },
-        "shots": {
-          "total": 3,
+          "total": 2,
           "on": null
         },
         "goals": {
@@ -1631,27 +2812,122 @@
           "saves": null
         },
         "passes": {
-          "total": 115,
-          "key": 3,
-          "accuracy": 9
+          "total": 250,
+          "key": 4,
+          "accuracy": 34
         },
         "tackles": {
           "total": 7,
-          "blocks": 1,
-          "interceptions": 3
+          "blocks": null,
+          "interceptions": 2
         },
         "duels": {
-          "total": 51,
-          "won": 21
+          "total": 21,
+          "won": 10
         },
         "dribbles": {
-          "attempts": 13,
+          "attempts": 2,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 108594,
+      "name": "J. Löffelsend",
+      "firstname": "Till Jasper",
+      "lastname": "Löffelsend",
+      "age": 27,
+      "birth": {
+        "date": "1997-09-10",
+        "place": null,
+        "country": "Germany"
+      },
+      "nationality": "Germany",
+      "height": "180 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/108594.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 0,
+          "minutes": 133,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.660000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 5,
+          "out": 1,
+          "bench": 8
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 50,
+          "key": null,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 31,
+          "won": 19
+        },
+        "dribbles": {
+          "attempts": 5,
           "success": 3,
           "past": null
         },
         "fouls": {
-          "drawn": 10,
-          "committed": 5
+          "drawn": 5,
+          "committed": 3
         },
         "cards": {
           "yellow": 1,
@@ -1665,181 +2941,33 @@
           "missed": 0,
           "saved": null
         }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 21,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
       }
     ]
   },
   {
     "player": {
-      "id": 315894,
-      "name": "T. Scott",
-      "firstname": "Tarik",
-      "lastname": "Scott",
-      "age": 19,
+      "id": 177820,
+      "name": "M. Edwards",
+      "firstname": "Michael Joseph",
+      "lastname": "Edwards",
+      "age": 24,
       "birth": {
-        "date": "2005-04-23",
-        "place": "New York",
+        "date": "2000-11-27",
+        "place": "Woodbridge",
         "country": "USA"
       },
-      "nationality": "Jamaica",
-      "height": "178 cm",
-      "weight": "64 kg",
+      "nationality": "USA",
+      "height": "192 cm",
+      "weight": "80 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/315894.png"
+      "photo": "https://media.api-sports.io/football/players/177820.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -1850,18 +2978,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 0,
+          "appearences": 1,
           "lineups": 0,
-          "minutes": 0,
+          "minutes": 8,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
+          "position": "Defender",
+          "rating": "6.700000",
           "captain": false
         },
         "substitutes": {
-          "in": 0,
+          "in": 1,
           "out": 0,
-          "bench": 0
+          "bench": 5
         },
         "shots": {
           "total": null,
@@ -1869,14 +2997,14 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
+          "conceded": 0,
           "assists": null,
           "saves": null
         },
         "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
+          "total": 14,
+          "key": 1,
+          "accuracy": 14
         },
         "tackles": {
           "total": null,
@@ -1884,7 +3012,7 @@
           "interceptions": null
         },
         "duels": {
-          "total": null,
+          "total": 1,
           "won": null
         },
         "dribbles": {
@@ -1904,156 +3032,8 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }
@@ -2061,704 +3041,28 @@
   },
   {
     "player": {
-      "id": 325993,
-      "name": "E. Sali",
-      "firstname": "Enes",
-      "lastname": "Sali",
-      "age": 18,
+      "id": 203436,
+      "name": "R. Priso",
+      "firstname": "Ralph-William Johnson",
+      "lastname": "Priso-Mbongue",
+      "age": 22,
       "birth": {
-        "date": "2006-02-23",
+        "date": "2002-08-02",
         "place": "Toronto",
         "country": "Canada"
       },
-      "nationality": "Romania",
-      "height": "168 cm",
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/325993.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 3
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 326864,
-      "name": "D. García",
-      "firstname": "Diego",
-      "lastname": "García Murillo",
-      "age": 18,
-      "birth": {
-        "date": "2006-10-17",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": "173 cm",
-      "weight": "54 kg",
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/326864.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 41,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 1,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 351585,
-      "name": "I. Parker",
-      "firstname": "Isaiah",
-      "lastname": "Parker",
-      "age": 22,
-      "birth": {
-        "date": "2002-09-01",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": null,
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/351585.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 358139,
-      "name": "Pedrinho",
-      "firstname": "Pedro Henrique",
-      "lastname": "Fonseca de Araújo Martins",
-      "age": 21,
-      "birth": {
-        "date": "2003-04-18",
-        "place": null,
-        "country": "Brazil"
-      },
-      "nationality": "Brazil",
+      "nationality": "Canada",
       "height": "175 cm",
-      "weight": "72 kg",
+      "weight": "80 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/358139.png"
+      "photo": "https://media.api-sports.io/football/players/203436.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 14,
-          "number": null,
-          "position": "Midfielder",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 412234,
-      "name": "T. Pondeca",
-      "firstname": "Tomas",
-      "lastname": "Pondeca",
-      "age": 23,
-      "birth": {
-        "date": "2001-10-10",
-        "place": null,
-        "country": "USA"
-      },
-      "nationality": "USA",
-      "height": null,
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/412234.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -2773,82 +3077,8 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": 0,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": 0,
-          "missed": 0,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
+          "position": "Midfielder",
+          "rating": "6.500000",
           "captain": false
         },
         "substitutes": {
@@ -2862,23 +3092,23 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
+          "conceded": 0,
           "assists": null,
           "saves": null
         },
         "passes": {
-          "total": null,
+          "total": 20,
           "key": null,
-          "accuracy": null
+          "accuracy": 9
         },
         "tackles": {
-          "total": null,
+          "total": 1,
           "blocks": null,
           "interceptions": null
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 6,
+          "won": 1
         },
         "dribbles": {
           "attempts": null,
@@ -2887,7 +3117,7 @@
         },
         "fouls": {
           "drawn": null,
-          "committed": null
+          "committed": 1
         },
         "cards": {
           "yellow": 0,
@@ -2897,82 +3127,8 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 44,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }
@@ -2980,28 +3136,28 @@
   },
   {
     "player": {
-      "id": 413247,
-      "name": "L. Taboada",
-      "firstname": "Lautaro",
-      "lastname": "Taboada",
+      "id": 267865,
+      "name": "D. Yapi",
+      "firstname": "Darren Kissy",
+      "lastname": "Yapi",
       "age": 20,
       "birth": {
-        "date": "2004-01-22",
-        "place": "Morón",
-        "country": "Argentina"
+        "date": "2004-11-19",
+        "place": "Denver",
+        "country": "USA"
       },
-      "nationality": "Argentina",
-      "height": null,
-      "weight": null,
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "79 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/413247.png"
+      "photo": "https://media.api-sports.io/football/players/267865.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -3012,136 +3168,62 @@
           "season": 2024
         },
         "games": {
-          "appearences": null,
-          "lineups": null,
-          "minutes": null,
+          "appearences": 14,
+          "lineups": 2,
+          "minutes": 352,
           "number": null,
           "position": "Attacker",
-          "rating": null,
+          "rating": "6.550000",
           "captain": false
         },
         "substitutes": {
-          "in": null,
-          "out": null,
-          "bench": null
+          "in": 12,
+          "out": 2,
+          "bench": 12
         },
         "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": null,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": null,
-          "yellowred": null,
-          "red": null
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
+          "total": 4,
           "on": null
         },
         "goals": {
           "total": 0,
-          "conceded": null,
-          "assists": null,
+          "conceded": 0,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
+          "total": 74,
+          "key": 4,
+          "accuracy": 3
         },
         "tackles": {
-          "total": null,
+          "total": 9,
           "blocks": null,
-          "interceptions": null
+          "interceptions": 1
         },
         "duels": {
-          "total": null,
-          "won": null
+          "total": 80,
+          "won": 33
         },
         "dribbles": {
-          "attempts": null,
-          "success": null,
+          "attempts": 13,
+          "success": 8,
           "past": null
         },
         "fouls": {
-          "drawn": null,
-          "committed": null
+          "drawn": 6,
+          "committed": 11
         },
         "cards": {
-          "yellow": 0,
+          "yellow": 2,
           "yellowred": 0,
           "red": 0
         },
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }
@@ -3149,28 +3231,28 @@
   },
   {
     "player": {
-      "id": 452825,
-      "name": "M. Henry-Scott",
-      "firstname": "Malik",
-      "lastname": "Henry-Scott",
-      "age": 23,
+      "id": 362182,
+      "name": "E. Bandré",
+      "firstname": "Ethan",
+      "lastname": "Bandré",
+      "age": 26,
       "birth": {
-        "date": "2001-11-28",
+        "date": "1998-09-14",
         "place": null,
         "country": "USA"
       },
       "nationality": "USA",
-      "height": "178 cm",
-      "weight": "79 kg",
+      "height": "188 cm",
+      "weight": "84 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/452825.png"
+      "photo": "https://media.api-sports.io/football/players/362182.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -3185,155 +3267,7 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Attacker",
+          "position": "Goalkeeper",
           "rating": null,
           "captain": false
         },
@@ -3348,7 +3282,7 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
+          "conceded": 0,
           "assists": null,
           "saves": null
         },
@@ -3383,37 +3317,37 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
         }
       }
     ]
   },
   {
     "player": {
-      "id": 455011,
-      "name": "L. Farrington",
-      "firstname": "Logan",
-      "lastname": "Farrington",
-      "age": 23,
+      "id": 362448,
+      "name": "A. Beaudry",
+      "firstname": "Adam James",
+      "lastname": "Beaudry",
+      "age": 18,
       "birth": {
-        "date": "2001-12-14",
-        "place": null,
+        "date": "2006-04-18",
+        "place": "O'Fallon",
         "country": "USA"
       },
       "nationality": "USA",
       "height": "188 cm",
       "weight": null,
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/455011.png"
+      "photo": "https://media.api-sports.io/football/players/362448.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -3424,22 +3358,22 @@
           "season": 2024
         },
         "games": {
-          "appearences": 9,
-          "lineups": 2,
-          "minutes": 269,
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
           "number": null,
-          "position": "Attacker",
-          "rating": "6.528571",
+          "position": "Goalkeeper",
+          "rating": null,
           "captain": false
         },
         "substitutes": {
-          "in": 7,
-          "out": 1,
-          "bench": 8
+          "in": 0,
+          "out": 0,
+          "bench": 13
         },
         "shots": {
-          "total": 9,
-          "on": 4
+          "total": null,
+          "on": null
         },
         "goals": {
           "total": 0,
@@ -3448,9 +3382,294 @@
           "saves": null
         },
         "passes": {
-          "total": 78,
-          "key": 2,
-          "accuracy": 7
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 1
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 407017,
+      "name": "M. Bombito",
+      "firstname": "Moïse Bombito",
+      "lastname": "Lumpungu",
+      "age": 24,
+      "birth": {
+        "date": "2000-03-30",
+        "place": "Montreal",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "190 cm",
+      "weight": "83 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/407017.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1170,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.015384",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 4,
+          "on": 3
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 624,
+          "key": 1,
+          "accuracy": 39
+        },
+        "tackles": {
+          "total": 24,
+          "blocks": 8,
+          "interceptions": 16
+        },
+        "duels": {
+          "total": 98,
+          "won": 60
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 12
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 418680,
+      "name": "N. Jones",
+      "firstname": "Nathaniel",
+      "lastname": "Jones",
+      "age": 23,
+      "birth": {
+        "date": "2001-08-23",
+        "place": "Gig Harbor",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/418680.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 453232,
+      "name": "K. Stewart-Baynes",
+      "firstname": "Kimani",
+      "lastname": "Stewart-Baynes",
+      "age": 19,
+      "birth": {
+        "date": "2005-01-17",
+        "place": null,
+        "country": "St. Vincent and the Grenadines"
+      },
+      "nationality": "Canada",
+      "height": "175 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/453232.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 5,
+          "lineups": 0,
+          "minutes": 56,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.625000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 5,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 19,
+          "key": 1,
+          "accuracy": 4
         },
         "tackles": {
           "total": 2,
@@ -3458,17 +3677,397 @@
           "interceptions": null
         },
         "duels": {
-          "total": 47,
-          "won": 13
+          "total": 14,
+          "won": 5
         },
         "dribbles": {
-          "attempts": 9,
-          "success": 4,
+          "attempts": 6,
+          "success": 2,
           "past": null
         },
         "fouls": {
-          "drawn": 4,
-          "committed": 8
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 458378,
+      "name": "W. Frederick",
+      "firstname": "Wayne Alix",
+      "lastname": "Frederick II",
+      "age": 20,
+      "birth": {
+        "date": "2004-06-13",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "Trinidad and Tobago",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/458378.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 7
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 1,
+          "key": null,
+          "accuracy": 1
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 1,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50866,
+      "name": "J. Lewis",
+      "firstname": "Jonathan Jeremy",
+      "lastname": "Lewis",
+      "age": 27,
+      "birth": {
+        "date": "1997-06-04",
+        "place": "Atlanta",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "170 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50866.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 0,
+          "minutes": 101,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.516666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 6,
+          "out": 0,
+          "bench": 8
+        },
+        "shots": {
+          "total": 3,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 47,
+          "key": 1,
+          "accuracy": 7
+        },
+        "tackles": {
+          "total": 4,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 12,
+          "won": 7
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 68057,
+      "name": "Rafael Navarro",
+      "firstname": "Rafael",
+      "lastname": "Navarro Leal",
+      "age": 24,
+      "birth": {
+        "date": "2000-04-14",
+        "place": "Cabo Frio",
+        "country": "Brazil"
+      },
+      "nationality": "Brazil",
+      "height": "184 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/68057.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1138,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.521428",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 10,
+          "bench": 0
+        },
+        "shots": {
+          "total": 24,
+          "on": 17
+        },
+        "goals": {
+          "total": 8,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 291,
+          "key": 11,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 25,
+          "blocks": 3,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 221,
+          "won": 101
+        },
+        "dribbles": {
+          "attempts": 42,
+          "success": 25,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 23,
+          "committed": 22
+        },
+        "cards": {
+          "yellow": 3,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 4,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 94341,
+      "name": "C. Harris",
+      "firstname": "Calvin",
+      "lastname": "Harris",
+      "age": 24,
+      "birth": {
+        "date": "2000-03-20",
+        "place": "Middlesbrough",
+        "country": "England"
+      },
+      "nationality": "England",
+      "height": "183 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/94341.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 8,
+          "minutes": 702,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.835714",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 6,
+          "out": 8,
+          "bench": 6
+        },
+        "shots": {
+          "total": 8,
+          "on": 6
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 198,
+          "key": 10,
+          "accuracy": 11
+        },
+        "tackles": {
+          "total": 11,
+          "blocks": 1,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 100,
+          "won": 42
+        },
+        "dribbles": {
+          "attempts": 19,
+          "success": 9,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 18,
+          "committed": 12
         },
         "cards": {
           "yellow": 1,
@@ -3482,181 +4081,33 @@
           "missed": 0,
           "saved": null
         }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 257,
-          "name": "US Open Cup",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/257.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 25,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 1,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 44,
-          "number": null,
-          "position": "Attacker",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
       }
     ]
   },
   {
     "player": {
-      "id": 455012,
-      "name": "T. Humphrey",
-      "firstname": "Turner",
-      "lastname": "Humphrey",
-      "age": 24,
+      "id": 102360,
+      "name": "M. Vargas",
+      "firstname": "Marlon",
+      "lastname": "Vargas",
+      "age": 23,
       "birth": {
-        "date": "2000-10-16",
-        "place": null,
+        "date": "2001-01-12",
+        "place": "Bakersfield",
         "country": "USA"
       },
-      "nationality": "USA",
-      "height": "188 cm",
-      "weight": "86 kg",
+      "nationality": "El Salvador",
+      "height": "165 cm",
+      "weight": "63 kg",
       "injured": false,
-      "photo": "https://media.api-sports.io/football/players/455012.png"
+      "photo": "https://media.api-sports.io/football/players/102360.png"
     },
     "statistics": [
       {
         "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
+          "id": 1610,
+          "name": "Colorado Rapids",
+          "logo": "https://media.api-sports.io/football/teams/1610.png"
         },
         "league": {
           "id": 253,
@@ -3671,86 +4122,12 @@
           "lineups": 0,
           "minutes": 0,
           "number": null,
-          "position": "Defender",
+          "position": "Midfielder",
           "rating": null,
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 21,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
           "out": 0,
           "bench": 1
         },
@@ -3760,7 +4137,7 @@
         },
         "goals": {
           "total": 0,
-          "conceded": null,
+          "conceded": 0,
           "assists": null,
           "saves": null
         },
@@ -3795,177 +4172,8 @@
         "penalty": {
           "won": null,
           "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      }
-    ]
-  },
-  {
-    "player": {
-      "id": 455013,
-      "name": "M. Westergren",
-      "firstname": "Mads",
-      "lastname": "Westergren",
-      "age": 22,
-      "birth": {
-        "date": "2002-06-08",
-        "place": "Solrød Strand",
-        "country": "Denmark"
-      },
-      "nationality": "Denmark",
-      "height": "191 cm",
-      "weight": null,
-      "injured": false,
-      "photo": "https://media.api-sports.io/football/players/455013.png"
-    },
-    "statistics": [
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 253,
-          "name": "Major League Soccer",
-          "country": "USA",
-          "logo": "https://media.api-sports.io/football/leagues/253.png",
-          "flag": "https://media.api-sports.io/flags/us.svg",
-          "season": 2024
-        },
-        "games": {
-          "appearences": 0,
-          "lineups": 0,
-          "minutes": 0,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 0,
-          "out": 0,
-          "bench": 0
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
-          "saved": null
-        }
-      },
-      {
-        "team": {
-          "id": 1597,
-          "name": "FC Dallas",
-          "logo": "https://media.api-sports.io/football/teams/1597.png"
-        },
-        "league": {
-          "id": 667,
-          "name": "Friendlies Clubs",
-          "country": "World",
-          "logo": "https://media.api-sports.io/football/leagues/667.png",
-          "flag": null,
-          "season": 2024
-        },
-        "games": {
-          "appearences": 1,
-          "lineups": 0,
-          "minutes": 6,
-          "number": null,
-          "position": "Defender",
-          "rating": null,
-          "captain": false
-        },
-        "substitutes": {
-          "in": 1,
-          "out": 0,
-          "bench": 1
-        },
-        "shots": {
-          "total": null,
-          "on": null
-        },
-        "goals": {
-          "total": 0,
-          "conceded": null,
-          "assists": null,
-          "saves": null
-        },
-        "passes": {
-          "total": null,
-          "key": null,
-          "accuracy": null
-        },
-        "tackles": {
-          "total": null,
-          "blocks": null,
-          "interceptions": null
-        },
-        "duels": {
-          "total": null,
-          "won": null
-        },
-        "dribbles": {
-          "attempts": null,
-          "success": null,
-          "past": null
-        },
-        "fouls": {
-          "drawn": null,
-          "committed": null
-        },
-        "cards": {
-          "yellow": 0,
-          "yellowred": 0,
-          "red": 0
-        },
-        "penalty": {
-          "won": null,
-          "commited": null,
-          "scored": null,
-          "missed": null,
+          "scored": 0,
+          "missed": 0,
           "saved": null
         }
       }

@@ -1,0 +1,7650 @@
+[
+  {
+    "player": {
+      "id": 19007,
+      "name": "J. Hoilett",
+      "firstname": "David Junior Wayne",
+      "lastname": "Hoilett",
+      "age": 34,
+      "birth": {
+        "date": "1990-06-05",
+        "place": "Brampton",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "174 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/19007.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 44844,
+      "name": "R. Gauld",
+      "firstname": "Ryan Stewart",
+      "lastname": "Gauld",
+      "age": 29,
+      "birth": {
+        "date": "1995-12-16",
+        "place": "Aberdeen",
+        "country": "Scotland"
+      },
+      "nationality": "Scotland",
+      "height": "169 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/44844.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1149,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.500000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 3,
+          "bench": 0
+        },
+        "shots": {
+          "total": 22,
+          "on": 12
+        },
+        "goals": {
+          "total": 4,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 523,
+          "key": 35,
+          "accuracy": 32
+        },
+        "tackles": {
+          "total": 28,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 112,
+          "won": 60
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 16,
+          "committed": 11
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 1,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 167,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.950000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 75,
+          "key": 3,
+          "accuracy": 30
+        },
+        "tackles": {
+          "total": 4,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 10,
+          "won": 6
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50749,
+      "name": "F. Picault",
+      "firstname": "Fabrice Jean-Ian",
+      "lastname": "Picault",
+      "age": 33,
+      "birth": {
+        "date": "1991-02-23",
+        "place": "New York",
+        "country": "USA"
+      },
+      "nationality": "Haiti",
+      "height": "173 cm",
+      "weight": "63 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50749.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 7,
+          "minutes": 591,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.063636",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 3,
+          "bench": 4
+        },
+        "shots": {
+          "total": 15,
+          "on": 7
+        },
+        "goals": {
+          "total": 3,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 215,
+          "key": 7,
+          "accuracy": 17
+        },
+        "tackles": {
+          "total": 6,
+          "blocks": 1,
+          "interceptions": 7
+        },
+        "duels": {
+          "total": 90,
+          "won": 47
+        },
+        "dribbles": {
+          "attempts": 28,
+          "success": 13,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 17,
+          "committed": 7
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 0,
+          "minutes": 38,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.800000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 14,
+          "key": 1,
+          "accuracy": 6
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 5,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50816,
+      "name": "R. Laryea",
+      "firstname": "Richmond Mamah",
+      "lastname": "Laryea",
+      "age": 28,
+      "birth": {
+        "date": "1995-01-07",
+        "place": "Toronto",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "175 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50816.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50969,
+      "name": "B. White",
+      "firstname": "Brian Michael",
+      "lastname": "White",
+      "age": 28,
+      "birth": {
+        "date": "1996-02-03",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "180 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50969.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1028,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.066666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 4,
+          "bench": 0
+        },
+        "shots": {
+          "total": 20,
+          "on": 9
+        },
+        "goals": {
+          "total": 5,
+          "conceded": 0,
+          "assists": 2,
+          "saves": null
+        },
+        "passes": {
+          "total": 206,
+          "key": 11,
+          "accuracy": 11
+        },
+        "tackles": {
+          "total": 6,
+          "blocks": null,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 107,
+          "won": 52
+        },
+        "dribbles": {
+          "attempts": 8,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 13
+        },
+        "cards": {
+          "yellow": 4,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 46,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 180,
+          "number": null,
+          "position": "Attacker",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 34,
+          "key": 2,
+          "accuracy": 12
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 20,
+          "won": 8
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 5,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51291,
+      "name": "R. Teibert",
+      "firstname": "Russell James",
+      "lastname": "Teibert",
+      "age": 32,
+      "birth": {
+        "date": "1992-12-22",
+        "place": "Niagara Falls",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "173 cm",
+      "weight": "69 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51291.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71340,
+      "name": "K. Yao",
+      "firstname": "Karifa Abdoul",
+      "lastname": "Yao",
+      "age": 24,
+      "birth": {
+        "date": "2000-09-28",
+        "place": null,
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "191 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/71340.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 71739,
+      "name": "S. Becher",
+      "firstname": "Simon Michael",
+      "lastname": "Becher",
+      "age": 25,
+      "birth": {
+        "date": "1999-07-20",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/71739.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 171213,
+      "name": "G. Aguilar",
+      "firstname": "Giovanni",
+      "lastname": "Aguilar Herrera",
+      "age": 26,
+      "birth": {
+        "date": "1998-03-08",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "183 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/171213.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 191369,
+      "name": "J. Ngando",
+      "firstname": "Jean-Claude",
+      "lastname": "Ngando Mbende",
+      "age": 25,
+      "birth": {
+        "date": "1999-11-20",
+        "place": "Douala",
+        "country": "Cameroon"
+      },
+      "nationality": "Cameroon",
+      "height": "175 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/191369.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 13,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "5.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 3,
+          "key": null,
+          "accuracy": 2
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 4,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 199404,
+      "name": "T. Hasal",
+      "firstname": "Thomas",
+      "lastname": "Hasal",
+      "age": 25,
+      "birth": {
+        "date": "1999-07-09",
+        "place": null,
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "193 cm",
+      "weight": "86 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/199404.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 237078,
+      "name": "P. Vite",
+      "firstname": "Pedro Jeampierre",
+      "lastname": "Vite Uca",
+      "age": 22,
+      "birth": {
+        "date": "2002-03-09",
+        "place": "Babahoyo",
+        "country": "Ecuador"
+      },
+      "nationality": "Ecuador",
+      "height": "172 cm",
+      "weight": "68 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/237078.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 10,
+          "minutes": 922,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.023076",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 6,
+          "bench": 3
+        },
+        "shots": {
+          "total": 6,
+          "on": 3
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 562,
+          "key": 5,
+          "accuracy": 38
+        },
+        "tackles": {
+          "total": 22,
+          "blocks": null,
+          "interceptions": 13
+        },
+        "duels": {
+          "total": 80,
+          "won": 45
+        },
+        "dribbles": {
+          "attempts": 9,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 14,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 1,
+          "minutes": 119,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.750000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 59,
+          "key": null,
+          "accuracy": 26
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 6,
+          "won": 3
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 237106,
+      "name": "K. Habibullah",
+      "firstname": "Kamron",
+      "lastname": "Habibullah",
+      "age": 21,
+      "birth": {
+        "date": "2003-10-23",
+        "place": "Tashkent",
+        "country": "Uzbekistan"
+      },
+      "nationality": "Canada",
+      "height": "168 cm",
+      "weight": "69 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/237106.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 330333,
+      "name": "M. Campagna",
+      "firstname": "Matteo William",
+      "lastname": "Campagna",
+      "age": 20,
+      "birth": {
+        "date": "2004-06-27",
+        "place": "Vancouver",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "188 cm",
+      "weight": "73 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/330333.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362080,
+      "name": "J. Herdman",
+      "firstname": "Jay Joshua",
+      "lastname": "Herdman",
+      "age": 20,
+      "birth": {
+        "date": "2004-08-14",
+        "place": null,
+        "country": "New Zealand"
+      },
+      "nationality": "New Zealand",
+      "height": "169 cm",
+      "weight": "63 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362080.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 9,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 9,
+          "key": null,
+          "accuracy": 8
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 2,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362144,
+      "name": "V. Fry",
+      "firstname": "Vasco",
+      "lastname": "Fry Conroy",
+      "age": 24,
+      "birth": {
+        "date": "2000-07-30",
+        "place": "Lima",
+        "country": "Peru"
+      },
+      "nationality": "Peru",
+      "height": "178 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362144.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 374157,
+      "name": "M. Gherasimencov",
+      "firstname": "Mihail",
+      "lastname": "Gherasimencov",
+      "age": 19,
+      "birth": {
+        "date": "2005-03-25",
+        "place": null,
+        "country": "Moldova"
+      },
+      "nationality": "Moldova",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/374157.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": null,
+          "lineups": null,
+          "minutes": null,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": null,
+          "out": null,
+          "bench": null
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": null,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": null,
+          "yellowred": null,
+          "red": null
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 407583,
+      "name": "J. Badwal",
+      "firstname": "Jeevan Singh",
+      "lastname": "Badwal",
+      "age": 18,
+      "birth": {
+        "date": "2006-03-11",
+        "place": "Surrey",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "179 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/407583.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 411668,
+      "name": "L. Johnson",
+      "firstname": "Levonte Leroy Brown",
+      "lastname": "Johnson",
+      "age": 25,
+      "birth": {
+        "date": "1999-03-15",
+        "place": "Brampton",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "178 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/411668.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 1,
+          "minutes": 165,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.512500",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 8,
+          "out": 1,
+          "bench": 12
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 43,
+          "key": null,
+          "accuracy": 4
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 35,
+          "won": 12
+        },
+        "dribbles": {
+          "attempts": 7,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 84,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 2,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 9,
+          "number": null,
+          "position": "Attacker",
+          "rating": "6.300000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 1,
+          "key": null,
+          "accuracy": 1
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 453099,
+      "name": "C. Kachwele",
+      "firstname": "Cyprian",
+      "lastname": "Thobias Kachwele",
+      "age": 19,
+      "birth": {
+        "date": "2005-02-15",
+        "place": "Shinyanga",
+        "country": "Tanzania"
+      },
+      "nationality": "Tanzania",
+      "height": "190 cm",
+      "weight": "69 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/453099.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 2,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 2,
+          "key": null,
+          "accuracy": 1
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 1,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 6,
+          "number": null,
+          "position": "Attacker",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51208,
+      "name": "D. Kreilach",
+      "firstname": "Damir",
+      "lastname": "Kreilach",
+      "age": 35,
+      "birth": {
+        "date": "1989-04-16",
+        "place": "Vukovar",
+        "country": "Croatia"
+      },
+      "nationality": "Croatia",
+      "height": "186 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51208.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 8,
+          "lineups": 4,
+          "minutes": 310,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.687500",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 4,
+          "bench": 5
+        },
+        "shots": {
+          "total": 6,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 83,
+          "key": null,
+          "accuracy": 9
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 27,
+          "won": 9
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 151,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.050000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 39,
+          "key": null,
+          "accuracy": 12
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 16,
+          "won": 8
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 4,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 201713,
+      "name": "S. Berhalter",
+      "firstname": "Sebastian Matthew",
+      "lastname": "Berhalter",
+      "age": 23,
+      "birth": {
+        "date": "2001-05-10",
+        "place": "London",
+        "country": "England"
+      },
+      "nationality": "USA",
+      "height": "175 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/201713.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 10,
+          "lineups": 1,
+          "minutes": 249,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.770000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 9,
+          "out": 1,
+          "bench": 12
+        },
+        "shots": {
+          "total": 3,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 162,
+          "key": 6,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 5,
+          "blocks": 1,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 22,
+          "won": 6
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 1,
+          "minutes": 81,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.300000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 1,
+          "bench": 1
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 22,
+          "key": 1,
+          "accuracy": 6
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 7,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 2
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 6236,
+      "name": "A. Cubas",
+      "firstname": "Adrián Andrés",
+      "lastname": "Cubas",
+      "age": 28,
+      "birth": {
+        "date": "1996-05-11",
+        "place": "Aristóbulo del Valle",
+        "country": "Argentina"
+      },
+      "nationality": "Paraguay",
+      "height": "163 cm",
+      "weight": "60 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/6236.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 11,
+          "minutes": 941,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.927272",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 4,
+          "bench": 0
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 497,
+          "key": 2,
+          "accuracy": 40
+        },
+        "tackles": {
+          "total": 36,
+          "blocks": 4,
+          "interceptions": 20
+        },
+        "duels": {
+          "total": 90,
+          "won": 47
+        },
+        "dribbles": {
+          "attempts": 5,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 6,
+          "committed": 20
+        },
+        "cards": {
+          "yellow": 5,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 28,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.900000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 58,
+          "key": null,
+          "accuracy": 47
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 11,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 1,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 203436,
+      "name": "R. Priso",
+      "firstname": "Ralph-William Johnson",
+      "lastname": "Priso-Mbongue",
+      "age": 22,
+      "birth": {
+        "date": "2002-08-02",
+        "place": "Toronto",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "175 cm",
+      "weight": "80 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/203436.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 0,
+          "minutes": 35,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.500000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 11
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 20,
+          "key": null,
+          "accuracy": 9
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 6,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 46,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 417,
+      "name": "A. Schöpf",
+      "firstname": "Alessandro André",
+      "lastname": "Schöpf",
+      "age": 30,
+      "birth": {
+        "date": "1994-02-07",
+        "place": "Umhausen",
+        "country": "Austria"
+      },
+      "nationality": "Austria",
+      "height": "178 cm",
+      "weight": "74 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/417.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 11,
+          "lineups": 10,
+          "minutes": 744,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.081818",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 9,
+          "bench": 2
+        },
+        "shots": {
+          "total": 11,
+          "on": 5
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 392,
+          "key": 9,
+          "accuracy": 32
+        },
+        "tackles": {
+          "total": 9,
+          "blocks": 1,
+          "interceptions": 5
+        },
+        "duels": {
+          "total": 50,
+          "won": 29
+        },
+        "dribbles": {
+          "attempts": 10,
+          "success": 6,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 7
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 131,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 53,
+          "key": 1,
+          "accuracy": 24
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 10,
+          "won": 4
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 78451,
+      "name": "R. Raposo",
+      "firstname": "Ryan",
+      "lastname": "Raposo",
+      "age": 25,
+      "birth": {
+        "date": "1999-03-05",
+        "place": "Hamilton",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "170 cm",
+      "weight": "63 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/78451.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 7,
+          "minutes": 637,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "7.046153",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 6,
+          "out": 7,
+          "bench": 6
+        },
+        "shots": {
+          "total": 6,
+          "on": 5
+        },
+        "goals": {
+          "total": 2,
+          "conceded": 0,
+          "assists": 3,
+          "saves": null
+        },
+        "passes": {
+          "total": 255,
+          "key": 16,
+          "accuracy": 16
+        },
+        "tackles": {
+          "total": 11,
+          "blocks": 5,
+          "interceptions": 9
+        },
+        "duels": {
+          "total": 64,
+          "won": 33
+        },
+        "dribbles": {
+          "attempts": 15,
+          "success": 7,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 6
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 76,
+          "number": null,
+          "position": "Midfielder",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 157,
+          "number": null,
+          "position": "Midfielder",
+          "rating": "6.500000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 38,
+          "key": 1,
+          "accuracy": 15
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 8,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 350510,
+      "name": "G. Bovalina",
+      "firstname": "Giuseppe",
+      "lastname": "Bovalina",
+      "age": 20,
+      "birth": {
+        "date": "2004-11-11",
+        "place": null,
+        "country": "Australia"
+      },
+      "nationality": "Australia",
+      "height": null,
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/350510.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 2,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 32641,
+      "name": "J. Brown",
+      "firstname": "Javain Okemio",
+      "lastname": "Brown",
+      "age": 25,
+      "birth": {
+        "date": "1999-03-09",
+        "place": "Kingston",
+        "country": "Jamaica"
+      },
+      "nationality": "Jamaica",
+      "height": "180 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/32641.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 5,
+          "minutes": 452,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.966666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 3,
+          "bench": 8
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 258,
+          "key": 3,
+          "accuracy": 24
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": 4,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 40,
+          "won": 27
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": 3,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 9,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 88,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 0,
+          "minutes": 34,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.250000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": 1,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 13,
+          "key": 1,
+          "accuracy": 5
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 3,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 362145,
+      "name": "A. Ahmed",
+      "firstname": "Ali",
+      "lastname": "Ahmed",
+      "age": 24,
+      "birth": {
+        "date": "2000-10-10",
+        "place": "Toronto",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "180 cm",
+      "weight": "70 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/362145.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 8,
+          "minutes": 768,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.953846",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 5,
+          "out": 4,
+          "bench": 5
+        },
+        "shots": {
+          "total": 5,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 329,
+          "key": 12,
+          "accuracy": 21
+        },
+        "tackles": {
+          "total": 17,
+          "blocks": null,
+          "interceptions": 19
+        },
+        "duels": {
+          "total": 116,
+          "won": 67
+        },
+        "dribbles": {
+          "attempts": 31,
+          "success": 22,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 25,
+          "committed": 10
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 62,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 2017,
+      "name": "B. Utvik",
+      "firstname": "Bjørn Inge",
+      "lastname": "Utvik",
+      "age": 28,
+      "birth": {
+        "date": "1996-02-28",
+        "place": "Avaldsnes",
+        "country": "Norway"
+      },
+      "nationality": "Norway",
+      "height": "183 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/2017.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 4,
+          "minutes": 320,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.533333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 1,
+          "bench": 7
+        },
+        "shots": {
+          "total": 2,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 273,
+          "key": null,
+          "accuracy": 40
+        },
+        "tackles": {
+          "total": 4,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 20,
+          "won": 9
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 1
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 8,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.300000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 5,
+          "key": null,
+          "accuracy": 4
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 1,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 201346,
+      "name": "Belal Halbouni",
+      "firstname": "Belal",
+      "lastname": "Halbouni",
+      "age": 25,
+      "birth": {
+        "date": "1999-12-29",
+        "place": null,
+        "country": "Canada"
+      },
+      "nationality": "Syria",
+      "height": "188 cm",
+      "weight": "85 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/201346.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51027,
+      "name": "T. Blackmon",
+      "firstname": "Tristan Michael",
+      "lastname": "Blackmon",
+      "age": 28,
+      "birth": {
+        "date": "1996-08-12",
+        "place": "Las Vegas",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "189 cm",
+      "weight": "88 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51027.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 11,
+          "minutes": 1036,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.876923",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": 5,
+          "on": 1
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 722,
+          "key": 5,
+          "accuracy": 49
+        },
+        "tackles": {
+          "total": 4,
+          "blocks": 8,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 53,
+          "won": 28
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 2,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 4
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 172,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.950000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": 2,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 79,
+          "key": null,
+          "accuracy": 32
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": 1,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 12,
+          "won": 8
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 41415,
+      "name": "Luís Martins",
+      "firstname": "Luís Carlos",
+      "lastname": "Ramos Martins",
+      "age": 32,
+      "birth": {
+        "date": "1992-06-10",
+        "place": "Lamego",
+        "country": "Portugal"
+      },
+      "nationality": "Portugal",
+      "height": "177 cm",
+      "weight": "67 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/41415.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 2,
+          "minutes": 212,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.700000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 4,
+          "out": 2,
+          "bench": 8
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 115,
+          "key": 1,
+          "accuracy": 14
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": 4
+        },
+        "duels": {
+          "total": 10,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 44,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.300000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 24,
+          "key": null,
+          "accuracy": 17
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": 1
+        },
+        "duels": {
+          "total": 4,
+          "won": 1
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 45938,
+      "name": "R. Veselinović",
+      "firstname": "Ranko",
+      "lastname": "Veselinović",
+      "age": 25,
+      "birth": {
+        "date": "1999-03-24",
+        "place": "Novi Sad",
+        "country": "Serbia"
+      },
+      "nationality": "Serbia",
+      "height": "188 cm",
+      "weight": "77 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/45938.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1066,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.058333",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 1
+        },
+        "shots": {
+          "total": 3,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 638,
+          "key": 3,
+          "accuracy": 48
+        },
+        "tackles": {
+          "total": 8,
+          "blocks": 8,
+          "interceptions": 7
+        },
+        "duels": {
+          "total": 50,
+          "won": 31
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 6
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 14,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 180,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.800000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 69,
+          "key": null,
+          "accuracy": 31
+        },
+        "tackles": {
+          "total": null,
+          "blocks": 3,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 10,
+          "won": 5
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 39107,
+      "name": "S. Adekugbe",
+      "firstname": "Samuel Ayomide",
+      "lastname": "Adekugbe",
+      "age": 29,
+      "birth": {
+        "date": "1995-01-16",
+        "place": "London",
+        "country": "England"
+      },
+      "nationality": "Canada",
+      "height": "178 cm",
+      "weight": "75 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/39107.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 6,
+          "lineups": 3,
+          "minutes": 239,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.916666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 3,
+          "bench": 3
+        },
+        "shots": {
+          "total": 3,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 141,
+          "key": 7,
+          "accuracy": 20
+        },
+        "tackles": {
+          "total": 3,
+          "blocks": null,
+          "interceptions": 2
+        },
+        "duels": {
+          "total": 17,
+          "won": 9
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 6
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51569,
+      "name": "M. Laborda",
+      "firstname": "Mathías Nicolás",
+      "lastname": "Laborda Malseñido",
+      "age": 25,
+      "birth": {
+        "date": "1999-09-15",
+        "place": "Fray Bentos",
+        "country": "Uruguay"
+      },
+      "nationality": "Uruguay",
+      "height": "182 cm",
+      "weight": "72 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51569.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 9,
+          "lineups": 9,
+          "minutes": 780,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.922222",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 2,
+          "bench": 3
+        },
+        "shots": {
+          "total": 4,
+          "on": 2
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 461,
+          "key": 2,
+          "accuracy": 44
+        },
+        "tackles": {
+          "total": 16,
+          "blocks": 5,
+          "interceptions": 12
+        },
+        "duels": {
+          "total": 77,
+          "won": 45
+        },
+        "dribbles": {
+          "attempts": 4,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 7,
+          "committed": 5
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 180,
+          "number": null,
+          "position": "Defender",
+          "rating": "7.000000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": 3,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": 92,
+          "key": 2,
+          "accuracy": 37
+        },
+        "tackles": {
+          "total": 7,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 20,
+          "won": 16
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 367611,
+      "name": "M. Anchor",
+      "firstname": "Max",
+      "lastname": "Anchor",
+      "age": 20,
+      "birth": {
+        "date": "2004-07-21",
+        "place": null,
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "191 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/367611.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 276531,
+      "name": "I. Boehmer",
+      "firstname": "Isaac",
+      "lastname": "Boehmer",
+      "age": 23,
+      "birth": {
+        "date": "2001-11-20",
+        "place": "Penticton",
+        "country": "Canada"
+      },
+      "nationality": "Canada",
+      "height": "188 cm",
+      "weight": "84 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/276531.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 13
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 1,
+          "minutes": 90,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 33385,
+      "name": "Y. Takaoka",
+      "firstname": "Yohei",
+      "lastname": "Takaoka",
+      "age": 28,
+      "birth": {
+        "date": "1996-03-16",
+        "place": "Yokohama",
+        "country": "Japan"
+      },
+      "nationality": "Japan",
+      "height": "182 cm",
+      "weight": "80 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/33385.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1170,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.015384",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 15,
+          "assists": 0,
+          "saves": 36
+        },
+        "passes": {
+          "total": 387,
+          "key": null,
+          "accuracy": 21
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 8,
+          "won": 7
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 16,
+          "name": "CONCACAF Champions League",
+          "country": "World",
+          "logo": "https://media.api-sports.io/football/leagues/16.png",
+          "flag": null,
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 2,
+          "minutes": 180,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.050000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 4,
+          "assists": null,
+          "saves": 8
+        },
+        "passes": {
+          "total": 54,
+          "key": null,
+          "accuracy": 19
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 2,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50827,
+      "name": "J. Bendik",
+      "firstname": "Joseph Thomas",
+      "lastname": "Bendik",
+      "age": 35,
+      "birth": {
+        "date": "1989-04-25",
+        "place": "Marietta",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "94 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50827.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      },
+      {
+        "team": {
+          "id": 1603,
+          "name": "Vancouver Whitecaps",
+          "logo": "https://media.api-sports.io/football/teams/1603.png"
+        },
+        "league": {
+          "id": 259,
+          "name": "Canadian Championship",
+          "country": "Canada",
+          "logo": "https://media.api-sports.io/football/leagues/259.png",
+          "flag": "https://media.api-sports.io/flags/ca.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": null,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": null,
+          "missed": null,
+          "saved": null
+        }
+      }
+    ]
+  }
+]

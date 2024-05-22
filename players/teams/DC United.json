@@ -33,32 +33,32 @@
           "season": 2024
         },
         "games": {
-          "appearences": 9,
-          "lineups": 9,
-          "minutes": 810,
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1077,
           "number": null,
           "position": "Attacker",
-          "rating": "7.855555",
+          "rating": "7.816666",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 0,
+          "out": 1,
           "bench": 1
         },
         "shots": {
-          "total": 26,
-          "on": 16
+          "total": 36,
+          "on": 23
         },
         "goals": {
-          "total": 8,
+          "total": 11,
           "conceded": 0,
           "assists": 1,
           "saves": null
         },
         "passes": {
-          "total": 252,
-          "key": 14,
+          "total": 329,
+          "key": 19,
           "accuracy": 15
         },
         "tackles": {
@@ -67,20 +67,20 @@
           "interceptions": null
         },
         "duels": {
-          "total": 208,
-          "won": 142
+          "total": 268,
+          "won": 177
         },
         "dribbles": {
-          "attempts": 9,
-          "success": 4,
+          "attempts": 12,
+          "success": 6,
           "past": null
         },
         "fouls": {
-          "drawn": 10,
-          "committed": 27
+          "drawn": 14,
+          "committed": 34
         },
         "cards": {
-          "yellow": 2,
+          "yellow": 3,
           "yellowred": 0,
           "red": 0
         },
@@ -128,21 +128,21 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 11,
-          "minutes": 990,
+          "appearences": 13,
+          "lineups": 13,
+          "minutes": 1135,
           "number": null,
           "position": "Midfielder",
-          "rating": "7.500000",
+          "rating": "7.469230",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 0,
+          "out": 1,
           "bench": 0
         },
         "shots": {
-          "total": 10,
+          "total": 11,
           "on": 7
         },
         "goals": {
@@ -152,30 +152,30 @@
           "saves": null
         },
         "passes": {
-          "total": 505,
-          "key": 31,
-          "accuracy": 37
+          "total": 568,
+          "key": 38,
+          "accuracy": 35
         },
         "tackles": {
-          "total": 23,
+          "total": 25,
           "blocks": 3,
           "interceptions": 9
         },
         "duels": {
-          "total": 97,
-          "won": 45
+          "total": 108,
+          "won": 48
         },
         "dribbles": {
-          "attempts": 18,
-          "success": 9,
+          "attempts": 21,
+          "success": 10,
           "past": null
         },
         "fouls": {
           "drawn": 13,
-          "committed": 17
+          "committed": 19
         },
         "cards": {
-          "yellow": 5,
+          "yellow": 6,
           "yellowred": 0,
           "red": 0
         },
@@ -223,42 +223,42 @@
           "season": 2024
         },
         "games": {
-          "appearences": 12,
-          "lineups": 11,
-          "minutes": 923,
+          "appearences": 14,
+          "lineups": 12,
+          "minutes": 1004,
           "number": null,
           "position": "Attacker",
-          "rating": "6.675000",
+          "rating": "6.621428",
           "captain": false
         },
         "substitutes": {
-          "in": 1,
-          "out": 6,
-          "bench": 1
+          "in": 2,
+          "out": 7,
+          "bench": 2
         },
         "shots": {
-          "total": 9,
-          "on": 5
+          "total": 12,
+          "on": 6
         },
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 236,
+          "total": 257,
           "key": 9,
-          "accuracy": 15
+          "accuracy": 14
         },
         "tackles": {
-          "total": 14,
+          "total": 16,
           "blocks": 3,
-          "interceptions": 6
+          "interceptions": 8
         },
         "duels": {
-          "total": 144,
-          "won": 48
+          "total": 154,
+          "won": 50
         },
         "dribbles": {
           "attempts": 20,
@@ -267,7 +267,7 @@
         },
         "fouls": {
           "drawn": 12,
-          "committed": 23
+          "committed": 24
         },
         "cards": {
           "yellow": 3,
@@ -318,18 +318,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 4,
+          "appearences": 6,
           "lineups": 0,
-          "minutes": 61,
+          "minutes": 85,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.625000",
+          "rating": "6.566666",
           "captain": false
         },
         "substitutes": {
-          "in": 4,
-          "out": 0,
-          "bench": 12
+          "in": 6,
+          "out": 1,
+          "bench": 14
         },
         "shots": {
           "total": null,
@@ -338,22 +338,22 @@
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 43,
+          "total": 56,
           "key": 2,
-          "accuracy": 12
+          "accuracy": 9
         },
         "tackles": {
-          "total": 4,
-          "blocks": null,
+          "total": 6,
+          "blocks": 1,
           "interceptions": 2
         },
         "duels": {
-          "total": 14,
-          "won": 5
+          "total": 19,
+          "won": 7
         },
         "dribbles": {
           "attempts": 3,
@@ -362,7 +362,7 @@
         },
         "fouls": {
           "drawn": 1,
-          "committed": 2
+          "committed": 3
         },
         "cards": {
           "yellow": 1,
@@ -413,42 +413,42 @@
           "season": 2024
         },
         "games": {
-          "appearences": 12,
-          "lineups": 12,
-          "minutes": 1080,
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1225,
           "number": null,
           "position": "Defender",
-          "rating": "6.791666",
+          "rating": "6.750000",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 0,
+          "out": 1,
           "bench": 0
         },
         "shots": {
-          "total": 2,
+          "total": 3,
           "on": null
         },
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 519,
+          "total": 567,
           "key": 2,
-          "accuracy": 35
+          "accuracy": 32
         },
         "tackles": {
-          "total": 18,
+          "total": 21,
           "blocks": 14,
-          "interceptions": 18
+          "interceptions": 21
         },
         "duels": {
-          "total": 106,
-          "won": 40
+          "total": 114,
+          "won": 44
         },
         "dribbles": {
           "attempts": 1,
@@ -457,10 +457,10 @@
         },
         "fouls": {
           "drawn": 5,
-          "committed": 28
+          "committed": 30
         },
         "cards": {
-          "yellow": 2,
+          "yellow": 3,
           "yellowred": 0,
           "red": 0
         },
@@ -698,51 +698,51 @@
           "season": 2024
         },
         "games": {
-          "appearences": 10,
-          "lineups": 5,
-          "minutes": 463,
+          "appearences": 12,
+          "lineups": 6,
+          "minutes": 578,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.920000",
+          "rating": "7.058333",
           "captain": false
         },
         "substitutes": {
-          "in": 5,
-          "out": 2,
-          "bench": 6
+          "in": 6,
+          "out": 3,
+          "bench": 7
         },
         "shots": {
-          "total": 3,
-          "on": 2
+          "total": 4,
+          "on": 3
         },
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": 1,
+          "assists": 2,
           "saves": null
         },
         "passes": {
-          "total": 215,
-          "key": 4,
-          "accuracy": 17
+          "total": 273,
+          "key": 10,
+          "accuracy": 18
         },
         "tackles": {
-          "total": 14,
+          "total": 20,
           "blocks": 1,
-          "interceptions": 13
+          "interceptions": 15
         },
         "duels": {
-          "total": 55,
-          "won": 27
+          "total": 73,
+          "won": 37
         },
         "dribbles": {
-          "attempts": 2,
+          "attempts": 5,
           "success": 1,
           "past": null
         },
         "fouls": {
-          "drawn": 6,
-          "committed": 9
+          "drawn": 8,
+          "committed": 10
         },
         "cards": {
           "yellow": 2,
@@ -793,12 +793,12 @@
           "season": 2024
         },
         "games": {
-          "appearences": 10,
-          "lineups": 10,
-          "minutes": 900,
+          "appearences": 12,
+          "lineups": 12,
+          "minutes": 1080,
           "number": null,
           "position": "Defender",
-          "rating": "7.650000",
+          "rating": "7.475000",
           "captain": false
         },
         "substitutes": {
@@ -807,7 +807,7 @@
           "bench": 0
         },
         "shots": {
-          "total": 13,
+          "total": 15,
           "on": 6
         },
         "goals": {
@@ -817,27 +817,27 @@
           "saves": null
         },
         "passes": {
-          "total": 396,
-          "key": 16,
+          "total": 467,
+          "key": 18,
           "accuracy": 31
         },
         "tackles": {
           "total": 33,
-          "blocks": 8,
-          "interceptions": 13
+          "blocks": 9,
+          "interceptions": 16
         },
         "duels": {
-          "total": 111,
-          "won": 70
+          "total": 116,
+          "won": 72
         },
         "dribbles": {
-          "attempts": 19,
-          "success": 13,
+          "attempts": 20,
+          "success": 14,
           "past": null
         },
         "fouls": {
           "drawn": 9,
-          "committed": 17
+          "committed": 18
         },
         "cards": {
           "yellow": 5,
@@ -888,50 +888,50 @@
           "season": 2024
         },
         "games": {
-          "appearences": 7,
-          "lineups": 6,
-          "minutes": 476,
+          "appearences": 9,
+          "lineups": 8,
+          "minutes": 616,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.814285",
+          "rating": "6.911111",
           "captain": false
         },
         "substitutes": {
           "in": 1,
-          "out": 4,
+          "out": 6,
           "bench": 2
         },
         "shots": {
-          "total": 8,
+          "total": 9,
           "on": 4
         },
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 130,
-          "key": 5,
+          "total": 167,
+          "key": 8,
           "accuracy": 11
         },
         "tackles": {
-          "total": 10,
+          "total": 15,
           "blocks": null,
-          "interceptions": 6
+          "interceptions": 7
         },
         "duels": {
-          "total": 52,
-          "won": 22
+          "total": 71,
+          "won": 34
         },
         "dribbles": {
-          "attempts": 13,
-          "success": 6,
+          "attempts": 22,
+          "success": 11,
           "past": null
         },
         "fouls": {
-          "drawn": 5,
+          "drawn": 6,
           "committed": 4
         },
         "cards": {
@@ -1078,21 +1078,21 @@
           "season": 2024
         },
         "games": {
-          "appearences": 12,
-          "lineups": 12,
-          "minutes": 932,
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1085,
           "number": null,
           "position": "Midfielder",
-          "rating": "7.241666",
+          "rating": "7.157142",
           "captain": false
         },
         "substitutes": {
           "in": 0,
-          "out": 10,
+          "out": 12,
           "bench": 0
         },
         "shots": {
-          "total": 12,
+          "total": 13,
           "on": 3
         },
         "goals": {
@@ -1102,27 +1102,27 @@
           "saves": null
         },
         "passes": {
-          "total": 258,
-          "key": 19,
+          "total": 300,
+          "key": 23,
           "accuracy": 15
         },
         "tackles": {
-          "total": 22,
+          "total": 25,
           "blocks": 1,
-          "interceptions": 4
+          "interceptions": 5
         },
         "duels": {
-          "total": 109,
-          "won": 50
+          "total": 117,
+          "won": 55
         },
         "dribbles": {
-          "attempts": 17,
-          "success": 5,
+          "attempts": 18,
+          "success": 6,
           "past": null
         },
         "fouls": {
-          "drawn": 21,
-          "committed": 9
+          "drawn": 22,
+          "committed": 11
         },
         "cards": {
           "yellow": 3,
@@ -1458,18 +1458,18 @@
           "season": 2024
         },
         "games": {
-          "appearences": 12,
+          "appearences": 14,
           "lineups": 7,
-          "minutes": 624,
+          "minutes": 659,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.683333",
+          "rating": "6.621428",
           "captain": false
         },
         "substitutes": {
-          "in": 5,
+          "in": 7,
           "out": 6,
-          "bench": 5
+          "bench": 7
         },
         "shots": {
           "total": 9,
@@ -1478,13 +1478,13 @@
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 189,
+          "total": 202,
           "key": 9,
-          "accuracy": 12
+          "accuracy": 11
         },
         "tackles": {
           "total": 12,
@@ -1492,16 +1492,16 @@
           "interceptions": 1
         },
         "duels": {
-          "total": 66,
-          "won": 25
+          "total": 69,
+          "won": 27
         },
         "dribbles": {
-          "attempts": 13,
-          "success": 5,
+          "attempts": 15,
+          "success": 6,
           "past": null
         },
         "fouls": {
-          "drawn": 5,
+          "drawn": 6,
           "committed": 8
         },
         "cards": {
@@ -1553,51 +1553,51 @@
           "season": 2024
         },
         "games": {
-          "appearences": 11,
-          "lineups": 7,
-          "minutes": 574,
+          "appearences": 13,
+          "lineups": 9,
+          "minutes": 720,
           "number": null,
           "position": "Midfielder",
-          "rating": "6.536363",
+          "rating": "6.576923",
           "captain": false
         },
         "substitutes": {
           "in": 4,
-          "out": 6,
+          "out": 7,
           "bench": 5
         },
         "shots": {
-          "total": 5,
-          "on": 1
+          "total": 7,
+          "on": 3
         },
         "goals": {
           "total": 0,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 216,
+          "total": 275,
           "key": 3,
-          "accuracy": 14
+          "accuracy": 16
         },
         "tackles": {
-          "total": 9,
+          "total": 14,
           "blocks": null,
-          "interceptions": 2
+          "interceptions": 3
         },
         "duels": {
-          "total": 71,
-          "won": 29
+          "total": 84,
+          "won": 38
         },
         "dribbles": {
-          "attempts": 7,
-          "success": 4,
+          "attempts": 9,
+          "success": 6,
           "past": null
         },
         "fouls": {
-          "drawn": 12,
-          "committed": 13
+          "drawn": 13,
+          "committed": 15
         },
         "cards": {
           "yellow": 3,
@@ -1754,7 +1754,7 @@
         "substitutes": {
           "in": 8,
           "out": 1,
-          "bench": 10
+          "bench": 12
         },
         "shots": {
           "total": 3,
@@ -1838,31 +1838,31 @@
           "season": 2024
         },
         "games": {
-          "appearences": 8,
+          "appearences": 10,
           "lineups": 2,
-          "minutes": 275,
+          "minutes": 302,
           "number": null,
           "position": "Attacker",
-          "rating": "6.387500",
+          "rating": "6.470000",
           "captain": false
         },
         "substitutes": {
-          "in": 6,
+          "in": 8,
           "out": 2,
-          "bench": 9
+          "bench": 11
         },
         "shots": {
-          "total": 7,
-          "on": 4
+          "total": 9,
+          "on": 5
         },
         "goals": {
           "total": 1,
           "conceded": 0,
-          "assists": null,
+          "assists": 0,
           "saves": null
         },
         "passes": {
-          "total": 43,
+          "total": 48,
           "key": 2,
           "accuracy": 4
         },
@@ -1872,8 +1872,8 @@
           "interceptions": 2
         },
         "duels": {
-          "total": 35,
-          "won": 8
+          "total": 38,
+          "won": 10
         },
         "dribbles": {
           "attempts": 1,
@@ -1881,7 +1881,7 @@
           "past": null
         },
         "fouls": {
-          "drawn": 2,
+          "drawn": 3,
           "committed": 3
         },
         "cards": {
@@ -1895,6 +1895,861 @@
           "scored": 0,
           "missed": 0,
           "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 47713,
+      "name": "Mohanad Jeahze",
+      "firstname": "Mohanad Abdulkadhim Qasim",
+      "lastname": "Al Jebur Jeahze",
+      "age": 27,
+      "birth": {
+        "date": "1997-04-10",
+        "place": "Linkoping",
+        "country": "Sweden"
+      },
+      "nationality": "Iraq",
+      "height": "166 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/47713.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 1,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Defender",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 1,
+          "out": 0,
+          "bench": 2
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50754,
+      "name": "S. Birnbaum",
+      "firstname": "Steven Mitchell",
+      "lastname": "Birnbaum",
+      "age": 33,
+      "birth": {
+        "date": "1991-01-23",
+        "place": "Newport",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "186 cm",
+      "weight": "80 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50754.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 3,
+          "lineups": 1,
+          "minutes": 131,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.566666",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 1,
+          "bench": 4
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 66,
+          "key": null,
+          "accuracy": 18
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": 1,
+          "interceptions": 3
+        },
+        "duels": {
+          "total": 22,
+          "won": 12
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 50800,
+      "name": "A. Bono",
+      "firstname": "Alexander Nicholas",
+      "lastname": "Bono",
+      "age": 30,
+      "birth": {
+        "date": "1994-04-25",
+        "place": "Syracuse",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "190 cm",
+      "weight": "95 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/50800.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1260,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": "7.171428",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 0
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 20,
+          "assists": 0,
+          "saves": 42
+        },
+        "passes": {
+          "total": 473,
+          "key": null,
+          "accuracy": 19
+        },
+        "tackles": {
+          "total": 2,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 7,
+          "won": 6
+        },
+        "dribbles": {
+          "attempts": 1,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 2,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 51022,
+      "name": "T. Miller",
+      "firstname": "Tyler Austin",
+      "lastname": "Miller",
+      "age": 31,
+      "birth": {
+        "date": "1993-03-12",
+        "place": "Woodbury",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "193 cm",
+      "weight": "88 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/51022.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 6
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 83527,
+      "name": "M. Peltola",
+      "firstname": "Matti",
+      "lastname": "Peltola",
+      "age": 22,
+      "birth": {
+        "date": "2002-07-03",
+        "place": "Espoo",
+        "country": "Finland"
+      },
+      "nationality": "Finland",
+      "height": "185 cm",
+      "weight": null,
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/83527.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 13,
+          "lineups": 10,
+          "minutes": 953,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.861538",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 2,
+          "bench": 3
+        },
+        "shots": {
+          "total": 4,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 399,
+          "key": 8,
+          "accuracy": 25
+        },
+        "tackles": {
+          "total": 38,
+          "blocks": 5,
+          "interceptions": 18
+        },
+        "duels": {
+          "total": 100,
+          "won": 62
+        },
+        "dribbles": {
+          "attempts": 7,
+          "success": 5,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 14,
+          "committed": 13
+        },
+        "cards": {
+          "yellow": 1,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 126820,
+      "name": "G. Tubbs",
+      "firstname": "Garrison Isaiah",
+      "lastname": "Tubbs",
+      "age": 22,
+      "birth": {
+        "date": "2002-02-17",
+        "place": "Jacksonville",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "188 cm",
+      "weight": "79 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/126820.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 2,
+          "lineups": 0,
+          "minutes": 19,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.200000",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 2,
+          "out": 0,
+          "bench": 7
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 5,
+          "key": null,
+          "accuracy": 2
+        },
+        "tackles": {
+          "total": 1,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": 3,
+          "won": 2
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": 1
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 171254,
+      "name": "C. Antley",
+      "firstname": "William Conner",
+      "lastname": "Antley",
+      "age": 29,
+      "birth": {
+        "date": "1995-03-22",
+        "place": "Newnan",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "185 cm",
+      "weight": "78 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/171254.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 7,
+          "lineups": 4,
+          "minutes": 432,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.742857",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 3,
+          "out": 1,
+          "bench": 5
+        },
+        "shots": {
+          "total": 1,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": 1,
+          "saves": null
+        },
+        "passes": {
+          "total": 168,
+          "key": 3,
+          "accuracy": 16
+        },
+        "tackles": {
+          "total": 16,
+          "blocks": 3,
+          "interceptions": 6
+        },
+        "duels": {
+          "total": 53,
+          "won": 34
+        },
+        "dribbles": {
+          "attempts": 7,
+          "success": 4,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 3,
+          "committed": 3
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 351583,
+      "name": "L. Bartlett",
+      "firstname": "Lucas Allen",
+      "lastname": "Bartlett",
+      "age": 27,
+      "birth": {
+        "date": "1997-07-26",
+        "place": "Overland Park",
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "191 cm",
+      "weight": "91 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/351583.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 14,
+          "lineups": 14,
+          "minutes": 1238,
+          "number": null,
+          "position": "Defender",
+          "rating": "6.971428",
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 1,
+          "bench": 0
+        },
+        "shots": {
+          "total": 11,
+          "on": 3
+        },
+        "goals": {
+          "total": 1,
+          "conceded": 0,
+          "assists": 0,
+          "saves": null
+        },
+        "passes": {
+          "total": 608,
+          "key": 2,
+          "accuracy": 33
+        },
+        "tackles": {
+          "total": 20,
+          "blocks": 9,
+          "interceptions": 14
+        },
+        "duels": {
+          "total": 131,
+          "won": 86
+        },
+        "dribbles": {
+          "attempts": 2,
+          "success": 1,
+          "past": null
+        },
+        "fouls": {
+          "drawn": 15,
+          "committed": 13
+        },
+        "cards": {
+          "yellow": 2,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": null
+        }
+      }
+    ]
+  },
+  {
+    "player": {
+      "id": 458453,
+      "name": "N. Crockford",
+      "firstname": "Nathan",
+      "lastname": "Crockford",
+      "age": 22,
+      "birth": {
+        "date": "2002-09-06",
+        "place": null,
+        "country": "USA"
+      },
+      "nationality": "USA",
+      "height": "193 cm",
+      "weight": "86 kg",
+      "injured": false,
+      "photo": "https://media.api-sports.io/football/players/458453.png"
+    },
+    "statistics": [
+      {
+        "team": {
+          "id": 1615,
+          "name": "DC United",
+          "logo": "https://media.api-sports.io/football/teams/1615.png"
+        },
+        "league": {
+          "id": 253,
+          "name": "Major League Soccer",
+          "country": "USA",
+          "logo": "https://media.api-sports.io/football/leagues/253.png",
+          "flag": "https://media.api-sports.io/flags/us.svg",
+          "season": 2024
+        },
+        "games": {
+          "appearences": 0,
+          "lineups": 0,
+          "minutes": 0,
+          "number": null,
+          "position": "Goalkeeper",
+          "rating": null,
+          "captain": false
+        },
+        "substitutes": {
+          "in": 0,
+          "out": 0,
+          "bench": 1
+        },
+        "shots": {
+          "total": null,
+          "on": null
+        },
+        "goals": {
+          "total": 0,
+          "conceded": 0,
+          "assists": null,
+          "saves": null
+        },
+        "passes": {
+          "total": null,
+          "key": null,
+          "accuracy": null
+        },
+        "tackles": {
+          "total": null,
+          "blocks": null,
+          "interceptions": null
+        },
+        "duels": {
+          "total": null,
+          "won": null
+        },
+        "dribbles": {
+          "attempts": null,
+          "success": null,
+          "past": null
+        },
+        "fouls": {
+          "drawn": null,
+          "committed": null
+        },
+        "cards": {
+          "yellow": 0,
+          "yellowred": 0,
+          "red": 0
+        },
+        "penalty": {
+          "won": null,
+          "commited": null,
+          "scored": 0,
+          "missed": 0,
+          "saved": 0
         }
       }
     ]

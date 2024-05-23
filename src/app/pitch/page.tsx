@@ -5,6 +5,74 @@ import Navbar from "@/components/Navbar";
 import Timer from "@/components/Timer";
 import Status from "@/components/status";
 import Form from "@/components/Form";
+const GameStatus = ({
+  team1,
+  team2,
+  time,
+  stadium,
+  form1,
+  form2,
+  status,
+}: {
+  team1: string;
+  team2: string;
+  time: string;
+  stadium: string;
+  form1: string[];
+  form2: string[];
+  status: number;
+}) => {
+  return (
+    <>
+      <div className="flex text-xl font-stalinist w-10/12 justify-between">
+        <div className="">
+          <Status status={status} />
+        </div>
+        <div className="text-[10px] ">Players : 250</div>
+      </div>
+      <hr className="p-2 w-10/12" />
+      <div className="flex font-stalinist capitalize justify-between w-10/12">
+        <div className="text-left text-[#D8485F] sm:text-3xl text-lg ">
+          {team1}
+        </div>
+        <Timer starttime={time} />
+        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg ">
+          {team2}
+        </div>
+      </div>
+      <div className="flex font-stalinist capitalize justify-between w-10/12">
+        <Form form={form1} />
+        <p className="text-[8px] pt-2 text-slate-400">{stadium}</p>
+        <Form form={form2} />
+      </div>
+    </>
+  );
+};
+const PlayerProgress = ({ noPlayers }: { noPlayers: number }) => {
+  return (
+    <>
+      <div className="flex font-stalinist text-[8px] justify-between">
+        <p>Players Chosen</p>
+        <p>{noPlayers + 1}/11</p>
+      </div>
+      <div className="flex bg-[url('/assets/progressborder.svg')] sm:w-[320px] h-[20px] bg-no-repeat bg-cover items-center justify-center ">
+        {Array(10) // Create an array of 11 elements
+          .fill(null) // Fill the array with null values
+          .map((_, index) => (
+            <div
+              key={index}
+              className={`w-[28px] h-3 rounded-sm bg-white ml-1 ${
+                index < noPlayers ? "" : "opacity-0"
+              }`}
+            />
+          ))}
+        {noPlayers == 10 && (
+          <div className="w-0 h-0 transform rotate-0 border-b-[11px] ml-1 border-b-transparent border-l-[10px] border-l-white border-r-[5px] border-r-transparent "></div>
+        )}{" "}
+      </div>
+    </>
+  );
+};
 function Page() {
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(true);
@@ -44,91 +112,77 @@ function Page() {
   }
   const [playerPositions, setPlayerPositions] = useState<Player[]>([
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
     {
-      name: "Choose Player",
+      name: "Choose",
       id: "",
       team: "avatar",
     },
   ]);
-  const [noPlayers, setnumberofPlayers] = useState(5); // Initial state
+  const [noPlayers, setnumberofPlayers] = useState(10); // Initial state
 
   return (
     <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
       <div>
         <Navbar />
       </div>
-      <div className="flex text-xl font-stalinist w-10/12 justify-between">
-        <div className="">
-          <Status status={0} />
-        </div>
-        <div className="text-[10px] ">Players : 250</div>
-      </div>
-      <hr className="p-2 w-10/12" />
-      <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <div className="text-left text-[#D8485F] sm:text-3xl text-lg ">
-          orlando city
-        </div>
-        <Timer starttime={"100000"} />
-        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg ">
-          inter miami
-        </div>
-      </div>
-      <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <Form form={["W", "L", "D", "W", "L"]} />
-        <p className="text-[8px] pt-2 text-slate-400">
-          Inter and co Patriots Point{" "}
-        </p>
-        <Form form={["L", "L", "W", "W", "L"]} />
-      </div>
+      <GameStatus
+        team1={"orlando city"}
+        team2={"inter miami"}
+        time={"1000"}
+        stadium={"Inter and co Patriots Point"}
+        form1={["L", "L", "W", "W", "L"]}
+        form2={["W", "L", "D", "W", "L"]}
+        status={0}
+      />
       <div className=" h-full flex gap-2 sm:justify-between justify-center sm:items w-10/12 sm:flex-row flex-col">
         <div className="w-1/2 sm:ml-6">
           <Pitch
@@ -139,27 +193,9 @@ function Page() {
             showPoints={true}
           />
         </div>
-        <div className=" flex w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20 justify-center items-center">
-          <div className=" -mt-[850px]">
-            <div className="flex font-stalinist text-[8px] p-1 justify-between">
-              <p>Players Chosen</p>
-              <p>{noPlayers + 1}/11</p>
-            </div>
-            <div className="flex gap-0.1 bg-[url('/assets/progressborder.svg')] w-10/11 bg-no-repeat bg-cover items-center justify-center">
-              {Array(10) // Create an array of 11 elements
-                .fill(null) // Fill the array with null values
-                .map((_, index) => (
-                  <div
-                    key={index}
-                    className={`w-6 h-1.5 bg-white mt-1 ml-1 ${
-                      index < noPlayers ? "" : "opacity-0"
-                    }`}
-                  />
-                ))}
-              {noPlayers == 10 && (
-                <div className="w-0 h-0 transform rotate-0 border-b-[6px] ml-1 border-b-transparent border-l-[10px] border-l-white border-r-[5px] border-r-transparent mt-1"></div>
-              )}{" "}
-            </div>
+        <div className=" flex flex-col sm:w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20 justify-start items-start">
+          <div className="mt-12 ml-16">
+            <PlayerProgress noPlayers={noPlayers} />
           </div>
         </div>
       </div>

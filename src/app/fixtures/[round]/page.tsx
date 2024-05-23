@@ -6,6 +6,7 @@ import { teamLogo } from "@/utils/logos/teamlogo";
 import fetchFixtureByRound from "@/utils/fixtureHelpers/FixtureByRound";
 import FixtureCard from "@/components/FixtureCard";
 import Left from "../../../../public/assets/Left.png";
+import Navbar from "@/components/Navbar";
 
 interface MatchDetails {
   away_id: number;
@@ -313,10 +314,14 @@ export default function Page({ params }: { params: { round: string } }) {
     // </div>
     <div
       className="flex flex-col px-10 items-center bg-no-repeat bg-contain w-full h-[1700px] overflow-hidden xl:h-[1800px]"
+      //  h-auto min-h-screen" // or
       style={{ backgroundImage: `url('/assets/PageBorder.svg')` }}
     >
+      <div className="w-full">
+        <Navbar />
+      </div>
       <div
-        className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] mt-80 "
+        className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] mt-28 "
         style={{ backgroundImage: `url('/assets/GameBorder.svg')` }}
       >
         <div className="text-4xl self-start mt-5 px-2 pt-5 font-stalinist text-gradient xl:px-8">

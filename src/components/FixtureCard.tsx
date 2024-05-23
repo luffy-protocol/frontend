@@ -3,9 +3,6 @@ import Timer from "./Timer";
 import Status from "./status";
 import Button from "./Button";
 
-interface CardProps {
-  className?: string; // Optional class for additional styling
-}
 interface FixtureDetails {
   away_id: number;
   away_name: string;

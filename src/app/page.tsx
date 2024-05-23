@@ -25,7 +25,9 @@ export default function Home() {
     }
   };
 
-  const data = getPlayerByTeamId(9568, 1606);
+  // const data = getPlayerByTeamId(9568, 1606);
+  // console.log(data);
+  const data = addFollower(1111, 1112);
   console.log(data);
   // return (
   //   <div>

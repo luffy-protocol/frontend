@@ -75,6 +75,11 @@ export default async function addFollower(
   response: any;
 }> {
   try {
+    const { data, error } = await supabase
+      .from("FollowersNotification")
+      .insert([{ followerId: userId, followingId: followerId }])
+      .select();
+
     // Fetch the user profile
     const { data: userprofile, error: userProfileError } = await supabase
       .from("Profile")

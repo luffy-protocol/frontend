@@ -60,9 +60,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       <img
         src={imageUrl}
         alt={`Player ${index + 1}`}
-        className={`absolute cursor-pointer w-16 mt-20 ${
+        className={`absolute cursor-pointer w-16 mt-0 ${
           index == 10
-            ? "left-[42%] top-[0%]"
+            ? "left-[42%] top-[5%]"
             : index == 9
             ? " top-[40%] sm:top-[47%] left-[8%]"
             : index == 8
@@ -86,28 +86,28 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
         onClick={onClick}
       />
       <div
-        className={`absolute cursor-pointer sm:text-xs text-[5px] mt-10 mr-3 px-1 bg-slate-50 text-black rounded-md text-center  ${
+        className={`absolute cursor-pointer sm:text-[10px] text-[5px] mt-10 mr-3 px-1 bg-slate-50 text-black rounded-md text-center  ${
           index == 10
-            ? "left-[42%] top-[0%]"
+            ? "left-[42%] top-[12%]"
             : index == 9
-            ? " top-[40%] sm:top-[47%] left-[8%]"
+            ? " top-[52%] sm:top-[59%] left-[8%]"
             : index == 8
-            ? "top-[40%] sm:top-[47%] left-[30%]"
+            ? "top-[52%] sm:top-[59%] left-[30%]"
             : index == 7
-            ? " top-[40%] sm:top-[47%] left-[55%]"
+            ? " top-[52%] sm:top-[59%] left-[55%]"
             : index == 6
-            ? "top-[40%] sm:top-[47%] left-[80%]"
+            ? "top-[52%] sm:top-[59%] left-[78%]"
             : index == 5
-            ? "top-[64%] sm:top-[71%] left-[17%]"
+            ? "top-[66%] sm:top-[83%] left-[17%]"
             : index == 4
-            ? "top-[64%] sm:top-[71%] left-[42%]"
+            ? "top-[66%] sm:top-[83%] left-[42%]"
             : index == 3
-            ? "top-[64%]  sm:top-[71%] left-[67%]"
+            ? "top-[66%] sm:top-[83%] left-[67%]"
             : index == 2
-            ? "top-[16%] sm:top-[23%] left-[17%]"
+            ? "top-[28%] sm:top-[35%] left-[17%]"
             : index == 1
-            ? "top-[16%] sm:top-[23%] left-[42%]"
-            : "top-[16%] sm:top-[23%] left-[67%]"
+            ? "top-[28%] sm:top-[35%] left-[42%]"
+            : "top-[28%] sm:top-[35%] left-[67%]"
         } w-7 md:w-14`}
         onClick={onClick}
       >

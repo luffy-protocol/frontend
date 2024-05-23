@@ -10,7 +10,7 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ children }) => (
-  <div className="text-gradient text-2xl font-stalinist">{children}</div>
+  <div className="text-gradient text-sm font-stalinist">{children}</div>
 );
 
 const Navbar = () => {
@@ -22,8 +22,8 @@ const Navbar = () => {
         <NavLink>Home</NavLink>
         <NavLink>Fixtures</NavLink>
         <NavLink>Leaderboard</NavLink>
-        <Image src={Bell} alt="" width={53} height={53} />
-        <Image src={Profile} alt="" width={53} height={53} />
+        <Image src={Bell} alt="" width={30} height={53} />
+        <Image src={Profile} alt="" width={30} height={30} />
         <LoginButton />
       </div>
     </div>

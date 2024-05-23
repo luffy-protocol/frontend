@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Pitch from "@/components/Pitch";
+import Navbar from "@/components/Navbar";
 function Page() {
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(true);
@@ -97,17 +98,21 @@ function Page() {
   ]);
 
   return (
-    <div className="container mx-auto px-4 py-8 flex gap-2">
-      <div className="h-10">
-        <Pitch
-          setindex={setindex}
-          setOpen={setOpen}
-          playerPositions={playerPositions}
-          points={[10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-          showPoints={true}
-        />
+    <div className="flex flex-col px-10 items-center bg-no-repeat bg-contain w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')]">
+      <div className="w-full">
+        <Navbar />
       </div>
-      <div>hi</div>
+      <div className="w-full h-full flex">
+        <div className="w-1/3 ml-10">
+          <Pitch
+            setindex={setindex}
+            setOpen={setOpen}
+            playerPositions={playerPositions}
+            points={[10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+            showPoints={true}
+          />
+        </div>
+      </div>
     </div>
   );
 }

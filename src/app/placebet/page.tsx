@@ -53,12 +53,12 @@ export default function PlaceBet() {
     {
       id: 2,
       name: "LINK",
-      image: "https://testnet.luffyprotocoll.com/link.png",
+      image: "https://testnet.luffyprotocol.com/link.png",
     },
     {
       id: 3,
       name: "USDC",
-      image: "https://testnet.luffyprotocoll.com/usdc.png",
+      image: "https://testnet.luffyprotocol.com/usdc.png",
     },
   ];
   return (

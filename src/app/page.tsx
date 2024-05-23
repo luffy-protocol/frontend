@@ -14,6 +14,7 @@ import FixtureCard from "@/components/FixtureCard";
 import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
 import getFollowingNotifications from "@/utils/notificationHelpers/notifyFollowing";
 import ArrowButton from "@/components/ArrowButton";
+import ChoosePlayer from "@/components/ChoosePlayer";
 
 export default function Home() {
   const [img, setimg] = useState<File | null | undefined>();
@@ -69,8 +70,9 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8 flex flex-col gap-2">
       {/* <FixtureCard /> */}
-      <PlayerCard />
+      {/* <PlayerCard /> */}
       {/* <ArrowButton /> */}
+      <ChoosePlayer />
     </div>
   );
 }

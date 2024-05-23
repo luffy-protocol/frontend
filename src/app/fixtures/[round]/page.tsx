@@ -312,11 +312,12 @@ export default function Page({ params }: { params: { round: string } }) {
     //     </>
     //   )}
     // </div>
-    <div
-      className="flex flex-col px-10 items-center bg-no-repeat bg-contain w-full h-[1700px] overflow-hidden xl:h-[1800px]"
-      //  h-auto min-h-screen" // or
-      style={{ backgroundImage: `url('/assets/PageBorder.svg')` }}
-    >
+    // <div
+    //   className="flex flex-col px-10 items-center bg-no-repeat bg-contain w-full h-[1700px] overflow-hidden xl:h-[1800px]"
+    //   //  h-auto min-h-screen" // or
+    //   style={{ backgroundImage: `url('/assets/PageBorder.svg')` }}
+    // >
+    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
       <div className="w-full">
         <Navbar />
       </div>

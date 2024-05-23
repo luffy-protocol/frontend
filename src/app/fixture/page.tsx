@@ -73,6 +73,45 @@ const PlayerProgress = ({ noPlayers }: { noPlayers: number }) => {
     </>
   );
 };
+const Dropdown = ({
+  content,
+  onOptionClick,
+}: {
+  content: string[];
+  onOptionClick?: (option: string) => void;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+    console.log(isOpen);
+  };
+
+  const handleOptionClick = (option: string) => {
+    onOptionClick?.(option); // Optional callback for option click
+    toggleDropdown(); // Close the dropdown after clicking an option
+  };
+
+  return (
+    <>
+      <select
+        className=" w-[370px] h-[35px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat  bg-transparent font-stalinist border-none rounded-md  appearance-none focus:outline-none"
+        name="players"
+        id="players"
+      >
+        {content.map((option) => (
+          <option
+            key={option}
+            value={option}
+            className=" bg-[#0C0D3D] text-white text-[8px]"
+          >
+            {option}
+          </option>
+        ))}
+      </select>
+    </>
+  );
+};
 function Page() {
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(true);
@@ -196,6 +235,38 @@ function Page() {
         <div className=" flex flex-col sm:w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20 justify-start items-start">
           <div className="mt-12 ml-16">
             <PlayerProgress noPlayers={noPlayers} />
+          </div>
+          <div className="flex  gap-20 mt-24  font-stalinist text-[10px] ml-28">
+            <p className="text-[10px]">Chain</p>
+
+            <p className="text-[10px]">token</p>
+          </div>
+          <div
+            className="flex  gap-4 justify-start items-start w-full "
+            style={{ transform: "scale(.60)" }}
+          >
+            <Dropdown
+              content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
+            />
+            <Dropdown
+              content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
+            />
+          </div>
+          <div className="flex ml-52 mt-2">
+            <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
+            <p className="text-[10px]  font-stalinist ">30 gwei</p>
+          </div>
+          <div className="mt-60 ml-52">
+            <div
+              className={`flex items-center justify-center bg-no-repeat bg-contain w-[210%] h-full `}
+              style={{
+                backgroundImage: `url('/assets/LoginBorder.svg')`,
+              }}
+            >
+              <span className="text-sm font-stalinist flex justify-center self-center py-2 ">
+                Bet
+              </span>
+            </div>
           </div>
         </div>
       </div>

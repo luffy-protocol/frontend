@@ -25,7 +25,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   setOpen,
 }) => {
   return (
-    <div className="relative flex-1 inline-block  text-left">
+    <div className="relative inline-block  text-left">
       <div>
         <button
           type="button"

@@ -84,13 +84,15 @@ export default function PlaceBet() {
           <Dropdown
             label="Choose Token"
             selectedOption={selectedToken}
-            setSelectedOption={(chain: number) => {
-              if (chain == selectedToken) setSelectedToken(0);
-              else setSelectedToken(chain);
+            setSelectedOption={(token: number) => {
+              if (token == selectedToken) setSelectedToken(0);
+              else setSelectedToken(token);
             }}
             options={tokens}
             open={tokensOpen}
             setOpen={(state) => {
+              console.log("PRESSED");
+              console.log(state);
               setTokensOpen(state);
             }}
           />

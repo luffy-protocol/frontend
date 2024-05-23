@@ -99,6 +99,7 @@ function Page() {
       team: "avatar",
     },
   ]);
+  const [noPlayers, setnumberofPlayers] = useState(5); // Initial state
 
   return (
     <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
@@ -138,7 +139,29 @@ function Page() {
             showPoints={true}
           />
         </div>
-        <div className="flex w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20"></div>
+        <div className=" flex w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20 justify-center items-center">
+          <div className=" -mt-[850px]">
+            <div className="flex font-stalinist text-[8px] p-1 justify-between">
+              <p>Players Chosen</p>
+              <p>{noPlayers + 1}/11</p>
+            </div>
+            <div className="flex gap-0.1 bg-[url('/assets/progressborder.svg')] w-10/11 bg-no-repeat bg-cover items-center justify-center">
+              {Array(10) // Create an array of 11 elements
+                .fill(null) // Fill the array with null values
+                .map((_, index) => (
+                  <div
+                    key={index}
+                    className={`w-6 h-1.5 bg-white mt-1 ml-1 ${
+                      index < noPlayers ? "" : "opacity-0"
+                    }`}
+                  />
+                ))}
+              {noPlayers == 10 && (
+                <div className="w-0 h-0 transform rotate-0 border-b-[6px] ml-1 border-b-transparent border-l-[10px] border-l-white border-r-[5px] border-r-transparent mt-1"></div>
+              )}{" "}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

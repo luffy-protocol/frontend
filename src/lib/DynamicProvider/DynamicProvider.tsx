@@ -97,10 +97,7 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
     <DynamicContextProvider
       settings={{
         appLogoUrl: "https://testnet.luffyprotocol.com/logo.png",
-        overrides: { evmNetworks },
-        environmentId:
-          process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID ||
-          "2762a57b-faa4-41ce-9f16-abff9300e2c9",
+        environmentId: process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID || "",
         appName: "Luffy Protocol",
         walletConnectors: [EthereumWalletConnectors],
       }}

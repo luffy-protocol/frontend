@@ -5,7 +5,7 @@ import {
   DynamicContextProvider,
   EthereumWalletConnectors,
 } from "@/lib/dynamic";
-import { Providers } from "../lib/providers";
+import { Providers } from "@/lib/providers";
 import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
 import { DynamicProvider } from "@/lib/DynamicProvider";
 

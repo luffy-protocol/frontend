@@ -11,6 +11,7 @@ import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
 import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
 import addFollower from "@/utils/profileHelpers/addFollower";
 import FixtureCard from "@/components/FixtureCard";
+import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
 
 export default function Home() {
   const [img, setimg] = useState<File | null | undefined>();
@@ -23,6 +24,9 @@ export default function Home() {
       console.log("uploaded");
     }
   };
+
+  const data = getPlayerByTeamId(9568, 1606);
+  console.log(data);
   // return (
   //   <div>
   //     <button

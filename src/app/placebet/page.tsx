@@ -53,19 +53,19 @@ export default function PlaceBet() {
     {
       id: 2,
       name: "LINK",
-      image: "https://testnet.luffyprotocol.com/link.png",
+      image: "/link.png",
     },
     {
       id: 3,
       name: "USDC",
-      image: "https://testnet.luffyprotocol.com/usdc.png",
+      image: "/usdc.png",
     },
   ];
   return (
     <div className="w-full h-screen flex flex-col space-y-2 justify-center items-center">
       <p className="font-bold text-4xl">Game Page</p>
       <DynamicWidget />
-
+      <p className="mt-6 mb-4 font-semibold text-white text-2xl">Step 1</p>
       {isAuthenticated && (
         <div className="flex space-x-4">
           <Dropdown
@@ -98,6 +98,17 @@ export default function PlaceBet() {
           />
         </div>
       )}
+      <p className="mt-6 mb-4 font-semibold text-white text-2xl">Step 2</p>
+      <p className="text-lg text-white">Bet Amount - 0.1 USDC</p>
+      <p className="text-lg text-white">Crosschain Fee - 0.1 ETH</p>
+      <p className="text-lg text-white">ETH to USDC Swap Fee - 0.1 ETH</p>
+      <p className="mt-6 mb-4 font-semibold text-white text-2xl">Step 3</p>
+      <button
+        type="button"
+        className="my-4 inline-flex justify-center  rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-black text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+      >
+        Place Bet 💰
+      </button>
     </div>
   );
 }

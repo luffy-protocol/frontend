@@ -8,7 +8,13 @@ import {
 } from "@wagmi/core/chains";
 
 export const config = createConfig({
-  chains: [arbitrumSepolia, optimismSepolia],
+  chains: [
+    arbitrumSepolia,
+    optimismSepolia,
+    avalancheFuji,
+    sepolia,
+    baseSepolia,
+  ],
   multiInjectedProviderDiscovery: false,
   ssr: true,
   transports: {

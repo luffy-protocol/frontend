@@ -11,7 +11,7 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
       blockExplorerUrls: ["https://testnet.snowtrace.io/"],
       chainId: 43113,
       chainName: "Avalanche Fuji",
-      iconUrls: ["https://app.dynamic.xyz/assets/networks/avalanche.svg"],
+      iconUrls: ["https://app.dynamic.xyz/assets/networks/avax.svg"],
       name: "Avalanche Fuji",
       nativeCurrency: {
         decimals: 18,
@@ -26,7 +26,7 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
       blockExplorerUrls: ["https://sepolia.etherscan.io/"],
       chainId: 11155111,
       chainName: "Sepolia",
-      iconUrls: ["https://app.dynamic.xyz/assets/networks/ethereum.svg"],
+      iconUrls: ["https://app.dynamic.xyz/assets/networks/eth.svg"],
       name: "Sepolia",
       nativeCurrency: {
         decimals: 18,
@@ -96,6 +96,9 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <DynamicContextProvider
       settings={{
+        overrides: {
+          evmNetworks: evmNetworks,
+        },
         appLogoUrl: "https://testnet.luffyprotocol.com/logo.png",
         environmentId: process.env.NEXT_PUBLIC_DYNAMIC_ENVIRONMENT_ID || "",
         appName: "Luffy Protocol",

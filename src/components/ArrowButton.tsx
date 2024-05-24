@@ -8,11 +8,9 @@ interface ButtonProps {
 const ArrowButton: React.FC<ButtonProps> = ({ id, setplayerId }) => {
   return (
     <div
-      className={`flex justify-center items-center bg-contain bg-no-repeat `}
+      className={`flex justify-center items-center bg-contain bg-no-repeat w-[100px] h-[80px] lg:w-[70px] lg:h-[70px]`}
       style={{
         backgroundImage: `url('/assets/ButtonFrame.svg')`,
-        width: "100px",
-        height: "80px",
       }}
       onClick={() => {
         console.log("first");

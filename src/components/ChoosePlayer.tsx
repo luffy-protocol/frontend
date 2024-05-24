@@ -134,7 +134,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen, index }) => {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center  bg-no-repeat bg-contain bg-center  h-[650px] xl:h-[750px] xl:w-[900px] self-center`}
+      className={`flex flex-col items-center justify-center  bg-no-repeat bg-contain bg-center  h-[700px] w-[800px] xl:h-[750px] xl:w-[900px] self-center`}
       style={{
         backgroundImage: `url('/assets/ChooseModal.png')`,
       }}
@@ -149,7 +149,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen, index }) => {
         </div>
       </div>
 
-      <div className="flex gap-2 w-full mt-9 ">
+      <div className="flex gap-2 w-full mt-9 lg:w-[90%]">
         <div className="flex flex-col gap-2 w-full max-h-[520px] overflow-y-scroll scrollbar-custom">
           {/* <div className="flex flex-col gap-2 ">
             <PlayerCard id={154} />

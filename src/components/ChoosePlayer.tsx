@@ -3,7 +3,11 @@ import PlayerCard from "./PlayerCard";
 import PlayerDetailCard from "./PlayerDetailCard";
 import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
 
-const ChoosePlayer = () => {
+interface ChoosePlayerProps {
+  setopen: (open: boolean) => void;
+}
+
+const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen }) => {
   const data = getPlayerByTeamId(9568, 1606);
   console.log(data);
   const [playerId, setPlayerId] = useState<number>(154);
@@ -14,7 +18,16 @@ const ChoosePlayer = () => {
         backgroundImage: `url('/assets/ChooseModal.png')`,
       }}
     >
-      <div className=" font-stalinist text-3xl">Choose Player</div>
+      <div className="flex justify-between items-center">
+        <div className="font-stalinist text-3xl">Choose Player</div>
+        <div
+          className="text-right justify-items-end cursor-pointer pl-20"
+          onClick={() => setopen(false)}
+        >
+          Close
+        </div>
+      </div>
+
       <div className="flex gap-2 w-full mt-9 ">
         <div className="flex flex-col gap-2 w-full max-h-[520px] overflow-y-scroll scrollbar-custom">
           {/* <div className="flex flex-col gap-2 ">

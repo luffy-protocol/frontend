@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Timer from "@/components/Timer";
 import Status from "@/components/status";
 import Form from "@/components/Form";
+import ChoosePlayer from "@/components/ChoosePlayer";
 const GameStatus = ({
   team1,
   team2,
@@ -114,7 +115,7 @@ const Dropdown = ({
 };
 function Page() {
   const [index, setindex] = useState(0);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   interface Player {
     name: string;
     id: string;
@@ -210,7 +211,7 @@ function Page() {
 
   return (
     <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
-      <div>
+      <div className="w-full">
         <Navbar />
       </div>
       <GameStatus
@@ -270,6 +271,12 @@ function Page() {
           </div>
         </div>
       </div>
+      {open && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
+          {/* Content of your Choosemodal component */}
+          <ChoosePlayer setopen={setOpen} />
+        </div>
+      )}
     </div>
   );
 }

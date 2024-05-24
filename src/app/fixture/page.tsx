@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import Pitch from "@/components/Pitch";
 import Navbar from "@/components/Navbar";
 import Timer from "@/components/Timer";
@@ -74,37 +74,48 @@ const PlayerProgress = ({ noPlayers }: { noPlayers: number }) => {
     </>
   );
 };
-const Dropdown = ({
-  content,
-  onOptionClick,
-}: {
+interface DropdownProps {
   content: string[];
   onOptionClick?: (option: string) => void;
+  setState?: Dispatch<SetStateAction<string>>; // Use Dispatch for setState type
+}
+
+const Dropdown: React.FC<DropdownProps> = ({
+  content,
+  onOptionClick,
+  setState,
 }) => {
+  const [selectedOption, setSelectedOption] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
-  const handleOptionClick = (option: string) => {
-    onOptionClick?.(option); // Optional callback for option click
-    toggleDropdown(); // Close the dropdown after clicking an option
+  const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newSelectedOption = event.target.value as string; // Type assertion for safety
+    setSelectedOption(newSelectedOption);
+    onOptionClick?.(newSelectedOption);
+    toggleDropdown();
+    if (setState) {
+      setState(newSelectedOption);
+    }
   };
 
   return (
     <>
       <select
-        className=" w-[370px] h-[35px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat  bg-transparent font-stalinist border-none rounded-md  appearance-none focus:outline-none"
+        className="w-[370px] h-[35px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
         name="players"
         id="players"
+        value={selectedOption} // Set selected value based on state
+        onChange={handleOptionChange} // Handle option changes
       >
         {content.map((option) => (
           <option
             key={option}
             value={option}
-            className=" bg-[#0C0D3D] text-white text-[8px]"
+            className="bg-[#0C0D3D] text-white text-[8px]"
           >
             {option}
           </option>
@@ -117,6 +128,18 @@ const Dropdown = ({
 function Page() {
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(false);
+  const [team1, setTeam1] = useState("orlando city");
+  const [team2, setTeam2] = useState("inter miami");
+  const [time, setTime] = useState("1000");
+  const [stadium, setStadium] = useState("Inter and co Patriots Point");
+  const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
+  const [form2, setForm2] = useState(["W", "L", "D", "W", "L"]);
+  const [status, setStatus] = useState(0);
+  const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [selectedChain, setSelectedChain] = useState("Avalanche");
+  const [selectedToken, setSelectedToken] = useState("USDT");
+  const [gas, setGas] = useState(30);
+  const [Randomness, setRandomness] = useState(false);
   interface Player {
     name: string;
     id: string;
@@ -216,13 +239,13 @@ function Page() {
         <Navbar />
       </div>
       <GameStatus
-        team1={"orlando city"}
-        team2={"inter miami"}
-        time={"1000"}
-        stadium={"Inter and co Patriots Point"}
-        form1={["L", "L", "W", "W", "L"]}
-        form2={["W", "L", "D", "W", "L"]}
-        status={0}
+        team1={team1}
+        team2={team2}
+        time={time}
+        stadium={stadium}
+        form1={form1}
+        form2={form2}
+        status={status}
       />
       <div className=" h-full flex gap-2 sm:justify-between justify-center sm:items w-10/12 sm:flex-row flex-col">
         <div className="w-1/2 sm:ml-6">
@@ -230,7 +253,7 @@ function Page() {
             setindex={setindex}
             setOpen={setOpen}
             playerPositions={playerPositions}
-            points={[10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+            points={points}
             showPoints={true}
           />
         </div>
@@ -248,20 +271,31 @@ function Page() {
             style={{ transform: "scale(.60)" }}
           >
             <Dropdown
+              setState={setSelectedChain}
               content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
             />
+
             <Dropdown
-              content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
+              content={["USDT", "token  1", "token 2", "token 3"]}
+              setState={setSelectedToken}
             />
           </div>
           <div className="flex ml-52 mt-2">
             <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
-            <p className="text-[10px]  font-stalinist ">30 gwei</p>
+            <p className="text-[10px]  font-stalinist ">{gas} gwei</p>
           </div>
           <div className="mt-48 ml-32">
             <div>
               <label className="inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="" className="sr-only peer" />
+                <input
+                  type="checkbox"
+                  value=""
+                  className="sr-only peer"
+                  onChange={() => {
+                    setRandomness(!Randomness);
+                    console.log(Randomness);
+                  }}
+                />
                 <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800  peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border  after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#410C5E]"></div>
                 <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 font-stalinist">
                   Randomness

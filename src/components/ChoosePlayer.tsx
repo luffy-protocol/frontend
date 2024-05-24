@@ -1,16 +1,137 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import PlayerDetailCard from "./PlayerDetailCard";
 import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
 
 interface ChoosePlayerProps {
   setopen: (open: boolean) => void;
+  index: number;
 }
 
-const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen }) => {
-  const data = getPlayerByTeamId(9568, 1606);
-  console.log(data);
+interface Player {
+  player: {
+    id: number;
+    name: string;
+    firstname: string;
+    lastname: string;
+    age: number;
+    birth: {
+      date: string;
+      place: string;
+      country: string;
+    };
+    nationality: string;
+    height: string;
+    weight: string;
+    injured: boolean;
+    photo: string;
+  };
+  statistics: {
+    team: {
+      id: number;
+      name: string;
+      logo: string;
+    };
+    league: {
+      id: number;
+      name: string;
+      country: string;
+      logo: string;
+      flag: string;
+      season: number;
+    };
+    games: {
+      appearences: number;
+      lineups: number;
+      minutes: number;
+      number: null | number;
+      position: string;
+      rating: string;
+      captain: boolean;
+    };
+    substitutes: {
+      in: number;
+      out: number;
+      bench: number;
+    };
+    shots: {
+      total: number;
+      on: number;
+    };
+    goals: {
+      total: number;
+      conceded: number;
+      assists: number;
+      saves: null | number;
+    };
+    passes: {
+      total: number;
+      key: number;
+      accuracy: number;
+    };
+    tackles: {
+      total: number;
+      blocks: number | null;
+      interceptions: number;
+    };
+    duels: {
+      total: number;
+      won: number;
+    };
+    dribbles: {
+      attempts: number;
+      success: number;
+      past: null | number;
+    };
+    fouls: {
+      drawn: number;
+      committed: number;
+    };
+    cards: {
+      yellow: number;
+      yellowred: number;
+      red: number;
+    };
+    penalty: {
+      won: null | number;
+      commited: null | number;
+      scored: number;
+      missed: number;
+      saved: null | number;
+    };
+  }[];
+}
+
+const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen, index }) => {
+  const [playerData, setplayerData] = useState<Player[] | undefined>(undefined);
+
   const [playerId, setPlayerId] = useState<number>(154);
+
+  useEffect(() => {
+    console.log(index);
+    const data = getPlayerByTeamId(9568, 1606);
+
+    const positions = [
+      { position: "Goalkeeper", indices: [10] },
+      { position: "Defender", indices: [0, 1, 2] },
+      { position: "Midfielder", indices: [6, 7, 8, 9] },
+      { position: "Attacker", indices: [3, 4, 5] },
+    ];
+
+    const filteredPlayerData = positions.find((pos) =>
+      pos.indices.includes(index)
+    );
+
+    if (filteredPlayerData) {
+      const filterData = data?.filter(
+        (item) =>
+          item.statistics[0].games.position === filteredPlayerData.position
+      );
+      console.log(filterData);
+      setplayerData(filterData);
+    }
+  }, [index]);
+
   return (
     <div
       className={`flex flex-col items-center justify-center  bg-no-repeat bg-contain bg-center  h-[650px] xl:h-[750px] xl:w-[900px] self-center`}
@@ -41,7 +162,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen }) => {
           </div> */}
           <div className="flex flex-col gap-2 w-full">
             {/* Map over the data array and render a PlayerCard component for each player */}
-            {data?.map((item, index) => (
+            {playerData?.map((item, index) => (
               <PlayerCard
                 key={index}
                 id={item.player.id}

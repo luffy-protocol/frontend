@@ -113,6 +113,7 @@ const Dropdown = ({
     </>
   );
 };
+
 function Page() {
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(false);
@@ -274,7 +275,7 @@ function Page() {
       {open && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
           {/* Content of your Choosemodal component */}
-          <ChoosePlayer setopen={setOpen} />
+          <ChoosePlayer setopen={setOpen} index={index} />
         </div>
       )}
     </div>

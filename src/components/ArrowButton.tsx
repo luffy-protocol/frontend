@@ -1,10 +1,11 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 interface ButtonProps {
-  //   id: number;
+  id: number;
+  setplayerId: (id: number) => void;
 }
 
-const ArrowButton: React.FC<ButtonProps> = ({}) => {
+const ArrowButton: React.FC<ButtonProps> = ({ id, setplayerId }) => {
   return (
     <div
       className={`flex justify-center items-center bg-contain bg-no-repeat `}
@@ -15,6 +16,7 @@ const ArrowButton: React.FC<ButtonProps> = ({}) => {
       }}
       onClick={() => {
         console.log("first");
+        setplayerId(id);
       }}
     >
       <div className="flex items-center justify-center ">

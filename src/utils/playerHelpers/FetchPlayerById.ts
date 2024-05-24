@@ -102,6 +102,6 @@ const getPlayers = (): Player[] => {
 // Function to get player details by ID
 export const getPlayerById = (id: number): Player | undefined => {
   const allPlayers: Player[] = getPlayers();
-  console.log(allPlayers);
+
   return allPlayers.find((player) => player.player.id === id);
 };

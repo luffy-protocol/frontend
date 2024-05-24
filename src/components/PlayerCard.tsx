@@ -3,12 +3,14 @@ import React from "react";
 import Button from "./Button";
 import ArrowButton from "./ArrowButton";
 import { getPlayerById } from "@/utils/playerHelpers/FetchPlayerById";
+import profile from "../../public/assets/profile.png";
 
 interface PlayerCardProps {
   id: number;
+  setPlayerId: (id: number) => void;
 }
 
-const PlayerCard: React.FC<PlayerCardProps> = ({ id }) => {
+const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
   const data = getPlayerById(id);
   return (
     <div
@@ -20,7 +22,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id }) => {
       <div className="flex justify-center items-center gap-2 w-full">
         {/* Image Section */}
         <img
-          src={playerimg(id)}
+          src={data?.player.photo}
           alt=""
           className="ml-3"
           width={50}
@@ -29,7 +31,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id }) => {
 
         {/* Content Section */}
 
-        <div className="flex flex-col justify-start">
+        <div className="flex flex-col justify-start max-w-[160px] ">
           <div className="font-stalinist text-[#D8485F] text-xl">
             {data?.player.name}
           </div>
@@ -47,7 +49,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id }) => {
         </div>
 
         {/* Arrow Button Section */}
-        <ArrowButton />
+        <ArrowButton id={id} setplayerId={setPlayerId} />
       </div>
     </div>
   );

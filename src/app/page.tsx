@@ -72,7 +72,7 @@ export default function Home() {
       {/* <FixtureCard /> */}
       {/* <PlayerCard /> */}
       {/* <ArrowButton /> */}
-      <ChoosePlayer />
+      {/* <ChoosePlayer /> */}
     </div>
   );
 }

@@ -6,9 +6,17 @@ import { getPlayerById } from "@/utils/playerHelpers/FetchPlayerById";
 
 interface PlayerCardProps {
   id: number;
+  setPlayerPositions: (player: any) => void;
+  setopen: (open: boolean) => void;
+  index: number;
 }
 
-const PlayerDetailCard: React.FC<PlayerCardProps> = ({ id }) => {
+const PlayerDetailCard: React.FC<PlayerCardProps> = ({
+  id,
+  setPlayerPositions,
+  setopen,
+  index,
+}) => {
   const [playerData, setplayerData] = useState<any>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
@@ -30,12 +38,81 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({ id }) => {
     return <div>Loading...</div>;
   }
 
-  return playerDetails(playerData, id);
+  return (
+    <PlayerDetails
+      id={id}
+      playerData={playerData}
+      setPlayerPositions={setPlayerPositions}
+      setopen={setopen}
+      index={index}
+    />
+  );
 };
 
 export default PlayerDetailCard;
 
-const playerDetails = (playerData: any, id: any) => {
+const shortForm: { [key: string]: string } = {
+  "Atlanta United FC": "atlanta-united",
+  Austin: "austin",
+  Charlotte: "charlotte",
+  "Chicago Fire": "chicago-fire",
+  "Colorado Rapids": "colorado-rapids",
+  "Columbus Crew": "columbus-crew",
+  "DC United": "dc-united",
+  "FC Cincinnati": "fc-cincinnati",
+  "FC Dallas": "fc-dallas",
+  "Houston Dynamo": "houston-dynamo",
+  "Inter Miami": "inter-miami",
+  "Los Angeles FC": "lafc", // LAFC was missing in your list
+  "Los Angeles Galaxy": "la-galaxy",
+  "Minnesota United FC": "minnesota-united",
+  "Montreal Impact": "cf-montreal", // Montreal Impact renamed to CF Montreal
+  "Nashville SC": "nashville",
+  "New England Revolution": "new-england-revolution",
+  "New York City FC": "nycfc",
+  "New York Red Bulls": "new-york-red-bulls", // Added hyphen for consistency
+  "Orlando City SC": "orlando-city",
+  "Philadelphia Union": "philadelphia-union",
+  "Portland Timbers": "portland-timbers",
+  "Real Salt Lake": "real-salt-lake",
+  "San Jose Earthquakes": "san-jose-earthquakes",
+  "Seattle Sounders": "seattle-sounders",
+  "Sporting Kansas City": "sporting-kc",
+  "St. Louis City": "st-louis-city",
+  "Toronto FC": "toronto",
+  "Vancouver Whitecaps": "vancouver-whitecaps",
+};
+
+interface PlayerDetailProps {
+  id: number;
+  index: number;
+  playerData: any;
+  setPlayerPositions: (player: any) => void;
+  setopen: (open: boolean) => void;
+}
+
+const PlayerDetails: React.FC<PlayerDetailProps> = ({
+  playerData,
+  id,
+  setopen,
+  setPlayerPositions,
+  index,
+}) => {
+  const updatePlayerPosition = (index: number, newPlayerData: any) => {
+    setPlayerPositions((prevPositions: any) => {
+      // Create a copy of the state to avoid mutation
+      const updatedPositions = [...prevPositions];
+
+      // Ensure the index is within valid bounds
+      if (index >= 0 && index < updatedPositions.length) {
+        updatedPositions[index] = newPlayerData; // Replace the entire player entry
+      } else {
+        console.error(`Invalid index: ${index}`);
+      }
+
+      return updatedPositions;
+    });
+  };
   return (
     <div className="flex flex-col justify-center items-center gap-4 font-stalinist">
       {playerData && (
@@ -156,6 +233,16 @@ const playerDetails = (playerData: any, id: any) => {
             style={{
               backgroundImage: `url('/assets/AddPlayer.png')`,
             }}
+            onClick={() => {
+              console.log(playerData?.statistics[0].team.name);
+
+              updatePlayerPosition(index, {
+                name: playerData?.player.name,
+                id: playerData?.player.id as any,
+                team: shortForm[playerData?.statistics[0].team.name as string],
+              });
+              setopen(false);
+            }}
           >
             <span className="text-sm font-stalinist flex justify-center self-center px-3 py-2 ">
               Add Player
@@ -166,3 +253,15 @@ const playerDetails = (playerData: any, id: any) => {
     </div>
   );
 };
+
+// onClick={() => {
+//   console.log(person);
+
+//   updatePlayerPosition(index, {
+//     id: person.id as any,
+//     name: person.name,
+//     team: person.team as any,
+//     type: person.role as any,
+//   });
+//   setOpen(false);
+// }}

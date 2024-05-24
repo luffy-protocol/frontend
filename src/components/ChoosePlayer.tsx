@@ -6,6 +6,7 @@ import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
 interface ChoosePlayerProps {
   setopen: (open: boolean) => void;
   index: number;
+  setPlayerPositions: (player: any) => void;
 }
 
 interface Player {
@@ -102,7 +103,11 @@ interface Player {
   }[];
 }
 
-const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen, index }) => {
+const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
+  setopen,
+  index,
+  setPlayerPositions,
+}) => {
   const [playerData, setplayerData] = useState<Player[] | undefined>(undefined);
 
   const [playerId, setPlayerId] = useState<number>(154);
@@ -172,7 +177,12 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({ setopen, index }) => {
           </div>
         </div>
         <div className="flex flex-col gap-2 w-full">
-          <PlayerDetailCard id={playerId} />
+          <PlayerDetailCard
+            id={playerId}
+            setopen={setopen}
+            setPlayerPositions={setPlayerPositions}
+            index={index}
+          />
         </div>
       </div>
     </div>

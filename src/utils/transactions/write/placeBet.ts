@@ -36,7 +36,7 @@ export default async function placeBet(params: PlaceBetParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = createPublicClient(CHAIN_RESOLVERS[chainId] as any);
+    const publicClient = CHAIN_RESOLVERS[chainId];
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[chainId] as `0x${string}`,
       abi:

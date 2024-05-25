@@ -16,7 +16,7 @@ export default async function approveToken(params: ApproveTokenParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = createPublicClient(CHAIN_RESOLVERS[chainId] as any);
+    const publicClient = CHAIN_RESOLVERS[chainId];
     const { request } = await publicClient.simulateContract({
       address: TOKEN_ADDRESSES[chainId][token] as `0x${string}`,
       abi: erc20Abi,

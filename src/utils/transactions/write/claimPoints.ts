@@ -23,7 +23,7 @@ export default async function claimPoints(params: ClaimPointsParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = createPublicClient(CHAIN_RESOLVERS[43113] as any);
+    const publicClient = CHAIN_RESOLVERS[43113];
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[43113] as `0x${string}`,
       abi: PROTOCOL_ABI,

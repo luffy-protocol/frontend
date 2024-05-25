@@ -31,7 +31,7 @@ export default async function placeBetRandom(params: PlaceBetRandomParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = createPublicClient(CHAIN_RESOLVERS[chainId] as any);
+    const publicClient = CHAIN_RESOLVERS[chainId];
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[chainId] as `0x${string}`,
       abi: chainId == 43113 ? PROTOCOL_ABI : CROSSCHAIN_ABI,

@@ -1,4 +1,4 @@
-import { transactionType } from "viem";
+import { PublicClient, http } from "viem";
 import {
   arbitrumSepolia,
   avalancheFuji,
@@ -6,7 +6,7 @@ import {
   optimismSepolia,
   sepolia,
 } from "viem/chains";
-
+import { createPublicClient } from "viem";
 const DEPLOYMENTS: Record<number, string> = {
   43113: "0xcC4203412a962fEFC2e41003bB1Ae296Ff7FE8f3",
   11155111: "0x8Aa5Bc6b3B7C779be6c36Cb6Cc61fcDa1a67c039",
@@ -3667,31 +3667,37 @@ interface ChainResolver {
   chain: any; // Specify the correct type
   transport: string;
 }
-const CHAIN_RESOLVERS: Record<number, ChainResolver> = {
-  43113: {
+const CHAIN_RESOLVERS: Record<number, PublicClient> = {
+  43113: createPublicClient({
     chain: avalancheFuji,
-    transport: "https://api.avax-test.network/ext/bc/C/rpc",
-  },
-  11155111: {
+    transport: http("https://api.avax-test.network/ext/bc/C/rpc"),
+  }),
+  11155111: createPublicClient({
     chain: sepolia,
-    transport:
+    transport: http(
       "https://eth-sepolia.g.alchemy.com/v2/" +
-      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
-  },
-  84532: {
+        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+    ),
+  }),
+  84532: createPublicClient({
     chain: baseSepolia,
-    transport:
+    transport: http(
       "https://base-sepolia.g.alchemy.com/v2/" +
-      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
-  },
-  421614: {
+        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
+    ),
+  }),
+  421614: createPublicClient({
     chain: arbitrumSepolia,
-    transport: `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
-  },
-  11155420: {
+    transport: http(
+      `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+    ),
+  }),
+  11155420: createPublicClient({
     chain: optimismSepolia,
-    transport: `https://opt-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
-  },
+    transport: http(
+      `https://opt-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
+    ),
+  }),
 };
 
 const TOKEN_ADDRESSES: Record<number, Record<number, string>> = {

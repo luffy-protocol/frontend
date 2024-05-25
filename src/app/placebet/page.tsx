@@ -3,6 +3,7 @@ import Dropdown from "@/components/Dropdown";
 import computeMerklePath from "@/utils/zk/computeMerklePath";
 import computeMerkleRoot from "@/utils/zk/computeMerkleRoot";
 import circuit from "@/utils/zk/circuit.json";
+import axios from "axios";
 import {
   DynamicWidget,
   createWalletClientFromWallet,
@@ -16,6 +17,7 @@ import { Noir } from "@noir-lang/noir_js";
 import React, { useState } from "react";
 import { hexToBytes, recoverPublicKey, stringToBytes, toBytes } from "viem";
 import computeSquadHash from "@/utils/zk/computeSquadHash";
+import formatProofInputs from "@/utils/zk/formatProofInputs";
 
 // place bet
 interface Option {
@@ -155,6 +157,8 @@ export default function PlaceBet() {
             const squadMerkleRoot = computeMerkleRoot(results);
             const player_ids = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
             const points = [10, 97, 105, 0, 0, 14, 4, 0, 1, 39, 65];
+            const selected_player_ids = player_ids;
+
             let player_points = [];
             for (let i = 0; i < 11; i++) {
               const merklePathHexString = computeMerklePath(
@@ -195,17 +199,14 @@ export default function PlaceBet() {
               signature: sig,
             });
             const publicKeyBuffer = Buffer.from(publicKey.slice(2), "hex");
+
+            // Extract x and y coordinates
+            signer_pub_x_key = Array.from(publicKeyBuffer.subarray(1, 33));
+            signer_pub_y_key = Array.from(publicKeyBuffer.subarray(33));
             signature = Array.from(
               new Uint8Array(sig.subarray(0, sig.length - 1))
             );
 
-            // Extract x and y coordinates
-            signer_pub_x_key = Array.from(publicKeyBuffer.subarray(1, 33)).map(
-              (byte) => `${byte}`
-            );
-            signer_pub_y_key = Array.from(publicKeyBuffer.subarray(33)).map(
-              (byte) => `${byte}`
-            );
             console.log({
               signer_pub_x_key: Array.from(signer_pub_x_key).map(
                 (byte) => `${byte}`
@@ -247,61 +248,102 @@ export default function PlaceBet() {
               )
             );
 
-            const proof = await noir.generateFinalProof({
-              signer_pub_x_key: Array.from(signer_pub_x_key).map(
-                (byte) => `${byte}`
-              ),
-              signer_pub_y_key: Array.from(signer_pub_y_key).map(
-                (byte) => `${byte}`
-              ),
-              signature: Array.from(signature).map((byte) => `${byte}`),
-              selected_player_ids: Array.from(player_ids).map(
-                (byte) => `${byte}`
-              ),
-              selected_players_points: player_points.map((point) =>
-                Array.from(point).map((byte) => `${byte}`)
-              ) as any,
-              player_points_merkle_paths: points_merkle_paths.map(
-                (points_merkle_path) =>
-                  points_merkle_path.map((element) =>
-                    Array.from(element).map((e) => `${e}`)
-                  )
-              ) as any,
-              all_player_points_merkle_root: Array.from(
-                toBytes(squadMerkleRoot)
-              ).map((byte) => `${byte}`),
-              selected_squad_hash: Array.from(
-                Buffer.from(squadHash.slice(2), "hex")
-              ).map((byte) => `${byte}`),
-              claimed_player_points: points.reduce(
-                (acc, currentValue) => acc + currentValue,
-                0
-              ),
-            });
+            // const proof = await noir.generateFinalProof({
+            //   signer_pub_x_key: Array.from(signer_pub_x_key).map(
+            //     (byte) => `${byte}`
+            //   ),
+            //   signer_pub_y_key: Array.from(signer_pub_y_key).map(
+            //     (byte) => `${byte}`
+            //   ),
+            //   signature: Array.from(signature).map((byte) => `${byte}`),
+            //   selected_player_ids: Array.from(player_ids).map(
+            //     (byte) => `${byte}`
+            //   ),
+            //   selected_players_points: player_points.map((point) =>
+            //     Array.from(point).map((byte) => `${byte}`)
+            //   ) as any,
+            //   player_points_merkle_paths: points_merkle_paths.map(
+            //     (points_merkle_path) =>
+            //       points_merkle_path.map((element) =>
+            //         Array.from(element).map((e) => `${e}`)
+            //       )
+            //   ) as any,
+            //   all_player_points_merkle_root: Array.from(
+            //     toBytes(squadMerkleRoot)
+            //   ).map((byte) => `${byte}`),
+            //   selected_squad_hash: Array.from(
+            //     Buffer.from(squadHash.slice(2), "hex")
+            //   ).map((byte) => `${byte}`),
+            //   claimed_player_points: points.reduce(
+            //     (acc, currentValue) => acc + currentValue,
+            //     0
+            //   ),
+            // });
 
-            const verified = await noir.verifyFinalProof(proof);
-            if (verified)
-              _logs.push({
-                id: _logs.length + 1,
-                hash: "Proof verified successfully",
-                href: "",
-                username:
-                  "Woohoo. There is one more step. Wait for the transaction to complete. The proof is being sent on the blockchain",
-              });
-            else
-              _logs.push({
-                id: _logs.length + 1,
-                hash: "Proof verification failed",
-                href: "",
-                username:
-                  "Uh Oh. Something is wrong with your proof. Please try again. If you are stuck, reach out to our discord channel.",
-              });
+            const proofInputs = {
+              signer_pub_x_key: JSON.stringify(signer_pub_x_key),
+              signer_pub_y_key: JSON.stringify(signer_pub_y_key),
+              signature: JSON.stringify(signature),
+              selected_player_ids: JSON.stringify(player_ids),
+              selected_player_points: JSON.stringify(
+                player_points.map((point) => Array.from(point))
+              ),
+              all_player_points_merkle_root: JSON.stringify(
+                Array.from(toBytes(squadMerkleRoot))
+              ),
+              selected_squad_hash: JSON.stringify(
+                Array.from(Buffer.from(squadHash.slice(2), "hex"))
+              ),
+              player_points_merkle_paths: JSON.stringify(
+                points_merkle_paths.map((path) =>
+                  path.map((e) => Array.from(e))
+                )
+              ),
+              claimed_player_points: JSON.stringify(
+                points.reduce((acc, currentValue) => acc + currentValue, 0)
+              ),
+            };
+            console.log("PROOF INPUTS");
+            console.log(proofInputs);
+
+            const formattedProofInputs = formatProofInputs(proofInputs);
+            console.log("FORMATTED PROOF INPUTS");
+            console.log(formattedProofInputs);
+
+            const response = await axios.post(`/api/sindri/prove`, {
+              headers: {},
+              data: { proofInputs: formattedProofInputs },
+            });
+            if (response.data.success) {
+              console.log("Proof generation success");
+              console.log(response.data.proof);
+            } else {
+              console.log("Proof generation failewd");
+            }
+
+            // const verified = await noir.verifyFinalProof(proof);
+            // if (verified)
+            //   _logs.push({
+            //     id: _logs.length + 1,
+            //     hash: "Proof verified successfully",
+            //     href: "",
+            //     username:
+            //       "Woohoo. There is one more step. Wait for the transaction to complete. The proof is being sent on the blockchain",
+            //   });
+            // else
+            //   _logs.push({
+            //     id: _logs.length + 1,
+            //     hash: "Proof verification failed",
+            //     href: "",
+            //     username:
+            //       "Uh Oh. Something is wrong with your proof. Please try again. If you are stuck, reach out to our discord channel.",
+            //   });
 
             console.log("PARAMS");
             console.log([
               69,
               points.reduce((acc, currentValue) => acc + currentValue, 0),
-              proof.proof,
+              // proof.proof,
             ]);
             // send transaction
             // const { request } = await publicClient.simulateContract({

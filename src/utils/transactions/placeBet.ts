@@ -8,15 +8,15 @@ import {
   CROSSCHAIN_NO_VRF_ABI,
   DEPLOYMENTS,
   PROTOCOL_ABI,
-  TOKEN_ADDRESSES,
 } from "../constants";
-import { createPublicClient, erc20Abi } from "viem";
+import { createPublicClient } from "viem";
 interface PlaceBetParams {
   primaryWallet: Wallet;
   chainId: number;
   gameId: number;
   squadHash: string;
-  amountInWei: string;
+  tokenAmount: string;
+  value: string;
   token: number;
   captain: number;
   viceCaptain: number;
@@ -27,8 +27,9 @@ export default async function placeBet(params: PlaceBetParams) {
     chainId,
     gameId,
     squadHash,
+    value,
     token,
-    amountInWei,
+    tokenAmount,
     captain,
     viceCaptain,
   } = params;
@@ -45,10 +46,11 @@ export default async function placeBet(params: PlaceBetParams) {
           ? CROSSCHAIN_ABI
           : CROSSCHAIN_NO_VRF_ABI,
       functionName: "makeSquadAndPlaceBet",
+      value: BigInt(value),
       args: [
         gameId.toString(),
         squadHash,
-        amountInWei,
+        tokenAmount,
         token,
         captain,
         viceCaptain,

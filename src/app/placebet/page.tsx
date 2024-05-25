@@ -1,24 +1,7 @@
 "use client";
 import Dropdown from "@/components/Dropdown";
-import computeMerklePath from "@/utils/zk/computeMerklePath";
-import computeMerkleRoot from "@/utils/zk/helpers/computeMerkleRoot";
-import circuit from "@/utils/zk/circuit.json";
-import axios from "axios";
-import {
-  DynamicWidget,
-  createWalletClientFromWallet,
-  useDynamicContext,
-} from "@dynamic-labs/sdk-react-core";
-import {
-  BarretenbergBackend,
-  CompiledCircuit,
-} from "@noir-lang/backend_barretenberg";
-import { Noir } from "@noir-lang/noir_js";
+import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import React, { useState } from "react";
-import { hexToBytes, recoverPublicKey, stringToBytes, toBytes } from "viem";
-import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
-import formatProofInputs from "@/utils/zk/helpers/formatProofInputs";
-import generateProof from "@/utils/zk/generateProof";
 
 // place bet
 interface Option {

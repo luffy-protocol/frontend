@@ -1,7 +1,9 @@
 "use client";
 import Dropdown from "@/components/Dropdown";
+import computeSquadHash from "@/utils/zk/computeSquadHash";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import React, { useState } from "react";
+const BN = require("bn.js");
 
 // place bet
 interface Option {
@@ -16,7 +18,7 @@ export default function PlaceBet() {
   const [selectedChain, setSelectedChain] = useState(0);
   const [tokensOpen, setTokensOpen] = useState(false);
   const [selectedToken, setSelectedToken] = useState(0);
-
+  const [squadHash, setSquadHash] = useState("");
   const chains: Option[] = [
     {
       id: 1,
@@ -109,6 +111,29 @@ export default function PlaceBet() {
       >
         Place Bet 💰
       </button>
+      <button
+        type="button"
+        onClick={async () => {
+          const remappedPIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12];
+          let squad_hash: `0x${string}` = computeSquadHash(
+            Buffer.from(remappedPIds)
+          );
+          console.log(
+            JSON.stringify(Array.from(Buffer.from(squad_hash.slice(2), "hex")))
+          );
+          setSquadHash(squad_hash);
+        }}
+        className="my-4 inline-flex justify-center  rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-black text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+      >
+        Compute Squad Hash
+      </button>
+      {squadHash != "" && (
+        <p className="text-white text-xl font-bold">
+          {Array.from(Buffer.from(squadHash.slice(2), "hex")).map((e) =>
+            e.toString()
+          )}
+        </p>
+      )}
     </div>
   );
 }

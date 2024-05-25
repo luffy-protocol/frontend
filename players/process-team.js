@@ -30,8 +30,8 @@ function processDataAndWriteToFile(input1, input2, outputFilePath) {
     console.error("Error processing data:", error);
   }
 }
-const team1 = "Inter Miami";
-const team2 = "Real Salt Lake";
+const team1 = "San Jose Earthquakes";
+const team2 = "Austin";
 
 // Example usage:
 const input1 = "./teams/" + team1 + ".json"; // Provide the path to your input JSON file

@@ -1,7 +1,7 @@
 "use client";
 import Dropdown from "@/components/Dropdown";
 import computeMerklePath from "@/utils/zk/computeMerklePath";
-import computeMerkleRoot from "@/utils/zk/computeMerkleRoot";
+import computeMerkleRoot from "@/utils/zk/helpers/computeMerkleRoot";
 import circuit from "@/utils/zk/circuit.json";
 import axios from "axios";
 import {
@@ -16,8 +16,8 @@ import {
 import { Noir } from "@noir-lang/noir_js";
 import React, { useState } from "react";
 import { hexToBytes, recoverPublicKey, stringToBytes, toBytes } from "viem";
-import computeSquadHash from "@/utils/zk/computeSquadHash";
-import formatProofInputs from "@/utils/zk/formatProofInputs";
+import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
+import formatProofInputs from "@/utils/zk/helpers/formatProofInputs";
 import generateProof from "@/utils/zk/generateProof";
 
 // place bet
@@ -130,13 +130,14 @@ export default function PlaceBet() {
         type="button"
         onClick={async () => {
           if (primaryWallet == null) return;
-          const response = await generateProof({
-            primaryWallet,
-            resultsUrl:
-              "https://amethyst-impossible-ptarmigan-368.mypinata.cloud/ipfs/bafkreic2oubuisvjs6z3zbpnwergd6kpvcx5gfjrf6ttran6d634n6i2sa?pinataGatewayToken=CUMCxB7dqGB8wEEQqGSGd9u1edmJpWmR9b0Oiuewyt5gs633nKmTogRoKZMrG4Vk",
-            playerIds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-          });
-          console.log(response);
+          // const response = await generateProof({
+          //   primaryWallet,
+          //   resultsUrl:
+          //     "https://amethyst-impossible-ptarmigan-368.mypinata.cloud/ipfs/bafkreic2oubuisvjs6z3zbpnwergd6kpvcx5gfjrf6ttran6d634n6i2sa?pinataGatewayToken=CUMCxB7dqGB8wEEQqGSGd9u1edmJpWmR9b0Oiuewyt5gs633nKmTogRoKZMrG4Vk",
+          //   playerIds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          // });
+
+          // console.log(response);
         }}
         className="my-4 inline-flex justify-center  rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-black text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
       >

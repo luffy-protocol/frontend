@@ -1,12 +1,12 @@
 import { hexToBytes, recoverPublicKey, stringToBytes, toBytes } from "viem";
-import computeMerkleRoot from "./computeMerkleRoot";
-import computeMerklePath from "./computeMerklePath";
-import computeSquadHash from "./computeSquadHash";
+import computeMerkleRoot from "./helpers/computeMerkleRoot";
+import computeMerklePath from "./helpers/computeMerklePath";
+import computeSquadHash from "./helpers/computeSquadHash";
 import {
   Wallet,
   createWalletClientFromWallet,
 } from "@dynamic-labs/sdk-react-core";
-import formatProofInputs from "./formatProofInputs";
+import formatProofInputs from "./helpers/formatProofInputs";
 import axios from "axios";
 interface GenerateProofParams {
   primaryWallet: Wallet;

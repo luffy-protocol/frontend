@@ -1,9 +1,19 @@
-const PROTOCOL_ADDRESS = "0xcC4203412a962fEFC2e41003bB1Ae296Ff7FE8f3";
-const ETH_CROSS_CHAIN_ADDRESS = "0x8Aa5Bc6b3B7C779be6c36Cb6Cc61fcDa1a67c039";
-const ARB_CROSS_CHAIN_ADDRESS = "0x675a508b3F705aAc0FBd3CbFB7eC125B50cC6bE1";
-const BASE_CROSS_CHAIN_ADDRESS = "0x49DE60E820557699088995B4386D6d07Cb50f378";
-const OP_CROSS_CHAIN_ADDRESS = "0x2BB1f234D6889B0dc3cE3a4A1885AcfE1DA30936";
+import { transactionType } from "viem";
+import {
+  arbitrumSepolia,
+  avalancheFuji,
+  baseSepolia,
+  optimismSepolia,
+  sepolia,
+} from "viem/chains";
 
+const DEPLOYMENTS: Record<number, string> = {
+  43113: "0xcC4203412a962fEFC2e41003bB1Ae296Ff7FE8f3",
+  11155111: "0x8Aa5Bc6b3B7C779be6c36Cb6Cc61fcDa1a67c039",
+  84532: "0x49DE60E820557699088995B4386D6d07Cb50f378",
+  421614: "0x675a508b3F705aAc0FBd3CbFB7eC125B50cC6bE1",
+  11155420: "0x2BB1f234D6889B0dc3cE3a4A1885AcfE1DA30936",
+};
 const PROTOCOL_ABI = [
   {
     inputs: [
@@ -3653,14 +3663,64 @@ const CROSSCHAIN_ABI = [
     type: "function",
   },
 ];
+interface ChainResolver {
+  chain: any; // Specify the correct type
+  transport: string;
+}
+const CHAIN_RESOLVERS: Record<number, ChainResolver> = {
+  43113: {
+    chain: avalancheFuji,
+    transport: "https://api.avax-test.network/ext/bc/C/rpc",
+  },
+  11155111: {
+    chain: sepolia,
+    transport:
+      "https://eth-sepolia.g.alchemy.com/v2/" +
+      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
+  },
+  84532: {
+    chain: baseSepolia,
+    transport:
+      "https://base-sepolia.g.alchemy.com/v2/" +
+      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
+  },
+  421614: {
+    chain: arbitrumSepolia,
+    transport: `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
+  },
+  11155420: {
+    chain: optimismSepolia,
+    transport: `https://opt-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
+  },
+};
 
+const TOKEN_ADDRESSES: Record<number, Record<number, string>> = {
+  43113: {
+    0: "",
+    1: "",
+  },
+  11155111: {
+    0: "",
+    1: "",
+  },
+  84532: {
+    0: "",
+    1: "",
+  },
+  421614: {
+    0: "",
+    1: "",
+  },
+  11155420: {
+    0: "",
+    1: "",
+  },
+};
 export {
-  PROTOCOL_ADDRESS,
   PROTOCOL_ABI,
   CROSSCHAIN_ABI,
   CROSSCHAIN_NO_VRF_ABI,
-  ETH_CROSS_CHAIN_ADDRESS,
-  ARB_CROSS_CHAIN_ADDRESS,
-  BASE_CROSS_CHAIN_ADDRESS,
-  OP_CROSS_CHAIN_ADDRESS,
+  DEPLOYMENTS,
+  CHAIN_RESOLVERS,
+  TOKEN_ADDRESSES,
 };

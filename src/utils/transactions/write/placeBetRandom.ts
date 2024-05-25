@@ -7,7 +7,7 @@ import {
   CROSSCHAIN_ABI,
   DEPLOYMENTS,
   PROTOCOL_ABI,
-} from "../constants";
+} from "../../constants";
 import { createPublicClient } from "viem";
 interface PlaceBetRandomParams {
   primaryWallet: Wallet;

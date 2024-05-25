@@ -2,7 +2,7 @@ import {
   Wallet,
   createWalletClientFromWallet,
 } from "@dynamic-labs/sdk-react-core";
-import { CHAIN_RESOLVERS, DEPLOYMENTS, TOKEN_ADDRESSES } from "../constants";
+import { CHAIN_RESOLVERS, DEPLOYMENTS, TOKEN_ADDRESSES } from "../../constants";
 import { createPublicClient, erc20Abi } from "viem";
 
 interface ApproveTokenParams {

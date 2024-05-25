@@ -8,7 +8,7 @@ import {
   CROSSCHAIN_NO_VRF_ABI,
   DEPLOYMENTS,
   PROTOCOL_ABI,
-} from "../constants";
+} from "../../constants";
 import { createPublicClient } from "viem";
 interface PlaceBetParams {
   primaryWallet: Wallet;

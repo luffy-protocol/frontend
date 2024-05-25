@@ -7,9 +7,9 @@ import {
   DEPLOYMENTS,
   PROTOCOL_ABI,
   TOKEN_ADDRESSES,
-} from "../constants";
+} from "../../constants";
 import { createPublicClient, erc20Abi } from "viem";
-import formatPlayerIds from "./helpers/formatPlayerIds";
+import formatPlayerIds from "../helpers/formatPlayerIds";
 
 interface ClaimPointsParams {
   primaryWallet: Wallet;

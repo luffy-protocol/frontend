@@ -3663,10 +3663,7 @@ const CROSSCHAIN_ABI = [
     type: "function",
   },
 ];
-interface ChainResolver {
-  chain: any; // Specify the correct type
-  transport: string;
-}
+
 const CHAIN_RESOLVERS: Record<number, any> = {
   43113: createPublicClient({
     chain: avalancheFuji,
@@ -3722,11 +3719,19 @@ const TOKEN_ADDRESSES: Record<number, Record<number, string>> = {
     2: "",
   },
 };
+
+const COINMARKETCAP_IDS = {
+  link: 1975,
+  eth: 1027,
+  avax: 5805,
+  usdc: 3408,
+};
 export {
   PROTOCOL_ABI,
   CROSSCHAIN_ABI,
   CROSSCHAIN_NO_VRF_ABI,
   DEPLOYMENTS,
   CHAIN_RESOLVERS,
+  COINMARKETCAP_IDS,
   TOKEN_ADDRESSES,
 };

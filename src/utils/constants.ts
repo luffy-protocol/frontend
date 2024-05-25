@@ -3667,7 +3667,7 @@ interface ChainResolver {
   chain: any; // Specify the correct type
   transport: string;
 }
-const CHAIN_RESOLVERS: Record<number, PublicClient> = {
+const CHAIN_RESOLVERS: Record<number, any> = {
   43113: createPublicClient({
     chain: avalancheFuji,
     transport: http("https://api.avax-test.network/ext/bc/C/rpc"),

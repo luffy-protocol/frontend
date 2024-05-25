@@ -134,7 +134,7 @@ function Page() {
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
   const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
   const [form2, setForm2] = useState(["W", "L", "D", "W", "L"]);
-  const [status, setStatus] = useState(0);
+  const [status, setStatus] = useState(1);
   const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [selectedChain, setSelectedChain] = useState("Avalanche");
   const [selectedToken, setSelectedToken] = useState("USDT");

@@ -14,13 +14,12 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
   const data = getPlayerById(id);
   return (
     <div
-      className="flex items-center justify-center bg-no-repeat bg-contain bg-center h-[100px] w-full"
+      className="flex items-center justify-center bg-no-repeat bg-contain bg-center h-[80px] xl:h-[100px] w-full"
       style={{
         backgroundImage: `url('/assets/PlayerCard.png')`,
       }}
     >
       <div className="flex justify-center items-center gap-2 w-full">
-        {/* Image Section */}
         <img
           src={data?.player.photo}
           alt=""
@@ -29,10 +28,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
           style={{ marginRight: "20px" }}
         />
 
-        {/* Content Section */}
-
         <div className="flex flex-col justify-start max-w-[160px] ">
-          <div className="font-stalinist text-[#D8485F] text-xl">
+          <div className="font-stalinist text-[#D8485F] text-xl ">
             {data?.player.name}
           </div>
           <div className="flex gap-2 justify-start items-center">

@@ -317,25 +317,25 @@ export default function Page({ params }: { params: { round: string } }) {
     //   //  h-auto min-h-screen" // or
     //   style={{ backgroundImage: `url('/assets/PageBorder.svg')` }}
     // >
-    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
+    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')]  bg-contain ">
       <div className="w-full">
         <Navbar />
       </div>
       <div
-        className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] mt-28 "
+        className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] "
         style={{ backgroundImage: `url('/assets/GameBorder.svg')` }}
       >
         <div className="text-4xl self-start mt-5 px-2 pt-5 font-stalinist text-gradient xl:px-8">
           GAMES
         </div>
-        <div className="flex flex-col gap-2 items-center w-10/12 mt-24  max-h-full">
+        <div className="flex flex-col gap-2 items-center w-10/12 mt-12  max-h-full">
           <div className="flex gap-3 items-center justify-center mb-10">
-            <img src="/assets/Left.png" alt="" width="90px" />
+            <img src="/assets/Left.png" alt="" width="60px" />
 
-            <div className="text-5xl font-stalinist items-center justify-center lg:text-4xl">
+            <div className="text-5xl font-stalinist items-center justify-center lg:text-2xl">
               Game Week {params.round}
             </div>
-            <img src="/assets/Right.png" alt="" width="90px" />
+            <img src="/assets/Right.png" alt="" width="60px" />
           </div>
           <div className="flex flex-col gap-2 items-center justify-center w-full ">
             <div className="flex items-center justify-center w-full">
@@ -346,6 +346,7 @@ export default function Page({ params }: { params: { round: string } }) {
                   status={2}
                 />
               ))}
+              {/* <FixtureCard /> */}
             </div>
             <div className="flex items-center justify-center w-full">
               {claimmableOngoingMatches.map((match, index) => (

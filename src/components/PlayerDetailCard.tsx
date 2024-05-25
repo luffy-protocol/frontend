@@ -63,14 +63,14 @@ const shortForm: { [key: string]: string } = {
   "FC Dallas": "fc-dallas",
   "Houston Dynamo": "houston-dynamo",
   "Inter Miami": "inter-miami",
-  "Los Angeles FC": "lafc", // LAFC was missing in your list
+  "Los Angeles FC": "lafc",
   "Los Angeles Galaxy": "la-galaxy",
   "Minnesota United FC": "minnesota-united",
-  "Montreal Impact": "cf-montreal", // Montreal Impact renamed to CF Montreal
+  "Montreal Impact": "cf-montreal",
   "Nashville SC": "nashville",
   "New England Revolution": "new-england-revolution",
   "New York City FC": "nycfc",
-  "New York Red Bulls": "new-york-red-bulls", // Added hyphen for consistency
+  "New York Red Bulls": "new-york-red-bulls",
   "Orlando City SC": "orlando-city",
   "Philadelphia Union": "philadelphia-union",
   "Portland Timbers": "portland-timbers",

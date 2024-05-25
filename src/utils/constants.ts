@@ -3696,24 +3696,24 @@ const CHAIN_RESOLVERS: Record<number, ChainResolver> = {
 
 const TOKEN_ADDRESSES: Record<number, Record<number, string>> = {
   43113: {
-    0: "",
     1: "",
+    2: "",
   },
   11155111: {
-    0: "",
     1: "",
+    2: "",
   },
   84532: {
-    0: "",
     1: "",
+    2: "",
   },
   421614: {
-    0: "",
     1: "",
+    2: "",
   },
   11155420: {
-    0: "",
     1: "",
+    2: "",
   },
 };
 export {

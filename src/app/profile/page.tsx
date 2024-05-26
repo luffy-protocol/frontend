@@ -10,12 +10,12 @@ function Page() {
   const [username, setUsername] = useState<string>("@LeoMessi");
   const [followers, setFollowers] = useState<number>(56);
   return (
-    <div>
-      <div className=" relative z-10 w- mx-2">
+    <div className="">
+      <div className=" relative z-10 mx-2">
         <img src="/assets/BG.svg" className=" w-screen" />
       </div>
       <div className="absolute inset-0 z-20 ">
-        <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px]  bg-contain font-stalinist">
+        <div className="flex flex-col px-10 items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
           <div className="w-full">
             <Navbar />
           </div>

@@ -105,7 +105,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <>
       <select
-        className="w-[370px] h-[35px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
+        className="w-[400px] h-[43px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
         name="players"
         id="players"
         value={selectedOption} // Set selected value based on state
@@ -134,12 +134,13 @@ function Page() {
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
   const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
   const [form2, setForm2] = useState(["W", "L", "D", "W", "L"]);
-  const [status, setStatus] = useState(1);
+  const [status, setStatus] = useState(0);
   const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [selectedChain, setSelectedChain] = useState("Avalanche");
   const [selectedToken, setSelectedToken] = useState("USDT");
   const [gas, setGas] = useState(30);
   const [Randomness, setRandomness] = useState(false);
+  const [betamount, setBetamount] = useState(10);
   interface Player {
     name: string;
     id: string;
@@ -234,7 +235,7 @@ function Page() {
   const [noPlayers, setnumberofPlayers] = useState(10); // Initial state
 
   return (
-    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
+    <div className="flex flex-col px-10 items-center bg-no-repeat w-full  justify-center">
       <div className="w-full">
         <Navbar />
       </div>
@@ -258,62 +259,84 @@ function Page() {
           />
         </div>
         {status == 0 ? (
-          <div className=" flex flex-col sm:w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20 justify-start items-start">
-            <div className="mt-12 ml-16">
-              <PlayerProgress noPlayers={noPlayers} />
+          <div className="flex justify-center items-center w-1/2 h-2/3">
+            <div className=" relative z-10 mx-2 mt-16">
+              <img src="/assets/FixBorder.svg" className=" w-fit h-2/3" />
             </div>
-            <div className="flex  gap-20 mt-24  font-stalinist text-[10px] ml-28">
-              <p className="text-[10px]">Chain</p>
-
-              <p className="text-[10px]">token</p>
-            </div>
-            <div
-              className="flex  gap-4 justify-start items-start w-full "
-              style={{ transform: "scale(.60)" }}
-            >
-              <Dropdown
-                setState={setSelectedChain}
-                content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
-              />
-
-              <Dropdown
-                content={["USDT", "token  1", "token 2", "token 3"]}
-                setState={setSelectedToken}
-              />
-            </div>
-            <div className="flex ml-52 mt-2">
-              <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
-              <p className="text-[10px]  font-stalinist ">{gas} gwei</p>
-            </div>
-            <div className="mt-48 ml-32">
-              <div>
-                <label className="inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    value=""
-                    className="sr-only peer"
-                    onChange={() => {
-                      setRandomness(!Randomness);
-                      console.log(Randomness);
-                    }}
-                  />
-                  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800  peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border  after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#410C5E]"></div>
-                  <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 font-stalinist">
-                    Randomness
-                  </span>
-                </label>
-              </div>
-            </div>
-            <div className="mt-8 ml-52">
-              <div
-                className={`flex items-center justify-center bg-no-repeat bg-contain w-[210%] h-full `}
-                style={{
-                  backgroundImage: `url('/assets/LoginBorder.svg')`,
-                }}
-              >
-                <span className="text-sm font-stalinist flex justify-center self-center py-2 ">
-                  Bet
-                </span>
+            <div className="absolute  w-1/3 inset-y-80 z-20 border-2 mt-24 h-2/3 border-red-50 ">
+              <div className=" flex flex-col mx-2 mt-16 justify-center items-center gap-24">
+                <div className="">
+                  <PlayerProgress noPlayers={noPlayers} />
+                </div>
+                <div className="flex flex-col justify-center items-center ">
+                  <div className="flex  gap-20 font-stalinist text-[10px] justify-be">
+                    <p className="text-[10px]">Chain</p>
+                    <p className="text-[10px]">Token</p>
+                  </div>
+                  <div
+                    className="flex  gap-4 justify-start items-start w-full sm:flex-row flex-col"
+                    style={{ transform: "scale(.60)" }}
+                  >
+                    <Dropdown
+                      setState={setSelectedChain}
+                      content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
+                    />
+                    <Dropdown
+                      content={["USDT", "token  1", "token 2", "token 3"]}
+                      setState={setSelectedToken}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex flex-col mt-2 justify-center items-center">
+                    <p className="text-md  font-stalinist text-slate-500">
+                      Bet Amount
+                    </p>
+                    <p className="text-xl  font-stalinist  ">
+                      {betamount}{" "}
+                      <span className=" text-[#d94956]">{selectedToken}</span>
+                    </p>
+                  </div>
+                  <div className="flex mt-2 justify-center items-center">
+                    <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
+                    <p className="text-[10px] font-stalinist text-center">
+                      {gas} gwei
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <div className="">
+                    <div>
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          value=""
+                          className="sr-only peer"
+                          onChange={() => {
+                            setRandomness(!Randomness);
+                            console.log(Randomness);
+                          }}
+                        />
+                        <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800  peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border  after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#410C5E]"></div>
+                        <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 font-stalinist">
+                          Randomness
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div className="flex w-full justify-center items-center">
+                    <div
+                      className={` bg-no-repeat  w-fit bg-cover `}
+                      style={{
+                        backgroundImage: `url('/assets/LoginBorder.svg')`,
+                      }}
+                    >
+                      <span className="text-sm font-stalinist flex justify-center self-center py-2 mx-5 pr-3 cursor-pointer">
+                        Bet
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

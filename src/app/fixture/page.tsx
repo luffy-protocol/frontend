@@ -326,7 +326,7 @@ function Page() {
               <div className="text-left text-[#D8485F] sm:text-md text-sm ">
                 {team1}
               </div>
-              <p className=" text-slate-500"> 64'</p>
+              <p className=" text-slate-500"> 64&apos;</p>
 
               <div className=" text-right text-[#B62DD3] sm:text-md text-sm ">
                 {team2}

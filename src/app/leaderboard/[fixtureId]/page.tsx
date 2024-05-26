@@ -55,7 +55,7 @@ const claimRows: ClaimRow[] = [
 ];
 const RecentClaims = () => {
   return (
-    <div className="flex flex-col p-20">
+    <div className="flex flex-col ">
       <div className="whitespace-nowrap font-stalinist text-2xl xl:text-3xl text-[#D8485F]">
         Recent Claims
       </div>
@@ -64,14 +64,14 @@ const RecentClaims = () => {
         {claimRows.map((row, id) => (
           <div className="flex flex-col gap-3" key={id}>
             <div className="flex justify-between items-center">
-              <div className="font-stalinist text-xl  max-w-[220px] overflow-hidden text-ellipsis whitespace-nowrap text-[#717171]">
+              <div className="font-stalinist  text-lg xl:text-xl  max-w-[220px] overflow-hidden text-ellipsis whitespace-nowrap text-[#717171]">
                 @{row.name}
               </div>
               <div className="font-stalinist text-sm whitespace-nowrap text-[#B62DD3]">
                 {row.time}
               </div>
             </div>
-            <div className="self-center eclipse text-[#D8485F] text-2xl font-stalinist">
+            <div className="self-center eclipse text-[#D8485F] text-xl xl:text-2xl font-stalinist">
               {row.points} points
             </div>
           </div>
@@ -83,7 +83,7 @@ const RecentClaims = () => {
 
 const Leaderboard = () => {
   return (
-    <div className="flex flex-col p-20 gap-10 w-full">
+    <div className="flex flex-col gap-10 w-full">
       <div className=" font-stalinist  text-2xl xl:text-3xl text-[#D8485F] ">
         Leaderboard
       </div>
@@ -92,26 +92,33 @@ const Leaderboard = () => {
           <table className="table w-full">
             <thead>
               <tr className=" border-y-2 border-white border-opacity-50 font-stalinist text-gradient">
-                <th className="th text-left px-4 py-2 min-w-[150px] xl:min-w-[200px] ">
+                <th className="th text-left px-4 py-2 min-w-[100px] xl:min-w-[200px] ">
                   Rank
                 </th>
-                <th className="th text-left px-4 py-2 min-w-[250px] xl:min-w-[300px] ">
+                <th className="th text-left px-4 py-2 min-w-[220px] xl:min-w-[300px] ">
                   Name
                 </th>
-                <th className="th text-left px-4 py-2 min-w-[150px] xl:min-w-[200px] ">
+                <th className="th text-left px-4 py-2 min-w-[100px] xl:min-w-[200px] ">
                   Points
                 </th>
               </tr>
             </thead>
+
             <tbody className="">
               {leaderboardData.map((row) => (
                 <tr
                   key={row.rank}
                   className="tr hover:bg-gray-100 text-gradient font-stalinist"
                 >
-                  <td className="td px-4 py-6">{row.rank}</td>
-                  <td className="td px-4 py-6">{row.name}</td>
-                  <td className="td px-4 py-6">{row.points}</td>
+                  <td className="td px-4 py-6 text-sm xl:text-lg">
+                    {row.rank}
+                  </td>
+                  <td className="td px-4 py-6 text-sm xl:text-lg">
+                    {row.name}
+                  </td>
+                  <td className="td px-4 py-6 text-sm xl:text-lg">
+                    {row.points}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -124,11 +131,15 @@ const Leaderboard = () => {
 
 const page = () => {
   return (
-    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1350px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')]  bg-contain">
+    <div className="flex flex-col px-10 justify-center items-center ">
       <div className="w-full">
         <Navbar />
-        <div className="flex justify-center w-full">
-          <Leaderboard />
+      </div>
+      <div className="flex justify-between self-center px-10 xl:px-24">
+        <div className="flex justify-between  ">
+          <div className="overflow-y-auto h-5/6">
+            <Leaderboard />
+          </div>
           <RecentClaims />
         </div>
       </div>

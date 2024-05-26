@@ -134,7 +134,7 @@ function Page() {
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
   const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
   const [form2, setForm2] = useState(["W", "L", "D", "W", "L"]);
-  const [status, setStatus] = useState(0);
+  const [status, setStatus] = useState(1);
   const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [selectedChain, setSelectedChain] = useState("Avalanche");
   const [selectedToken, setSelectedToken] = useState("USDT");
@@ -263,7 +263,7 @@ function Page() {
             <div className=" relative z-10 mx-2 mt-16">
               <img src="/assets/FixBorder.svg" className=" w-fit h-2/3" />
             </div>
-            <div className="absolute  w-1/3 inset-y-80 z-20 border-2 mt-24 h-2/3 border-red-50 ">
+            <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 h-2/3">
               <div className=" flex flex-col mx-2 mt-16 justify-center items-center gap-24">
                 <div className="">
                   <PlayerProgress noPlayers={noPlayers} />
@@ -341,59 +341,66 @@ function Page() {
             </div>
           </div>
         ) : (
-          <div className=" flex flex-col sm:w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder1.svg')] mt-20 ml-20 justify-start items-start font-stalinist">
-            <div className=" scale-75 mt-2 ml-2">
-              <Status status={status} />
-            </div>
-            <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
-              <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                {team1}
-              </div>
-              <p className=" text-slate-500"> 64&apos;</p>
-
-              <div className=" text-right text-[#B62DD3] sm:text-md text-sm ">
-                {team2}
-              </div>
-            </div>
-
-            <div className="flex font-stalinist capitalize justify-between w-full px-20 mt-3 ">
-              <p>02</p>
-              <p>-</p>
-              <p>03 </p>
-            </div>
-            <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
-              <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                <p>Top Points</p>
-              </div>
-            </div>
-            <div className="flex justify-center items-center w-full mt-5">
-              <img
-                src="https://media.api-sports.io/football/players/154.png"
-                alt="toppoints"
-                className="w-1/5  flex justify-center items-center"
-              />
-            </div>
-            <div className=" text-sm flex justify-center items-center w-full mt-5">
-              <p>50 points</p>
-            </div>
-            <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
-              <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                <p>Your Points</p>
-              </div>
-            </div>
-            <div className=" text-sm flex justify-center items-center w-full mt-5">
-              <p>23 points</p>
-            </div>
-            <div className="flex w-full justify-center items-center mt-4">
-              <div
-                className={` bg-no-repeat  w-fit bg-cover `}
-                style={{
-                  backgroundImage: `url('/assets/LoginBorder.svg')`,
-                }}
-              >
-                <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
-                  Claim
-                </span>
+          <div className="flex justify-center items-center w-1/2 h-2/3">
+            <img
+              src="/assets/FixBorder1.svg"
+              className=" w-fit relative z-10 mx-6 mt-16"
+              key={1}
+            />
+            <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 top-[30%] h-2/3">
+              <div className=" flex flex-col scale-110 h-2/3 bg-no-repeat  mt-20 ml-20 justify-start items-start font-stalinist">
+                <div className=" scale-75 mt-2 ml-2">
+                  <Status status={status} />
+                </div>
+                <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
+                  <div className="text-left text-[#D8485F] sm:text-md text-sm ">
+                    {team1}
+                  </div>
+                  <p className=" text-slate-500"> 64&apos;</p>
+                  <div className=" text-right text-[#B62DD3] sm:text-md text-sm ">
+                    {team2}
+                  </div>
+                </div>
+                <div className="flex font-stalinist capitalize justify-between w-full px-20 mt-3 ">
+                  <p>02</p>
+                  <p>-</p>
+                  <p>03 </p>
+                </div>
+                <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
+                  <div className="text-left text-[#D8485F] sm:text-md text-sm ">
+                    <p>Top Points</p>
+                  </div>
+                </div>
+                <div className="flex justify-center items-center w-full mt-5">
+                  <img
+                    src="https://media.api-sports.io/football/players/154.png"
+                    alt="toppoints"
+                    className="w-1/5  flex justify-center items-center"
+                  />
+                </div>
+                <div className=" text-sm flex justify-center items-center w-full mt-5">
+                  <p>50 points</p>
+                </div>
+                <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
+                  <div className="text-left text-[#D8485F] sm:text-md text-sm ">
+                    <p>Your Points</p>
+                  </div>
+                </div>
+                <div className=" text-sm flex justify-center items-center w-full mt-5">
+                  <p>23 points</p>
+                </div>
+                <div className="flex w-full justify-center items-center mt-4">
+                  <div
+                    className={` bg-no-repeat  w-fit bg-cover `}
+                    style={{
+                      backgroundImage: `url('/assets/LoginBorder.svg')`,
+                    }}
+                  >
+                    <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
+                      Claim
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

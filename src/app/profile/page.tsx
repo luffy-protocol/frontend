@@ -89,14 +89,20 @@ function Page() {
               <img
                 src={profilepic}
                 alt="toppoints"
-                className="w-28 h-28  rounded-full bg-white mx-auto mt-10"
+                className="w-32 h-32  rounded-full bg-white mx-auto mt-10"
               />
-              <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5">
-                <p className=" text-nowrap">{name}</p>
-                <p>{username}</p>
-                <div className="flex items-center justify-center mt-6">
-                  <span className=" text-slate-400">
+              <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
+                <p className=" text-nowrap  self-start">{name}</p>
+                <p className="text-nowrap self-start">{username}</p>
+                <div className="flex items-center justify-center ">
+                  <span className=" text-slate-400 self-start">
                     Followers&nbsp;:&nbsp;
+                  </span>{" "}
+                  21
+                </div>
+                <div className="flex items-center justify-center self-start">
+                  <span className=" text-slate-400">
+                    Following&nbsp;:&nbsp;
                   </span>{" "}
                   21
                 </div>

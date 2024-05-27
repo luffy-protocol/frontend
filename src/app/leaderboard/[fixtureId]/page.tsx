@@ -145,7 +145,9 @@ const page = () => {
               <div className="overflow-y-auto h-5/6">
                 <Leaderboard />
               </div>
-              <RecentClaims />
+              <div>
+                <RecentClaims />
+              </div>
             </div>
           </div>
         </div>

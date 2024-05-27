@@ -8,20 +8,17 @@ const Button: React.FC<ButtonProps> = ({ id }) => {
   const router = useRouter();
   return (
     <div
-      className={`flex justify-center items-center bg-contain bg-no-repeat `}
+      className={`flex items-center justify-center bg-no-repeat bg-contain  h-[60px]`}
       style={{
         backgroundImage: `url('/assets/Button.svg')`,
-        width: "100px",
-        height: "40px",
       }}
       onClick={() => {
-        console.log("first");
         router.push(`/game/${id}`);
       }}
     >
-      <div className="flex items-center justify-center ">
-        {/* <div className='self-center'>GO</div> */}
-      </div>
+      <span className="text-sm font-stalinist flex justify-center self-center text-center px-2">
+        Go
+      </span>
     </div>
   );
 };

@@ -8,7 +8,7 @@ export default async function fixtureById(slug: number): Promise<{
 }> {
   try {
     const { data: fixture, error } = await supabase
-      .from("fixtures")
+      .from("fixture")
       .select("*")
       .eq("fixture_id", slug);
     if (error) throw new Error(error.message);

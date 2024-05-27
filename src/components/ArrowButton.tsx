@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const ArrowButton: React.FC<ButtonProps> = ({ id, setplayerId }) => {
   return (
-    <div
+    <button
       className={`flex justify-center items-center bg-contain bg-no-repeat w-[100px] h-[80px] lg:w-[70px] lg:h-[70px]`}
       style={{
         backgroundImage: `url('/assets/ButtonFrame.svg')`,
@@ -20,7 +20,7 @@ const ArrowButton: React.FC<ButtonProps> = ({ id, setplayerId }) => {
       <div className="flex items-center justify-center ">
         {/* <div className='self-center'>GO</div> */}
       </div>
-    </div>
+    </button>
   );
 };
 

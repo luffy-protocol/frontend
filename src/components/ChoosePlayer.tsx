@@ -159,7 +159,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
           className="text-right justify-items-end cursor-pointer pl-20"
           onClick={() => setopen(false)}
         >
-          Close
+          x
         </div>
       </div>
 

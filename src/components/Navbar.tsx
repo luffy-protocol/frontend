@@ -6,6 +6,7 @@ import Image from "next/image";
 import LoginButton from "./LoginButton";
 import Link from "next/link";
 import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
+import { useAccount } from "wagmi";
 
 interface NavLinkProps {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ const NavLink: React.FC<NavLinkProps> = ({ children, href }) => (
 );
 
 const Navbar = () => {
+  const { address } = useAccount();
   return (
     <div className="flex justify-between items-center py-12 px-20">
       <Link href="/">
@@ -40,7 +42,7 @@ const Navbar = () => {
             className="hover:scale-110"
           />
         </Link>
-        <Link href="/profile" className="mx-2">
+        <Link href={`/profile/${address}`} className="mx-2">
           <Image
             src={Profile}
             alt=""

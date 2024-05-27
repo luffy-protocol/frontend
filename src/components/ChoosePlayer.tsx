@@ -118,7 +118,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
 }) => {
   const [playerData, setplayerData] = useState<Player[] | undefined>(undefined);
 
-  const [playerId, setPlayerId] = useState<number>(154);
+  const [playerId, setPlayerId] = useState<number>(0);
   const [TeamData, setTeamData] = useState<any>(null);
 
   useEffect(() => {
@@ -146,11 +146,6 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
     }
   }, [index, hometeam, awayteam]);
 
-  // useEffect(() => {
-  //   const data = getPlayerByTeamId(hometeam, awayteam);
-  //   setTeamData(data);
-  // }, [hometeam, awayteam]);
-
   return (
     <div
       className={`flex flex-col items-center justify-center  bg-no-repeat bg-contain bg-center  h-[700px] w-[800px] xl:h-[750px] xl:w-[900px] self-center`}
@@ -170,15 +165,6 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
 
       <div className="flex gap-2 w-full mt-9 lg:w-[90%]">
         <div className="flex flex-col gap-2 w-full max-h-[520px] overflow-y-scroll scrollbar-custom">
-          {/* <div className="flex flex-col gap-2 ">
-            <PlayerCard id={154} />
-            <PlayerCard id={154} />
-            <PlayerCard id={154} />
-            <PlayerCard id={154} />
-            <PlayerCard id={154} />
-            <PlayerCard id={154} />
-            <PlayerCard id={154} />
-          </div> */}
           <div className="flex flex-col gap-2 w-full">
             {/* Map over the data array and render a PlayerCard component for each player */}
             {playerData?.map((item, index) => (

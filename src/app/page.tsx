@@ -1,3 +1,4 @@
+import LoginButton from "@/components/LoginButton";
 import Navbar from "@/components/Navbar";
 import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 import React from "react";
@@ -13,8 +14,8 @@ function Page() {
           <div className="w-full xl:mt-20">
             <img src="/assets/luffy.svg" className="w-1/2 mx-auto" />
           </div>
-          <div className="my-6">
-            <DynamicWidget/>
+          <div className="mt-12">
+            <LoginButton />
           </div>
         </div>
       </div>

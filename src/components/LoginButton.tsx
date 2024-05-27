@@ -1,26 +1,21 @@
-import { useDynamicModals } from "@dynamic-labs/sdk-react-core";
+"use client";
 import React from "react";
 
 const LoginButton = () => {
-  const { setShowLinkNewWalletModal } = useDynamicModals();
   return (
-    <div className="w-[140px]">
-      <button
-        className="button-with-svg"
-        style={{
-          backgroundImage: 'url("/assets/LoginBorder.svg")',
-          backgroundSize: "cover",
-          width: "140px",
-          height: "54px",
-        }}
-        onClick={() => {
-          setShowLinkNewWalletModal(true);
-        }}
-      >
-        <span className="text-sm font-stalinist flex justify-center items-center self-center px-3 py-2 ">
-          Login
-        </span>
-      </button>
+    <div
+      className="flex  justify-center items-center cursor-pointer"
+      onClick={() => {
+        window.location.href = "/fixtures";
+      }}
+      style={{
+        backgroundImage: 'url("/assets/LoginBorder.svg")',
+        backgroundSize: "cover",
+        width: "210px",
+        height: "86px",
+      }}
+    >
+      <a className="text-md font-stalinist  px-6 py-2 ">Play Now</a>
     </div>
   );
 };

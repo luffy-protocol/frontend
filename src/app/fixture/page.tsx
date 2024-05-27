@@ -33,11 +33,11 @@ const GameStatus = ({
       </div>
       <hr className="p-2 w-10/12" />
       <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <div className="text-left text-[#D8485F] sm:text-3xl text-lg ">
+        <div className="text-left text-[#D8485F] sm:text-3xl text-lg w-1/4 text-wrap ">
           {team1}
         </div>
         <Timer starttime={time} />
-        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg ">
+        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg w-1/4 text-wrap">
           {team2}
         </div>
       </div>

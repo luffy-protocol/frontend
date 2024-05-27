@@ -41,10 +41,7 @@ const Navbar = () => {
             className="hover:scale-110"
           />
         </Link>
-        <Link
-          href={`/profile/0x4b4b30e2e7c6463b03cdffd6c42329d357205334`}
-          className="mx-2"
-        >
+        <Link href={`/profile`} className="mx-2">
           <Image
             src={Profile}
             alt=""

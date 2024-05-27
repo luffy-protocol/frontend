@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Status from "@/components/status";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useAccount } from "wagmi";
 import CheckProfile from "@/utils/profileHelpers/CheckProfile";
 import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
 import getProfile from "@/utils/profileHelpers/getProfile";
@@ -12,6 +11,8 @@ import { request, gql } from "graphql-request";
 import { teamLogo } from "@/utils/logos/teamlogo";
 import { useRouter } from "next/navigation";
 import addFollower from "@/utils/profileHelpers/addFollower";
+import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
+import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
 
 interface MatchCardProps {
   team1: number;
@@ -19,8 +20,6 @@ interface MatchCardProps {
   status: number;
   fixtureid: number;
 }
-
-const matchDate = "2024-06-15";
 
 const MatchCard: React.FC<MatchCardProps> = ({
   team1,
@@ -74,38 +73,37 @@ const MatchCard: React.FC<MatchCardProps> = ({
 };
 
 function Page({ params }: { params: { address: string } }) {
-  const { address } = useAccount();
+  const { primaryWallet } = useDynamicContext();
   const [name, setName] = useState<string>("Lionel Messi");
   const [username, setUsername] = useState<string>("@LeoMessi");
   const [followers, setFollowers] = useState<number>(1);
   const [followings, setFollowing] = useState<number>(1);
 
   useEffect(() => {
-    if (address) {
-      CheckProfile(address as string).then((data) => {
-        if (data.response.length == 0) {
-          registerUserProfile(address as string).then((data) => {
-            console.log(data.response);
-          });
-        }
-      });
-      getProfile(address as string).then((data) => {
-        console.log(data.response);
-        setProfilepic(data.response[0].imageUrl);
-        if (data.response[0].followers !== null) {
-          setFollowers(data.response[0].followers.length);
-        } else {
-          setFollowers(0);
-        }
-        if (data.response[0].following !== null) {
-          setFollowers(data.response[0].following.length);
-        } else {
-          setFollowers(0);
-        }
-      });
-    }
+    if (!primaryWallet) return;
+    CheckProfile(primaryWallet.address as string).then((data) => {
+      if (data.response.length == 0) {
+        registerUserProfile(primaryWallet.address as string).then((data) => {
+          console.log(data.response);
+        });
+      }
+    });
+    getProfile(primaryWallet.address as string).then((data) => {
+      console.log(data.response);
+      setProfilepic(data.response[0].imageUrl);
+      if (data.response[0].followers !== null) {
+        setFollowers(data.response[0].followers.length);
+      } else {
+        setFollowers(0);
+      }
+      if (data.response[0].following !== null) {
+        setFollowers(data.response[0].following.length);
+      } else {
+        setFollowers(0);
+      }
+    });
 
-    if (typeof window !== "undefined" && address) {
+    if (typeof window !== "undefined" && primaryWallet.address) {
       console.log(process.env.NEXT_PUBLIC_DYNAMIC_API_KEY);
       (async function () {
         try {
@@ -119,7 +117,8 @@ function Page({ params }: { params: { address: string } }) {
             // Filter the data based on address
             const filteredUsers = data.data.users.filter(
               (user: any) =>
-                user.walletPublicKey.toLowerCase() === address.toLowerCase()
+                user.walletPublicKey.toLowerCase() ===
+                primaryWallet.address.toLowerCase()
             );
             console.log(filteredUsers);
 
@@ -135,7 +134,7 @@ function Page({ params }: { params: { address: string } }) {
         }
       })();
     }
-  }, [address]);
+  }, [primaryWallet]);
 
   const [profilepic, setProfilepic] = useState<string>(
     "https://media.api-sports.io/football/players/154.png"
@@ -153,6 +152,8 @@ function Page({ params }: { params: { address: string } }) {
 
   useEffect(() => {
     async function fetchOngoingFixtures() {
+      if (!primaryWallet) return;
+
       try {
         console.log("Fetching ongoing fixtures...");
         // const { message, response } = await fetchFixtures();
@@ -171,7 +172,7 @@ function Page({ params }: { params: { address: string } }) {
                   predictions(
                     where: {
                       user_: {
-                        address: "${address}"
+                        address: "${primaryWallet.address}"
                       }
                     }
                   ) {
@@ -329,7 +330,7 @@ function Page({ params }: { params: { address: string } }) {
     }
 
     fetchOngoingFixtures();
-  }, [address]);
+  }, [primaryWallet]);
 
   return (
     <div className="">
@@ -341,176 +342,186 @@ function Page({ params }: { params: { address: string } }) {
           <div className="w-full">
             <Navbar />
           </div>
-          <div className="flex justify-between w-10/12 px-10">
-            <div className="flex">
-              <img
-                src={profilepic}
-                alt="toppoints"
-                className="w-32 h-32  rounded-full bg-white mx-auto mt-10"
-              />
-              <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
-                <p className=" text-nowrap  self-start">{name}</p>
-                <p className="text-nowrap self-start">@{username}</p>
-                <div className="flex items-center justify-center self-start">
-                  <span className=" text-slate-400 ">
-                    Followers&nbsp;:&nbsp;
-                  </span>{" "}
-                  {followers}
+          {primaryWallet == null ? (
+            <ConnectWalletToPlay />
+          ) : (
+            <>
+              <div className="flex justify-between w-10/12 px-10">
+                <div className="flex">
+                  <img
+                    src={profilepic}
+                    alt="toppoints"
+                    className="w-32 h-32  rounded-full bg-white mx-auto mt-10"
+                  />
+                  <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
+                    <p className=" text-nowrap  self-start">{name}</p>
+                    <p className="text-nowrap self-start">@{username}</p>
+                    <div className="flex items-center justify-center self-start">
+                      <span className=" text-slate-400 ">
+                        Followers&nbsp;:&nbsp;
+                      </span>{" "}
+                      {followers}
+                    </div>
+                    <div className="flex items-center justify-center self-start">
+                      <span className=" text-slate-400">
+                        Following&nbsp;:&nbsp;
+                      </span>{" "}
+                      {followings}
+                    </div>
+                  </div>
+                  <div className="flex w-full justify-center items-center mt-4 ml-10 ">
+                    <div
+                      className={`bg-no-repeat w-fit bg-cover ${
+                        primaryWallet.address === params.address
+                          ? "opacity-50 cursor-not-allowed"
+                          : ""
+                      }`}
+                      style={{
+                        backgroundImage: `url('/assets/LoginBorder.svg')`,
+                      }}
+                    >
+                      <span
+                        className={`text-sm font-stalinist flex justify-center self-center mt-1 py-2 ml-3 pr-3 ${
+                          primaryWallet.address === params.address
+                            ? "cursor-not-allowed"
+                            : "cursor-pointer"
+                        }`}
+                        onClick={() => {
+                          if (primaryWallet.address !== params.address) {
+                            addFollower(
+                              params.address as string,
+                              primaryWallet.address as string
+                            ).then((data) => {
+                              console.log(data.response);
+                            });
+                          }
+                        }}
+                      >
+                        Follow
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center self-start">
-                  <span className=" text-slate-400">
-                    Following&nbsp;:&nbsp;
-                  </span>{" "}
-                  {followings}
-                </div>
-              </div>
-              <div className="flex w-full justify-center items-center mt-4 ml-10 ">
-                <div
-                  className={`bg-no-repeat w-fit bg-cover ${
-                    address === params.address
-                      ? "opacity-50 cursor-not-allowed"
-                      : ""
-                  }`}
-                  style={{
-                    backgroundImage: `url('/assets/LoginBorder.svg')`,
-                  }}
-                >
-                  <span
-                    className={`text-sm font-stalinist flex justify-center self-center mt-1 py-2 ml-3 pr-3 ${
-                      address === params.address
-                        ? "cursor-not-allowed"
-                        : "cursor-pointer"
-                    }`}
-                    onClick={() => {
-                      if (address !== params.address) {
-                        addFollower(
-                          params.address as string,
-                          address as string
-                        ).then((data) => {
-                          console.log(data.response);
-                        });
-                      }
-                    }}
-                  >
-                    Follow
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            <div className="flex items-center justify-center mt-6 gap-2">
-              <div className=" text-[10px] text-slate-400 xl:text-[14px]">
-                Net Revenue
+                <div className="flex items-center justify-center mt-6 gap-2">
+                  <div className=" text-[10px] text-slate-400 xl:text-[14px]">
+                    Net Revenue
+                  </div>
+                  <div className="text-[10px] text-green-500 xl:text-[14px]">
+                    $1000
+                  </div>
+                </div>
+                {params.address == primaryWallet?.address && (
+                  <div className="flex items-center justify-center mt-6">
+                    <div className="flex w-full justify-center items-center  ml-10">
+                      <div
+                        className={` bg-no-repeat  w-fit bg-cover `}
+                        style={{
+                          backgroundImage: `url('/assets/LoginBorder.svg')`,
+                        }}
+                      >
+                        <span className="text-sm font-stalinist flex justify-center self-center mt-1 py-2 mr-2 ml-4 pr-3 cursor-pointer">
+                          Claim
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-              <div className="text-[10px] text-green-500 xl:text-[14px]">
-                $1000
-              </div>
-            </div>
-            <div className="flex items-center justify-center mt-6">
-              <div className="flex w-full justify-center items-center  ml-10">
-                <div
-                  className={` bg-no-repeat  w-fit bg-cover `}
-                  style={{
-                    backgroundImage: `url('/assets/LoginBorder.svg')`,
-                  }}
-                >
-                  <span className="text-sm font-stalinist flex justify-center self-center mt-1 py-2 mr-2 ml-4 pr-3 cursor-pointer">
-                    Claim
-                  </span>
+              <div className="flex justify-between w-10/12 px-10 mt-5">
+                <div className="flex gap-1 ">
+                  <div className="text-[#D8485F] text-[10px]xl:text-[14px]">
+                    Highest Position
+                  </div>
+                  <div className="text-[10px] xl:text-[14px]">3</div>
+                </div>
+                <div className="flex gap-1 ">
+                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                    Highest amount
+                  </div>
+                  <div className="text-[10px] xl:text-[14px]">$836</div>
+                </div>{" "}
+                <div className="flex gap-1 ">
+                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                    total games
+                  </div>
+                  <div className="text-[10px] xl:text-[14px]">10</div>
+                </div>{" "}
+                <div className="flex gap-1 ">
+                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                    total amount
+                  </div>
+                  <div className="text-[10px] xl:text-[14px]">$1799</div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="flex justify-between w-10/12 px-10 mt-5">
-            <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px]xl:text-[14px]">
-                Highest Position
+              <hr className="p-2 w-10/12 mt-5 " />
+              <div className="text-lg">Ongoing</div>
+              <div className="flex justify-between w-10/12  mt-5">
+                <div className="overflow-x-auto self-start scrollbar-custom">
+                  <div className="flex gap-3 self-start  ">
+                    {unclaimmableOngoingMatches.length > 0 ? (
+                      unclaimmableOngoingMatches.map(
+                        (match: any, index: number) => (
+                          <MatchCard
+                            key={index}
+                            team1={match.home_id}
+                            team2={match.away_id}
+                            status={1}
+                            fixtureid={match.fixture_id}
+                          />
+                        )
+                      )
+                    ) : (
+                      <div className="text-lg text-slate-100 font-stalinist">
+                        No Ongoing Matches
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
-              <div className="text-[10px] xl:text-[14px]">3</div>
-            </div>
-            <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                Highest amount
+              <div className="mt-3 text-lg">Claimable</div>
+
+              <div className="flex justify-between w-10/12  mt-5">
+                <div className="overflow-x-auto self-start scrollbar-custom">
+                  <div className="flex gap-3 self-start">
+                    {claimmableOngoingMatches.length > 0 ? (
+                      claimmableOngoingMatches.map(
+                        (match: any, index: number) => (
+                          <MatchCard
+                            key={index}
+                            team1={match.home_id}
+                            team2={match.away_id}
+                            status={2}
+                            fixtureid={match.fixture_id}
+                          />
+                        )
+                      )
+                    ) : (
+                      <div className="text-lg text-slate-100 self-center">
+                        No Claimable Matches
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
-              <div className="text-[10px] xl:text-[14px]">$836</div>
-            </div>{" "}
-            <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                total games
-              </div>
-              <div className="text-[10px] xl:text-[14px]">10</div>
-            </div>{" "}
-            <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                total amount
-              </div>
-              <div className="text-[10px] xl:text-[14px]">$1799</div>
-            </div>
-          </div>
-          <hr className="p-2 w-10/12 mt-5 " />
-          <div className="text-lg">Ongoing</div>
-          <div className="flex justify-between w-10/12  mt-5">
-            <div className="overflow-x-auto self-start scrollbar-custom">
-              <div className="flex gap-3 self-start  ">
-                {unclaimmableOngoingMatches.length > 0 ? (
-                  unclaimmableOngoingMatches.map(
-                    (match: any, index: number) => (
+              <div className="mt-3 text-lg">Completed</div>
+              <div className="flex justify-between w-10/12  mt-5">
+                <div className="overflow-x-auto self-start scrollbar-custom">
+                  <div className="flex gap-3 self-start  ">
+                    {completedMatches.map((match: any, index: number) => (
                       <MatchCard
                         key={index}
                         team1={match.home_id}
                         team2={match.away_id}
-                        status={1}
+                        status={4}
                         fixtureid={match.fixture_id}
                       />
-                    )
-                  )
-                ) : (
-                  <div className="text-lg text-slate-100 font-stalinist">
-                    No Ongoing Matches
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="mt-3 text-lg">Claimable</div>
-
-          <div className="flex justify-between w-10/12  mt-5">
-            <div className="overflow-x-auto self-start scrollbar-custom">
-              <div className="flex gap-3 self-start">
-                {claimmableOngoingMatches.length > 0 ? (
-                  claimmableOngoingMatches.map((match: any, index: number) => (
-                    <MatchCard
-                      key={index}
-                      team1={match.home_id}
-                      team2={match.away_id}
-                      status={2}
-                      fixtureid={match.fixture_id}
-                    />
-                  ))
-                ) : (
-                  <div className="text-lg text-slate-100 self-center">
-                    No Claimable Matches
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="mt-3 text-lg">Completed</div>
-          <div className="flex justify-between w-10/12  mt-5">
-            <div className="overflow-x-auto self-start scrollbar-custom">
-              <div className="flex gap-3 self-start  ">
-                {completedMatches.map((match: any, index: number) => (
-                  <MatchCard
-                    key={index}
-                    team1={match.home_id}
-                    team2={match.away_id}
-                    status={4}
-                    fixtureid={match.fixture_id}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       </div>
     </div>

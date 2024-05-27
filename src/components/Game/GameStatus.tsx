@@ -1,6 +1,7 @@
 import Form from "./Form";
 import Timer from "../Timer";
 import Status from "../status";
+import { useEffect, useRef, useState } from "react";
 
 interface GameStatusProps {
   team1: string;
@@ -22,22 +23,53 @@ export default function GameStatus({
   status,
   playersCount,
 }: GameStatusProps) {
+  const [homeScrolling, setHomeScrolling] = useState(false);
+  const [awayScrolling, setAwayScrolling] = useState(false);
+  const homeTextRef = useRef(null);
+  const awayTextRef = useRef(null);
+
+  useEffect(() => {
+    const checkOverflow = (element: any, setScrolling: any) => {
+      if (element && element.scrollWidth > element.clientWidth) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    checkOverflow(homeTextRef.current, setHomeScrolling);
+    checkOverflow(awayTextRef.current, setAwayScrolling);
+  }, [team1, team2]);
   return (
     <>
       <div className="flex text-xl font-stalinist w-10/12 justify-between">
-        <div className="">
+        <div>
           <Status status={status} />
         </div>
-        <div className="text-[10px] ">Players : {playersCount}</div>
+        <div className="text-[10px]">Players: {playersCount}</div>
       </div>
       <hr className="p-2 w-10/12" />
       <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <div className="text-left text-[#D8485F] sm:text-3xl text-lg w-1/4 text-wrap ">
-          {team1}
+        <div className="overflow-hidden relative w-[30%]">
+          <p
+            ref={homeTextRef}
+            className={`${
+              homeScrolling ? "scrolling-text" : ""
+            } text-left text-[#D8485F] sm:text-3xl text-lg overflow-x-scroll whitespace-nowrap`}
+          >
+            {team1}
+          </p>
         </div>
         <Timer starttime={time} />
-        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg w-1/4 text-wrap">
-          {team2}
+        <div className="overflow-hidden relative w-[30%]">
+          <p
+            ref={awayTextRef}
+            className={`${
+              awayScrolling ? "scrolling-text" : ""
+            } text-right text-[#B62DD3] sm:text-3xl text-lg overflow-x-scroll whitespace-nowrap`}
+          >
+            {team2}
+          </p>
         </div>
       </div>
       <div className="flex font-stalinist capitalize justify-between w-10/12">

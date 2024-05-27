@@ -14,8 +14,6 @@ import Dropdown from "@/components/Game/Dropdown";
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(false);
-  const [team1, setTeam1] = useState("orlando city");
-  const [team2, setTeam2] = useState("inter miami");
   const [time, setTime] = useState("1000");
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
   const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
@@ -184,12 +182,12 @@ function Page({ params }: { params: { id: string } }) {
                   </div>
                   <div className=" flex flex-col scale-110 h-2/3 bg-no-repeat  mt-20  justify-center items-center font-stalinist">
                     <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
-                      <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                        {team1}
+                      <div className="text-left text-[#D8485F] sm:text-md text-sm overflow-x-scroll whitespace-nowrap">
+                        {homeTeam}
                       </div>
                       <p className=" text-slate-500"> 64&apos;</p>
-                      <div className=" text-right text-[#B62DD3] sm:text-md text-sm ">
-                        {team2}
+                      <div className=" text-right text-[#B62DD3] sm:text-md text-sm overflow-x-scroll whitespace-nowrap">
+                        {awayTeam}
                       </div>
                     </div>
                     <div className="flex font-stalinist capitalize justify-between w-full px-20 mt-3 ">

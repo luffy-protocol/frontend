@@ -88,3 +88,22 @@ body {
   --dynamic-connect-button-hover-background: #242967;
   --dynamic-connect-button-color-hover: #fff;
 }
+
+@keyframes scrollLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(
+      -50%
+    ); /* Adjust this value based on your content width */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scrolling-text {
+  display: inline-block; /* Ensures the element is only as wide as its content */
+  animation: scrollLeftRight 10s linear infinite; /* Adjust duration as needed */
+}

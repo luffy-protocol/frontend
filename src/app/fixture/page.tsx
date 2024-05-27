@@ -405,14 +405,14 @@ function Page() {
                     <div className=" text-sm flex justify-center items-center w-full mt-5">
                       <p>23 points</p>
                     </div>
-                    <div className="flex w-full justify-center items-center mt-4">
+                    <div className="flex w-full justify-center items-center mt-4 hover:scale-110 ">
                       <div
-                        className={` bg-no-repeat  w-fit bg-cover `}
+                        className={` bg-no-repeat  w-fit bg-cover cursor-pointer hover:scale-110`}
                         style={{
                           backgroundImage: `url('/assets/LoginBorder.svg')`,
                         }}
                       >
-                        <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
+                        <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 ">
                           Claim
                         </span>
                       </div>

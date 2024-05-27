@@ -14,7 +14,9 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ children, href }) => (
   <Link href={href}>
-    <div className="text-gradient text-sm font-stalinist">{children}</div>
+    <div className="text-gradient text-sm font-stalinist hover:scale-110">
+      {children}
+    </div>
   </Link>
 );
 
@@ -30,10 +32,22 @@ const Navbar = () => {
         <NavLink href="/fixtures/19">Fixtures</NavLink>
         <NavLink href="/leaderboard/1">Leaderboard</NavLink>
         <Link href="/notifications" className="mx-2">
-          <Image src={Bell} alt="" width={30} height={53} />
+          <Image
+            src={Bell}
+            alt=""
+            width={30}
+            height={53}
+            className="hover:scale-110"
+          />
         </Link>
         <Link href="/profile" className="mx-2">
-          <Image src={Profile} alt="" width={30} height={30} />
+          <Image
+            src={Profile}
+            alt=""
+            width={30}
+            height={30}
+            className="hover:scale-110"
+          />
         </Link>
         {/* <LoginButton /> */}
         <div className="flex-1 w-full">

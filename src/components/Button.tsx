@@ -8,7 +8,7 @@ const Button: React.FC<ButtonProps> = ({ id }) => {
   const router = useRouter();
   return (
     <div
-      className={`flex items-center justify-center bg-no-repeat bg-contain  h-[60px]`}
+      className={`flex items-center justify-center bg-no-repeat bg-contain  h-[60px] hover:scale-110`}
       style={{
         backgroundImage: `url('/assets/Button.svg')`,
       }}

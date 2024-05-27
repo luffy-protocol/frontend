@@ -15,7 +15,7 @@ function Page() {
           <div className="w-full xl:mt-20">
             <img src="/assets/Luffy.svg" className="w-1/2 mx-auto" />
           </div>
-          <div className="mt-12">
+          <div className="mt-12 hover:scale-110">
             <LoginButton />
           </div>
           <div className=" scale-50 w-[1500px]">

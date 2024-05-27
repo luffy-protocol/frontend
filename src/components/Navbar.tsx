@@ -22,7 +22,6 @@ const NavLink: React.FC<NavLinkProps> = ({ children, href }) => (
 );
 
 const Navbar = () => {
-  const { address } = useAccount();
   return (
     <div className="flex justify-between items-center py-12 px-20">
       <Link href="/">
@@ -42,7 +41,10 @@ const Navbar = () => {
             className="hover:scale-110"
           />
         </Link>
-        <Link href={`/profile/${address}`} className="mx-2">
+        <Link
+          href={`/profile/0x4b4b30e2e7c6463b03cdffd6c42329d357205334`}
+          className="mx-2"
+        >
           <Image
             src={Profile}
             alt=""

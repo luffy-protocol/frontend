@@ -141,7 +141,7 @@ const page = () => {
             <Navbar />
           </div>
           <div className="flex justify-between self-center px-10 xl:px-24">
-            <div className="flex justify-between w-11/12 ">
+            <div className="flex justify-between w-full ">
               <div className="overflow-y-auto h-5/6">
                 <Leaderboard />
               </div>

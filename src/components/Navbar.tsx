@@ -37,7 +37,9 @@ const Navbar = () => {
         </Link>
         {/* <LoginButton /> */}
         <div className="flex-1 w-full">
-          <DynamicWidget />
+          <DynamicWidget
+            innerButtonComponent={<button>Login or Signup</button>}
+          />
         </div>
       </div>
     </div>

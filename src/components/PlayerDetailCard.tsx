@@ -216,7 +216,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
             </div>
           </div>
           <div className="flex justify-between items-center w-[360px]">
-            <div
+            <button
               className={`flex items-center justify-center bg-no-repeat bg-contain h-[50px]`}
               style={{
                 backgroundImage: `url('/assets/vc.png')`,
@@ -230,9 +230,9 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               <span className="text-[10px] font-stalinist flex justify-center self-center px-3 py-2 ">
                 Vice Captain
               </span>
-            </div>
+            </button>
 
-            <div
+            <button
               className={`flex items-center justify-center bg-no-repeat bg-contain h-[50px]`}
               style={{
                 backgroundImage: `url('/assets/cap.png')`,
@@ -246,9 +246,9 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               <span className="text-[10px] font-stalinist flex justify-center self-center px-8 py-3 ">
                 Captain
               </span>
-            </div>
+            </button>
           </div>
-          <div
+          <button
             className={`flex items-center justify-center bg-no-repeat bg-contain  h-full`}
             style={{
               backgroundImage: `url('/assets/AddPlayer.png')`,
@@ -267,7 +267,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
             <span className="text-sm font-stalinist flex justify-center self-center px-3 py-2 ">
               Add Player
             </span>
-          </div>
+          </button>
         </>
       )}
     </div>

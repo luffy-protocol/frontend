@@ -25,6 +25,11 @@ interface NotificationCardProps {
   onClose: (id: number) => void;
 }
 
+const truncateAddress = (address: string): string => {
+  const prefix = address.slice(0, 4);
+  const suffix = address.slice(-4);
+  return `${prefix}...${suffix}`;
+};
 const NotificationCard: React.FC<NotificationCardProps> = ({
   notification,
   onClose,
@@ -40,7 +45,9 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         <div className=" font-stalinist text-xl flex whitespace-nowrap gap-1 items-center">
           {/* {`User ${notification.followingId} started following you.`} */}
           <div>{"User"} </div>
-          <div className="text-[#D8485F] ">{notification.followingId}</div>
+          <div className="text-[#D8485F] ">
+            {truncateAddress(notification.followingId.toString())}
+          </div>
           <div> {" started following you."}</div>
         </div>
         {/* <button
@@ -67,7 +74,11 @@ const Page: React.FC<PageProps> = ({ params }) => {
 
   useEffect(() => {
     const fetchNotifications = async () => {
-      const { message, response } = await getFollowingNotifications(1111);
+      const { message, response } = await getFollowingNotifications(
+        "0x4b4b30e2E7c6463b03CdFFD6c42329D357205334"
+
+        // "1111"
+      );
       console.log(response);
       setNotifications(response);
     };
@@ -83,22 +94,29 @@ const Page: React.FC<PageProps> = ({ params }) => {
   };
 
   return (
-    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1350px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')]  bg-contain">
-      <div className="w-full">
-        <Navbar />
+    <div className="">
+      <div className=" relative z-10 mx-2">
+        <img src="/assets/BG.svg" className=" w-screen" />
       </div>
-      <div className="flex flex-col justify-center items-center w-full gap-20">
-        <div className=" font-stalinist  text-2xl xl:text-4xl text-[#D8485F] self-center">
-          Notifications
-        </div>
-        <div className="flex flex-col gap-6 w-full">
-          {notifications.map((notification) => (
-            <NotificationCard
-              key={notification.id}
-              notification={notification}
-              onClose={handleCloseNotification}
-            />
-          ))}
+      <div className="absolute inset-0 z-20 ">
+        <div className="flex flex-col px-10 items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
+          <div className="w-full">
+            <Navbar />
+          </div>
+          <div className="flex flex-col justify-center items-center w-full gap-20">
+            <div className=" font-stalinist  text-2xl xl:text-4xl text-[#D8485F] self-center">
+              Notifications
+            </div>
+            <div className="flex flex-col gap-6 w-full">
+              {notifications.map((notification) => (
+                <NotificationCard
+                  key={notification.id}
+                  notification={notification}
+                  onClose={handleCloseNotification}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

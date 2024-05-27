@@ -317,90 +317,80 @@ export default function Page({ params }: { params: { round: string } }) {
     //   //  h-auto min-h-screen" // or
     //   style={{ backgroundImage: `url('/assets/PageBorder.svg')` }}
     // >
-    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')]  bg-contain ">
-      <div className="w-full">
-        <Navbar />
+    <div className="">
+      <div className=" relative z-10 mx-2">
+        <img src="/assets/BG.svg" className=" w-screen" />
       </div>
-      <div
-        className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] "
-        style={{ backgroundImage: `url('/assets/GameBorder.svg')` }}
-      >
-        <div className="text-4xl self-start mt-5 px-2 pt-5 font-stalinist text-gradient xl:px-8">
-          GAMES
-        </div>
-        <div className="flex flex-col gap-2 items-center w-10/12 mt-12  max-h-full">
-          <div className="flex gap-3 items-center justify-center mb-10">
-            <img src="/assets/Left.png" alt="" width="60px" />
 
-            <div className="text-5xl font-stalinist items-center justify-center lg:text-2xl">
-              Game Week {params.round}
-            </div>
-            <img src="/assets/Right.png" alt="" width="60px" />
+      <div className="absolute inset-0 z-20 ">
+        <div className="flex flex-col px-10 items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
+          <div className="w-full">
+            <Navbar />
           </div>
-          <div className="flex flex-col gap-2 items-center justify-center w-full ">
-            <div className="flex items-center justify-center w-full">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
-              {/* <FixtureCard /> */}
+          <div
+            className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] bg-center"
+            style={{ backgroundImage: `url('/assets/GameBorder.svg')` }}
+          >
+            <div className="text-4xl self-start mt- px-2 ml-5 pt-5 font-stalinist text-gradient xl:px-8">
+              GAMES
             </div>
-            <div className="flex items-center justify-center w-full">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
-            </div>
-            <div className="flex items-center justify-center w-full">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
-            </div>{" "}
-            <div className="flex items-center justify-center w-full">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
-            </div>{" "}
-            <div className="flex items-center justify-center w-full">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
-            </div>
-            <div className="flex items-center justify-center w-full">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
-            </div>{" "}
-            <div className="flex items-center justify-center w-full ">
-              {claimmableOngoingMatches.map((match, index) => (
-                <FixtureCard
-                  key={`${match.fixture_id}-${index}`}
-                  fixture={match}
-                  status={2}
-                />
-              ))}
+            <div className="flex flex-col gap-2 items-center w-10/12 mt-12  max-h-full">
+              <div className="flex gap-3 items-center justify-center mb-10">
+                <img src="/assets/Left.png" alt="" width="60px" />
+
+                <div className="text-5xl font-stalinist items-center justify-center lg:text-2xl">
+                  Game Week {params.round}
+                </div>
+                <img src="/assets/Right.png" alt="" width="60px" />
+              </div>
+              <div className="flex flex-col gap-2  w-full max-h-[1000px] overflow-y-auto">
+                <div className="flex-col items-center justify-center w-full">
+                  {claimmableOngoingMatches.map((match, index) => (
+                    <FixtureCard
+                      key={`${match.fixture_id}-${index}`}
+                      fixture={match}
+                      status={2}
+                    />
+                  ))}
+                </div>
+                <div className="flex-col items-center justify-center w-full">
+                  {unclaimmableOngoingMatches.map((match, index) => (
+                    <FixtureCard
+                      key={`${match.fixture_id}-${index}`}
+                      fixture={match}
+                      status={1}
+                    />
+                  ))}
+                </div>
+                <div className="flex-col items-center justify-center w-full">
+                  {upcomingMatches.map((match, index) => (
+                    <FixtureCard
+                      key={`${match.fixture_id}-${index}`}
+                      fixture={match}
+                      status={0}
+                    />
+                  ))}
+                </div>
+
+                <div className="flex-col gap-2 items-center justify-center w-full">
+                  {expiredMatches.map((match, index) => (
+                    <FixtureCard
+                      key={`${match.fixture_id}-${index}`}
+                      fixture={match}
+                      status={3}
+                    />
+                  ))}
+                </div>
+                <div className="flex-col gap-2 items-center justify-center w-full">
+                  {completedMatches.map((match, index) => (
+                    <FixtureCard
+                      key={`${match.fixture_id}-${index}`}
+                      fixture={match}
+                      status={4}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

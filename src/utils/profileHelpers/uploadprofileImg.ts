@@ -4,7 +4,7 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 export default async function uploadProfileImg(
   img: File,
-  userId: Number
+  address: string
 ): Promise<{
   message: string;
   response: any;
@@ -12,10 +12,10 @@ export default async function uploadProfileImg(
   try {
     const { data, error } = await supabase.storage
       .from("profileImage")
-      .upload(`profile/${userId}`, img);
+      .upload(`profile/${address}`, img);
     const { data: url } = supabase.storage
       .from("profileImage")
-      .getPublicUrl(`profile/${userId}`);
+      .getPublicUrl(`profile/${address}`);
     if (error) throw new Error(error.message);
     return { message: "Success", response: url };
   } catch (error) {

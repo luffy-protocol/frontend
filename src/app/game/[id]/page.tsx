@@ -10,6 +10,7 @@ import { Player } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
 import PlayerProgress from "@/components/Game/PlayerProgress";
 import Dropdown from "@/components/Game/Dropdown";
+import Results from "@/components/Results";
 
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);
@@ -169,70 +170,17 @@ function Page({ params }: { params: { id: string } }) {
                 </div>
               </div>
             ) : (
-              <div className="flex justify-center items-center w-1/2 h-2/3">
-                <img
-                  src="/assets/FixBorder1.svg"
-                  className=" w-fit relative z-10 mx-6 mt-16"
-                  key={1}
-                />
-
-                <div className="absolute w-1/3 inset-y-80 z-20  mt-40 top-[30%] h-2/3 ">
-                  <div className=" font-stalinist ">
-                    <Status status={status} />
-                  </div>
-                  <div className=" flex flex-col scale-110 h-2/3 bg-no-repeat  mt-20  justify-center items-center font-stalinist">
-                    <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
-                      <div className="text-left text-[#D8485F] sm:text-md text-sm overflow-x-scroll whitespace-nowrap">
-                        {homeTeam}
-                      </div>
-                      <p className=" text-slate-500"> 64&apos;</p>
-                      <div className=" text-right text-[#B62DD3] sm:text-md text-sm overflow-x-scroll whitespace-nowrap">
-                        {awayTeam}
-                      </div>
-                    </div>
-                    <div className="flex font-stalinist capitalize justify-between w-full px-20 mt-3 ">
-                      <p>02</p>
-                      <p>-</p>
-                      <p>03 </p>
-                    </div>
-                    <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
-                      <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                        <p>Top Points</p>
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center w-full mt-5">
-                      <img
-                        src="https://media.api-sports.io/football/players/154.png"
-                        alt="toppoints"
-                        className="w-1/5  flex justify-center items-center"
-                      />
-                    </div>
-                    <div className=" text-sm flex justify-center items-center w-full mt-5">
-                      <p>50 points</p>
-                    </div>
-                    <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
-                      <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                        <p>Your Points</p>
-                      </div>
-                    </div>
-                    <div className=" text-sm flex justify-center items-center w-full mt-5">
-                      <p>23 points</p>
-                    </div>
-                    <div className="flex w-full justify-center items-center mt-4">
-                      <div
-                        className={` bg-no-repeat  w-fit bg-cover `}
-                        style={{
-                          backgroundImage: `url('/assets/LoginBorder.svg')`,
-                        }}
-                      >
-                        <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
-                          Claim
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Results
+                status={status}
+                homeTeam={homeTeam}
+                awayTeam={awayTeam}
+                homeGoals={2}
+                awayGoals={3}
+                topPlayerId="154"
+                totalPoints={332}
+                topPlayerPoints={80}
+                matchMinutes={69}
+              />
             )}
           </div>
           {open && (

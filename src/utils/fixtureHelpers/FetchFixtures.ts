@@ -7,9 +7,7 @@ export default async function fetchFixtures(): Promise<{
   response: any;
 }> {
   try {
-    const { data: fixture, error } = await supabase
-      .from("fixtures")
-      .select("*");
+    const { data: fixture, error } = await supabase.from("fixture").select("*");
     if (error) throw new Error(error.message);
 
     return { message: "Success", response: fixture };

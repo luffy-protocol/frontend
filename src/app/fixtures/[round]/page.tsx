@@ -50,37 +50,9 @@ export default function Page({ params }: { params: { round: string } }) {
         console.log("Fetched fixtures message:", message);
         console.log("Fetched fixtures response:", response);
 
-        const data = await request(
+        const data: { games: any[] } = await request(
           "https://api.studio.thegraph.com/query/30735/luffy-block-magic/version/latest",
           gql`
-            query MyQuery {
-              games {
-                id
-                resultsPublishedTime
-                predictions(
-                  where: {
-                    user_: {
-                      address: "${address}"
-                    }
-                  }
-                ) {
-                  claim {
-                    game {
-                      id
-                    }
-                  }
-                }
-              }
-            }
-          `
-        );
-
-        console.log("Fetched data:", data);
-
-        if (data != null) {
-          const data: { games: any[] } = await request(
-            "https://api.studio.thegraph.com/query/30735/luffy-block-magic/version/latest",
-            gql`
               query MyQuery {
                 games {
                   id
@@ -101,151 +73,147 @@ export default function Page({ params }: { params: { round: string } }) {
                 }
               }
             `
-          );
+        );
 
-          const games = data.games;
-          console.log("Games:", games);
+        const games = data.games;
+        console.log("Games:", games);
 
-          const gameIdsWithPredictionsAndNullClaims = games.filter(
+        const gameIdsWithPredictionsAndNullClaims = games.filter(
+          (game: any) =>
+            game.predictions.length > 0 &&
+            game.predictions.some(
+              (prediction: any) => prediction.claim === null
+            )
+        );
+        console.log(
+          "Games with predictions and null claims:",
+          gameIdsWithPredictionsAndNullClaims
+        );
+
+        const gameIdsThatCanBeClaimed = gameIdsWithPredictionsAndNullClaims
+          .filter((game: any) => game.resultsPublishedTime != null)
+          .map((game: any) => parseInt(game.id, 16));
+        console.log("Game IDs that can be claimed:", gameIdsThatCanBeClaimed);
+
+        const gameIdsThatCannotBeClaimed = gameIdsWithPredictionsAndNullClaims
+          .filter((game: any) => game.resultsPublishedTime == null)
+          .map((game: any) => parseInt(game.id, 16));
+        console.log(
+          "Game IDs that cannot be claimed:",
+          gameIdsThatCannotBeClaimed
+        );
+
+        const ongoingMatchesThatCanBeClaimed = response.filter((match: any) =>
+          gameIdsThatCanBeClaimed.includes(match.fixture_id)
+        );
+        console.log(
+          "Ongoing matches that can be claimed:",
+          ongoingMatchesThatCanBeClaimed
+        );
+
+        const ongoingMatchesThatCannotBeClaimed = response.filter(
+          (match: any) => gameIdsThatCannotBeClaimed.includes(match.fixture_id)
+        );
+        console.log(
+          "Ongoing matches that cannot be claimed:",
+          ongoingMatchesThatCannotBeClaimed
+        );
+
+        // Check if the resultsPublishedTime is more than 2 days ago
+        const now = new Date();
+        const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
+        const updatedClaimableOngoingMatches =
+          ongoingMatchesThatCanBeClaimed.filter((match: any) => {
+            const game = games.find(
+              (game: any) => parseInt(game.id, 16) === match.fixture_id
+            );
+            return (
+              new Date(parseInt(game.resultsPublishedTime) * 1000) > twoDaysAgo
+            );
+          });
+
+        const matchesMovedToExpired = ongoingMatchesThatCanBeClaimed.filter(
+          (match: any) => {
+            const game = games.find(
+              (game: any) => parseInt(game.id, 16) === match.fixture_id
+            );
+            return (
+              new Date(parseInt(game.resultsPublishedTime) * 1000) <= twoDaysAgo
+            );
+          }
+        );
+
+        setClaimmableOngoingMatches(updatedClaimableOngoingMatches);
+        setUnclaimmableOngoingMatches(ongoingMatchesThatCannotBeClaimed);
+        setExpiredMatches(matchesMovedToExpired);
+        setLoadingOngoing(false);
+
+        const gameIdsWithPredictionsAndClaims = games
+          .filter(
             (game: any) =>
               game.predictions.length > 0 &&
               game.predictions.some(
-                (prediction: any) => prediction.claim === null
+                (prediction: any) => prediction.claim !== null
               )
-          );
-          console.log(
-            "Games with predictions and null claims:",
-            gameIdsWithPredictionsAndNullClaims
+          )
+          .map((game: any) => parseInt(game.id, 16));
+        console.log(
+          "Game IDs with predictions and claims:",
+          gameIdsWithPredictionsAndClaims
+        );
+
+        const completedMatchDetails = response.filter((match: any) =>
+          gameIdsWithPredictionsAndClaims.includes(match.fixture_id)
+        );
+        console.log("Completed match details:", completedMatchDetails);
+
+        setCompletedMatches(completedMatchDetails);
+
+        const remaining = games.filter(
+          (match: any) =>
+            !gameIdsThatCanBeClaimed.includes(parseInt(match.id, 16)) &&
+            !gameIdsThatCannotBeClaimed.includes(parseInt(match.id, 16)) &&
+            !gameIdsWithPredictionsAndClaims.includes(parseInt(match.id, 16))
+        );
+        console.log("Remaining games:", remaining);
+
+        const remainingCompletedMatchesDetails: MatchDetails[] = [];
+        const remainingUpcomingMatchesDetails: MatchDetails[] = [];
+
+        remaining.forEach((match: any) => {
+          const fixture_id = parseInt(match.id, 16);
+          const matchDetail = response.find(
+            (responseMatch: any) => responseMatch.fixture_id === fixture_id
           );
 
-          const gameIdsThatCanBeClaimed = gameIdsWithPredictionsAndNullClaims
-            .filter((game: any) => game.resultsPublishedTime != null)
-            .map((game: any) => parseInt(game.id, 16));
-          console.log("Game IDs that can be claimed:", gameIdsThatCanBeClaimed);
+          if (matchDetail) {
+            const startDate = new Date(Number(matchDetail.starttime) * 1000);
+            const currentDate = new Date();
 
-          const gameIdsThatCannotBeClaimed = gameIdsWithPredictionsAndNullClaims
-            .filter((game: any) => game.resultsPublishedTime == null)
-            .map((game: any) => parseInt(game.id, 16));
-          console.log(
-            "Game IDs that cannot be claimed:",
-            gameIdsThatCannotBeClaimed
-          );
-
-          const ongoingMatchesThatCanBeClaimed = response.filter((match: any) =>
-            gameIdsThatCanBeClaimed.includes(match.fixture_id)
-          );
-          console.log(
-            "Ongoing matches that can be claimed:",
-            ongoingMatchesThatCanBeClaimed
-          );
-
-          const ongoingMatchesThatCannotBeClaimed = response.filter(
-            (match: any) =>
-              gameIdsThatCannotBeClaimed.includes(match.fixture_id)
-          );
-          console.log(
-            "Ongoing matches that cannot be claimed:",
-            ongoingMatchesThatCannotBeClaimed
-          );
-
-          // Check if the resultsPublishedTime is more than 2 days ago
-          const now = new Date();
-          const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
-          const updatedClaimableOngoingMatches =
-            ongoingMatchesThatCanBeClaimed.filter((match: any) => {
-              const game = games.find(
-                (game: any) => parseInt(game.id, 16) === match.fixture_id
-              );
-              return (
-                new Date(parseInt(game.resultsPublishedTime) * 1000) >
-                twoDaysAgo
-              );
-            });
-
-          const matchesMovedToExpired = ongoingMatchesThatCanBeClaimed.filter(
-            (match: any) => {
-              const game = games.find(
-                (game: any) => parseInt(game.id, 16) === match.fixture_id
-              );
-              return (
-                new Date(parseInt(game.resultsPublishedTime) * 1000) <=
-                twoDaysAgo
-              );
+            if (startDate > currentDate) {
+              remainingUpcomingMatchesDetails.push(matchDetail);
+            } else {
+              remainingCompletedMatchesDetails.push(matchDetail);
             }
-          );
+          }
+        });
 
-          setClaimmableOngoingMatches(updatedClaimableOngoingMatches);
-          setUnclaimmableOngoingMatches(ongoingMatchesThatCannotBeClaimed);
-          setExpiredMatches(matchesMovedToExpired);
-          setLoadingOngoing(false);
+        console.log(
+          "Remaining completed match details:",
+          remainingCompletedMatchesDetails
+        );
+        console.log(
+          "Remaining upcoming match details:",
+          remainingUpcomingMatchesDetails
+        );
 
-          const gameIdsWithPredictionsAndClaims = games
-            .filter(
-              (game: any) =>
-                game.predictions.length > 0 &&
-                game.predictions.some(
-                  (prediction: any) => prediction.claim !== null
-                )
-            )
-            .map((game: any) => parseInt(game.id, 16));
-          console.log(
-            "Game IDs with predictions and claims:",
-            gameIdsWithPredictionsAndClaims
-          );
-
-          const completedMatchDetails = response.filter((match: any) =>
-            gameIdsWithPredictionsAndClaims.includes(match.fixture_id)
-          );
-          console.log("Completed match details:", completedMatchDetails);
-
-          setCompletedMatches(completedMatchDetails);
-
-          const remaining = games.filter(
-            (match: any) =>
-              !gameIdsThatCanBeClaimed.includes(parseInt(match.id, 16)) &&
-              !gameIdsThatCannotBeClaimed.includes(parseInt(match.id, 16)) &&
-              !gameIdsWithPredictionsAndClaims.includes(parseInt(match.id, 16))
-          );
-          console.log("Remaining games:", remaining);
-
-          const remainingCompletedMatchesDetails: MatchDetails[] = [];
-          const remainingUpcomingMatchesDetails: MatchDetails[] = [];
-
-          remaining.forEach((match: any) => {
-            const fixture_id = parseInt(match.id, 16);
-            const matchDetail = response.find(
-              (responseMatch: any) => responseMatch.fixture_id === fixture_id
-            );
-
-            if (matchDetail) {
-              const startDate = new Date(Number(matchDetail.starttime) * 1000);
-              const currentDate = new Date();
-
-              if (startDate > currentDate) {
-                remainingUpcomingMatchesDetails.push(matchDetail);
-              } else {
-                remainingCompletedMatchesDetails.push(matchDetail);
-              }
-            }
-          });
-
-          console.log(
-            "Remaining completed match details:",
-            remainingCompletedMatchesDetails
-          );
-          console.log(
-            "Remaining upcoming match details:",
-            remainingUpcomingMatchesDetails
-          );
-
-          setCompletedMatches((prevCompletedMatches) => [
-            ...prevCompletedMatches,
-            ...remainingCompletedMatchesDetails,
-          ]);
-          setLoadingCompleted(false);
-          setUpcomingMatches(remainingUpcomingMatchesDetails);
-          setUpcomingLoading(false);
-        }
+        setCompletedMatches((prevCompletedMatches) => [
+          ...prevCompletedMatches,
+          ...remainingCompletedMatchesDetails,
+        ]);
+        setLoadingCompleted(false);
+        setUpcomingMatches(remainingUpcomingMatchesDetails);
+        setUpcomingLoading(false);
       } catch (error) {
         console.error("Error fetching ongoing fixtures:", error);
       }

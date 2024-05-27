@@ -18,8 +18,12 @@ function Page() {
           <div className="mt-12 hover:scale-110">
             <LoginButton />
           </div>
-          <div className=" scale-50 w-[1500px]">
+          <div className="scale-50 w-[1700px]">
             <Slider />
+            <p className="text-md text-center mt-14 ">
+              Built with 💙 for <br />
+              Chainlink Block Magic 2024 Hackathon
+            </p>
           </div>
         </div>
       </div>

@@ -8,24 +8,28 @@ function Slider() {
           <img
             src="/logos/chainlink.svg"
             alt="Chainlink"
-            className="h-[100px]"
+            className="h-[100px] mr-2 ml-8"
           />
         </li>
         <li>
-          <img src="/logos/aztec.svg" alt="Chainlink" className="h-[100px]" />
+          <img src="/logos/aztec.svg" alt="Aztec" className="h-[90px] mx-2" />
         </li>
         <li>
           <img
             src="/logos/avalanche.svg"
-            alt="Chainlink"
-            className="h-[100px]"
+            alt="avalanche"
+            className="h-[100px] mx-2"
           />
         </li>
         <li>
-          <img src="/logos/dynamic.svg" alt="Chainlink" className="h-[100px]" />
+          <img
+            src="/logos/dynamic.svg"
+            alt="dynamic"
+            className="h-[80px] mx-2"
+          />
         </li>
         <li>
-          <img src="/logos/sindri.svg" alt="Chainlink" className="h-[100px]" />
+          <img src="/logos/sindri.svg" alt="sindri" className="h-[80px] mx-2" />
         </li>
       </ul>
       <ul
@@ -36,24 +40,28 @@ function Slider() {
           <img
             src="/logos/chainlink.svg"
             alt="Chainlink"
-            className="h-[100px]"
+            className="h-[100px] mr-2 ml-8"
           />
         </li>
         <li>
-          <img src="/logos/aztec.svg" alt="Chainlink" className="h-[100px]" />
+          <img src="/logos/aztec.svg" alt="aztec" className="h-[90px] mx-2" />
         </li>
         <li>
           <img
             src="/logos/avalanche.svg"
-            alt="Chainlink"
-            className="h-[100px]"
+            alt="avalanche"
+            className="h-[100px] mx-2"
           />
         </li>
         <li>
-          <img src="/logos/dynamic.svg" alt="Chainlink" className="h-[100px]" />
+          <img
+            src="/logos/dynamic.svg"
+            alt="dynamic"
+            className="h-[80px] mx-2"
+          />
         </li>
         <li>
-          <img src="/logos/sindri.svg" alt="Chainlink" className="h-[100px]" />
+          <img src="/logos/sindri.svg" alt="sindri" className="h-[80px] mx-2" />
         </li>
       </ul>
     </div>

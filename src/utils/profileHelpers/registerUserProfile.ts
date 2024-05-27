@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-export default async function registerUserProfile(userId: number): Promise<{
+export default async function registerUserProfile(address: string): Promise<{
   message: string;
   response: any;
 }> {
@@ -11,7 +11,7 @@ export default async function registerUserProfile(userId: number): Promise<{
       .from("Profile")
       .insert([
         {
-          userId: userId,
+          address: address,
           imageUrl:
             "https://tzfytpqfslcatnstvjkw.supabase.co/storage/v1/object/public/profileImage/defaultImage",
         },

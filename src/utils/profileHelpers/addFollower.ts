@@ -68,8 +68,8 @@ const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export default async function addFollower(
-  userId: number, // assuming userId is a string (UUID)
-  followerId: number // assuming followerId is a string (UUID)
+  userId: string, // assuming userId is a string (UUID)
+  followerId: string // assuming followerId is a string (UUID)
 ): Promise<{
   message: string;
   response: any;

@@ -65,7 +65,7 @@ const Pitch: React.FC<PitchProps> = ({
             src="/pitch.png"
             alt="Pitch"
           />
-          <div className="pl-2">
+          <div className="pl-2 ">
             {playerPositions.map((player, index) => (
               <div className=" pt-5" key={index}>
                 <PlayerImage

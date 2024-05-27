@@ -11,6 +11,7 @@ import fetchFixtures from "@/utils/fixtureHelpers/FetchFixtures";
 import { request, gql } from "graphql-request";
 import { teamLogo } from "@/utils/logos/teamlogo";
 import { useRouter } from "next/navigation";
+import addFollower from "@/utils/profileHelpers/addFollower";
 
 interface MatchCardProps {
   team1: number;
@@ -382,7 +383,12 @@ function Page({ params }: { params: { address: string } }) {
                     }`}
                     onClick={() => {
                       if (address !== params.address) {
-                        console.log("Follow button clicked");
+                        addFollower(
+                          params.address as string,
+                          address as string
+                        ).then((data) => {
+                          console.log(data.response);
+                        });
                       }
                     }}
                   >
@@ -446,15 +452,23 @@ function Page({ params }: { params: { address: string } }) {
           <div className="flex justify-between w-10/12  mt-5">
             <div className="overflow-x-auto self-start scrollbar-custom">
               <div className="flex gap-3 self-start  ">
-                {unclaimmableOngoingMatches.map((match: any, index: number) => (
-                  <MatchCard
-                    key={index}
-                    team1={match.home_id}
-                    team2={match.away_id}
-                    status={1}
-                    fixtureid={match.fixture_id}
-                  />
-                ))}
+                {unclaimmableOngoingMatches.length > 0 ? (
+                  unclaimmableOngoingMatches.map(
+                    (match: any, index: number) => (
+                      <MatchCard
+                        key={index}
+                        team1={match.home_id}
+                        team2={match.away_id}
+                        status={1}
+                        fixtureid={match.fixture_id}
+                      />
+                    )
+                  )
+                ) : (
+                  <div className="text-lg text-slate-100 font-stalinist">
+                    No Ongoing Matches
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -462,16 +476,22 @@ function Page({ params }: { params: { address: string } }) {
 
           <div className="flex justify-between w-10/12  mt-5">
             <div className="overflow-x-auto self-start scrollbar-custom">
-              <div className="flex gap-3 self-start  ">
-                {claimmableOngoingMatches.map((match: any, index: number) => (
-                  <MatchCard
-                    key={index}
-                    team1={match.home_id}
-                    team2={match.away_id}
-                    status={2}
-                    fixtureid={match.fixture_id}
-                  />
-                ))}
+              <div className="flex gap-3 self-start">
+                {claimmableOngoingMatches.length > 0 ? (
+                  claimmableOngoingMatches.map((match: any, index: number) => (
+                    <MatchCard
+                      key={index}
+                      team1={match.home_id}
+                      team2={match.away_id}
+                      status={2}
+                      fixtureid={match.fixture_id}
+                    />
+                  ))
+                ) : (
+                  <div className="text-lg text-slate-100 self-center">
+                    No Claimable Matches
+                  </div>
+                )}
               </div>
             </div>
           </div>

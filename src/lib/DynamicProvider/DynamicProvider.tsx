@@ -95,6 +95,7 @@ export const DynamicProvider: React.FC<PropsWithChildren> = ({ children }) => {
   ];
   return (
     <DynamicContextProvider
+      theme="dark"
       settings={{
         overrides: {
           evmNetworks: evmNetworks,

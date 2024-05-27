@@ -176,6 +176,8 @@ function Page({ params }: { params: { id: string } }) {
       | "st-louis-city"
       | "vancouver-whitecaps";
   }
+  const [captain, setCaptain] = useState(0);
+  const [setViceCaptain, setviceCaptain] = useState(0);
   const [playerPositions, setPlayerPositions] = useState<Player[]>([
     {
       name: "Choose",
@@ -447,6 +449,8 @@ function Page({ params }: { params: { id: string } }) {
                 setPlayerPositions={setPlayerPositions}
                 hometeam={homeid}
                 awayteam={awayid}
+                setCaptain={setCaptain}
+                setViceCaptain={setviceCaptain}
               />
             </div>
           )}

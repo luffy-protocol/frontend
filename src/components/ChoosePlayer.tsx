@@ -9,6 +9,8 @@ interface ChoosePlayerProps {
   setPlayerPositions: (player: any) => void;
   hometeam: number;
   awayteam: number;
+  setCaptain: (captain: any) => void;
+  setViceCaptain: (viceCaptain: any) => void;
 }
 
 interface Player {
@@ -111,6 +113,8 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
   setPlayerPositions,
   hometeam,
   awayteam,
+  setCaptain,
+  setViceCaptain,
 }) => {
   const [playerData, setplayerData] = useState<Player[] | undefined>(undefined);
 
@@ -192,6 +196,8 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
             setopen={setopen}
             setPlayerPositions={setPlayerPositions}
             index={index}
+            setCaptain={setCaptain}
+            setViceCaptain={setViceCaptain}
           />
         </div>
       </div>

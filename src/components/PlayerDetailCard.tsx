@@ -9,6 +9,8 @@ interface PlayerCardProps {
   setPlayerPositions: (player: any) => void;
   setopen: (open: boolean) => void;
   index: number;
+  setCaptain: (captain: any) => void;
+  setViceCaptain: (viceCaptain: any) => void;
 }
 
 const PlayerDetailCard: React.FC<PlayerCardProps> = ({
@@ -16,6 +18,8 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({
   setPlayerPositions,
   setopen,
   index,
+  setCaptain,
+  setViceCaptain,
 }) => {
   const [playerData, setplayerData] = useState<any>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
@@ -45,6 +49,8 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({
       setPlayerPositions={setPlayerPositions}
       setopen={setopen}
       index={index}
+      setCaptain={setCaptain}
+      setViceCaptain={setViceCaptain}
     />
   );
 };
@@ -89,6 +95,8 @@ interface PlayerDetailProps {
   playerData: any;
   setPlayerPositions: (player: any) => void;
   setopen: (open: boolean) => void;
+  setCaptain: (captain: any) => void;
+  setViceCaptain: (viceCaptain: any) => void;
 }
 
 const PlayerDetails: React.FC<PlayerDetailProps> = ({
@@ -97,6 +105,8 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
   setopen,
   setPlayerPositions,
   index,
+  setCaptain,
+  setViceCaptain,
 }) => {
   const updatePlayerPosition = (index: number, newPlayerData: any) => {
     setPlayerPositions((prevPositions: any) => {
@@ -211,6 +221,11 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               style={{
                 backgroundImage: `url('/assets/vc.png')`,
               }}
+              onClick={() => {
+                if (playerData) {
+                  setViceCaptain(playerData.player.id);
+                }
+              }}
             >
               <span className="text-[10px] font-stalinist flex justify-center self-center px-3 py-2 ">
                 Vice Captain
@@ -221,6 +236,11 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               className={`flex items-center justify-center bg-no-repeat bg-contain h-[50px]`}
               style={{
                 backgroundImage: `url('/assets/cap.png')`,
+              }}
+              onClick={() => {
+                if (playerData) {
+                  setCaptain(playerData.player.id);
+                }
               }}
             >
               <span className="text-[10px] font-stalinist flex justify-center self-center px-8 py-3 ">

@@ -6,59 +6,26 @@ function Slider() {
       <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
         <li>
           <img
-            src="/logos/chainlink.png"
+            src="/logos/chainlink.svg"
             alt="Chainlink"
             className="h-[100px]"
           />
         </li>
         <li>
+          <img src="/logos/aztec.svg" alt="Chainlink" className="h-[100px]" />
+        </li>
+        <li>
           <img
-            src="/logos/chainlink.png"
+            src="/logos/avalanche.svg"
             alt="Chainlink"
             className="h-[100px]"
           />
         </li>
         <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
+          <img src="/logos/dynamic.svg" alt="Chainlink" className="h-[100px]" />
         </li>
         <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
+          <img src="/logos/sindri.svg" alt="Chainlink" className="h-[100px]" />
         </li>
       </ul>
       <ul
@@ -67,59 +34,26 @@ function Slider() {
       >
         <li>
           <img
-            src="/logos/chainlink.png"
+            src="/logos/chainlink.svg"
             alt="Chainlink"
             className="h-[100px]"
           />
         </li>
         <li>
+          <img src="/logos/aztec.svg" alt="Chainlink" className="h-[100px]" />
+        </li>
+        <li>
           <img
-            src="/logos/chainlink.png"
+            src="/logos/avalanche.svg"
             alt="Chainlink"
             className="h-[100px]"
           />
         </li>
         <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
+          <img src="/logos/dynamic.svg" alt="Chainlink" className="h-[100px]" />
         </li>
         <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
-        </li>
-        <li>
-          <img
-            src="/logos/chainlink.png"
-            alt="Chainlink"
-            className="h-[100px]"
-          />
+          <img src="/logos/sindri.svg" alt="Chainlink" className="h-[100px]" />
         </li>
       </ul>
     </div>

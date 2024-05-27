@@ -1,6 +1,7 @@
 import LoginButton from "@/components/LoginButton";
 import Navbar from "@/components/Navbar";
 import Slider from "@/components/Slider";
+import Socials from "@/components/Socials";
 import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 import React from "react";
 
@@ -24,6 +25,7 @@ function Page() {
               Built with 💙 for <br />
               Chainlink Block Magic 2024 Hackathon
             </p>
+            <Socials />
           </div>
         </div>
       </div>

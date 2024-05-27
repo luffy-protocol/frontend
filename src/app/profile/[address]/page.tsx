@@ -1,7 +1,12 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Status from "@/components/status";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useAccount } from "wagmi";
+import CheckProfile from "@/utils/profileHelpers/CheckProfile";
+import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
+import getProfile from "@/utils/profileHelpers/getProfile";
 
 interface MatchCardProps {
   team1: {
@@ -68,12 +73,73 @@ const MatchCard: React.FC<MatchCardProps> = ({ team1, team2, status }) => {
 };
 
 function Page() {
+  const { address } = useAccount();
+  const [name, setName] = useState<string>("Lionel Messi");
+  const [username, setUsername] = useState<string>("@LeoMessi");
+  const [followers, setFollowers] = useState<number>(1);
+  const [followings, setFollowing] = useState<number>(1);
+
+  useEffect(() => {
+    if (address) {
+      CheckProfile(address as string).then((data) => {
+        if (data.response.length == 0) {
+          registerUserProfile(address as string).then((data) => {
+            console.log(data.response);
+          });
+        }
+      });
+      getProfile(address as string).then((data) => {
+        console.log(data.response);
+        setProfilepic(data.response[0].imageUrl);
+        if (data.response[0].followers !== null) {
+          setFollowers(data.response[0].followers.length);
+        } else {
+          setFollowers(0);
+        }
+        if (data.response[0].following !== null) {
+          setFollowers(data.response[0].following.length);
+        } else {
+          setFollowers(0);
+        }
+      });
+    }
+
+    if (typeof window !== "undefined" && address) {
+      console.log(process.env.NEXT_PUBLIC_DYNAMIC_API_KEY);
+      (async function () {
+        try {
+          const response = await axios.get(`/api/dynamic/fetch-users`, {
+            headers: {},
+          });
+          const data = response.data;
+          console.log("DYNAMIC DATA");
+
+          if (data.success) {
+            // Filter the data based on address
+            const filteredUsers = data.data.users.filter(
+              (user: any) =>
+                user.walletPublicKey.toLowerCase() === address.toLowerCase()
+            );
+            console.log(filteredUsers);
+
+            // Set the state based on the filtered user
+            if (filteredUsers.length > 0) {
+              const user = filteredUsers[0];
+              setName(`${user.firstName} ${user.lastName}`);
+              setUsername(user.firstName);
+            }
+          }
+        } catch (error) {
+          console.error("Error fetching users:", error);
+        }
+      })();
+    }
+  }, [address]);
+
   const [profilepic, setProfilepic] = useState<string>(
     "https://media.api-sports.io/football/players/154.png"
   );
-  const [name, setName] = useState<string>("Lionel Messi");
-  const [username, setUsername] = useState<string>("@LeoMessi");
-  const [followers, setFollowers] = useState<number>(56);
+
   return (
     <div className="">
       <div className=" relative z-10 mx-2">
@@ -93,18 +159,18 @@ function Page() {
               />
               <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
                 <p className=" text-nowrap  self-start">{name}</p>
-                <p className="text-nowrap self-start">{username}</p>
-                <div className="flex items-center justify-center ">
-                  <span className=" text-slate-400 self-start">
+                <p className="text-nowrap self-start">@{username}</p>
+                <div className="flex items-center justify-center self-start">
+                  <span className=" text-slate-400 ">
                     Followers&nbsp;:&nbsp;
                   </span>{" "}
-                  21
+                  {followers}
                 </div>
                 <div className="flex items-center justify-center self-start">
                   <span className=" text-slate-400">
                     Following&nbsp;:&nbsp;
                   </span>{" "}
-                  21
+                  {followings}
                 </div>
               </div>
               <div className="flex w-full justify-center items-center mt-4 ml-10">

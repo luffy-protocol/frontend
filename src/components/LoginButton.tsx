@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
+im;
 
 const LoginButton = () => {
   return (
     <div
       className="flex  justify-center items-center cursor-pointer"
       onClick={() => {
-        window.location.href = "/fixtures";
+        window.location.href = "/fixtures/19";
       }}
       style={{
         backgroundImage: 'url("/assets/LoginBorder.svg")',

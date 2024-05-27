@@ -5,6 +5,7 @@ import Profile from "../../public/assets/Profile.svg";
 import Image from "next/image";
 import LoginButton from "./LoginButton";
 import Link from "next/link";
+import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 
 interface NavLinkProps {
   children: React.ReactNode;
@@ -24,17 +25,20 @@ const Navbar = () => {
         <Image src={Logo} alt="Logo" width={120} className="mr-4" />
       </Link>
       {/* Margin-right for logo */}
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-6 items-center">
         <NavLink href="/">Home</NavLink>
         <NavLink href="/fixtures/19">Fixtures</NavLink>
         <NavLink href="/leaderboard/1">Leaderboard</NavLink>
-        <Link href="/notifications" className="w-full">
+        <Link href="/notifications" className="mx-2">
           <Image src={Bell} alt="" width={30} height={53} />
         </Link>
-        <Link href="/profile" className="w-full">
+        <Link href="/profile" className="mx-2">
           <Image src={Profile} alt="" width={30} height={30} />
         </Link>
-        <LoginButton />
+        {/* <LoginButton /> */}
+        <div className="flex-1 w-full">
+          <DynamicWidget />
+        </div>
       </div>
     </div>
   );

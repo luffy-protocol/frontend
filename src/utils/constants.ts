@@ -3726,6 +3726,64 @@ const COINMARKETCAP_IDS = {
   avax: 5805,
   usdc: 3408,
 };
+
+const emptyPlayers: any = [
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+  {
+    name: "Choose",
+    id: "",
+    team: "avatar",
+  },
+];
 export {
   PROTOCOL_ABI,
   CROSSCHAIN_ABI,
@@ -3734,4 +3792,5 @@ export {
   CHAIN_RESOLVERS,
   COINMARKETCAP_IDS,
   TOKEN_ADDRESSES,
+  emptyPlayers,
 };

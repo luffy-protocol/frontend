@@ -1,130 +1,15 @@
 "use client";
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import Navbar from "@/components/Navbar";
-import Timer from "@/components/Timer";
 import Status from "@/components/status";
-import Form from "@/components/Form";
 import ChoosePlayer from "@/components/ChoosePlayer";
 import fixtureById from "@/utils/fixtureHelpers/FixtureById";
-const GameStatus = ({
-  team1,
-  team2,
-  time,
-  stadium,
-  form1,
-  form2,
-  status,
-}: {
-  team1: string;
-  team2: string;
-  time: string;
-  stadium: string;
-  form1: string[];
-  form2: string[];
-  status: number;
-}) => {
-  return (
-    <>
-      <div className="flex text-xl font-stalinist w-10/12 justify-between">
-        <div className="">
-          <Status status={status} />
-        </div>
-        <div className="text-[10px] ">Players : 250</div>
-      </div>
-      <hr className="p-2 w-10/12" />
-      <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <div className="text-left text-[#D8485F] sm:text-3xl text-lg w-1/4 text-wrap ">
-          {team1}
-        </div>
-        <Timer starttime={time} />
-        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg w-1/4 text-wrap">
-          {team2}
-        </div>
-      </div>
-      <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <Form form={form1} />
-        <p className="text-[8px] pt-2 text-slate-400">{stadium}</p>
-        <Form form={form2} />
-      </div>
-    </>
-  );
-};
-const PlayerProgress = ({ noPlayers }: { noPlayers: number }) => {
-  return (
-    <>
-      <div className="flex font-stalinist text-[8px] justify-between">
-        <p>Players Chosen</p>
-        <p>{noPlayers + 1}/11</p>
-      </div>
-      <div className="flex bg-[url('/assets/progressborder.svg')] sm:w-[320px] h-[20px] bg-no-repeat bg-cover items-center justify-center ">
-        {Array(10) // Create an array of 11 elements
-          .fill(null) // Fill the array with null values
-          .map((_, index) => (
-            <div
-              key={index}
-              className={`w-[28px] h-3 rounded-sm bg-white ml-1 ${
-                index < noPlayers ? "" : "opacity-0"
-              }`}
-            />
-          ))}
-        {noPlayers == 10 && (
-          <div className="w-0 h-0 transform rotate-0 border-b-[11px] ml-1 border-b-transparent border-l-[10px] border-l-white border-r-[5px] border-r-transparent "></div>
-        )}{" "}
-      </div>
-    </>
-  );
-};
-interface DropdownProps {
-  content: string[];
-  onOptionClick?: (option: string) => void;
-  setState?: Dispatch<SetStateAction<string>>; // Use Dispatch for setState type
-}
-
-const Dropdown: React.FC<DropdownProps> = ({
-  content,
-  onOptionClick,
-  setState,
-}) => {
-  const [selectedOption, setSelectedOption] = useState<string>("");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const newSelectedOption = event.target.value as string; // Type assertion for safety
-    setSelectedOption(newSelectedOption);
-    onOptionClick?.(newSelectedOption);
-    toggleDropdown();
-    if (setState) {
-      setState(newSelectedOption);
-    }
-  };
-
-  return (
-    <>
-      <select
-        className="w-[400px] h-[43px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
-        name="players"
-        id="players"
-        value={selectedOption} // Set selected value based on state
-        onChange={handleOptionChange} // Handle option changes
-      >
-        {content.map((option) => (
-          <option
-            key={option}
-            value={option}
-            className="bg-[#0C0D3D] text-white text-[8px]"
-          >
-            {option}
-          </option>
-        ))}
-      </select>
-    </>
-  );
-};
+import { emptyPlayers } from "@/utils/constants";
+import { Player } from "@/utils/interface";
+import GameStatus from "@/components/Game/GameStatus";
+import PlayerProgress from "@/components/Game/PlayerProgress";
+import Dropdown from "@/components/Game/Dropdown";
 
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);
@@ -142,99 +27,11 @@ function Page({ params }: { params: { id: string } }) {
   const [gas, setGas] = useState(30);
   const [Randomness, setRandomness] = useState(false);
   const [betamount, setBetamount] = useState(10);
-  interface Player {
-    name: string;
-    id: string;
-    team:
-      | "avatar"
-      | "atlanta-united"
-      | "austin"
-      | "charlotte"
-      | "chicago-fire"
-      | "fc-cincinnati"
-      | "columbus-crew"
-      | "dc-united"
-      | "inter-miami"
-      | "cf-montreal"
-      | "new-england-revolution"
-      | "nycfc"
-      | "orlando-city"
-      | "philadelphia-union"
-      | "toronto"
-      | "colorado-rapids"
-      | "fc-dallas"
-      | "houston-dynamo"
-      | "la-galaxy"
-      | "lafc"
-      | "minnesota-united"
-      | "nashville"
-      | "portland-timbers"
-      | "real-salt-lake"
-      | "san-jose-earthquakes"
-      | "seattle-sounders"
-      | "sporting-kc"
-      | "st-louis-city"
-      | "vancouver-whitecaps";
-  }
+
   const [captain, setCaptain] = useState(0);
   const [setViceCaptain, setviceCaptain] = useState(0);
-  const [playerPositions, setPlayerPositions] = useState<Player[]>([
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-    {
-      name: "Choose",
-      id: "",
-      team: "avatar",
-    },
-  ]);
+  const [playerPositions, setPlayerPositions] =
+    useState<Player[]>(emptyPlayers);
   const [noPlayers, setnumberofPlayers] = useState(10); // Initial state
   const [homeTeam, setHomeTeam] = useState("...........");
   const [awayTeam, setAwayTeam] = useState("...........");
@@ -242,8 +39,7 @@ function Page({ params }: { params: { id: string } }) {
   const [awayid, setAwayId] = useState(0);
   useEffect(() => {
     const getFixtureDetails = async () => {
-      const { message, response } = await fixtureById(parseInt(params.id));
-      console.log(response[0].home_name);
+      const { response } = await fixtureById(parseInt(params.id));
       setHomeTeam(response[0].home_name);
       setAwayTeam(response[0].away_name);
       setAwayId(response[0].away_id);
@@ -270,6 +66,7 @@ function Page({ params }: { params: { id: string } }) {
             form1={form1}
             form2={form2}
             status={status}
+            playersCount={0}
           />
           <div className=" h-full flex gap-2 sm:justify-between justify-center sm:items w-10/12 sm:flex-row flex-col">
             <div className="w-1/2 sm:ml-6">
@@ -348,7 +145,6 @@ function Page({ params }: { params: { id: string } }) {
                               className="sr-only peer"
                               onChange={() => {
                                 setRandomness(!Randomness);
-                                console.log(Randomness);
                               }}
                             />
                             <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800  peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border  after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#410C5E]"></div>

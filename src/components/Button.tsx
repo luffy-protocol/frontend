@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({ id }) => {
         router.push(`/game/${id}`);
       }}
     >
-      <span className="text-sm font-stalinist flex justify-center self-center text-center px-2">
+      <span className="text-sm font-stalinist flex justify-center self-center text-center px-1 mr-7">
         Go
       </span>
     </div>

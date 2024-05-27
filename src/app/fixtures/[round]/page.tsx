@@ -331,11 +331,8 @@ export default function Page({ params }: { params: { round: string } }) {
             className="flex flex-col px-10 items-center bg-no-repeat bg-contain  w-[90%] h-[900px] overflow-hidden lg:h-[1000px] xl:h-[1250px] 2xl:h-[1400px] bg-center"
             style={{ backgroundImage: `url('/assets/GameBorder.svg')` }}
           >
-            <div className="text-4xl self-start mt- px-2 ml-5 pt-5 font-stalinist text-gradient xl:px-8">
-              GAMES
-            </div>
-            <div className="flex flex-col gap-2 items-center w-10/12 mt-12  max-h-full">
-              <div className="flex gap-3 items-center justify-center mb-10">
+            <div className="flex flex-col gap-2 items-center w-10/12 2xl:mt-32 xl:mt-56 mt-32 h-4/5 overflow-clip">
+              <div className="flex gap-3 items-center justify-center mb-10 2xl:mt-20">
                 <img src="/assets/Left.png" alt="" width="60px" />
 
                 <div className="text-5xl font-stalinist items-center justify-center lg:text-2xl">
@@ -343,7 +340,7 @@ export default function Page({ params }: { params: { round: string } }) {
                 </div>
                 <img src="/assets/Right.png" alt="" width="60px" />
               </div>
-              <div className="flex flex-col gap-2  w-full max-h-[1000px] overflow-y-auto">
+              <div className="flex flex-col gap-2  w-full xl:max-h-[700px] 2xl:max-h-[1000px] overflow-y-auto">
                 <div className="flex-col items-center justify-center w-full">
                   {claimmableOngoingMatches.map((match, index) => (
                     <FixtureCard

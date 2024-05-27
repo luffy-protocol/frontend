@@ -52,7 +52,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
 
           <div className="flex flex-col text-right">
             <div className="overflow-x-auto max-w-[180px]   min-w-[180px]  xl:min-w-[260px] xl:max-w-[260px]">
-              <p className="font-bold text-xl xl:text-2xl font-stalinist text-[#B62DD3] text-ellipsis whitespace-nowrap">
+              <p className="font-bold  text-xl xl:text-2xl font-stalinist text-[#B62DD3] min-w-[180px] max-w-[180px]  xl:min-w-[260px] xl:max-w-[260px] overflow-hidden text-ellipsis whitespace-nowrap">
                 {fixture.away_name}
                 {/* Inter Miami */}
               </p>

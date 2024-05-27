@@ -7,8 +7,6 @@ import fetchOngoingFixtures from "@/utils/fixtureHelpers/fetchOngoingFixtures";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
 
-const address = "0x4b4b30e2E7c6463b03CdFFD6c42329D357205334"; // replace with the actual address
-
 export default function Page({ params }: { params: { round: string } }) {
   const { primaryWallet } = useDynamicContext();
 

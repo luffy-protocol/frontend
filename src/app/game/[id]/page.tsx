@@ -381,11 +381,12 @@ function Page({ params }: { params: { id: string } }) {
                   className=" w-fit relative z-10 mx-6 mt-16"
                   key={1}
                 />
-                <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 top-[30%] h-2/3">
-                  <div className=" flex flex-col scale-110 h-2/3 bg-no-repeat  mt-20 ml-20 justify-start items-start font-stalinist">
-                    <div className=" scale-75 mt-2 ml-2">
-                      <Status status={status} />
-                    </div>
+
+                <div className="absolute w-1/3 inset-y-80 z-20  mt-40 top-[30%] h-2/3 ">
+                  <div className=" font-stalinist ">
+                    <Status status={status} />
+                  </div>
+                  <div className=" flex flex-col scale-110 h-2/3 bg-no-repeat  mt-20  justify-center items-center font-stalinist">
                     <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
                       <div className="text-left text-[#D8485F] sm:text-md text-sm ">
                         {team1}

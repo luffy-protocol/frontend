@@ -1,5 +1,6 @@
 import LoginButton from "@/components/LoginButton";
 import Navbar from "@/components/Navbar";
+import Slider from "@/components/Slider";
 import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 import React from "react";
 
@@ -16,6 +17,9 @@ function Page() {
           </div>
           <div className="mt-12">
             <LoginButton />
+          </div>
+          <div className=" scale-50 w-[1500px]">
+            <Slider />
           </div>
         </div>
       </div>

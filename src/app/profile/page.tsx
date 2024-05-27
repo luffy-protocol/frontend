@@ -116,8 +116,12 @@ function Page() {
             </div>
 
             <div className="flex items-center justify-center mt-6 gap-2">
-              <div className=" text-[10px] text-slate-400">Net Revenue</div>
-              <div className="text-[10px] text-green-500">$1000</div>
+              <div className=" text-[10px] text-slate-400 xl:text-[14px]">
+                Net Revenue
+              </div>
+              <div className="text-[10px] text-green-500 xl:text-[14px]">
+                $1000
+              </div>
             </div>
             <div className="flex items-center justify-center mt-6">
               <div className="flex w-full justify-center items-center  ml-10">
@@ -136,24 +140,32 @@ function Page() {
           </div>
           <div className="flex justify-between w-10/12 px-10 mt-5">
             <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px]">Highest Position</div>
-              <div className="text-[10px]">3</div>
+              <div className="text-[#D8485F] text-[10px]xl:text-[14px]">
+                Highest Position
+              </div>
+              <div className="text-[10px] xl:text-[14px]">3</div>
             </div>
             <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px]">Highest amount</div>
-              <div className="text-[10px]">$836</div>
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                Highest amount
+              </div>
+              <div className="text-[10px] xl:text-[14px]">$836</div>
             </div>{" "}
             <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px]">total games</div>
-              <div className="text-[10px]">10</div>
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                total games
+              </div>
+              <div className="text-[10px] xl:text-[14px]">10</div>
             </div>{" "}
             <div className="flex gap-1 ">
-              <div className="text-[#D8485F] text-[10px]">total amount</div>
-              <div className="text-[10px]">$1799</div>
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                total amount
+              </div>
+              <div className="text-[10px] xl:text-[14px]">$1799</div>
             </div>
           </div>
           <hr className="p-2 w-10/12 mt-5 " />
-          <div>Completed</div>
+          <div className="text-lg">Completed</div>
           <div className="flex justify-between w-10/12  mt-5">
             <div className="overflow-x-auto self-start ">
               <div className="flex gap-3 self-start  ">
@@ -190,7 +202,7 @@ function Page() {
               </div>
             </div>
           </div>
-          <div className="mt-3">Ongoing</div>
+          <div className="mt-3 text-lg">Ongoing</div>
 
           <div className="flex justify-between w-10/12  mt-5">
             <div className="overflow-x-auto self-start ">

@@ -33,11 +33,11 @@ const GameStatus = ({
       </div>
       <hr className="p-2 w-10/12" />
       <div className="flex font-stalinist capitalize justify-between w-10/12">
-        <div className="text-left text-[#D8485F] sm:text-3xl text-lg ">
+        <div className="text-left text-[#D8485F] sm:text-3xl text-lg w-1/4 text-wrap ">
           {team1}
         </div>
         <Timer starttime={time} />
-        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg ">
+        <div className=" text-right text-[#B62DD3] sm:text-3xl text-lg w-1/4 text-wrap">
           {team2}
         </div>
       </div>
@@ -105,7 +105,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <>
       <select
-        className="w-[370px] h-[35px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
+        className="w-[400px] h-[43px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
         name="players"
         id="players"
         value={selectedOption} // Set selected value based on state
@@ -140,6 +140,7 @@ function Page() {
   const [selectedToken, setSelectedToken] = useState("USDT");
   const [gas, setGas] = useState(30);
   const [Randomness, setRandomness] = useState(false);
+  const [betamount, setBetamount] = useState(10);
   interface Player {
     name: string;
     id: string;
@@ -234,158 +235,205 @@ function Page() {
   const [noPlayers, setnumberofPlayers] = useState(10); // Initial state
 
   return (
-    <div className="flex flex-col px-10 items-center bg-no-repeat w-full h-[1700px] overflow-hidden xl:h-[1800px] bg-[url('/assets/BG.svg')] justify-center bg-contain">
-      <div className="w-full">
-        <Navbar />
+    <div className="">
+      <div className=" relative z-10 mx-2">
+        <img src="/assets/BG.svg" className=" w-screen" />
       </div>
-      <GameStatus
-        team1={team1}
-        team2={team2}
-        time={time}
-        stadium={stadium}
-        form1={form1}
-        form2={form2}
-        status={status}
-      />
-      <div className=" h-full flex gap-2 sm:justify-between justify-center sm:items w-10/12 sm:flex-row flex-col">
-        <div className="w-1/2 sm:ml-6">
-          <Pitch
-            setindex={setindex}
-            setOpen={setOpen}
-            playerPositions={playerPositions}
-            points={points}
-            showPoints={true}
+      <div className="absolute inset-0 z-20 ">
+        <div className="flex flex-col  items-center w-full overflow-hidden  ">
+          <div className="w-full">
+            <Navbar />
+          </div>
+          <GameStatus
+            team1={team1}
+            team2={team2}
+            time={time}
+            stadium={stadium}
+            form1={form1}
+            form2={form2}
+            status={status}
           />
+          <div className=" h-full flex gap-2 sm:justify-between justify-center sm:items w-10/12 sm:flex-row flex-col">
+            <div className="w-1/2 sm:ml-6">
+              <Pitch
+                setindex={setindex}
+                setOpen={setOpen}
+                playerPositions={playerPositions}
+                points={points}
+                showPoints={true}
+              />
+            </div>
+            {status == 0 ? (
+              <div className="flex justify-center items-center w-1/2 h-2/3">
+                <div className=" relative z-10 mx-2 mt-16">
+                  <img src="/assets/FixBorder.svg" className=" w-fit h-2/3" />
+                </div>
+                <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 h-2/3">
+                  <div className=" flex flex-col mx-2 mt-16 justify-center items-center gap-24">
+                    <div className="">
+                      <PlayerProgress noPlayers={noPlayers} />
+                    </div>
+                    <div className="flex flex-col justify-center items-center ">
+                      <div className="flex  gap-20 font-stalinist text-[10px] justify-be">
+                        <p className="text-[10px]">Chain</p>
+                        <p className="text-[10px]">Token</p>
+                      </div>
+                      <div
+                        className="flex  gap-4 justify-start items-start w-full sm:flex-row flex-col"
+                        style={{ transform: "scale(.60)" }}
+                      >
+                        <Dropdown
+                          setState={setSelectedChain}
+                          content={[
+                            "Avalanche",
+                            "Chain 1",
+                            "Chain 2",
+                            "Chain 3",
+                          ]}
+                        />
+                        <Dropdown
+                          content={["USDT", "token  1", "token 2", "token 3"]}
+                          setState={setSelectedToken}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex flex-col mt-2 justify-center items-center">
+                        <p className="text-md  font-stalinist text-slate-500">
+                          Bet Amount
+                        </p>
+                        <p className="text-xl  font-stalinist  ">
+                          {betamount}{" "}
+                          <span className=" text-[#d94956]">
+                            {selectedToken}
+                          </span>
+                        </p>
+                      </div>
+                      <div className="flex mt-2 justify-center items-center">
+                        <img
+                          src="/assets/gas.png"
+                          alt="chain"
+                          className=" -mt-1"
+                        />
+                        <p className="text-[10px] font-stalinist text-center">
+                          {gas} gwei
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="">
+                        <div>
+                          <label className="inline-flex items-center cursor-pointer">
+                            <input
+                              type="checkbox"
+                              value=""
+                              className="sr-only peer"
+                              onChange={() => {
+                                setRandomness(!Randomness);
+                                console.log(Randomness);
+                              }}
+                            />
+                            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800  peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border  after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#410C5E]"></div>
+                            <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 font-stalinist">
+                              Randomness
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                      <div className="flex w-full justify-center items-center">
+                        <div
+                          className={` bg-no-repeat  w-fit bg-cover `}
+                          style={{
+                            backgroundImage: `url('/assets/LoginBorder.svg')`,
+                          }}
+                        >
+                          <span className="text-sm font-stalinist flex justify-center self-center py-2 mx-5 pr-3 cursor-pointer">
+                            Bet
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="flex justify-center items-center w-1/2 h-2/3">
+                <img
+                  src="/assets/FixBorder1.svg"
+                  className=" w-fit relative z-10 mx-6 mt-16"
+                  key={1}
+                />
+                <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 top-[30%] h-2/3">
+                  <div className=" flex flex-col scale-110 h-2/3 bg-no-repeat  mt-20 ml-20 justify-start items-start font-stalinist">
+                    <div className=" scale-75 mt-2 ml-2">
+                      <Status status={status} />
+                    </div>
+                    <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
+                      <div className="text-left text-[#D8485F] sm:text-md text-sm ">
+                        {team1}
+                      </div>
+                      <p className=" text-slate-500"> 64&apos;</p>
+                      <div className=" text-right text-[#B62DD3] sm:text-md text-sm ">
+                        {team2}
+                      </div>
+                    </div>
+                    <div className="flex font-stalinist capitalize justify-between w-full px-20 mt-3 ">
+                      <p>02</p>
+                      <p>-</p>
+                      <p>03 </p>
+                    </div>
+                    <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
+                      <div className="text-left text-[#D8485F] sm:text-md text-sm ">
+                        <p>Top Points</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-center items-center w-full mt-5">
+                      <img
+                        src="https://media.api-sports.io/football/players/154.png"
+                        alt="toppoints"
+                        className="w-1/5  flex justify-center items-center"
+                      />
+                    </div>
+                    <div className=" text-sm flex justify-center items-center w-full mt-5">
+                      <p>50 points</p>
+                    </div>
+                    <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
+                      <div className="text-left text-[#D8485F] sm:text-md text-sm ">
+                        <p>Your Points</p>
+                      </div>
+                    </div>
+                    <div className=" text-sm flex justify-center items-center w-full mt-5">
+                      <p>23 points</p>
+                    </div>
+                    <div className="flex w-full justify-center items-center mt-4">
+                      <div
+                        className={` bg-no-repeat  w-fit bg-cover `}
+                        style={{
+                          backgroundImage: `url('/assets/LoginBorder.svg')`,
+                        }}
+                      >
+                        <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
+                          Claim
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          {open && (
+            <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
+              {/* Content of your Choosemodal component */}
+              {/* <ChoosePlayer
+                setopen={setOpen}
+                index={index}
+                setPlayerPositions={setPlayerPositions}
+              /> */}
+            </div>
+          )}
         </div>
-        {status == 0 ? (
-          <div className=" flex flex-col sm:w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder.svg')] mt-20 ml-20 justify-start items-start">
-            <div className="mt-12 ml-16">
-              <PlayerProgress noPlayers={noPlayers} />
-            </div>
-            <div className="flex  gap-20 mt-24  font-stalinist text-[10px] ml-28">
-              <p className="text-[10px]">Chain</p>
-
-              <p className="text-[10px]">token</p>
-            </div>
-            <div
-              className="flex  gap-4 justify-start items-start w-full "
-              style={{ transform: "scale(.60)" }}
-            >
-              <Dropdown
-                setState={setSelectedChain}
-                content={["Avalanche", "Chain 1", "Chain 2", "Chain 3"]}
-              />
-
-              <Dropdown
-                content={["USDT", "token  1", "token 2", "token 3"]}
-                setState={setSelectedToken}
-              />
-            </div>
-            <div className="flex ml-52 mt-2">
-              <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
-              <p className="text-[10px]  font-stalinist ">{gas} gwei</p>
-            </div>
-            <div className="mt-48 ml-32">
-              <div>
-                <label className="inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    value=""
-                    className="sr-only peer"
-                    onChange={() => {
-                      setRandomness(!Randomness);
-                      console.log(Randomness);
-                    }}
-                  />
-                  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800  peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border  after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#410C5E]"></div>
-                  <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 font-stalinist">
-                    Randomness
-                  </span>
-                </label>
-              </div>
-            </div>
-            <div className="mt-8 ml-52">
-              <div
-                className={`flex items-center justify-center bg-no-repeat bg-contain w-[210%] h-full `}
-                style={{
-                  backgroundImage: `url('/assets/LoginBorder.svg')`,
-                }}
-              >
-                <span className="text-sm font-stalinist flex justify-center self-center py-2 ">
-                  Bet
-                </span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className=" flex flex-col sm:w-1/2 h-2/3 bg-no-repeat bg-contain bg-[url('/assets/FixBorder1.svg')] mt-20 ml-20 justify-start items-start font-stalinist">
-            <div className=" scale-75 mt-2 ml-2">
-              <Status status={status} />
-            </div>
-            <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-10 ">
-              <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                {team1}
-              </div>
-              <p className=" text-slate-500"> 64&apos;</p>
-
-              <div className=" text-right text-[#B62DD3] sm:text-md text-sm ">
-                {team2}
-              </div>
-            </div>
-
-            <div className="flex font-stalinist capitalize justify-between w-full px-20 mt-3 ">
-              <p>02</p>
-              <p>-</p>
-              <p>03 </p>
-            </div>
-            <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
-              <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                <p>Top Points</p>
-              </div>
-            </div>
-            <div className="flex justify-center items-center w-full mt-5">
-              <img
-                src="https://media.api-sports.io/football/players/154.png"
-                alt="toppoints"
-                className="w-1/5  flex justify-center items-center"
-              />
-            </div>
-            <div className=" text-sm flex justify-center items-center w-full mt-5">
-              <p>50 points</p>
-            </div>
-            <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5 ">
-              <div className="text-left text-[#D8485F] sm:text-md text-sm ">
-                <p>Your Points</p>
-              </div>
-            </div>
-            <div className=" text-sm flex justify-center items-center w-full mt-5">
-              <p>23 points</p>
-            </div>
-            <div className="flex w-full justify-center items-center mt-4">
-              <div
-                className={` bg-no-repeat  w-fit bg-cover `}
-                style={{
-                  backgroundImage: `url('/assets/LoginBorder.svg')`,
-                }}
-              >
-                <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
-                  Claim
-                </span>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
-      {open && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
-          {/* Content of your Choosemodal component */}
-          <ChoosePlayer
-            setopen={setOpen}
-            index={index}
-            setPlayerPositions={setPlayerPositions}
-          />
-        </div>
-      )}
     </div>
   );
 }

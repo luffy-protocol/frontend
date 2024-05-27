@@ -7,6 +7,8 @@ interface ChoosePlayerProps {
   setopen: (open: boolean) => void;
   index: number;
   setPlayerPositions: (player: any) => void;
+  hometeam: number;
+  awayteam: number;
 }
 
 interface Player {
@@ -107,14 +109,17 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
   setopen,
   index,
   setPlayerPositions,
+  hometeam,
+  awayteam,
 }) => {
   const [playerData, setplayerData] = useState<Player[] | undefined>(undefined);
 
   const [playerId, setPlayerId] = useState<number>(154);
+  const [TeamData, setTeamData] = useState<any>(null);
 
   useEffect(() => {
     console.log(index);
-    const data = getPlayerByTeamId(9568, 1606);
+    const data = getPlayerByTeamId(hometeam, awayteam);
 
     const positions = [
       { position: "Goalkeeper", indices: [10] },
@@ -129,13 +134,18 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
 
     if (filteredPlayerData) {
       const filterData = data?.filter(
-        (item) =>
+        (item: any) =>
           item.statistics[0].games.position === filteredPlayerData.position
       );
       console.log(filterData);
       setplayerData(filterData);
     }
-  }, [index]);
+  }, [index, hometeam, awayteam]);
+
+  // useEffect(() => {
+  //   const data = getPlayerByTeamId(hometeam, awayteam);
+  //   setTeamData(data);
+  // }, [hometeam, awayteam]);
 
   return (
     <div

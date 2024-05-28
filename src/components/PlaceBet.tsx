@@ -40,7 +40,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 label={
                   chain == 0
                     ? "Choose Chain"
-                    : dropdownElements.chains[chain].name
+                    : dropdownElements.chains[chain - 1].name
                 }
                 selectedOption={chain}
                 setSelectedOption={setChain}
@@ -50,11 +50,11 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 label={
                   token == 0
                     ? "Choose Token"
-                    : dropdownElements.tokens[token].name
+                    : dropdownElements.tokens[token - 1].name
                 }
                 selectedOption={token}
                 setSelectedOption={setToken}
-                options={resolveTokens(dropdownElements, chain)}
+                options={resolveTokens(dropdownElements, chain - 1)}
               />
             </div>
           </div>
@@ -66,11 +66,11 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
               <p className="text-xl  font-stalinist  ">
                 {betInEther}&nbsp;
                 <span className=" text-[#d94956]">
-                  {token == 1
+                  {token < 2
                     ? chain > 1
                       ? "ETH"
                       : "AVAX"
-                    : dropdownElements.tokens[token].name}
+                    : dropdownElements.tokens[token - 1].name}
                 </span>
               </p>
             </div>

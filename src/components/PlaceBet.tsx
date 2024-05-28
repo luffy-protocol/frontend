@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
+import Tooltip from "./Tooltip";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -77,7 +78,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
             </div>
           </div>
           <div>
-            <div className="">
+            <div className="flex">
               <div>
                 <label className="inline-flex items-center cursor-pointer">
                   <input
@@ -93,6 +94,9 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                     Randomness
                   </span>
                 </label>
+              </div>
+              <div className="ml-4 mt-0">
+                <Tooltip text="Randomness" />
               </div>
             </div>
             <div className="flex w-full justify-center items-center">

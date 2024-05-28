@@ -267,7 +267,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
           <button
             className={`flex items-center justify-center bg-no-repeat bg-contain  h-full`}
             style={{
-              backgroundImage: `url('/assets/AddPlayer.png')`,
+              backgroundImage: `url('/assets/addPlayer.png')`,
             }}
             onClick={() => {
               console.log(playerData?.statistics[0].team.name);

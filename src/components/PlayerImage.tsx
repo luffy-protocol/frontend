@@ -85,12 +85,13 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
         } w-7 sm:w-7 md:w-10 lg:w-14`}
         onClick={onClick}
       />
+
       <div
-        className={`absolute cursor-pointer   text-md  bg-slate-50 text-black rounded-md text-center  ${
+        className={`absolute cursor-pointer   text-sm bg-slate-50 text-black rounded-md text-center  ${
           index == 10
-            ? "left-[42%] top-[15%]"
+            ? "left-[42%] top-[15%]  self-center"
             : index == 9
-            ? " top-[52%] sm:top-[59%] left-[8%]"
+            ? " top-[52%] sm:top-[59%] left-[8%] "
             : index == 8
             ? "top-[52%] sm:top-[59%] left-[30%]"
             : index == 7
@@ -108,7 +109,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             : index == 1
             ? "top-[28%] sm:top-[35%] left-[42%]"
             : "top-[28%] sm:top-[35%] left-[67%]"
-        } w-7 md:w-14`}
+        } w-fit px-1`}
         onClick={onClick}
       >
         {name}

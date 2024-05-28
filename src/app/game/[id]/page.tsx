@@ -36,6 +36,7 @@ function Page({ params }: { params: { id: string } }) {
   const [awayTeam, setAwayTeam] = useState("...........");
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
+
   useEffect(() => {
     const getFixtureDetails = async () => {
       const { response } = await fixtureById(parseInt(params.id));
@@ -43,6 +44,7 @@ function Page({ params }: { params: { id: string } }) {
       setAwayTeam(response[0].away_name);
       setAwayId(response[0].away_id);
       setHomeId(response[0].home_id);
+      setStadium(response[0].venue);
     };
     getFixtureDetails();
   }, [params.id]);
@@ -186,17 +188,16 @@ function Page({ params }: { params: { id: string } }) {
           {open && (
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
               {/* Content of your Choosemodal component */}
-              <div className="h-[90vh]">
-                <ChoosePlayer
-                  setopen={setOpen}
-                  index={index}
-                  setPlayerPositions={setPlayerPositions}
-                  hometeam={homeid}
-                  awayteam={awayid}
-                  setCaptain={setCaptain}
-                  setViceCaptain={setviceCaptain}
-                />
-              </div>
+
+              <ChoosePlayer
+                setopen={setOpen}
+                index={index}
+                setPlayerPositions={setPlayerPositions}
+                hometeam={homeid}
+                awayteam={awayid}
+                setCaptain={setCaptain}
+                setViceCaptain={setviceCaptain}
+              />
             </div>
           )}
         </div>

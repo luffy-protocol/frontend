@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import Navbar from "@/components/Navbar";
 import Status from "@/components/status";
@@ -31,7 +31,7 @@ function Page({ params }: { params: { id: string } }) {
   const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
     useState<Player[]>(emptyPlayers);
-  const [noPlayers, setnumberofPlayers] = useState(10); // Initial state
+  const [noPlayers, setnumberofPlayers] = useState(0); // Initial state
   const [homeTeam, setHomeTeam] = useState("...........");
   const [awayTeam, setAwayTeam] = useState("...........");
   const [homeid, setHomeId] = useState(0);
@@ -49,6 +49,12 @@ function Page({ params }: { params: { id: string } }) {
     getFixtureDetails();
   }, [params.id]);
 
+  useEffect(() => {
+    setnumberofPlayers(
+      playerPositions.filter((player) => player.id !== "").length
+    );
+    console.log(playerPositions.length);
+  }, [playerPositions]);
   return (
     <div className="">
       <div className=" relative z-10 mx-2">

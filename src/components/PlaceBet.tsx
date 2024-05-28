@@ -23,7 +23,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
         <img src="/assets/FixBorder.svg" className=" w-fit h-2/3" />
       </div>
       <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 h-2/3">
-        <div className=" flex flex-col mx-2 mt-16 justify-center items-center gap-24">
+        <div className=" flex flex-col mx-2 mt-16 justify-center items-center gap-24 min-[1400px]:gap-20">
           <div className="">
             <PlayerProgress noPlayers={selectedPlayersCount} />
           </div>

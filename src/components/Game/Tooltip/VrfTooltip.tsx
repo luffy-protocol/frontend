@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Tooltip = () => {
+const VrfTooltip = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleMouseEnter = () => setIsVisible(true);
@@ -61,4 +61,4 @@ const Tooltip = () => {
   );
 };
 
-export default Tooltip;
+export default VrfTooltip;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
-import Tooltip from "./Tooltip";
+import VrfTooltip from "./Game/Tooltip/VrfTooltip";
 import { dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/resolveTokens";
 
@@ -98,7 +98,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 </label>
               </div>
               <div className="ml-4 mt-0">
-                <Tooltip />
+                <VrfTooltip />
               </div>
             </div>
             <div className="flex w-full justify-center items-center mt-2">

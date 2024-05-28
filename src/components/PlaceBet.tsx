@@ -99,14 +99,20 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 <Tooltip />
               </div>
             </div>
-            <div className="flex w-full justify-center items-center">
+            {enableRandomness && (
+              <p className=" text-[10px] font-stalinist ">
+                Powered By Chainlink VRF
+              </p>
+            )}
+            <div className="flex w-full justify-center items-center mt-2">
               <button
                 className={` bg-no-repeat  w-fit bg-cover `}
                 style={{
                   backgroundImage: `url('/assets/LoginBorder.svg')`,
+                  backgroundSize: "contain",
                 }}
               >
-                <span className="text-sm font-stalinist flex justify-center self-center py-2 mx-5 pr-3 cursor-pointer">
+                <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2">
                   Submit Squad
                 </span>
               </button>

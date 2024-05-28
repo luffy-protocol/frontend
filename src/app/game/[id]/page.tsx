@@ -12,6 +12,7 @@ import PlayerProgress from "@/components/Game/PlayerProgress";
 import Dropdown from "@/components/Game/Dropdown";
 import Results from "@/components/Results";
 import PlaceBet from "@/components/PlaceBet";
+import Tooltip from "@/components/Tooltip";
 
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);

@@ -4,6 +4,7 @@ import getFollowingNotifications from "@/utils/notificationHelpers/notifyFollowi
 import removeNotifications from "@/utils/notificationHelpers/removeNotification";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
+import DefaultLayout from "@/components/DefaultLayout";
 
 interface Notification {
   id: number;
@@ -94,32 +95,22 @@ const Page: React.FC<PageProps> = ({ params }) => {
   };
 
   return (
-    <div className="">
-      <div className=" relative z-10 mx-2">
-        <img src="/assets/BG.svg" className=" w-screen" />
-      </div>
-      <div className="absolute inset-0 z-20 ">
-        <div className="flex flex-col px-10 items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
-          <div className="w-full">
-            <Navbar />
-          </div>
-          <div className="flex flex-col justify-center items-center w-full gap-20">
-            <div className=" font-stalinist  text-2xl xl:text-4xl text-[#D8485F] self-center">
-              Notifications
-            </div>
-            <div className="flex flex-col gap-6 w-full">
-              {notifications.map((notification) => (
-                <NotificationCard
-                  key={notification.id}
-                  notification={notification}
-                  onClose={handleCloseNotification}
-                />
-              ))}
-            </div>
-          </div>
+    <DefaultLayout>
+      <div className="flex flex-col justify-center items-center w-full gap-20">
+        <div className=" font-stalinist  text-2xl xl:text-4xl text-[#D8485F] self-center">
+          Notifications
+        </div>
+        <div className="flex flex-col gap-6 w-full">
+          {notifications.map((notification) => (
+            <NotificationCard
+              key={notification.id}
+              notification={notification}
+              onClose={handleCloseNotification}
+            />
+          ))}
         </div>
       </div>
-    </div>
+    </DefaultLayout>
   );
 };
 

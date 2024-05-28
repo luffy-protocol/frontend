@@ -34,6 +34,26 @@ const Tooltip = () => {
               <span className="text-[#D4AF37]">3x</span>
             </li>
           </ul>
+          <br />
+          <div className="flex">
+            <img
+              src="/assets/dice.gif"
+              width={"80px"}
+              alt="chain"
+              className=" -mt-5 -ml-5"
+            />
+            <p className=" text-[10px] font-stalinist text-red-500 -ml-5  text-center">
+              Powered By Chainlink VRF
+            </p>
+          </div>
+          <div className=" justify-center items-center flex">
+            <img
+              src="/logos/chainlink.svg"
+              width={"70px"}
+              alt="chain"
+              className=" -mt-5"
+            />
+          </div>
         </div>
       )}
     </div>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "@/components/Navbar";
+import DefaultLayout from "@/components/DefaultLayout";
 
 interface LeaderboardRow {
   rank: number;
@@ -132,28 +133,18 @@ const Leaderboard = () => {
 
 const page = () => {
   return (
-    <div className="">
-      <div className=" relative z-10 mx-2">
-        <img src="/assets/BG.svg" className=" w-screen" />
-      </div>
-      <div className="absolute inset-0 z-20 ">
-        <div className="flex flex-col px-10 items-center justify-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
-          <div className="w-full">
-            <Navbar />
+    <DefaultLayout>
+      <div className="flex justify-between self-center px-10 xl:px-24">
+        <div className="flex justify-between w-full ">
+          <div className="overflow-y-auto h-5/6">
+            <Leaderboard />
           </div>
-          <div className="flex justify-between self-center px-10 xl:px-24">
-            <div className="flex justify-between w-full ">
-              <div className="overflow-y-auto h-5/6">
-                <Leaderboard />
-              </div>
-              <div>
-                <RecentClaims />
-              </div>
-            </div>
+          <div>
+            <RecentClaims />
           </div>
         </div>
       </div>
-    </div>
+    </DefaultLayout>
   );
 };
 

@@ -14,6 +14,7 @@ import addFollower from "@/utils/profileHelpers/addFollower";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
 import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
+import DefaultLayout from "@/components/DefaultLayout";
 
 interface MatchCardProps {
   team1: number;
@@ -356,291 +357,279 @@ function Page({ params }: { params: { address: string } }) {
   };
 
   return (
-    <div className="">
-      <div className=" relative z-10 mx-2">
-        <img src="/assets/BG.svg" className=" w-screen" />
-      </div>
-      <div className="absolute inset-0 z-20 ">
-        <div className="flex flex-col px-10 items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
-          <div className="w-full">
-            <Navbar />
-          </div>
-          {primaryWallet == null ? (
-            <ConnectWalletToPlay />
-          ) : (
-            <>
-              <div className="flex justify-between w-10/12 px-10">
-                <div className="flex">
-                  <img
-                    src={profilepic}
-                    alt="toppoints"
-                    className="w-32 h-32  rounded-full bg-white mx-auto mt-10 cursor-pointer"
-                    onClick={handleImageClick}
-                  />
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    style={{ display: "none" }}
-                    onChange={handleFileChange}
-                  />
-                  <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
-                    <p className=" text-nowrap  self-start">{name}</p>
-                    <p className="text-nowrap self-start">@{username}</p>
-                    <div className="flex items-center justify-center self-start">
-                      <span className=" text-slate-400 ">
-                        Followers&nbsp;:&nbsp;
-                      </span>{" "}
-                      {followers}
-                    </div>
-                    <div className="flex items-center justify-center self-start">
-                      <span className=" text-slate-400">
-                        Following&nbsp;:&nbsp;
-                      </span>{" "}
-                      {followings}
-                    </div>
-                  </div>
-                  <div className="flex w-full justify-center items-center mt-4 ml-10 ">
-                    <div
-                      className={`bg-no-repeat w-fit bg-cover ${
-                        primaryWallet.address === params.address
-                          ? "opacity-50 cursor-not-allowed"
-                          : ""
-                      }`}
-                      style={{
-                        backgroundImage: `url('/assets/LoginBorder.svg')`,
-                      }}
-                    >
-                      <span
-                        className={`text-sm font-stalinist flex justify-center self-center mt-1 py-2 ml-3 pr-3 ${
-                          primaryWallet.address === params.address
-                            ? "cursor-not-allowed"
-                            : "cursor-pointer"
-                        }`}
-                        onClick={() => {
-                          if (primaryWallet.address !== params.address) {
-                            addFollower(
-                              params.address as string,
-                              primaryWallet.address as string
-                            ).then((data) => {
-                              console.log(data.response);
-                            });
-                          }
-                        }}
-                      >
-                        Follow
-                      </span>
-                    </div>
-                  </div>
+    <DefaultLayout>
+      {primaryWallet == null ? (
+        <ConnectWalletToPlay />
+      ) : (
+        <>
+          <div className="flex justify-between w-10/12 px-10">
+            <div className="flex">
+              <img
+                src={profilepic}
+                alt="toppoints"
+                className="w-32 h-32  rounded-full bg-white mx-auto mt-10 cursor-pointer"
+                onClick={handleImageClick}
+              />
+              <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
+              <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
+                <p className=" text-nowrap  self-start">{name}</p>
+                <p className="text-nowrap self-start">@{username}</p>
+                <div className="flex items-center justify-center self-start">
+                  <span className=" text-slate-400 ">
+                    Followers&nbsp;:&nbsp;
+                  </span>{" "}
+                  {followers}
                 </div>
+                <div className="flex items-center justify-center self-start">
+                  <span className=" text-slate-400">
+                    Following&nbsp;:&nbsp;
+                  </span>{" "}
+                  {followings}
+                </div>
+              </div>
+              <div className="flex w-full justify-center items-center mt-4 ml-10 ">
+                <div
+                  className={`bg-no-repeat w-fit bg-cover ${
+                    primaryWallet.address === params.address
+                      ? "opacity-50 cursor-not-allowed"
+                      : ""
+                  }`}
+                  style={{
+                    backgroundImage: `url('/assets/LoginBorder.svg')`,
+                  }}
+                >
+                  <span
+                    className={`text-sm font-stalinist flex justify-center self-center mt-1 py-2 ml-3 pr-3 ${
+                      primaryWallet.address === params.address
+                        ? "cursor-not-allowed"
+                        : "cursor-pointer"
+                    }`}
+                    onClick={() => {
+                      if (primaryWallet.address !== params.address) {
+                        addFollower(
+                          params.address as string,
+                          primaryWallet.address as string
+                        ).then((data) => {
+                          console.log(data.response);
+                        });
+                      }
+                    }}
+                  >
+                    Follow
+                  </span>
+                </div>
+              </div>
+            </div>
 
-                <div className="flex items-center justify-center mt-6 gap-2">
-                  <div className=" text-[10px] text-slate-400 xl:text-[14px]">
-                    Net Revenue
-                  </div>
-                  <div className="text-[10px] text-green-500 xl:text-[14px]">
-                    $1000
+            <div className="flex items-center justify-center mt-6 gap-2">
+              <div className=" text-[10px] text-slate-400 xl:text-[14px]">
+                Net Revenue
+              </div>
+              <div className="text-[10px] text-green-500 xl:text-[14px]">
+                $1000
+              </div>
+            </div>
+            {params.address == primaryWallet?.address && (
+              <div className="flex items-center justify-center mt-6">
+                <div className="flex w-full justify-center items-center  ml-10">
+                  <div
+                    className={` bg-no-repeat  w-fit bg-cover `}
+                    style={{
+                      backgroundImage: `url('/assets/LoginBorder.svg')`,
+                    }}
+                  >
+                    <span className="text-sm font-stalinist flex justify-center self-center mt-1 py-2 mr-2 ml-4 pr-3 cursor-pointer">
+                      Claim
+                    </span>
                   </div>
                 </div>
-                {params.address == primaryWallet?.address && (
-                  <div className="flex items-center justify-center mt-6">
-                    <div className="flex w-full justify-center items-center  ml-10">
-                      <div
-                        className={` bg-no-repeat  w-fit bg-cover `}
-                        style={{
-                          backgroundImage: `url('/assets/LoginBorder.svg')`,
-                        }}
+              </div>
+            )}
+          </div>
+          <div className="flex justify-between w-10/12 px-10 mt-8 ">
+            <div className="flex gap-1 ">
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                Highest Position
+              </div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">3</div>
+            </div>
+            <div className="flex gap-1 ">
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                Biggest Win
+              </div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">$836</div>
+            </div>
+            <div className="flex gap-1 ">
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                Games Played
+              </div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">10</div>
+            </div>
+            <div className="flex gap-1 ">
+              <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
+                Amount won
+              </div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">$1799</div>
+            </div>
+          </div>
+          <hr className="p-2 w-10/12 my-5 " />
+          <div className="text-lg">Ongoing</div>
+          <div className="flex justify-between w-10/12 mt-5">
+            <div className="overflow-x-auto self-start scrollbar-custom w-full">
+              <div className="flex gap-3 self-start w-full">
+                {fetching ? (
+                  // Display dummy data while fetching
+                  <div className="text-center flex items-center justify-center w-full h-32">
+                    <div role="status">
+                      <svg
+                        aria-hidden="true"
+                        className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-[#D8485F]"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <span className="text-sm font-stalinist flex justify-center self-center mt-1 py-2 mr-2 ml-4 pr-3 cursor-pointer">
-                          Claim
-                        </span>
-                      </div>
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentFill"
+                        />
+                      </svg>
+                      <span className="sr-only">Loading...</span>
+                    </div>
+                  </div>
+                ) : // Display actual ongoing matches after fetching
+                unclaimmableOngoingMatches.length > 0 ? (
+                  unclaimmableOngoingMatches.map(
+                    (match: any, index: number) => (
+                      <MatchCard
+                        key={index}
+                        team1={match.home_id}
+                        team2={match.away_id}
+                        status={1}
+                        fixtureid={match.fixture_id}
+                      />
+                    )
+                  )
+                ) : (
+                  <div className="flex items-center justify-center w-full h-32">
+                    <div className="text-sm text-slate-500 font-stalinist">
+                      Empty
                     </div>
                   </div>
                 )}
               </div>
-              <div className="flex justify-between w-10/12 px-10 mt-8 ">
-                <div className="flex gap-1 ">
-                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    Highest Position
-                  </div>
-                  <div className="text-[10px] ml-2 xl:text-[14px]">3</div>
-                </div>
-                <div className="flex gap-1 ">
-                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    Biggest Win
-                  </div>
-                  <div className="text-[10px] ml-2 xl:text-[14px]">$836</div>
-                </div>
-                <div className="flex gap-1 ">
-                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    Games Played
-                  </div>
-                  <div className="text-[10px] ml-2 xl:text-[14px]">10</div>
-                </div>
-                <div className="flex gap-1 ">
-                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    Amount won
-                  </div>
-                  <div className="text-[10px] ml-2 xl:text-[14px]">$1799</div>
-                </div>
-              </div>
-              <hr className="p-2 w-10/12 my-5 " />
-              <div className="text-lg">Ongoing</div>
-              <div className="flex justify-between w-10/12 mt-5">
-                <div className="overflow-x-auto self-start scrollbar-custom w-full">
-                  <div className="flex gap-3 self-start w-full">
-                    {fetching ? (
-                      // Display dummy data while fetching
-                      <div className="text-center flex items-center justify-center w-full h-32">
-                        <div role="status">
-                          <svg
-                            aria-hidden="true"
-                            className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-[#D8485F]"
-                            viewBox="0 0 100 101"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                              fill="currentFill"
-                            />
-                          </svg>
-                          <span className="sr-only">Loading...</span>
-                        </div>
-                      </div>
-                    ) : // Display actual ongoing matches after fetching
-                    unclaimmableOngoingMatches.length > 0 ? (
-                      unclaimmableOngoingMatches.map(
-                        (match: any, index: number) => (
-                          <MatchCard
-                            key={index}
-                            team1={match.home_id}
-                            team2={match.away_id}
-                            status={1}
-                            fixtureid={match.fixture_id}
-                          />
-                        )
-                      )
-                    ) : (
-                      <div className="flex items-center justify-center w-full h-32">
-                        <div className="text-sm text-slate-500 font-stalinist">
-                          Empty
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
 
-              <div className="mt-3 text-lg">Claimable</div>
+          <div className="mt-3 text-lg">Claimable</div>
 
-              <div className="flex justify-between w-10/12 mt-5">
-                <div className="overflow-x-auto self-start scrollbar-custom w-full">
-                  <div className="flex gap-3 self-start w-full">
-                    {fetching ? (
-                      // Display dummy data while fetching
-                      <div className="text-center flex items-center justify-center w-full h-32">
-                        <div role="status">
-                          <svg
-                            aria-hidden="true"
-                            className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-[#D8485F]"
-                            viewBox="0 0 100 101"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                              fill="currentFill"
-                            />
-                          </svg>
-                          <span className="sr-only">Loading...</span>
-                        </div>
-                      </div>
-                    ) : // Display actual ongoing matches after fetching
-                    claimmableOngoingMatches.length > 0 ? (
-                      claimmableOngoingMatches.map(
-                        (match: any, index: number) => (
-                          <MatchCard
-                            key={index}
-                            team1={match.home_id}
-                            team2={match.away_id}
-                            status={1}
-                            fixtureid={match.fixture_id}
-                          />
-                        )
-                      )
-                    ) : (
-                      <div className="flex items-center justify-center w-full h-32">
-                        <div className="text-sm text-slate-500 font-stalinist">
-                          Empty
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div className="mt-3 text-lg">Completed</div>
-
-              <div className="flex justify-between w-10/12 mt-5">
-                <div className="overflow-x-auto self-start scrollbar-custom w-full">
-                  <div className="flex gap-3 self-start w-full">
-                    {fetching ? (
-                      // Display dummy data while fetching
-                      <div className="text-center flex items-center justify-center w-full h-32">
-                        <div role="status">
-                          <svg
-                            aria-hidden="true"
-                            className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-[#D8485F]"
-                            viewBox="0 0 100 101"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                              fill="currentFill"
-                            />
-                          </svg>
-                          <span className="sr-only">Loading...</span>
-                        </div>
-                      </div>
-                    ) : // Display actual ongoing matches after fetching
-                    completedMatches.length > 0 ? (
-                      completedMatches.map((match: any, index: number) => (
-                        <MatchCard
-                          key={index}
-                          team1={match.home_id}
-                          team2={match.away_id}
-                          status={1}
-                          fixtureid={match.fixture_id}
+          <div className="flex justify-between w-10/12 mt-5">
+            <div className="overflow-x-auto self-start scrollbar-custom w-full">
+              <div className="flex gap-3 self-start w-full">
+                {fetching ? (
+                  // Display dummy data while fetching
+                  <div className="text-center flex items-center justify-center w-full h-32">
+                    <div role="status">
+                      <svg
+                        aria-hidden="true"
+                        className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-[#D8485F]"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="currentColor"
                         />
-                      ))
-                    ) : (
-                      <div className="flex items-center justify-center w-full h-32">
-                        <div className="text-sm text-slate-500 font-stalinist">
-                          Empty
-                        </div>
-                      </div>
-                    )}
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentFill"
+                        />
+                      </svg>
+                      <span className="sr-only">Loading...</span>
+                    </div>
                   </div>
-                </div>
+                ) : // Display actual ongoing matches after fetching
+                claimmableOngoingMatches.length > 0 ? (
+                  claimmableOngoingMatches.map((match: any, index: number) => (
+                    <MatchCard
+                      key={index}
+                      team1={match.home_id}
+                      team2={match.away_id}
+                      status={1}
+                      fixtureid={match.fixture_id}
+                    />
+                  ))
+                ) : (
+                  <div className="flex items-center justify-center w-full h-32">
+                    <div className="text-sm text-slate-500 font-stalinist">
+                      Empty
+                    </div>
+                  </div>
+                )}
               </div>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
+            </div>
+          </div>
+          <div className="mt-3 text-lg">Completed</div>
+
+          <div className="flex justify-between w-10/12 mt-5">
+            <div className="overflow-x-auto self-start scrollbar-custom w-full">
+              <div className="flex gap-3 self-start w-full">
+                {fetching ? (
+                  // Display dummy data while fetching
+                  <div className="text-center flex items-center justify-center w-full h-32">
+                    <div role="status">
+                      <svg
+                        aria-hidden="true"
+                        className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-[#D8485F]"
+                        viewBox="0 0 100 101"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                          fill="currentFill"
+                        />
+                      </svg>
+                      <span className="sr-only">Loading...</span>
+                    </div>
+                  </div>
+                ) : // Display actual ongoing matches after fetching
+                completedMatches.length > 0 ? (
+                  completedMatches.map((match: any, index: number) => (
+                    <MatchCard
+                      key={index}
+                      team1={match.home_id}
+                      team2={match.away_id}
+                      status={1}
+                      fixtureid={match.fixture_id}
+                    />
+                  ))
+                ) : (
+                  <div className="flex items-center justify-center w-full h-32">
+                    <div className="text-sm text-slate-500 font-stalinist">
+                      Empty
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </DefaultLayout>
   );
 }
 

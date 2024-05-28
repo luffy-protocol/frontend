@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import DefaultLayout from "@/components/DefaultLayout";
+import request, { gql } from "graphql-request";
+import axios from "axios";
 
 interface LeaderboardRow {
   rank: number;
@@ -55,6 +57,86 @@ const claimRows: ClaimRow[] = [
     time: "5 mins ago",
   },
 ];
+
+interface User {
+  id: string;
+  name: string;
+  address: string;
+}
+interface MappedUsers {
+  [address: string]: User;
+}
+interface FetchInput {
+  mappedUsers: MappedUsers;
+  gameId: string;
+}
+interface UserData {
+  id: string;
+  name: string;
+  address: string;
+
+  points: number;
+}
+
+interface Props {
+  fetched: boolean;
+  setFetched: () => void;
+  slug: string;
+}
+
+const fetchAllUsers = async ({
+  gameId,
+  mappedUsers,
+}: FetchInput): Promise<UserData[]> => {
+  try {
+    const query = gql`
+      query MyQuery($gameId: String!) {
+        predictions(where: { game: $gameId }) {
+          claim {
+            points
+            user {
+              address
+            }
+          }
+        }
+      }
+    `;
+
+    const data = await request(
+      "https://api.studio.thegraph.com/query/30735/luffy-block-magic/version/latest",
+      query,
+      { gameId }
+    );
+
+    console.log("Fetched data:", data);
+
+    return (data as any).predictions
+      .map((pred: any) => {
+        if (pred.claim === null) {
+          return null;
+        }
+        const userAddress = pred.claim.user.address.toLowerCase();
+        const user = mappedUsers[userAddress];
+        if (!user) {
+          return {
+            name: "Unknown",
+            address: userAddress,
+            points: pred.claim.points || 0,
+          };
+        }
+        return {
+          name: user.name,
+          address: userAddress,
+          points: pred.claim.points || 0,
+        };
+      })
+      .filter((pred: any) => pred !== null);
+  } catch (error) {
+    console.error("Error fetching ongoing fixtures:", error);
+    return [];
+  }
+};
+
 const RecentClaims = () => {
   return (
     <div className="flex flex-col ">
@@ -83,7 +165,7 @@ const RecentClaims = () => {
   );
 };
 
-const Leaderboard = () => {
+const Leaderboard = ({ users }: { users: UserData[] }) => {
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className=" font-stalinist  text-2xl xl:text-3xl text-[#D8485F] ">
@@ -107,22 +189,24 @@ const Leaderboard = () => {
             </thead>
 
             <tbody className="">
-              {leaderboardData.map((row) => (
-                <tr
-                  key={row.rank}
-                  className="tr hover:bg-gray-100 text-gradient font-stalinist"
-                >
-                  <td className="td px-4 py-6 text-sm xl:text-lg">
-                    {row.rank}
-                  </td>
-                  <td className="td px-4 py-6 text-sm xl:text-lg">
-                    {row.name}
-                  </td>
-                  <td className="td px-4 py-6 text-sm xl:text-lg">
-                    {row.points}
-                  </td>
-                </tr>
-              ))}
+              {users
+                .sort((a: any, b: any) => b.points - a.points)
+                .map((user: any, index: any) => (
+                  <tr
+                    key={user.name}
+                    className="tr hover:bg-gray-100 text-gradient font-stalinist"
+                  >
+                    <td className="td px-4 py-6 text-sm xl:text-lg">
+                      {index + 1}
+                    </td>
+                    <td className="td px-4 py-6 text-sm xl:text-lg">
+                      {user.name}
+                    </td>
+                    <td className="td px-4 py-6 text-sm xl:text-lg">
+                      {user.points}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
@@ -131,13 +215,50 @@ const Leaderboard = () => {
   );
 };
 
-const page = () => {
+const page = ({ params }: { params: { fixtureId: string } }) => {
+  const [users, setUsers] = useState<UserData[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        console.log("FETCHING data");
+        const response = await axios.get(`/api/dynamic/fetch-users`);
+        const data = response.data;
+        console.log(data);
+        if (data.success) {
+          const _mappedUsers: {
+            [key: string]: { id: string; name: string; address: string };
+          } = {};
+          data.data.users.forEach((user: any) => {
+            const address = user.walletPublicKey.toLowerCase();
+            _mappedUsers[address] = {
+              id: user.id,
+              name: `${user.firstName} ${user.lastName}`,
+              address,
+            };
+          });
+          const fixtureIdHex = "0x" + parseInt(params.fixtureId).toString(16);
+          const _userData = await fetchAllUsers({
+            mappedUsers: _mappedUsers,
+            gameId: fixtureIdHex,
+          });
+          console.log(_userData);
+          setUsers(_userData);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <DefaultLayout>
       <div className="flex justify-between self-center px-10 xl:px-24">
         <div className="flex justify-between w-full ">
           <div className="overflow-y-auto h-5/6">
-            <Leaderboard />
+            <Leaderboard users={users} />
           </div>
           <div>
             <RecentClaims />

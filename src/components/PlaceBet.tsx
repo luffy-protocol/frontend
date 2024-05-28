@@ -37,21 +37,23 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
               style={{ transform: "scale(.60)" }}
             >
               <Dropdown
-                label="Choose Chain"
+                label={
+                  chain == 0
+                    ? "Choose Chain"
+                    : dropdownElements.chains[chain].name
+                }
                 selectedOption={chain}
-                setSelectedOption={(c: number) => {
-                  if (c == chain) setChain(0);
-                  else setChain(chain);
-                }}
+                setSelectedOption={setChain}
                 options={dropdownElements.chains}
               />
               <Dropdown
-                label="Choose Token"
+                label={
+                  token == 0
+                    ? "Choose Token"
+                    : dropdownElements.tokens[token].name
+                }
                 selectedOption={token}
-                setSelectedOption={(t: number) => {
-                  if (t == token) setToken(0);
-                  else setToken(token);
-                }}
+                setSelectedOption={setToken}
                 options={resolveTokens(dropdownElements, chain)}
               />
             </div>

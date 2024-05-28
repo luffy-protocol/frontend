@@ -77,7 +77,7 @@ const Leaderboard = ({ users }: { users: UserData[] }) => {
                 .sort((a: any, b: any) => b.points - a.points)
                 .map((user: any, index: any) => (
                   <tr
-                    key={user.name}
+                    key={index}
                     className="tr hover:bg-gray-100 text-gradient font-stalinist"
                   >
                     <td className="td px-4 py-6 text-sm xl:text-lg">

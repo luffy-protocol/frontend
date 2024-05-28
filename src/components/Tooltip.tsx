@@ -43,16 +43,19 @@ const Tooltip = () => {
               className=" -mt-5 -ml-5"
             />
             <p className=" text-[10px] font-stalinist text-red-500 -ml-5  text-center">
-              Powered By Chainlink VRF
+              Powered By
             </p>
-          </div>
-          <div className=" justify-center items-center flex">
-            <img
-              src="/logos/chainlink.svg"
-              width={"70px"}
-              alt="chain"
-              className=" -mt-5"
-            />
+            <div className=" justify-center items-center flex mx-2">
+              <img
+                src="/logos/chainlink.svg"
+                width={"70px"}
+                alt="chain"
+                className=" -mt-6"
+              />
+            </div>
+            <p className=" text-[10px] font-stalinist text-red-500  text-center">
+              VRF
+            </p>
           </div>
         </div>
       )}

@@ -15,6 +15,8 @@ import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
 import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
 import DefaultLayout from "@/components/DefaultLayout";
+import { getProfileData } from "@/utils/profileHelpers/getProfileData";
+import { getPackedSettings } from "http2";
 
 interface MatchCardProps {
   team1: number;
@@ -31,7 +33,7 @@ const MatchCard: React.FC<MatchCardProps> = ({
 }) => {
   const router = useRouter();
   return (
-    <div className="flex flex-col items-center bg-transparent rounded-lg shadow-lg p-6 m-4 min-w-[280px] max-w-[300px] max-h-[130px] border gap-3 border-[#D8485F]">
+    <div className="flex flex-col items-center bg-transparent rounded-lg shadow-lg p-6 m-4 min-w-[280px] max-w-[300px] max-h-[130px] border gap-3 border-[#D8485F] font-stalinist">
       <div className="justify-between">
         <div className="flex justify-between items-center min-w-[200px] max-w-[260px]">
           <div>
@@ -80,6 +82,11 @@ function Page({ params }: { params: { address: string } }) {
   const [username, setUsername] = useState<string>("@LeoMessi");
   const [followers, setFollowers] = useState<number>(1);
   const [followings, setFollowing] = useState<number>(1);
+  const [totalGamesPlayed, setTotalGamesPlayed] = useState<string>("-");
+  const [HighestPosition, setHighestPosition] = useState<string>("-");
+  const [BiggestWin, setBiggestWin] = useState<string>("-");
+  const [AmountWon, setAmountWon] = useState<string>("-");
+  const [NetRevenue, setNetRevenue] = useState<number>(0);
 
   useEffect(() => {
     if (!primaryWallet) return;
@@ -113,14 +120,16 @@ function Page({ params }: { params: { address: string } }) {
             headers: {},
           });
           const data = response.data;
+
           console.log("DYNAMIC DATA");
+          console.log(data);
 
           if (data.success) {
             // Filter the data based on address
             const filteredUsers = data.data.users.filter(
               (user: any) =>
                 user.walletPublicKey.toLowerCase() ===
-                primaryWallet.address.toLowerCase()
+                params.address.toLowerCase()
             );
             console.log(filteredUsers);
 
@@ -356,13 +365,43 @@ function Page({ params }: { params: { address: string } }) {
     }
   };
 
+  useEffect(() => {
+    const fetchdata = async () => {
+      const data = await getProfileData(params.address);
+      console.log(data);
+      if (data) {
+        setAmountWon(data.totalEarnings || "0");
+        setTotalGamesPlayed(data.totalGamesPlayed || "0");
+        const lowestPosition = data.predictions.reduce(
+          (min, prediction) =>
+            Math.min(min, Number(prediction.reward.position)),
+          Infinity
+        );
+        setHighestPosition(lowestPosition.toString());
+        const highestReward = data.rewards.reduce(
+          (max, reward) => Math.max(max, Number(reward.amount)),
+          0
+        );
+        setBiggestWin(highestReward.toString());
+
+        setNetRevenue(
+          Number(data.totalEarnings) === 0
+            ? 0
+            : Number(data.totalEarnings) - Number(data.totalSpent)
+        );
+      }
+    };
+
+    fetchdata();
+  });
+
   return (
     <DefaultLayout>
       {primaryWallet == null ? (
         <ConnectWalletToPlay />
       ) : (
         <>
-          <div className="flex justify-between w-10/12 px-10">
+          <div className="flex justify-between w-10/12 px-10 font-stalinist">
             <div className="flex">
               <img
                 src={profilepic}
@@ -430,8 +469,12 @@ function Page({ params }: { params: { address: string } }) {
               <div className=" text-[10px] text-slate-400 xl:text-[14px]">
                 Net Revenue
               </div>
-              <div className="text-[10px] text-green-500 xl:text-[14px]">
-                $1000
+              <div
+                className={`text-[10px xl:text-[14px] ${
+                  NetRevenue >= 0 ? "text-green-500" : "text-red-500"
+                }`}
+              >
+                ${NetRevenue}
               </div>
             </div>
             {params.address == primaryWallet?.address && (
@@ -451,34 +494,42 @@ function Page({ params }: { params: { address: string } }) {
               </div>
             )}
           </div>
-          <div className="flex justify-between w-10/12 px-10 mt-8 ">
+          <div className="flex justify-between w-10/12 px-10 mt-8 font-stalinist">
             <div className="flex gap-1 ">
               <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
                 Highest Position
               </div>
-              <div className="text-[10px] ml-2 xl:text-[14px]">3</div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">
+                {HighestPosition}
+              </div>
             </div>
             <div className="flex gap-1 ">
               <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
                 Biggest Win
               </div>
-              <div className="text-[10px] ml-2 xl:text-[14px]">$836</div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">
+                ${BiggestWin}
+              </div>
             </div>
             <div className="flex gap-1 ">
               <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
                 Games Played
               </div>
-              <div className="text-[10px] ml-2 xl:text-[14px]">10</div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">
+                {totalGamesPlayed}
+              </div>
             </div>
             <div className="flex gap-1 ">
               <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
                 Amount won
               </div>
-              <div className="text-[10px] ml-2 xl:text-[14px]">$1799</div>
+              <div className="text-[10px] ml-2 xl:text-[14px]">
+                ${AmountWon}
+              </div>
             </div>
           </div>
           <hr className="p-2 w-10/12 my-5 " />
-          <div className="text-lg">Ongoing</div>
+          <div className="text-lg font-stalinist">Ongoing</div>
           <div className="flex justify-between w-10/12 mt-5">
             <div className="overflow-x-auto self-start scrollbar-custom w-full">
               <div className="flex gap-3 self-start w-full">
@@ -529,7 +580,7 @@ function Page({ params }: { params: { address: string } }) {
             </div>
           </div>
 
-          <div className="mt-3 text-lg">Claimable</div>
+          <div className="mt-3 text-lg font-stalinist">Claimable</div>
 
           <div className="flex justify-between w-10/12 mt-5">
             <div className="overflow-x-auto self-start scrollbar-custom w-full">
@@ -578,7 +629,7 @@ function Page({ params }: { params: { address: string } }) {
               </div>
             </div>
           </div>
-          <div className="mt-3 text-lg">Completed</div>
+          <div className="mt-3 text-lg font-stalinist">Completed</div>
 
           <div className="flex justify-between w-10/12 mt-5">
             <div className="overflow-x-auto self-start scrollbar-custom w-full">

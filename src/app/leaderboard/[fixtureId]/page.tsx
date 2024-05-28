@@ -4,77 +4,14 @@ import Navbar from "@/components/Navbar";
 import DefaultLayout from "@/components/DefaultLayout";
 import request, { gql } from "graphql-request";
 import axios from "axios";
+import { time } from "console";
+import { ClaimRow, FetchInput, UserData } from "@/utils/interface";
+import { fetchLeaderboard } from "@/utils/leaderboardHelpers/fetchLeaderboard";
+import { fetchAllClaims } from "@/utils/leaderboardHelpers/fetchRecentClaims";
 
 interface LeaderboardRow {
   rank: number;
   name: string;
-  points: number;
-}
-
-interface ClaimRow {
-  name: string;
-  time: string;
-  points: number;
-}
-
-const leaderboardData: LeaderboardRow[] = [
-  { rank: 1, name: "Gabriel", points: 79 },
-  { rank: 2, name: "Romario Kavin", points: 100 },
-  { rank: 3, name: "Leo Franklin", points: 80 },
-  { rank: 4, name: "Gabriel", points: 79 },
-  { rank: 5, name: "Leo Franklin", points: 80 },
-  { rank: 6, name: "Gabriel", points: 79 },
-  { rank: 7, name: "Leo Franklin", points: 80 },
-  { rank: 8, name: "Gabriel", points: 79 },
-  { rank: 9, name: "Romario Kavin", points: 100 },
-  { rank: 10, name: "Leo Franklin", points: 80 },
-  { rank: 11, name: "Gabriel", points: 79 },
-  { rank: 12, name: "Romario Kavin", points: 100 },
-  { rank: 13, name: "Leo Franklin", points: 80 },
-  { rank: 14, name: "Gabriel", points: 79 },
-  { rank: 15, name: "Leo Franklin", points: 80 },
-];
-
-const claimRows: ClaimRow[] = [
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 minutes ago",
-  },
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 minutes ago",
-  },
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 mins ago",
-  },
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 mins ago",
-  },
-];
-
-interface User {
-  id: string;
-  name: string;
-  address: string;
-}
-interface MappedUsers {
-  [address: string]: User;
-}
-interface FetchInput {
-  mappedUsers: MappedUsers;
-  gameId: string;
-}
-interface UserData {
-  id: string;
-  name: string;
-  address: string;
-
   points: number;
 }
 
@@ -84,60 +21,7 @@ interface Props {
   slug: string;
 }
 
-const fetchAllUsers = async ({
-  gameId,
-  mappedUsers,
-}: FetchInput): Promise<UserData[]> => {
-  try {
-    const query = gql`
-      query MyQuery($gameId: String!) {
-        predictions(where: { game: $gameId }) {
-          claim {
-            points
-            user {
-              address
-            }
-          }
-        }
-      }
-    `;
-
-    const data = await request(
-      "https://api.studio.thegraph.com/query/30735/luffy-block-magic/version/latest",
-      query,
-      { gameId }
-    );
-
-    console.log("Fetched data:", data);
-
-    return (data as any).predictions
-      .map((pred: any) => {
-        if (pred.claim === null) {
-          return null;
-        }
-        const userAddress = pred.claim.user.address.toLowerCase();
-        const user = mappedUsers[userAddress];
-        if (!user) {
-          return {
-            name: "Unknown",
-            address: userAddress,
-            points: pred.claim.points || 0,
-          };
-        }
-        return {
-          name: user.name,
-          address: userAddress,
-          points: pred.claim.points || 0,
-        };
-      })
-      .filter((pred: any) => pred !== null);
-  } catch (error) {
-    console.error("Error fetching ongoing fixtures:", error);
-    return [];
-  }
-};
-
-const RecentClaims = () => {
+const RecentClaims = ({ claims }: { claims: ClaimRow[] }) => {
   return (
     <div className="flex flex-col ">
       <div className="whitespace-nowrap font-stalinist text-2xl xl:text-3xl text-[#D8485F]">
@@ -145,18 +29,18 @@ const RecentClaims = () => {
       </div>
       <hr className="my-10 border-t border-gray-300" />
       <div className="flex flex-col gap-6">
-        {claimRows.map((row, id) => (
+        {claims.map((claim, id) => (
           <div className="flex flex-col gap-3" key={id}>
             <div className="flex justify-between items-center">
               <div className="font-stalinist  text-lg xl:text-xl  max-w-[220px] overflow-hidden text-ellipsis whitespace-nowrap text-[#717171]">
-                @{row.name}
+                @{claim.name}
               </div>
               <div className="font-stalinist text-sm whitespace-nowrap text-[#B62DD3]">
-                {row.time}
+                {claim.time}
               </div>
             </div>
             <div className="self-center eclipse text-[#D8485F] text-xl xl:text-2xl font-stalinist">
-              {row.points} points
+              {claim.points} points
             </div>
           </div>
         ))}
@@ -217,6 +101,7 @@ const Leaderboard = ({ users }: { users: UserData[] }) => {
 
 const page = ({ params }: { params: { fixtureId: string } }) => {
   const [users, setUsers] = useState<UserData[]>([]);
+  const [claims, setClaims] = useState<ClaimRow[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -238,12 +123,20 @@ const page = ({ params }: { params: { fixtureId: string } }) => {
             };
           });
           const fixtureIdHex = "0x" + parseInt(params.fixtureId).toString(16);
-          const _userData = await fetchAllUsers({
+          const _userData = await fetchLeaderboard({
             mappedUsers: _mappedUsers,
             gameId: fixtureIdHex,
           });
           console.log(_userData);
           setUsers(_userData);
+
+          //Recent Claims
+          const _claimData = await fetchAllClaims({
+            mappedUsers: _mappedUsers,
+            gameId: fixtureIdHex,
+          });
+          console.log(_claimData);
+          setClaims(_claimData);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -261,7 +154,7 @@ const page = ({ params }: { params: { fixtureId: string } }) => {
             <Leaderboard users={users} />
           </div>
           <div>
-            <RecentClaims />
+            <RecentClaims claims={claims} />
           </div>
         </div>
       </div>

@@ -50,4 +50,41 @@ interface Option {
   name: string;
   image: string;
 }
-export type { MatchDetails, Player, Option };
+interface ClaimRow {
+  id: string;
+  name: string;
+  time: string;
+  points: number;
+  address: string;
+}
+
+interface User {
+  id: string;
+  name: string;
+  address: string;
+}
+interface MappedUsers {
+  [address: string]: User;
+}
+interface FetchInput {
+  mappedUsers: MappedUsers;
+  gameId: string;
+}
+interface UserData {
+  id: string;
+  name: string;
+  address: string;
+
+  points: number;
+}
+
+export type {
+  MatchDetails,
+  Player,
+  Option,
+  ClaimRow,
+  User,
+  MappedUsers,
+  FetchInput,
+  UserData,
+};

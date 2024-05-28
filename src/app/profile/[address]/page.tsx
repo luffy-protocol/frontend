@@ -1,7 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Status from "@/components/status";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import CheckProfile from "@/utils/profileHelpers/CheckProfile";
 import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import addFollower from "@/utils/profileHelpers/addFollower";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
+import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
 
 interface MatchCardProps {
   team1: number;
@@ -332,6 +333,25 @@ function Page({ params }: { params: { address: string } }) {
     fetchOngoingFixtures();
   }, [primaryWallet]);
 
+  const fileInputRef = useRef(null);
+
+  const handleImageClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange: any = async (event: any) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log(file);
+      await uploadProfileImg(file, params.address as string).then((data) => {
+        console.log(data.response);
+        setProfilepic(data.response.publicUrl);
+      });
+    }
+  };
+
   return (
     <div className="">
       <div className=" relative z-10 mx-2">
@@ -351,7 +371,14 @@ function Page({ params }: { params: { address: string } }) {
                   <img
                     src={profilepic}
                     alt="toppoints"
-                    className="w-32 h-32  rounded-full bg-white mx-auto mt-10"
+                    className="w-32 h-32  rounded-full bg-white mx-auto mt-10 cursor-pointer"
+                    onClick={handleImageClick}
+                  />
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    style={{ display: "none" }}
+                    onChange={handleFileChange}
                   />
                   <div className=" text-sm flex flex-col justify-center items-center w-fit mt-5 ml-5 gap-2">
                     <p className=" text-nowrap  self-start">{name}</p>
@@ -456,9 +483,9 @@ function Page({ params }: { params: { address: string } }) {
               </div>
               <hr className="p-2 w-10/12 mt-5 " />
               <div className="text-lg">Ongoing</div>
-              <div className="flex justify-between w-10/12  mt-5">
-                <div className="overflow-x-auto self-start scrollbar-custom">
-                  <div className="flex gap-3 self-start  ">
+              <div className="flex justify-between w-10/12 mt-5">
+                <div className="overflow-x-auto self-start scrollbar-custom w-full">
+                  <div className="flex gap-3 self-start w-full">
                     {unclaimmableOngoingMatches.length > 0 ? (
                       unclaimmableOngoingMatches.map(
                         (match: any, index: number) => (
@@ -472,18 +499,21 @@ function Page({ params }: { params: { address: string } }) {
                         )
                       )
                     ) : (
-                      <div className="text-lg text-slate-100 font-stalinist">
-                        No Ongoing Matches
+                      <div className="flex items-center justify-center w-full h-32">
+                        <div className="text-sm text-slate-500 font-stalinist">
+                          No Ongoing Matches
+                        </div>
                       </div>
                     )}
                   </div>
                 </div>
               </div>
+
               <div className="mt-3 text-lg">Claimable</div>
 
-              <div className="flex justify-between w-10/12  mt-5">
-                <div className="overflow-x-auto self-start scrollbar-custom">
-                  <div className="flex gap-3 self-start">
+              <div className="flex justify-between w-10/12 mt-5">
+                <div className="overflow-x-auto self-start scrollbar-custom w-full">
+                  <div className="flex gap-3 self-start w-full">
                     {claimmableOngoingMatches.length > 0 ? (
                       claimmableOngoingMatches.map(
                         (match: any, index: number) => (
@@ -491,14 +521,16 @@ function Page({ params }: { params: { address: string } }) {
                             key={index}
                             team1={match.home_id}
                             team2={match.away_id}
-                            status={2}
+                            status={1}
                             fixtureid={match.fixture_id}
                           />
                         )
                       )
                     ) : (
-                      <div className="text-lg text-slate-100 self-center">
-                        No Claimable Matches
+                      <div className="flex items-center justify-center w-full h-32">
+                        <div className="text-sm text-slate-500 font-stalinist">
+                          No Claimable Matches
+                        </div>
                       </div>
                     )}
                   </div>

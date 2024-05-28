@@ -96,11 +96,6 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 <Tooltip />
               </div>
             </div>
-            {enableRandomness && (
-              <p className=" text-[10px] font-stalinist ">
-                Powered By Chainlink VRF
-              </p>
-            )}
             <div className="flex w-full justify-center items-center mt-2">
               <button
                 className={` bg-no-repeat  w-fit bg-cover `}

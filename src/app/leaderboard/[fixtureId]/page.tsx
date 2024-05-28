@@ -9,18 +9,6 @@ import { ClaimRow, FetchInput, UserData } from "@/utils/interface";
 import { fetchLeaderboard } from "@/utils/leaderboardHelpers/fetchLeaderboard";
 import { fetchAllClaims } from "@/utils/leaderboardHelpers/fetchRecentClaims";
 
-interface LeaderboardRow {
-  rank: number;
-  name: string;
-  points: number;
-}
-
-interface Props {
-  fetched: boolean;
-  setFetched: () => void;
-  slug: string;
-}
-
 const RecentClaims = ({ claims }: { claims: ClaimRow[] }) => {
   return (
     <div className="flex flex-col ">
@@ -99,7 +87,7 @@ const Leaderboard = ({ users }: { users: UserData[] }) => {
   );
 };
 
-const page = ({ params }: { params: { fixtureId: string } }) => {
+const Page: React.FC<{ params: { fixtureId: string } }> = ({ params }) => {
   const [users, setUsers] = useState<UserData[]>([]);
   const [claims, setClaims] = useState<ClaimRow[]>([]);
 
@@ -162,4 +150,4 @@ const page = ({ params }: { params: { fixtureId: string } }) => {
   );
 };
 
-export default page;
+export default Page;

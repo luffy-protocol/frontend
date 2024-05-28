@@ -10,7 +10,7 @@ interface DropdownProps {
   setSelectedOption: (e: number) => void; // Use Dispatch for setState type
 }
 
-export default function TempDropdown({
+export default function Dropdown({
   label,
   selectedOption,
   setSelectedOption,

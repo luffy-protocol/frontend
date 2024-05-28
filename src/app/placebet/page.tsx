@@ -1,16 +1,9 @@
 "use client";
-import Dropdown from "@/components/Dropdown";
-import TempDropdown from "@/components/Game/Dropdown";
+import Dropdown from "@/components/Game/Dropdown";
 import { dropdownElements } from "@/utils/constants";
+import resolveTokens from "@/utils/resolveTokens";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import React, { useState } from "react";
-
-// place bet
-interface Option {
-  id: number;
-  name: string;
-  image: string;
-}
 
 export default function PlaceBet() {
   const { isAuthenticated, primaryWallet } = useDynamicContext();
@@ -25,15 +18,6 @@ export default function PlaceBet() {
       <DynamicWidget />
       <p className="mt-6 mb-4 font-semibold text-white text-2xl">Step 1</p>
       <div className="flex space-x-4">
-        <TempDropdown
-          label="Choose Chain"
-          selectedOption={selectedChain}
-          setSelectedOption={(chain: number) => {
-            if (chain == selectedChain) setSelectedChain(0);
-            else setSelectedChain(chain);
-          }}
-          options={dropdownElements.chains}
-        />
         <Dropdown
           label="Choose Chain"
           selectedOption={selectedChain}
@@ -42,10 +26,6 @@ export default function PlaceBet() {
             else setSelectedChain(chain);
           }}
           options={dropdownElements.chains}
-          open={chainsOpen}
-          setOpen={(state) => {
-            setChainsOpen(state);
-          }}
         />
         <Dropdown
           label="Choose Token"
@@ -54,13 +34,7 @@ export default function PlaceBet() {
             if (token == selectedToken) setSelectedToken(0);
             else setSelectedToken(token);
           }}
-          options={dropdownElements.tokens}
-          open={tokensOpen}
-          setOpen={(state) => {
-            console.log("PRESSED");
-            console.log(state);
-            setTokensOpen(state);
-          }}
+          options={resolveTokens(dropdownElements, selectedChain)}
         />
       </div>
       <p className="mt-6 mb-4 font-semibold text-white text-2xl">Step 2</p>

@@ -43,6 +43,10 @@ interface Player {
     | "st-louis-city"
     | "vancouver-whitecaps";
 }
+function shortenName(name: string): string {
+  const maxLength = 8;
+  return name.length > maxLength ? name.substring(0, maxLength) + "..." : name;
+}
 const PlayerImage: React.FC<PlayerImageProps> = ({
   name,
   index,
@@ -91,57 +95,57 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       />
 
       <div
-        className={`absolute cursor-pointer   text-sm bg-slate-50 text-black rounded-md text-center  ${
+        className={`absolute cursor-pointer   text-[11px] bg-slate-50 text-black  border-2 border-purple-600 font-stalinist text-center  ${
           index == 10
-            ? "left-[42%] top-[15%]  self-center"
+            ? "left-[40%] top-[15%]  self-center"
             : index == 9
-            ? " top-[52%] sm:top-[59%] left-[8%] "
+            ? " top-[52%] sm:top-[59%] left-[6%] "
             : index == 8
-            ? "top-[52%] sm:top-[59%] left-[30%]"
+            ? "top-[52%] sm:top-[59%] left-[28%]"
             : index == 7
-            ? " top-[52%] sm:top-[59%] left-[55%]"
+            ? " top-[52%] sm:top-[59%] left-[53%]"
             : index == 6
-            ? "top-[52%] sm:top-[59%] left-[78%]"
+            ? "top-[52%] sm:top-[59%] left-[76%]"
             : index == 5
-            ? "top-[66%] sm:top-[83%] left-[17%]"
+            ? "top-[66%] sm:top-[83%] left-[15%]"
             : index == 4
-            ? "top-[66%] sm:top-[83%] left-[42%]"
+            ? "top-[66%] sm:top-[83%] left-[40%]"
             : index == 3
-            ? "top-[66%] sm:top-[83%] left-[67%]"
+            ? "top-[66%] sm:top-[83%] left-[65%]"
             : index == 2
-            ? "top-[28%] sm:top-[35%] left-[17%]"
+            ? "top-[28%] sm:top-[35%] left-[15%]"
             : index == 1
-            ? "top-[28%] sm:top-[35%] left-[42%]"
-            : "top-[28%] sm:top-[35%] left-[67%]"
+            ? "top-[28%] sm:top-[35%] left-[40%]"
+            : "top-[28%] sm:top-[35%] left-[65%]"
         } w-fit px-2`}
         onClick={onClick}
       >
-        {name}
+        {shortenName(name)}
       </div>
       {showPoints && (
         <div
-          className={`absolute cursor-pointer text-[5px] md:text-xs mt-1 mr-5 px-1 font-semibold text-black rounded-md bg-slate-50 ${
+          className={`absolute cursor-pointer px-2   text-[9px] bg-slate-50 text-black  border-2 border-purple-600 font-stalinist text-center ${
             index == 10
-              ? "left-[42%] top-[18%]"
+              ? "left-[40%] top-[18%]"
               : index == 9
-              ? "top-[62%] left-[8%]"
+              ? "top-[62%] left-[6%]"
               : index == 8
-              ? "top-[62%] left-[30%]"
+              ? "top-[62%] left-[28%]"
               : index == 7
-              ? "top-[62%] left-[55%]"
+              ? "top-[62%] left-[53%]"
               : index == 6
-              ? "top-[62%] left-[78%]"
+              ? "top-[62%] left-[76%]"
               : index == 5
-              ? "top-[86%] left-[17%]"
+              ? "top-[86%] left-[15%]"
               : index == 4
-              ? "top-[86%] left-[42%]"
+              ? "top-[86%] left-[40%]"
               : index == 3
-              ? "top-[86%] left-[67%]"
+              ? "top-[86%] left-[65%]"
               : index == 2
-              ? "top-[38%] left-[17%]"
+              ? "top-[38%] left-[15%]"
               : index == 1
-              ? "top-[38%] left-[42%]"
-              : "top-[38%] left-[67%]"
+              ? "top-[38%] left-[40%]"
+              : "top-[38%] left-[65%]"
           }`}
           onClick={onClick}
         >

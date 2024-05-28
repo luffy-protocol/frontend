@@ -28,7 +28,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
             <PlayerProgress noPlayers={selectedPlayersCount} />
           </div>
           <div className="flex flex-col justify-center items-center ">
-            <div className="flex  gap-20 font-stalinist text-[10px] justify-be">
+            <div className="flex w-full font-stalinist text-[10px] justify-around">
               <p className="text-[10px]">Chain</p>
               <p className="text-[10px]">Token</p>
             </div>

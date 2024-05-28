@@ -3,6 +3,7 @@ import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
 import Tooltip from "./Tooltip";
 import { dropdownElements } from "@/utils/constants";
+import resolveTokens from "@/utils/resolveTokens";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -36,18 +37,22 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
               style={{ transform: "scale(.60)" }}
             >
               <Dropdown
+                label="Choose Chain"
                 selectedOption={chain}
-                setSelectedOption={(index) => {
-                  setChain(index);
+                setSelectedOption={(c: number) => {
+                  if (c == chain) setChain(0);
+                  else setChain(chain);
                 }}
                 options={dropdownElements.chains}
               />
               <Dropdown
+                label="Choose Token"
                 selectedOption={token}
-                setSelectedOption={(index) => {
-                  setToken(index);
+                setSelectedOption={(t: number) => {
+                  if (t == token) setToken(0);
+                  else setToken(token);
                 }}
-                options={dropdownElements.tokens}
+                options={resolveTokens(dropdownElements, chain)}
               />
             </div>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 import { Option } from "@/utils/interface";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface DropdownProps {
   label: string;
@@ -20,6 +20,11 @@ export default function Dropdown({
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    console.log("SELECTED OPTION");
+    console.log(selectedOption);
+  }, [selectedOption]);
 
   return (
     <div className="relative inline-block  text-left font-stalinist">
@@ -58,6 +63,8 @@ export default function Dropdown({
                   role="menuitem"
                   tabIndex={-1}
                   onClick={() => {
+                    console.log("SELECTED CHIAN ID");
+                    console.log(chain.id);
                     setSelectedOption(chain.id);
                     setIsOpen(false);
                   }}

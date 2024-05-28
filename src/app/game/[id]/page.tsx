@@ -11,6 +11,7 @@ import GameStatus from "@/components/Game/GameStatus";
 import PlayerProgress from "@/components/Game/PlayerProgress";
 import Dropdown from "@/components/Game/Dropdown";
 import Results from "@/components/Results";
+import Tooltip from "@/components/Tooltip";
 
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);
@@ -145,7 +146,7 @@ function Page({ params }: { params: { id: string } }) {
                       </div>
                     </div>
                     <div>
-                      <div className="">
+                      <div className="flex">
                         <div>
                           <label className="inline-flex items-center cursor-pointer">
                             <input
@@ -161,6 +162,9 @@ function Page({ params }: { params: { id: string } }) {
                               Randomness
                             </span>
                           </label>
+                        </div>
+                        <div className="ml-4 mt-0">
+                          <Tooltip text="Randomness" />
                         </div>
                       </div>
                       <div className="flex w-full justify-center items-center">

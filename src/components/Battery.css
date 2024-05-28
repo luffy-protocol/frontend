@@ -1,0 +1,15 @@
+@keyframes fillUp {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.battery-level {
+  animation: fillUp 0.5s ease-in-out forwards;
+  transform-origin: bottom;
+}

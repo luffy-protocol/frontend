@@ -159,7 +159,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
           className="text-right justify-items-end cursor-pointer pl-20"
           onClick={() => setopen(false)}
         >
-          x
+          <img src="/assets/cancel.png" alt="close" />
         </div>
       </div>
 

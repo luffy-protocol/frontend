@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="flex gap-6 items-center">
         <NavLink href="/">Home</NavLink>
         <NavLink href="/fixtures">Fixtures</NavLink>
-        <NavLink href="/leaderboard/1">Leaderboard</NavLink>
+        <NavLink href="/leaderboard">Leaderboard</NavLink>
         <Link href="/notifications" className="mx-2">
           <Image
             src={Bell}

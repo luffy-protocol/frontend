@@ -501,7 +501,7 @@ function Page({ params }: { params: { address: string } }) {
                     ) : (
                       <div className="flex items-center justify-center w-full h-32">
                         <div className="text-sm text-slate-500 font-stalinist">
-                          No Ongoing Matches
+                          Empty
                         </div>
                       </div>
                     )}
@@ -529,7 +529,7 @@ function Page({ params }: { params: { address: string } }) {
                     ) : (
                       <div className="flex items-center justify-center w-full h-32">
                         <div className="text-sm text-slate-500 font-stalinist">
-                          No Claimable Matches
+                          Empty
                         </div>
                       </div>
                     )}

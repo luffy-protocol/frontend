@@ -1,9 +1,12 @@
-import { useState } from "react";
+"use client";
+import { use, useEffect, useState } from "react";
 import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
 import VrfTooltip from "./Game/Tooltip/VrfTooltip";
 import { dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/resolveTokens";
+import getVrfFee from "@/utils/transactions/read/getVrfFee";
+import getGasPrice from "@/utils/transactions/read/getGasPrice";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -12,11 +15,19 @@ interface PlaceBetProps {
 export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
   const [betInEther, setBetInEther] = useState(0);
   const [gasPrice, setGasPrice] = useState(0);
-
+  const [betamount, setBetAmount] = useState(0);
   const [chain, setChain] = useState(0);
   const [token, setToken] = useState(0);
   const [enableRandomness, setEnableRandomness] = useState(false);
-
+  const [crosschainfee, setCrosschainFee] = useState(0);
+  const [vrffee, setVrfFee] = useState(0);
+  // useEffect(() => {
+  //   const getDet = async () => {
+  //     const gas = await getGasPrice(chain);
+  //     setGasPrice(gas);
+  //   };
+  //   getDet();
+  // }, [chain]);
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
       <div className=" relative z-10 mx-2 mt-16">
@@ -88,7 +99,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                   Cross Chain Fee
                 </p>
                 <p className="text-xl  font-stalinist  ">
-                  {betInEther}&nbsp;
+                  {crosschainfee}&nbsp;
                   <span className=" text-[#d94956]">
                     {token < 2
                       ? chain > 1
@@ -128,7 +139,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                   VRF Fee
                 </p>
                 <p className="text-xl  font-stalinist  ">
-                  {betInEther}&nbsp;
+                  {vrffee}&nbsp;
                   <span className=" text-[#d94956]">
                     {token < 2
                       ? chain > 1

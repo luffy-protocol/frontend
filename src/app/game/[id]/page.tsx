@@ -186,15 +186,17 @@ function Page({ params }: { params: { id: string } }) {
           {open && (
             <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
               {/* Content of your Choosemodal component */}
-              <ChoosePlayer
-                setopen={setOpen}
-                index={index}
-                setPlayerPositions={setPlayerPositions}
-                hometeam={homeid}
-                awayteam={awayid}
-                setCaptain={setCaptain}
-                setViceCaptain={setviceCaptain}
-              />
+              <div className="h-[90vh]">
+                <ChoosePlayer
+                  setopen={setOpen}
+                  index={index}
+                  setPlayerPositions={setPlayerPositions}
+                  hometeam={homeid}
+                  awayteam={awayid}
+                  setCaptain={setCaptain}
+                  setViceCaptain={setviceCaptain}
+                />
+              </div>
             </div>
           )}
         </div>

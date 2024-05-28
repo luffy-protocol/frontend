@@ -32,7 +32,7 @@ export default function Dropdown({
   return (
     <>
       <select
-        className="w-[400px] h-[43px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
+        className="w-[400px] h-[55px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
         name="players"
         id="players"
         value={selectedOption} // Set selected value based on state

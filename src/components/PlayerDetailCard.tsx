@@ -223,7 +223,15 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               }}
               onClick={() => {
                 if (playerData) {
-                  setViceCaptain(playerData.player.id);
+                  setViceCaptain(index);
+                  updatePlayerPosition(index, {
+                    name: playerData?.player.name,
+                    id: playerData?.player.id as any,
+                    team: shortForm[
+                      playerData?.statistics[0].team.name as string
+                    ],
+                  });
+                  setopen(false);
                 }
               }}
             >
@@ -239,7 +247,15 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               }}
               onClick={() => {
                 if (playerData) {
-                  setCaptain(playerData.player.id);
+                  setCaptain(index);
+                  updatePlayerPosition(index, {
+                    name: playerData?.player.name,
+                    id: playerData?.player.id as any,
+                    team: shortForm[
+                      playerData?.statistics[0].team.name as string
+                    ],
+                  });
+                  setopen(false);
                 }
               }}
             >

@@ -19,7 +19,7 @@ function Page({ params }: { params: { id: string } }) {
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
   const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
   const [form2, setForm2] = useState(["W", "L", "D", "W", "L"]);
-  const [status, setStatus] = useState(1);
+  const [status, setStatus] = useState(0);
   const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [selectedChain, setSelectedChain] = useState("Avalanche");
   const [selectedToken, setSelectedToken] = useState("USDT");
@@ -27,8 +27,8 @@ function Page({ params }: { params: { id: string } }) {
   const [Randomness, setRandomness] = useState(false);
   const [betamount, setBetamount] = useState(10);
 
-  const [captain, setCaptain] = useState(0);
-  const [setViceCaptain, setviceCaptain] = useState(0);
+  const [captain, setCaptain] = useState(11);
+  const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
     useState<Player[]>(emptyPlayers);
   const [noPlayers, setnumberofPlayers] = useState(10); // Initial state
@@ -77,6 +77,8 @@ function Page({ params }: { params: { id: string } }) {
                 playerPositions={playerPositions}
                 points={points}
                 showPoints={true}
+                viceCaptain={viceCaptain}
+                captain={captain}
               />
             </div>
             {status == 0 ? (

@@ -6,6 +6,8 @@ interface PlayerImageProps {
   points: number[];
   showPoints: boolean;
   onClick: () => void;
+  captain: number;
+  viceCaptain: number;
 }
 
 interface Player {
@@ -48,6 +50,8 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
   points,
   showPoints,
   onClick,
+  captain,
+  viceCaptain,
 }) => {
   const [imageUrl, setImageUrl] = useState<string>(`/teams/${player.team}.png`);
 
@@ -109,14 +113,14 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             : index == 1
             ? "top-[28%] sm:top-[35%] left-[42%]"
             : "top-[28%] sm:top-[35%] left-[67%]"
-        } w-fit px-1`}
+        } w-fit px-2`}
         onClick={onClick}
       >
         {name}
       </div>
       {showPoints && (
         <div
-          className={`absolute cursor-pointer text-[5px] md:text-xs mt-1 mr-5 px-1 bg-slate-50 text-black rounded-md ${
+          className={`absolute cursor-pointer text-[5px] md:text-xs mt-1 mr-5 px-1 font-semibold text-black rounded-md bg-slate-50 ${
             index == 10
               ? "left-[42%] top-[18%]"
               : index == 9
@@ -142,7 +146,8 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
           onClick={onClick}
         >
           {points[index]}
-          {"  "}Points
+          {"  "}Points{" "}
+          {index == captain ? "(C)" : index == viceCaptain ? "(VC)" : ""}
         </div>
       )}
     </div>

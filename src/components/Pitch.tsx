@@ -41,6 +41,8 @@ interface PitchProps {
   playerPositions: Player[];
   points: any[];
   showPoints: boolean;
+  viceCaptain: number;
+  captain: number;
 }
 
 const Pitch: React.FC<PitchProps> = ({
@@ -49,6 +51,8 @@ const Pitch: React.FC<PitchProps> = ({
   playerPositions,
   points,
   showPoints,
+  viceCaptain,
+  captain,
 }) => {
   const handlePlayerClick = (index: number) => {
     console.log("Player", index, "clicked");
@@ -76,6 +80,8 @@ const Pitch: React.FC<PitchProps> = ({
                   points={points}
                   showPoints={showPoints}
                   onClick={() => handlePlayerClick(index)}
+                  viceCaptain={viceCaptain}
+                  captain={captain}
                 />
               </div>
             ))}

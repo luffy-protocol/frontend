@@ -455,33 +455,33 @@ function Page({ params }: { params: { address: string } }) {
                   </div>
                 )}
               </div>
-              <div className="flex justify-between w-10/12 px-10 mt-5">
+              <div className="flex justify-between w-10/12 px-10 mt-8 ">
                 <div className="flex gap-1 ">
-                  <div className="text-[#D8485F] text-[10px]xl:text-[14px]">
+                  <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
                     Highest Position
                   </div>
-                  <div className="text-[10px] xl:text-[14px]">3</div>
+                  <div className="text-[10px] ml-2 xl:text-[14px]">3</div>
                 </div>
                 <div className="flex gap-1 ">
                   <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    Highest amount
+                    Biggest Win
                   </div>
-                  <div className="text-[10px] xl:text-[14px]">$836</div>
-                </div>{" "}
+                  <div className="text-[10px] ml-2 xl:text-[14px]">$836</div>
+                </div>
                 <div className="flex gap-1 ">
                   <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    total games
+                    Games Played
                   </div>
-                  <div className="text-[10px] xl:text-[14px]">10</div>
-                </div>{" "}
+                  <div className="text-[10px] ml-2 xl:text-[14px]">10</div>
+                </div>
                 <div className="flex gap-1 ">
                   <div className="text-[#D8485F] text-[10px] xl:text-[14px]">
-                    total amount
+                    Amount won
                   </div>
-                  <div className="text-[10px] xl:text-[14px]">$1799</div>
+                  <div className="text-[10px] ml-2 xl:text-[14px]">$1799</div>
                 </div>
               </div>
-              <hr className="p-2 w-10/12 mt-5 " />
+              <hr className="p-2 w-10/12 my-5 " />
               <div className="text-lg">Ongoing</div>
               <div className="flex justify-between w-10/12 mt-5">
                 <div className="overflow-x-auto self-start scrollbar-custom w-full">

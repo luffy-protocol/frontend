@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Tooltip = ({ text }: { text: string }) => {
+const Tooltip = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleMouseEnter = () => setIsVisible(true);

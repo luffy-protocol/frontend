@@ -96,7 +96,7 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 </label>
               </div>
               <div className="ml-4 mt-0">
-                <Tooltip text="Randomness" />
+                <Tooltip />
               </div>
             </div>
             <div className="flex w-full justify-center items-center">

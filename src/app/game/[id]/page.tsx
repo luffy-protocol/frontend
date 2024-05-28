@@ -32,7 +32,7 @@ function Page({ params }: { params: { id: string } }) {
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
   const [pageLoaded, setPageLoaded] = useState(false);
-  const [transactionLoading, setTransactionLoading] = useState(true);
+  const [transactionLoading, setTransactionLoading] = useState(false);
 
   useEffect(() => {
     const getFixtureDetails = async () => {

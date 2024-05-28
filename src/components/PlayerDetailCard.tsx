@@ -130,7 +130,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
           <img
             src={playerimg(id)}
             alt=""
-            className="border border-gradient-[#D8485F,##B62DD3]"
+            className="border border-gradient-[#D8485F,#B62DD3]"
           />
           <div className="flex flex-col justify-center items-center">
             <div className="font-stalinist text-2xl text-gradient">

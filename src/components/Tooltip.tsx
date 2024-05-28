@@ -23,8 +23,16 @@ const Tooltip = () => {
 
           <p className="text-red-500">Provides following Perks :</p>
           <ul>
-            <li className=" list-item list-disc ml-5"> Captain 4x</li>
-            <li className=" list-item list-disc ml-5"> Vice-captain 3x</li>
+            <li className=" list-item list-disc ml-5 ">
+              Captain <span className="text-[#005599]">3x </span>
+              {"->"}&nbsp;
+              <span className="text-[#D4AF37]">4x</span>
+            </li>
+            <li className=" list-item list-disc ml-5 ">
+              Vice-captain <span className="text-[#005599]">2x </span>
+              {"->"}&nbsp;
+              <span className="text-[#D4AF37]">3x</span>
+            </li>
           </ul>
         </div>
       )}

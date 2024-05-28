@@ -36,26 +36,24 @@ const Tooltip = () => {
           </ul>
           <br />
           <div className="flex">
+            <p className=" text-[10px] font-stalinist text-red-500 ml-5  text-center">
+              Powered By <span className="text-purple-600">Chainlink VRF</span>
+            </p>
+          </div>
+          <div className="flex justify-center mt-2">
+            <img
+              src="/chainlink.png"
+              width={"25px"}
+              height={"25px"}
+              alt="chainlink"
+              className=""
+            />
             <img
               src="/assets/dice.gif"
-              width={"80px"}
-              alt="chain"
-              className=" -mt-5 -ml-5"
+              width={"25px"}
+              alt="vrf"
+              className="ml-2"
             />
-            <p className=" text-[10px] font-stalinist text-red-500 -ml-5  text-center">
-              Powered By
-            </p>
-            <div className=" justify-center items-center flex mx-2">
-              <img
-                src="/logos/chainlink.svg"
-                width={"70px"}
-                alt="chain"
-                className=" -mt-6"
-              />
-            </div>
-            <p className=" text-[10px] font-stalinist text-red-500  text-center">
-              VRF
-            </p>
           </div>
         </div>
       )}

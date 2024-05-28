@@ -3784,6 +3784,52 @@ const emptyPlayers: any = [
     team: "avatar",
   },
 ];
+const dropdownElements = {
+  tokens: [
+    {
+      id: 1,
+      name: "Native",
+      image: "", // chains[selectedChain != 0 ? selectedChain - 1 : 0].image
+    },
+    {
+      id: 2,
+      name: "LINK",
+      image: "/link.png",
+    },
+    {
+      id: 3,
+      name: "USDC",
+      image: "/usdc.png",
+    },
+  ],
+  chains: [
+    {
+      id: 1,
+      name: "Avalanche",
+      image: "https://app.dynamic.xyz/assets/networks/avax.svg",
+    },
+    {
+      id: 2,
+      name: "Sepolia",
+      image: "https://app.dynamic.xyz/assets/networks/eth.svg",
+    },
+    {
+      id: 3,
+      name: "Base",
+      image: "https://app.dynamic.xyz/assets/networks/base.svg",
+    },
+    {
+      id: 4,
+      name: "Optimism",
+      image: "https://app.dynamic.xyz/assets/networks/optimism.svg",
+    },
+    {
+      id: 5,
+      name: "Arbitrum",
+      image: "https://app.dynamic.xyz/assets/networks/arbitrum.svg",
+    },
+  ],
+};
 export {
   PROTOCOL_ABI,
   CROSSCHAIN_ABI,
@@ -3793,4 +3839,5 @@ export {
   COINMARKETCAP_IDS,
   TOKEN_ADDRESSES,
   emptyPlayers,
+  dropdownElements,
 };

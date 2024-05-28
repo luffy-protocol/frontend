@@ -45,4 +45,9 @@ interface Player {
     | "st-louis-city"
     | "vancouver-whitecaps";
 }
-export type { MatchDetails, Player };
+interface Option {
+  id: number;
+  name: string;
+  image: string;
+}
+export type { MatchDetails, Player, Option };

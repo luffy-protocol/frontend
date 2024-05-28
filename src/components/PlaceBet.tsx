@@ -2,6 +2,7 @@ import { useState } from "react";
 import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
 import Tooltip from "./Tooltip";
+import { dropdownElements } from "@/utils/constants";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -10,16 +11,8 @@ interface PlaceBetProps {
 export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
   const [betInEther, setBetInEther] = useState(0);
   const [gasPrice, setGasPrice] = useState(0);
-  const chains = [
-    "Select Chain",
-    "Avalanche",
-    "Ethereum",
-    "Arbitrum",
-    "Optimism",
-    "Base",
-  ];
+
   const [chain, setChain] = useState(0);
-  const tokens = ["Select Token", "Native", "USDT", "LINK"];
   const [token, setToken] = useState(0);
   const [enableRandomness, setEnableRandomness] = useState(false);
 
@@ -47,14 +40,14 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 setSelectedOption={(index) => {
                   setChain(index);
                 }}
-                options={chains}
+                options={dropdownElements.chains}
               />
               <Dropdown
                 selectedOption={token}
                 setSelectedOption={(index) => {
                   setToken(index);
                 }}
-                options={tokens}
+                options={dropdownElements.tokens}
               />
             </div>
           </div>
@@ -66,7 +59,11 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
               <p className="text-xl  font-stalinist  ">
                 {betInEther}&nbsp;
                 <span className=" text-[#d94956]">
-                  {token == 1 ? (chain > 1 ? "ETH" : "AVAX") : tokens[token]}
+                  {token == 1
+                    ? chain > 1
+                      ? "ETH"
+                      : "AVAX"
+                    : dropdownElements.tokens[token].name}
                 </span>
               </p>
             </div>

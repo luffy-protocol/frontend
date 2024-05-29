@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import DefaultLayout from "@/components/DefaultLayout";
+import { fetchOverallLeaderboard } from "@/utils/leaderboardHelpers/fetchOverallLeaderboard";
+import axios from "axios";
 
 interface LeaderboardRow {
   rank: number;
@@ -10,37 +13,51 @@ interface LeaderboardRow {
   netRevenue: number;
 }
 
-const leaderboardData: LeaderboardRow[] = [
-  { rank: 1, name: "Liam", points: 99, gamesPlayed: 16, netRevenue: 450 },
-  { rank: 2, name: "Jackson", points: 95, gamesPlayed: 21, netRevenue: 280 },
-  { rank: 3, name: "Isabella", points: 94, gamesPlayed: 24, netRevenue: -180 },
-  {
-    rank: 4,
-    name: "Romario Kavin",
-    points: 92,
-    gamesPlayed: 19,
-    netRevenue: 370,
-  },
-  { rank: 5, name: "Mia", points: 91, gamesPlayed: 12, netRevenue: -300 },
-  {
-    rank: 6,
-    name: "Leo Franklin",
-    points: 89,
-    gamesPlayed: 22,
-    netRevenue: 500,
-  },
-  { rank: 7, name: "Mason", points: 88, gamesPlayed: 25, netRevenue: 270 },
-  { rank: 8, name: "Lucas", points: 87, gamesPlayed: 17, netRevenue: 410 },
-  { rank: 9, name: "Elijah", points: 86, gamesPlayed: 13, netRevenue: 330 },
-  { rank: 10, name: "Ava", points: 85, gamesPlayed: 15, netRevenue: 200 },
-  { rank: 11, name: "Olivia", points: 81, gamesPlayed: 20, netRevenue: 130 },
-  { rank: 12, name: "Gabriel", points: 79, gamesPlayed: 18, netRevenue: 50 },
-  { rank: 13, name: "Sophia", points: 78, gamesPlayed: 14, netRevenue: -120 },
-  { rank: 14, name: "Emma", points: 74, gamesPlayed: 11, netRevenue: -90 },
-  { rank: 15, name: "Noah", points: 83, gamesPlayed: 23, netRevenue: -250 },
-];
+interface OverallLeaderBoard {
+  address: string;
+  name: string;
+  gamesPlayed: string;
+  points: string;
+  netRevenue: number;
+}
 
 const Leaderboard = () => {
+  const [leaderboardData, setLeaderboardData] = React.useState<
+    OverallLeaderBoard[]
+  >([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        console.log("FETCHING data");
+        const response = await axios.get(`/api/dynamic/fetch-users`);
+        const data = response.data;
+        console.log(data);
+        if (data.success) {
+          const _mappedUsers: {
+            [key: string]: { id: string; name: string; address: string };
+          } = {};
+          data.data.users.forEach((user: any) => {
+            const address = user.walletPublicKey.toLowerCase();
+            _mappedUsers[address] = {
+              id: user.id,
+              name: `${user.firstName} ${user.lastName}`,
+              address,
+            };
+          });
+
+          const _userData = await fetchOverallLeaderboard({
+            mappedUsers: _mappedUsers,
+          });
+          console.log(_userData);
+          setLeaderboardData(_userData);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className="flex flex-col p-20 gap-10 w-full">
       <div className="font-stalinist text-2xl xl:text-3xl text-[#D8485F]">
@@ -69,9 +86,9 @@ const Leaderboard = () => {
               </tr>
             </thead>
             <tbody className="">
-              {leaderboardData.map((row) => (
-                <tr key={row.rank} className="tr  font-stalinist">
-                  <td className="td px-4 py-6 text-white">{row.rank}</td>
+              {leaderboardData.map((row, index) => (
+                <tr key={index} className="tr  font-stalinist">
+                  <td className="td px-4 py-6 text-white">{index + 1}</td>
                   <td className="td px-4 py-6 text-[#cccccc]">{row.name}</td>
                   <td className="td px-4 py-6 text-[#b2b2b2]">
                     {row.gamesPlayed}

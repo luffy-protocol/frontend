@@ -219,7 +219,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
             <button
               className={`flex items-center justify-center bg-no-repeat bg-contain h-[50px]`}
               style={{
-                backgroundImage: `url('/assets/vc.png')`,
+                backgroundImage: `url('/assets/vcap.png')`,
               }}
               onClick={() => {
                 if (playerData) {
@@ -267,7 +267,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
           <button
             className={`flex items-center justify-center bg-no-repeat bg-contain  h-full`}
             style={{
-              backgroundImage: `url('/assets/AddPlayer.png')`,
+              backgroundImage: `url('/assets/ap.png')`,
             }}
             onClick={() => {
               console.log(playerData?.statistics[0].team.name);

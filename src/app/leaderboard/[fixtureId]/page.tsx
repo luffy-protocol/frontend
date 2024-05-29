@@ -1,61 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import DefaultLayout from "@/components/DefaultLayout";
+import request, { gql } from "graphql-request";
+import axios from "axios";
+import { time } from "console";
+import { ClaimRow, FetchInput, UserData } from "@/utils/interface";
+import { fetchLeaderboard } from "@/utils/leaderboardHelpers/fetchLeaderboard";
+import { fetchAllClaims } from "@/utils/leaderboardHelpers/fetchRecentClaims";
 
-interface LeaderboardRow {
-  rank: number;
-  name: string;
-  points: number;
-}
-
-interface ClaimRow {
-  name: string;
-  time: string;
-  points: number;
-}
-
-const leaderboardData: LeaderboardRow[] = [
-  { rank: 1, name: "Gabriel", points: 79 },
-  { rank: 2, name: "Romario Kavin", points: 100 },
-  { rank: 3, name: "Leo Franklin", points: 80 },
-  { rank: 4, name: "Gabriel", points: 79 },
-  { rank: 5, name: "Leo Franklin", points: 80 },
-  { rank: 6, name: "Gabriel", points: 79 },
-  { rank: 7, name: "Leo Franklin", points: 80 },
-  { rank: 8, name: "Gabriel", points: 79 },
-  { rank: 9, name: "Romario Kavin", points: 100 },
-  { rank: 10, name: "Leo Franklin", points: 80 },
-  { rank: 11, name: "Gabriel", points: 79 },
-  { rank: 12, name: "Romario Kavin", points: 100 },
-  { rank: 13, name: "Leo Franklin", points: 80 },
-  { rank: 14, name: "Gabriel", points: 79 },
-  { rank: 15, name: "Leo Franklin", points: 80 },
-];
-
-const claimRows: ClaimRow[] = [
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 minutes ago",
-  },
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 minutes ago",
-  },
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 mins ago",
-  },
-  {
-    name: "Leo Franklin",
-    points: 80,
-    time: "5 mins ago",
-  },
-];
-const RecentClaims = () => {
+const RecentClaims = ({ claims }: { claims: ClaimRow[] }) => {
   return (
     <div className="flex flex-col ">
       <div className="whitespace-nowrap font-stalinist text-2xl xl:text-3xl text-[#D8485F]">
@@ -63,18 +17,18 @@ const RecentClaims = () => {
       </div>
       <hr className="my-10 border-t border-gray-300" />
       <div className="flex flex-col gap-6">
-        {claimRows.map((row, id) => (
+        {claims.map((claim, id) => (
           <div className="flex flex-col gap-3" key={id}>
             <div className="flex justify-between items-center">
               <div className="font-stalinist  text-lg xl:text-xl  max-w-[220px] overflow-hidden text-ellipsis whitespace-nowrap text-[#717171]">
-                @{row.name}
+                @{claim.name}
               </div>
               <div className="font-stalinist text-sm whitespace-nowrap text-[#B62DD3]">
-                {row.time}
+                {claim.time}
               </div>
             </div>
             <div className="self-center eclipse text-[#D8485F] text-xl xl:text-2xl font-stalinist">
-              {row.points} points
+              {claim.points} points
             </div>
           </div>
         ))}
@@ -83,7 +37,7 @@ const RecentClaims = () => {
   );
 };
 
-const Leaderboard = () => {
+const Leaderboard = ({ users }: { users: UserData[] }) => {
   return (
     <div className="flex flex-col gap-10 w-full">
       <div className=" font-stalinist  text-2xl xl:text-3xl text-[#D8485F] ">
@@ -107,22 +61,24 @@ const Leaderboard = () => {
             </thead>
 
             <tbody className="">
-              {leaderboardData.map((row) => (
-                <tr
-                  key={row.rank}
-                  className="tr hover:bg-gray-100 text-gradient font-stalinist"
-                >
-                  <td className="td px-4 py-6 text-sm xl:text-lg">
-                    {row.rank}
-                  </td>
-                  <td className="td px-4 py-6 text-sm xl:text-lg">
-                    {row.name}
-                  </td>
-                  <td className="td px-4 py-6 text-sm xl:text-lg">
-                    {row.points}
-                  </td>
-                </tr>
-              ))}
+              {users
+                .sort((a: any, b: any) => b.points - a.points)
+                .map((user: any, index: any) => (
+                  <tr
+                    key={index}
+                    className="tr hover:bg-gray-100 text-gradient font-stalinist"
+                  >
+                    <td className="td px-4 py-6 text-sm xl:text-lg">
+                      {index + 1}
+                    </td>
+                    <td className="td px-4 py-6 text-sm xl:text-lg">
+                      {user.name}
+                    </td>
+                    <td className="td px-4 py-6 text-sm xl:text-lg">
+                      {user.points}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
@@ -131,16 +87,62 @@ const Leaderboard = () => {
   );
 };
 
-const page = () => {
+const Page: React.FC<{ params: { fixtureId: string } }> = ({ params }) => {
+  const [users, setUsers] = useState<UserData[]>([]);
+  const [claims, setClaims] = useState<ClaimRow[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        console.log("FETCHING data");
+        const response = await axios.get(`/api/dynamic/fetch-users`);
+        const data = response.data;
+        console.log(data);
+        if (data.success) {
+          const _mappedUsers: {
+            [key: string]: { id: string; name: string; address: string };
+          } = {};
+          data.data.users.forEach((user: any) => {
+            const address = user.walletPublicKey.toLowerCase();
+            _mappedUsers[address] = {
+              id: user.id,
+              name: `${user.firstName} ${user.lastName}`,
+              address,
+            };
+          });
+          const fixtureIdHex = "0x" + parseInt(params.fixtureId).toString(16);
+          const _userData = await fetchLeaderboard({
+            mappedUsers: _mappedUsers,
+            gameId: fixtureIdHex,
+          });
+          console.log(_userData);
+          setUsers(_userData);
+
+          //Recent Claims
+          const _claimData = await fetchAllClaims({
+            mappedUsers: _mappedUsers,
+            gameId: fixtureIdHex,
+          });
+          console.log(_claimData);
+          setClaims(_claimData);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <DefaultLayout>
       <div className="flex justify-between self-center px-10 xl:px-24">
         <div className="flex justify-between w-full ">
           <div className="overflow-y-auto h-5/6">
-            <Leaderboard />
+            <Leaderboard users={users} />
           </div>
           <div>
-            <RecentClaims />
+            <RecentClaims claims={claims} />
           </div>
         </div>
       </div>
@@ -148,4 +150,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -372,12 +372,18 @@ function Page({ params }: { params: { address: string } }) {
       if (data) {
         setAmountWon(data.totalEarnings || "0");
         setTotalGamesPlayed(data.totalGamesPlayed || "0");
-        const lowestPosition = data.predictions.reduce(
-          (min, prediction) =>
-            Math.min(min, Number(prediction.reward.position)),
-          Infinity
-        );
-        setHighestPosition(lowestPosition.toString());
+        const lowestPosition = data.predictions.reduce((min, prediction) => {
+          if (
+            prediction.reward === null ||
+            prediction.reward.position === undefined
+          ) {
+            return min;
+          }
+          return Math.min(min, Number(prediction.reward.position));
+        }, Infinity);
+
+        const result = lowestPosition === Infinity ? "-" : lowestPosition;
+        setHighestPosition(result.toString());
         const highestReward = data.rewards.reduce(
           (max, reward) => Math.max(max, Number(reward.amount)),
           0
@@ -615,7 +621,7 @@ function Page({ params }: { params: { address: string } }) {
                       key={index}
                       team1={match.home_id}
                       team2={match.away_id}
-                      status={1}
+                      status={2}
                       fixtureid={match.fixture_id}
                     />
                   ))
@@ -664,7 +670,7 @@ function Page({ params }: { params: { address: string } }) {
                       key={index}
                       team1={match.home_id}
                       team2={match.away_id}
-                      status={1}
+                      status={4}
                       fixtureid={match.fixture_id}
                     />
                   ))

@@ -7,12 +7,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-
   theme: {
-    // colors: {
-    //   primary: "#d8485f",
-    //   secondary: "#b62dd3",
-    // },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -20,12 +15,23 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        stalinist: ["var(--font-stalinist )"],
+        stalinist: ["var(--font-stalinist)"],
       },
       animation: {
         "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "fill-drain": "fillDrain 5s ease-in-out infinite",
       },
       keyframes: {
+        fillDrain: {
+          "0%, 100%": {
+            opacity: "0",
+            transform: "scaleY(0)",
+          },
+          "50%": {
+            opacity: "1",
+            transform: "scaleY(1)",
+          },
+        },
         "infinite-scroll": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-100%)" },
@@ -47,4 +53,5 @@ const config: Config = {
     }),
   ],
 };
+
 export default config;

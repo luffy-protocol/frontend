@@ -6,7 +6,7 @@ const LoginButton = () => {
     <div
       className="flex  justify-center items-center cursor-pointer"
       onClick={() => {
-        window.location.href = "/fixtures/19";
+        window.location.href = "/fixtures";
       }}
       style={{
         backgroundImage: 'url("/assets/LoginBorder.svg")',

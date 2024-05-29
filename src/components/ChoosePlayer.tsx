@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import PlayerDetailCard from "./PlayerDetailCard";
 import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
+import { Player } from "@/utils/interface";
 
 interface ChoosePlayerProps {
   setopen: (open: boolean) => void;
@@ -11,9 +12,10 @@ interface ChoosePlayerProps {
   awayteam: number;
   setCaptain: (captain: any) => void;
   setViceCaptain: (viceCaptain: any) => void;
+  playerPosition: Player[];
 }
 
-interface Player {
+interface Player1 {
   player: {
     id: number;
     name: string;
@@ -115,14 +117,16 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
   awayteam,
   setCaptain,
   setViceCaptain,
+  playerPosition,
 }) => {
-  const [playerData, setplayerData] = useState<Player[] | undefined>(undefined);
+  const [playerData, setplayerData] = useState<Player1[] | undefined>(
+    undefined
+  );
 
   const [playerId, setPlayerId] = useState<number>(0);
   const [TeamData, setTeamData] = useState<any>(null);
 
   useEffect(() => {
-    console.log(index);
     const data = getPlayerByTeamId(hometeam, awayteam);
 
     const positions = [
@@ -139,12 +143,12 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
     if (filteredPlayerData) {
       const filterData = data?.filter(
         (item: any) =>
-          item.statistics[0].games.position === filteredPlayerData.position
+          item.statistics[0].games.position === filteredPlayerData.position &&
+          !playerPosition.some((player) => player.id === item.player.id)
       );
-      console.log(filterData);
       setplayerData(filterData);
     }
-  }, [index, hometeam, awayteam]);
+  }, [index, hometeam, awayteam, playerPosition]);
 
   return (
     <div

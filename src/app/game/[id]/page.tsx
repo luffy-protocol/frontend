@@ -1,18 +1,15 @@
 "use client";
 import React, { use, useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
-import Navbar from "@/components/Navbar";
-import Status from "@/components/status";
 import ChoosePlayer from "@/components/ChoosePlayer";
 import fixtureById from "@/utils/fixtureHelpers/FixtureById";
 import { emptyPlayers } from "@/utils/constants";
 import { Player } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
-import PlayerProgress from "@/components/Game/PlayerProgress";
-import Dropdown from "@/components/Game/Dropdown";
 import Results from "@/components/Results";
 import PlaceBet from "@/components/PlaceBet";
 import DefaultLayout from "@/components/DefaultLayout";
+import Transaction from "@/components/Transaction";
 
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);
@@ -24,7 +21,7 @@ function Page({ params }: { params: { id: string } }) {
   const [status, setStatus] = useState(0);
   const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [gas, setGas] = useState(30);
-
+  const [transactionstep, setTransactionStep] = useState(2);
   const [captain, setCaptain] = useState(11);
   const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
@@ -35,6 +32,7 @@ function Page({ params }: { params: { id: string } }) {
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
   const [pageLoaded, setPageLoaded] = useState(false);
+  const [transactionLoading, setTransactionLoading] = useState(false);
 
   useEffect(() => {
     const getFixtureDetails = async () => {
@@ -74,25 +72,29 @@ function Page({ params }: { params: { id: string } }) {
             setOpen={setOpen}
             playerPositions={playerPositions}
             points={points}
-            showPoints={true}
+            showPoints={status > 0}
             viceCaptain={viceCaptain}
             captain={captain}
           />
         </div>
-        {status == 0 ? (
-          <PlaceBet selectedPlayersCount={noPlayers} />
+        {!transactionLoading ? (
+          status == 0 ? (
+            <PlaceBet selectedPlayersCount={noPlayers} />
+          ) : (
+            <Results
+              status={status}
+              homeTeam={homeTeam}
+              awayTeam={awayTeam}
+              homeGoals={2}
+              awayGoals={3}
+              topPlayerId="154"
+              totalPoints={332}
+              topPlayerPoints={80}
+              matchMinutes={69}
+            />
+          )
         ) : (
-          <Results
-            status={status}
-            homeTeam={homeTeam}
-            awayTeam={awayTeam}
-            homeGoals={2}
-            awayGoals={3}
-            topPlayerId="154"
-            totalPoints={332}
-            topPlayerPoints={80}
-            matchMinutes={69}
-          />
+          <Transaction step={transactionstep} />
         )}
       </div>
       {open && (
@@ -105,6 +107,7 @@ function Page({ params }: { params: { id: string } }) {
             awayteam={awayid}
             setCaptain={setCaptain}
             setViceCaptain={setviceCaptain}
+            playerPosition={playerPositions}
           />
         </div>
       )}

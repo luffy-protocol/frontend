@@ -8,7 +8,7 @@ import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
 import DefaultLayout from "@/components/DefaultLayout";
 
-export default function Page({ params }: { params: { round: string } }) {
+export default function Page() {
   const { primaryWallet } = useDynamicContext();
 
   const [claimmableOngoingMatches, setClaimmableOngoingMatches] = useState<
@@ -23,6 +23,7 @@ export default function Page({ params }: { params: { round: string } }) {
   const [loadingOngoing, setLoadingOngoing] = useState<boolean>(true);
   const [loadingCompleted, setLoadingCompleted] = useState<boolean>(true);
   const [upcomingLoading, setUpcomingLoading] = useState<boolean>(true);
+  const [gameWeek, setGameWeek] = useState<number>(19);
 
   const [fixtureLoading, setFixtureLoading] = useState<boolean>(false);
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function Page({ params }: { params: { round: string } }) {
     setFixtureLoading(true);
     fetchOngoingFixtures({
       address: primaryWallet.address,
-      round: params.round,
+      round: gameWeek.toString(),
       setClaimmableOngoingMatches,
       setUnclaimmableOngoingMatches,
       setCompletedMatches,
@@ -42,7 +43,7 @@ export default function Page({ params }: { params: { round: string } }) {
     }).then(() => {
       setFixtureLoading(false);
     });
-  }, [primaryWallet]);
+  }, [primaryWallet, gameWeek]);
 
   return (
     <DefaultLayout>
@@ -55,26 +56,39 @@ export default function Page({ params }: { params: { round: string } }) {
         >
           <div className="flex flex-col gap-2 items-center w-10/12 2xl:mt-32 xl:mt-56 mt-32 h-4/5 overflow-clip">
             <div className="flex gap-3 items-center justify-center mb-10 2xl:mt-20">
-              <a href={`/fixtures/${parseInt(params.round) - 1}`}>
-                <img
-                  src="/assets/Left.png"
-                  alt=""
-                  width="60px"
-                  className="hover:scale-110"
-                />
-              </a>
+              <img
+                src="/assets/Left.png"
+                alt=""
+                width="60px"
+                className="hover:scale-110"
+                onClick={() => {
+                  setGameWeek((prevGameWeek) => prevGameWeek - 1);
+                  setClaimmableOngoingMatches([]);
+                  setCompletedMatches([]);
+                  setExpiredMatches([]);
+                  setUnclaimmableOngoingMatches([]);
+                  setUpcomingMatches([]);
+                }}
+              />
 
               <div className="text-5xl font-stalinist items-center justify-center lg:text-2xl">
-                Game Week {params.round}
+                Game Week {gameWeek}
               </div>
-              <a href={`/fixtures/${parseInt(params.round) + 1}`}>
-                <img
-                  src="/assets/Right.png"
-                  alt=""
-                  width="60px"
-                  className="hover:scale-110"
-                />
-              </a>
+
+              <img
+                src="/assets/Right.png"
+                alt=""
+                width="60px"
+                className="hover:scale-110"
+                onClick={() => {
+                  setGameWeek((prevGameWeek) => prevGameWeek + 1);
+                  setClaimmableOngoingMatches([]);
+                  setCompletedMatches([]);
+                  setExpiredMatches([]);
+                  setUnclaimmableOngoingMatches([]);
+                  setUpcomingMatches([]);
+                }}
+              />
             </div>
             {fixtureLoading && (
               <div className="flex flex-col gap-2  w-full xl:max-h-[700px] 2xl:max-h-[1000px] overflow-y-auto">

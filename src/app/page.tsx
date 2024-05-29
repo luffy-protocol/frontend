@@ -12,8 +12,8 @@ function Page() {
         <img src="/assets/Landing.png" className="h-screen w-screen" />
       </div>
       <div className="absolute inset-0 z-20">
-        <div className=" flex justify-between flex-col h-screen">
-          <div className="flex flex-col px-10 justify-center  items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist mt-32">
+        <div className=" flex flex-col h-screen">
+          <div className="flex flex-col px-10 justify-center  items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist mt-20">
             <div className="w-full xl:mt-20">
               <img src="/assets/Luffy.svg" className="w-1/2 mx-auto" />
             </div>

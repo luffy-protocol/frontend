@@ -72,7 +72,7 @@ function Page({ params }: { params: { id: string } }) {
             setOpen={setOpen}
             playerPositions={playerPositions}
             points={points}
-            showPoints={true}
+            showPoints={status > 0}
             viceCaptain={viceCaptain}
             captain={captain}
           />

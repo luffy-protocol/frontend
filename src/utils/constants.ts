@@ -1,4 +1,4 @@
-import { PublicClient, http } from "viem";
+import { HttpTransport, PublicClient, http } from "viem";
 import {
   arbitrumSepolia,
   avalancheFuji,
@@ -3664,37 +3664,31 @@ const CROSSCHAIN_ABI = [
   },
 ];
 
-const CHAIN_RESOLVERS: Record<number, any> = {
-  43113: createPublicClient({
+const CHAIN_RESOLVERS: Record<number, { chain: any; transport: string }> = {
+  43113: {
     chain: avalancheFuji,
-    transport: http("https://api.avax-test.network/ext/bc/C/rpc"),
-  }),
-  11155111: createPublicClient({
+    transport: "https://api.avax-test.network/ext/bc/C/rpc",
+  },
+  11155111: {
     chain: sepolia,
-    transport: http(
+    transport:
       "https://eth-sepolia.g.alchemy.com/v2/" +
-        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
-    ),
-  }),
-  84532: createPublicClient({
+      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
+  },
+  84532: {
     chain: baseSepolia,
-    transport: http(
+    transport:
       "https://base-sepolia.g.alchemy.com/v2/" +
-        process.env.NEXT_PUBLIC_ALCHEMY_API_KEY
-    ),
-  }),
-  421614: createPublicClient({
+      process.env.NEXT_PUBLIC_ALCHEMY_API_KEY,
+  },
+  421614: {
     chain: arbitrumSepolia,
-    transport: http(
-      `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
-    ),
-  }),
-  11155420: createPublicClient({
+    transport: `https://arb-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
+  },
+  11155420: {
     chain: optimismSepolia,
-    transport: http(
-      `https://opt-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`
-    ),
-  }),
+    transport: `https://opt-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
+  },
 };
 
 const TOKEN_ADDRESSES: Record<number, Record<number, string>> = {

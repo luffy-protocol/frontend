@@ -9,6 +9,9 @@ import getVrfFee from "@/utils/transactions/read/getVrfFee";
 import ErrorTooltip from "./Game/Tooltip/ErrorTooltip";
 import resolveBet from "@/utils/resolveBet";
 import resolveCrosschainFee from "@/utils/resolveCrosschainFee";
+import resolveVrfFee from "@/utils/resolveVrfFee";
+import getGasPrice from "@/utils/transactions/read/getGasPrice";
+import { formatGwei } from "viem";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -27,22 +30,32 @@ export default function PlaceBet({
   const [vrffee, setVrfFee] = useState("0.0");
   const [betAmountLoading, setBetAmountLoading] = useState(true);
   const [showErrorMessage, setShowErrorMessage] = useState(true);
-
+  const [gasPrice, setGasPrice] = useState("0.0");
   useEffect(() => {
     resolveBet(token, chain, setBetAmount, setBetAmountLoading);
   }, [chain, token]);
 
   useEffect(() => {
+    if (chain != 0) getGasPrice(chain, setGasPrice);
     resolveCrosschainFee(chain, setCrosschainFee);
-    if (chain == 3 || chain == 4) setEnableRandomness(false);
   }, [chain]);
+
+  useEffect(() => {
+    if (chain == 3 || chain == 4) {
+      setEnableRandomness(false);
+      setVrfFee("0.0");
+    } else if (enableRandomness) resolveVrfFee(chain, setVrfFee);
+    else {
+      setVrfFee("0.0");
+    }
+  }, [chain, enableRandomness]);
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
       <div className=" relative z-10 mx-2 mt-16">
         <img src="/assets/FixBorder.svg" className=" w-fit h-2/3" />
       </div>
       <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 h-2/3">
-        <div className=" flex flex-col mx-2 mt-16 justify-center items-center 2xl:gap-28 min-[1400px]:gap-20">
+        <div className=" flex flex-col mx-2 mt-16 justify-center items-center 2xl:gap-28 min-[1400px]:gap-[74px]">
           <div className="flex items-center">
             <PlayerProgress noPlayers={selectedPlayersCount} />
             {selectedPlayersCount < 11 && showErrorMessage && (
@@ -91,8 +104,16 @@ export default function PlaceBet({
             </div>
           </div>
 
-          <div className="flex gap-10 ">
-            <div className="w-[50px]"></div>
+          <div className="flex gap-10  ">
+            <div className="flex mt-2 justify-center items-center">
+              <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
+              <p className="text-[10px] font-stalinist text-center">
+                {Number(
+                  formatGwei(BigInt(gasPrice == "0.0" ? "0" : gasPrice))
+                ).toFixed(3)}{" "}
+                gwei
+              </p>
+            </div>
             <div>
               <div className="flex flex-col justify-center items-center text-center">
                 <p className="text-md font-stalinist text-slate-500">
@@ -145,7 +166,7 @@ export default function PlaceBet({
                   </span>
                 </label>
               </div>
-              <div className="ml-4 mt-0">
+              <div className="ml-4">
                 {chain == 3 || chain == 4 ? (
                   <ErrorTooltip
                     message={`Feature Unavailable for ${
@@ -158,12 +179,13 @@ export default function PlaceBet({
               </div>
             </div>
             <div>
-              <div className="flex flex-col mt-2 justify-center items-center">
+              <div className="flex flex-col text-center justify-center items-center">
                 <p className="text-md  font-stalinist text-slate-500">
                   VRF Fee
                 </p>
                 <p className="text-xl  font-stalinist  ">
-                  {vrffee}&nbsp;
+                  {vrffee}
+                  <br />
                   <span className=" text-[#d94956]">
                     {chain > 1 ? "ETH" : "AVAX"}
                   </span>

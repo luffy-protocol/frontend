@@ -4,6 +4,7 @@ import {
   CROSSCHAIN_NO_VRF_ABI,
   DEPLOYMENTS,
 } from "@/utils/constants";
+import { createPublicClient, http } from "viem";
 
 interface GetCrosschainFeeParams {
   chainId: number;
@@ -15,7 +16,9 @@ interface GetCrosschainFeeParams {
   isRandom: boolean;
 }
 
-export default async function getCrosschainFee(params: GetCrosschainFeeParams) {
+export default async function getCrosschainFee(
+  params: GetCrosschainFeeParams
+): Promise<{ success: boolean; data: bigint; error?: any }> {
   try {
     const {
       chainId,
@@ -26,9 +29,12 @@ export default async function getCrosschainFee(params: GetCrosschainFeeParams) {
       viceCaptain,
       isRandom,
     } = params;
-    const publicClient = CHAIN_RESOLVERS[chainId];
+    const publicClient = createPublicClient({
+      chain: CHAIN_RESOLVERS[chainId].chain,
+      transport: http(CHAIN_RESOLVERS[chainId].transport),
+    });
     const data = await publicClient.readContract({
-      address: DEPLOYMENTS[chainId],
+      address: DEPLOYMENTS[chainId] as `0x${string}`,
       abi:
         chainId == 11155111 || chainId == 421614
           ? CROSSCHAIN_ABI
@@ -39,12 +45,13 @@ export default async function getCrosschainFee(params: GetCrosschainFeeParams) {
     console.log(data);
     return {
       success: true,
-      data: data.toString(),
+      data: data != undefined ? (data as bigint) : BigInt(0),
     };
   } catch (e) {
     return {
       success: false,
       error: e,
+      data: BigInt(0),
     };
   }
 }

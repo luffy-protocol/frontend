@@ -10,6 +10,7 @@ interface ResultsProps {
   topPlayerPoints: number;
   totalPoints: number;
   matchMinutes: number;
+  setTransactionLoading: (loading: boolean) => void;
 }
 export default function Results({
   status,
@@ -21,6 +22,7 @@ export default function Results({
   totalPoints,
   topPlayerPoints,
   matchMinutes,
+  setTransactionLoading,
 }: ResultsProps) {
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">

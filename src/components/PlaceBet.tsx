@@ -10,9 +10,13 @@ import getGasPrice from "@/utils/transactions/read/getGasPrice";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
+  setTransactionLoading: (loading: boolean) => void;
 }
 
-export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
+export default function PlaceBet({
+  selectedPlayersCount,
+  setTransactionLoading,
+}: PlaceBetProps) {
   const [betInEther, setBetInEther] = useState(0);
   const [gasPrice, setGasPrice] = useState(0);
   const [betamount, setBetAmount] = useState(0);
@@ -156,6 +160,9 @@ export default function PlaceBet({ selectedPlayersCount }: PlaceBetProps) {
                 style={{
                   backgroundImage: `url('/assets/LoginBorder.svg')`,
                   backgroundSize: "contain",
+                }}
+                onClick={() => {
+                  setTransactionLoading(true);
                 }}
               >
                 <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2">

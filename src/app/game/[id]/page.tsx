@@ -32,7 +32,7 @@ function Page({ params }: { params: { id: string } }) {
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
   const [pageLoaded, setPageLoaded] = useState(false);
-  const [transactionLoading, setTransactionLoading] = useState(false);
+  const [transactionLoading, setTransactionLoading] = useState(true);
 
   useEffect(() => {
     const getFixtureDetails = async () => {
@@ -79,7 +79,10 @@ function Page({ params }: { params: { id: string } }) {
         </div>
         {!transactionLoading ? (
           status == 0 ? (
-            <PlaceBet selectedPlayersCount={noPlayers} />
+            <PlaceBet
+              selectedPlayersCount={noPlayers}
+              setTransactionLoading={setTransactionLoading}
+            />
           ) : (
             <Results
               status={status}
@@ -91,10 +94,14 @@ function Page({ params }: { params: { id: string } }) {
               totalPoints={332}
               topPlayerPoints={80}
               matchMinutes={69}
+              setTransactionLoading={setTransactionLoading}
             />
           )
         ) : (
-          <Transaction step={transactionstep} />
+          <Transaction
+            step={transactionstep}
+            setTransactionLoading={setTransactionLoading}
+          />
         )}
       </div>
       {open && (

@@ -3,23 +3,27 @@ import Status from "./status";
 import Battery from "./Battery";
 interface TransactionProps {
   step: number;
+  setTransactionLoading: (value: boolean) => void;
 }
-export default function Transaction({ step }: TransactionProps) {
+export default function Transaction({
+  step,
+  setTransactionLoading,
+}: TransactionProps) {
   return (
-    <div className="flex justify-center items-center w-1/2 h-2/3">
+    <div className="flex relative justify-center items-center w-1/2 h-2/3">
       <img
         src="/assets/FixBorder1.svg"
         className="w-fit relative z-10 mx-6 mt-16"
         key={1}
       />
 
-      <div className="absolute w-1/3 inset-y-80 z-20 mr-8 mt-40 top-[30%] h-2/3 flex">
-        <div className=" justify-center items-center flex ml-10 mt-32">
+      <div className="absolute w-1/3 z-20 mr-8  h-full flex top-[5%] left-[5%]">
+        <div className=" justify-center items-center flex ml-10 ">
           <Battery step={step} />
         </div>
-        <div className="font-stalinist flex flex-col items-start justify-center text-lg text-red-400 gap-6  mt-36 ml-4">
+        <div className="font-stalinist flex flex-col items-start justify-center text-lg text-red-400 gap-6  ml-4">
           <div className="flex text-xl text-white mb-10">
-            <div role="status" className="px-2 -mt-1">
+            <div role="status" className="px-2 ">
               {step < 4 ? (
                 <svg
                   aria-hidden="true"
@@ -45,7 +49,7 @@ export default function Transaction({ step }: TransactionProps) {
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
-              {step < 1 ? (
+              {step == 0 ? (
                 <svg
                   aria-hidden="true"
                   className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600"
@@ -70,7 +74,7 @@ export default function Transaction({ step }: TransactionProps) {
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
-              {step < 2 ? (
+              {step == 1 ? (
                 <svg
                   aria-hidden="true"
                   className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600"
@@ -87,15 +91,17 @@ export default function Transaction({ step }: TransactionProps) {
                     fill="currentFill"
                   />
                 </svg>
-              ) : (
+              ) : step > 1 ? (
                 <img src="/assets/tick.svg" className="w-8 h-8" />
+              ) : (
+                <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
               )}
             </div>
             <p> Placing Bet</p>
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
-              {step < 3 ? (
+              {step == 2 ? (
                 <svg
                   aria-hidden="true"
                   className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600"
@@ -112,15 +118,17 @@ export default function Transaction({ step }: TransactionProps) {
                     fill="currentFill"
                   />
                 </svg>
-              ) : (
+              ) : step > 2 ? (
                 <img src="/assets/tick.svg" className="w-8 h-8" />
+              ) : (
+                <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
               )}
             </div>
             <p> Waiting for randomness</p>
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
-              {step < 4 ? (
+              {step == 3 ? (
                 <svg
                   aria-hidden="true"
                   className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600"
@@ -137,8 +145,10 @@ export default function Transaction({ step }: TransactionProps) {
                     fill="currentFill"
                   />
                 </svg>
-              ) : (
+              ) : step > 3 ? (
                 <img src="/assets/tick.svg" className="w-8 h-8" />
+              ) : (
+                <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
               )}
             </div>
             <p> Waiting for crosschain transaction</p>
@@ -149,6 +159,9 @@ export default function Transaction({ step }: TransactionProps) {
               style={{
                 backgroundImage: `url('/assets/LoginBorder.svg')`,
                 backgroundSize: "contain",
+              }}
+              onClick={() => {
+                setTransactionLoading(false);
               }}
             >
               <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2 -mt-4">

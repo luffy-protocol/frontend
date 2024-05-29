@@ -621,7 +621,7 @@ function Page({ params }: { params: { address: string } }) {
                       key={index}
                       team1={match.home_id}
                       team2={match.away_id}
-                      status={1}
+                      status={2}
                       fixtureid={match.fixture_id}
                     />
                   ))
@@ -670,7 +670,7 @@ function Page({ params }: { params: { address: string } }) {
                       key={index}
                       team1={match.home_id}
                       team2={match.away_id}
-                      status={1}
+                      status={4}
                       fixtureid={match.fixture_id}
                     />
                   ))

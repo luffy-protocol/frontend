@@ -11,7 +11,7 @@ function Page() {
       <div className="relative z-10">
         <img src="/assets/Landing.png" className="h-screen w-screen" />
       </div>
-      <div className="absolute inset-0 z-20 mt-40">
+      <div className="absolute inset-0 z-20 min-[1400px]:mt-40 mt-10">
         <div className="flex flex-col px-10 justify-center  items-center bg-no-repeat w-full overflow-hidden  bg-contain font-stalinist">
           <div className="w-full xl:mt-20">
             <img src="/assets/Luffy.svg" className="w-1/2 mx-auto" />
@@ -19,13 +19,13 @@ function Page() {
           <div className="mt-12 hover:scale-110">
             <LoginButton />
           </div>
-          <div className="scale-50 w-[1700px]">
+          <div className="scale-50 w-[1700px] -mt-10">
             <Slider />
             <p className="text-md text-center mt-14 ">
               Built with 💙 for <br />
               Chainlink Block Magic 2024 Hackathon
             </p>
-            <div className="mt-28">
+            <div className=" mt-2">
               <Socials />
             </div>
           </div>

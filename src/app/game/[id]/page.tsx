@@ -107,6 +107,7 @@ function Page({ params }: { params: { id: string } }) {
             awayteam={awayid}
             setCaptain={setCaptain}
             setViceCaptain={setviceCaptain}
+            playerPosition={playerPositions}
           />
         </div>
       )}

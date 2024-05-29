@@ -16,7 +16,6 @@ export default async function getVrfFee(params: GetVrfFeeParams) {
     const { chainId, gasPriceInWei } = params;
     const publicClient = CHAIN_RESOLVERS[chainId];
 
-    // TODO: Directly call getGas price and pass it here
     const data = await publicClient.readContract({
       address: DEPLOYMENTS[chainId],
       abi:
@@ -25,7 +24,7 @@ export default async function getVrfFee(params: GetVrfFeeParams) {
           : chainId == 11155111 || chainId == 421614
           ? CROSSCHAIN_ABI
           : CROSSCHAIN_NO_VRF_ABI,
-      functionName: "getCrosschainFee",
+      functionName: "getRandomnessPriceInNative",
       args: [gasPriceInWei],
     });
     console.log(data);

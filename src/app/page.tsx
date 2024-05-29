@@ -21,11 +21,7 @@ function Page() {
           </div>
           <div className="scale-50 w-[1700px] -mt-10">
             <Slider />
-            <p className="text-md text-center mt-14 ">
-              Built with 💙 for <br />
-              Chainlink Block Magic 2024 Hackathon
-            </p>
-            <div className=" mt-2">
+            <div className=" mt-12 scale-90 pt-1">
               <Socials />
             </div>
           </div>

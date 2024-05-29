@@ -3830,6 +3830,13 @@ const dropdownElements = {
     },
   ],
 };
+const chainToChainIds: Record<number, number> = {
+  1: 43113,
+  2: 11155111,
+  3: 84532,
+  4: 11155420,
+  5: 421614,
+};
 export {
   PROTOCOL_ABI,
   CROSSCHAIN_ABI,
@@ -3840,4 +3847,5 @@ export {
   TOKEN_ADDRESSES,
   emptyPlayers,
   dropdownElements,
+  chainToChainIds,
 };

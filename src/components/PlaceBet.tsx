@@ -6,7 +6,9 @@ import VrfTooltip from "./Game/Tooltip/VrfTooltip";
 import { dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/resolveTokens";
 import getVrfFee from "@/utils/transactions/read/getVrfFee";
-import getGasPrice from "@/utils/transactions/read/getGasPrice";
+import ErrorTooltip from "./Game/Tooltip/ErrorTooltip";
+import resolveBet from "@/utils/resolveBet";
+import resolveCrosschainFee from "@/utils/resolveCrosschainFee";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -17,21 +19,23 @@ export default function PlaceBet({
   selectedPlayersCount,
   setTransactionLoading,
 }: PlaceBetProps) {
-  const [betInEther, setBetInEther] = useState(0);
-  const [gasPrice, setGasPrice] = useState(0);
-  const [betamount, setBetAmount] = useState(0);
+  const [betamount, setBetAmount] = useState("0.0");
   const [chain, setChain] = useState(0);
   const [token, setToken] = useState(0);
   const [enableRandomness, setEnableRandomness] = useState(false);
-  const [crosschainfee, setCrosschainFee] = useState(0);
-  const [vrffee, setVrfFee] = useState(0);
-  // useEffect(() => {
-  //   const getDet = async () => {
-  //     const gas = await getGasPrice(chain);
-  //     setGasPrice(gas);
-  //   };
-  //   getDet();
-  // }, [chain]);
+  const [crosschainfee, setCrosschainFee] = useState("0.0");
+  const [vrffee, setVrfFee] = useState("0.0");
+  const [betAmountLoading, setBetAmountLoading] = useState(true);
+  const [showErrorMessage, setShowErrorMessage] = useState(true);
+
+  useEffect(() => {
+    resolveBet(token, chain, setBetAmount, setBetAmountLoading);
+  }, [chain, token]);
+
+  useEffect(() => {
+    resolveCrosschainFee(chain, setCrosschainFee);
+    if (chain == 3 || chain == 4) setEnableRandomness(false);
+  }, [chain]);
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
       <div className=" relative z-10 mx-2 mt-16">
@@ -39,13 +43,26 @@ export default function PlaceBet({
       </div>
       <div className="absolute  w-1/3 inset-y-80 z-20  mt-24 h-2/3">
         <div className=" flex flex-col mx-2 mt-16 justify-center items-center 2xl:gap-28 min-[1400px]:gap-20">
-          <div className="">
+          <div className="flex items-center">
             <PlayerProgress noPlayers={selectedPlayersCount} />
+            {selectedPlayersCount < 11 && showErrorMessage && (
+              <ErrorTooltip message="You must select 11 players to submit the squad ⚠️" />
+            )}
           </div>
           <div className="flex flex-col justify-center items-center ">
             <div className="flex w-full font-stalinist text-[10px] justify-around">
-              <p className="text-[10px]">Chain</p>
-              <p className="text-[10px]">Token</p>
+              <div className="flex">
+                <p className="text-[10px]">Chain</p>
+                {chain == 0 && showErrorMessage && (
+                  <ErrorTooltip message="Please select a chain to continue ⚠️" />
+                )}
+              </div>
+              <div className="flex">
+                <p className="text-[10px]">Token</p>
+                {token == 0 && showErrorMessage && (
+                  <ErrorTooltip message="Please select token to continue ⚠️" />
+                )}
+              </div>
             </div>
             <div
               className="flex  gap-4 justify-start items-start w-full sm:flex-row flex-col"
@@ -73,14 +90,17 @@ export default function PlaceBet({
               />
             </div>
           </div>
-          <div className="flex gap-10 mt-2">
+
+          <div className="flex gap-10 ">
+            <div className="w-[50px]"></div>
             <div>
-              <div className="flex flex-col mt-2 justify-center items-center">
-                <p className="text-md  font-stalinist text-slate-500">
+              <div className="flex flex-col justify-center items-center text-center">
+                <p className="text-md font-stalinist text-slate-500">
                   Bet Amount
                 </p>
-                <p className="text-xl  font-stalinist  ">
-                  {betInEther}&nbsp;
+                <p className="text-lg  font-stalinist  ">
+                  {betAmountLoading ? ". . ." : betamount}
+                  <br />
                   <span className=" text-[#d94956]">
                     {token < 2
                       ? chain > 1
@@ -90,26 +110,17 @@ export default function PlaceBet({
                   </span>
                 </p>
               </div>
-              <div className="flex mt-2 justify-center items-center">
-                <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
-                <p className="text-[10px] font-stalinist text-center">
-                  {gasPrice} gwei
-                </p>
-              </div>
             </div>
             <div>
-              <div className="flex flex-col mt-2 justify-center items-center">
+              <div className="flex flex-col justify-center items-center text-center">
                 <p className="text-md  font-stalinist text-slate-500">
                   Cross Chain Fee
                 </p>
                 <p className="text-xl  font-stalinist  ">
-                  {crosschainfee}&nbsp;
+                  {crosschainfee}
+                  <br />
                   <span className=" text-[#d94956]">
-                    {token < 2
-                      ? chain > 1
-                        ? "ETH"
-                        : "AVAX"
-                      : dropdownElements.tokens[token - 1].name}
+                    {chain > 1 ? "ETH" : "AVAX"}
                   </span>
                 </p>
               </div>
@@ -121,7 +132,8 @@ export default function PlaceBet({
                 <label className="inline-flex items-center cursor-pointer">
                   <input
                     type="checkbox"
-                    value=""
+                    checked={enableRandomness}
+                    disabled={chain == 3 || chain == 4}
                     className="sr-only peer"
                     onChange={() => {
                       setEnableRandomness(!enableRandomness);
@@ -134,7 +146,15 @@ export default function PlaceBet({
                 </label>
               </div>
               <div className="ml-4 mt-0">
-                <VrfTooltip />
+                {chain == 3 || chain == 4 ? (
+                  <ErrorTooltip
+                    message={`Feature Unavailable for ${
+                      chain == 3 ? "Base" : "Optimism"
+                    } ⚠️`}
+                  />
+                ) : (
+                  <VrfTooltip />
+                )}
               </div>
             </div>
             <div>
@@ -145,11 +165,7 @@ export default function PlaceBet({
                 <p className="text-xl  font-stalinist  ">
                   {vrffee}&nbsp;
                   <span className=" text-[#d94956]">
-                    {token < 2
-                      ? chain > 1
-                        ? "ETH"
-                        : "AVAX"
-                      : dropdownElements.tokens[token - 1].name}
+                    {chain > 1 ? "ETH" : "AVAX"}
                   </span>
                 </p>
               </div>

@@ -1,6 +1,6 @@
 export default function PlayerProgress({ noPlayers }: { noPlayers: number }) {
   return (
-    <>
+    <div>
       <div className="flex font-stalinist text-[8px] justify-between">
         <p>Players Chosen</p>
         <p>{noPlayers}/11</p>
@@ -20,6 +20,6 @@ export default function PlayerProgress({ noPlayers }: { noPlayers: number }) {
           <div className="w-0 h-0 transform rotate-0 border-b-[11px] ml-1 border-b-transparent border-l-[10px] border-l-white border-r-[5px] border-r-transparent "></div>
         )}{" "}
       </div>
-    </>
+    </div>
   );
 }

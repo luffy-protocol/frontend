@@ -70,7 +70,7 @@ export default function Transaction({
                 <img src="/assets/tick.svg" className="w-8 h-8" />
               )}
             </div>
-            <p>Waiting For approval</p>
+            <p>Approve Tokens</p>
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
@@ -97,7 +97,7 @@ export default function Transaction({
                 <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
               )}
             </div>
-            <p> Placing Bet</p>
+            <p>Place Bet</p>
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
@@ -124,7 +124,7 @@ export default function Transaction({
                 <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
               )}
             </div>
-            <p> Waiting for randomness</p>
+            <p>Randomness Commitment</p>
           </div>
           <div className="flex">
             <div role="status" className="px-2 -mt-1">
@@ -151,7 +151,7 @@ export default function Transaction({
                 <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
               )}
             </div>
-            <p> Waiting for crosschain transaction</p>
+            <p>Receiving crosschain transaction</p>
           </div>
           <div className="flex w-full justify-center items-center mt-8 hover:scale-110">
             <button

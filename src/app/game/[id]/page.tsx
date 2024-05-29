@@ -82,6 +82,7 @@ function Page({ params }: { params: { id: string } }) {
             <PlaceBet
               selectedPlayersCount={noPlayers}
               setTransactionLoading={setTransactionLoading}
+              captainAndViceCaptainSet={true}
             />
           ) : (
             <Results

@@ -1,11 +1,10 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
 import VrfTooltip from "./Game/Tooltip/VrfTooltip";
 import { dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/resolveTokens";
-import getVrfFee from "@/utils/transactions/read/getVrfFee";
 import ErrorTooltip from "./Game/Tooltip/ErrorTooltip";
 import resolveBet from "@/utils/resolveBet";
 import resolveCrosschainFee from "@/utils/resolveCrosschainFee";
@@ -16,11 +15,13 @@ import { formatGwei } from "viem";
 interface PlaceBetProps {
   selectedPlayersCount: number;
   setTransactionLoading: (loading: boolean) => void;
+  captainAndViceCaptainSet: boolean;
 }
 
 export default function PlaceBet({
   selectedPlayersCount,
   setTransactionLoading,
+  captainAndViceCaptainSet,
 }: PlaceBetProps) {
   const [betamount, setBetAmount] = useState("0.0");
   const [chain, setChain] = useState(0);
@@ -29,7 +30,7 @@ export default function PlaceBet({
   const [crosschainfee, setCrosschainFee] = useState("0.0");
   const [vrffee, setVrfFee] = useState("0.0");
   const [betAmountLoading, setBetAmountLoading] = useState(true);
-  const [showErrorMessage, setShowErrorMessage] = useState(true);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [gasPrice, setGasPrice] = useState("0.0");
   useEffect(() => {
     resolveBet(token, chain, setBetAmount, setBetAmountLoading);
@@ -167,6 +168,8 @@ export default function PlaceBet({
                 </label>
               </div>
               <div className="ml-4">
+                <VrfTooltip />
+
                 {chain == 3 || chain == 4 ? (
                   <ErrorTooltip
                     message={`Feature Unavailable for ${
@@ -174,7 +177,12 @@ export default function PlaceBet({
                     } ⚠️`}
                   />
                 ) : (
-                  <VrfTooltip />
+                  !enableRandomness &&
+                  !captainAndViceCaptainSet && (
+                    <ErrorTooltip
+                      message={`Set your Captain and Vice Captain or Enable Randomness ⚠️`}
+                    />
+                  )
                 )}
               </div>
             </div>
@@ -200,7 +208,16 @@ export default function PlaceBet({
                   backgroundSize: "contain",
                 }}
                 onClick={() => {
-                  setTransactionLoading(true);
+                  if (
+                    selectedPlayersCount == 11 &&
+                    chain != 0 &&
+                    token != 0 &&
+                    (!enableRandomness ? captainAndViceCaptainSet : true)
+                  ) {
+                    setTransactionLoading(true);
+                  } else {
+                    setShowErrorMessage(true);
+                  }
                 }}
               >
                 <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2">

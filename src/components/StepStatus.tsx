@@ -1,3 +1,5 @@
+import TxHash from "./Game/Tooltip/TxHash";
+
 export const StepStatus = ({
   currentStep,
   index,
@@ -33,7 +35,17 @@ export const StepStatus = ({
           <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
         )}
       </div>
-      <p>{label}</p>
+      <div className="flex justify-between items-center ">
+        <p className="w-full">{label}</p>
+        <div className=" ml-5">
+          {currentStep > index && (
+            <TxHash
+              chainid={1}
+              hash="0x227a61374f68d61d6cbe1f711dcd1910ef2f62a9208eb960dd791f8f24c6fa59"
+            />
+          )}
+        </div>
+      </div>
     </div>
   );
 };

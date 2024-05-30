@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Status from "./status";
 import Battery from "./Battery";
-import { StepStatus } from "./Stepstatus";
+import { StepStatus } from "./StepStatus";
+import TxHash from "./Game/Tooltip/TxHash";
 interface TransactionProps {
   step: number;
   setTransactionLoading: (value: boolean) => void;
@@ -51,12 +52,14 @@ export default function Transaction({
             <p> Submitting Squad</p>
           </div>
           {labels.map((label, index) => (
-            <StepStatus
-              key={index}
-              currentStep={step}
-              index={index}
-              label={label}
-            />
+            <>
+              <StepStatus
+                key={index}
+                currentStep={step}
+                index={index}
+                label={label}
+              />
+            </>
           ))}
           <div className="flex w-full justify-center items-center mt-8 hover:scale-110">
             <button

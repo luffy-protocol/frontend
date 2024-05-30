@@ -3824,6 +3824,13 @@ const dropdownElements = {
     },
   ],
 };
+const chainToExplorer: Record<number, string> = {
+  1: "https://avascan.info/blockchain/c/tx/",
+  2: "https://sepolia.etherscan.io/tx/",
+  3: "https://sepolia.basescan.org/tx/",
+  4: "https://sepolia-optimism.etherscan.io/tx",
+  5: "https://sepolia.arbiscan.io/tx/",
+};
 const chainToChainIds: Record<number, number> = {
   1: 43113,
   2: 11155111,
@@ -3842,4 +3849,5 @@ export {
   emptyPlayers,
   dropdownElements,
   chainToChainIds,
+  chainToExplorer,
 };

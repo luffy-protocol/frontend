@@ -9,7 +9,8 @@ const TxHash = ({ chain, hash }: { chain: number; hash: string }) => {
   const handleMouseLeave = () => setIsVisible(false);
   const url = chainToExplorer[chain] + hash;
   return (
-    <div
+    <button
+      className="cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => window.open(url, "_blank")}
@@ -24,12 +25,14 @@ const TxHash = ({ chain, hash }: { chain: number; hash: string }) => {
         />
         {isVisible && (
           <div className="absolute top-full left-0 mt-2 text-xs z-20 bg-gray-800 text-purple-600  rounded-md shadow-sm p-2 w-fit text-nowrap font-stalinist">
-            <p className="text-red-400">View Tx in Explorer : </p>
-            <p className="ml-3">{`${hash.slice(0, 8)}` + `...`}</p>
+            <p className="text-red-400">Click to view Tx </p>
+            <p className="ml-3">{`${hash.slice(0, 6)} ... ${hash.slice(
+              hash.length - 6
+            )}`}</p>
           </div>
         )}
       </div>
-    </div>
+    </button>
   );
 };
 

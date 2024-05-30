@@ -35,7 +35,9 @@ export default function Transaction({
           <div className="flex text-xl text-white mb-10">
             <p className="text-center">
               Submitting Squad <br />
-              <span className="text-purple-500">0 / 3</span>
+              <span className="text-purple-500">
+                {txHashes.length} / {labels.length}
+              </span>
             </p>
           </div>
           {labels.map((label, index) => (

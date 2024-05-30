@@ -3,19 +3,19 @@ import Navbar from "@/components/Navbar";
 import Status from "@/components/status";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import CheckProfile from "@/utils/profileHelpers/CheckProfile";
-import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
-import getProfile from "@/utils/profileHelpers/getProfile";
+import CheckProfile from "@/utils/profile/CheckProfile";
+import registerUserProfile from "@/utils/profile/registerUserProfile";
+import getProfile from "@/utils/profile/getProfile";
 import fetchFixtures from "@/utils/fixtures/fetchFixtures";
 import { request, gql } from "graphql-request";
 import { teamLogo } from "@/utils/logos/teamlogo";
 import { useRouter } from "next/navigation";
-import addFollower from "@/utils/profileHelpers/addFollower";
+import addFollower from "@/utils/profile/addFollower";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
-import uploadProfileImg from "@/utils/profileHelpers/uploadprofileImg";
+import uploadProfileImg from "@/utils/profile/uploadprofileImg";
 import DefaultLayout from "@/components/DefaultLayout";
-import { getProfileData } from "@/utils/profileHelpers/getProfileData";
+import { getProfileData } from "@/utils/profile/getProfileData";
 import { getPackedSettings } from "http2";
 
 interface MatchCardProps {

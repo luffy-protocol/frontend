@@ -1,7 +1,7 @@
 import request, { gql } from "graphql-request";
 import { ClaimRow, FetchInput } from "../interface";
 
-export const fetchAllClaims = async ({
+export const fetchRecentClaims = async ({
   gameId,
   mappedUsers,
 }: FetchInput): Promise<ClaimRow[]> => {

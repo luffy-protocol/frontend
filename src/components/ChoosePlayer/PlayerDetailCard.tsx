@@ -1,6 +1,6 @@
 import { playerimg } from "@/utils/logos/playerImage";
 import React, { useEffect, useState } from "react";
-import Button from "../Button";
+import Button from "../fixture/fixtureCard/Button";
 import ArrowButton from "./ArrowButton";
 import { getPlayerById } from "@/utils/player/getPlayerById";
 

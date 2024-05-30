@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Status from "./status";
+import Status from "./fixture/fixtureCard/status";
 interface ResultsProps {
   status: number;
   homeTeam: string;

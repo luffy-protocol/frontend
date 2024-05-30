@@ -1,9 +1,8 @@
 import React, { use, useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import PlayerDetailCard from "./PlayerDetailCard";
-
-import { Player } from "@/utils/interface";
 import { fetchPlayersByTeamId } from "@/utils/player/fetchPlayersByTeamId";
+import { Player } from "@/utils/interface";
 
 interface ChoosePlayerProps {
   setopen: (open: boolean) => void;

@@ -1,7 +1,7 @@
 "use client";
 import Dropdown from "@/components/Game/Dropdown";
 import { dropdownElements } from "@/utils/constants";
-import resolveTokens from "@/utils/resolveTokens";
+import resolveTokens from "@/utils/game/resolveTokens";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import React, { useState } from "react";
 

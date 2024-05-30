@@ -1,9 +1,6 @@
-import { playerimg } from "@/utils/logos/playerImage";
 import React from "react";
-import Button from "./Button";
 import ArrowButton from "./ArrowButton";
-import { getPlayerById } from "@/utils/player/fetchPlayerById";
-import profile from "../../public/assets/profile.png";
+import { fetchPlayerById } from "@/utils/player/fetchPlayerById";
 
 interface PlayerCardProps {
   id: number;
@@ -11,7 +8,7 @@ interface PlayerCardProps {
 }
 
 const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
-  const data = getPlayerById(id);
+  const data = fetchPlayerById(id);
   return (
     <div
       className="flex items-center justify-center bg-no-repeat bg-contain bg-center h-[100px] w-full"

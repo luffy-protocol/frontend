@@ -1,5 +1,3 @@
-import { fetchPlayerById } from "./fetchPlayerById";
-
 interface Player {
   player: {
     id: number;
@@ -102,24 +100,8 @@ const getPlayers = (): Player[] => {
 };
 
 // Function to get player details by ID
-export const fetchPlayersByTeamId = (
-  home_id: number,
-  away_id: number
-): Player[] | undefined => {
+export const getPlayerById = (id: number): Player | undefined => {
   const allPlayers: Player[] = getPlayers();
-  const teams = allPlayers.filter(
-    (player) =>
-      player.statistics[0].team.id === home_id &&
-      fetchPlayerById(player.player.id)?.statistics[0].team.id === home_id
-  );
-  console.log(teams);
-  const away = allPlayers.filter(
-    (player) =>
-      player.statistics[0].team.id === away_id &&
-      fetchPlayerById(player.player.id)?.statistics[0].team.id === away_id
-  );
-  console.log(away);
 
-  const combinedPlayers = [...teams, ...away];
-  return combinedPlayers;
+  return allPlayers.find((player) => player.player.id === id);
 };

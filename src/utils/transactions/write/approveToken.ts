@@ -30,6 +30,7 @@ export default async function approveToken(
       chain: CHAIN_RESOLVERS[chainId].chain,
       transport: http(CHAIN_RESOLVERS[chainId].transport),
     });
+
     const { request } = await publicClient.simulateContract({
       address: TOKEN_ADDRESSES[chainId][token - 1] as `0x${string}`,
       abi: erc20Abi,

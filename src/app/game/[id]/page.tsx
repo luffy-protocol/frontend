@@ -42,6 +42,7 @@ function Page({ params }: { params: { id: string } }) {
   const [stepCount, setStepCount] = useState(0);
   const [chain, setChain] = useState(0);
   const [txHashes, setTxHashes] = useState<string[]>([]);
+  const [txConfirmed, setTxConfirmed] = useState<boolean[]>([]);
   const [error, setError] = useState("");
   useEffect(() => {
     console.log("Captain and Vice captain");
@@ -131,6 +132,7 @@ function Page({ params }: { params: { id: string } }) {
                   viceCaptain: 2,
                   squadHash,
                   setTxHashes: setTxHashes,
+                  setTxConfirmations: setTxConfirmed,
                 });
                 if (!success) {
                   console.log("Error in transaction");
@@ -158,9 +160,14 @@ function Page({ params }: { params: { id: string } }) {
             labels={labels}
             setTransactionLoading={setTransactionLoading}
             txHashes={txHashes}
+            txConfirmed={txConfirmed}
             chain={chain}
             error={error}
-            setError={setError}
+            clear={() => {
+              setError("");
+              setTxHashes([]);
+              setLabels([]);
+            }}
           />
         )}
       </div>

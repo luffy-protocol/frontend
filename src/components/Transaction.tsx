@@ -8,8 +8,9 @@ interface TransactionProps {
   setTransactionLoading: (value: boolean) => void;
   labels: string[];
   txHashes: string[];
+  txConfirmed: boolean[];
+  clear: () => void;
   error: string;
-  setError: (value: string) => void;
 }
 export default function Transaction({
   txHashes,
@@ -17,7 +18,8 @@ export default function Transaction({
   setTransactionLoading,
   labels,
   error,
-  setError,
+  txConfirmed,
+  clear,
 }: TransactionProps) {
   return (
     <div className="flex relative justify-center items-center w-1/2 h-2/3">
@@ -45,12 +47,15 @@ export default function Transaction({
               <StepStatus
                 key={index}
                 chain={chain}
-                currentStep={txHashes.length}
+                currentStep={txConfirmed.length}
                 index={index}
                 label={label}
                 txHash={index < txHashes.length ? txHashes[index] : ""}
                 error={
                   error.length > 0 && index == txHashes.length ? error : ""
+                }
+                txConfirmed={
+                  index < txHashes.length ? txConfirmed[index] : false
                 }
               />
             </>
@@ -63,8 +68,8 @@ export default function Transaction({
                 backgroundSize: "contain",
               }}
               onClick={() => {
-                setError("");
                 setTransactionLoading(false);
+                clear();
               }}
             >
               <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2 -mt-4">

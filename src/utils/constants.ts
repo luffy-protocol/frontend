@@ -12,6 +12,12 @@ const DEPLOYMENTS: Record<number, string> = {
   421614: "0x87dd08be032a03d937F2A8003dfa9C52821cbaB9",
   11155420: "0xAa25e4A9db1F3e493B9a20279572e4F15Ce6eEa2",
 };
+
+const VRF_COORDINATORS: Record<number, string> = {
+  43113: "0x5C210eF41CD1a72de73bF76eC39637bB0d3d7BEE",
+  11155111: "0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B",
+  421614: "0x5CE8D5A2BC84beb22a398CCA51996F7930313D61",
+};
 const PROTOCOL_ABI = [
   {
     inputs: [
@@ -3848,4 +3854,5 @@ export {
   dropdownElements,
   chainToChainIds,
   chainToExplorer,
+  VRF_COORDINATORS,
 };

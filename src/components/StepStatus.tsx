@@ -9,6 +9,7 @@ export const StepStatus = ({
   label,
   txHash,
   error,
+  txConfirmed,
 }: {
   currentStep: number;
   index: number;
@@ -16,6 +17,7 @@ export const StepStatus = ({
   chain: number;
   txHash: string;
   error: string;
+  txConfirmed: boolean;
 }) => {
   return (
     <div className="flex mx-auto">
@@ -48,8 +50,8 @@ export const StepStatus = ({
       <div className="flex justify-between items-center ">
         <p className="w-full">
           {label}
-          {currentStep > index ? (
-            <TxHash chain={chain} hash={txHash} />
+          {txHash.length > 0 ? (
+            <TxHash chain={chain} hash={txHash} confirmed={txConfirmed} />
           ) : (
             error.length > 0 && <TxErrorTooltip message={error} />
           )}

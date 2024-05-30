@@ -6,8 +6,8 @@ import request, { gql } from "graphql-request";
 import axios from "axios";
 import { time } from "console";
 import { ClaimRow, FetchInput, UserData } from "@/utils/interface";
-import { fetchLeaderboard } from "@/utils/leaderboard/leaderboard";
-import { fetchAllClaims } from "@/utils/leaderboard/recentClaims";
+import { fetchLeaderboardByGame } from "@/utils/leaderboard/fetchLeaderboardByGame";
+import { fetchRecentClaims } from "@/utils/leaderboard/fetchRecentClaims";
 
 const RecentClaims = ({ claims }: { claims: ClaimRow[] }) => {
   return (
@@ -111,7 +111,7 @@ const Page: React.FC<{ params: { fixtureId: string } }> = ({ params }) => {
             };
           });
           const fixtureIdHex = "0x" + parseInt(params.fixtureId).toString(16);
-          const _userData = await fetchLeaderboard({
+          const _userData = await fetchLeaderboardByGame({
             mappedUsers: _mappedUsers,
             gameId: fixtureIdHex,
           });
@@ -119,7 +119,7 @@ const Page: React.FC<{ params: { fixtureId: string } }> = ({ params }) => {
           setUsers(_userData);
 
           //Recent Claims
-          const _claimData = await fetchAllClaims({
+          const _claimData = await fetchRecentClaims({
             mappedUsers: _mappedUsers,
             gameId: fixtureIdHex,
           });

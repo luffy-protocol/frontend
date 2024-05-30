@@ -1,6 +1,6 @@
 import React from "react";
 import ArrowButton from "./ArrowButton";
-import { fetchPlayerById } from "@/utils/player/fetchPlayerById";
+import { getPlayerById } from "@/utils/player/getPlayerById";
 
 interface PlayerCardProps {
   id: number;
@@ -8,7 +8,7 @@ interface PlayerCardProps {
 }
 
 const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
-  const data = fetchPlayerById(id);
+  const data = getPlayerById(id);
   return (
     <div
       className="flex items-center justify-center bg-no-repeat bg-contain bg-center h-[100px] w-full"

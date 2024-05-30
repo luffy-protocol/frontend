@@ -1,7 +1,7 @@
 "use client";
 import React, { use, useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
-import ChoosePlayer from "@/components/ChoosePlayer";
+import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
 import fixtureById from "@/utils/fixtures/fetchFixtureById";
 import { emptyPlayers } from "@/utils/constants";
 import { Player } from "@/utils/interface";

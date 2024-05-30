@@ -1,6 +1,6 @@
 import Form from "./Form";
-import Timer from "../Timer";
-import Status from "../status";
+import Timer from "../fixture/fixtureCard/Timer";
+import Status from "../fixture/fixtureCard/status";
 import { useEffect, useRef, useState } from "react";
 
 interface GameStatusProps {

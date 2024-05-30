@@ -1,8 +1,8 @@
 import { playerimg } from "@/utils/logos/playerImage";
 import React, { useEffect, useState } from "react";
-import Button from "./Button";
+import Button from "../fixture/fixtureCard/Button";
 import ArrowButton from "./ArrowButton";
-import { fetchPlayerById } from "@/utils/player/fetchPlayerById";
+import { getPlayerById } from "@/utils/player/getPlayerById";
 
 interface PlayerCardProps {
   id: number;
@@ -28,7 +28,7 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({
       try {
         setLoading(true);
         console.log("loadinxg");
-        const data = await fetchPlayerById(id);
+        const data = await getPlayerById(id);
         setplayerData(data);
         setLoading(false);
       } catch (error) {

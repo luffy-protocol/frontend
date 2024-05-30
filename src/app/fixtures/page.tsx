@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import FixtureCard from "@/components/FixtureCard";
+import FixtureCard from "@/components/fixture/fixtureCard/FixtureCard";
 import Navbar from "@/components/Navbar";
 import { MatchDetails } from "@/utils/interface";
 import fetchOngoingFixtures from "@/utils/fixtures/fetchOngoingFixtures";

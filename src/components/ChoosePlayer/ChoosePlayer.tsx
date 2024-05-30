@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import PlayerDetailCard from "./PlayerDetailCard";
-import { fetchPlayersByTeamId } from "@/utils/player/fetchPlayersByTeamId";
+import { getPlayerByTeamId } from "@/utils/player/getPlayersByTeamId";
 import { Player } from "@/utils/interface";
 
 interface ChoosePlayerProps {
@@ -127,7 +127,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
   const [TeamData, setTeamData] = useState<any>(null);
 
   useEffect(() => {
-    const data = fetchPlayersByTeamId(hometeam, awayteam);
+    const data = getPlayerByTeamId(hometeam, awayteam);
 
     const positions = [
       { position: "Goalkeeper", indices: [10] },

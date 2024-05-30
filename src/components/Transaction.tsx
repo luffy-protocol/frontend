@@ -27,12 +27,12 @@ export default function Transaction({
         key={1}
       />
 
-      <div className="absolute w-1/3 z-20 mr-8  h-full flex top-[5%] left-[5%]">
-        <div className=" justify-center items-center flex ml-10 ">
-          <Battery step={txHashes.length} totalSteps={labels.length} />
+      <div className="absolute w-full z-20 mr-8  h-full flex top-[5%] left-[5%]">
+        <div className="flex justify-center items-center  ml-10 ">
+          <Battery step={txHashes.length} totalSteps={4} />
         </div>
-        <div className="font-stalinist flex flex-col items-start justify-center text-lg text-red-400 gap-6  ml-4">
-          <div className="flex text-xl text-white mb-10">
+        <div className="font-stalinist w-[50%] flex flex-col items-start justify-center text-lg text-red-400 gap-6  ml-4">
+          <div className=" text-xl text-white mb-10">
             <p className="text-center">
               Submitting Squad <br />
               <span className="text-purple-500">

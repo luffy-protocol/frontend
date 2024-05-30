@@ -16,9 +16,9 @@ export default function resolveLabels({
     if (token == 2) labels.push("Approve LINK");
     else labels.push("Approve USDC");
   }
-  labels.push("Place Bet");
+  labels.push("Confirm Bet");
   if (isRandom) {
-    labels.push("Randomness Commitment");
+    labels.push("VRF Callback");
   }
   if (chain > 1) {
     labels.push("Receiving Crosschain Transaction");

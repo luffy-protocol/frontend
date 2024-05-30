@@ -53,7 +53,7 @@ const CcipTooltip = ({ chain }: { chain: number }) => {
               className=""
             />
             <img
-              src="/assets/dice.gif"
+              src="/assets/ccip.gif"
               width={"25px"}
               alt="vrf"
               className="ml-2"

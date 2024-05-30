@@ -1,3 +1,3 @@
-export const playerimg = (playerid: number) => {
+export const getPlayerimg = (playerid: number) => {
   return `https://media.api-sports.io/football/players/${playerid}.png`;
 };

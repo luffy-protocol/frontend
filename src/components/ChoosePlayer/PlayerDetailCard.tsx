@@ -1,4 +1,4 @@
-import { playerimg } from "@/utils/logos/playerImage";
+import { getPlayerimg } from "@/utils/logos/getPlayerImage";
 import React, { useEffect, useState } from "react";
 import Button from "../Fixtures/FixtureCard/Button";
 import ArrowButton from "./ArrowButton";
@@ -128,7 +128,7 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
       {playerData && (
         <>
           <img
-            src={playerimg(id)}
+            src={getPlayerimg(id)}
             alt=""
             className="border border-gradient-[#D8485F,#B62DD3]"
           />

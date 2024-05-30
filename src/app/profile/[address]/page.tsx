@@ -8,7 +8,7 @@ import registerUserProfile from "@/utils/profile/registerUserProfile";
 import getProfile from "@/utils/profile/getProfile";
 import fetchFixtures from "@/utils/fixtures/fetchFixtures";
 import { request, gql } from "graphql-request";
-import { teamLogo } from "@/utils/logos/teamlogo";
+import { getTeamLogo } from "@/utils/logos/getTeamLogo";
 import { useRouter } from "next/navigation";
 import addFollower from "@/utils/profile/addFollower";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
@@ -54,7 +54,7 @@ const MatchCard: React.FC<MatchCardProps> = ({
       <div className="flex justify-between items-center w-full mb-4 gap-3">
         <div className="flex flex-col items-center">
           <img
-            src={teamLogo(team1)}
+            src={getTeamLogo(team1)}
             alt={`${team1} logo`}
             className="w-16 h-16 mb-2"
           />
@@ -63,7 +63,7 @@ const MatchCard: React.FC<MatchCardProps> = ({
         <span className="text-xl font-semibold">VS</span>
         <div className="flex flex-col items-center">
           <img
-            src={teamLogo(team2)}
+            src={getTeamLogo(team2)}
             alt={`${team2} logo`}
             className="w-16 h-16 mb-2"
           />

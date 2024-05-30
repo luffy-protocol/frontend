@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import FixtureCard from "@/components/FixtureCard";
 import Navbar from "@/components/Navbar";
 import { MatchDetails } from "@/utils/interface";
-import fetchOngoingFixtures from "@/utils/fixtureHelpers/fetchOngoingFixtures";
+import fetchOngoingFixtures from "@/utils/fixtures/fetchOngoingFixtures";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import ConnectWalletToPlay from "@/components/ConnectWalletToPlay";
 import DefaultLayout from "@/components/DefaultLayout";

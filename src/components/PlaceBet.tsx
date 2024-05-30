@@ -73,7 +73,7 @@ export default function PlaceBet({
                   <ErrorTooltip message="Please select a chain to continue ⚠️" />
                 )}
               </div>
-              {chain != 1 ? <CcipTooltip chain={chain} /> : <div></div>}
+              {chain > 1 ? <CcipTooltip chain={chain} /> : <div></div>}
               <div className="flex">
                 <p className="text-[10px]">Token</p>
                 {token == 0 && showErrorMessage && (

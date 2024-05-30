@@ -6,8 +6,8 @@ import request, { gql } from "graphql-request";
 import axios from "axios";
 import { time } from "console";
 import { ClaimRow, FetchInput, UserData } from "@/utils/interface";
-import { fetchLeaderboard } from "@/utils/leaderboardHelpers/fetchLeaderboard";
-import { fetchAllClaims } from "@/utils/leaderboardHelpers/fetchRecentClaims";
+import { fetchLeaderboard } from "@/utils/leaderboard/leaderboard";
+import { fetchAllClaims } from "@/utils/leaderboard/recentClaims";
 
 const RecentClaims = ({ claims }: { claims: ClaimRow[] }) => {
   return (

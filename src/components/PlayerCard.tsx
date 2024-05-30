@@ -2,7 +2,7 @@ import { playerimg } from "@/utils/logos/playerImage";
 import React from "react";
 import Button from "./Button";
 import ArrowButton from "./ArrowButton";
-import { getPlayerById } from "@/utils/playerHelpers/FetchPlayerById";
+import { getPlayerById } from "@/utils/player/fetchPlayerById";
 import profile from "../../public/assets/profile.png";
 
 interface PlayerCardProps {

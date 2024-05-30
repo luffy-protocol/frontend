@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import DefaultLayout from "@/components/DefaultLayout";
-import { fetchOverallLeaderboard } from "@/utils/leaderboardHelpers/fetchOverallLeaderboard";
+import { fetchOverallLeaderboard } from "@/utils/leaderboard/fetchOverallLeaderboard";
 import axios from "axios";
 
 interface LeaderboardRow {

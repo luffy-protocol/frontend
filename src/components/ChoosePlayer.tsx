@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import PlayerCard from "./PlayerCard";
 import PlayerDetailCard from "./PlayerDetailCard";
-import { getPlayerByTeamId } from "@/utils/playerHelpers/FetchPlayerByTeamId";
+import { getPlayerByTeamId } from "@/utils/player/fetchPlayerByTeamId";
 import { Player } from "@/utils/interface";
 
 interface ChoosePlayerProps {

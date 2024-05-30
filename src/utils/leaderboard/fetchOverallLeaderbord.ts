@@ -1,10 +1,6 @@
 import request, { gql } from "graphql-request";
 import { FetchInput, MappedUsers, UserData } from "../interface";
 
-interface OverallLeaderboard {
-  name: string;
-}
-
 export const fetchOverallLeaderboard = async ({
   mappedUsers,
 }: {

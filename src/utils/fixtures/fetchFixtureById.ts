@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-export default async function fetchFixtureByRound(round: number): Promise<{
+export default async function fetchFixtureById(slug: number): Promise<{
   message: string;
   response: any;
 }> {
@@ -10,7 +10,7 @@ export default async function fetchFixtureByRound(round: number): Promise<{
     const { data: fixture, error } = await supabase
       .from("fixture")
       .select("*")
-      .eq("round", round);
+      .eq("fixture_id", slug);
     if (error) throw new Error(error.message);
     return { message: "Success", response: fixture };
   } catch (error) {

@@ -1,7 +1,7 @@
 import request, { gql } from "graphql-request";
 import { FetchInput, UserData } from "../interface";
 
-export const fetchLeaderboard = async ({
+export const fetchLeaderboardByGame = async ({
   gameId,
   mappedUsers,
 }: FetchInput): Promise<UserData[]> => {

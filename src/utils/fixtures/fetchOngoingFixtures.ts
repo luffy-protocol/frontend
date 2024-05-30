@@ -1,5 +1,5 @@
 import request, { gql } from "graphql-request";
-import fetchFixtureByRound from "./FixtureByRound";
+import fetchFixtureByRound from "./fetchFixturesByRound";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import { MatchDetails } from "../interface";
 

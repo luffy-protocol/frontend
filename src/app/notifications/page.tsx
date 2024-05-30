@@ -1,7 +1,7 @@
 "use client";
 
-import getFollowingNotifications from "@/utils/notificationHelpers/notifyFollowing";
-import removeNotifications from "@/utils/notificationHelpers/removeNotification";
+import getFollowingNotifications from "@/utils/notifications/notifyFollowing";
+import removeNotifications from "@/utils/notifications/removeNotification";
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import DefaultLayout from "@/components/DefaultLayout";

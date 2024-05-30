@@ -18,7 +18,12 @@ interface PlaceBetRandomParams {
   value: string;
   token: number;
 }
-export default async function placeBetRandom(params: PlaceBetRandomParams) {
+export default async function placeBetRandom(
+  params: PlaceBetRandomParams
+): Promise<{
+  success: boolean;
+  data: { hash: string; error: any };
+}> {
   const {
     primaryWallet,
     chainId,
@@ -48,6 +53,7 @@ export default async function placeBetRandom(params: PlaceBetRandomParams) {
       success: true,
       data: {
         hash: tx,
+        error: "",
       },
     };
   } catch (e) {
@@ -55,6 +61,7 @@ export default async function placeBetRandom(params: PlaceBetRandomParams) {
       success: false,
       data: {
         error: e,
+        hash: "",
       },
     };
   }

@@ -21,7 +21,10 @@ interface PlaceBetParams {
   captain: number;
   viceCaptain: number;
 }
-export default async function placeBet(params: PlaceBetParams) {
+export default async function placeBet(params: PlaceBetParams): Promise<{
+  success: boolean;
+  data: { hash: string; error: any };
+}> {
   const {
     primaryWallet,
     chainId,
@@ -65,6 +68,7 @@ export default async function placeBet(params: PlaceBetParams) {
       success: true,
       data: {
         hash: tx,
+        error: "",
       },
     };
   } catch (e) {
@@ -72,6 +76,7 @@ export default async function placeBet(params: PlaceBetParams) {
       success: false,
       data: {
         error: e,
+        hash: "",
       },
     };
   }

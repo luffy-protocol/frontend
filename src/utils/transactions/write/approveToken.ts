@@ -9,9 +9,14 @@ interface ApproveTokenParams {
   primaryWallet: Wallet;
   chainId: number;
   token: number;
-  amount: bigint;
+  amount: string;
 }
-export default async function approveToken(params: ApproveTokenParams) {
+export default async function approveToken(
+  params: ApproveTokenParams
+): Promise<{
+  success: boolean;
+  data: { hash: string; error: any };
+}> {
   const { primaryWallet, chainId, token, amount } = params;
 
   try {
@@ -24,7 +29,7 @@ export default async function approveToken(params: ApproveTokenParams) {
       address: TOKEN_ADDRESSES[chainId][token] as `0x${string}`,
       abi: erc20Abi,
       functionName: "approve",
-      args: [DEPLOYMENTS[chainId] as `0x${string}`, amount],
+      args: [DEPLOYMENTS[chainId] as `0x${string}`, BigInt(amount)],
       account: primaryWallet.address as `0x${string}`,
     });
     const tx = await walletClient.writeContract(request);
@@ -32,6 +37,7 @@ export default async function approveToken(params: ApproveTokenParams) {
       success: true,
       data: {
         hash: tx,
+        error: "",
       },
     };
   } catch (e) {
@@ -39,6 +45,7 @@ export default async function approveToken(params: ApproveTokenParams) {
       success: false,
       data: {
         error: e,
+        hash: "",
       },
     };
   }

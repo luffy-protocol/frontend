@@ -48,77 +48,6 @@ export default async function triggerSubmitSquad({
     chain: CHAIN_RESOLVERS[chainToChainIds[chain]].chain,
     transport: http(CHAIN_RESOLVERS[chainToChainIds[chain]].transport),
   });
-  if (token != 1) {
-    // Approve Tokens
-    const publicClient = createPublicClient({
-      chain: CHAIN_RESOLVERS[chainToChainIds[chain]].chain,
-      transport: http(CHAIN_RESOLVERS[chainToChainIds[chain]].transport),
-    });
-    const unwatchApproval = publicClient.watchEvent({
-      address: TOKEN_ADDRESSES[chainToChainIds[chain]][
-        token - 1
-      ] as `0x${string}`,
-      event: {
-        anonymous: false,
-        inputs: [
-          {
-            indexed: true,
-            internalType: "address",
-            name: "owner",
-            type: "address",
-          },
-          {
-            indexed: true,
-            internalType: "address",
-            name: "spender",
-            type: "address",
-          },
-          {
-            indexed: false,
-            internalType: "uint256",
-            name: "value",
-            type: "uint256",
-          },
-        ],
-        name: "Approval",
-        type: "event",
-      },
-      onLogs: (logs) => {
-        console.log("Approval Event");
-        console.log(logs);
-        if (
-          logs[0].args.spender ==
-            (DEPLOYMENTS[chainToChainIds[chain]] as `0x${string}`) &&
-          logs[0].args.owner == primaryWallet.address
-        ) {
-          txState = 2;
-          txConfirmations.push(true);
-          setTxConfirmations(txConfirmations);
-        }
-      },
-    });
-    const { success, data } = await approveToken({
-      primaryWallet: primaryWallet,
-      chainId: chainToChainIds[chain],
-      token: token,
-      amount: tokenAmount,
-    });
-    txState = 1;
-
-    if (success) {
-      txHashes.push(data.hash);
-      setTxHashes(txHashes);
-    } else
-      return {
-        success: false,
-        error: data.error,
-      };
-
-    while (txState != 2) {
-      await delay(2000);
-    }
-  }
-
   const unwatchBetPlaced = sourcePublicClient.watchEvent({
     address: DEPLOYMENTS[chainToChainIds[chain]][token - 1] as `0x${string}`,
     event: {
@@ -180,19 +109,24 @@ export default async function triggerSubmitSquad({
     },
     onLogs: (logs) => {
       console.log("Bet Placed Event");
-      if (isRandom) {
-        // TODO: upload the tx also to txHashes
-      }
       console.log(logs);
-      txConfirmations.push(true);
-      setTxConfirmations(txConfirmations);
-      txState = 10;
+      if (logs[0].args.caller == primaryWallet.address) {
+        if (isRandom) {
+          const tx = logs[0].transactionHash;
+          txHashes.push(tx);
+          setTxHashes(txHashes);
+        }
+        txConfirmations.push(true);
+        setTxConfirmations(txConfirmations);
+        txState = 10;
+      }
     },
   });
   const unwatchRequestRandomness = sourcePublicClient.watchEvent({
     address: VRF_COORDINATORS[chainToChainIds[chain]][
       token - 1
     ] as `0x${string}`,
+
     onLogs: (logs) => {
       console.log("Random Words Requestd Event");
       console.log(logs);
@@ -201,6 +135,73 @@ export default async function triggerSubmitSquad({
       txState = 4;
     },
   });
+  const unwatchApproval = sourcePublicClient.watchEvent({
+    address: TOKEN_ADDRESSES[chainToChainIds[chain]][
+      token - 1
+    ] as `0x${string}`,
+    event: {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "spender",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "value",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    onLogs: (logs) => {
+      console.log("Approval Event");
+      console.log(logs);
+      if (
+        logs[0].args.spender ==
+          (DEPLOYMENTS[chainToChainIds[chain]] as `0x${string}`) &&
+        logs[0].args.owner == primaryWallet.address
+      ) {
+        txState = 2;
+        txConfirmations.push(true);
+        setTxConfirmations(txConfirmations);
+      }
+    },
+  });
+  if (token != 1) {
+    // Approve Tokens
+    const { success, data } = await approveToken({
+      primaryWallet: primaryWallet,
+      chainId: chainToChainIds[chain],
+      token: token,
+      amount: tokenAmount,
+    });
+    txState = 1;
+
+    if (success) {
+      txHashes.push(data.hash);
+      setTxHashes(txHashes);
+    } else
+      return {
+        success: false,
+        error: data.error,
+      };
+
+    while (txState != 2) {
+      await delay(2000);
+    }
+  }
+
   if (isRandom) {
     const { success, data } = await placeBetRandom({
       primaryWallet,

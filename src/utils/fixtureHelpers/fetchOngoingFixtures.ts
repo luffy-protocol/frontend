@@ -169,11 +169,12 @@ export default async function fetchOngoingFixtures({
         const startDate = new Date(Number(matchDetail.starttime) * 1000);
         const currentDate = new Date();
 
-        if (startDate > currentDate) {
-          remainingUpcomingMatchesDetails.push(matchDetail);
-        } else {
-          remainingCompletedMatchesDetails.push(matchDetail);
-        }
+        // if (startDate > currentDate) {
+        //   remainingUpcomingMatchesDetails.push(matchDetail);
+        // } else {
+        //   remainingCompletedMatchesDetails.push(matchDetail);
+        // }
+        remainingUpcomingMatchesDetails.push(matchDetail);
       }
     });
 

@@ -122,7 +122,7 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       >
         {shortenName(name)}
       </div>
-      {showPoints && (
+      {showPoints ? (
         <div
           className={`absolute cursor-pointer px-2   text-[9px] bg-slate-50 text-black  border-2 border-purple-600 font-stalinist text-center ${
             index == 10
@@ -153,6 +153,37 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
           {"  "}Points{" "}
           {index == captain ? "(C)" : index == viceCaptain ? "(VC)" : ""}
         </div>
+      ) : (
+        (index == captain || index == viceCaptain) && (
+          <div
+            className={`absolute cursor-pointer px-2   text-[9px] bg-purple-600 text-white  border-[1px] border-white font-stalinist text-center ${
+              index == 10
+                ? "left-[43%] top-[18%]"
+                : index == 9
+                ? "top-[62%] left-[9%]"
+                : index == 8
+                ? "top-[62%] left-[31%]"
+                : index == 7
+                ? "top-[62%] left-[56%]"
+                : index == 6
+                ? "top-[62%] left-[79%]"
+                : index == 5
+                ? "top-[86%] left-[18%]"
+                : index == 4
+                ? "top-[86%] left-[43%]"
+                : index == 3
+                ? "top-[86%] left-[68%]"
+                : index == 2
+                ? "top-[38%] left-[18%]"
+                : index == 1
+                ? "top-[38%] left-[43%]"
+                : "top-[38%] left-[68%]"
+            }`}
+            onClick={onClick}
+          >
+            {index == captain ? "(C)" : index == viceCaptain ? "(VC)" : ""}
+          </div>
+        )
       )}
     </div>
   );

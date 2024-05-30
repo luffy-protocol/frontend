@@ -10,7 +10,7 @@ interface TriggerSubmitSquadProps {
   token: number;
   totalValue: string;
   tokenAmount: string;
-  isRandom: number;
+  isRandom: boolean;
   captain: number;
   viceCaptain: number;
   squadHash: string;

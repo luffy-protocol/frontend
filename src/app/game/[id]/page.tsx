@@ -11,8 +11,12 @@ import PlaceBet from "@/components/PlaceBet";
 import DefaultLayout from "@/components/DefaultLayout";
 import Transaction from "@/components/Transaction";
 import resolveLabels from "@/utils/game/resolveLabels";
+import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
+import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
+import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 
 function Page({ params }: { params: { id: string } }) {
+  const { primaryWallet } = useDynamicContext();
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState("1000");
@@ -93,14 +97,37 @@ function Page({ params }: { params: { id: string } }) {
               selectedPlayersCount={noPlayers}
               setTransactionLoading={setTransactionLoading}
               captainAndViceCaptainSet={captain !== 11 && viceCaptain !== 11}
-              triggerTransaction={async (params: TriggerTransactionProps) => {
-                setChain(params.chain);
+              triggerTransaction={async ({
+                token,
+                chain,
+                isRandom,
+                tokenAmount,
+                totalValue,
+              }: TriggerTransactionProps) => {
+                if (primaryWallet == null || primaryWallet == undefined) return;
+                setChain(chain);
+                const squadHash = computeSquadHash(
+                  new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+                );
                 resolveLabels({
                   setLabels,
                   setStepCount,
-                  token: params.token,
-                  chain: params.chain,
-                  isRandom: params.isRandom,
+                  token: token,
+                  chain: chain,
+                  isRandom: isRandom,
+                });
+                await triggerSubmitSquad({
+                  gameId: parseInt(params.id),
+                  primaryWallet,
+                  chain,
+                  token,
+                  tokenAmount,
+                  totalValue,
+                  isRandom,
+                  captain: 1,
+                  viceCaptain: 2,
+                  squadHash,
+                  setTxHashes: setTxHashes,
                 });
               }}
             />

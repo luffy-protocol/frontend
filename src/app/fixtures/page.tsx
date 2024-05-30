@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import FixtureCard from "@/components/Fixtures/fixtureCard/FixtureCard";
-import Navbar from "@/components/Navbar";
+import FixtureCard from "@/components/Fixtures/FixtureCard";
 import { MatchDetails } from "@/utils/interface";
 import fetchOngoingFixtures from "@/utils/fixtures/fetchOngoingFixtures";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";

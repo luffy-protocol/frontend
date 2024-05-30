@@ -87,8 +87,8 @@ interface PlaceBetProps {
 interface TriggerTransactionProps {
   chain: number;
   token: number;
-  vrfFee: number;
-  crosschianFee: number;
+  tokenAmount: string;
+  totalValue: string;
   isRandom: boolean;
   gasPrice: number;
 }

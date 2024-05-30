@@ -3825,7 +3825,7 @@ const dropdownElements = {
   ],
 };
 const chainToExplorer: Record<number, string> = {
-  1: "https://avascan.info/blockchain/c/tx/",
+  1: "https://testnet.snowtrace.io/tx/",
   2: "https://sepolia.etherscan.io/tx/",
   3: "https://sepolia.basescan.org/tx/",
   4: "https://sepolia-optimism.etherscan.io/tx",

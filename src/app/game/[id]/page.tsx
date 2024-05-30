@@ -32,7 +32,7 @@ function Page({ params }: { params: { id: string } }) {
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
   const [pageLoaded, setPageLoaded] = useState(false);
-  const [transactionLoading, setTransactionLoading] = useState(false);
+  const [transactionLoading, setTransactionLoading] = useState(true);
 
   useEffect(() => {
     const getFixtureDetails = async () => {
@@ -100,6 +100,12 @@ function Page({ params }: { params: { id: string } }) {
           )
         ) : (
           <Transaction
+            labels={[
+              "Approve Tokens",
+              "Place Bet",
+              "Randomness Commitment",
+              "Receiving crosschain transaction",
+            ]}
             step={transactionstep}
             setTransactionLoading={setTransactionLoading}
           />

@@ -22,7 +22,7 @@ const CcipTooltip = ({ chain }: { chain: number }) => {
           <p>
             from{" "}
             <span className="text-blue-500">
-              {dropdownElements.chains[chain - 1].name}
+              {dropdownElements.chains[chain != 0 ? chain - 1 : 0].name}
             </span>{" "}
             {"->"} <span className="text-red-500">Avax</span>{" "}
           </p>

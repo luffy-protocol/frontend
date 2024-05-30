@@ -1,4 +1,3 @@
-import { HttpTransport, PublicClient, http } from "viem";
 import {
   arbitrumSepolia,
   avalancheFuji,
@@ -6,13 +5,12 @@ import {
   optimismSepolia,
   sepolia,
 } from "viem/chains";
-import { createPublicClient } from "viem";
 const DEPLOYMENTS: Record<number, string> = {
-  43113: "0xcC4203412a962fEFC2e41003bB1Ae296Ff7FE8f3",
-  11155111: "0x8Aa5Bc6b3B7C779be6c36Cb6Cc61fcDa1a67c039",
-  84532: "0x49DE60E820557699088995B4386D6d07Cb50f378",
-  421614: "0x675a508b3F705aAc0FBd3CbFB7eC125B50cC6bE1",
-  11155420: "0x2BB1f234D6889B0dc3cE3a4A1885AcfE1DA30936",
+  43113: "0x09249908F451EAe8fF4612e3E2C4a0f574a114f4",
+  11155111: "0xa12Ffa8429b6c0e4AcFD93aFbd30705bBE254FD5",
+  84532: "0x513F5406f1C40874f3c0cD078E606897DC29F67b",
+  421614: "0x87dd08be032a03d937F2A8003dfa9C52821cbaB9",
+  11155420: "0xAa25e4A9db1F3e493B9a20279572e4F15Ce6eEa2",
 };
 const PROTOCOL_ABI = [
   {

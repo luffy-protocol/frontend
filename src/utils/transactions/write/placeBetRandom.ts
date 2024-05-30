@@ -36,10 +36,15 @@ export default async function placeBetRandom(
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
+
     const publicClient = createPublicClient({
       chain: CHAIN_RESOLVERS[chainId].chain,
       transport: http(CHAIN_RESOLVERS[chainId].transport),
     });
+
+    console.log("Address " + DEPLOYMENTS[chainId]);
+    console.log("Args " + [gameId.toString(), squadHash, tokenAmount, token]);
+    console.log("Value " + BigInt(value));
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[chainId] as `0x${string}`,
       abi: chainId == 43113 ? PROTOCOL_ABI : CROSSCHAIN_ABI,
@@ -57,6 +62,8 @@ export default async function placeBetRandom(
       },
     };
   } catch (e) {
+    console.log("ERrro");
+    console.log(e);
     return {
       success: false,
       data: {

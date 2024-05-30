@@ -2,12 +2,13 @@ import React from "react";
 
 interface BatteryProps {
   step: number;
+  totalSteps: number;
 }
 
-const Battery: React.FC<BatteryProps> = ({ step }) => {
+const Battery: React.FC<BatteryProps> = ({ step, totalSteps }) => {
   return (
     <div className="flex bg-[url('/assets/battery.svg')] sm:w-[150px] h-[530px] bg-no-repeat bg-cover items-center justify-center flex-col-reverse gap-2">
-      {Array(8)
+      {Array(totalSteps)
         .fill(null)
         .map((_, index) => (
           <div

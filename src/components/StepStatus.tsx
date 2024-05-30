@@ -32,7 +32,7 @@ export const StepStatus = ({
         ) : currentStep > index ? (
           <img src="/assets/tick.svg" className="w-8 h-8" />
         ) : (
-          <img src="/assets/pending.png" className="mx-1 w-16 h-8" />
+          <img src="/assets/pending.svg" className="mx-1 w-20 pr-1 " />
         )}
       </div>
       <div className="flex justify-between items-center ">

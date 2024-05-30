@@ -3691,26 +3691,26 @@ const CHAIN_RESOLVERS: Record<number, { chain: any; transport: string }> = {
   },
 };
 
-const TOKEN_ADDRESSES: Record<number, Record<number, string>> = {
+const TOKEN_ADDRESSES: Record<number, Record<number, `0x${string}`>> = {
   43113: {
-    1: "",
-    2: "",
+    1: "0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846",
+    2: "0x5425890298aed601595a70AB815c96711a31Bc65",
   },
   11155111: {
-    1: "",
-    2: "",
+    1: "0x779877A7B0D9E8603169DdbD7836e478b4624789",
+    2: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
   },
   84532: {
-    1: "",
-    2: "",
+    1: "0xE4aB69C077896252FAFBD49EFD26B5D171A32410",
+    2: "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
   },
   421614: {
-    1: "",
-    2: "",
+    1: "0xb1D4538B4571d411F07960EF2838Ce337FE1E80E",
+    2: "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
   },
   11155420: {
-    1: "",
-    2: "",
+    1: "0xE4aB69C077896252FAFBD49EFD26B5D171A32410",
+    2: "0x5fd84259d66Cd46123540766Be93DFE6D43130D7",
   },
 };
 

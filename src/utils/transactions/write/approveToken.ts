@@ -18,6 +18,11 @@ export default async function approveToken(
   data: { hash: string; error: any };
 }> {
   const { primaryWallet, chainId, token, amount } = params;
+  console.log("Approve Token Input Params");
+  console.log("Address: " + TOKEN_ADDRESSES[chainId][token - 1]);
+  console.log(
+    "Args: " + [DEPLOYMENTS[chainId] as `0x${string}`, BigInt(amount)]
+  );
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
@@ -26,7 +31,7 @@ export default async function approveToken(
       transport: http(CHAIN_RESOLVERS[chainId].transport),
     });
     const { request } = await publicClient.simulateContract({
-      address: TOKEN_ADDRESSES[chainId][token] as `0x${string}`,
+      address: TOKEN_ADDRESSES[chainId][token - 1] as `0x${string}`,
       abi: erc20Abi,
       functionName: "approve",
       args: [DEPLOYMENTS[chainId] as `0x${string}`, BigInt(amount)],
@@ -41,6 +46,7 @@ export default async function approveToken(
       },
     };
   } catch (e) {
+    console.log(e);
     return {
       success: false,
       data: {

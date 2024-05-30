@@ -65,7 +65,7 @@ export default function Transaction({
                 currentStep={currentStep}
                 index={index}
                 label={label}
-                txHash={txHashes[index]}
+                txHash={index < txHashes.length ? txHashes[index] : ""}
               />
             </>
           ))}

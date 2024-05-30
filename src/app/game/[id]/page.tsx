@@ -41,9 +41,7 @@ function Page({ params }: { params: { id: string } }) {
   const [labels, setLabels] = useState<string[]>([]);
   const [stepCount, setStepCount] = useState(0);
   const [chain, setChain] = useState(0);
-  const [txHashes, setTxHashes] = useState<string[]>(
-    new Array(stepCount).fill("")
-  );
+  const [txHashes, setTxHashes] = useState<string[]>([]);
   useEffect(() => {
     console.log("Captain and Vice captain");
     console.log(captain, viceCaptain);
@@ -94,7 +92,7 @@ function Page({ params }: { params: { id: string } }) {
         {!transactionLoading ? (
           status == 0 ? (
             <PlaceBet
-              selectedPlayersCount={noPlayers}
+              selectedPlayersCount={11}
               setTransactionLoading={setTransactionLoading}
               captainAndViceCaptainSet={captain !== 11 && viceCaptain !== 11}
               triggerTransaction={async ({
@@ -104,11 +102,14 @@ function Page({ params }: { params: { id: string } }) {
                 tokenAmount,
                 totalValue,
               }: TriggerTransactionProps) => {
+                console.log("Transaction Started");
                 if (primaryWallet == null || primaryWallet == undefined) return;
                 setChain(chain);
                 const squadHash = computeSquadHash(
                   new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
                 );
+                console.log("Squad Hash computed");
+                console.log(squadHash);
                 resolveLabels({
                   setLabels,
                   setStepCount,
@@ -116,7 +117,8 @@ function Page({ params }: { params: { id: string } }) {
                   chain: chain,
                   isRandom: isRandom,
                 });
-                await triggerSubmitSquad({
+                console.log("Labels resolved");
+                const { success, error } = await triggerSubmitSquad({
                   gameId: parseInt(params.id),
                   primaryWallet,
                   chain,
@@ -129,6 +131,10 @@ function Page({ params }: { params: { id: string } }) {
                   squadHash,
                   setTxHashes: setTxHashes,
                 });
+                if (!success) {
+                  console.log("Error in transaction");
+                  console.log(error);
+                }
               }}
             />
           ) : (

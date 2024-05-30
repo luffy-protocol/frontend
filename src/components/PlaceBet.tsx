@@ -11,6 +11,7 @@ import resolveCrosschainFee from "@/utils/resolveCrosschainFee";
 import resolveVrfFee from "@/utils/resolveVrfFee";
 import getGasPrice from "@/utils/transactions/read/getGasPrice";
 import { formatGwei } from "viem";
+import CcipTooltip from "./Game/Tooltip/CcipTooltip";
 
 interface PlaceBetProps {
   selectedPlayersCount: number;
@@ -65,13 +66,14 @@ export default function PlaceBet({
             )}
           </div>
           <div className="flex flex-col justify-center items-center ">
-            <div className="flex w-full font-stalinist text-[10px] justify-around">
+            <div className="flex w-full font-stalinist text-[10px] justify-center space-x-[20%]">
               <div className="flex">
                 <p className="text-[10px]">Chain</p>
                 {chain == 0 && showErrorMessage && (
                   <ErrorTooltip message="Please select a chain to continue ⚠️" />
                 )}
               </div>
+              {chain != 1 ? <CcipTooltip chain={chain} /> : <div></div>}
               <div className="flex">
                 <p className="text-[10px]">Token</p>
                 {token == 0 && showErrorMessage && (

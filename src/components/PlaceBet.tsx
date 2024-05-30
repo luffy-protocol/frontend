@@ -167,7 +167,7 @@ export default function PlaceBet({
                 </label>
               </div>
               <div className="ml-4">
-                <VrfTooltip />
+                {chain != 3 && chain != 4 && <VrfTooltip />}
 
                 {chain == 3 || chain == 4 ? (
                   <ErrorTooltip

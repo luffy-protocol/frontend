@@ -9,7 +9,7 @@ const VrfTooltip = () => {
   return (
     <div className="relative inline-block">
       <p
-        className="text-purple-600 border-2 border-red-500 px-0.5 pr-1  text-center text-[10px]  py-0  hover:text-blue-500 cursor-pointer font-stalinist"
+        className=" border-2 border-white-500 px-0.5 pr-1  text-center text-[10px]  py-0 text-purple-600 hover:text-blue-500 cursor-pointer font-stalinist"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

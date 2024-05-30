@@ -95,65 +95,81 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       />
 
       <div
-        className={`absolute cursor-pointer   text-[11px] bg-slate-50 text-black  border-2 border-purple-600 font-stalinist text-center  ${
+        className={`absolute cursor-pointer   ${
           index == 10
-            ? "left-[40%] top-[15%]  self-center"
+            ? "left-[39%] top-[16%]  self-center"
             : index == 9
-            ? " top-[52%] sm:top-[59%] left-[6%] "
+            ? " top-[52%] sm:top-[58%] left-[6%] "
             : index == 8
-            ? "top-[52%] sm:top-[59%] left-[28%]"
+            ? "top-[52%] sm:top-[58%] left-[28%]"
             : index == 7
-            ? " top-[52%] sm:top-[59%] left-[53%]"
+            ? " top-[52%] sm:top-[58%] left-[53%]"
             : index == 6
-            ? "top-[52%] sm:top-[59%] left-[76%]"
+            ? "top-[52%] sm:top-[58%] left-[76%]"
             : index == 5
-            ? "top-[66%] sm:top-[83%] left-[15%]"
+            ? "top-[66%] sm:top-[82%] left-[15%]"
             : index == 4
-            ? "top-[66%] sm:top-[83%] left-[40%]"
+            ? "top-[66%] sm:top-[82%] left-[40%]"
             : index == 3
-            ? "top-[66%] sm:top-[83%] left-[65%]"
+            ? "top-[66%] sm:top-[82%] left-[65%]"
             : index == 2
-            ? "top-[28%] sm:top-[35%] left-[15%]"
+            ? "top-[28%] sm:top-[34%] left-[15%]"
             : index == 1
-            ? "top-[28%] sm:top-[35%] left-[40%]"
-            : "top-[28%] sm:top-[35%] left-[65%]"
-        } w-fit px-2`}
+            ? "top-[28%] sm:top-[34%] left-[40%]"
+            : "top-[28%] sm:top-[34%] left-[65%]"
+        } `}
         onClick={onClick}
       >
-        {shortenName(name)}
-      </div>
-      {showPoints && (
         <div
-          className={`absolute cursor-pointer px-2   text-[9px] bg-slate-50 text-black  border-2 border-purple-600 font-stalinist text-center ${
-            index == 10
-              ? "left-[40%] top-[18%]"
-              : index == 9
-              ? "top-[62%] left-[6%]"
-              : index == 8
-              ? "top-[62%] left-[28%]"
-              : index == 7
-              ? "top-[62%] left-[53%]"
-              : index == 6
-              ? "top-[62%] left-[76%]"
-              : index == 5
-              ? "top-[86%] left-[15%]"
-              : index == 4
-              ? "top-[86%] left-[40%]"
-              : index == 3
-              ? "top-[86%] left-[65%]"
-              : index == 2
-              ? "top-[38%] left-[15%]"
-              : index == 1
-              ? "top-[38%] left-[40%]"
-              : "top-[38%] left-[65%]"
-          }`}
-          onClick={onClick}
+          className={` text-[11px] bg-slate-50 text-black ${
+            showPoints ? "border-t-[2px]  border-x-[2px]" : "border-[2px]"
+          }  border-purple-600 font-stalinist text-center w-fit px-2 py-[1px] `}
         >
-          {points[index]}
-          {"  "}Points{" "}
-          {index == captain ? "(C)" : index == viceCaptain ? "(VC)" : ""}
+          {shortenName(name)}
         </div>
-      )}
+
+        {showPoints ? (
+          <div
+            className={`cursor-pointer px-2 py-1  text-[9px]  bg-purple-600 text-white  border-b  -[2px]  border-x-[2px] border-purple-600 font-stalinist text-center ${
+              index == 10
+                ? "left-[40%] top-[18%]"
+                : index == 9
+                ? "top-[62%] left-[6%]"
+                : index == 8
+                ? "top-[62%] left-[28%]"
+                : index == 7
+                ? "top-[62%] left-[53%]"
+                : index == 6
+                ? "top-[62%] left-[76%]"
+                : index == 5
+                ? "top-[86%] left-[15%]"
+                : index == 4
+                ? "top-[86%] left-[40%]"
+                : index == 3
+                ? "top-[86%] left-[65%]"
+                : index == 2
+                ? "top-[38%] left-[15%]"
+                : index == 1
+                ? "top-[38%] left-[40%]"
+                : "top-[38%] left-[65%]"
+            }`}
+            onClick={onClick}
+          >
+            {points[index]}
+            {index == captain ? " (C)" : index == viceCaptain ? " (VC)" : ""}
+          </div>
+        ) : (
+          (index == captain || index == viceCaptain) && (
+            <div
+              className={`cursor-pointer px-2 py-1 text-[9px] bg-purple-600 text-white  border-[1px] border-purple-600 font-stalinist text-center 
+               `}
+              onClick={onClick}
+            >
+              {index == captain ? "(C)" : index == viceCaptain ? "(VC)" : ""}
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 };

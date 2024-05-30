@@ -2,7 +2,7 @@ import { playerimg } from "@/utils/logos/playerImage";
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import ArrowButton from "./ArrowButton";
-import { getPlayerById } from "@/utils/player/fetchPlayerById";
+import { getPlayerById } from "@/utils/player/getPlayerById";
 
 interface PlayerCardProps {
   id: number;

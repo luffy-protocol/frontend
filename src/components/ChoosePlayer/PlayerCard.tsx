@@ -1,9 +1,6 @@
-import { playerimg } from "@/utils/logos/playerImage";
 import React from "react";
-import Button from "../Button";
 import ArrowButton from "./ArrowButton";
 import { getPlayerById } from "@/utils/player/getPlayerById";
-import profile from "../../public/assets/profile.png";
 
 interface PlayerCardProps {
   id: number;

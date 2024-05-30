@@ -26,7 +26,7 @@ interface TriggerSubmitSquadProps {
   setTxHashes: (txHashes: string[]) => void;
   setTxConfirmations: (txConfirmations: boolean[]) => void;
 }
-
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 export default async function triggerSubmitSquad({
   gameId,
   primaryWallet,
@@ -58,9 +58,31 @@ export default async function triggerSubmitSquad({
       address: TOKEN_ADDRESSES[chainToChainIds[chain]][
         token - 1
       ] as `0x${string}`,
-      event: parseAbiItem(
-        "event Approval(address indexed owner, address indexed spender, uint256 value)"
-      ),
+      event: {
+        anonymous: false,
+        inputs: [
+          {
+            indexed: true,
+            internalType: "address",
+            name: "owner",
+            type: "address",
+          },
+          {
+            indexed: true,
+            internalType: "address",
+            name: "spender",
+            type: "address",
+          },
+          {
+            indexed: false,
+            internalType: "uint256",
+            name: "value",
+            type: "uint256",
+          },
+        ],
+        name: "Approval",
+        type: "event",
+      },
       onLogs: (logs) => {
         console.log("Approval Event");
         console.log(logs);
@@ -72,7 +94,6 @@ export default async function triggerSubmitSquad({
           txState = 2;
           txConfirmations.push(true);
           setTxConfirmations(txConfirmations);
-          unwatchApproval();
         }
       },
     });
@@ -83,6 +104,7 @@ export default async function triggerSubmitSquad({
       amount: tokenAmount,
     });
     txState = 1;
+
     if (success) {
       txHashes.push(data.hash);
       setTxHashes(txHashes);
@@ -91,9 +113,11 @@ export default async function triggerSubmitSquad({
         success: false,
         error: data.error,
       };
+
+    while (txState != 2) {
+      await delay(2000);
+    }
   }
-  await waitForEvent(txState, 2);
-  txState = 0;
 
   const unwatchBetPlaced = sourcePublicClient.watchEvent({
     address: DEPLOYMENTS[chainToChainIds[chain]][token - 1] as `0x${string}`,
@@ -160,30 +184,24 @@ export default async function triggerSubmitSquad({
         // TODO: upload the tx also to txHashes
       }
       console.log(logs);
-      txState = 3;
       txConfirmations.push(true);
       setTxConfirmations(txConfirmations);
-      unwatchBetPlaced();
+      txState = 10;
+    },
+  });
+  const unwatchRequestRandomness = sourcePublicClient.watchEvent({
+    address: VRF_COORDINATORS[chainToChainIds[chain]][
+      token - 1
+    ] as `0x${string}`,
+    onLogs: (logs) => {
+      console.log("Random Words Requestd Event");
+      console.log(logs);
+      txConfirmations.push(true);
+      setTxConfirmations(txConfirmations);
+      txState = 4;
     },
   });
   if (isRandom) {
-    const unwatchRequestRandomness = sourcePublicClient.watchEvent({
-      address: VRF_COORDINATORS[chainToChainIds[chain]][
-        token - 1
-      ] as `0x${string}`,
-      event: parseAbiItem(
-        "event RandomWordsRequested(bytes32 indexed keyHash, uint256 requestId, uint256 preSeed, uint256 indexed subId, uint16 minimumRequestConfirmations, uint32 callbackGasLimit, uint32 numWords, bytes extraArgs, address indexed sender)"
-      ),
-      onLogs: (logs) => {
-        console.log("Random Words Requestd Event");
-        console.log(logs);
-        txState = 2;
-        txConfirmations.push(true);
-        setTxConfirmations(txConfirmations);
-        unwatchRequestRandomness();
-      },
-    });
-
     const { success, data } = await placeBetRandom({
       primaryWallet,
       chainId: chainToChainIds[chain],
@@ -193,7 +211,7 @@ export default async function triggerSubmitSquad({
       token: token - 1,
       tokenAmount: tokenAmount,
     });
-
+    txState = 3;
     if (success) {
       txHashes.push(data.hash);
       setTxHashes(txHashes);
@@ -202,9 +220,6 @@ export default async function triggerSubmitSquad({
         success: false,
         error: data.error,
       };
-
-    await waitForEvent(txState, 3);
-    txState = 0;
   } else {
     const { success, data } = await placeBet({
       primaryWallet,
@@ -217,7 +232,7 @@ export default async function triggerSubmitSquad({
       captain,
       viceCaptain,
     });
-    txState = 1;
+    txState = 6;
     if (success) {
       txHashes.push(data.hash);
       setTxHashes(txHashes);
@@ -226,11 +241,13 @@ export default async function triggerSubmitSquad({
         success: false,
         error: data.error,
       };
-    await waitForEvent(txState, 3);
-    txState = 0;
   }
   if (chain > 1) {
     // TODO: wait for cross chain tx to receive
+  }
+
+  while (txState != 10) {
+    await delay(2000);
   }
   return {
     success: true,

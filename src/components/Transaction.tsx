@@ -38,7 +38,7 @@ export default function Transaction({
             <p className="text-center">
               Submitting Squad <br />
               <span className="text-purple-500">
-                {txHashes.length} / {labels.length}
+                {txConfirmed.length} / {labels.length}
               </span>
             </p>
           </div>
@@ -68,8 +68,8 @@ export default function Transaction({
                 backgroundSize: "contain",
               }}
               onClick={() => {
-                setTransactionLoading(false);
                 clear();
+                setTransactionLoading(false);
               }}
             >
               <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2 -mt-4">

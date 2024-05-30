@@ -20,7 +20,7 @@ export const StepStatus = ({
   txConfirmed: boolean;
 }) => {
   return (
-    <div className="flex mx-auto">
+    <div key={index} className="flex mx-auto">
       <div role="status" className="px-2 -mt-1">
         {error.length > 0 ? (
           <img src="/assets/failed.png" className="w-8 h-8" />

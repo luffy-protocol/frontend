@@ -1,3 +1,4 @@
+import ErrorTooltip from "./Game/Tooltip/ErrorTooltip";
 import TxHash from "./Game/Tooltip/TxHash";
 
 export const StepStatus = ({
@@ -6,17 +7,21 @@ export const StepStatus = ({
   index,
   label,
   txHash,
+  error,
 }: {
   currentStep: number;
   index: number;
   label: string;
   chain: number;
   txHash: string;
+  error: string;
 }) => {
   return (
     <div className="flex">
       <div role="status" className="px-2 -mt-1">
-        {currentStep === index ? (
+        {error.length > 0 ? (
+          <img src="/assets/failed.png" className="w-8 h-8" />
+        ) : currentStep === index ? (
           <svg
             aria-hidden="true"
             className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600"
@@ -42,7 +47,11 @@ export const StepStatus = ({
       <div className="flex justify-between items-center ">
         <p className="w-full">{label}</p>
         <div className=" ml-5">
-          {currentStep > index && <TxHash chain={chain} hash={txHash} />}
+          {currentStep > index ? (
+            <TxHash chain={chain} hash={txHash} />
+          ) : (
+            error.length > 0 && <ErrorTooltip message={error} />
+          )}
         </div>
       </div>
     </div>

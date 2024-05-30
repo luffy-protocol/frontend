@@ -26,7 +26,7 @@ function Page({ params }: { params: { id: string } }) {
   const [status, setStatus] = useState(0);
   const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [gas, setGas] = useState(30);
-  const [transactionstep, setTransactionStep] = useState(2);
+  const [transactionstep, setTransactionStep] = useState(0);
   const [captain, setCaptain] = useState(11);
   const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
@@ -42,6 +42,7 @@ function Page({ params }: { params: { id: string } }) {
   const [stepCount, setStepCount] = useState(0);
   const [chain, setChain] = useState(0);
   const [txHashes, setTxHashes] = useState<string[]>([]);
+  const [error, setError] = useState("");
   useEffect(() => {
     console.log("Captain and Vice captain");
     console.log(captain, viceCaptain);
@@ -118,7 +119,7 @@ function Page({ params }: { params: { id: string } }) {
                   isRandom: isRandom,
                 });
                 console.log("Labels resolved");
-                const { success, error } = await triggerSubmitSquad({
+                const { success, error: callError } = await triggerSubmitSquad({
                   gameId: parseInt(params.id),
                   primaryWallet,
                   chain,
@@ -133,7 +134,8 @@ function Page({ params }: { params: { id: string } }) {
                 });
                 if (!success) {
                   console.log("Error in transaction");
-                  console.log(error);
+                  console.log(callError);
+                  setError("Transasction Failed or User Rejected Transaction");
                 }
               }}
             />
@@ -154,11 +156,11 @@ function Page({ params }: { params: { id: string } }) {
         ) : (
           <Transaction
             labels={labels}
-            currentStep={transactionstep}
-            stepCount={stepCount}
             setTransactionLoading={setTransactionLoading}
             txHashes={txHashes}
             chain={chain}
+            error={error}
+            setError={setError}
           />
         )}
       </div>

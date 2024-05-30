@@ -1,5 +1,5 @@
 import request, { gql } from "graphql-request";
-import fetchFixtureByRound from "./FixtureByRound";
+import fetchFixtureByRound from "./fixturesByRound";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import { MatchDetails } from "../interface";
 
@@ -16,7 +16,7 @@ interface fetchOngoingFixturesProps {
   setUpcomingLoading: (loading: boolean) => void;
 }
 
-export default async function fetchOngoingFixtures({
+export default async function ongoingFixtures({
   round,
   address,
   setClaimmableOngoingMatches,

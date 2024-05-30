@@ -6,7 +6,7 @@ import axios from "axios";
 import CheckProfile from "@/utils/profileHelpers/CheckProfile";
 import registerUserProfile from "@/utils/profileHelpers/registerUserProfile";
 import getProfile from "@/utils/profileHelpers/getProfile";
-import fetchFixtures from "@/utils/fixtureHelpers/FetchFixtures";
+import fetchFixtures from "@/utils/fixtures/fetchFixtures";
 import { request, gql } from "graphql-request";
 import { teamLogo } from "@/utils/logos/teamlogo";
 import { useRouter } from "next/navigation";

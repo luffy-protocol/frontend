@@ -2,7 +2,7 @@
 import React, { use, useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer";
-import fixtureById from "@/utils/fixtureHelpers/FixtureById";
+import fixtureById from "@/utils/fixtures/fixtureById";
 import { emptyPlayers } from "@/utils/constants";
 import { Player } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";

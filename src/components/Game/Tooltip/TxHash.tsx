@@ -15,12 +15,17 @@ const TxHash = ({ chainid, hash }: { chainid: number; hash: string }) => {
       onClick={() => window.open(url, "_blank")}
     >
       <div className="relative inline-block">
-        <p className="text-purple-600 border-2 z-10 border-red-500 px-0.5 pr-1  text-center text-[10px]  py-0  hover:text-blue-500 cursor-pointer font-stalinist">
+        {/* <p className="text-purple-600 border-2 z-10 border-red-500 px-0.5 pr-1  text-center text-[10px]  py-0  hover:text-blue-500 cursor-pointer font-stalinist">
           0x
-        </p>
+        </p> */}
+        <img
+          src="/assets/transaction.svg"
+          className="w-10 h-8 border-2 z-10 border-red-500 px-0.5 pr-1  text-center text-[10px]  py-0  hover:text-blue-500 cursor-pointer font-stalinist bg-purple-600 hover:scale-105"
+        />
         {isVisible && (
           <div className="absolute top-full left-0 mt-2 text-xs z-20 bg-gray-800 text-purple-600  rounded-md shadow-sm p-2 w-fit text-nowrap font-stalinist">
-            <p>{`${hash.slice(0, 8)}` + `...`}</p>
+            <p className="text-red-400">View Tx in Explorer : </p>
+            <p className="ml-3">{`${hash.slice(0, 8)}` + `...`}</p>
           </div>
         )}
       </div>

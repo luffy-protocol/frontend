@@ -50,6 +50,7 @@ export default function PlaceBet({
       setVrfFee("0.0");
     }
   }, [chain, enableRandomness]);
+
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
       <div className=" relative z-10 mx-2 mt-16">
@@ -212,7 +213,7 @@ export default function PlaceBet({
                     selectedPlayersCount == 11 &&
                     chain != 0 &&
                     token != 0 &&
-                    (!enableRandomness ? captainAndViceCaptainSet : true)
+                    (enableRandomness ? true : captainAndViceCaptainSet)
                   ) {
                     setTransactionLoading(true);
                   } else {

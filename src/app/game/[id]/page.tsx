@@ -35,6 +35,11 @@ function Page({ params }: { params: { id: string } }) {
   const [transactionLoading, setTransactionLoading] = useState(true);
 
   useEffect(() => {
+    console.log("Captain and Vice captain");
+    console.log(captain, viceCaptain);
+  }, [captain, viceCaptain]);
+
+  useEffect(() => {
     const getFixtureDetails = async () => {
       const { response } = await fixtureById(parseInt(params.id));
       setHomeTeam(response[0].home_name);

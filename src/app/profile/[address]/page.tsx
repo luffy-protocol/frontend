@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import Status from "@/components/fixture/fixtureCard/status";
+import Status from "@/components/Fixtures/FixtureCard/Status";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import CheckProfile from "@/utils/profile/CheckProfile";

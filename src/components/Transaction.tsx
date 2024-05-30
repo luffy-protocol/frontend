@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Status from "./fixture/fixtureCard/status";
+import Status from "./Fixtures/FixtureCard/Status";
 import Battery from "./Battery";
 import { StepStatus } from "./StepStatus";
 import TxHash from "./Game/Tooltip/TxHash";

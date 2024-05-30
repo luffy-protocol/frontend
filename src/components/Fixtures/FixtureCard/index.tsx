@@ -1,6 +1,6 @@
 import React from "react";
 import Timer from "./Timer";
-import Status from "./status";
+import Status from "./Status";
 import Button from "./Button";
 
 interface FixtureDetails {

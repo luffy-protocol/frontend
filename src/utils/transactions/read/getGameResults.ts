@@ -1,4 +1,5 @@
 import { CHAIN_RESOLVERS, DEPLOYMENTS, PROTOCOL_ABI } from "@/utils/constants";
+import { createPublicClient, http } from "viem";
 
 interface GetGameResultsParams {
   gameId: string;
@@ -7,9 +8,12 @@ interface GetGameResultsParams {
 export default async function getGameResults(params: GetGameResultsParams) {
   try {
     const { gameId } = params;
-    const publicClient = CHAIN_RESOLVERS[43113];
+    const publicClient = createPublicClient({
+      chain: CHAIN_RESOLVERS[43113].chain,
+      transport: http(CHAIN_RESOLVERS[43113].transport),
+    });
     const data = await publicClient.readContract({
-      address: DEPLOYMENTS[43113],
+      address: DEPLOYMENTS[43113] as `0x${string}`,
       abi: PROTOCOL_ABI,
       functionName: "results",
       args: [gameId],

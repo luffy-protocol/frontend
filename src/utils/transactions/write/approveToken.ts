@@ -3,7 +3,7 @@ import {
   createWalletClientFromWallet,
 } from "@dynamic-labs/sdk-react-core";
 import { CHAIN_RESOLVERS, DEPLOYMENTS, TOKEN_ADDRESSES } from "../../constants";
-import { createPublicClient, erc20Abi } from "viem";
+import { createPublicClient, erc20Abi, http } from "viem";
 
 interface ApproveTokenParams {
   primaryWallet: Wallet;
@@ -16,7 +16,10 @@ export default async function approveToken(params: ApproveTokenParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = CHAIN_RESOLVERS[chainId];
+    const publicClient = createPublicClient({
+      chain: CHAIN_RESOLVERS[chainId].chain,
+      transport: http(CHAIN_RESOLVERS[chainId].transport),
+    });
     const { request } = await publicClient.simulateContract({
       address: TOKEN_ADDRESSES[chainId][token] as `0x${string}`,
       abi: erc20Abi,

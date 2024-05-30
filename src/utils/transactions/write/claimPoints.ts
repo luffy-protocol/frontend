@@ -8,7 +8,7 @@ import {
   PROTOCOL_ABI,
   TOKEN_ADDRESSES,
 } from "../../constants";
-import { createPublicClient, erc20Abi } from "viem";
+import { createPublicClient, http } from "viem";
 import formatPlayerIds from "../helpers/formatPlayerIds";
 
 interface ClaimPointsParams {
@@ -23,7 +23,10 @@ export default async function claimPoints(params: ClaimPointsParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = CHAIN_RESOLVERS[43113];
+    const publicClient = createPublicClient({
+      chain: CHAIN_RESOLVERS[43113].chain,
+      transport: http(CHAIN_RESOLVERS[43113].transport),
+    });
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[43113] as `0x${string}`,
       abi: PROTOCOL_ABI,

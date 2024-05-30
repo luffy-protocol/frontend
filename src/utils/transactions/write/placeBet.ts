@@ -9,7 +9,7 @@ import {
   DEPLOYMENTS,
   PROTOCOL_ABI,
 } from "../../constants";
-import { createPublicClient } from "viem";
+import { createPublicClient, http } from "viem";
 interface PlaceBetParams {
   primaryWallet: Wallet;
   chainId: number;
@@ -36,7 +36,10 @@ export default async function placeBet(params: PlaceBetParams) {
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
-    const publicClient = CHAIN_RESOLVERS[chainId];
+    const publicClient = createPublicClient({
+      chain: CHAIN_RESOLVERS[chainId].chain,
+      transport: http(CHAIN_RESOLVERS[chainId].transport),
+    });
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[chainId] as `0x${string}`,
       abi:

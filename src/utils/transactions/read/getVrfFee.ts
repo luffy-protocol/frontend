@@ -5,7 +5,7 @@ import {
   DEPLOYMENTS,
   PROTOCOL_ABI,
 } from "@/utils/constants";
-import { createPublicClient, http } from "viem";
+import { createPublicClient, http, parseGwei } from "viem";
 
 interface GetVrfFeeParams {
   chainId: number;
@@ -31,7 +31,7 @@ export default async function getVrfFee(
           ? CROSSCHAIN_ABI
           : CROSSCHAIN_NO_VRF_ABI,
       functionName: "getRandomnessPriceInNative",
-      args: [gasPriceInWei],
+      args: [chainId == 43113 ? parseGwei("28") : gasPriceInWei],
     });
     console.log(data);
     return {

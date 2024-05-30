@@ -53,6 +53,7 @@ export default async function placeBet(params: PlaceBetParams): Promise<{
           : CROSSCHAIN_NO_VRF_ABI,
       functionName: "makeSquadAndPlaceBet",
       value: BigInt(value),
+      gas: BigInt("300000"),
       args: [
         gameId.toString(),
         squadHash,

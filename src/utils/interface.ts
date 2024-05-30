@@ -77,6 +77,21 @@ interface UserData {
 
   points: number;
 }
+interface PlaceBetProps {
+  selectedPlayersCount: number;
+  setTransactionLoading: (loading: boolean) => void;
+  captainAndViceCaptainSet: boolean;
+  triggerTransaction: (params: TriggerTransactionProps) => Promise<void>;
+}
+
+interface TriggerTransactionProps {
+  chain: number;
+  token: number;
+  vrfFee: number;
+  crosschianFee: number;
+  isRandom: boolean;
+  gasPrice: number;
+}
 
 export type {
   MatchDetails,
@@ -87,4 +102,6 @@ export type {
   MappedUsers,
   FetchInput,
   UserData,
+  PlaceBetProps,
+  TriggerTransactionProps,
 };

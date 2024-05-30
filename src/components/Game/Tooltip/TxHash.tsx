@@ -2,12 +2,12 @@ import { chainToExplorer } from "@/utils/constants";
 import { url } from "inspector";
 import React, { useState } from "react";
 
-const TxHash = ({ chainid, hash }: { chainid: number; hash: string }) => {
+const TxHash = ({ chain, hash }: { chain: number; hash: string }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleMouseEnter = () => setIsVisible(true);
   const handleMouseLeave = () => setIsVisible(false);
-  const url = chainToExplorer[chainid] + hash;
+  const url = chainToExplorer[chain] + hash;
   return (
     <div
       onMouseEnter={handleMouseEnter}

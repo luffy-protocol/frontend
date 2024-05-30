@@ -12,17 +12,13 @@ import resolveVrfFee from "@/utils/game/resolveVrfFee";
 import getGasPrice from "@/utils/transactions/read/getGasPrice";
 import { formatGwei } from "viem";
 import CcipTooltip from "./Game/Tooltip/CcipTooltip";
-
-interface PlaceBetProps {
-  selectedPlayersCount: number;
-  setTransactionLoading: (loading: boolean) => void;
-  captainAndViceCaptainSet: boolean;
-}
+import { PlaceBetProps } from "@/utils/interface";
 
 export default function PlaceBet({
   selectedPlayersCount,
   setTransactionLoading,
   captainAndViceCaptainSet,
+  triggerTransaction,
 }: PlaceBetProps) {
   const [betamount, setBetAmount] = useState("0.0");
   const [chain, setChain] = useState(0);
@@ -181,7 +177,8 @@ export default function PlaceBet({
                   />
                 ) : (
                   !enableRandomness &&
-                  !captainAndViceCaptainSet && (
+                  !captainAndViceCaptainSet &&
+                  showErrorMessage && (
                     <ErrorTooltip
                       message={`Set your Captain and Vice Captain or Enable Randomness ⚠️`}
                     />
@@ -210,7 +207,7 @@ export default function PlaceBet({
                   backgroundImage: `url('/assets/LoginBorder.svg')`,
                   backgroundSize: "contain",
                 }}
-                onClick={() => {
+                onClick={async () => {
                   if (
                     selectedPlayersCount == 11 &&
                     chain != 0 &&
@@ -218,6 +215,15 @@ export default function PlaceBet({
                     (enableRandomness ? true : captainAndViceCaptainSet)
                   ) {
                     setTransactionLoading(true);
+                    await triggerTransaction({
+                      chain,
+                      token,
+                      vrfFee: Number(vrffee),
+                      crosschianFee: Number(crosschainfee),
+                      isRandom: enableRandomness,
+                      gasPrice: Number(gasPrice),
+                    });
+                    // set chain
                   } else {
                     setShowErrorMessage(true);
                   }

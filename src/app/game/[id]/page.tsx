@@ -4,12 +4,13 @@ import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
 import fixtureById from "@/utils/fixtures/fetchFixtureById";
 import { emptyPlayers } from "@/utils/constants";
-import { Player } from "@/utils/interface";
+import { Player, TriggerTransactionProps } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
 import Results from "@/components/Results";
 import PlaceBet from "@/components/PlaceBet";
 import DefaultLayout from "@/components/DefaultLayout";
 import Transaction from "@/components/Transaction";
+import resolveLabels from "@/utils/game/resolveLabels";
 
 function Page({ params }: { params: { id: string } }) {
   const [index, setindex] = useState(0);
@@ -31,9 +32,14 @@ function Page({ params }: { params: { id: string } }) {
   const [awayTeam, setAwayTeam] = useState("...........");
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
-  const [pageLoaded, setPageLoaded] = useState(false);
-  const [transactionLoading, setTransactionLoading] = useState(true);
-
+  // const [pageLoaded, setPageLoaded] = useState(false);
+  const [transactionLoading, setTransactionLoading] = useState(false);
+  const [labels, setLabels] = useState<string[]>([]);
+  const [stepCount, setStepCount] = useState(0);
+  const [chain, setChain] = useState(0);
+  const [txHashes, setTxHashes] = useState<string[]>(
+    new Array(stepCount).fill("")
+  );
   useEffect(() => {
     console.log("Captain and Vice captain");
     console.log(captain, viceCaptain);
@@ -47,7 +53,6 @@ function Page({ params }: { params: { id: string } }) {
       setAwayId(response[0].away_id);
       setHomeId(response[0].home_id);
       setStadium(response[0].venue);
-      setPageLoaded(true);
     };
     getFixtureDetails();
   }, [params.id]);
@@ -88,6 +93,16 @@ function Page({ params }: { params: { id: string } }) {
               selectedPlayersCount={noPlayers}
               setTransactionLoading={setTransactionLoading}
               captainAndViceCaptainSet={captain !== 11 && viceCaptain !== 11}
+              triggerTransaction={async (params: TriggerTransactionProps) => {
+                setChain(params.chain);
+                resolveLabels({
+                  setLabels,
+                  setStepCount,
+                  token: params.token,
+                  chain: params.chain,
+                  isRandom: params.isRandom,
+                });
+              }}
             />
           ) : (
             <Results
@@ -105,14 +120,12 @@ function Page({ params }: { params: { id: string } }) {
           )
         ) : (
           <Transaction
-            labels={[
-              "Approve Tokens",
-              "Place Bet",
-              "Randomness Commitment",
-              "Receiving crosschain transaction",
-            ]}
-            step={transactionstep}
+            labels={labels}
+            currentStep={transactionstep}
+            stepCount={stepCount}
             setTransactionLoading={setTransactionLoading}
+            txHashes={txHashes}
+            chain={chain}
           />
         )}
       </div>

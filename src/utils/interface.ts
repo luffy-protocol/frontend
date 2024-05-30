@@ -90,7 +90,6 @@ interface TriggerTransactionProps {
   tokenAmount: string;
   totalValue: string;
   isRandom: boolean;
-  gasPrice: number;
 }
 
 export type {

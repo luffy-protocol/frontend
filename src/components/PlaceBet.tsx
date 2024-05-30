@@ -10,7 +10,7 @@ import resolveBet from "@/utils/game/resolveBet";
 import resolveCrosschainFee from "@/utils/game/resolveCrosschainFee";
 import resolveVrfFee from "@/utils/game/resolveVrfFee";
 import getGasPrice from "@/utils/transactions/read/getGasPrice";
-import { formatGwei } from "viem";
+import { formatGwei, parseEther } from "viem";
 import CcipTooltip from "./Game/Tooltip/CcipTooltip";
 import { PlaceBetProps } from "@/utils/interface";
 
@@ -215,13 +215,21 @@ export default function PlaceBet({
                     (enableRandomness ? true : captainAndViceCaptainSet)
                   ) {
                     setTransactionLoading(true);
+                    let totalValue = parseEther(
+                      (Number(vrffee) + Number(crosschainfee)).toString()
+                    ).toString();
+                    let tokenAmount = "0";
+                    if (token == 1)
+                      totalValue += parseEther(betamount).toString();
+                    else if (token == 2)
+                      tokenAmount = parseEther(betamount).toString();
+                    else if (token == 3) tokenAmount = "100000";
                     await triggerTransaction({
                       chain,
                       token,
-                      vrfFee: Number(vrffee),
-                      crosschianFee: Number(crosschainfee),
+                      totalValue,
+                      tokenAmount,
                       isRandom: enableRandomness,
-                      gasPrice: Number(gasPrice),
                     });
                     // set chain
                   } else {

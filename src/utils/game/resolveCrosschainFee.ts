@@ -1,6 +1,6 @@
 import axios from "axios";
-import getCrosschainFee from "./transactions/read/getCrosschainFee";
-import { chainToChainIds } from "./constants";
+import getCrosschainFee from "../transactions/read/getCrosschainFee";
+import { chainToChainIds } from "../constants";
 import { formatEther, parseEther } from "viem";
 
 export default async function resolveCrosschainFee(

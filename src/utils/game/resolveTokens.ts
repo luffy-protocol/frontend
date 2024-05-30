@@ -1,4 +1,4 @@
-import { Option } from "./interface";
+import { Option } from "../interface";
 
 export default function resolveTokens(elements: any, chain: number): Option[] {
   if (chain == 0) {

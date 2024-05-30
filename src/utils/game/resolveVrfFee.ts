@@ -1,8 +1,8 @@
 import { formatEther } from "viem";
-import { chainToChainIds } from "./constants";
-import { Option } from "./interface";
-import getGasPrice from "./transactions/read/getGasPrice";
-import getVrfFee from "./transactions/read/getVrfFee";
+import { chainToChainIds } from "../constants";
+import { Option } from "../interface";
+import getGasPrice from "../transactions/read/getGasPrice";
+import getVrfFee from "../transactions/read/getVrfFee";
 
 export default async function resolveVrfFee(
   chain: number,

@@ -7,7 +7,7 @@ interface DropdownProps {
   label: string;
   options: Option[];
   selectedOption: number;
-  setSelectedOption: (e: number) => void; // Use Dispatch for setState type
+  setSelectedOption: (e: number) => Promise<void>; // Use Dispatch for setState type
 }
 
 export default function Dropdown({
@@ -62,10 +62,10 @@ export default function Dropdown({
                   className="text-gray-300 w-full hover:bg-[#d94856] hover:text-white block px-4 py-2 text-sm flex items-center"
                   role="menuitem"
                   tabIndex={-1}
-                  onClick={() => {
+                  onClick={async () => {
                     console.log("SELECTED CHIAN ID");
                     console.log(chain.id);
-                    setSelectedOption(chain.id);
+                    await setSelectedOption(chain.id);
                     setIsOpen(false);
                   }}
                 >
@@ -85,28 +85,3 @@ export default function Dropdown({
     </div>
   );
 }
-
-// <>
-//       <select
-//         className="w-[400px] h-[55px] bg-[url('/assets/dropdown.svg')] p-2 bg-cover bg-no-repeat bg-transparent font-stalinist border-none rounded-md appearance-none focus:outline-none"
-//         name="players"
-//         id="players"
-//         value={options[selectedOption].name} // Set selected value based on state
-//         onClick={() => {
-//           toggleDropdown();
-//         }}
-//       >
-//         {options.map((option, index) => (
-//           <option
-//             key={option.id}
-//             value={option.name}
-//             onClick={() => {
-//               setSelectedOption(index);
-//             }}
-//             className="bg-[#0C0D3D] text-white text-[8px]"
-//           >
-//             {option.name}
-//           </option>
-//         ))}
-//       </select>
-//     </>

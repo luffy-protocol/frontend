@@ -3,10 +3,8 @@ export default function resolveLabels({
   isRandom,
   chain,
   setLabels,
-  setStepCount,
 }: {
   setLabels: (labels: string[]) => void;
-  setStepCount: (stepCount: number) => void;
   token: number;
   isRandom: boolean;
   chain: number;
@@ -24,5 +22,4 @@ export default function resolveLabels({
     labels.push("Receiving Crosschain Transaction");
   }
   setLabels(labels);
-  setStepCount(labels.length);
 }

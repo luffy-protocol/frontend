@@ -1,14 +1,15 @@
 "use client";
 import Dropdown from "@/components/Game/Dropdown";
-import { dropdownElements } from "@/utils/constants";
+import { chainToChainIds, dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/game/resolveTokens";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function PlaceBet() {
-  const { isAuthenticated, primaryWallet } = useDynamicContext();
+  const { isAuthenticated, primaryWallet, walletConnector } =
+    useDynamicContext();
   const [chainsOpen, setChainsOpen] = useState(false);
-  const [selectedChain, setSelectedChain] = useState(1);
+  const [selectedChain, setSelectedChain] = useState(0);
   const [tokensOpen, setTokensOpen] = useState(false);
   const [selectedToken, setSelectedToken] = useState(0);
 
@@ -21,16 +22,31 @@ export default function PlaceBet() {
         <Dropdown
           label="Choose Chain"
           selectedOption={selectedChain}
-          setSelectedOption={(chain: number) => {
+          setSelectedOption={async (chain: number) => {
+            if (walletConnector == null) return;
+            if (primaryWallet == null) return;
             if (chain == selectedChain) setSelectedChain(0);
-            else setSelectedChain(chain);
+            else {
+              console.log("PRIMARY WALLET CHAIN");
+              console.log(primaryWallet.chain);
+              if (
+                chainToChainIds[chain] != Number(primaryWallet.chain) &&
+                walletConnector.supportsNetworkSwitching()
+              ) {
+                await walletConnector.switchNetwork({
+                  networkChainId: chainToChainIds[chain],
+                });
+                console.log("Success! Network switched");
+              }
+              setSelectedChain(chain);
+            }
           }}
           options={dropdownElements.chains}
         />
         <Dropdown
           label="Choose Token"
           selectedOption={selectedToken}
-          setSelectedOption={(token: number) => {
+          setSelectedOption={async (token: number) => {
             if (token == selectedToken) setSelectedToken(0);
             else setSelectedToken(token);
           }}

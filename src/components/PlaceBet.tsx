@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Dropdown from "./Game/Dropdown";
 import PlayerProgress from "./Game/PlayerProgress";
 import VrfTooltip from "./Game/Tooltip/VrfTooltip";
-import { dropdownElements } from "@/utils/constants";
+import { chainToChainIds, dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/game/resolveTokens";
 import ErrorTooltip from "./Game/Tooltip/ErrorTooltip";
 import resolveBet from "@/utils/game/resolveBet";
@@ -13,6 +13,7 @@ import getGasPrice from "@/utils/transactions/read/getGasPrice";
 import { formatGwei, parseEther } from "viem";
 import CcipTooltip from "./Game/Tooltip/CcipTooltip";
 import { PlaceBetProps } from "@/utils/interface";
+import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
 export default function PlaceBet({
   selectedPlayersCount,
@@ -20,6 +21,8 @@ export default function PlaceBet({
   captainAndViceCaptainSet,
   triggerTransaction,
 }: PlaceBetProps) {
+  const { isAuthenticated, primaryWallet, walletConnector } =
+    useDynamicContext();
   const [betamount, setBetAmount] = useState("0.0");
   const [chain, setChain] = useState(0);
   const [token, setToken] = useState(0);
@@ -88,7 +91,23 @@ export default function PlaceBet({
                     : dropdownElements.chains[chain - 1].name
                 }
                 selectedOption={chain}
-                setSelectedOption={setChain}
+                setSelectedOption={async function (selectedChain: number) {
+                  if (walletConnector == null) return;
+                  if (primaryWallet == null) return;
+                  if (chain == selectedChain) setChain(0);
+                  else {
+                    console.log("PRIMARY WALLET CHAIN");
+                    console.log(primaryWallet.network);
+                    if (walletConnector.supportsNetworkSwitching()) {
+                      try {
+                        await walletConnector.switchNetwork({
+                          networkChainId: chainToChainIds[selectedChain],
+                        });
+                        setChain(selectedChain);
+                      } catch (e) {}
+                    }
+                  }
+                }}
                 options={dropdownElements.chains}
               />
               <Dropdown
@@ -98,7 +117,9 @@ export default function PlaceBet({
                     : dropdownElements.tokens[token - 1].name
                 }
                 selectedOption={token}
-                setSelectedOption={setToken}
+                setSelectedOption={async function (selectedToken: number) {
+                  setToken(selectedToken);
+                }}
                 options={resolveTokens(dropdownElements, chain - 1)}
               />
             </div>

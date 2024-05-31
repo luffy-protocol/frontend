@@ -3,14 +3,7 @@ import React, { use, useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
 import fixtureById from "@/utils/fixtures/fetchFixtureById";
-import { useWatchContractEvent } from "wagmi";
-import {
-  CHAIN_RESOLVERS,
-  DEPLOYMENTS,
-  PROTOCOL_ABI,
-  chainToChainIds,
-  emptyPlayers,
-} from "@/utils/constants";
+import { chainToChainIds, emptyPlayers } from "@/utils/constants";
 import { Player, TriggerTransactionProps } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
 import Results from "@/components/Results";
@@ -21,10 +14,9 @@ import resolveLabels from "@/utils/game/resolveLabels";
 import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
-import { createPublicClient, http } from "viem";
 
 function Page({ params }: { params: { id: string } }) {
-  const { primaryWallet } = useDynamicContext();
+  const { primaryWallet, walletConnector } = useDynamicContext();
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(false);
   const [time, setTime] = useState("1000");
@@ -44,10 +36,8 @@ function Page({ params }: { params: { id: string } }) {
   const [awayTeam, setAwayTeam] = useState("...........");
   const [homeid, setHomeId] = useState(0);
   const [awayid, setAwayId] = useState(0);
-  // const [pageLoaded, setPageLoaded] = useState(false);
   const [transactionLoading, setTransactionLoading] = useState(false);
   const [labels, setLabels] = useState<string[]>([]);
-  const [stepCount, setStepCount] = useState(0);
   const [chain, setChain] = useState(0);
   const [txHashes, setTxHashes] = useState<string[]>([]);
   const [txConfirmed, setTxConfirmed] = useState<number>(0);
@@ -115,6 +105,8 @@ function Page({ params }: { params: { id: string } }) {
               }: TriggerTransactionProps) => {
                 console.log("Transaction Started");
                 if (primaryWallet == null || primaryWallet == undefined) return;
+                if (walletConnector == null || walletConnector == undefined)
+                  return;
                 setChain(chain);
                 const squadHash = computeSquadHash(
                   new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
@@ -123,7 +115,6 @@ function Page({ params }: { params: { id: string } }) {
                 console.log(squadHash);
                 resolveLabels({
                   setLabels,
-                  setStepCount,
                   token: token,
                   chain: chain,
                   isRandom: isRandom,

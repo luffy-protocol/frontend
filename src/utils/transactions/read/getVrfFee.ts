@@ -31,7 +31,13 @@ export default async function getVrfFee(
           ? CROSSCHAIN_ABI
           : CROSSCHAIN_NO_VRF_ABI,
       functionName: "getRandomnessPriceInNative",
-      args: [chainId == 43113 ? parseGwei("28") : gasPriceInWei],
+      args: [
+        chainId == 43113
+          ? parseGwei("28")
+          : chainId == 11155111
+          ? parseGwei("14")
+          : gasPriceInWei,
+      ],
     });
     console.log(data);
     return {

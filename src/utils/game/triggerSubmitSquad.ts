@@ -1,17 +1,9 @@
 import { Wallet } from "@dynamic-labs/sdk-react-core";
-import {
-  CHAIN_RESOLVERS,
-  DEPLOYMENTS,
-  PROTOCOL_ABI,
-  TOKEN_ADDRESSES,
-  VRF_COORDINATORS,
-  chainToChainIds,
-} from "../constants";
+import { CHAIN_RESOLVERS, chainToChainIds } from "../constants";
 import approveToken from "../transactions/write/approveToken";
 import placeBet from "../transactions/write/placeBet";
 import placeBetRandom from "../transactions/write/placeBetRandom";
 import { createPublicClient, http, parseAbiItem } from "viem";
-import waitForEvent from "../transactions/helpers/waitForEvent";
 interface TriggerSubmitSquadProps {
   gameId: number;
   chain: number;
@@ -26,7 +18,9 @@ interface TriggerSubmitSquadProps {
   setTxHashes: (txHashes: string[]) => void;
   setTxConfirmations: (txConfirmations: boolean[]) => void;
 }
+
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export default async function triggerSubmitSquad({
   gameId,
   primaryWallet,
@@ -65,6 +59,12 @@ export default async function triggerSubmitSquad({
       });
       console.log("Approve Tokens Receipt");
       console.log(txReceipt);
+      if (txReceipt.status == "reverted") {
+        return {
+          success: false,
+          error: data.error,
+        };
+      }
       txConfirmations.push(true);
       setTxConfirmations(txConfirmations);
       // TODO: If not approved 100000, throw error
@@ -76,17 +76,6 @@ export default async function triggerSubmitSquad({
   }
   let unwatchBetPlaced;
   if (isRandom) {
-    // unwatchBetPlaced = sourcePublicClient.watchContractEvent({
-    //   address: DEPLOYMENTS[chainToChainIds[chain]][token - 1] as `0x${string}`,
-    //   abi: PROTOCOL_ABI,
-    //   eventName: "BetPlaced",
-    //   onLogs: (logs) => {
-    //     console.log("Bet Placed Event");
-    //     console.log(logs);
-    //     txConfirmations.push(true);
-    //     setTxConfirmations(txConfirmations);
-    //   },
-    // });
     const { success, data } = await placeBetRandom({
       primaryWallet,
       chainId: chainToChainIds[chain],
@@ -98,20 +87,29 @@ export default async function triggerSubmitSquad({
     });
     if (success) {
       txHashes.push(data.hash);
+      console.log(txHashes);
       setTxHashes(txHashes);
       const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
       console.log("Place Bet Random Receipt");
       console.log(txReceipt);
+      if (txReceipt.status == "reverted") {
+        return {
+          success: false,
+          error: data.error,
+        };
+      }
       txConfirmations.push(true);
+      console.log(txConfirmations);
       setTxConfirmations(txConfirmations);
-      console.log("Place bet confirmations set. wating for delay of 8 seconds");
+      console.log("Waiting fot delay");
       await delay(8000);
-      console.log("Delay completed");
+      console.log(txHashes);
       txHashes.push(data.hash);
       setTxHashes(txHashes);
       txConfirmations.push(true);
+      console.log(txConfirmations);
       setTxConfirmations(txConfirmations);
       console.log("ALl Steps completed");
     } else
@@ -134,21 +132,21 @@ export default async function triggerSubmitSquad({
     if (success) {
       txHashes.push(data.hash);
       setTxHashes(txHashes);
+      console.log(txHashes);
       const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
       console.log("Place Bet Receipt");
       console.log(txReceipt);
+      if (txReceipt.status == "reverted") {
+        return {
+          success: false,
+          error: data.error,
+        };
+      }
       txConfirmations.push(true);
+      console.log(txConfirmations);
       setTxConfirmations(txConfirmations);
-      console.log("Place bet confirmations set. wating for delay of 8 seconds");
-      await delay(8000);
-      console.log("Delay completed");
-      txHashes.push(data.hash);
-      setTxHashes(txHashes);
-      txConfirmations.push(true);
-      setTxConfirmations(txConfirmations);
-      console.log("ALl Steps completed");
     } else
       return {
         success: false,

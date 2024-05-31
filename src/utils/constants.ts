@@ -6,7 +6,7 @@ import {
   sepolia,
 } from "viem/chains";
 const DEPLOYMENTS: Record<number, string> = {
-  43113: "0x09249908F451EAe8fF4612e3E2C4a0f574a114f4",
+  43113: "0x6BD5184C69078CF4DC576c78c2B2Bb2E55d53eb0",
   11155111: "0xa12Ffa8429b6c0e4AcFD93aFbd30705bBE254FD5",
   84532: "0x513F5406f1C40874f3c0cD078E606897DC29F67b",
   421614: "0x87dd08be032a03d937F2A8003dfa9C52821cbaB9",
@@ -47,6 +47,11 @@ const PROTOCOL_ABI = [
             internalType: "address",
             name: "linkToken",
             type: "address",
+          },
+          {
+            internalType: "uint256[2]",
+            name: "upKeepIds",
+            type: "uint256[2]",
           },
           {
             internalType: "contract AggregatorV3Interface[2]",
@@ -97,6 +102,11 @@ const PROTOCOL_ABI = [
   {
     inputs: [],
     name: "EmptyArgs",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "EmptySecrets",
     type: "error",
   },
   {
@@ -345,20 +355,26 @@ const PROTOCOL_ABI = [
       {
         indexed: false,
         internalType: "uint256",
-        name: "gameId",
+        name: "gameweek",
         type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256[]",
+        name: "gameIds",
+        type: "uint256[]",
+      },
+      {
+        indexed: false,
+        internalType: "string[]",
+        name: "remappings",
+        type: "string[]",
       },
       {
         indexed: false,
         internalType: "uint256",
-        name: "_startsIn",
+        name: "resultsTriggersIn",
         type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "string",
-        name: "remapping",
-        type: "string",
       },
     ],
     name: "GamePlayerIdRemappingSet",
@@ -416,6 +432,12 @@ const PROTOCOL_ABI = [
         internalType: "bytes",
         name: "response",
         type: "bytes",
+      },
+      {
+        indexed: false,
+        internalType: "bool",
+        name: "isFunction",
+        type: "bool",
       },
     ],
     name: "OracleResponseSuccess",
@@ -507,9 +529,9 @@ const PROTOCOL_ABI = [
       },
       {
         indexed: false,
-        internalType: "bytes32",
+        internalType: "bytes32[11]",
         name: "playerIds",
-        type: "bytes32",
+        type: "bytes32[11]",
       },
       {
         indexed: false,
@@ -642,19 +664,6 @@ const PROTOCOL_ABI = [
   },
   {
     inputs: [],
-    name: "FUNCTIONS_ROUTER",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
     name: "LINK_TOKEN",
     outputs: [
       {
@@ -713,6 +722,30 @@ const PROTOCOL_ABI = [
         internalType: "contract IVRFV2PlusWrapper",
         name: "",
         type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes",
+        name: "_proof",
+        type: "bytes",
+      },
+      {
+        internalType: "bytes32[]",
+        name: "_publicInputs",
+        type: "bytes32[]",
+      },
+    ],
+    name: "_verifyProof",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
       },
     ],
     stateMutability: "view",
@@ -864,6 +897,30 @@ const PROTOCOL_ABI = [
   {
     inputs: [
       {
+        internalType: "bytes",
+        name: "",
+        type: "bytes",
+      },
+    ],
+    name: "checkUpkeep",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "upkeepNeeded",
+        type: "bool",
+      },
+      {
+        internalType: "bytes",
+        name: "performData",
+        type: "bytes",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint256",
         name: "_gameId",
         type: "uint256",
@@ -897,9 +954,9 @@ const PROTOCOL_ABI = [
         type: "uint256",
       },
       {
-        internalType: "bytes32",
+        internalType: "bytes32[11]",
         name: "_playerIds",
-        type: "bytes32",
+        type: "bytes32[11]",
       },
       {
         internalType: "uint256",
@@ -965,6 +1022,13 @@ const PROTOCOL_ABI = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "clearCacheFunds",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "uint64",
@@ -978,6 +1042,25 @@ const PROTOCOL_ABI = [
         internalType: "address",
         name: "",
         type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "gameIdsToRemappingsSet",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
       },
     ],
     stateMutability: "view",
@@ -1044,23 +1127,13 @@ const PROTOCOL_ABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "gameId",
+        name: "gameweek",
         type: "uint256",
-      },
-      {
-        internalType: "string",
-        name: "remapping",
-        type: "string",
       },
       {
         internalType: "uint256",
-        name: "startsIn",
+        name: "resultsTriggersIn",
         type: "uint256",
-      },
-      {
-        internalType: "bool",
-        name: "exists",
-        type: "bool",
       },
     ],
     stateMutability: "view",
@@ -1218,6 +1291,19 @@ const PROTOCOL_ABI = [
   },
   {
     inputs: [],
+    name: "latestGameweek",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "latestRequestId",
     outputs: [
       {
@@ -1323,19 +1409,6 @@ const PROTOCOL_ABI = [
   },
   {
     inputs: [],
-    name: "oracleCallbackGasLimit",
-    outputs: [
-      {
-        internalType: "uint32",
-        name: "",
-        type: "uint32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
     name: "owner",
     outputs: [
       {
@@ -1358,6 +1431,32 @@ const PROTOCOL_ABI = [
     name: "performUpkeep",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "prevDonHostedSecretsSlotID",
+    outputs: [
+      {
+        internalType: "uint8",
+        name: "",
+        type: "uint8",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "prevDonHostedSecretsVersion",
+    outputs: [
+      {
+        internalType: "uint64",
+        name: "",
+        type: "uint64",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -1528,6 +1627,24 @@ const PROTOCOL_ABI = [
   {
     inputs: [
       {
+        internalType: "uint8",
+        name: "_donHostedSecretsSlotID",
+        type: "uint8",
+      },
+      {
+        internalType: "uint64",
+        name: "_donHostedSecretsVersion",
+        type: "uint64",
+      },
+    ],
+    name: "setDonHostedSecrets",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint256",
         name: "_upKeepId",
         type: "uint256",
@@ -1555,21 +1672,26 @@ const PROTOCOL_ABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_gameId",
+        name: "gameweek",
         type: "uint256",
+      },
+      {
+        internalType: "uint256[]",
+        name: "gameIds",
+        type: "uint256[]",
+      },
+      {
+        internalType: "string[]",
+        name: "remappings",
+        type: "string[]",
       },
       {
         internalType: "uint256",
-        name: "_startsIn",
+        name: "resultsTriggersIn",
         type: "uint256",
       },
-      {
-        internalType: "string",
-        name: "_remapping",
-        type: "string",
-      },
     ],
-    name: "setPlayerIdRemmapings",
+    name: "setPlayerIdRemappings",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1653,17 +1775,27 @@ const PROTOCOL_ABI = [
         type: "uint256",
       },
       {
+        internalType: "string",
+        name: "remapping",
+        type: "string",
+      },
+      {
         internalType: "uint8",
-        name: "donHostedSecretsSlotID",
+        name: "slotId",
         type: "uint8",
       },
       {
         internalType: "uint64",
-        name: "donHostedSecretsVersion",
+        name: "version",
         type: "uint64",
       },
+      {
+        internalType: "bytes[]",
+        name: "bytesArgs",
+        type: "bytes[]",
+      },
     ],
-    name: "triggerFetchResults",
+    name: "triggerFetchResult",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -1768,9 +1900,9 @@ const PROTOCOL_ABI = [
         type: "address",
       },
       {
-        internalType: "bytes32",
+        internalType: "bytes32[11]",
         name: "_playerIds",
-        type: "bytes32",
+        type: "bytes32[11]",
       },
       {
         internalType: "uint256",
@@ -1911,18 +2043,23 @@ const PROTOCOL_ABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_gameId",
+        name: "gameweek",
         type: "uint256",
+      },
+      {
+        internalType: "uint256[]",
+        name: "gameIds",
+        type: "uint256[]",
+      },
+      {
+        internalType: "string[]",
+        name: "remappings",
+        type: "string[]",
       },
       {
         internalType: "uint256",
-        name: "_startsIn",
+        name: "resultsTriggersIn",
         type: "uint256",
-      },
-      {
-        internalType: "string",
-        name: "_remapping",
-        type: "string",
       },
     ],
     name: "zsetPlayerIdRemmapings",

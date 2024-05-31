@@ -50,10 +50,12 @@ export const StepStatus = ({
       <div className="flex justify-between items-center ">
         <p className="w-full">
           {label}
-          {txHash.length > 0 ? (
-            <TxHash chain={chain} hash={txHash} confirmed={txConfirmed} />
+          {error.length > 0 ? (
+            <TxErrorTooltip message={error} />
           ) : (
-            error.length > 0 && <TxErrorTooltip message={error} />
+            txHash.length > 0 && (
+              <TxHash chain={chain} hash={txHash} confirmed={txConfirmed} />
+            )
           )}
         </p>
         <div className=" ml-5"></div>

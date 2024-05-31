@@ -21,6 +21,12 @@ export default function Transaction({
   txConfirmed,
   clear,
 }: TransactionProps) {
+  useEffect(() => {
+    console.log("TX hashes updated");
+    console.log(txHashes);
+    console.log("TX confirmed updated");
+    console.log(txConfirmed);
+  }, [txHashes, txConfirmed]);
   return (
     <div className="flex relative justify-center items-center w-1/2 h-2/3">
       <img
@@ -59,7 +65,15 @@ export default function Transaction({
                 label={label}
                 txHash={index < txHashes.length ? txHashes[index] : ""}
                 error={
-                  error.length > 0 && index == txHashes.length ? error : ""
+                  error.length > 0
+                    ? txHashes.length == txConfirmed.length &&
+                      index == txHashes.length
+                      ? error
+                      : txHashes.length != txConfirmed.length &&
+                        index == txConfirmed.length
+                      ? error
+                      : ""
+                    : ""
                 }
                 txConfirmed={
                   index < txHashes.length ? txConfirmed[index] : false

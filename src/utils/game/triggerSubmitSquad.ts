@@ -66,7 +66,6 @@ export default async function triggerSubmitSquad({
         };
       }
       setTxConfirmations();
-      // TODO: If not approved 100000, throw error
     } else
       return {
         success: false,

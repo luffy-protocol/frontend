@@ -3,7 +3,8 @@ import { CHAIN_RESOLVERS, chainToChainIds } from "../constants";
 import approveToken from "../transactions/write/approveToken";
 import placeBet from "../transactions/write/placeBet";
 import placeBetRandom from "../transactions/write/placeBetRandom";
-import { createPublicClient, http, parseAbiItem } from "viem";
+import { createPublicClient, http } from "viem";
+import { Dispatch, SetStateAction } from "react";
 interface TriggerSubmitSquadProps {
   gameId: number;
   chain: number;
@@ -15,8 +16,8 @@ interface TriggerSubmitSquadProps {
   viceCaptain: number;
   squadHash: string;
   primaryWallet: Wallet;
-  setTxHashes: (txHashes: string[]) => void;
-  setTxConfirmations: (txConfirmations: boolean[]) => void;
+  setTxHashes: Dispatch<SetStateAction<string[]>>;
+  setTxConfirmations: Dispatch<SetStateAction<boolean[]>>;
 }
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -35,8 +36,6 @@ export default async function triggerSubmitSquad({
   setTxHashes,
   setTxConfirmations,
 }: TriggerSubmitSquadProps): Promise<{ success: boolean; error: string }> {
-  const txHashes: string[] = [];
-  const txConfirmations: boolean[] = [];
   const sourcePublicClient = createPublicClient({
     chain: CHAIN_RESOLVERS[chainToChainIds[chain]].chain,
     transport: http(CHAIN_RESOLVERS[chainToChainIds[chain]].transport),
@@ -52,8 +51,10 @@ export default async function triggerSubmitSquad({
     });
 
     if (success) {
-      txHashes.push(data.hash);
-      setTxHashes(txHashes);
+      setTxHashes((txHashes) => {
+        txHashes.push(data.hash);
+        return txHashes;
+      });
       const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
@@ -65,8 +66,10 @@ export default async function triggerSubmitSquad({
           error: data.error,
         };
       }
-      txConfirmations.push(true);
-      setTxConfirmations(txConfirmations);
+      setTxConfirmations((confirmations) => {
+        confirmations.push(true);
+        return confirmations;
+      });
       // TODO: If not approved 100000, throw error
     } else
       return {
@@ -86,9 +89,10 @@ export default async function triggerSubmitSquad({
       tokenAmount: tokenAmount,
     });
     if (success) {
-      txHashes.push(data.hash);
-      console.log(txHashes);
-      setTxHashes(txHashes);
+      setTxHashes((txHashes) => {
+        txHashes.push(data.hash);
+        return txHashes;
+      });
       const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
@@ -100,17 +104,20 @@ export default async function triggerSubmitSquad({
           error: data.error,
         };
       }
-      txConfirmations.push(true);
-      console.log(txConfirmations);
-      setTxConfirmations(txConfirmations);
+      setTxConfirmations((txConfirmations) => {
+        txConfirmations.push(true);
+        return txConfirmations;
+      });
       console.log("Waiting fot delay");
       await delay(8000);
-      console.log(txHashes);
-      txHashes.push(data.hash);
-      setTxHashes(txHashes);
-      txConfirmations.push(true);
-      console.log(txConfirmations);
-      setTxConfirmations(txConfirmations);
+      setTxHashes((txHashes) => {
+        txHashes.push(data.hash);
+        return txHashes;
+      });
+      setTxConfirmations((txConfirmations) => {
+        txConfirmations.push(true);
+        return txConfirmations;
+      });
       console.log("ALl Steps completed");
     } else
       return {
@@ -130,9 +137,10 @@ export default async function triggerSubmitSquad({
       viceCaptain,
     });
     if (success) {
-      txHashes.push(data.hash);
-      setTxHashes(txHashes);
-      console.log(txHashes);
+      setTxHashes((txHashes) => {
+        txHashes.push(data.hash);
+        return txHashes;
+      });
       const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
@@ -144,9 +152,10 @@ export default async function triggerSubmitSquad({
           error: data.error,
         };
       }
-      txConfirmations.push(true);
-      console.log(txConfirmations);
-      setTxConfirmations(txConfirmations);
+      setTxConfirmations((txConfirmations) => {
+        txConfirmations.push(true);
+        return txConfirmations;
+      });
     } else
       return {
         success: false,

@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import Status from "./Fixtures/FixtureCard/Status";
 import Battery from "./Battery";
 import { StepStatus } from "./StepStatus";
 import TxHash from "./Game/Tooltip/TxHash";
 interface TransactionProps {
   chain: number;
-  setTransactionLoading: (value: boolean) => void;
+  setTransactionLoading: Dispatch<SetStateAction<boolean>>;
   labels: string[];
   txHashes: string[];
   txConfirmed: boolean[];

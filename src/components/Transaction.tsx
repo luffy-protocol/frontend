@@ -8,7 +8,7 @@ interface TransactionProps {
   setTransactionLoading: Dispatch<SetStateAction<boolean>>;
   labels: string[];
   txHashes: string[];
-  txConfirmed: boolean[];
+  txConfirmed: number;
   clear: () => void;
   error: string;
 }
@@ -42,13 +42,11 @@ export default function Transaction({
         <div className="font-stalinist w-[50%] flex flex-col items-start justify-center text-lg text-red-400 gap-6  ml-4">
           <div className=" text-xl text-white mb-10">
             <p className="text-center">
-              {txConfirmed.length == labels.length
-                ? "Registered"
-                : "Submitting"}{" "}
-              Squad <br />
-              {txConfirmed.length != labels.length ? (
+              {txConfirmed == labels.length ? "Registered" : "Submitting"} Squad{" "}
+              <br />
+              {txConfirmed != labels.length ? (
                 <span className="text-purple-500">
-                  {txConfirmed.length} / {labels.length}
+                  {txConfirmed} / {labels.length}
                 </span>
               ) : (
                 <img src="/assets/tick.svg" className="w-8 h-8 mx-auto" />
@@ -60,24 +58,20 @@ export default function Transaction({
               <StepStatus
                 key={index}
                 chain={chain}
-                currentStep={txConfirmed.length}
+                currentStep={txConfirmed}
                 index={index}
                 label={label}
                 txHash={index < txHashes.length ? txHashes[index] : ""}
                 error={
                   error.length > 0
-                    ? txHashes.length == txConfirmed.length &&
-                      index == txHashes.length
+                    ? txHashes.length == txConfirmed && index == txHashes.length
                       ? error
-                      : txHashes.length != txConfirmed.length &&
-                        index == txConfirmed.length
+                      : txHashes.length != txConfirmed && index == txConfirmed
                       ? error
                       : ""
                     : ""
                 }
-                txConfirmed={
-                  index < txHashes.length ? txConfirmed[index] : false
-                }
+                txConfirmed={index < txConfirmed ? true : false}
               />
             </>
           ))}
@@ -94,7 +88,7 @@ export default function Transaction({
               }}
             >
               <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2 -mt-4">
-                {txConfirmed.length == labels.length ? "Go Back" : "Cancel"}
+                {txConfirmed == labels.length ? "Go Back" : "Cancel"}
               </span>
             </button>
           </div>

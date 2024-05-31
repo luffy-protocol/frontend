@@ -5,7 +5,7 @@ import {
   optimismSepolia,
   sepolia,
 } from "viem/chains";
-const DEPLOYMENTS: Record<number, string> = {
+const DEPLOYMENTS: Record<number, `0x${string}`> = {
   43113: "0x6BD5184C69078CF4DC576c78c2B2Bb2E55d53eb0",
   11155111: "0xa12Ffa8429b6c0e4AcFD93aFbd30705bBE254FD5",
   84532: "0x513F5406f1C40874f3c0cD078E606897DC29F67b",
@@ -3979,6 +3979,7 @@ const chainToChainIds: Record<number, number> = {
   4: 11155420,
   5: 421614,
 };
+
 export {
   PROTOCOL_ABI,
   CROSSCHAIN_ABI,

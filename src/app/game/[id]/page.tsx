@@ -3,7 +3,14 @@ import React, { use, useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
 import fixtureById from "@/utils/fixtures/fetchFixtureById";
-import { emptyPlayers } from "@/utils/constants";
+import { useWatchContractEvent } from "wagmi";
+import {
+  CHAIN_RESOLVERS,
+  DEPLOYMENTS,
+  PROTOCOL_ABI,
+  chainToChainIds,
+  emptyPlayers,
+} from "@/utils/constants";
 import { Player, TriggerTransactionProps } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
 import Results from "@/components/Results";
@@ -14,6 +21,7 @@ import resolveLabels from "@/utils/game/resolveLabels";
 import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
+import { createPublicClient, http } from "viem";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet } = useDynamicContext();
@@ -42,8 +50,9 @@ function Page({ params }: { params: { id: string } }) {
   const [stepCount, setStepCount] = useState(0);
   const [chain, setChain] = useState(0);
   const [txHashes, setTxHashes] = useState<string[]>([]);
-  const [txConfirmed, setTxConfirmed] = useState<boolean[]>([]);
+  const [txConfirmed, setTxConfirmed] = useState<number>(0);
   const [error, setError] = useState("");
+
   useEffect(() => {
     console.log("Captain and Vice captain");
     console.log(captain, viceCaptain);
@@ -120,6 +129,7 @@ function Page({ params }: { params: { id: string } }) {
                   isRandom: isRandom,
                 });
                 console.log("Labels resolved");
+
                 const { success, error: callError } = await triggerSubmitSquad({
                   gameId: parseInt(params.id),
                   primaryWallet,
@@ -131,13 +141,28 @@ function Page({ params }: { params: { id: string } }) {
                   captain: 1,
                   viceCaptain: 2,
                   squadHash,
-                  setTxHashes: setTxHashes,
-                  setTxConfirmations: setTxConfirmed,
+                  setTxHashes: (hash: string) => {
+                    setTxHashes((hashes) => {
+                      return [...hashes, hash];
+                    });
+                  },
+                  setTxConfirmations: () => {
+                    setTxConfirmed((confirmed) => {
+                      return confirmed + 1;
+                    });
+                  },
                 });
+                const delay = (ms: number) =>
+                  new Promise((resolve) => setTimeout(resolve, ms));
+
                 if (!success) {
                   console.log("Error in transaction");
                   console.log(callError);
                   setError("Transasction Failed or User Rejected Transaction");
+                } else {
+                  await delay(5000);
+                  setTxHashes((prev) => [...prev, prev[0]]);
+                  setTxConfirmed((confirmed) => confirmed + 1);
                 }
               }}
             />

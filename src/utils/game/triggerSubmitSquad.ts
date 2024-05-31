@@ -106,6 +106,14 @@ export default async function triggerSubmitSquad({
       console.log(txReceipt);
       txConfirmations.push(true);
       setTxConfirmations(txConfirmations);
+      console.log("Place bet confirmations set. wating for delay of 8 seconds");
+      await delay(8000);
+      console.log("Delay completed");
+      txHashes.push(data.hash);
+      setTxHashes(txHashes);
+      txConfirmations.push(true);
+      setTxConfirmations(txConfirmations);
+      console.log("ALl Steps completed");
     } else
       return {
         success: false,
@@ -133,11 +141,14 @@ export default async function triggerSubmitSquad({
       console.log(txReceipt);
       txConfirmations.push(true);
       setTxConfirmations(txConfirmations);
+      console.log("Place bet confirmations set. wating for delay of 8 seconds");
       await delay(8000);
+      console.log("Delay completed");
       txHashes.push(data.hash);
       setTxHashes(txHashes);
       txConfirmations.push(true);
       setTxConfirmations(txConfirmations);
+      console.log("ALl Steps completed");
     } else
       return {
         success: false,

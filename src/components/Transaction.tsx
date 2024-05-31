@@ -31,15 +31,22 @@ export default function Transaction({
 
       <div className="absolute w-full z-20 mr-8  h-full flex top-[5%] left-[5%]">
         <div className="flex justify-center items-center  ml-10 ">
-          <Battery step={txHashes.length} totalSteps={4} />
+          <Battery step={4} totalSteps={4} />
         </div>
         <div className="font-stalinist w-[50%] flex flex-col items-start justify-center text-lg text-red-400 gap-6  ml-4">
           <div className=" text-xl text-white mb-10">
             <p className="text-center">
-              Submitting Squad <br />
-              <span className="text-purple-500">
-                {txConfirmed.length} / {labels.length}
-              </span>
+              {txConfirmed.length == labels.length
+                ? "Registered"
+                : "Submitting"}{" "}
+              Squad <br />
+              {txConfirmed.length != labels.length ? (
+                <span className="text-purple-500">
+                  {txConfirmed.length} / {labels.length}
+                </span>
+              ) : (
+                <img src="/assets/tick.svg" className="w-8 h-8 mx-auto" />
+              )}
             </p>
           </div>
           {labels.map((label, index) => (
@@ -73,7 +80,7 @@ export default function Transaction({
               }}
             >
               <span className="text-[12px] font-stalinist flex justify-center self-center p-7 cursor-pointer text-center -ml-2 -mt-4">
-                Cancel
+                {txConfirmed.length == labels.length ? "Go Back" : "Cancel"}
               </span>
             </button>
           </div>

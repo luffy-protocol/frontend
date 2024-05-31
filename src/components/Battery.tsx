@@ -7,7 +7,7 @@ interface BatteryProps {
 
 const Battery: React.FC<BatteryProps> = ({ step, totalSteps }) => {
   return (
-    <div className="flex bg-[url('/assets/battery.svg')] sm:w-[150px] h-[530px] bg-no-repeat bg-cover items-center justify-center flex-col-reverse gap-2">
+    <div className="flex bg-[url('/assets/battery.svg')] sm:w-[150px] h-[530px] bg-no-repeat bg-cover items-center justify-start flex-col-reverse gap-2">
       {Array(totalSteps)
         .fill(null)
         .map((_, index) => (

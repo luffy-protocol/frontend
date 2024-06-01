@@ -57,7 +57,7 @@ export default function Results({
           </div>
           <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5">
             <div className="text-center text-[#D8485F] sm:text-md text-sm">
-              <p>Top Player Points</p>
+              <p>Top Player</p>
             </div>
           </div>
           <div className="flex justify-center items-center w-full mt-5">
@@ -68,7 +68,7 @@ export default function Results({
             />
           </div>
           <div className="text-sm flex justify-center items-center w-full mt-5">
-            <p>{topPlayerPoints} points</p>
+            <p>{topPlayerPoints}</p>
           </div>
           <div className="flex font-stalinist capitalize justify-between w-full px-10 mt-5">
             <div className="text-center text-[#D8485F] sm:text-md text-sm">

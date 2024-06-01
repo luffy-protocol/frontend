@@ -68,7 +68,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
       <img
         src={imageUrl}
         alt={`Player ${index + 1}`}
-        className={`absolute cursor-pointer  scale-125 mt-0 ${
+        className={`absolute ${
+          !showPoints ? "cursor-pointer" : "cursor-default"
+        }  scale-125 mt-0 ${
           index == 10
             ? "left-[42%] top-[5%]"
             : index == 9
@@ -91,11 +93,15 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             ? "top-[16%] sm:top-[23%] left-[42%]"
             : "top-[16%] sm:top-[23%] left-[67%]"
         } w-7 sm:w-7 md:w-10 lg:w-14`}
-        onClick={onClick}
+        onClick={() => {
+          if (!showPoints) onClick();
+        }}
       />
 
       <div
-        className={`absolute cursor-pointer   ${
+        className={`absolute ${
+          !showPoints ? "cursor-pointer" : "cursor-default"
+        }  ${
           index == 10
             ? "left-[39%] top-[16%]  self-center"
             : index == 9
@@ -118,7 +124,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             ? "top-[28%] sm:top-[34%] left-[40%]"
             : "top-[28%] sm:top-[34%] left-[65%]"
         } `}
-        onClick={onClick}
+        onClick={() => {
+          if (!showPoints) onClick();
+        }}
       >
         <div
           className={` text-[11px] bg-slate-50 text-black ${
@@ -130,7 +138,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
 
         {showPoints ? (
           <div
-            className={`cursor-pointer px-2 py-1  text-[9px]  bg-purple-600 text-white  border-b  -[2px]  border-x-[2px] border-purple-600 font-stalinist text-center ${
+            className={`${
+              !showPoints ? "cursor-pointer" : "cursor-default"
+            } px-2 py-1  text-[9px]  bg-purple-600 text-white  border-b  -[2px]  border-x-[2px] border-purple-600 font-stalinist text-center ${
               index == 10
                 ? "left-[40%] top-[18%]"
                 : index == 9
@@ -153,7 +163,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
                 ? "top-[38%] left-[40%]"
                 : "top-[38%] left-[65%]"
             }`}
-            onClick={onClick}
+            onClick={() => {
+              if (!showPoints) onClick();
+            }}
           >
             {points[index]}
             {index == captain ? " (C)" : index == viceCaptain ? " (VC)" : ""}
@@ -161,9 +173,13 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
         ) : (
           (index == captain || index == viceCaptain) && (
             <div
-              className={`cursor-pointer px-2 py-1 text-[9px] bg-purple-600 text-white  border-[1px] border-purple-600 font-stalinist text-center 
+              className={`${
+                !showPoints ? "cursor-pointer" : "cursor-default"
+              } px-2 py-1 text-[9px] bg-purple-600 text-white  border-[1px] border-purple-600 font-stalinist text-center 
                `}
-              onClick={onClick}
+              onClick={() => {
+                if (!showPoints) onClick();
+              }}
             >
               {index == captain ? "(C)" : index == viceCaptain ? "(VC)" : ""}
             </div>

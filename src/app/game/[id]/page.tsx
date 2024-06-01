@@ -68,7 +68,7 @@ function Page({ params }: { params: { id: string } }) {
   }, [playerPositions]);
 
   useEffect(() => {
-    clearStates();
+    // clearStates();
     console.log(error, txHashes, labels);
   }, [transactionLoading]);
 
@@ -190,6 +190,7 @@ function Page({ params }: { params: { id: string } }) {
             txConfirmed={txConfirmed}
             chain={chain}
             error={error}
+            clearStates={clearStates}
           />
         )}
       </div>

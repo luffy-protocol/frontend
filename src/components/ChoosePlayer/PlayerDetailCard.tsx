@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../Fixtures/FixtureCard/Button";
 import ArrowButton from "./ArrowButton";
 import { getPlayerById } from "@/utils/player/getPlayerById";
+import { emptyPlayers } from "@/utils/constants";
 
 interface PlayerCardProps {
   id: number;
@@ -121,8 +122,10 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
   const updatePlayerPosition = (index: number, newPlayerData: any) => {
     let gameData = JSON.parse(localStorage.getItem("players") || "{}");
     if (!gameData[gameId]) gameData[gameId] = {};
+    if (!gameData[gameId][address as any])
+      gameData[gameId][address as any] = {};
     if (!gameData[gameId][address as any].players)
-      gameData[gameId][address as any].players = [];
+      gameData[gameId][address as any].players = emptyPlayers;
     gameData[gameId][address as any].players[index] = newPlayerData;
     localStorage.setItem("players", JSON.stringify(gameData));
     setPlayerPositions((prevPositions: any) => {

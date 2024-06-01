@@ -93,11 +93,16 @@ interface Player {
 }
 
 // Function to get players from the JSON file
-const data = require("../../../players/teams/all_teams.json");
+
+const getPlayers = (): Player[] => {
+  const data = require("../../../players/teams/all_teams.json");
+
+  return data;
+};
 
 // Function to get player details by ID
 export const getPlayerById = (id: number): Player | undefined => {
-  const allPlayers: Player[] = data;
+  const allPlayers: Player[] = getPlayers();
 
   return allPlayers.find((player) => player.player.id === id);
 };

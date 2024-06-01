@@ -132,7 +132,8 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
 
   useEffect(() => {
     const data = getPlayerByTeamId(hometeam, awayteam);
-
+    console.log("GET PLAYER BY TEAM ID");
+    console.log(data);
     const positions = [
       { position: "Goalkeeper", indices: [10] },
       { position: "Defender", indices: [0, 1, 2] },

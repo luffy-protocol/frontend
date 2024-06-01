@@ -88,9 +88,9 @@ export const StepStatus = ({
   return (
     <div
       key={index}
-      className="grid grid-cols-3 gap-4 items-center mx-auto p-2"
+      className="flex gap-4 items-center mx-auto p-2 justify-between  "
     >
-      <div role="status" className="flex justify-center">
+      <div role="status" className="flex justify-center w-fit">
         {error.length > 0 ? (
           <img src="/assets/failed.png" className="w-8 h-8" />
         ) : currentStep === index ? (
@@ -116,8 +116,8 @@ export const StepStatus = ({
           <img src="/assets/pending.svg" className="w-8 h-8" />
         )}
       </div>
-      <div className="flex justify-center">
-        <p className="w-full text-center">{label}</p>
+      <div className="flex justify-center text-xs w-72  max-w-72 overflow-clip text-wrap">
+        <div className=" text-center ">{label}</div>
       </div>
       <div className="flex justify-center">
         {error.length > 0 ? (

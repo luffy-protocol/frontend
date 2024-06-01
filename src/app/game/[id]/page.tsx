@@ -105,7 +105,7 @@ function Page({ params }: { params: { id: string } }) {
         {!transactionLoading ? (
           status == 0 ? (
             <PlaceBet
-              selectedPlayersCount={11}
+              selectedPlayersCount={noPlayers}
               setTransactionLoading={setTransactionLoading}
               captainAndViceCaptainSet={captain !== 11 && viceCaptain !== 11}
               triggerTransaction={async ({
@@ -121,7 +121,9 @@ function Page({ params }: { params: { id: string } }) {
                   return;
                 setChain(chain);
                 const squadHash = computeSquadHash(
-                  new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+                  new Uint8Array(
+                    playerPositions.map((player) => Number(player.id))
+                  )
                 );
                 console.log("Squad Hash computed");
                 console.log(squadHash);

@@ -17,7 +17,11 @@ const Battery: React.FC<BatteryProps> = ({ step, totalSteps }) => {
             className={`w-[105px] ${
               totalSteps == 4 ? "h-[50px]" : "h-[70px] mb-2"
             } rounded-sm bg-purple-600 shadow-2xl shadow-purple-700 ${
-              index < step * 2 ? "animate-fill-drain" : "opacity-0"
+              index < step * 2
+                ? index == step * 2 || index == step * 2 - 1
+                  ? "animate-fill-drain"
+                  : "opacity-100"
+                : "opacity-0"
             }`}
           />
         ))}

@@ -43,6 +43,17 @@ export default async function placeBet(params: PlaceBetParams): Promise<{
       chain: CHAIN_RESOLVERS[chainId].chain,
       transport: http(CHAIN_RESOLVERS[chainId].transport),
     });
+    console.log("VALUE");
+    console.log(value);
+    console.log("ARGS");
+    console.log([
+      gameId.toString(),
+      squadHash,
+      betAmount,
+      token,
+      captain,
+      viceCaptain,
+    ]);
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[chainId] as `0x${string}`,
       abi:
@@ -53,7 +64,7 @@ export default async function placeBet(params: PlaceBetParams): Promise<{
           : CROSSCHAIN_NO_VRF_ABI,
       functionName: "makeSquadAndPlaceBet",
       value: BigInt(value),
-      gas: BigInt("300000"),
+      gas: chainId == 43113 ? BigInt("300000") : undefined,
       args: [
         gameId.toString(),
         squadHash,

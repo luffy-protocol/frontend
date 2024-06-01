@@ -124,6 +124,9 @@ function Page({ params }: { params: { id: string } }) {
                 );
                 console.log("Squad Hash computed");
                 console.log(squadHash);
+                setLabels([]);
+                setTxHashes([]);
+                setTxConfirmed(0);
                 resolveLabels({
                   setLabels,
                   token: token,

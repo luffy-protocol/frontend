@@ -123,3 +123,11 @@ export const getPlayerByTeamId = (
   const combinedPlayers = [...teams, ...away];
   return combinedPlayers;
 };
+
+export const getPlayerBySquad = (playerIds: number[]): Player[] | undefined => {
+  const allPlayers: Player[] = getPlayers();
+  const players = allPlayers.filter((player) =>
+    playerIds.includes(player.player.id)
+  );
+  return players;
+};

@@ -6,6 +6,7 @@ import { Player } from "@/utils/interface";
 
 interface ChoosePlayerProps {
   gameId: string;
+  address: string;
   setopen: (open: boolean) => void;
   index: number;
   setPlayerPositions: (player: any) => void;
@@ -112,6 +113,7 @@ interface Player1 {
 
 const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
   setopen,
+  address,
   gameId,
   index,
   setPlayerPositions,
@@ -185,6 +187,7 @@ const ChoosePlayer: React.FC<ChoosePlayerProps> = ({
         <div className="flex flex-col gap-2 w-full">
           <PlayerDetailCard
             gameId={gameId}
+            address={address}
             id={playerId}
             setopen={setopen}
             setPlayerPositions={setPlayerPositions}

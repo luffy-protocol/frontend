@@ -43,7 +43,7 @@ export default function Results({
             >
               {homeTeam}
             </p>
-            <p className="text-slate-500">{matchMinutes}&apos;</p>
+            <p className="text-slate-500">FT</p>
             <p
               className={`w-[35%] text-right text-[#B62DD3] sm:text-md text-sm truncate whitespace-nowrap`}
             >

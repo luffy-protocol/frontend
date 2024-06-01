@@ -1,7 +1,7 @@
 import request, { gql } from "graphql-request";
 import axios from "axios";
 
-export const fetchGameRemapping = async ({
+export const getRemapping = async ({
   gameId,
 }: {
   gameId: string;

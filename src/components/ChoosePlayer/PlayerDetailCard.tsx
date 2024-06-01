@@ -7,6 +7,7 @@ import { getPlayerById } from "@/utils/player/getPlayerById";
 interface PlayerCardProps {
   id: number;
   gameId: string;
+  address: string;
   setPlayerPositions: (player: any) => void;
   setopen: (open: boolean) => void;
   index: number;
@@ -17,6 +18,7 @@ interface PlayerCardProps {
 const PlayerDetailCard: React.FC<PlayerCardProps> = ({
   id,
   gameId,
+  address,
   setPlayerPositions,
   setopen,
   index,
@@ -30,7 +32,7 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({
       try {
         setLoading(true);
         console.log("loadinxg");
-        const data = await getPlayerById(id);
+        const data = getPlayerById(id);
         setplayerData(data);
         setLoading(false);
       } catch (error) {
@@ -48,6 +50,7 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({
     <PlayerDetails
       gameId={gameId}
       id={id}
+      address={address}
       playerData={playerData}
       setPlayerPositions={setPlayerPositions}
       setopen={setopen}
@@ -95,6 +98,7 @@ const shortForm: { [key: string]: string } = {
 interface PlayerDetailProps {
   id: number;
   index: number;
+  address: string;
   playerData: any;
   gameId: string;
   setPlayerPositions: (player: any) => void;
@@ -104,6 +108,7 @@ interface PlayerDetailProps {
 }
 
 const PlayerDetails: React.FC<PlayerDetailProps> = ({
+  address,
   playerData,
   gameId,
   id,
@@ -114,17 +119,13 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
   setViceCaptain,
 }) => {
   const updatePlayerPosition = (index: number, newPlayerData: any) => {
+    let gameData = JSON.parse(localStorage.getItem("players") || "{}");
+    if (!gameData[gameId]) gameData[gameId] = {};
+    if (!gameData[gameId][address as any].players)
+      gameData[gameId][address as any].players = [];
+    gameData[gameId][address as any].players[index] = newPlayerData;
+    localStorage.setItem("players", JSON.stringify(gameData));
     setPlayerPositions((prevPositions: any) => {
-      // Update player In local storage
-      let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
-      if (gameData[gameId] == null || gameData[gameId] == undefined) {
-        gameData[gameId] = Array(11).fill(0);
-      }
-      gameData[gameId][index] = parseInt(newPlayerData.id);
-      console.log("GAME DATA");
-      console.log(gameData);
-      localStorage.setItem("gameData", JSON.stringify(gameData));
-
       // Create a copy of the state to avoid mutation
       const updatedPositions = [...prevPositions];
 

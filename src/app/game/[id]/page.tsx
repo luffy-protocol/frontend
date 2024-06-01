@@ -1,9 +1,9 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
 import fixtureById from "@/utils/fixtures/fetchFixtureById";
-import { chainToChainIds, emptyPlayers } from "@/utils/constants";
+import { emptyPlayers } from "@/utils/constants";
 import { Player, TriggerTransactionProps } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
 import Results from "@/components/Results";
@@ -14,7 +14,8 @@ import resolveLabels from "@/utils/game/resolveLabels";
 import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
-import { fetchGameRemapping } from "@/utils/game/getRemapping";
+import { getRemapping } from "@/utils/game/getRemapping";
+import { getPredictionComplete } from "@/utils/game/getPredictionComplete";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -45,11 +46,14 @@ function Page({ params }: { params: { id: string } }) {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    console.log("Captain and Vice captain");
-    console.log(captain, viceCaptain);
-  }, [captain, viceCaptain]);
-
-  useEffect(() => {
+    if (primaryWallet == null || primaryWallet == undefined) return;
+    const getPredictionState = async () => {
+      const isPredictionComplete = await getPredictionComplete({
+        gameId: "0x" + parseInt(params.id).toString(16),
+        address: primaryWallet.address.toLocaleLowerCase(),
+      });
+      // if (isPredictionComplete) setStatus(1);
+    };
     const getFixtureDetails = async () => {
       const { response } = await fixtureById(parseInt(params.id));
       setHomeTeam(response[0].home_name);
@@ -58,8 +62,23 @@ function Page({ params }: { params: { id: string } }) {
       setHomeId(response[0].home_id);
       setStadium(response[0].venue);
     };
-    getFixtureDetails();
-  }, [params.id]);
+    (async function () {
+      const players = JSON.parse(localStorage.getItem("players") || "{}");
+      if (
+        players != null &&
+        players != undefined &&
+        primaryWallet.address != undefined
+      ) {
+        if (players[params.id] == null || players[params.id] == undefined)
+          players[params.id] = {};
+        const squad = players[params.id][primaryWallet.address as any];
+
+        setPlayerPositions(squad.players);
+        await getFixtureDetails();
+        await getPredictionState();
+      }
+    })();
+  }, [primaryWallet, params.id]);
 
   useEffect(() => {
     setnumberofPlayers(
@@ -68,17 +87,6 @@ function Page({ params }: { params: { id: string } }) {
     console.log(playerPositions.length);
   }, [playerPositions]);
 
-  useEffect(() => {
-    // clearStates();
-    console.log(error, txHashes, labels);
-  }, [transactionLoading]);
-
-  const clearStates = () => {
-    setError("");
-    setTxHashes([]);
-    setLabels([]);
-    setTxConfirmed(0);
-  };
   return (
     <DefaultLayout>
       <GameStatus
@@ -108,7 +116,9 @@ function Page({ params }: { params: { id: string } }) {
             <PlaceBet
               selectedPlayersCount={noPlayers}
               setTransactionLoading={setTransactionLoading}
-              captainAndViceCaptainSet={captain !== 11 && viceCaptain !== 11}
+              captainAndViceCaptainSet={
+                captain !== 11 && viceCaptain !== 11 && captain != viceCaptain
+              }
               triggerTransaction={async ({
                 token,
                 chain,
@@ -121,15 +131,11 @@ function Page({ params }: { params: { id: string } }) {
                 if (walletConnector == null || walletConnector == undefined)
                   return;
                 setChain(chain);
-                let gameData = JSON.parse(
-                  localStorage.getItem("gameData") || "{}"
-                );
-                const playerIds = gameData[params.id];
-                const playerIdRemapping = await fetchGameRemapping({
+
+                const playerIdRemapping = await getRemapping({
                   gameId: "0x" + Number(params.id).toString(16),
                 });
-
-                if (playerIds == null || playerIds == undefined) return;
+                const playerIds = playerPositions.map((player) => player.id);
 
                 const remappedIds = playerIds.map(
                   (id: any) => playerIdRemapping[id.toString()]
@@ -197,7 +203,7 @@ function Page({ params }: { params: { id: string } }) {
               topPlayerId="154"
               totalPoints={332}
               topPlayerPoints={80}
-              matchMinutes={69}
+              matchMinutes={90}
               setTransactionLoading={setTransactionLoading}
             />
           )
@@ -209,7 +215,6 @@ function Page({ params }: { params: { id: string } }) {
             txConfirmed={txConfirmed}
             chain={chain}
             error={error}
-            clearStates={clearStates}
           />
         )}
       </div>
@@ -217,6 +222,7 @@ function Page({ params }: { params: { id: string } }) {
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
           <ChoosePlayer
             gameId={params.id}
+            address={primaryWallet?.address as string}
             setopen={setOpen}
             index={index}
             setPlayerPositions={setPlayerPositions}

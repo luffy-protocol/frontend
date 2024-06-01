@@ -76,9 +76,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             : index == 8
             ? "top-[40%] sm:top-[47%] left-[30%]"
             : index == 7
-            ? " top-[40%] sm:top-[47%] left-[55%]"
+            ? " top-[40%] sm:top-[47%] left-[52%]"
             : index == 6
-            ? "top-[40%] sm:top-[47%] left-[80%]"
+            ? "top-[40%] sm:top-[47%] left-[73%]"
             : index == 5
             ? "top-[64%] sm:top-[71%] left-[17%]"
             : index == 4
@@ -103,9 +103,9 @@ const PlayerImage: React.FC<PlayerImageProps> = ({
             : index == 8
             ? "top-[52%] sm:top-[58%] left-[28%]"
             : index == 7
-            ? " top-[52%] sm:top-[58%] left-[53%]"
+            ? " top-[52%] sm:top-[58%] left-[49%]"
             : index == 6
-            ? "top-[52%] sm:top-[58%] left-[76%]"
+            ? "top-[52%] sm:top-[58%] left-[70%]"
             : index == 5
             ? "top-[66%] sm:top-[82%] left-[15%]"
             : index == 4

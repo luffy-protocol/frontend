@@ -64,11 +64,14 @@ const Pitch: React.FC<PitchProps> = ({
     <div className="flex justify-centerrelative mx-auto">
       <div className="relative isolate overflow-hidden pt-14">
         <div className="flex justify-center items-center relative ">
-          <img
-            className="rounded-lg shadow-md w-full"
-            src="/pitch.png"
-            alt="Pitch"
-          />
+          <div>
+            <img
+              className="rounded-lg w-full flex justify-center items-center"
+              src="/pitch.png"
+              key={2}
+              alt="Pitch"
+            />
+          </div>
           <div className="pl-2 ">
             {playerPositions.map((player, index) => (
               <div className=" pt-5" key={index}>

@@ -76,6 +76,7 @@ function Page({ params }: { params: { id: string } }) {
     setError("");
     setTxHashes([]);
     setLabels([]);
+    setTxConfirmed(0);
   };
   return (
     <DefaultLayout>

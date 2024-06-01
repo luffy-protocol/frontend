@@ -14,7 +14,9 @@ const Battery: React.FC<BatteryProps> = ({ step, totalSteps }) => {
         .map((_, index) => (
           <div
             key={index}
-            className={`w-[105px] h-[50px] rounded-sm bg-purple-600 shadow-2xl shadow-purple-700 ${
+            className={`w-[105px] ${
+              totalSteps == 4 ? "h-[50px]" : "h-[70px] mb-2"
+            } rounded-sm bg-purple-600 shadow-2xl shadow-purple-700 ${
               index < step * 2 ? "animate-fill-drain" : "opacity-0"
             }`}
           />

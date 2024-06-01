@@ -88,11 +88,14 @@ export const StepStatus = ({
   return (
     <div
       key={index}
-      className="flex gap-4 items-center mx-auto p-2 justify-between  "
+      className="flex gap-4 items-center  p-2 justify-between w-full  "
     >
-      <div role="status" className="flex justify-center w-fit">
+      <div role="status" className=" flex justify-center items-center">
         {error.length > 0 ? (
-          <img src="/assets/failed.png" className="w-8 h-8" />
+          <img
+            src="/assets/failed.png"
+            className="w-8 h-8 text-gray-200 dark:text-gray-600 fill-purple-600"
+          />
         ) : currentStep === index ? (
           <svg
             aria-hidden="true"
@@ -119,7 +122,7 @@ export const StepStatus = ({
       <div className="flex justify-center text-xs w-72  max-w-72 overflow-clip text-wrap">
         <div className=" text-center ">{label}</div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-start items-start">
         {error.length > 0 ? (
           <TxErrorTooltip message={error} />
         ) : (

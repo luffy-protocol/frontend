@@ -39,7 +39,7 @@ export default function Transaction({
         <div className="flex justify-center items-center  ml-10 ">
           <Battery step={2} totalSteps={3} />
         </div>
-        <div className="font-stalinist w-[60%] flex flex-col items-center justify-center text-lg text-red-400 gap-6  ml-4">
+        <div className="font-stalinist w-1/2 flex flex-col items-center justify-center text-lg text-red-400 gap-6  ml-4">
           <div className=" text-xl text-white mb-10">
             <p className="text-center">
               {txConfirmed == labels.length ? "Registered" : "Submitting"} Squad{" "}

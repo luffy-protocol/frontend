@@ -94,7 +94,7 @@ export const StepStatus = ({
         {error.length > 0 ? (
           <img
             src="/assets/failed.png"
-            className="w-8 h-8 text-gray-200 dark:text-gray-600 fill-purple-600"
+            className="h-8 w-11 -ml-1 text-gray-200 dark:text-gray-600 fill-purple-600"
           />
         ) : currentStep === index ? (
           <svg

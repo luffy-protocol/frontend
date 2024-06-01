@@ -14,7 +14,7 @@ interface TriggerSubmitSquadProps {
   chain: number;
   token: number;
   totalValue: string;
-  tokenAmount: string;
+  betAmount: string;
   isRandom: boolean;
   captain: number;
   viceCaptain: number;
@@ -29,7 +29,7 @@ export default async function triggerSubmitSquad({
   primaryWallet,
   chain,
   token,
-  tokenAmount,
+  betAmount,
   totalValue,
   isRandom,
   viceCaptain,
@@ -49,7 +49,7 @@ export default async function triggerSubmitSquad({
       primaryWallet: primaryWallet,
       chainId: chainToChainIds[chain],
       token: token,
-      amount: tokenAmount,
+      amount: betAmount,
     });
 
     if (success) {
@@ -80,7 +80,7 @@ export default async function triggerSubmitSquad({
       squadHash,
       value: totalValue,
       token: token - 1,
-      tokenAmount: tokenAmount,
+      betAmount: betAmount,
     });
     if (success) {
       setTxHashes(data.hash);
@@ -109,7 +109,7 @@ export default async function triggerSubmitSquad({
       squadHash,
       value: totalValue,
       token: token - 1,
-      tokenAmount: tokenAmount,
+      betAmount,
       captain,
       viceCaptain,
     });

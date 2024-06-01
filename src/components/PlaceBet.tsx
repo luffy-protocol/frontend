@@ -239,16 +239,18 @@ export default function PlaceBet({
                     let totalValue = parseEther(
                       (Number(vrffee) + Number(crosschainfee)).toString()
                     );
-                    let tokenAmount = "0";
-                    if (token == 1) totalValue += parseEther(betamount);
-                    else if (token == 2)
-                      tokenAmount = parseEther(betamount).toString();
-                    else if (token == 3) tokenAmount = "100000";
+                    let betAmount = "0";
+                    if (token == 1) {
+                      totalValue += parseEther(betamount);
+                      betAmount = parseEther(betamount).toString();
+                    } else if (token == 2)
+                      betAmount = parseEther(betamount).toString();
+                    else if (token == 3) betAmount = "100000";
                     await triggerTransaction({
                       chain,
                       token,
                       totalValue: totalValue.toString(),
-                      tokenAmount: tokenAmount,
+                      betAmount,
                       isRandom: enableRandomness,
                     });
                     // set chain

@@ -15,7 +15,7 @@ interface PlaceBetParams {
   chainId: number;
   gameId: number;
   squadHash: string;
-  tokenAmount: string;
+  betAmount: string;
   value: string;
   token: number;
   captain: number;
@@ -32,7 +32,7 @@ export default async function placeBet(params: PlaceBetParams): Promise<{
     squadHash,
     value,
     token,
-    tokenAmount,
+    betAmount,
     captain,
     viceCaptain,
   } = params;
@@ -57,7 +57,7 @@ export default async function placeBet(params: PlaceBetParams): Promise<{
       args: [
         gameId.toString(),
         squadHash,
-        tokenAmount,
+        betAmount,
         token,
         captain,
         viceCaptain,

@@ -14,7 +14,7 @@ interface PlaceBetRandomParams {
   chainId: number;
   gameId: number;
   squadHash: string;
-  tokenAmount: string;
+  betAmount: string;
   value: string;
   token: number;
 }
@@ -24,15 +24,8 @@ export default async function placeBetRandom(
   success: boolean;
   data: { hash: string; error: any };
 }> {
-  const {
-    primaryWallet,
-    chainId,
-    gameId,
-    squadHash,
-    token,
-    tokenAmount,
-    value,
-  } = params;
+  const { primaryWallet, chainId, gameId, squadHash, token, betAmount, value } =
+    params;
 
   try {
     const walletClient = await createWalletClientFromWallet(primaryWallet);
@@ -43,7 +36,7 @@ export default async function placeBetRandom(
     });
 
     console.log("Address " + DEPLOYMENTS[chainId]);
-    console.log("Args " + [gameId.toString(), squadHash, tokenAmount, token]);
+    console.log("Args " + [gameId.toString(), squadHash, betAmount, token]);
     console.log("Value " + BigInt(value));
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[chainId] as `0x${string}`,
@@ -51,7 +44,7 @@ export default async function placeBetRandom(
       functionName: "makeSquadAndPlaceBetRandom",
       value: BigInt(value),
       gas: BigInt("300000"),
-      args: [gameId.toString(), squadHash, tokenAmount, token],
+      args: [gameId.toString(), squadHash, betAmount, token],
       account: primaryWallet.address as `0x${string}`,
     });
     const tx = await walletClient.writeContract(request);

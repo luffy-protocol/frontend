@@ -111,7 +111,7 @@ function Page({ params }: { params: { id: string } }) {
                 token,
                 chain,
                 isRandom,
-                tokenAmount,
+                betAmount,
                 totalValue,
               }: TriggerTransactionProps) => {
                 console.log("Transaction Started");
@@ -137,7 +137,7 @@ function Page({ params }: { params: { id: string } }) {
                   primaryWallet,
                   chain,
                   token,
-                  tokenAmount,
+                  betAmount,
                   totalValue,
                   isRandom,
                   captain: 1,

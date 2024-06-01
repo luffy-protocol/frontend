@@ -87,7 +87,7 @@ interface PlaceBetProps {
 interface TriggerTransactionProps {
   chain: number;
   token: number;
-  tokenAmount: string;
+  betAmount: string;
   totalValue: string;
   isRandom: boolean;
 }

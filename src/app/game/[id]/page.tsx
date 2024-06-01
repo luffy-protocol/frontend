@@ -66,6 +66,17 @@ function Page({ params }: { params: { id: string } }) {
     );
     console.log(playerPositions.length);
   }, [playerPositions]);
+
+  useEffect(() => {
+    // clearStates();
+    console.log(error, txHashes, labels);
+  }, [transactionLoading]);
+
+  const clearStates = () => {
+    setError("");
+    setTxHashes([]);
+    setLabels([]);
+  };
   return (
     <DefaultLayout>
       <GameStatus
@@ -179,11 +190,7 @@ function Page({ params }: { params: { id: string } }) {
             txConfirmed={txConfirmed}
             chain={chain}
             error={error}
-            clear={() => {
-              setError("");
-              setTxHashes([]);
-              setLabels([]);
-            }}
+            clearStates={clearStates}
           />
         )}
       </div>

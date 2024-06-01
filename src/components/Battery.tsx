@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface BatteryProps {
   step: number;
@@ -6,9 +6,10 @@ interface BatteryProps {
 }
 
 const Battery: React.FC<BatteryProps> = ({ step, totalSteps }) => {
+  useEffect(() => {}, [step]);
   return (
     <div className="flex bg-[url('/assets/battery.svg')] sm:w-[150px] h-[530px] bg-no-repeat bg-cover items-center justify-start flex-col-reverse gap-2">
-      {Array(totalSteps)
+      {Array(totalSteps * 2)
         .fill(null)
         .map((_, index) => (
           <div

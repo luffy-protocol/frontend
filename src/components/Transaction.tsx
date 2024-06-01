@@ -9,7 +9,7 @@ interface TransactionProps {
   labels: string[];
   txHashes: string[];
   txConfirmed: number;
-  clear: () => void;
+  clearStates: () => void;
   error: string;
 }
 export default function Transaction({
@@ -19,7 +19,7 @@ export default function Transaction({
   labels,
   error,
   txConfirmed,
-  clear,
+  clearStates,
 }: TransactionProps) {
   useEffect(() => {
     console.log("TX hashes updated");
@@ -83,7 +83,7 @@ export default function Transaction({
                 backgroundSize: "contain",
               }}
               onClick={() => {
-                clear();
+                clearStates();
                 setTransactionLoading(false);
               }}
             >

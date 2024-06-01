@@ -6,11 +6,11 @@ import {
   sepolia,
 } from "viem/chains";
 const DEPLOYMENTS: Record<number, `0x${string}`> = {
-  43113: "0x51b5703fF5e22A2AFdC5408163212dcF8aef3303",
-  11155111: "0x89d5da61548205E755874d7f67Ad00F90680440d",
-  84532: "0x5c248293e02A2FE29B0a8d72d3AB4124CFac56e7",
-  421614: "0x826dF7f9fEe3760321371d46a5a744bB2fcA4aef",
-  11155420: "0x9b7a42bFE8f8Df9d43f368Baf9480fB7193Cf06a",
+  43113: "0x2f80513FD5119CD9DC340cd0666Ee84d00A3e799",
+  11155111: "0x05aAFbce41C5ad85Be9a7017cB545E631D7aCB38",
+  84532: "0x146f80579cA969799523F333c77453143e99e67D",
+  421614: "0x1c89e2970889cA2eA64078c9A87eBEd03D68a541",
+  11155420: "0x17517F552d14E3ae1b2a8005f594D7916CE6466d",
 };
 
 const VRF_COORDINATORS: Record<number, string> = {
@@ -149,7 +149,7 @@ const PROTOCOL_ABI = [
       },
       {
         internalType: "uint256",
-        name: "betInUSD",
+        name: "requiredBetInWei",
         type: "uint256",
       },
       {
@@ -1155,6 +1155,30 @@ const PROTOCOL_ABI = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "amountInUSD",
+        type: "uint256",
+      },
+      {
+        internalType: "uint8",
+        name: "_token",
+        type: "uint8",
+      },
+    ],
+    name: "getBetValue",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "uint8",
         name: "_automation",
         type: "uint8",
@@ -1211,30 +1235,6 @@ const PROTOCOL_ABI = [
         internalType: "address",
         name: "",
         type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "amountInWei",
-        type: "uint256",
-      },
-      {
-        internalType: "uint8",
-        name: "_token",
-        type: "uint8",
-      },
-    ],
-    name: "getValueInUSD",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -2157,7 +2157,7 @@ const CROSSCHAIN_NO_VRF_ABI = [
       },
       {
         internalType: "uint256",
-        name: "betInUSD",
+        name: "requiredBetInWei",
         type: "uint256",
       },
       {
@@ -2573,6 +2573,30 @@ const CROSSCHAIN_NO_VRF_ABI = [
     inputs: [
       {
         internalType: "uint256",
+        name: "amountInUSD",
+        type: "uint256",
+      },
+      {
+        internalType: "uint8",
+        name: "_token",
+        type: "uint8",
+      },
+    ],
+    name: "getBetValue",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "_gameId",
         type: "uint256",
       },
@@ -2621,30 +2645,6 @@ const CROSSCHAIN_NO_VRF_ABI = [
         internalType: "address",
         name: "",
         type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "amountInWei",
-        type: "uint256",
-      },
-      {
-        internalType: "uint8",
-        name: "_token",
-        type: "uint8",
-      },
-    ],
-    name: "getValueInUSD",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -2910,7 +2910,7 @@ const CROSSCHAIN_ABI = [
       },
       {
         internalType: "uint256",
-        name: "betInUSD",
+        name: "requiredBetInWei",
         type: "uint256",
       },
       {
@@ -3368,6 +3368,30 @@ const CROSSCHAIN_ABI = [
     inputs: [
       {
         internalType: "uint256",
+        name: "amountInUSD",
+        type: "uint256",
+      },
+      {
+        internalType: "uint8",
+        name: "_token",
+        type: "uint8",
+      },
+    ],
+    name: "getBetValue",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "_gameId",
         type: "uint256",
       },
@@ -3448,30 +3472,6 @@ const CROSSCHAIN_ABI = [
         internalType: "address",
         name: "",
         type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "amountInWei",
-        type: "uint256",
-      },
-      {
-        internalType: "uint8",
-        name: "_token",
-        type: "uint8",
-      },
-    ],
-    name: "getValueInUSD",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
       },
     ],
     stateMutability: "view",

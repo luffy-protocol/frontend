@@ -67,14 +67,14 @@ export default function PlaceBet({
           <div className="flex flex-col justify-center items-center ">
             <div className="flex w-full font-stalinist text-[10px] justify-center space-x-[20%]">
               <div className="flex">
-                <p className="text-[10px]">Chain</p>
+                <p className="text-[10px] text-gray-300">Chain</p>
                 {chain == 0 && showErrorMessage && (
                   <ErrorTooltip message="Please select a chain to continue ⚠️" />
                 )}
               </div>
               {chain > 1 ? <CcipTooltip chain={chain} /> : <div></div>}
               <div className="flex">
-                <p className="text-[10px]">Token</p>
+                <p className="text-[10px] text-gray-300">Token</p>
                 {token == 0 && showErrorMessage && (
                   <ErrorTooltip message="Please select token to continue ⚠️" />
                 )}
@@ -128,7 +128,7 @@ export default function PlaceBet({
           <div className="flex gap-10  ">
             <div className="flex mt-2 justify-center items-center">
               <img src="/assets/gas.png" alt="chain" className=" -mt-1" />
-              <p className="text-[10px] font-stalinist text-center">
+              <p className="text-[10px] font-stalinist text-center text-gray-300">
                 {Number(
                   formatGwei(BigInt(gasPrice == "0.0" ? "0" : gasPrice))
                 ).toFixed(3)}{" "}

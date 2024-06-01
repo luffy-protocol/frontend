@@ -6,11 +6,11 @@ import {
   sepolia,
 } from "viem/chains";
 const DEPLOYMENTS: Record<number, `0x${string}`> = {
-  43113: "0x6BD5184C69078CF4DC576c78c2B2Bb2E55d53eb0",
-  11155111: "0xa12Ffa8429b6c0e4AcFD93aFbd30705bBE254FD5",
-  84532: "0x513F5406f1C40874f3c0cD078E606897DC29F67b",
-  421614: "0x87dd08be032a03d937F2A8003dfa9C52821cbaB9",
-  11155420: "0xAa25e4A9db1F3e493B9a20279572e4F15Ce6eEa2",
+  43113: "0x51b5703fF5e22A2AFdC5408163212dcF8aef3303",
+  11155111: "0x89d5da61548205E755874d7f67Ad00F90680440d",
+  84532: "0x5c248293e02A2FE29B0a8d72d3AB4124CFac56e7",
+  421614: "0x826dF7f9fEe3760321371d46a5a744bB2fcA4aef",
+  11155420: "0x9b7a42bFE8f8Df9d43f368Baf9480fB7193Cf06a",
 };
 
 const VRF_COORDINATORS: Record<number, string> = {
@@ -2361,6 +2361,10 @@ const CROSSCHAIN_NO_VRF_ABI = [
     type: "event",
   },
   {
+    stateMutability: "payable",
+    type: "fallback",
+  },
+  {
     inputs: [],
     name: "BET_AMOUNT_IN_USDC",
     outputs: [
@@ -2829,6 +2833,10 @@ const CROSSCHAIN_NO_VRF_ABI = [
     stateMutability: "view",
     type: "function",
   },
+  {
+    stateMutability: "payable",
+    type: "receive",
+  },
 ];
 const CROSSCHAIN_ABI = [
   {
@@ -3120,6 +3128,10 @@ const CROSSCHAIN_ABI = [
     ],
     name: "OwnershipTransferred",
     type: "event",
+  },
+  {
+    stateMutability: "payable",
+    type: "fallback",
   },
   {
     inputs: [],
@@ -3802,6 +3814,10 @@ const CROSSCHAIN_ABI = [
     ],
     stateMutability: "view",
     type: "function",
+  },
+  {
+    stateMutability: "payable",
+    type: "receive",
   },
 ];
 

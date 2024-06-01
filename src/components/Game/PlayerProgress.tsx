@@ -11,13 +11,13 @@ export default function PlayerProgress({ noPlayers }: { noPlayers: number }) {
           .map((_, index) => (
             <div
               key={index}
-              className={`w-[28px] h-3 rounded-sm bg-white ml-1 ${
+              className={`w-[28px] h-3 rounded-sm bg-[#d94956] ml-1 ${
                 index < noPlayers ? "" : "opacity-0"
               }`}
             />
           ))}
         {noPlayers == 11 && (
-          <div className="w-0 h-0 transform rotate-0 border-b-[11px] ml-1 border-b-transparent border-l-[10px] border-l-white border-r-[5px] border-r-transparent "></div>
+          <div className="w-0 h-0 transform rotate-0 border-b-[11px] ml-1 border-b-transparent border-l-[10px] border-l-[#d94956] border-r-[5px] border-r-transparent "></div>
         )}{" "}
       </div>
     </div>

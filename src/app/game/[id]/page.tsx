@@ -14,6 +14,7 @@ import resolveLabels from "@/utils/game/resolveLabels";
 import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
+import { fetchGameRemapping } from "@/utils/game/getRemapping";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -120,11 +121,23 @@ function Page({ params }: { params: { id: string } }) {
                 if (walletConnector == null || walletConnector == undefined)
                   return;
                 setChain(chain);
-                const squadHash = computeSquadHash(
-                  new Uint8Array(
-                    playerPositions.map((player) => Number(player.id))
-                  )
+                let gameData = JSON.parse(
+                  localStorage.getItem("gameData") || "{}"
                 );
+                const playerIds = gameData[params.id];
+                const playerIdRemapping = await fetchGameRemapping({
+                  gameId: "0x" + Number(params.id).toString(16),
+                });
+
+                if (playerIds == null || playerIds == undefined) return;
+
+                const remappedIds = playerIds.map(
+                  (id: any) => playerIdRemapping[id.toString()]
+                );
+                console.log("Remapped Ids");
+                console.log(remappedIds);
+
+                const squadHash = computeSquadHash(new Uint8Array(remappedIds));
                 console.log("Squad Hash computed");
                 console.log(squadHash);
                 setLabels([]);
@@ -203,6 +216,7 @@ function Page({ params }: { params: { id: string } }) {
       {open && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 bg-black bg-opacity-50 backdrop-blur-md">
           <ChoosePlayer
+            gameId={params.id}
             setopen={setOpen}
             index={index}
             setPlayerPositions={setPlayerPositions}

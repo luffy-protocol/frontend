@@ -6,6 +6,7 @@ import { getPlayerById } from "@/utils/player/getPlayerById";
 
 interface PlayerCardProps {
   id: number;
+  gameId: string;
   setPlayerPositions: (player: any) => void;
   setopen: (open: boolean) => void;
   index: number;
@@ -15,6 +16,7 @@ interface PlayerCardProps {
 
 const PlayerDetailCard: React.FC<PlayerCardProps> = ({
   id,
+  gameId,
   setPlayerPositions,
   setopen,
   index,
@@ -44,6 +46,7 @@ const PlayerDetailCard: React.FC<PlayerCardProps> = ({
 
   return (
     <PlayerDetails
+      gameId={gameId}
       id={id}
       playerData={playerData}
       setPlayerPositions={setPlayerPositions}
@@ -93,6 +96,7 @@ interface PlayerDetailProps {
   id: number;
   index: number;
   playerData: any;
+  gameId: string;
   setPlayerPositions: (player: any) => void;
   setopen: (open: boolean) => void;
   setCaptain: (captain: any) => void;
@@ -101,6 +105,7 @@ interface PlayerDetailProps {
 
 const PlayerDetails: React.FC<PlayerDetailProps> = ({
   playerData,
+  gameId,
   id,
   setopen,
   setPlayerPositions,
@@ -110,6 +115,16 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
 }) => {
   const updatePlayerPosition = (index: number, newPlayerData: any) => {
     setPlayerPositions((prevPositions: any) => {
+      // Update player In local storage
+      let gameData = JSON.parse(localStorage.getItem("gameData") || "{}");
+      if (gameData[gameId] == null || gameData[gameId] == undefined) {
+        gameData[gameId] = Array(11).fill(0);
+      }
+      gameData[gameId][index] = parseInt(newPlayerData.id);
+      console.log("GAME DATA");
+      console.log(gameData);
+      localStorage.setItem("gameData", JSON.stringify(gameData));
+
       // Create a copy of the state to avoid mutation
       const updatedPositions = [...prevPositions];
 

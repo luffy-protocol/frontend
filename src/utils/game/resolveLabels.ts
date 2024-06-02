@@ -8,7 +8,7 @@ export default function resolveLabels({
   token: number;
   isRandom: boolean;
   chain: number;
-}) {
+}): { tempLabels: string[] } {
   let labels = [];
   if (token > 1) {
     if (token == 2) labels.push("Approve LINK");
@@ -22,4 +22,5 @@ export default function resolveLabels({
     labels.push("Receiving Crosschain Transaction");
   }
   setLabels(labels);
+  return { tempLabels: labels };
 }

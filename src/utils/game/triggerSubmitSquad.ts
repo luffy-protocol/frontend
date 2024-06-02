@@ -39,11 +39,18 @@ export default async function triggerSubmitSquad({
   squadHash,
   setTxHashes,
   setTxConfirmations,
-}: TriggerSubmitSquadProps): Promise<{ success: boolean; error: string }> {
+}: TriggerSubmitSquadProps): Promise<{
+  success: boolean;
+  error: string;
+  tempTxHahes: string[];
+  tempTxConfirmations: number;
+}> {
   const sourcePublicClient = createPublicClient({
     chain: CHAIN_RESOLVERS[chainToChainIds[chain]].chain,
     transport: http(CHAIN_RESOLVERS[chainToChainIds[chain]].transport),
   });
+  let _txHashes: string[] = [];
+  let _txConfirmations: number = 0;
 
   if (token != 1) {
     // Approve Tokens
@@ -56,6 +63,7 @@ export default async function triggerSubmitSquad({
 
     if (success) {
       setTxHashes(data.hash);
+      _txHashes.push(data.hash);
       const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
@@ -65,13 +73,18 @@ export default async function triggerSubmitSquad({
         return {
           success: false,
           error: data.error,
+          tempTxHahes: [],
+          tempTxConfirmations: 0,
         };
       }
       setTxConfirmations();
+      _txConfirmations++;
     } else
       return {
         success: false,
         error: data.error,
+        tempTxHahes: [],
+        tempTxConfirmations: 0,
       };
   }
   let txReceipt;
@@ -85,10 +98,9 @@ export default async function triggerSubmitSquad({
       token: token - 1,
       betAmount: betAmount,
     });
-    players[gameId][primaryWallet.address].txStatus = 1;
-    localStorage.setItem("players", JSON.stringify(players));
     if (success) {
       setTxHashes(data.hash);
+      _txHashes.push(data.hash);
       txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
@@ -98,13 +110,20 @@ export default async function triggerSubmitSquad({
         return {
           success: false,
           error: data.error,
+          tempTxHahes: [],
+          tempTxConfirmations: 0,
         };
       }
       setTxConfirmations();
+      _txConfirmations++;
+      players[gameId][primaryWallet.address].txStatus = 1;
+      localStorage.setItem("players", JSON.stringify(players));
     } else
       return {
         success: false,
         error: data.error,
+        tempTxHahes: [],
+        tempTxConfirmations: 0,
       };
   } else {
     const { success, data } = await placeBet({
@@ -120,6 +139,7 @@ export default async function triggerSubmitSquad({
     });
     if (success) {
       setTxHashes(data.hash);
+      _txHashes.push(data.hash);
       txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
@@ -129,26 +149,36 @@ export default async function triggerSubmitSquad({
         return {
           success: false,
           error: data.error,
+          tempTxHahes: [],
+          tempTxConfirmations: 0,
         };
       }
       setTxConfirmations();
+      _txConfirmations++;
     } else
       return {
         success: false,
         error: data.error,
+        tempTxHahes: [],
+        tempTxConfirmations: 0,
       };
   }
   if (chain > 1) {
-    players[gameId][primaryWallet.address].txStatus = 2;
-    console.log("Crosschain Tx Receipt");
-    console.log(txReceipt);
-    players[gameId][primaryWallet.address].messageId = "123";
+    if (isRandom) {
+      players[gameId][primaryWallet.address].txStatus = 3;
+      players[gameId][primaryWallet.address].chainId = chainToChainIds[chain];
+    } else {
+      players[gameId][primaryWallet.address].messageId =
+        txReceipt.logs[txReceipt.logs.length - 1].data;
+      players[gameId][primaryWallet.address].txStatus = 2;
+    }
     localStorage.setItem("players", JSON.stringify(players));
-    // TODO: wait for cross chain tx to receive
   }
 
   return {
     success: true,
     error: "",
+    tempTxHahes: _txHashes,
+    tempTxConfirmations: _txConfirmations,
   };
 }

@@ -63,8 +63,10 @@ function Page({ params }: { params: { id: string } }) {
       setHomeId(response[0].home_id);
       setStadium(response[0].venue);
     };
+
     (async function () {
       const players = JSON.parse(localStorage.getItem("players") || "{}");
+
       if (
         players != null &&
         players != undefined &&
@@ -80,6 +82,44 @@ function Page({ params }: { params: { id: string } }) {
           setPlayerPositions(
             players[params.id][primaryWallet.address as any].players
           );
+
+        if (
+          players[params.id][primaryWallet.address as any].captain != undefined
+        )
+          setCaptain(players[params.id][primaryWallet.address as any].captain);
+        if (
+          players[params.id][primaryWallet.address as any].viceCaptain !=
+          undefined
+        )
+          setviceCaptain(
+            players[params.id][primaryWallet.address as any].viceCaptain
+          );
+        if (
+          players[params.id][primaryWallet.address as any].txStatus != undefined
+        ) {
+          let currentStatus =
+            players[params.id][primaryWallet.address as any].txStatus;
+          if (currentStatus != 0) {
+            setLabels(players[params.id][primaryWallet.address as any].labels);
+            setTxConfirmed(
+              players[params.id][primaryWallet.address as any].confirmations
+            );
+            setTxHashes(
+              players[params.id][primaryWallet.address as any].txHashes
+            );
+            setTransactionLoading(true);
+          } else if (currentStatus != 3) {
+            // This means it is just waiting for randomness OR just waiting for a crosschain transaction OR just received a random number and is waiting for a crosschain transaction
+            // fetch subgraph and update status
+            // Just fetch the betplaced event for the caller address and gameId
+          } else {
+            // This means it is waiting for randomness followed by Crosschain transaction
+            // fetch subgraph and update status
+            // TODO: To listen to random number of another chain is tricky
+          }
+        }
+        console.log("Players");
+        console.log(players);
         await getFixtureDetails();
         await getPredictionState();
         setIsLoaded(true);
@@ -170,7 +210,7 @@ function Page({ params }: { params: { id: string } }) {
                   setTxHashes([]);
                   setError("");
                   setTxConfirmed(0);
-                  resolveLabels({
+                  const { tempLabels } = resolveLabels({
                     setLabels,
                     token: token,
                     chain: chain,
@@ -179,32 +219,34 @@ function Page({ params }: { params: { id: string } }) {
                   console.log("Labels resolved");
                   setTransactionLoading(true);
 
-                  const { success, error: callError } =
-                    await triggerSubmitSquad({
-                      gameId: parseInt(params.id),
-                      players: players,
-                      primaryWallet,
-                      chain,
-                      token,
-                      betAmount,
-                      totalValue,
-                      isRandom,
-                      captain: 1,
-                      viceCaptain: 2,
-                      squadHash,
-                      setTxHashes: (hash: string) => {
-                        setTxHashes((hashes) => {
-                          return [...hashes, hash];
-                        });
-                      },
-                      setTxConfirmations: () => {
-                        setTxConfirmed((confirmed) => {
-                          return confirmed + 1;
-                        });
-                      },
-                    });
-                  const delay = (ms: number) =>
-                    new Promise((resolve) => setTimeout(resolve, ms));
+                  const {
+                    success,
+                    error: callError,
+                    tempTxHahes,
+                    tempTxConfirmations,
+                  } = await triggerSubmitSquad({
+                    gameId: parseInt(params.id),
+                    players: players,
+                    primaryWallet,
+                    chain,
+                    token,
+                    betAmount,
+                    totalValue,
+                    isRandom,
+                    captain: 1,
+                    viceCaptain: 2,
+                    squadHash,
+                    setTxHashes: (hash: string) => {
+                      setTxHashes((hashes) => {
+                        return [...hashes, hash];
+                      });
+                    },
+                    setTxConfirmations: () => {
+                      setTxConfirmed((confirmed) => {
+                        return confirmed + 1;
+                      });
+                    },
+                  });
 
                   if (!success) {
                     console.log("Error in transaction");
@@ -213,9 +255,30 @@ function Page({ params }: { params: { id: string } }) {
                       "Transasction Failed or User Rejected Transaction"
                     );
                   } else {
-                    await delay(5000);
-                    setTxHashes((prev) => [...prev, prev[0]]);
-                    setTxConfirmed((confirmed) => confirmed + 1);
+                    const players = JSON.parse(
+                      localStorage.getItem("players") || "{}"
+                    );
+                    const txStatus =
+                      players[params.id][primaryWallet.address as any].txStatus;
+
+                    console.log("LABELS");
+                    console.log(tempLabels);
+                    console.log("TX HASHES");
+                    console.log(tempTxHahes);
+                    console.log("TX CONFIRMED");
+                    console.log(tempTxConfirmations);
+
+                    if (txStatus != 0) {
+                      players[params.id][primaryWallet.address as any].labels =
+                        tempLabels;
+                      players[params.id][
+                        primaryWallet.address as any
+                      ].txHashes = tempTxHahes;
+                      players[params.id][
+                        primaryWallet.address as any
+                      ].confirmations = tempTxConfirmations;
+                      localStorage.setItem("players", JSON.stringify(players));
+                    }
                   }
                 }}
               />

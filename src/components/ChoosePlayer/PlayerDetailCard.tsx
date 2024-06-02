@@ -119,7 +119,12 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
   setCaptain,
   setViceCaptain,
 }) => {
-  const updatePlayerPosition = (index: number, newPlayerData: any) => {
+  const updatePlayerPosition = (
+    index: number,
+    newPlayerData: any,
+    captain: number,
+    viceCaptain: number
+  ) => {
     let gameData = JSON.parse(localStorage.getItem("players") || "{}");
     if (!gameData[gameId]) gameData[gameId] = {};
     if (!gameData[gameId][address as any])
@@ -127,6 +132,9 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
     if (!gameData[gameId][address as any].players)
       gameData[gameId][address as any].players = emptyPlayers;
     gameData[gameId][address as any].players[index] = newPlayerData;
+    if (captain !== 11) gameData[gameId][address as any].captain = captain;
+    if (viceCaptain !== 11)
+      gameData[gameId][address as any].viceCaptain = viceCaptain;
     localStorage.setItem("players", JSON.stringify(gameData));
     setPlayerPositions((prevPositions: any) => {
       // Create a copy of the state to avoid mutation
@@ -243,13 +251,18 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               onClick={() => {
                 if (playerData) {
                   setViceCaptain(index);
-                  updatePlayerPosition(index, {
-                    name: playerData?.player.name,
-                    id: playerData?.player.id as any,
-                    team: shortForm[
-                      playerData?.statistics[0].team.name as string
-                    ],
-                  });
+                  updatePlayerPosition(
+                    index,
+                    {
+                      name: playerData?.player.name,
+                      id: playerData?.player.id as any,
+                      team: shortForm[
+                        playerData?.statistics[0].team.name as string
+                      ],
+                    },
+                    11,
+                    index
+                  );
                   setopen(false);
                 }
               }}
@@ -267,13 +280,18 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
               onClick={() => {
                 if (playerData) {
                   setCaptain(index);
-                  updatePlayerPosition(index, {
-                    name: playerData?.player.name,
-                    id: playerData?.player.id as any,
-                    team: shortForm[
-                      playerData?.statistics[0].team.name as string
-                    ],
-                  });
+                  updatePlayerPosition(
+                    index,
+                    {
+                      name: playerData?.player.name,
+                      id: playerData?.player.id as any,
+                      team: shortForm[
+                        playerData?.statistics[0].team.name as string
+                      ],
+                    },
+                    index,
+                    11
+                  );
                   setopen(false);
                 }
               }}
@@ -291,11 +309,18 @@ const PlayerDetails: React.FC<PlayerDetailProps> = ({
             onClick={() => {
               console.log(playerData?.statistics[0].team.name);
 
-              updatePlayerPosition(index, {
-                name: playerData?.player.name,
-                id: playerData?.player.id as any,
-                team: shortForm[playerData?.statistics[0].team.name as string],
-              });
+              updatePlayerPosition(
+                index,
+                {
+                  name: playerData?.player.name,
+                  id: playerData?.player.id as any,
+                  team: shortForm[
+                    playerData?.statistics[0].team.name as string
+                  ],
+                },
+                11,
+                11
+              );
               setopen(false);
             }}
           >

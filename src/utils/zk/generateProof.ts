@@ -15,6 +15,7 @@ interface GenerateProofParams {
   allPlayerPointsMerkleRoot: string;
   captain: number;
   viceCaptain: number;
+  setError: (error: string) => void;
   isRandom: boolean;
   playerIds: number[];
   setTxConfirmed: (txConfirmed: boolean) => void;
@@ -35,6 +36,7 @@ export default async function generateProof(
     allPlayersPoints,
     allPlayerPointsMerkleRoot,
     isRandom,
+    setError,
   } = params;
 
   let signer_pub_x_key = [];
@@ -49,8 +51,6 @@ export default async function generateProof(
   console.log(results);
 
   const walletClient = await createWalletClientFromWallet(primaryWallet);
-
-  const allPointsMerkleRoot = computeMerkleRoot(allPlayersPoints);
 
   for (let i = 0; i < 11; i++) {
     const merklePathHexString = computeMerklePath(
@@ -68,21 +68,30 @@ export default async function generateProof(
     points_merkle_paths.push(merklePath);
   }
 
-  const squadHash = computeSquadHash(new Uint8Array(playerIds));
+  console.log("MERKLE PATH");
+  console.log(points_merkle_paths);
 
-  const sig = Buffer.from(
-    (
-      await walletClient.signMessage({
-        account: primaryWallet.address as `0x${string}`,
-        message: {
-          raw: stringToBytes(squadHash),
-        },
-      })
-    ).slice(2),
-    "hex"
-  );
-  setTxHashes(sig.toString("hex"));
-  setTxConfirmed(true);
+  const squadHash = computeSquadHash(new Uint8Array(playerIds));
+  let sig;
+  try {
+    sig = Buffer.from(
+      (
+        await walletClient.signMessage({
+          account: primaryWallet.address as `0x${string}`,
+          message: {
+            raw: stringToBytes(squadHash),
+          },
+        })
+      ).slice(2),
+      "hex"
+    );
+    setTxHashes(sig.toString("hex"));
+    setTxConfirmed(true);
+  } catch (e) {
+    setError("Error signing message or Signature rejected");
+    return { success: false, proof: "" };
+  }
+
   const publicKey = await recoverPublicKey({
     hash: Buffer.from(squadHash.slice(2), "hex"),
     signature: sig,
@@ -101,7 +110,7 @@ export default async function generateProof(
       player_points.map((point) => Array.from(point))
     ),
     all_player_points_merkle_root: JSON.stringify(
-      Array.from(toBytes(allPointsMerkleRoot))
+      Array.from(toBytes(allPlayerPointsMerkleRoot))
     ),
     selected_squad_hash: JSON.stringify(
       Array.from(Buffer.from(squadHash.slice(2), "hex"))

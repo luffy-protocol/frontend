@@ -2,6 +2,7 @@ import React from "react";
 import Timer from "./Timer";
 import Status from "./Status";
 import Button from "./Button";
+import Form from "@/components/Game/Form";
 
 interface FixtureDetails {
   away_id: number;
@@ -36,10 +37,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
               {/* Orlando */}
             </p>
             <div className=" self-start text-[10px] xl:text-[12px] flex gap-1 font-stalinist">
-              <p>W</p>
-              <p>L</p>
-              <p>W</p>
-              <p>W</p> <p>D</p>
+              <Form form={["W", "D", "W", "L", "W"]} />
             </div>
           </div>
           <div className=" self-start">
@@ -58,10 +56,7 @@ const FixtureCard: React.FC<{ fixture: FixtureDetails; status: number }> = ({
               </p>
             </div>
             <div className="self-end text-[10px] xl:text-[12px] flex gap-1 font-stalinist">
-              <p>W</p>
-              <p>L</p>
-              <p>W</p>
-              <p>W</p> <p>D</p>
+              <Form form={["W", "D", "W", "L", "W"]} />
             </div>
           </div>
         </div>

@@ -17,6 +17,7 @@ import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 import { getRemapping } from "@/utils/game/getRemapping";
 import { getPredictionState } from "@/utils/game/getPredictionState";
 import { getMaxIndex, getMaxValue, sumArray } from "@/utils/game/arrayHelpers";
+import { getPredictionStateCrosschain } from "@/utils/game/getPredictionStateCrosschain";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -111,19 +112,36 @@ function Page({ params }: { params: { id: string } }) {
             if (currentStatus != 3) {
               // This means it is just waiting for randomness OR just waiting for a crosschain transaction OR just received a random number and is waiting for a crosschain transaction
               if (fetchedPrediction != null || fetchedPrediction != undefined) {
-                setTxConfirmed((prevConf) => prevConf + 1);
                 setTxHashes((hashes) => [
                   ...hashes,
                   fetchedPrediction.transactionHash,
                 ]);
+                setTxConfirmed((prevConf) => prevConf + 1);
+
                 players[params.id][primaryWallet.address as any].txStatus = 0;
                 setCaptain(fetchedPrediction.captain);
                 setviceCaptain(fetchedPrediction.viceCaptain);
               }
             } else {
-              // This means it is waiting for randomness followed by Crosschain transaction
-              // fetch subgraph and update status
-              // TODO: To listen to random number of another chain is tricky
+              let fetchedCrosschainPrediction =
+                await getPredictionStateCrosschain({
+                  chain: players[params.id][primaryWallet.address as any].chain,
+                  gameId: "0x" + parseInt(params.id).toString(16),
+                  address: primaryWallet.address.toLocaleLowerCase(),
+                });
+              if (
+                fetchedCrosschainPrediction != null ||
+                fetchedCrosschainPrediction != undefined
+              ) {
+                setCaptain(fetchedCrosschainPrediction.captain);
+                setviceCaptain(fetchedCrosschainPrediction.viceCaptain);
+                setTxHashes((hashes) => [
+                  ...hashes,
+                  fetchedCrosschainPrediction.transactionHash,
+                ]);
+                setTxConfirmed((prevConf) => prevConf + 1);
+                players[params.id][primaryWallet.address as any].txStatus = 4;
+              }
             }
           } else {
             if (fetchedPrediction != null || fetchedPrediction != undefined) {

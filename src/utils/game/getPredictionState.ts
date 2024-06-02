@@ -16,6 +16,7 @@ export const getPredictionState = async ({
           transactionHash
           captain
           viceCaptain
+          usedRandomness
         }
       }
     `;
@@ -26,7 +27,6 @@ export const getPredictionState = async ({
       { gameId, address }
     );
 
-    console.log("Fetched data:", data);
     return (data as any).predictions[0];
   } catch (error) {
     console.error("Error fetching ongoing fixtures:", error);

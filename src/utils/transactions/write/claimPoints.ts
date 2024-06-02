@@ -41,7 +41,12 @@ export default async function claimPoints(
       address: DEPLOYMENTS[43113] as `0x${string}`,
       abi: PROTOCOL_ABI,
       functionName: "claimPoints",
-      args: [gameId, formatPlayerIds(playerIds), totalPoints.toString(), proof],
+      args: [
+        gameId,
+        formatPlayerIds(playerIds),
+        totalPoints.toString(),
+        "0x" + proof,
+      ],
       account: primaryWallet.address as `0x${string}`,
     });
     const tx = await walletClient.writeContract(request);

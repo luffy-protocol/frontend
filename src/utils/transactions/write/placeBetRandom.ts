@@ -43,7 +43,7 @@ export default async function placeBetRandom(
       abi: chainId == 43113 ? PROTOCOL_ABI : CROSSCHAIN_ABI,
       functionName: "makeSquadAndPlaceBetRandom",
       value: BigInt(value),
-      gas: BigInt("300000"),
+      gas: chainId == 43113 ? BigInt("300000") : undefined,
       args: [gameId.toString(), squadHash, betAmount, token],
       account: primaryWallet.address as `0x${string}`,
     });

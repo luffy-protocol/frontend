@@ -123,7 +123,6 @@ function Page({ params }: { params: { id: string } }) {
             status == 0 ? (
               <PlaceBet
                 selectedPlayersCount={noPlayers}
-                setTransactionLoading={setTransactionLoading}
                 captainAndViceCaptainSet={
                   captain !== 11 && viceCaptain !== 11 && captain != viceCaptain
                 }
@@ -163,10 +162,13 @@ function Page({ params }: { params: { id: string } }) {
 
                   players[params.id][primaryWallet.address as any].squadHash =
                     squadHash;
+
+                  players[params.id][primaryWallet.address as any].txStatus = 0;
                   localStorage.setItem("players", JSON.stringify(players));
 
                   setLabels([]);
                   setTxHashes([]);
+                  setError("");
                   setTxConfirmed(0);
                   resolveLabels({
                     setLabels,
@@ -175,10 +177,12 @@ function Page({ params }: { params: { id: string } }) {
                     isRandom: isRandom,
                   });
                   console.log("Labels resolved");
+                  setTransactionLoading(true);
 
                   const { success, error: callError } =
                     await triggerSubmitSquad({
                       gameId: parseInt(params.id),
+                      players: players,
                       primaryWallet,
                       chain,
                       token,

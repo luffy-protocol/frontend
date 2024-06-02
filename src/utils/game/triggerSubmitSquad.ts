@@ -13,6 +13,7 @@ interface TriggerSubmitSquadProps {
   gameId: number;
   chain: number;
   token: number;
+  players: any;
   totalValue: string;
   betAmount: string;
   isRandom: boolean;
@@ -25,6 +26,7 @@ interface TriggerSubmitSquadProps {
 }
 
 export default async function triggerSubmitSquad({
+  players,
   gameId,
   primaryWallet,
   chain,
@@ -72,6 +74,7 @@ export default async function triggerSubmitSquad({
         error: data.error,
       };
   }
+  let txReceipt;
   if (isRandom) {
     const { success, data } = await placeBetRandom({
       primaryWallet,
@@ -82,9 +85,11 @@ export default async function triggerSubmitSquad({
       token: token - 1,
       betAmount: betAmount,
     });
+    players[gameId][primaryWallet.address].txStatus = 1;
+    localStorage.setItem("players", JSON.stringify(players));
     if (success) {
       setTxHashes(data.hash);
-      const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
+      txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
       console.log("Place Bet Random Receipt");
@@ -115,7 +120,7 @@ export default async function triggerSubmitSquad({
     });
     if (success) {
       setTxHashes(data.hash);
-      const txReceipt = await sourcePublicClient.waitForTransactionReceipt({
+      txReceipt = await sourcePublicClient.waitForTransactionReceipt({
         hash: data.hash as `0x${string}`,
       });
       console.log("Place Bet Receipt");
@@ -134,6 +139,11 @@ export default async function triggerSubmitSquad({
       };
   }
   if (chain > 1) {
+    players[gameId][primaryWallet.address].txStatus = 2;
+    console.log("Crosschain Tx Receipt");
+    console.log(txReceipt);
+    players[gameId][primaryWallet.address].messageId = "123";
+    localStorage.setItem("players", JSON.stringify(players));
     // TODO: wait for cross chain tx to receive
   }
 

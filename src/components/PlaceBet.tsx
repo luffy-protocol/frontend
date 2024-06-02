@@ -17,7 +17,6 @@ import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 
 export default function PlaceBet({
   selectedPlayersCount,
-  setTransactionLoading,
   captainAndViceCaptainSet,
   triggerTransaction,
 }: PlaceBetProps) {
@@ -235,7 +234,6 @@ export default function PlaceBet({
                     token != 0 &&
                     (enableRandomness ? true : captainAndViceCaptainSet)
                   ) {
-                    setTransactionLoading(true);
                     let totalValue = parseEther(
                       (Number(vrffee) + Number(crosschainfee)).toString()
                     );

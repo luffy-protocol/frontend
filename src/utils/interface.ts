@@ -79,7 +79,6 @@ interface UserData {
 }
 interface PlaceBetProps {
   selectedPlayersCount: number;
-  setTransactionLoading: (loading: boolean) => void;
   captainAndViceCaptainSet: boolean;
   triggerTransaction: (params: TriggerTransactionProps) => Promise<void>;
 }

@@ -257,12 +257,11 @@ function Page({ params }: { params: { id: string } }) {
                     const txStatus =
                       players[params.id][primaryWallet.address as any].txStatus;
 
-                    console.log("LABELS");
-                    console.log(tempLabels);
-                    console.log("TX HASHES");
-                    console.log(tempTxHahes);
-                    console.log("TX CONFIRMED");
-                    console.log(tempTxConfirmations);
+                    players[params.id][primaryWallet.address as any].captain =
+                      captain;
+                    players[params.id][
+                      primaryWallet.address as any
+                    ].viceCaptain = viceCaptain;
 
                     if (txStatus != 0) {
                       players[params.id][primaryWallet.address as any].chain =

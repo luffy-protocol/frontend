@@ -70,7 +70,7 @@ export default function Results({
             <div className="flex w-full px-16 mt-2">
               <div className="flex justify-center items-center fit ">
                 <img
-                  src={`https://media.api-sports.io/football/players/153.png`}
+                  src={`https://media.api-sports.io/football/players/${topPlayer.id}.png`}
                   alt="toppoints"
                   className="w-20 flex justify-center items-center border-[2px] bg-black border-red-400 animate__pulse hover:animate__pulse-hover"
                 />

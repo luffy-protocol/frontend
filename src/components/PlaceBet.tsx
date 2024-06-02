@@ -33,7 +33,6 @@ export default function PlaceBet({
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [gasPrice, setGasPrice] = useState("0.0");
   const [availableBalance, setAvailableBalance] = useState("0.0");
-  const [avaialbleNativeBalance, setAvailableNativeBalance] = useState("0.0");
   useEffect(() => {
     resolveBet(token, chain, setBetAmount, setBetAmountLoading);
   }, [chain, token]);
@@ -52,45 +51,6 @@ export default function PlaceBet({
       setVrfFee("0.0");
     }
   }, [chain, enableRandomness]);
-
-  useEffect(() => {
-    const fetchBalance = async () => {
-      if (primaryWallet) {
-        const balance = await getTokenBalance(
-          chain,
-          token - 1,
-          primaryWallet.address as `0x${string}`
-        );
-        walletConnector?.getBalance().then((balance) => {
-          console.log(balance);
-          setAvailableNativeBalance(balance!);
-        });
-        if (balance) {
-          setAvailableBalance(balance);
-        }
-      }
-    };
-    if (!primaryWallet || !chain || !token) return;
-    if (token == 1) {
-      walletConnector?.getBalance().then((balance) => {
-        console.log(balance);
-        setAvailableNativeBalance(balance!);
-      });
-    } else {
-      fetchBalance();
-    }
-  }, [primaryWallet, chain, token]);
-
-  const CheckAvailable = () => {
-    if (token == 1) {
-      return Number(avaialbleNativeBalance) >= Number(betamount);
-    } else {
-      return (
-        Number(availableBalance) >= Number(betamount) &&
-        Number(avaialbleNativeBalance) >= Number(crosschainfee) + Number(vrffee)
-      );
-    }
-  };
 
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
@@ -274,8 +234,7 @@ export default function PlaceBet({
                     selectedPlayersCount == 11 &&
                     chain != 0 &&
                     token != 0 &&
-                    (enableRandomness ? true : captainAndViceCaptainSet) &&
-                    CheckAvailable()
+                    (enableRandomness ? true : captainAndViceCaptainSet)
                   ) {
                     let totalValue = parseEther(
                       (Number(vrffee) + Number(crosschainfee)).toString()

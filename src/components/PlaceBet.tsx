@@ -305,6 +305,9 @@ export default function PlaceBet({
                   Submit Squad
                 </span>
               </button>
+              {showErrorMessage && (
+                <ErrorTooltip message={`Insufficient Funds ⚠️`} />
+              )}
             </div>
           </div>
         </div>

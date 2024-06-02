@@ -1,13 +1,16 @@
 import { encodePacked, keccak256 } from "viem";
-
+function padArrayWithZeros(array: number[]) {
+  const paddedLength = Math.pow(2, Math.ceil(Math.log2(array.length)));
+  return array.concat(
+    Array.from({ length: paddedLength - array.length }, () => 0)
+  );
+}
 export default function computeMerkleRoot(points: number[]): `0x${string}` {
-  const hashValues: `0x${string}`[] = points.map(
-    (point: number) =>
-      `0x${point.toString(16).padStart(64, "0")}` as `0x${string}`
+  const hexValues = padArrayWithZeros(points).map((point) =>
+    keccak256(`0x${point.toString(16).padStart(64, "0")}`)
   );
 
-  // Start the recursive computation
-  return recursiveMerkleRoot(hashValues);
+  return recursiveMerkleRoot(hexValues);
 }
 
 function recursiveMerkleRoot(hashes: `0x${string}`[]): `0x${string}` {

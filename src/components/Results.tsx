@@ -91,13 +91,13 @@ export default function Results({
               </div>
             </div>
           </div>
-          <div className="flex w-full justify-start ">
+          <div className="flex flex-col w-full justify-center items-center ">
             <div className="flex font-stalinist capitalize  pl-10">
-              <div className=" text-purple-600 sm:text-md text-sm animate__fadeIn">
+              <div className=" text-purple-600 sm:text-md text-xl animate__fadeIn">
                 <p>Your Points &nbsp; </p>
               </div>
             </div>
-            <div className="text-sm flex justify-start items-center w-fit ">
+            <div className="text-md flex justify-start items-center w-fit ">
               <p className="animate__countUp">{totalPoints} </p>
             </div>
           </div>

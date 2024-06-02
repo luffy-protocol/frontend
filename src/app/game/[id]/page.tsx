@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
-import fixtureById from "@/utils/fixtures/fetchFixtureById";
 import { emptyPlayers } from "@/utils/constants";
 import { Player, TriggerTransactionProps } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
@@ -15,9 +14,8 @@ import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 import { getRemapping } from "@/utils/game/getRemapping";
-import { getPredictionState } from "@/utils/game/getPredictionState";
 import { getMaxIndex, getMaxValue, sumArray } from "@/utils/game/arrayHelpers";
-import { getPredictionStateCrosschain } from "@/utils/game/getPredictionStateCrosschain";
+import computeGamePageState from "@/utils/game/computeGamePageState";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -46,140 +44,26 @@ function Page({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     if (primaryWallet == null || primaryWallet == undefined) return;
-    const getPrediction = async (): Promise<any> => {
-      const fetchedPrediction = await getPredictionState({
-        gameId: "0x" + parseInt(params.id).toString(16),
-        address: primaryWallet.address.toLocaleLowerCase(),
-      });
-      return fetchedPrediction;
-    };
-    const getFixtureDetails = async () => {
-      const { response } = await fixtureById(parseInt(params.id));
-      setHomeTeam(response[0].home_name);
-      setAwayTeam(response[0].away_name);
-      setAwayId(response[0].away_id);
-      setHomeId(response[0].home_id);
-      setStadium(response[0].venue);
-    };
 
-    (async function () {
-      let fetchedPrediction = await getPrediction();
-
-      const players = JSON.parse(localStorage.getItem("players") || "{}");
-
-      if (
-        players != null &&
-        players != undefined &&
-        primaryWallet.address != undefined
-      ) {
-        if (!players[params.id]) players[params.id] = {};
-        if (!players[params.id][primaryWallet.address as any])
-          players[params.id][primaryWallet.address as any] = {};
-        if (!players[params.id][primaryWallet.address as any].players)
-          players[params.id][primaryWallet.address as any].players =
-            emptyPlayers;
-        else
-          setPlayerPositions(
-            players[params.id][primaryWallet.address as any].players
-          );
-
-        if (
-          players[params.id][primaryWallet.address as any].captain != undefined
-        )
-          setCaptain(players[params.id][primaryWallet.address as any].captain);
-        if (
-          players[params.id][primaryWallet.address as any].viceCaptain !=
-          undefined
-        )
-          setviceCaptain(
-            players[params.id][primaryWallet.address as any].viceCaptain
-          );
-        if (
-          players[params.id][primaryWallet.address as any].txStatus != undefined
-        ) {
-          let currentStatus =
-            players[params.id][primaryWallet.address as any].txStatus;
-          if (currentStatus != 0) {
-            setChain(players[params.id][primaryWallet.address as any].chain);
-            setLabels(players[params.id][primaryWallet.address as any].labels);
-            setTxConfirmed(
-              players[params.id][primaryWallet.address as any].confirmations
-            );
-            setTxHashes(
-              players[params.id][primaryWallet.address as any].txHashes
-            );
-            setTransactionLoading(true);
-            if (currentStatus != 3) {
-              // This means it is just waiting for randomness OR just waiting for a crosschain transaction OR just received a random number and is waiting for a crosschain transaction
-              if (fetchedPrediction != null || fetchedPrediction != undefined) {
-                setTxHashes((hashes) => [
-                  ...hashes,
-                  fetchedPrediction.transactionHash,
-                ]);
-                players[params.id][primaryWallet.address as any].txHashes = [
-                  ...players[params.id][primaryWallet.address as any].txHashes,
-                  fetchedPrediction.transactionHash,
-                ];
-                setTxConfirmed((prevConf) => prevConf + 1);
-                players[params.id][primaryWallet.address as any].confirmations =
-                  players[params.id][primaryWallet.address as any]
-                    .confirmations + 1;
-                players[params.id][primaryWallet.address as any].txStatus = 0;
-                players[params.id][primaryWallet.address as any].captain =
-                  fetchedPrediction.captain;
-                players[params.id][primaryWallet.address as any].viceCaptain =
-                  fetchedPrediction.viceCaptain;
-                setCaptain(fetchedPrediction.captain);
-                setviceCaptain(fetchedPrediction.viceCaptain);
-              }
-            } else {
-              let fetchedCrosschainPrediction =
-                await getPredictionStateCrosschain({
-                  chain: players[params.id][primaryWallet.address as any].chain,
-                  gameId: params.id,
-                  address: primaryWallet.address.toLocaleLowerCase(),
-                });
-              if (
-                fetchedCrosschainPrediction != null ||
-                fetchedCrosschainPrediction != undefined
-              ) {
-                setCaptain(fetchedCrosschainPrediction.captain);
-                setviceCaptain(fetchedCrosschainPrediction.viceCaptain);
-                setTxHashes((hashes) => [
-                  ...hashes,
-                  fetchedCrosschainPrediction.transactionHash,
-                ]);
-                players[params.id][primaryWallet.address as any].txHashes = [
-                  ...players[params.id][primaryWallet.address as any].txHashes,
-                  fetchedCrosschainPrediction.transactionHash,
-                ];
-                setTxConfirmed((prevConf) => prevConf + 1);
-                players[params.id][primaryWallet.address as any].confirmations =
-                  players[params.id][primaryWallet.address as any]
-                    .confirmations + 1;
-                players[params.id][primaryWallet.address as any].txStatus = 4;
-                players[params.id][primaryWallet.address as any].captain =
-                  fetchedCrosschainPrediction.captain;
-                players[params.id][primaryWallet.address as any].viceCaptain =
-                  fetchedCrosschainPrediction.viceCaptain;
-              }
-            }
-          } else {
-            if (fetchedPrediction != null || fetchedPrediction != undefined) {
-              setStatus(1);
-              setCaptain(fetchedPrediction.captain);
-              setviceCaptain(fetchedPrediction.viceCaptain);
-            }
-          }
-        }
-
-        console.log("Players");
-        console.log(players);
-        localStorage.setItem("players", JSON.stringify(players));
-        await getFixtureDetails();
-        setIsLoaded(true);
-      }
-    })();
+    computeGamePageState({
+      primaryWallet,
+      gameId: params.id,
+      setPlayerPositions,
+      setCaptain,
+      setviceCaptain,
+      setChain,
+      setLabels,
+      setTxConfirmed,
+      setTxHashes,
+      setTransactionLoading,
+      setStatus,
+      setHomeTeam,
+      setAwayTeam,
+      setStadium,
+      setHomeId,
+      setAwayId,
+      setIsLoaded,
+    });
   }, [primaryWallet, params.id]);
 
   useEffect(() => {
@@ -188,6 +72,14 @@ function Page({ params }: { params: { id: string } }) {
     );
     console.log(playerPositions.length);
   }, [playerPositions]);
+
+  useEffect(() => {
+    if (status == 1) {
+      (async function () {
+        console.log("Fetching results from smart contract");
+      })();
+    }
+  }, [status]);
 
   return (
     <DefaultLayout>

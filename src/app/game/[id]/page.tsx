@@ -16,6 +16,7 @@ import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 import { getRemapping } from "@/utils/game/getRemapping";
 import { getMaxIndex, getMaxValue, sumArray } from "@/utils/game/arrayHelpers";
 import computeGamePageState from "@/utils/game/computeGamePageState";
+import getGameResults from "@/utils/transactions/read/getGameResults";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -74,9 +75,13 @@ function Page({ params }: { params: { id: string } }) {
   }, [playerPositions]);
 
   useEffect(() => {
+    console.log("Status changed");
+    console.log(status);
     if (status == 1) {
       (async function () {
         console.log("Fetching results from smart contract");
+        const results = await getGameResults({ gameId: params.id });
+        console.log(results);
       })();
     }
   }, [status]);

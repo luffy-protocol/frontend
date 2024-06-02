@@ -17,6 +17,7 @@ import { getRemapping } from "@/utils/game/getRemapping";
 import { getMaxIndex, getMaxValue, sumArray } from "@/utils/game/arrayHelpers";
 import computeGamePageState from "@/utils/game/computeGamePageState";
 import getGameResults from "@/utils/transactions/read/getGameResults";
+import axios from "axios";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -25,7 +26,9 @@ function Page({ params }: { params: { id: string } }) {
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
 
   const [status, setStatus] = useState(0);
-  const [points, setPoints] = useState([10, 1, 2, 32, 23, 0, 0, 0, 89, 1, 2]);
+  const [points, setPoints] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+  const [allPlayerPointsMerkleRoot, setAllPlayerPointsMerkleRoot] =
+    useState("");
   const [captain, setCaptain] = useState(11);
   const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
@@ -42,6 +45,7 @@ function Page({ params }: { params: { id: string } }) {
   const [txConfirmed, setTxConfirmed] = useState<number>(0);
   const [error, setError] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [random, setRandom] = useState(false);
 
   useEffect(() => {
     if (primaryWallet == null || primaryWallet == undefined) return;
@@ -64,6 +68,7 @@ function Page({ params }: { params: { id: string } }) {
       setHomeId,
       setAwayId,
       setIsLoaded,
+      setRandom,
     });
   }, [primaryWallet, params.id]);
 
@@ -80,8 +85,41 @@ function Page({ params }: { params: { id: string } }) {
     if (status == 1) {
       (async function () {
         console.log("Fetching results from smart contract");
-        const results = await getGameResults({ gameId: params.id });
-        console.log(results);
+        const { success, data } = await getGameResults({ gameId: params.id });
+        if (success) {
+          const playerIdRemapping = await getRemapping({
+            gameId: "0x" + Number(params.id).toString(16),
+          });
+          const playerIds = playerPositions.map((player) => player.id);
+
+          const remappedIds = playerIds.map(
+            (id: any) => playerIdRemapping[id.toString()]
+          );
+          console.log("Remapped Ids");
+          console.log(remappedIds);
+          const results = (
+            await axios.get(
+              "https://amethyst-impossible-ptarmigan-368.mypinata.cloud/ipfs/" +
+                data[0] +
+                "?pinataGatewayToken=CUMCxB7dqGB8wEEQqGSGd9u1edmJpWmR9b0Oiuewyt5gs633nKmTogRoKZMrG4Vk"
+            )
+          ).data.points;
+          const fetchedPoints = remappedIds.map((id: any, index: number) => {
+            if (random) {
+              if (index == captain) return results[id] * 4;
+              else if (index == viceCaptain) return results[id] * 3;
+              else return results[id];
+            } else {
+              if (index == captain) return results[id] * 3;
+              else if (index == viceCaptain) return results[id] * 2;
+              else return results[id];
+            }
+          });
+          setPoints(fetchedPoints);
+          console.log("Points fetched");
+          console.log(fetchedPoints);
+          setAllPlayerPointsMerkleRoot(data[1]);
+        }
       })();
     }
   }, [status]);

@@ -18,6 +18,7 @@ export default async function computeGamePageState({
   setTransactionLoading,
   setStatus,
   setHomeTeam,
+  setRandom,
   setAwayTeam,
   setStadium,
   setHomeId,
@@ -25,6 +26,7 @@ export default async function computeGamePageState({
   setIsLoaded,
 }: {
   primaryWallet: Wallet;
+  setRandom: React.Dispatch<React.SetStateAction<boolean>>;
   gameId: string;
   setPlayerPositions: (players: Player[]) => void;
   setCaptain: (captainId: number) => void;
@@ -130,6 +132,7 @@ export default async function computeGamePageState({
           setStatus(1);
           setCaptain(fetchedPrediction.captain);
           setviceCaptain(fetchedPrediction.viceCaptain);
+          setRandom(fetchedPrediction.usedRandomness);
         }
       }
     }

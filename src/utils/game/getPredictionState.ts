@@ -16,6 +16,7 @@ export const getPredictionState = async ({
           transactionHash
           captain
           viceCaptain
+          usedRandomness
         }
       }
     `;

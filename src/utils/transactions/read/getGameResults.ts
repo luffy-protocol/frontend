@@ -5,7 +5,7 @@ interface GetGameResultsParams {
   gameId: string;
 }
 
-export default async function getGameResults(params: GetGameResultsParams) {
+export default async function getGameResults(params: GetGameResultsParams):Promise<{ success: boolean; data?: any; error?: any }>{
   try {
     const { gameId } = params;
     const publicClient = createPublicClient({
@@ -22,11 +22,13 @@ export default async function getGameResults(params: GetGameResultsParams) {
     return {
       success: true,
       data: data,
+      error:""
     };
   } catch (e) {
     return {
       success: false,
       error: e,
+      data:[]
     };
   }
 }

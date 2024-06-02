@@ -22,7 +22,7 @@ export default function Transaction({
   return (
     <div className="flex relative justify-center items-center w-1/2 h-2/3">
       <img
-        src="/assets/FixBorder1.svg"
+        src="/assets/ResultsBox.svg"
         className="w-fit relative z-10 mx-6 mt-16"
         key={1}
       />

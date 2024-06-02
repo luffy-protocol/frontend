@@ -82,7 +82,7 @@ export default async function generateProof(params: GenerateProofParams) {
       points_merkle_paths.map((path) => path.map((e) => Array.from(e)))
     ),
     captain: JSON.stringify(playerIds[captain]),
-    viceCaptain: JSON.stringify(playerIds[viceCaptain]),
+    vice_captain: JSON.stringify(playerIds[viceCaptain]),
     claimed_player_points: JSON.stringify(
       points.reduce((acc, currentValue) => acc + currentValue, 0)
     ),

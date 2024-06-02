@@ -25,13 +25,11 @@ export default function Results({
 }: ResultsProps) {
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
-      <img
-        src="/assets/FixBorder1.svg"
-        className="w-fit relative z-10 mx-6 mt-16"
-        key={1}
-      />
+      <div className="relative z-10 mx-2 mt-16">
+        <img src="/assets/ResultsBox.svg" className="w-fit h-2/3" />
+      </div>
 
-      <div className="absolute w-1/3 inset-y-80 z-20 mr-8 mt-40 top-[30%] h-2/3">
+      <div className="absolute w-1/3 inset-y-96  z-20 h-2/3">
         <div className="font-stalinist">
           <Status status={status} />
         </div>
@@ -80,17 +78,17 @@ export default function Results({
           <div className="text-sm flex justify-center items-center w-full mt-5">
             <p>{totalPoints} points</p>
           </div>
-          <div className="flex w-full justify-center items-center mt-4">
-            <div
-              className="bg-no-repeat w-fit bg-cover"
+          <div className="flex w-full justify-center items-center mt-6 ">
+            <button
+              className="bg-no-repeat w-fit h-[87px] bg-cover cursor-pointer"
               style={{
                 backgroundImage: `url('/assets/LoginBorder.svg')`,
               }}
             >
-              <span className="text-sm font-stalinist flex justify-center self-center py-2 ml-3 pr-3 cursor-pointer">
-                Claim
+              <span className="text-sm font-stalinist flex justify-center self-center pt-2   px-8 ">
+                Claim Points
               </span>
-            </div>
+            </button>
           </div>
         </div>
       </div>

@@ -312,6 +312,7 @@ function Page({ params }: { params: { id: string } }) {
                     allPlayerPointsMerkleRoot,
                     captain,
                     viceCaptain,
+                    setError,
                     isRandom: random,
                     playerIds: playerRemappedIds,
                     setTxHashes: (hash: string) => {

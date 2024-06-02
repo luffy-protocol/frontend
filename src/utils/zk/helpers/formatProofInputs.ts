@@ -21,8 +21,8 @@ export default function formatProofInputs(inputs: ProofInput): string {
     selected_squad_hash=${inputs.selected_squad_hash} 
     signer_pub_x_key=${inputs.signer_pub_x_key} 
     captain=${inputs.captain} 
-    is_random=${inputs.is_random} 
-    vice_captain=${inputs.vice_captain} 
+    isRandom=${inputs.is_random} 
+    viceCaptain=${inputs.vice_captain} 
     signer_pub_y_key=${inputs.signer_pub_y_key} 
     signature=${inputs.signature}`;
 

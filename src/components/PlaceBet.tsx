@@ -14,7 +14,7 @@ import { formatGwei, parseEther } from "viem";
 import CcipTooltip from "./Game/Tooltip/CcipTooltip";
 import { PlaceBetProps } from "@/utils/interface";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
-import { getBalance } from "@wagmi/core";
+import { getTokenBalance } from "@/utils/transactions/read/token/getTokenBalance";
 
 export default function PlaceBet({
   selectedPlayersCount,
@@ -32,6 +32,7 @@ export default function PlaceBet({
   const [betAmountLoading, setBetAmountLoading] = useState(true);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [gasPrice, setGasPrice] = useState("0.0");
+  const [availableBalance, setAvailableBalance] = useState("0.0");
   useEffect(() => {
     resolveBet(token, chain, setBetAmount, setBetAmountLoading);
   }, [chain, token]);
@@ -52,8 +53,28 @@ export default function PlaceBet({
   }, [chain, enableRandomness]);
 
   useEffect(() => {
-    console.log("");
-  }, [primaryWallet]);
+    const fetchBalance = async () => {
+      if (primaryWallet) {
+        const balance = await getTokenBalance(
+          chain,
+          token - 1,
+          primaryWallet.address as `0x${string}`
+        );
+        if (balance) {
+          setAvailableBalance(balance);
+        }
+      }
+    };
+    if (!primaryWallet || !chain || !token) return;
+    if (token == 1) {
+      walletConnector?.getBalance().then((balance) => {
+        console.log(balance);
+        setAvailableBalance(balance!);
+      });
+    } else {
+      fetchBalance();
+    }
+  }, [primaryWallet, chain, token]);
 
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">

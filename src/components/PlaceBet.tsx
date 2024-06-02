@@ -14,6 +14,7 @@ import { formatGwei, parseEther } from "viem";
 import CcipTooltip from "./Game/Tooltip/CcipTooltip";
 import { PlaceBetProps } from "@/utils/interface";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
+import { getBalance } from "@wagmi/core";
 
 export default function PlaceBet({
   selectedPlayersCount,
@@ -49,6 +50,10 @@ export default function PlaceBet({
       setVrfFee("0.0");
     }
   }, [chain, enableRandomness]);
+
+  useEffect(() => {
+    console.log("");
+  }, [primaryWallet]);
 
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">

@@ -2,6 +2,7 @@
 import Dropdown from "@/components/Game/Dropdown";
 import { chainToChainIds, dropdownElements } from "@/utils/constants";
 import resolveTokens from "@/utils/game/resolveTokens";
+import { getTokenBalance } from "@/utils/transactions/read/token/getTokenBalance";
 import { DynamicWidget, useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import React, { useEffect, useState } from "react";
 
@@ -88,6 +89,17 @@ export default function PlaceBet() {
           )}
         </p>
       )} */}
+      <button
+        onClick={async () => {
+          await getTokenBalance(
+            11155111,
+            selectedToken,
+            primaryWallet?.address as `0x${string}`
+          );
+        }}
+      >
+        Balance
+      </button>
     </div>
   );
 }

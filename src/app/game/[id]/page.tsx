@@ -15,20 +15,16 @@ import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 import { getRemapping } from "@/utils/game/getRemapping";
-import { getPredictionComplete } from "@/utils/game/getPredictionComplete";
+import { getPredictionsState } from "@/utils/game/getPredictionComplete";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
   const [index, setindex] = useState(0);
   const [open, setOpen] = useState(false);
-  const [time, setTime] = useState("1000");
   const [stadium, setStadium] = useState("Inter and co Patriots Point");
-  const [form1, setForm1] = useState(["L", "L", "W", "W", "L"]);
-  const [form2, setForm2] = useState(["W", "L", "D", "W", "L"]);
+
   const [status, setStatus] = useState(0);
-  const [points, setPoints] = useState([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-  const [gas, setGas] = useState(30);
-  const [transactionstep, setTransactionStep] = useState(0);
+  const [points, setPoints] = useState([10, 1, 2, 32, 23, 0, 0, 0, 89, 1, 2]);
   const [captain, setCaptain] = useState(11);
   const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
@@ -48,12 +44,12 @@ function Page({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     if (primaryWallet == null || primaryWallet == undefined) return;
-    const getPredictionState = async () => {
-      const isPredictionComplete = await getPredictionComplete({
+    const getPrediction = async (): Promise<any> => {
+      const fetchedPrediction = await getPredictionsState({
         gameId: "0x" + parseInt(params.id).toString(16),
         address: primaryWallet.address.toLocaleLowerCase(),
       });
-      if (isPredictionComplete) setStatus(1);
+      return fetchedPrediction;
     };
     const getFixtureDetails = async () => {
       const { response } = await fixtureById(parseInt(params.id));
@@ -65,6 +61,8 @@ function Page({ params }: { params: { id: string } }) {
     };
 
     (async function () {
+      let fetchedPrediction = await getPrediction();
+
       const players = JSON.parse(localStorage.getItem("players") || "{}");
 
       if (
@@ -100,6 +98,7 @@ function Page({ params }: { params: { id: string } }) {
           let currentStatus =
             players[params.id][primaryWallet.address as any].txStatus;
           if (currentStatus != 0) {
+            setChain(players[params.id][primaryWallet.address as any].chain);
             setLabels(players[params.id][primaryWallet.address as any].labels);
             setTxConfirmed(
               players[params.id][primaryWallet.address as any].confirmations
@@ -108,20 +107,36 @@ function Page({ params }: { params: { id: string } }) {
               players[params.id][primaryWallet.address as any].txHashes
             );
             setTransactionLoading(true);
-          } else if (currentStatus != 3) {
-            // This means it is just waiting for randomness OR just waiting for a crosschain transaction OR just received a random number and is waiting for a crosschain transaction
-            // fetch subgraph and update status
-            // Just fetch the betplaced event for the caller address and gameId
+            if (currentStatus != 3) {
+              // This means it is just waiting for randomness OR just waiting for a crosschain transaction OR just received a random number and is waiting for a crosschain transaction
+              if (fetchedPrediction != null || fetchedPrediction != undefined) {
+                setTxConfirmed((prevConf) => prevConf + 1);
+                setTxHashes((hashes) => [
+                  ...hashes,
+                  fetchedPrediction.transactionHash,
+                ]);
+                players[params.id][primaryWallet.address as any].txStatus = 0;
+                setCaptain(fetchedPrediction.captain);
+                setviceCaptain(fetchedPrediction.viceCaptain);
+              }
+            } else {
+              // This means it is waiting for randomness followed by Crosschain transaction
+              // fetch subgraph and update status
+              // TODO: To listen to random number of another chain is tricky
+            }
           } else {
-            // This means it is waiting for randomness followed by Crosschain transaction
-            // fetch subgraph and update status
-            // TODO: To listen to random number of another chain is tricky
+            if (fetchedPrediction != null || fetchedPrediction != undefined) {
+              setStatus(1);
+              setCaptain(fetchedPrediction.captain);
+              setviceCaptain(fetchedPrediction.viceCaptain);
+            }
           }
         }
+
         console.log("Players");
         console.log(players);
+        localStorage.setItem("players", JSON.stringify(players));
         await getFixtureDetails();
-        await getPredictionState();
         setIsLoaded(true);
       }
     })();
@@ -139,10 +154,10 @@ function Page({ params }: { params: { id: string } }) {
       <GameStatus
         team1={homeTeam}
         team2={awayTeam}
-        time={time}
+        time={"1000"}
         stadium={stadium}
-        form1={form1}
-        form2={form2}
+        form1={["L", "L", "W", "W", "L"]}
+        form2={["W", "L", "D", "W", "L"]}
         status={status}
         playersCount={0}
       />
@@ -269,6 +284,8 @@ function Page({ params }: { params: { id: string } }) {
                     console.log(tempTxConfirmations);
 
                     if (txStatus != 0) {
+                      players[params.id][primaryWallet.address as any].chain =
+                        chain;
                       players[params.id][primaryWallet.address as any].labels =
                         tempLabels;
                       players[params.id][

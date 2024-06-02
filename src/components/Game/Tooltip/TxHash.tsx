@@ -15,13 +15,17 @@ const TxHash = ({
 
   const handleMouseEnter = () => setIsVisible(true);
   const handleMouseLeave = () => setIsVisible(false);
-  const url = chainToExplorer[chain] + hash;
   return (
     <button
       className="cursor-pointer ml-4"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={() => window.open(url, "_blank")}
+      onClick={() => {
+        console.log("Chain that is clicked");
+        console.log(chain);
+        console.log("Clicked on tx hash", hash, chainToExplorer[chain] + hash);
+        window.open(chainToExplorer[chain] + hash, "_blank");
+      }}
     >
       <div className="relative inline-block">
         {/* <p className="text-purple-600 border-2 z-10 border-red-500 px-0.5 pr-1  text-center text-[10px]  py-0  hover:text-blue-500 cursor-pointer font-stalinist">

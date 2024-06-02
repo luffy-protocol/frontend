@@ -1,18 +1,21 @@
 import request, { gql } from "graphql-request";
 import axios from "axios";
 
-export const getPredictionComplete = async ({
+export const getPredictionsState = async ({
   gameId,
   address,
 }: {
   gameId: string;
   address: string;
-}): Promise<boolean> => {
+}): Promise<any> => {
   try {
     const query = gql`
       query MyQuery($address: String!, $gameId: String!) {
         predictions(where: { user: $address, game: $gameId }) {
           id
+          transactionHash
+          captain
+          viceCaptain
         }
       }
     `;
@@ -24,7 +27,7 @@ export const getPredictionComplete = async ({
     );
 
     console.log("Fetched data:", data);
-    return (data as any).predictions.length > 0;
+    return (data as any).predictions[0];
   } catch (error) {
     console.error("Error fetching ongoing fixtures:", error);
     return false;

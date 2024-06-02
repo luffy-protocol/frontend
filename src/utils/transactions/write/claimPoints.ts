@@ -29,6 +29,14 @@ export default async function claimPoints(
       chain: CHAIN_RESOLVERS[43113].chain,
       transport: http(CHAIN_RESOLVERS[43113].transport),
     });
+
+    console.log("ARGS");
+    console.log([
+      gameId,
+      formatPlayerIds(playerIds),
+      totalPoints.toString(),
+      proof,
+    ]);
     const { request } = await publicClient.simulateContract({
       address: DEPLOYMENTS[43113] as `0x${string}`,
       abi: PROTOCOL_ABI,

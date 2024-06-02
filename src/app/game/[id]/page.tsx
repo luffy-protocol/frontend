@@ -111,6 +111,8 @@ function Page({ params }: { params: { id: string } }) {
           ).data.points;
           setAllPlayersPoints(results);
           const fetchedPoints = remappedIds.map((id: any, index: number) => {
+            console.log("RANDOM");
+            console.log(random);
             if (random) {
               if (index == captain) return results[id] * 4;
               else if (index == viceCaptain) return results[id] * 3;

@@ -50,6 +50,24 @@ export default async function generateProof(
   console.log("RESULTS");
   console.log(results);
 
+  const totalPoints = results.reduce(
+    (acc, currentValue) => acc + currentValue,
+    0
+  );
+  console.log("TOTAL POINTS");
+  console.log(totalPoints);
+  const revertedResults = results.map((result, index) => {
+    if (isRandom) {
+      if (index == captain) return result / 4;
+      else if (index == viceCaptain) return result / 3;
+      else return result;
+    } else {
+      if (index == captain) return result / 3;
+      else if (index == viceCaptain) return result / 2;
+      else return result;
+    }
+  });
+
   const walletClient = await createWalletClientFromWallet(primaryWallet);
 
   for (let i = 0; i < 11; i++) {
@@ -57,19 +75,16 @@ export default async function generateProof(
       playerIds[i],
       allPlayersPoints
     );
-    console.log(merklePathHexString);
-    console.log(`0x${(results[i] as any).toString(16).padStart(64, "0")}`);
     player_points.push(
-      hexToBytes(`0x${(results[i] as any).toString(16).padStart(64, "0")}`)
+      hexToBytes(
+        `0x${(revertedResults[i] as any).toString(16).padStart(64, "0")}`
+      )
     );
     const merklePath = merklePathHexString.map((element) =>
       hexToBytes(element)
     );
     points_merkle_paths.push(merklePath);
   }
-
-  console.log("MERKLE PATH");
-  console.log(points_merkle_paths);
 
   const squadHash = computeSquadHash(new Uint8Array(playerIds));
   let sig;
@@ -118,11 +133,9 @@ export default async function generateProof(
     player_points_merkle_paths: JSON.stringify(
       points_merkle_paths.map((path) => path.map((e) => Array.from(e)))
     ),
-    captain: JSON.stringify(playerIds[captain]),
-    vice_captain: JSON.stringify(playerIds[viceCaptain]),
-    claimed_player_points: JSON.stringify(
-      results.reduce((acc, currentValue) => acc + currentValue, 0)
-    ),
+    captain: JSON.stringify(captain),
+    vice_captain: JSON.stringify(viceCaptain),
+    claimed_player_points: JSON.stringify(totalPoints),
     is_random: JSON.stringify(isRandom),
   };
   console.log("PROOF INPUTS");

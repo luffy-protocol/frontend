@@ -19,6 +19,7 @@ import computeGamePageState from "@/utils/game/computeGamePageState";
 import getGameResults from "@/utils/transactions/read/getGameResults";
 import axios from "axios";
 import generateProof from "@/utils/zk/generateProof";
+import claimPoints from "@/utils/transactions/write/claimPoints";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -331,6 +332,32 @@ function Page({ params }: { params: { id: string } }) {
                   } else {
                     console.log("Proof generated");
                     console.log(proof);
+                    setTxHashes((hashes) => {
+                      return [...hashes, proof.slice(0, 6) + proof.slice(-6)];
+                    });
+
+                    setTxConfirmed((confirmed) => {
+                      return confirmed + 1;
+                    });
+
+                    const { success, data } = await claimPoints({
+                      primaryWallet,
+                      proof,
+                      gameId: params.id,
+                      playerIds: playerRemappedIds,
+                      totalPoints: sumArray(points),
+                    });
+                    if (!success) {
+                      setError("Error claiming points");
+                    } else {
+                      console.log("Points claimed");
+                      setTxHashes((hashes) => {
+                        return [...hashes, data];
+                      });
+                      setTxConfirmed((confirmed) => {
+                        return confirmed + 1;
+                      });
+                    }
                   }
                 }}
               />

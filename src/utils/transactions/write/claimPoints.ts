@@ -18,7 +18,9 @@ interface ClaimPointsParams {
   playerIds: number[];
   totalPoints: number;
 }
-export default async function claimPoints(params: ClaimPointsParams) {
+export default async function claimPoints(
+  params: ClaimPointsParams
+): Promise<{ success: boolean; data: any; error: any }> {
   const { primaryWallet, proof, gameId, playerIds, totalPoints } = params;
 
   try {
@@ -37,16 +39,14 @@ export default async function claimPoints(params: ClaimPointsParams) {
     const tx = await walletClient.writeContract(request);
     return {
       success: true,
-      data: {
-        hash: tx,
-      },
+      data: tx,
+      error: "",
     };
   } catch (e) {
     return {
       success: false,
-      data: {
-        error: e,
-      },
+      error: e,
+      data: "",
     };
   }
 }

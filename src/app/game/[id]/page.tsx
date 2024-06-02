@@ -116,9 +116,19 @@ function Page({ params }: { params: { id: string } }) {
                   ...hashes,
                   fetchedPrediction.transactionHash,
                 ]);
+                players[params.id][primaryWallet.address as any].txHashes = [
+                  ...players[params.id][primaryWallet.address as any].txHashes,
+                  fetchedPrediction.transactionHash,
+                ];
                 setTxConfirmed((prevConf) => prevConf + 1);
-
+                players[params.id][primaryWallet.address as any].confirmations =
+                  players[params.id][primaryWallet.address as any]
+                    .confirmations + 1;
                 players[params.id][primaryWallet.address as any].txStatus = 0;
+                players[params.id][primaryWallet.address as any].captain =
+                  fetchedPrediction.captain;
+                players[params.id][primaryWallet.address as any].viceCaptain =
+                  fetchedPrediction.viceCaptain;
                 setCaptain(fetchedPrediction.captain);
                 setviceCaptain(fetchedPrediction.viceCaptain);
               }
@@ -126,7 +136,7 @@ function Page({ params }: { params: { id: string } }) {
               let fetchedCrosschainPrediction =
                 await getPredictionStateCrosschain({
                   chain: players[params.id][primaryWallet.address as any].chain,
-                  gameId: "0x" + parseInt(params.id).toString(16),
+                  gameId: params.id,
                   address: primaryWallet.address.toLocaleLowerCase(),
                 });
               if (
@@ -139,8 +149,19 @@ function Page({ params }: { params: { id: string } }) {
                   ...hashes,
                   fetchedCrosschainPrediction.transactionHash,
                 ]);
+                players[params.id][primaryWallet.address as any].txHashes = [
+                  ...players[params.id][primaryWallet.address as any].txHashes,
+                  fetchedCrosschainPrediction.transactionHash,
+                ];
                 setTxConfirmed((prevConf) => prevConf + 1);
+                players[params.id][primaryWallet.address as any].confirmations =
+                  players[params.id][primaryWallet.address as any]
+                    .confirmations + 1;
                 players[params.id][primaryWallet.address as any].txStatus = 4;
+                players[params.id][primaryWallet.address as any].captain =
+                  fetchedCrosschainPrediction.captain;
+                players[params.id][primaryWallet.address as any].viceCaptain =
+                  fetchedCrosschainPrediction.viceCaptain;
               }
             }
           } else {

@@ -127,7 +127,11 @@ export const StepStatus = ({
           <TxErrorTooltip message={error} />
         ) : (
           txHash.length > 0 && (
-            <TxHash chain={chain} hash={txHash} confirmed={txConfirmed} />
+            <TxHash
+              chain={label == "Receiving Crosschain Transaction" ? 1 : chain}
+              hash={txHash}
+              confirmed={txConfirmed}
+            />
           )
         )}
       </div>

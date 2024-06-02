@@ -6,7 +6,7 @@ import {
   sepolia,
 } from "viem/chains";
 const DEPLOYMENTS: Record<number, `0x${string}`> = {
-  43113: "0x886b99Ee4B4130884f5c04AB6A934978F43bc364",
+  43113: "0xf97d85DF6c4D2b032645EE2C2D24423Ed66793f4",
   11155111: "0xCBe49DBE7bf83f8238b4Ae89c1c67Af17b48D526",
   84532: "0xB096d51062F906c4f72d394fe522C845c377370D",
   421614: "0xE54b2A824E59890183E9a6e50911aDee6A587a7B",
@@ -3985,7 +3985,7 @@ const chainToExplorer: Record<number, string> = {
   1: "https://testnet.snowtrace.io/tx/",
   2: "https://sepolia.etherscan.io/tx/",
   3: "https://sepolia.basescan.org/tx/",
-  4: "https://sepolia-optimism.etherscan.io/tx",
+  4: "https://sepolia-optimism.etherscan.io/tx/",
   5: "https://sepolia.arbiscan.io/tx/",
 };
 const chainToChainIds: Record<number, number> = {

@@ -7,14 +7,11 @@ export async function POST(req: Request, res: Response) {
   const SINDRI_API_KEY =
     process.env.NEXT_PUBLIC_SINDRI_API_KEY || "<your-key-here>";
 
-  // Use v1 of the Sindri API.
   axios.defaults.baseURL = "https://sindri.app/api/v1";
-  // Authorize all future requests with an `Authorization` header.
   axios.defaults.headers.common["Authorization"] = `Bearer ${SINDRI_API_KEY}`;
-  // Expect 2xx responses for all requests.
   axios.defaults.validateStatus = (status) => status >= 200 && status < 300;
 
-  const circuitId = "d34e83f1-384a-4bbe-bb94-a05b6446bb45";
+  const circuitId = "db2b06fe-71a9-4020-aab7-7ce9e1fd3e3f";
 
   //   const proofInput = `selected_player_ids=[0,1,2,3,4,5,6,7,8,9,10]
   //     selected_players_points=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,97],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,65]]
@@ -34,7 +31,6 @@ export async function POST(req: Request, res: Response) {
       proof_input: proofInputs,
     });
     const proofId = proveResponse.data.proof_id;
-    // console.log("Proof ID:", proofId);
     let startTime = Date.now();
     let proofDetailResponse;
     while (true) {
@@ -53,10 +49,6 @@ export async function POST(req: Request, res: Response) {
       }
       await new Promise((resolve) => setTimeout(resolve, 1000));
     }
-    // console.log("Proof Output:");
-    // console.log(proofDetailResponse.data.proof);
-    // console.log("Public Output:");
-    // console.log(proofDetailResponse.data.public);
 
     return Response.json({
       success: true,

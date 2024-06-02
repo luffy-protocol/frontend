@@ -10,40 +10,66 @@ import formatProofInputs from "./helpers/formatProofInputs";
 import axios from "axios";
 interface GenerateProofParams {
   primaryWallet: Wallet;
-  resultsUrl: string;
+  results: number[];
+  allPlayersPoints: number[];
+  allPlayerPointsMerkleRoot: string;
   captain: number;
   viceCaptain: number;
+  isRandom: boolean;
   playerIds: number[];
+  setTxConfirmed: (txConfirmed: boolean) => void;
+  setTxHashes: (txHash: string) => void;
 }
 
-export default async function generateProof(params: GenerateProofParams) {
-  const { primaryWallet, resultsUrl, playerIds, captain, viceCaptain } = params;
-  const walletClient = await createWalletClientFromWallet(primaryWallet);
+export default async function generateProof(
+  params: GenerateProofParams
+): Promise<{ success: boolean; proof: any }> {
+  const {
+    primaryWallet,
+    results,
+    playerIds,
+    captain,
+    viceCaptain,
+    setTxConfirmed,
+    setTxHashes,
+    allPlayersPoints,
+    allPlayerPointsMerkleRoot,
+    isRandom,
+  } = params;
+
   let signer_pub_x_key = [];
   let signer_pub_y_key = [];
   let signature = [];
   let points_merkle_paths = [];
-  const results = (await axios.get(resultsUrl)).data.points;
+  let player_points = [];
+
+  console.log("PLAYER IDS");
+  console.log(playerIds);
   console.log("RESULTS");
   console.log(results);
-  const allPointsMerkleRoot = computeMerkleRoot(results);
-  const points = playerIds.map((id) => results[id]);
-  let player_points = [];
+
+  const walletClient = await createWalletClientFromWallet(primaryWallet);
+
+  const allPointsMerkleRoot = computeMerkleRoot(allPlayersPoints);
+
   for (let i = 0; i < 11; i++) {
-    const merklePathHexString = computeMerklePath(playerIds[i], results);
+    const merklePathHexString = computeMerklePath(
+      playerIds[i],
+      allPlayersPoints
+    );
     console.log(merklePathHexString);
-    console.log(`0x${(points[i] as any).toString(16).padStart(64, "0")}`);
+    console.log(`0x${(results[i] as any).toString(16).padStart(64, "0")}`);
     player_points.push(
-      hexToBytes(`0x${(points[i] as any).toString(16).padStart(64, "0")}`)
+      hexToBytes(`0x${(results[i] as any).toString(16).padStart(64, "0")}`)
     );
     const merklePath = merklePathHexString.map((element) =>
       hexToBytes(element)
     );
     points_merkle_paths.push(merklePath);
   }
-  console.log("Signing this");
+
   const squadHash = computeSquadHash(new Uint8Array(playerIds));
-  console.log(squadHash);
+
   const sig = Buffer.from(
     (
       await walletClient.signMessage({
@@ -55,11 +81,13 @@ export default async function generateProof(params: GenerateProofParams) {
     ).slice(2),
     "hex"
   );
-
+  setTxHashes(sig.toString("hex"));
+  setTxConfirmed(true);
   const publicKey = await recoverPublicKey({
     hash: Buffer.from(squadHash.slice(2), "hex"),
     signature: sig,
   });
+
   const publicKeyBuffer = Buffer.from(publicKey.slice(2), "hex");
   signer_pub_x_key = Array.from(publicKeyBuffer.subarray(1, 33));
   signer_pub_y_key = Array.from(publicKeyBuffer.subarray(33));
@@ -84,8 +112,9 @@ export default async function generateProof(params: GenerateProofParams) {
     captain: JSON.stringify(playerIds[captain]),
     vice_captain: JSON.stringify(playerIds[viceCaptain]),
     claimed_player_points: JSON.stringify(
-      points.reduce((acc, currentValue) => acc + currentValue, 0)
+      results.reduce((acc, currentValue) => acc + currentValue, 0)
     ),
+    is_random: JSON.stringify(isRandom),
   };
   console.log("PROOF INPUTS");
   console.log(proofInputs);
@@ -97,6 +126,5 @@ export default async function generateProof(params: GenerateProofParams) {
     headers: {},
     data: { proofInputs: formattedProofInputs },
   });
-
   return response.data;
 }

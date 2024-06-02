@@ -12,6 +12,7 @@ interface ResultsProps {
   totalPoints: number;
   matchMinutes: number;
   setTransactionLoading: (loading: boolean) => void;
+  claimPointsTransaction: () => Promise<void>;
 }
 export default function Results({
   status,
@@ -22,6 +23,7 @@ export default function Results({
   topPlayer,
   totalPoints,
   topPlayerPoints,
+  claimPointsTransaction,
 }: ResultsProps) {
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
@@ -105,6 +107,9 @@ export default function Results({
               className="bg-no-repeat w-fit h-[79px] bg-cover cursor-pointer hover:animate__wobble"
               style={{
                 backgroundImage: `url('/assets/LoginBorder.svg')`,
+              }}
+              onClick={async () => {
+                await claimPointsTransaction();
               }}
             >
               <span className="text-xs font-stalinist flex justify-center self-center pt-2   px-8 ">

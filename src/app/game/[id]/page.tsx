@@ -18,6 +18,7 @@ import { getMaxIndex, getMaxValue, sumArray } from "@/utils/game/arrayHelpers";
 import computeGamePageState from "@/utils/game/computeGamePageState";
 import getGameResults from "@/utils/transactions/read/getGameResults";
 import axios from "axios";
+import generateProof from "@/utils/zk/generateProof";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -29,6 +30,7 @@ function Page({ params }: { params: { id: string } }) {
   const [points, setPoints] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
   const [allPlayerPointsMerkleRoot, setAllPlayerPointsMerkleRoot] =
     useState("");
+  const [allPlayersPoints, setAllPlayersPoints] = useState<number[]>([]);
   const [captain, setCaptain] = useState(11);
   const [viceCaptain, setviceCaptain] = useState(11);
   const [playerPositions, setPlayerPositions] =
@@ -46,6 +48,7 @@ function Page({ params }: { params: { id: string } }) {
   const [error, setError] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   const [random, setRandom] = useState(false);
+  const [playerRemappedIds, setPlayerRemappedIds] = useState<number[]>([]);
 
   useEffect(() => {
     if (primaryWallet == null || primaryWallet == undefined) return;
@@ -97,6 +100,7 @@ function Page({ params }: { params: { id: string } }) {
           );
           console.log("Remapped Ids");
           console.log(remappedIds);
+          setPlayerRemappedIds(remappedIds);
           const results = (
             await axios.get(
               "https://amethyst-impossible-ptarmigan-368.mypinata.cloud/ipfs/" +
@@ -104,6 +108,7 @@ function Page({ params }: { params: { id: string } }) {
                 "?pinataGatewayToken=CUMCxB7dqGB8wEEQqGSGd9u1edmJpWmR9b0Oiuewyt5gs633nKmTogRoKZMrG4Vk"
             )
           ).data.points;
+          setAllPlayersPoints(results);
           const fetchedPoints = remappedIds.map((id: any, index: number) => {
             if (random) {
               if (index == captain) return results[id] * 4;
@@ -286,6 +291,47 @@ function Page({ params }: { params: { id: string } }) {
                 topPlayerPoints={getMaxValue(points)}
                 matchMinutes={90}
                 setTransactionLoading={setTransactionLoading}
+                claimPointsTransaction={async () => {
+                  console.log("Claiming Points");
+                  if (primaryWallet == null || primaryWallet == undefined)
+                    return;
+                  setLabels([
+                    "Sign Approval",
+                    "Generate Proof",
+                    "Claim Points",
+                  ]);
+                  setTxHashes([]);
+                  setError("");
+                  setTxConfirmed(0);
+
+                  setTransactionLoading(true);
+                  const { success, proof } = await generateProof({
+                    primaryWallet,
+                    results: points,
+                    allPlayersPoints,
+                    allPlayerPointsMerkleRoot,
+                    captain,
+                    viceCaptain,
+                    isRandom: random,
+                    playerIds: playerRemappedIds,
+                    setTxHashes: (hash: string) => {
+                      setTxHashes((hashes) => {
+                        return [...hashes, hash];
+                      });
+                    },
+                    setTxConfirmed: () => {
+                      setTxConfirmed((confirmed) => {
+                        return confirmed + 1;
+                      });
+                    },
+                  });
+                  if (!success) {
+                    setError("Error generating proof");
+                  } else {
+                    console.log("Proof generated");
+                    console.log(proof);
+                  }
+                }}
               />
             )
           ) : (

@@ -1,7 +1,11 @@
 import { createPublicClient, http } from "viem";
 import { formatUnits } from "viem/utils";
 import { erc20Abi } from "viem";
-import { TOKEN_ADDRESSES, CHAIN_RESOLVERS } from "@/utils/constants";
+import {
+  TOKEN_ADDRESSES,
+  CHAIN_RESOLVERS,
+  chainToChainIds,
+} from "@/utils/constants";
 
 // Function to get the token balance
 export async function getTokenBalance(
@@ -9,9 +13,9 @@ export async function getTokenBalance(
   tokenId: number,
   address: `0x${string}`
 ) {
-  const chainResolver = CHAIN_RESOLVERS[chainId];
+  const chainResolver = CHAIN_RESOLVERS[chainToChainIds[chainId]];
   if (!chainResolver) {
-    throw new Error(`Unsupported chain ID: ${chainId}`);
+    throw new Error(`Unsupported chain ID: ${chainToChainIds[chainId]}`);
   }
 
   const client = createPublicClient({
@@ -19,11 +23,16 @@ export async function getTokenBalance(
     transport: http(chainResolver.transport),
   });
 
-  if (!TOKEN_ADDRESSES[chainId] || !TOKEN_ADDRESSES[chainId][tokenId]) {
-    throw new Error(`Token ID ${tokenId} not found for chain ID ${chainId}`);
+  if (
+    !TOKEN_ADDRESSES[chainToChainIds[chainId]] ||
+    !TOKEN_ADDRESSES[chainToChainIds[chainId]][tokenId]
+  ) {
+    throw new Error(
+      `Token ID ${tokenId} not found for chain ID ${chainToChainIds[chainId]}`
+    );
   }
 
-  const tokenAddress = TOKEN_ADDRESSES[chainId][tokenId];
+  const tokenAddress = TOKEN_ADDRESSES[chainToChainIds[chainId]][tokenId];
 
   try {
     const [balance, decimals, symbol] = await Promise.all([

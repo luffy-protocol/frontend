@@ -14,7 +14,7 @@ import { formatGwei, parseEther } from "viem";
 import CcipTooltip from "./Game/Tooltip/CcipTooltip";
 import { PlaceBetProps } from "@/utils/interface";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
-import { getBalance } from "@wagmi/core";
+import { getTokenBalance } from "@/utils/transactions/read/token/getTokenBalance";
 
 export default function PlaceBet({
   selectedPlayersCount,
@@ -32,6 +32,8 @@ export default function PlaceBet({
   const [betAmountLoading, setBetAmountLoading] = useState(true);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [gasPrice, setGasPrice] = useState("0.0");
+  const [availableBalance, setAvailableBalance] = useState("0.0");
+  const [avaialbleNativeBalance, setAvailableNativeBalance] = useState("0.0");
   useEffect(() => {
     resolveBet(token, chain, setBetAmount, setBetAmountLoading);
   }, [chain, token]);
@@ -52,8 +54,43 @@ export default function PlaceBet({
   }, [chain, enableRandomness]);
 
   useEffect(() => {
-    console.log("");
-  }, [primaryWallet]);
+    const fetchBalance = async () => {
+      if (primaryWallet) {
+        const balance = await getTokenBalance(
+          chain,
+          token - 1,
+          primaryWallet.address as `0x${string}`
+        );
+        walletConnector?.getBalance().then((balance) => {
+          console.log(balance);
+          setAvailableNativeBalance(balance!);
+        });
+        if (balance) {
+          setAvailableBalance(balance);
+        }
+      }
+    };
+    if (!primaryWallet || !chain || !token) return;
+    if (token == 1) {
+      walletConnector?.getBalance().then((balance) => {
+        console.log(balance);
+        setAvailableNativeBalance(balance!);
+      });
+    } else {
+      fetchBalance();
+    }
+  }, [primaryWallet, chain, token]);
+
+  const CheckAvailable = () => {
+    if (token == 1) {
+      return Number(avaialbleNativeBalance) >= Number(betamount);
+    } else {
+      return (
+        Number(availableBalance) >= Number(betamount) &&
+        Number(avaialbleNativeBalance) >= Number(crosschainfee) + Number(vrffee)
+      );
+    }
+  };
 
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
@@ -237,7 +274,8 @@ export default function PlaceBet({
                     selectedPlayersCount == 11 &&
                     chain != 0 &&
                     token != 0 &&
-                    (enableRandomness ? true : captainAndViceCaptainSet)
+                    (enableRandomness ? true : captainAndViceCaptainSet) &&
+                    CheckAvailable()
                   ) {
                     let totalValue = parseEther(
                       (Number(vrffee) + Number(crosschainfee)).toString()
@@ -259,6 +297,7 @@ export default function PlaceBet({
                     // set chain
                   } else {
                     setShowErrorMessage(true);
+                    console.log("error");
                   }
                 }}
               >
@@ -266,6 +305,9 @@ export default function PlaceBet({
                   Submit Squad
                 </span>
               </button>
+              {showErrorMessage && (
+                <ErrorTooltip message={`Insufficient Funds ⚠️`} />
+              )}
             </div>
           </div>
         </div>

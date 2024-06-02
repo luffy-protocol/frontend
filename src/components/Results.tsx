@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import Status from "./Fixtures/FixtureCard/Status";
+import { Player } from "@/utils/interface";
 interface ResultsProps {
   status: number;
   homeTeam: string;
   awayTeam: string;
   homeGoals: number;
   awayGoals: number;
-  topPlayerId: string;
+  topPlayer: Player;
   topPlayerPoints: number;
   totalPoints: number;
   matchMinutes: number;
@@ -18,11 +19,9 @@ export default function Results({
   awayTeam,
   homeGoals,
   awayGoals,
-  topPlayerId,
+  topPlayer,
   totalPoints,
   topPlayerPoints,
-  matchMinutes,
-  setTransactionLoading,
 }: ResultsProps) {
   return (
     <div className="flex justify-center items-center w-1/2 h-2/3">
@@ -62,10 +61,13 @@ export default function Results({
           </div>
           <div className="flex justify-center items-center w-full mt-5">
             <img
-              src={`https://media.api-sports.io/football/players/${topPlayerId}.png`}
+              src={`https://media.api-sports.io/football/players/${topPlayer.id}.png`}
               alt="toppoints"
               className="w-1/5 flex justify-center items-center"
             />
+          </div>
+          <div className="text-sm flex justify-center items-center w-full mt-5">
+            <p>{topPlayer.name}</p>
           </div>
           <div className="text-sm flex justify-center items-center w-full mt-5">
             <p>{topPlayerPoints}</p>

@@ -16,6 +16,7 @@ import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 import { getRemapping } from "@/utils/game/getRemapping";
 import { getPredictionsState } from "@/utils/game/getPredictionComplete";
+import getMaxIndex from "@/utils/game/getMaxIndex";
 
 function Page({ params }: { params: { id: string } }) {
   const { primaryWallet, walletConnector } = useDynamicContext();
@@ -304,9 +305,9 @@ function Page({ params }: { params: { id: string } }) {
                 status={status}
                 homeTeam={homeTeam}
                 awayTeam={awayTeam}
-                homeGoals={2}
-                awayGoals={3}
-                topPlayerId="154"
+                homeGoals={Math.floor(Math.random() * 6)}
+                awayGoals={Math.floor(Math.random() * 6)}
+                topPlayer={playerPositions[getMaxIndex(points)]}
                 totalPoints={332}
                 topPlayerPoints={80}
                 matchMinutes={90}

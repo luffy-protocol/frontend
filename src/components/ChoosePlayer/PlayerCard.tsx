@@ -26,10 +26,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
           style={{ marginRight: "20px" }}
         />
 
-        {/* Content Section */}
-
         <div className="flex flex-col justify-start max-w-[160px] ">
-          <div className="font-stalinist text-[#D8485F] text-xl">
+          <div className="font-stalinist text-[#D8485F] text-xl overflow-hidden overflow-ellipsis">
             {data?.player.name}
           </div>
           <div className="flex gap-2 justify-start items-center">
@@ -44,7 +42,6 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ id, setPlayerId }) => {
             />
           </div>
         </div>
-
         {/* Arrow Button Section */}
         <ArrowButton id={id} setplayerId={setPlayerId} />
       </div>

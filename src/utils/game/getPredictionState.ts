@@ -1,7 +1,7 @@
 import request, { gql } from "graphql-request";
 import axios from "axios";
 
-export const getPredictionsState = async ({
+export const getPredictionState = async ({
   gameId,
   address,
 }: {

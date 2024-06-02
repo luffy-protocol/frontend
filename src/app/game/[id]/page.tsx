@@ -15,7 +15,7 @@ import triggerSubmitSquad from "@/utils/game/triggerSubmitSquad";
 import { useDynamicContext } from "@dynamic-labs/sdk-react-core";
 import computeSquadHash from "@/utils/zk/helpers/computeSquadHash";
 import { getRemapping } from "@/utils/game/getRemapping";
-import { getPredictionsState } from "@/utils/game/getPredictionComplete";
+import { getPredictionState } from "@/utils/game/getPredictionState";
 import { getMaxIndex, getMaxValue, sumArray } from "@/utils/game/arrayHelpers";
 
 function Page({ params }: { params: { id: string } }) {
@@ -46,7 +46,7 @@ function Page({ params }: { params: { id: string } }) {
   useEffect(() => {
     if (primaryWallet == null || primaryWallet == undefined) return;
     const getPrediction = async (): Promise<any> => {
-      const fetchedPrediction = await getPredictionsState({
+      const fetchedPrediction = await getPredictionState({
         gameId: "0x" + parseInt(params.id).toString(16),
         address: primaryWallet.address.toLocaleLowerCase(),
       });

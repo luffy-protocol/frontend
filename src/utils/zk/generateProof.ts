@@ -11,11 +11,13 @@ import axios from "axios";
 interface GenerateProofParams {
   primaryWallet: Wallet;
   resultsUrl: string;
+  captain: number;
+  viceCaptain: number;
   playerIds: number[];
 }
 
 export default async function generateProof(params: GenerateProofParams) {
-  const { primaryWallet, resultsUrl, playerIds } = params;
+  const { primaryWallet, resultsUrl, playerIds, captain, viceCaptain } = params;
   const walletClient = await createWalletClientFromWallet(primaryWallet);
   let signer_pub_x_key = [];
   let signer_pub_y_key = [];
@@ -79,6 +81,8 @@ export default async function generateProof(params: GenerateProofParams) {
     player_points_merkle_paths: JSON.stringify(
       points_merkle_paths.map((path) => path.map((e) => Array.from(e)))
     ),
+    captain: JSON.stringify(playerIds[captain]),
+    viceCaptain: JSON.stringify(playerIds[viceCaptain]),
     claimed_player_points: JSON.stringify(
       points.reduce((acc, currentValue) => acc + currentValue, 0)
     ),

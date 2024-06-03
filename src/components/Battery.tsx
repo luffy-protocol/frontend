@@ -7,7 +7,11 @@ interface BatteryProps {
 
 const Battery: React.FC<BatteryProps> = ({ step, totalSteps }) => {
   const steppx = ["240", "110", "70", "50"];
-  useEffect(() => {}, [step]);
+  useEffect(() => {
+    console.log("Battery");
+    console.log(step);
+    console.log(totalSteps);
+  }, [step]);
   return (
     <div className="flex bg-[url('/assets/battery.svg')] sm:w-[150px] h-[530px] bg-no-repeat bg-cover items-center justify-start flex-col-reverse gap-2">
       {Array(totalSteps * 2)

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Pitch from "@/components/Pitch";
 import ChoosePlayer from "@/components/ChoosePlayer/ChoosePlayer";
-import { emptyPlayers } from "@/utils/constants";
+import { chainToChainIds, emptyPlayers } from "@/utils/constants";
 import { Player, TriggerTransactionProps } from "@/utils/interface";
 import GameStatus from "@/components/Game/GameStatus";
 import Results from "@/components/Results";
@@ -50,6 +50,7 @@ function Page({ params }: { params: { id: string } }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [random, setRandom] = useState(false);
   const [playerRemappedIds, setPlayerRemappedIds] = useState<number[]>([]);
+  const [isClaimed, setIsClaimed] = useState(false);
 
   useEffect(() => {
     if (primaryWallet == null || primaryWallet == undefined) return;
@@ -90,6 +91,11 @@ function Page({ params }: { params: { id: string } }) {
       (async function () {
         console.log("Fetching results from smart contract");
         const { success, data } = await getGameResults({ gameId: params.id });
+        const players = JSON.parse(localStorage.getItem("players") || "{}");
+        if (primaryWallet == null || primaryWallet == undefined) return;
+        if (players[params.id][primaryWallet.address as any].isClaimed)
+          setIsClaimed(true);
+
         if (success) {
           const playerIdRemapping = await getRemapping({
             gameId: "0x" + Number(params.id).toString(16),
@@ -293,10 +299,19 @@ function Page({ params }: { params: { id: string } }) {
                 topPlayerPoints={getMaxValue(points)}
                 matchMinutes={90}
                 setTransactionLoading={setTransactionLoading}
+                isClaimed={isClaimed}
                 claimPointsTransaction={async () => {
                   console.log("Claiming Points");
                   if (primaryWallet == null || primaryWallet == undefined)
                     return;
+                  if (walletConnector == null) return;
+                  if (walletConnector.supportsNetworkSwitching()) {
+                    try {
+                      await walletConnector.switchNetwork({
+                        networkChainId: 43113,
+                      });
+                    } catch (e) {}
+                  }
                   setLabels([
                     "Sign Approval",
                     "Generate Proof",
@@ -358,6 +373,13 @@ function Page({ params }: { params: { id: string } }) {
                       setTxConfirmed((confirmed) => {
                         return confirmed + 1;
                       });
+                      const players = JSON.parse(
+                        localStorage.getItem("players") || "{}"
+                      );
+                      players[params.id][
+                        primaryWallet.address as any
+                      ].isClaimed = true;
+                      localStorage.setItem("players", JSON.stringify(players));
                     }
                   }
                 }}
